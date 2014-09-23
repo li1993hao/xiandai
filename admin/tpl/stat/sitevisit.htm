@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<LINK href="<{$web_url}>/common/admin/css/admin.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript" src="<{$web_url}>/common/libs/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="<{$web_url}>/common/libs/jquery-migrate-1.1.0.min.js"></script>
+<script language="javascript" type="text/javascript" src="<{$web_url}>/common/libs/My97DatePicker/WdatePicker.js"></script>
+<script language="javascript" type="text/javascript" src="<{$web_url}>/common/libs/jquery.gvChart-0.1.min.js"></script>
+</head>
+<style type="text/css">/* CSS Document */   
+#info th {  
+ border-right: 1px solid #adceff;  
+ border-bottom: 1px solid #adceff;  
+ border-top: 1px solid #adceff;  
+ letter-spacing: 2px;  
+ text-transform: uppercase;  
+ text-align: left;  
+ padding: 6px 6px 6px 12px;  
+ background: #f4f7fc;  
+}  
+#info td {  
+ border-right: 1px solid #adceff;  
+ border-bottom: 1px solid #adceff;  
+ background: #fff;  
+ font-size:11px;  
+ padding: 6px 6px 6px 12px;  
+ 
+}  
+#info th.spec {  
+ border-left: 1px solid #adceff;  
+ border-top: 0;  
+ background: #fff;   
+}  
+</style> 
+<script type="text/javascript">
+<{if isset($visitList)}>
+		gvChartInit();
+<{/if}>
+		$(function() {
+			var order = $("#order").val();
+			$("#start").focus(function(){
+				if(order == 1){//月
+					WdatePicker({
+						dateFmt:'yyyy-MM',
+						maxDate:'#F{$dp.$D(\'end\')||\'2099-01\'}'
+					});
+				}else if(order == 2){//年
+					WdatePicker({
+						dateFmt:'yyyy',
+						maxDate:'#F{$dp.$D(\'end\')||\'2099\'}'
+					});
+					
+				}else{//天
+					WdatePicker({
+						dateFmt:'yyyy-MM-dd',
+						maxDate:'#F{$dp.$D(\'end\')||\'2099-01-01\'}'
+					});
+					
+				}
+				
+			});
+			$("#end").focus(function(){
+				if(order == 1){//月
+					WdatePicker({
+						dateFmt:'yyyy-MM',
+						minDate:'#F{$dp.$D(\'start\')}',
+						maxDate:'2099-01'	
+					});
+				}else if(order == 2){//日
+					WdatePicker({
+						dateFmt:'yyyy',
+						minDate:'#F{$dp.$D(\'start\')}',
+						maxDate:'2099'
+					});
+				}else{//天
+					WdatePicker({
+						dateFmt:'yyyy-MM-dd',
+						minDate:'#F{$dp.$D(\'start\')}',
+						maxDate:'2099-01-01'	
+					});
+				}
+			});
+			$("#order").change(function(){
+				order = $("#order").val();
+				$("#start").val("");
+				$("#end").val("");
+				
+			});
+			$("#form1").submit(function(){
+				if($("#start").val()==""){
+					$("#start").focus();
+					$("#result").text("请选择开始日期！");
+					return false;
+				}
+				if($("#end").val()==""){
+					
+					$("#end").focus();
+					$("#result").text("请选择结束日期！");
+					return false;
+				}
+			
+			});
+			<{if isset($visitList)}>
+	
+			if($('#lineChartTable').size() > 0){
+				
+				$('#lineChartTable').gvChart({
+					chartType: 'LineChart',
+					gvSettings: {
+						vAxis: {title: '访问量'},
+						hAxis: {title: '日期'},
+						width: 800,
+						height: 400,
+					}
+				});
+			}
+			<{/if}>
+		}); 
+</script>
+<body>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" align=center border=0>
+  	<TR height=28><TD background="<{$web_url}>/common/admin/images/title_bg1.jpg">当前位置:站点访问统计</TD></TR>
+  	<TR><TD bgColor=#b1ceef height=1></TD></TR>
+  	<TR height=20>
+    	<TD background="<{$web_url}>/common/admin/images/shadow_bg.jpg"></TD>
+	</TR>
+</TABLE>
+
+<div id="stat" style="margin-left:20px;">
+	<form id="form1"   target="_self" name="form1" method="post" action="" >
+		查询方式:
+		<select name="order" id="order"> 
+		<option value="0" selected="selected" >日</option>
+		<option value="1" >月</option>
+		<option value="2" >年</option>
+		</select>
+		&nbsp;
+		终端类型：
+		<select name="terminal" id="terminal"> 
+		<option value="5" selected="selected" >全部</option>
+		<option value="0" >Web端</option>
+		<option value="3" >Android客户端</option>
+		<option value="4" >iOS客户端</option>
+		</select>
+		&nbsp;
+		开始时间:<input id="start" name="start" class="Wdate" type="text"  />
+		&nbsp;
+		结束时间:<input id="end" name="end" class="Wdate" type="text"  />
+		&nbsp;
+		<input name="submit" type="submit" value="查询" />
+		&nbsp;
+	</form>
+</div>
+</br>
+<font color="#CC0000" id="result"><{$result|default:""}></font>
+</br>
+<div id="info" style=" margin-left:10px;">
+	
+	<{if isset($visitList)}>
+	<table id="mytable" cellspacing="0" style="display:block;float:left;margin-top:20px;">  
+	  <tr>  
+	    <th scope="col" width="150px" style="border-left:1px solid #adceff;" >时间</th>  
+	    <th scope="col" width="150px" >访问量</th> 
+	  </tr>  
+	  <{section name=vl loop=$visitList}>
+	  <tr >
+	   	
+	    <td style="border-left:1px solid #adceff;" ><{$visitList[vl].date}></td>
+	    <td><{$visitList[vl].result}></td>
+	  </tr>  
+	  <{sectionelse}>
+	  <tr >
+	    <th class="spec" colspan="2">没有结果</td>
+	  </tr>
+	  <{/section}>
+	</table> 
+	<div style="float:left; margin-left:20px;">
+		
+			<table id='lineChartTable'>
+				<caption>折线图</caption>
+				<thead>
+					<tr>
+						<th></th>
+						<{section name=vl1 loop=$visitList}>
+						<th><{$visitList[vl1].date}></td>
+						<{/section}>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>曲线</th>
+						<{section name=vl2 loop=$visitList}>
+						<td><{$visitList[vl2].result}></td>
+						<{/section}>
+					</tr>
+				</tbody>
+			</table>
+	</div>
+	<{/if}>
+</div>
+
+
+</body>
+</html>

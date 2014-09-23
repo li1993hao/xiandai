@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<LINK href="<{$web_url}>/common/admin/css/admin.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="<{$web_url}>/common/libs/jquery-1.4.4.min.js"></script>
+<title>招聘会管理</title>
+<style type="text/css">
+<!--
+.enable{
+	background-color:#FFC1C1;
+	width:400px;
+	height:150px;
+}
+.disable{
+	background-color:#E3E0D5;
+	width:400px;
+	height:150px;
+}
+
+-->
+
+.mask{height:100%; width:100%; position:fixed; _position:absolute; top:0; z-index:1000;  opacity:0.5; filter: alpha(opacity=50); background-color:#000; display:none;}
+.calendar-href{line-height:20px; height: 20px;}
+.calendar-container{margin:10px;background-color:#E8F1FA;width:250px;height:130px; float:left;border-top:#F50 solid 2px;border-left:1px solid #CCC; border-right:1px solid #CCC; border-bottom:1px solid #CCC;}
+.calendar-container:hover{background:#FCF1CA;}
+.calendar-container-header{height:20px; width:250px; text-align: right; border-bottom:1px solid #CCC; }
+.calendar-container-item{height:110px; margin:10px; width:250px; text-align:left;}
+.calendar-container-item-row{width:250px;height:20px;}
+.calendar-container-nothing{margin:10px;}
+.pop-container{width:500px;position:absolute;left:40px; top:240px;margin-top:10px; margin-left:10px; border-top:#F50 solid 2px; border-left:1px solid #CCC; border-right:1px solid #CCC; border-bottom:1px solid #CCC; background:#F0F5FB;z-index:1001;display:none} 
+.pop-calendar-form-header{ width:500px; border-bottom:solid #999 1px;}
+.pop-calendar-form-title{float:left;text-align:left; padding:2px 5px; width:200px; }
+.pop-calendar-closebtn{ float:right; text-align:right; padding:2px 5px;width:30px;cursor:pointer;  font-size:11px; line-height:20px; color:#000; background:#DBEAF9; border:1px solid #CCC;}
+.pop-calendar-closebtn:hover{background:#FCF1CA;}
+.pop-calendar-menu-btnok{cursor:pointer;font-size:11px;background:#DBEAF9; border:1px solid #CCC; text-align:center; width:88px;height:20px;float:left;}
+.pop-calendar-menu-btnok:hover{background:#FCF1CA;}
+.pop-calendar-container{padding:5px 0px; margin:5px 10px;border-bottom: 1px dotted #DDD;}
+.pop-calendar-title{ font-size:12px; line-height:22px; color:#000; text-align:right; width:100px; float:left;}
+.pop-calendar-text{ font-size:12px; color:#000; text-align:left; width:340px; height:20px;min-height:20px;  float:left;}
+.menu-container{ padding:5px 0px; margin:20px 10px;border-bottom: 1px dotted #DDD;width:340px;height:40px;}
+.calendar-menu{ font-size:12px; color:#000; text-align:left; width:340px; height:40px;min-height:20px;  float:left;}
+
+</style>
+
+<script type="text/javascript">
+$(function(){
+	$(".addcalendar").click(function(){
+		$("#mask").show();
+		$("#pop-container-add").show();
+		var title = $(this).attr("var1");
+		//alert(title);
+		var addr = $(this).attr("var2");
+		var time = $(this).attr("var3");
+		//var tel = $(this).attr("var4");
+		//var assistel =  $(this).attr("var5");
+		var content = $(this).attr("var6");
+	
+		$("#pop-calendar-menu-btnok-add").click(function(){
+			//alert("aa");
+			var contact = $("#add-contact").val();
+			var tel = $("#add-tel").val();
+			var student = $("#add-student").val();
+			var assistel = $("#add-assistel").val();
+			$.ajax({
+				type:"POST",
+				url:"<{$web_url}>/manwyjob.php/calendar/addjsondata",
+				data:"title="+title+"&time="+time+"&addr="+addr+"&contact="+contact+"&tel="+tel+"&student="+student+"&assistel="+assistel+"&content="+content,
+				success:function(msg){
+					alert(msg);
+					var obj = eval('(' + msg + ')');
+					if(obj.json.state == 1){
+						alert("添加成功");
+						$("#pop-calendar-closebtn-add").click();
+						window.location.reload();
+					}else{
+						alert("该记录已存在不能重复添加！");
+					}
+				}
+					
+			});
+			
+		});
+		
+	});
+	
+	$("#pop-calendar-closebtn-add").click(function(){
+		$("#mask").hide();
+		$("#pop-container-add").hide();
+	});
+	
+	//alert("aa");
+});
+
+
+
+</script>
+</head>
+<body>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" align=center border=0>
+  	<TR height=28><TD background="<{$web_url}>/common/admin/images/title_bg1.jpg">当前位置:招聘会管理</TD></TR>
+  	
+  	<TR><TD bgColor=#b1ceef height=1></TD></TR>
+  	<TR height=20>
+    	<TD background="<{$web_url}>/common/admin/images/shadow_bg.jpg"></TD>
+	</TR>
+</TABLE>
+
+<div style="padding-left:30px;" >
+	<font color="#CC0000"><{$result|default:""}></font>
+</div>
+<div>
+
+	<div style="padding-left:30px;padding-top:20px;">
+		<form  target="_self" name="form1" method="post" action="<{$web_url}>/manwyjob.php/jobfair/getjobfairmsglist">
+			<input type="text" name="keyword" id="keyword" size="20" value="<{$keyword|default:""}>" />
+			<input type="submit" value="搜索" />
+			<{if isset($keyword) }>
+			关键字："<{$keyword}>",
+			<{/if}>
+			查询到<{$joblist.total}>条数据！
+		</form>
+	</div>
+<{if $joblist.total eq "0" }>
+	<div style="padding-left:30px;padding-top:20px;">	
+		没有数据
+	</div>
+<{else}>
+<{foreach $joblist.list as $re}>
+<div style="padding-left:30px;padding-top:20px;background-color:white;width:400px;height:150px; float:left">
+	<div <{if $re.jm_isup=="" or $re.jm_isup=="0000-00-00 00:00:00"}>class="disable"<{else}>class="enable"<{/if}> >
+		<div style="heig  ht:20px; width:400px; text-align: right; ">
+    		<a target="top" style="line-height:20px; height: 20px;" href="<{$web_url}>/index.php/jobfairmsg/detail/id/<{$re.jm_id}>">查看详情</a>
+			&nbsp;&nbsp;
+    		<a style="line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/jobfair/editjobfairmsg/id/<{$re.jm_id}>">修改</a>
+			&nbsp;&nbsp;
+		   	<a onclick="return confirm('确认删除这条招聘信息吗？');" style="line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/jobfair/getjobfairmsglist/do/del/id/<{$re.jm_id}>">删除</a>
+			&nbsp;&nbsp;
+			<{if $re.jm_isup=="" or $re.jm_isup=="0000-00-00 00:00:00"}>
+	    	 <a  style="width: 60px; line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/jobfair/getjobfairmsglist/do/up/id/<{$re.jm_id}>">置顶</a>
+			<{else}>
+			<a  style="width: 80px; line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/jobfair/getjobfairmsglist/do/cancelup/id/<{$re.jm_id}>">取消置顶</a>
+			<{/if}>
+			&nbsp;&nbsp;
+		</div>
+		<div style="height:110px; margin:10px; width:380; text-align:left;" >
+			<{if $re.pic_id==""}>
+				<div style="width:370px;">标题:<{$re.jm_name}></div>
+				<div style="width:370px; height:30px;">发布时间:<{$re.jm_date}></div>
+				<div style="width:370px; height:30px;">浏览次数:<{$re.jm_read}></div>
+				<!-- 
+				<div class="addcalendar" style="width:220px;cursor:pointer;" var1="<{$re.jm_name|strip_tags}>" var2="<{$re.jm_addr|strip_tags}>" var3="<{$re.jm_opentime|strip_tags}>"
+				var6="<{$re.jm_content|strip_tags|truncate:1024}>">将此招聘会信息添加到工作日历中+</div>
+			 -->	
+			<{else}>
+				<div style="float:left;width:100px;height:110px;margin:10px;">
+					<img style="max-width:100px;max-height:110px;" src="<{$web_url}>/common/upload/images/<{$re.pic_link}>" />
+				</div>
+				<div style="float:left;width:100px;height:110px;margin:10px;">
+					<div style="width:220px;">标题:<{$re.jm_name}></div>
+					<div style="width:220px; height:20px;">发布时间:<{$re.jm_date}></div>
+					<div style="width:220px; height:20px;">浏览次数:<{$re.jm_read}></div>
+					<!-- 
+					<div class="addcalendar" style="width:220px;cursor:pointer;" var1="<{$re.jm_name|strip_tags}>" var2="<{$re.jm_addr|strip_tags}>" var3="<{$re.jm_opentime|strip_tags}>"
+					 var6="<{$re.jm_content|strip_tags|truncate:1024}>">将此招聘会信息添加到工作日历中+</div>
+				 -->
+				</div>
+			<{/if}>
+		</div>
+
+
+	</div>
+</div>
+<{/foreach}>
+<{/if}>
+<div style="clear: both;"></div>
+
+</div>
+
+<div id="mask" class="mask"></div>
+<div id="pop-container-add" class="pop-container" data="">
+	<div class="pop-calendar-form-header">
+		<div class="pop-calendar-form-title" >
+				添加到工作日历请先填写单位联系人及学生助理信息
+		</div>
+		<div id="pop-calendar-closebtn-add" class="pop-calendar-closebtn">
+    		关闭
+    	</div>
+    	<div style="clear:both;"></div>
+    </div>
+    <div class="pop-calendar-container">
+    	<div class="pop-calendar-title">联系人姓名：</div>
+       	<div class="pop-calendar-text">
+       		<input id="add-contact" type="text" name="add-contact" size="30" value="" /><font style="color:red;size:20px">(必填)</font>
+        </div>
+        <div style="clear:both"></div>
+        <div class="pop-calendar-title">联系人电话：</div>
+       	<div class="pop-calendar-text">
+       		<input id="add-tel" type="text" name="add-tel" size="30" value="" /><font style="color:red;size:20px">(必填)</font>
+        </div>
+        <div style="clear:both"></div>
+        <div class="pop-calendar-title">学生助理姓名：</div>
+       	<div class="pop-calendar-text">
+       		<input id="add-student" type="text" name="add-student" size="30" value="" /><font style="color:red;size:20px">(必填)</font>
+        </div>
+        <div style="clear:both"></div>
+        <div class="pop-calendar-title">学生助理电话：</div>
+       	<div class="pop-calendar-text">
+       		<input id="add-assistel" type="text" name="add-assistel" size="30" value="" /><font style="color:red;size:20px">(必填)</font>
+        </div>
+       
+    </div>
+    <div class ="menu-container">
+    	<div class="calendar-menu">
+       		<div style="padding-left:180px;padding-top:10px;height:20px; float:left;">
+       			<div id="pop-calendar-menu-btnok-add" class="pop-calendar-menu-btnok">
+       			确定
+      			</div>
+       		</div>
+     	</div>
+     </div>
+</div>
+<{if isset($keyword) }>
+	<{assign var=url value="/manwyjob.php/jobfair/getjobfairmsglist/keyword/<{$keyword}>"}>
+<{else}>
+	<{assign var=url value="/manwyjob.php/jobfair/getjobfairmsglist"}> 
+<{/if}>
+<{page info=$joblist web_url=$web_url url=$url}>
+
+</body>
+</html>

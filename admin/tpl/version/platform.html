@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link type="text/css" rel="stylesheet" href="<{$web_url}>/common/admin/css/other/other.css" />
+<LINK href="<{$web_url}>/common/admin/css/admin.css" type="text/css" rel="stylesheet">
+<title>平台管理</title>
+</head>
+<body>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" align=center border=0>
+  	<TR height=28><TD background="<{$web_url}>/common/admin/images/title_bg1.jpg">当前位置:平台管理</TD></TR>
+  	<TR><TD bgColor=#b1ceef height=1></TD></TR>
+  	<TR height=20>
+    	<TD background="<{$web_url}>/common/admin/images/shadow_bg.jpg"></TD>
+	</TR>
+</TABLE>
+
+<div style="padding-left:30px;" >
+	<font color="#CC0000"><{$result|default:""}></font>
+</div>
+<{if $list eq "0" }>没有数据
+<{else}>
+<{foreach $list as $re}>
+<div style="padding-left:30px;padding-top:20px;background-color:white;width:300px;height:100px; float:left;">
+	<div style="background-color:#FFC1C1;width:300px;height:100px;">
+		<div style="height:20px; width:300px; text-align: right; ">
+    		<a  style="line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/version/Editplatform/id/<{$re.CODE_PLATFORM}>">修改</a>
+			&nbsp;&nbsp;
+		   	<a onclick="return confirm('如果版本更新数据库已经有此平台的版本，请勿删除！');" style="line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/version/Getplatform/do/del/id/<{$re.CODE_PLATFORM}>">删除</a>
+			&nbsp;&nbsp;
+		</div>
+		<div style="height:60px; margin:10px; width:280; text-align:left;" >
+				<div style="width:270px;height:30px;">平台号:<{$re.NAME_PLATFORM}></div>
+				<div style="width:270px; height:30px;">关键字:<{$re.KEYWORD}></div>
+		</div>
+</div>
+<div style="clear: both;"></div>
+</div>
+<{/foreach}>
+<{/if}>
+</body>
+</html>

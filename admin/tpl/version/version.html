@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link type="text/css" rel="stylesheet" href="<{$web_url}>/common/admin/css/other/other.css" />
+<LINK href="<{$web_url}>/common/admin/css/admin.css" type="text/css" rel="stylesheet">
+<title>版本管理</title>
+</head>
+<body>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" align=center border=0>
+  	<TR height=28><TD background="<{$web_url}>/common/admin/images/title_bg1.jpg">当前位置:版本管理</TD></TR>
+  	<TR><TD bgColor=#b1ceef height=1></TD></TR>
+  	<TR height=20>
+    	<TD background="<{$web_url}>/common/admin/images/shadow_bg.jpg"></TD>
+	</TR>
+</TABLE>
+
+<div style="padding-left:30px;" >
+	<font color="#CC0000"><{$result|default:""}></font>
+</div>
+<{if $list eq "0" }>没有数据
+<{else}>
+<{foreach $list as $re}>
+<div style="padding-left:30px;padding-top:20px;background-color:white;width:300px;height:330px; float:left;">
+	<div style="background-color:#FFC1C1;width:300px;height:330px;">
+		<div style="height:20px; width:300px; text-align: right; ">
+    		<a  style="line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/version/Editversion/id/<{$re.ID_VERSION}>">修改</a>
+			&nbsp;&nbsp;
+		   	<a onclick="return confirm('确定删除这个版本吗？');" style="line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/version/Getversion/do/del/id/<{$re.ID_VERSION}>">删除</a>
+			&nbsp;&nbsp;
+		</div>
+		<div style="height:210px; margin:10px; width:280; text-align:left;" >
+				<div style="width:270px;height:30px;">平台号:<{$re.NAME_PLATFORM}></div>
+				<div style="width:270px;height:30px;">平台号:<{$re.NAME_DISP}></div>
+				<div style="width:270px; height:30px;">版本号:<{$re.NUM_VERSION}></div>
+				<div style="width:270px; height:30px;">版本描述:<{$re.DESC_VERSION|truncate:30:'..':true:true}></div>
+				<div style="width:270px; height:30px;">升级类型:<{$re.TYPE_UPGRADE}></div>
+				<div style="width:270px; height:30px;">发布状态:
+				<{if $re.FLAG_PUBLISH==1}>发布
+				<{else}>未发布
+				<{/if}>
+				</div>
+				<div style="width:270px; height:30px;">发布时间:<{$re.TIME_PUBLISH}></div>
+				<div style="width:270px; height:30px;">下载次数:<{$re.download_num}></div>
+				<div style="width:270px; height:30px;">APP大小:<{$re.SIZE_VERSION}></div>
+				<div style="width:270px; height:30px;">下载链接地址:<a href="<{$re.NAME_FILE}>"><{$re.NAME_FILE|truncate:20:'..':true:true}></a></div>
+		</div>
+</div>
+<div style="clear: both;"></div>
+</div>
+<{/foreach}>
+<{/if}>
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link type="text/css" rel="stylesheet" href="<{$web_url}>/common/admin/css/recruit/style.css" />
+<LINK href="<{$web_url}>/common/admin/css/admin.css" type="text/css" rel="stylesheet">
+<title>添加企业招聘信息</title>
+<script type="text/javascript" src="<{$web_url}>/common/libs/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="<{$web_url}>/common/libs/upload/jquery.uploadify.min.js"></script>
+<link rel="stylesheet" type="text/css" href="<{$web_url}>/common/libs/upload/uploadify.css">
+<script type="text/javascript" src="<{$web_url}>/common/libs/xheditor-1.2.1/xheditor-1.2.1.min.js"></script>
+<script type="text/javascript" src="<{$web_url}>/common/libs/xheditor-1.2.1/xheditor_lang/zh-cn.js"></script>
+<script type="text/javascript">
+		$(function() {
+			$('#file_upload').uploadify({
+				'formData'     : {
+				},
+				'swf'      : '<{$web_url}>/common/libs/upload/uploadify.swf',
+				'uploader' : '<{$web_url}>/manwyjob.php/studentjobinfo/upload/',
+				'queueSizeLimit': 1 , 
+				'multi':false,
+				'auto':true,
+				'fileTypeDesc':"请选择图片文件",
+				'fileTypeExts':'*.jpg;*.jpeg;*.png;*.gif;*.bmp',
+				'fileSizeLimit': '10240KB', 
+				'buttonText':"选择图片", 
+				'width' : 100, 
+				'height':20, 
+				'cancelImg' : '<{$web_url}>/common/libs/upload/uploadify-cancel.png',
+				'onUploadError' : function(file, errorCode, errorMsg, errorString) {
+			            alert('The file ' + file.name + ' could not be uploaded: ' + errorString);
+			    },
+			    'onUploadStart' : function(file) {
+			    	$("#picstate").val("1"); 
+		        },
+		        'onCancel' : function(file) {
+		        	$("#picstate").val("0"); 
+		        },
+			    'onUploadSuccess' : function(file, data, response) {
+		            //alert('The file ' + file.name + ' was successfully uploaded with a response of ' + response + ':' + data);
+		            var myObject = eval('(' + data + ')');
+		            //alert(myObject.result);
+		            //alert(myObject.msg);
+		            if(myObject.result == '0'){
+			            $("#img").html(myObject.msg);
+			            $("#picstate").val("0");//0表示没有图片上传 1表示图片上传中 2表示图片上传成功
+		            }else{
+		            	$("#hidFileID").attr("value",myObject.result);
+			            $("#img").html("<img style=\" max-width:600px; max-height:200px;\" src='"+myObject.msg+"'/>");
+			            $("#picstate").val("2");
+		            }
+		            
+			    }
+			});
+			var editor = $('#content').xheditor({
+				upLinkUrl:"<{$web_url}>/common/upload.php",
+				upLinkExt:"zip,rar,txt",
+				upImgUrl:"<{$web_url}>/common/upload.php",
+				upImgExt:"jpg,jpeg,gif,png",
+				upFlashUrl:"<{$web_url}>/common/upload.php",
+				upFlashExt:"swf",
+				upMediaUrl:"<{$web_url}>/common/upload.php",
+				upMediaExt:"avi",
+				remoteImgSaveUrl:"<{$web_url}>/common/upload.php",
+				cleanPaste:2,
+				internalScript:false,
+				inlineScript:false,
+				internalStyle:false,
+				inlineStyle:false
+			});
+			
+			$("#form1").submit( function () {
+				$("#result").val("");
+				$('#content').val(editor.getSource());//加上这句防止提交数据为空
+				
+				//return false;
+				
+				//alert($("#newssort").val());
+				
+				if($("#title").val() == ""){
+					$("#result").text("标题不能为空！");
+					$("#title").focus();
+					return false;
+				} 
+				if($("#periodslist").val() == ""){
+					$("#result").text("请选择期刊号！");
+					$("#periodslist").focus();
+					return false;
+				}
+				if($("#banmian").val() == "0"){
+					$("#result").text("请选择版面！");
+					$("#banmian").focus();
+					return false;
+				}
+				if($("#content").val() == ""){
+					$("#result").text("请填写内容！");
+					$("#content").focus();
+					return false;
+				}
+				
+				if($("#picstate").val()==1){
+					alert("文件上传中，请稍后！");
+					return false;
+				}
+				return true;
+			} );
+			$("#addperidos").click(function(){
+				//alert("aaa");
+				$("#addresult").html("正在添加...");
+				$.ajax({
+				   	type: "POST",
+				   	url: "<{$web_url}>/manwyjob.php/studentjobinfo/addperidos",
+				   	success: function(msg){
+				  		//alert( msg );
+				  		var myObject = eval('(' + msg + ')');
+				  		//alert(myObject.result);
+				  		if(myObject.result > 0){
+				  			$("#firstperiods").after("<option value='"+myObject.result+"'>第"+myObject.number+"期</option>");
+				  			$("#addresult").html("添加成功！");
+				  		}else{
+				  			$("#addresult").html("添加失败！");
+				  		}
+				  		 
+					},
+					error:function(msg){
+						$("#addresult").html("添加失败！");
+					}
+				});
+			});
+			
+			$("#addlayout").click(function(){
+				//alert("aaa");
+				if($("#periodslist").val()==0){
+					$("#addlayoutresult").html("请选择期号");
+					return false;
+				}
+				$("#addlayoutresult").html("正在添加...");
+				
+				$.ajax({
+				   	type: "POST",
+				   	url: "<{$web_url}>/manwyjob.php/studentjobinfo/addlayout",
+					data:"pid="+$("#periodslist").val(),
+				   	success: function(msg){
+				  		
+				   		//alert( msg );
+				  		
+				  		var myObject = eval('(' + msg + ')');
+				  		//alert("ssss");
+				  		//alert(myObject.result);
+				  		
+				  		if(myObject.result > 0){
+				  			$("#firstlayout").after("<option value='"+myObject.result+"'>第"+myObject.l_number+"版</option>");
+				  			$("#addlayoutresult").html("添加成功！");
+				  		}else{
+				  			$("#addlayoutresult").html("添加失败！");
+				  		}
+				  		 
+					},
+					error:function(msg){
+						$("#addlayoutresult").html("添加失败！");
+					}
+				});
+			
+			});
+			$("#periodslist").change(function(){
+				//alert($("#periodslist").val());
+				$("#banmian").html("<option id='firstlayout' value='0'>选择版面</option>");
+				if($("#periodslist").val() != 0 ){
+					$.ajax({
+					   	type: "POST",
+					   	url: "<{$web_url}>/manwyjob.php/studentjobinfo/getlayoutlist",
+					   	data:"pid="+$("#periodslist").val(),
+					   	success: function(msg){
+					  		//alert( msg );
+					  		var myObject = eval('(' + msg + ')');
+					  		//alert(myObject.result);
+					  		if(myObject.result > 0){
+					  			//myObject.result
+					  			$(myObject.data).each(function (index, ele) { 
+									//alert(index);
+					  				$("#firstlayout").after("<option value='"+ele.l_id+"'>第"+ele.l_number+"版</option>");
+					  			});
+					  		}
+						}
+					});
+				}
+			});
+		});
+</script>
+</head>
+<body>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" align=center border=0>
+  	<TR height=28><TD background="<{$web_url}>/common/admin/images/title_bg1.jpg">当前位置:添加学生就业通讯</TD></TR>
+  	<TR><TD bgColor=#b1ceef height=1></TD></TR>
+  	<TR height=20>
+    	<TD background="<{$web_url}>/common/admin/images/shadow_bg.jpg"></TD>
+	</TR>
+	</TABLE>
+	<table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+                              
+                                <form id="form1" enctype="multipart/form-data" target="_self" name="form1" method="post" action="<{$web_url}>/manwyjob.php/studentjobinfo/newstudentjobcomm">
+                                	<tr>
+			<td width="107" height="30"><div align="right"></div></td>
+			<td height="40" colspan="2">
+				<div align="left"><font id="result" color="#0000FF"><{$result|default:""}></font></div>
+			</td>
+			</tr>
+									<tr>
+                                    <td height="40"><div align="right">标题：</div></td>
+                                    <td height="40" colspan="2">&nbsp;<input  type="text" id="title" size="60" name="title" /> &nbsp;&nbsp;<font color="#ff0000">必填</font></td>
+                                   </tr>
+                                    <tr>
+	                                    <td width="107" height="30"><div align="right">所属期号：</div></td>
+	                                    <td height="40" colspan="2">&nbsp;
+	                                    	<select id="periodslist"  name="periods" size=1>
+	                                    		<option id="firstperiods"  value="">选择期刊号</option>
+	                                    	 	<{foreach $perid as $re}>
+	                                         	<option  value="<{$re.p_id}>">第<{$re.p_number}>期</option>
+	                                         	<{/foreach}>
+	                                         	</select>&nbsp;&nbsp;
+	                                         	<input id="addperidos" type="button" value="添加一期" /><font id="addresult" color="#0000FF"></font>
+	                                         	 &nbsp;&nbsp;<font color="#ff0000">必选</font>
+                                        </td>
+                                        
+                                   </tr>
+                                    <tr>
+                                    <td width="107" height="30"><div align="right">版面：</div></td>
+                                    <td height="40" colspan="2">&nbsp;
+                                    	<select id="banmian" name="banmian" size=1>
+                                         <option id='firstlayout' value="0">选择版面</option>
+                                        </select>
+                                        &nbsp;&nbsp;
+	                                    <input id="addlayout" type="button" value="添加版面" /><font id="addlayoutresult" color="#0000FF"></font>
+	                                     &nbsp;&nbsp;<font color="#ff0000">必选</font>
+                                        </td>
+                                   </tr>
+                                   
+                                 <tr>
+                                 	<td height="40"><div align="right">录入者：</div></td>
+                                    <td height="40" colspan="2">&nbsp;&nbsp;<{$user.user_name}>
+                                        </td>
+                                 </tr>
+                                   
+                              
+                                <tr>
+							<td height="40"><div align="right">图片：</div></td>
+						<td height="40" colspan="2" style="display:table-cell; vertical-align:middle;">&nbsp;         
+						<div id="img"></div>
+						<input id="file_upload" name="file_upload" type="file" multiple >
+						<input type="hidden" name="picid" id="hidFileID" value="" />
+						<input type="hidden" name="picstate" id="picstate" value="0" />图片大小不能超过10M
+						</td>
+						</tr>
+                        <tr>
+						<td><div align="right">内容：</div></td>
+						<td   colspan="2">
+						<textarea id="content" name="content" rows="24" cols="120" style="width: 60%"></textarea>
+						</td>
+						</tr>
+         <tr>
+			<td><div align="right"></div></td>
+			<td height="40" colspan="2">
+				<div align="left">
+					<input name="submit" type="submit" value="提交" />&nbsp;&nbsp;
+				</div>
+			</td>
+		</tr>
+                                 
+                                </form>
+                                
+</TABLE>
+</body>
+</html>

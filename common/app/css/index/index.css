@@ -1,0 +1,269 @@
+.middle{
+    	height: 1500px;
+    }
+    .nav ul {
+        height: 33px;
+    }
+    .nav li {
+        float: left;
+        margin-left: 42px;
+    }
+    .nav a {
+        display: block;
+        line-height: 33px;
+        color: white;
+        font-size: 16px;
+    }
+    /*轮播控件*/
+    .carousel {
+        height: 342px;
+        width: 990px;
+    }
+    .middle_main {
+        width: 990px;
+        min-height: 400px;
+        margin-top: 7px;
+    }
+    .middle_left {
+        width: 635px;
+        float: left;
+        margin-right: 10px;
+    }
+    .middle_right {
+        width: 345px;
+        float: left;
+        background-color: blue;
+    }
+    .block_style {
+        background-color: #ecf0f1;
+        border: 1px solid gray;
+        border-radius: 2px;
+    }
+    .nav_fast {
+        width: 100%;
+        height: 355px;
+    }
+    /**快速导航样式*/
+    .nav_fast {
+        font-size: 18px;
+        border-top: none;
+
+    }
+    .nav_fast ul {
+        margin-left: 28px;
+        margin-top: 20px;
+        line-height: 30px;
+    }
+    .nav_fast a {
+        color: #515151;
+
+    }
+    .nav_fast >div {
+        float: left;
+        height: 355px;
+        width: 211px;
+    }
+    .nav_fast_title {
+        height: 38px;
+        margin-right: 2px;
+        line-height: 36px;
+        padding-left: 10px;
+    }
+    .nav_fast >div:nth-child(3) .nav_fast_title {
+        margin-right: -2px;
+    }
+    .nav_fast >div:nth-child(1) .nav_fast_title {
+        background-color: #27ae61;
+    }
+    .nav_fast >div:nth-child(2) .nav_fast_title {
+        background-color: #3598db;
+    }
+    .nav_fast >div:nth-child(3) .nav_fast_title {
+        background-color: #9b58b5;
+    }
+
+    .nav_fast >div >div:first-child{
+        float: right;
+        width: 3px;
+        height: 355px;
+        position: relative;
+        top: 46px;
+        left: 1px;
+        background: url(../../images/index/fast_line.png) no-repeat;
+    }
+
+    .nav_fast >div:last-child >div:first-child{
+        display: none;
+    }
+
+
+    /**招聘日历样式**/
+    .rec_clendar {
+        height: 207px;
+        margin-top: 13px;
+        padding: 0 10px;
+    }
+    .rec_clendar_title {
+        height: 30px;
+        text-align: right;
+        border-bottom: 1px solid black;
+    }
+    .rec_clendar_title div {
+        float: left;
+        font-size: 18px;
+        font-weight: bold;
+    }
+    .rec_clendar_info,
+    .rec_clendar_info a {
+        font-size: 14px;
+        color: white;
+    }
+    .rec_clendar_info > div {
+        float: left;
+        width: 115px;
+        height: 176px;
+        margin-right: 7px;
+    }
+    .rec_clendar_info > div > div {
+        height: 77px;
+        margin-bottom: 5px;
+        background-color: red;
+    }
+    .rec_clendar_info >div >div:nth-child(1) {
+        margin-top: 10px;
+    }
+    /**招聘日历色块颜色**/
+    .rec_clendar_info >div:nth-child(1)>div:nth-child(1) {
+        background-color: #1bbc9b;
+    }
+    .rec_clendar_info >div:nth-child(1)>div:nth-child(2) {
+        background-color: #16a086;
+    }
+    .rec_clendar_info >div:nth-child(2)>div:nth-child(1) {
+        background-color: #2dcc70;
+    }
+    .rec_clendar_info >div:nth-child(2)>div:nth-child(2) {
+        background-color: #27ae61;
+    }
+    .rec_clendar_info >div:nth-child(3)>div:nth-child(1) {
+        background-color: #3598db;
+    }
+    .rec_clendar_info >div:nth-child(3)>div:nth-child(2) {
+        background-color: #297fb8;
+    }
+    .rec_clendar_info >div:nth-child(4)>div:nth-child(1) {
+        background-color: #9b58b5;
+    }
+    .rec_clendar_info >div:nth-child(4)>div:nth-child(2) {
+        background-color: #8f44ad;
+    }
+    .rec_clendar_info >div:nth-child(5)>div:nth-child(1) {
+        background-color: #34495e;
+    }
+    .rec_clendar_info >div:nth-child(5)>div:nth-child(2) {
+        background-color: #2d3e50;
+    }
+    .rec_clendar_info div {
+        text-align: center;
+    }
+    .rec_clendar_info >div>div:last-child a{
+    	display: block;
+        padding-top: 17px;
+    }
+    .rec_clendar_info>div>div>div:nth-child(1) {
+        height: 20px;
+    }
+    /**日期头部白色色块**/
+    .rec_clendar_info >div>div>div>div:first-child {
+        float: left;
+        height: 10px;
+        width: 16px;
+        margin-left: 20px;
+        background-color: #ecf0f1;
+    }
+    .rec_clendar_info >div>div>div>div:last-child {
+        float: right;
+        height: 10px;
+        width: 16px;
+        margin-right: 20px;
+        background-color: #ecf0f1;
+    }
+    /******栏目信息列表块样式**********/
+    .category_info {
+        margin-top: 10px;
+        height: 470px;
+    }
+    .category_nav {
+        height: 40px;
+    }
+    .category_nav li {
+        float: left;
+    }
+
+    .category_nav a {
+        display: block;
+        font-size: 17px;
+        height: 40px;
+        margin-left: 4px;
+        padding-top: 8px;
+        padding-left: 12px;
+        padding-right: 12px;
+        background-color: #34495e;
+        border-radius: 3px;
+        color: white;
+        border: 1px solid #b2b2b2;
+    }
+    .category_nav li:first-child a{
+        background-color:#ecf0f1;
+        color: black; 
+    }
+
+    .category_nav li:first-child a {
+        margin-left: 0px;
+    }
+    .category_list {
+        height: 430px;
+        background-color: #ecf0f1;
+        position: relative;
+        top: -2px;
+
+        border-bottom: solid 1px #b2b2b2;
+        border-left: solid 1px #b2b2b2;
+        border-right: solid 1px #b2b2b2;
+        border-bottom-left-radius: 2px;
+        border-bottom-right-radius: 2px;
+    }
+    .category_list li {
+        padding-bottom: 5px;
+        margin: 0 7px;
+        margin-top: 10px;
+        border-bottom: 1px dashed #b2b2b2;
+    }
+    .category_list li:nth-child(1) {
+        margin-top: 0px;
+        padding-top: 10px;
+    }
+    .category_list li a {
+        color: black;
+        font-weight: bolder;
+        font-size: 16px;
+    }
+    .category_list li span {
+        font-size: 16px;
+        color: #b2b2b2;
+    }
+    .category_list li>div {
+        margin: 0 5px;
+        overflow: hidden;
+    }
+    .category_list li>div:first-child {
+        height: 30px;
+        text-align: right;
+    }
+    .category_list li>div:last-child {
+        color: #7c7c7c;
+    }
+    .category_list li>div:first-child>div {
+        float: left;
+        font-weight: bolder;
+    }

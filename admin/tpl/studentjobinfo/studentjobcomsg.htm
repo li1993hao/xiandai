@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<LINK href="<{$web_url}>/common/admin/css/admin.css" type="text/css" rel="stylesheet">
+<title>学生就业通讯管理</title>
+<style type="text/css">
+<!--
+.enable{
+	background-color:#FFC1C1;
+	width:400px;
+	height:150px;
+}
+.disable{
+	background-color:#E3E0D5;
+	width:400px;
+	height:150px;
+}
+
+-->
+
+</style>
+</head>
+<body>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" align=center border=0>
+  	<TR height=28><TD background="<{$web_url}>/common/admin/images/title_bg1.jpg">当前位置:学生就业通讯管理</TD></TR>
+  	<TR><TD bgColor=#b1ceef height=1></TD></TR>
+  	<TR height=20>
+    	<TD background="<{$web_url}>/common/admin/images/shadow_bg.jpg"></TD>
+	</TR>
+</TABLE>
+<div style="padding-left:30px;" >
+	<font color="#CC0000"><{$result|default:""}></font>
+</div>
+<{assign var="qi" value=0}>
+<{assign var="ban" value=0}>
+<{foreach $alist.list as $re}>
+
+<{if $qi != $re.id}>
+<{assign var="qi" value= $re.id}>
+<{assign var="ban" value=0}>
+<div style="clear:both"></div>
+<div style=" margin:20px; height:30px; line-height:30px; border-bottom:2px solid;">
+	<div style = " width:50px; height:30px; line-height:30px; padding: 0 10px; border-bottom:2px solid red; color:red; float:left;" >
+		第<{$re.p_number}>期
+	</div>
+	<div style="float:right; margin-right:20px;">
+		<a href = "<{$web_url}>/manwyjob.php/studentjobinfo/Getstudentjobcomsglist/do/delqi/id/<{$re.id}>">删除</a>
+	</div>
+	
+</div>
+	<{if $re.layoutid == ""}>
+	<div style=" margin-left:30px;">
+		没有版面~
+	</div>
+	<{/if}>
+<{/if}>
+<{if $ban != $re.layoutid}>
+<{assign var="ban" value= $re.layoutid}>
+<div style="clear:both"></div>
+<div style=" margin:10px 25px; height:25px; line-height:25px; border-bottom:1px dotted #333333; ">
+	<div style = " width:40px; height:25px; line-height:25px; padding: 0 10px;  color:red; float:left;" >
+	第<{$re.l_number}>版
+	</div>
+	<div style="float:right; width:40px;">
+		<a href = "<{$web_url}>/manwyjob.php/studentjobinfo/Getstudentjobcomsglist/do/delban/id/<{$re.layoutid}>">删除</a>
+	</div>
+</div>
+<{if $re.a_id == ""}>
+	<div style=" margin-left:35px;">
+		此版面没有文章~
+	</div>
+	
+<{/if}>
+<{/if}>
+
+<{if $re.a_id!=""}>
+<div style="  padding-left:30px;padding-top:20px;background-color:white;width:400px;height:150px; float:left">
+	<div <{if $re.a_top=="" or $re.a_top=="0000-00-00 00:00:00"}>class="disable"<{else}>class="enable"<{/if}> >
+		<div style="heig  ht:20px; width:400px; text-align: right; ">
+    		<a target="top" style="line-height:20px; height: 20px;" href="<{$web_url}>/index.php/periodicals/detail/id/<{$re.a_id}>">查看详情</a>
+			&nbsp;&nbsp;
+    		<a style="line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/studentjobinfo/editstujcomsg/id/<{$re.a_id}>">修改</a>
+			&nbsp;&nbsp;
+		   	<a onclick="return confirm('确认删除这条学生就业通讯吗？');" style="line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/studentjobinfo/Getstudentjobcomsglist/do/del/id/<{$re.a_id}>">删除</a>
+			&nbsp;&nbsp;
+			<{if $re.a_top==""}>
+	    	 <a  style="width: 60px; line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/studentjobinfo/Getstudentjobcomsglist/do/up/id/<{$re.a_id}>">置顶</a>
+			<{else}>
+			<a  style="width: 80px; line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/studentjobinfo/Getstudentjobcomsglist/do/cancelup/id/<{$re.a_id}>">取消置顶</a>
+			<{/if}>
+			&nbsp;&nbsp;
+		</div>
+		<div style="height:110px; margin:10px; width:380px; text-align:left;" >
+			<{if $re.pic_id==""}>
+				<div style="width:370px;">标题:<{$re.a_title|truncate:20}></div>
+				<div style="width:370px; height:30px;">发布时间:<{$re.a_time}></div>
+				<div style="width:370px; height:30px;">浏览次数:<{$re.a_scan}>&nbsp;&nbsp; 分享次数:<{$re.a_share}></div>
+			<{else}>
+				<div style="float:left;width:100px;height:110px;margin:10px;">
+					<img style="max-width:100px;max-height:110px;" src="<{$web_url}>/common/upload/images/<{$re.pic_link}>" />
+				</div>
+				<div style="float:left;width:100px;height:110px;margin:10px;">
+					<div style="width:220px;">标题:<{$re.a_title|truncate:20}></div>
+					<div style="width:220px; height:30px;">发布时间:<{$re.a_time}></div>
+					<div style="width:220px; height:30px;">浏览次数:<{$re.a_scan}>&nbsp;&nbsp; 分享次数:<{$re.a_share}></div>
+				</div>
+			<{/if}>
+		</div>
+
+	</div>
+</div>
+<{/if}>
+<{/foreach}>
+<div style="clear: both;"></div>
+
+<{page info=$alist web_url=$web_url url="/manwyjob.php/studentjobinfo/Getstudentjobcomsglist/"}>
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link type="text/css" rel="stylesheet" href="<{$web_url}>/common/admin/css/recruit/style.css" />
+<LINK href="<{$web_url}>/common/admin/css/admin.css" type="text/css" rel="stylesheet">
+<title>修改就业政策</title>
+<script type="text/javascript" src="<{$web_url}>/common/libs/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="<{$web_url}>/common/libs/jquery-migrate-1.1.0.min.js"></script>
+<script type="text/javascript" src="<{$web_url}>/common/libs/upload/jquery.uploadify.min.js"></script>
+<link rel="stylesheet" type="text/css" href="<{$web_url}>/common/libs/upload/uploadify.css">
+<script type="text/javascript" src="<{$web_url}>/common/libs/xheditor-1.2.1/xheditor-1.2.1.min.js"></script>
+<script type="text/javascript" src="<{$web_url}>/common/libs/xheditor-1.2.1/xheditor_lang/zh-cn.js"></script>
+<script type="text/javascript">
+		$(function() {
+			$("#zz_del").click(function(){
+				$("#attrID").val('');
+				$("#filetitle").val('');
+				$("#file").hide();
+			})
+			
+			$('#file_upload').uploadify({
+				'formData'     : {
+				},
+				'swf'      : '<{$web_url}>/common/libs/upload/uploadify.swf',
+				'uploader' : '<{$web_url}>/manwyjob.php/jobinfo/upload/',
+				'queueSizeLimit': 1 , 
+				'multi':false,
+				'auto':true,
+				'fileTypeDesc':"请选择图片文件",
+				'fileTypeExts':'*.jpg;*.jpeg;*.png;*.gif;*.bmp',
+				'fileSizeLimit': 1024*1024, 
+				'buttonText':"选择图片", 
+				'width' : 100, 
+				'height':20, 
+				'cancelImg' : '<{$web_url}>/common/libs/upload/uploadify-cancel.png',
+				'onUploadError' : function(file, errorCode, errorMsg, errorString) {
+			            alert('The file ' + file.name + ' could not be uploaded: ' + errorString);
+			    },
+			    'onUploadStart' : function(file) {
+			    	$("#picstate").val("1"); 
+		        },
+		        'onCancel' : function(file) {
+		        	$("#picstate").val("0"); 
+		        },
+			    'onUploadSuccess' : function(file, data, response) {
+		            //alert('The file ' + file.name + ' was successfully uploaded with a response of ' + response + ':' + data);
+		            var myObject = eval('(' + data + ')');
+		            //alert(myObject.result);
+		            //alert(myObject.msg);
+		            if(myObject.result == '0'){
+			            $("#img").html(myObject.msg);
+			            $("#picstate").val("0");//0表示没有图片上传 1表示图片上传中 2表示图片上传成功
+		            }else{
+		            	$("#hidFileID").attr("value",myObject.result);
+			            $("#img").html("<img style=\" max-width:600px; max-height:200px;\" src='"+myObject.msg+"'/>");
+			            $("#picstate").val("2");
+		            }
+		            
+			    }
+			});
+			
+			
+			$('#attr_upload').uploadify({
+				'formData'     : {
+				},
+				'swf'      : '<{$web_url}>/common/libs/upload/uploadify.swf',
+				'uploader' : '<{$web_url}>/manwyjob.php/jobinfo/upload/filetype/file',
+				'queueSizeLimit': 1 , 
+				'multi':false,
+				'auto':true,
+				'fileTypeDesc':"请选择文件", 
+				'fileTypeExts':'*.txt;*.pdf;*.doc;*.docx;*.xls;*.xslx;*.rar;*.zip;*.ppt;*.pptx',
+				'fileSizeLimit': '10240KB', 
+				'buttonText':"选择文件",
+				'width' : 100, 
+				'height':20, 
+				'cancelImg' : '<{$web_url}>/common/libs/upload/uploadify-cancel.png',
+				'onUploadError' : function(file, errorCode, errorMsg, errorString) {
+			            alert('The file ' + file.name + ' could not be uploaded: ' + errorString);
+			    },
+			    'onUploadStart' : function(file) {
+			    	$("#filestate").val("1"); 
+		        },
+		        'onCancel' : function(file) {
+		        	$("#filestate").val("0"); 
+		        },
+			    'onUploadSuccess' : function(file, data, response) {
+		            //alert('The file ' + file.name + ' was successfully uploaded with a response of ' + response + ':' + data);
+		           // alert(data);//size
+		            var myObject = eval('(' + data + ')');
+		           // alert(myObject.result);
+		           //alert(myObject);
+		           
+		            if(myObject.result == '0'){
+		            	$("#file").html("上传失败！");
+			            $("#filetate").val("0");//0表示没有图片上传 1表示图片上传中 2表示图片上传成功
+		            }else{
+		            	$("#attrID").attr("value",myObject.result);
+		            	//$("#fsize").val(myObject.size);
+		            	$("#filetitle").val(file.name);
+		            	$("#file").html("<a href='"+myObject.msg+"'>"+myObject.name+"</a>");
+			            $("#filestate").val("2");
+		            }
+		            
+			    }
+			});
+			
+			var editor = $('#content').xheditor({
+				upLinkUrl:"<{$web_url}>/common/upload.php",
+				upLinkExt:"zip,rar,txt",
+				upImgUrl:"<{$web_url}>/common/upload.php",
+				upImgExt:"jpg,jpeg,gif,png",
+				upFlashUrl:"<{$web_url}>/common/upload.php",
+				upFlashExt:"swf",
+				upMediaUrl:"<{$web_url}>/common/upload.php",
+				upMediaExt:"avi",
+				remoteImgSaveUrl:"<{$web_url}>/common/upload.php",
+				cleanPaste:2,
+				internalScript:false,
+				inlineScript:false,
+				internalStyle:false,
+				inlineStyle:false
+			});
+			
+			$("#form1").submit( function () {
+			
+				
+				//return false;
+				if($("#title").val() == ""){
+					$("#result").text("标题不能为空！");
+					$("#title").focus();
+					return false;
+				}
+				if($("#content").val() == ""){
+					$("#result").text("内容不能为空！");
+					$("#content").focus();
+					return false;
+				} 
+				
+				return true;
+			} );
+		});
+	</script>
+</head>
+<body>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" align=center border=0>
+  	<TR height=28><TD background="<{$web_url}>/common/admin/images/title_bg1.jpg">当前位置:修改就业政策</TD></TR>
+  	<TR><TD bgColor=#b1ceef height=1></TD></TR>
+  	<TR height=20>
+    	<TD background="<{$web_url}>/common/admin/images/shadow_bg.jpg"></TD>
+	</TR>
+</TABLE>
+<table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+                              
+                                <form id="form1" enctype="multipart/form-data"  target="_self" name="form1" method="post" action="<{$web_url}>/manwyjob.php/Jobinfo/Editemploy/id/<{$id}>" >
+                                   <tr>
+									<td width="107" height="30"><div align="right"></div></td>
+									<td height="40" colspan="2">
+										<div align="left"><font id="result" color="#0000FF"><{$result|default:""}></font></div>
+									</td>
+								  </tr>
+                                   <tr>
+                                    <td height="40"><div align="right">标题:</div></td>
+                                    <td height="40" colspan="2">&nbsp;
+                                        <input id="title" type="text" name="title" id="title" size="35" class="inputcss" value="<{$detail.ep_title}>"/><font style="color:red;size:20px">(必填)</font></td>
+                                  </tr>
+                                <tr>
+						              <td height="40"><div align="right">附件名称:</div></td>
+						              <td height="40" colspan="2">&nbsp;<input id="filetitle" type="text" size="60" name="filetitle" value="<{$detail.file_name}>" />&nbsp;&nbsp;<a style="color:#f00; cursor:pointer" id="zz_del">删除</a><font color="#0000FF"></font></td>
+						        </tr>
+						        <tr>
+						            <td><div align="right"></div></td>
+						           	<td colspan="2" >
+										<div id="file">
+										<{if $detail.file_id!=""}>
+										<a target="top" href="<{$web_url}>/common/upload/files/<{$detail.file_link}>"><{$detail.file_name}></a>
+										<{/if}>
+										</div>
+						            </td>
+						        </tr>
+						        <tr>
+						            <td height="40"><div align="right">上传附件：</div></td>
+						           	<td height="40"width="110px;">
+										<input id="attr_upload" name="attr_upload" type="file" multiple >
+										<input type="hidden" name="fileid" id="attrID" value="<{$detail.file_id}>" />
+										<input type="hidden" name="filestate" id="filestate" value="<{if $detail.file_id != ""}>2<{/if}>" />
+						            </td>
+						            <td>可选，文件大小不能超过10M</td>
+						        </tr>
+                                 <tr>
+                                    <td height="40"><div align="right">发布时间：</div></td>
+                                    <td height="40" colspan="2">&nbsp;&nbsp;<{$detail.ep_create}>
+                                       </td>
+                                  </tr>
+                        
+						 		<tr>
+									
+									 <td height="130"><div align="right">内容：</div></td>
+									<td height="130" colspan="2">
+									<textarea id="content" name="content" rows="24" cols="120" style="width: 700px;"><{$detail.ep_content}></textarea>
+									</td>
+							   	</tr>
+                                
+                                 <tr>
+                                 	<td height="40"></td>
+                                    <td height="40" colspan="2">
+                                        <input type="checkbox" name="push" value="1"/>推送给客户端用户
+                                    </td>
+                                 </tr>
+                                 
+                                 <tr>
+                            <td height="40" colspan="3">
+                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="submit" type="submit" value="提交" style="width:60px;" />
+
+                            </td>
+                          </tr>
+                                 </form>
+                             
+                            </table>
+
+
+</body>
+</html>

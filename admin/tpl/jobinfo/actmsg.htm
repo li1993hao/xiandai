@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<LINK href="<{$web_url}>/common/admin/css/admin.css" type="text/css" rel="stylesheet">
+<title>通知公告管理</title>
+<style type="text/css">
+<!--
+.enable{
+	background-color:#FFC1C1;
+	width:400px;
+	height:150px;
+}
+.disable{
+	background-color:#E3E0D5;
+	width:400px;
+	height:150px;
+}
+.recomenable{
+	background-color:#E3EFFB;
+	width:400px;
+	height:150px;	
+}
+-->
+
+</style>
+</head>
+<body>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" align=center border=0>
+  	<TR height=28><TD background="<{$web_url}>/common/admin/images/title_bg1.jpg">当前位置:通知公告管理</TD></TR>
+  	<TR><TD bgColor=#b1ceef height=1></TD></TR>
+  	<TR height=20>
+    	<TD background="<{$web_url}>/common/admin/images/shadow_bg.jpg"></TD>
+	</TR>
+</TABLE>
+<div style="padding-left:30px;" >
+	<font color="#CC0000"><{$result|default:""}></font>
+</div>
+<div style="padding-left:30px;"><font color="#0000FF">推荐：将新闻推荐到首页大图</font></div>
+<div>
+	<div style="padding-left:30px;padding-top:20px;">
+		<form  target="_self" name="form1" method="post" action="<{$web_url}>/manwyjob.php/jobinfo/getactlist">
+			<input type="text" name="keyword" id="keyword" size="20" value="<{$keyword|default:""}>" />
+			<input type="submit" value="搜索" />
+			<{if isset($keyword) }>
+			关键字："<{$keyword}>",
+			<{/if}>
+			查询到<{$joblist.total}>条数据！
+		</form>
+	</div>
+<{if $joblist.total eq "0" }>
+	<div style="padding-left:30px;padding-top:20px;">	
+		没有数据
+	</div>
+<{else}>
+<{foreach $joblist.list as $re}>
+<div style="padding-left:30px;padding-top:20px;background-color:white;width:400px;height:150px; float:left">
+	<div <{if $re.ji_isup=="" or $re.ji_isup=="0000-00-00 00:00:00"}>class="disable"<{else}>class="enable"<{/if}> >
+		<div <{if $re.ji_recom!=""}>class="recomenable"<{/if}> >
+		<div style="height:20px; width:400px; text-align: right; ">
+    		<a target="top" style="line-height:20px; height: 20px;" href="<{$web_url}>/index.php/jobinfo/detail/id/<{$re.ji_id}>">查看详情</a>
+			&nbsp;&nbsp;
+    		<a style="line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/jobinfo/editactmsg/id/<{$re.ji_id}>">修改</a>
+			&nbsp;&nbsp;
+		   	<a onclick="return confirm('确认删除这条招聘信息吗？');" style="line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/jobinfo/getactlist/do/del/id/<{$re.ji_id}>">删除</a>
+			&nbsp;&nbsp;
+			<{if $re.ji_isup=="" or $re.ji_isup=="0000-00-00 00:00:00"}>
+	    	 <a  style="width: 60px; line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/jobinfo/getactlist/do/up/id/<{$re.ji_id}>">置顶</a>
+			<{else}>
+			<a  style="width: 80px; line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/jobinfo/getactlist/do/cancelup/id/<{$re.ji_id}>">取消置顶</a>
+			<{/if}>
+			&nbsp;&nbsp;
+			<{if $re.ji_recom==""}>
+	    	 <a  style="width: 60px; line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/jobinfo/getactlist/do/recom/id/<{$re.ji_id}>">推荐</a>
+			<{else}>
+			<a  style="width: 80px; line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/jobinfo/getactlist/do/cancelrecom/id/<{$re.ji_id}>">取消推荐</a>
+			<{/if}>
+			&nbsp;&nbsp;
+		</div>
+		<div style="height:110px; margin:10px; width:380; text-align:left;" >
+			<{if $re.pic_id==""}>
+				<div style="width:370px;">标题:<{$re.ji_title}></div>
+				<div style="width:370px; height:30px;">发布时间:<{$re.ji_date}></div>
+				<div style="width:370px; height:30px;">浏览次数:<{$re.ji_read}></div>
+			<{else}>
+				<div style="float:left;width:100px;height:110px;margin:10px;">
+					<img style="max-width:100px;max-height:110px;" src="<{$web_url}>/common/upload/images/<{$re.pic_link}>" />
+				</div>
+				<div style="float:left;width:100px;height:110px;margin:10px;">
+					<div style="width:220px;">标题:<{$re.ji_title}></div>
+					<div style="width:220px; height:30px;">发布时间:<{$re.ji_date}></div>
+					<div style="width:220px; height:30px;">浏览次数:<{$re.ji_read}></div>
+				</div>
+			<{/if}>
+		</div>
+		</div>
+	</div>
+</div>
+<{/foreach}>
+<{/if}>
+<div style="clear: both;"></div>
+</div>
+<{if isset($keyword) }>
+	<{assign var=url value="/manwyjob.php/jobinfo/getactlist/keyword/<{$keyword}>"}>
+<{else}>
+	<{assign var=url value="/manwyjob.php/jobinfo/getactlist"}> 
+<{/if}>
+<{page info=$joblist web_url=$web_url url=$url}>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<LINK href="<{$web_url}>/common/admin/css/admin.css" type="text/css" rel="stylesheet">
+<title>实习招聘信息管理</title>
+<style type="text/css">
+<!--
+.enable{
+	background-color:#FFC1C1;
+	width:400px;
+	height:150px;
+}
+.disable{
+	background-color:#E3E0D5;
+	width:400px;
+	height:150px;
+}
+
+-->
+
+</style>
+</head>
+<body>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" align=center border=0>
+  	<TR height=28><TD background="<{$web_url}>/common/admin/images/title_bg1.jpg">当前位置:生源信息管理</TD></TR>
+  	<TR><TD bgColor=#b1ceef height=1></TD></TR>
+  	<TR height=20>
+    	<TD background="<{$web_url}>/common/admin/images/shadow_bg.jpg"></TD>
+	</TR>
+</TABLE>
+<div style="padding-left:30px;" >
+	<font color="#CC0000"><{$result|default:""}></font>
+</div>
+<div>
+<{if $silist.total eq "0" }>没有数据
+<{else}>
+<{foreach $silist.list as $re}>
+<div style="padding-left:30px;padding-top:20px;background-color:white;width:400px;height:150px; float:left">
+	<div <{if $re.si_top==""}>class="disable"<{else}>class="enable"<{/if}> >
+		<div style="heig  ht:20px; width:400px; text-align: right; ">
+    		<a target="top" style="line-height:20px; height: 20px;" href="<{$web_url}>/index.php/sourceinformation/detail/id/<{$re.si_id}>">查看详情</a>
+			&nbsp;&nbsp;
+    		<a style="line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/employerservice/editsimsg/id/<{$re.si_id}>">修改</a>
+			&nbsp;&nbsp;
+		   	<a onclick="return confirm('确认删除这条生源信息吗？');" style="line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/employerservice/Getsourceinfomsglist/do/del/id/<{$re.si_id}>">删除</a>
+			&nbsp;&nbsp;
+			<{if $re.si_top=="" or $re.si_top=="0000-00-00 00:00:00"}>
+	    	 <a  style="width: 60px; line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/employerservice/Getsourceinfomsglist/do/up/id/<{$re.si_id}>">置顶</a>
+			<{else}>
+			<a  style="width: 80px; line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/employerservice/Getsourceinfomsglist/do/cancelup/id/<{$re.si_id}>">取消置顶</a>
+			<{/if}>
+			&nbsp;&nbsp;
+		</div>
+		<div style="height:110px; margin:10px; width:380; text-align:left;" >
+			
+				<div style="width:370px;height:30px;">标题:<{$re.si_title|truncate:30}></div>
+				<div style="width:370px; height:30px;">
+				附件:
+				<{if $re.file_id != ""}>
+				<a target="top" href="<{$web_url}>/common/upload/files/<{$re.file_link}>">
+				<{$re.file_name}>
+				</a>
+				
+				<{else}>
+				无
+				<{/if}>
+				</div>
+				<div style="width:370px; height:30px;">发布时间:<{$re.si_time}></div>
+				<div style="width:370px; height:30px;">浏览次数:<{$re.si_scan}>&nbsp;&nbsp; 分享次数:<{$re.si_share}></div>
+			
+		</div>
+
+	</div>
+</div>
+<{/foreach}>
+<{/if}>
+
+<div style="clear: both;"></div>
+</div>
+<{page info=$silist web_url=$web_url url="/manwyjob.php/recruit/getinternmsglist/"}>
+
+</body>
+</html>
