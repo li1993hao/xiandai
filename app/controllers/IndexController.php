@@ -8,12 +8,8 @@ class IndexController extends Controller{
 	}
 
 	public function Index(){
-		$this->view->test = "lihao";
 
 		$this->view->display("index.htm");
 	}
 
-	public function Go(){
-		$this->view->display("test.htm");
-	}
 }

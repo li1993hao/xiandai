@@ -10,8 +10,7 @@ include_once("Smarty/Smarty.class.php");
 class View{
 	protected $_engine;
 	protected $jsonArray = array("json" => array( "state" => null, "msg"=>null, "status"=>"0", "data"=>null ) );
-	public function __construct($array){
-		
+	public function __construct($array){		
  		$this->_engine=new Smarty();
  		$this->_engine->left_delimiter 	= 	$array['left_delimiter'];
 		$this->_engine->right_delimiter = 	$array['right_delimiter'];

@@ -3,13 +3,70 @@
         font-size: 16px;
     }
     a:hover {
-        text-decoration: underline;
+        text-decoration: none;
     }
     .container {
         height: 100%;
         width: 990px;
         margin: 0 auto;
     }
+    /***头部登录框样式**/
+    .top_login{
+        display: none;
+        height: 120px;
+        font-size: 16px;
+        padding-top: 30px;
+    }
+    .top_login input{
+        height: 25px;
+        width: 200px;
+        border: solid 1px #3598db;
+    }
+
+    .top_login >div p{
+        margin-bottom: 10px;
+        color: #3598db;
+    }
+
+    .top_login >div{
+        float: left;
+        padding-top: 20px;
+    }
+
+    .top_login >div span{
+        margin-right: 6px;
+        color: #3598db;
+    }
+
+    .top_login >div:first-child{
+        margin-right: 80px;
+    }
+
+    .top_login >div:last-child{
+        padding-left: 20px;
+        background: url(../images/right-line-150.png) no-repeat;
+    }
+
+    .top_login >div>div{
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .top_login >div>div:last-child{
+        background: #3598db;
+        width: 203px;
+        position: relative;
+        left: 41px;
+        color: white;
+        cursor: pointer;
+    }
+
+    .top_login >div>div:last-child:hover{
+        background: #3598cc;
+    }
+
+
+
     /*header样式*/
     .header {
         width: 100%;
@@ -21,7 +78,6 @@
         width: 100%;
         padding-top: 15px;
     }
-
     .header_top .header_unlogin a{
         padding-left: 4px;
         display: block;
@@ -160,5 +216,4 @@
     	color: white;
     	font-size: 16px;
     }
-
     /*************/
