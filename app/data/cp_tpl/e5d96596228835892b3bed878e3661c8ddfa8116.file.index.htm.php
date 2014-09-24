@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-24 03:32:06
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-24 13:40:34
          compiled from "app/tpl/index/index.htm" */ ?>
 <?php /*%%SmartyHeaderCode:1843120913541e4a515c7036-27068526%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e5d96596228835892b3bed878e3661c8ddfa8116' => 
     array (
       0 => 'app/tpl/index/index.htm',
-      1 => 1411500725,
+      1 => 1411537231,
       2 => 'file',
     ),
   ),
@@ -76,11 +76,32 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <div class="middle">
         <!--轮播控件-->
         <div class="carousel">
-            <div class="carousel_content">
-                <div class="carousel_item">
+            <div class="carousel_scroll_wrap">
+              <div class="carousel_content">
+                <div >
                     <img src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/app/images/index/hit1.png"></img>
                 </div>
+                 <div >
+                    <img src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/app/images/index/hit1.png"></img>
+                </div>
+                 <div >
+                    <img src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/app/images/index/hit1.png"></img>
+                </div>
+            </div>
+            </div>
+
+            <div class="carousel_info">
+                <div class="carousel_left">《</div>
+                <div class="carousel_mid">
+                    <div>
+                        标题
+                    </div>
+                    <div>多发点佛挡杀佛水电费</div>
+                </div>
+                <div class="carousel_right">》</div>
             </div>
         </div>
 
@@ -543,27 +564,30 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                     <div>意见反馈 Suggestions</div>
                     <div>
                         <div>界面友好性：</div>
-                        <div class="star_on"></div>
-                        <div class="star_on"></div>
-                        <div class="star_on"></div>
-                        <div class="star_on"></div>
-                        <div class="star_on"></div>
+                        <div class="star star_on"></div>
+                        <div class="star star_on"></div>
+                        <div class="star star_on"></div>
+                        <div class="star star_off"></div>
+                        <div class="star star_off"></div>
+                        <span>还行</span>
                     </div>
                     <div>
                         <div>信息有效性：</div>
-                        <div class="star_on"></div>
-                        <div class="star_on"></div>
-                        <div class="star_on"></div>
-                        <div class="star_on"></div>
-                        <div class="star_on"></div>
+                        <div class="star star_on"></div>
+                        <div class="star star_on"></div>
+                        <div class="star star_on"></div>
+                        <div class="star star_off"></div>
+                        <div class="star star_off"></div>
+                        <span>还行</span>
                     </div>
                     <div>
                         <div>功能实用性：</div>
-                        <div class="star_on"></div>
-                        <div class="star_on"></div>
-                        <div class="star_on"></div>
-                        <div class="star_on"></div>
-                        <div class="star_on"></div>
+                        <div class="star star_on"></div>
+                        <div class="star star_on"></div>
+                        <div class="star star_on"></div>
+                        <div class="star star_off"></div>
+                        <div class="star star_off"></div>
+                        <span>还行</span>
                     </div>
                     <div>
                         <div>您的建议:</div>
