@@ -490,7 +490,8 @@
     color: #b2b2b2;
 }
 
-.right_top li div:first-child{
+.right_top li div:first-child a{
+    display: block;
     margin-top: 7px;
     color: #fe0000;
     font-size: 14px;
@@ -514,6 +515,7 @@
     height: 322px;
     margin-bottom: 20px;
 }
+
 .right_feedback{
     height: 640px;
 }
@@ -527,6 +529,9 @@
     font-size: 18px;
     padding-bottom: 2px;
     border-bottom: 1px solid black;
+}
+#baidu_map{
+    height: 340px;
 }
 
 .right_mid>div:nth-child(1){
@@ -656,7 +661,7 @@
     border:1px solid #b2b2b2;
     padding-top: 10px;
     padding-left: 10px;
-    overflow: scroll;
+    overflow: auto;
 }
 
 .star{
