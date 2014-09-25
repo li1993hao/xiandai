@@ -205,6 +205,7 @@
                             <a href="#">更多>></a>
                         </div>
                         <div class="rec_clendar_info">
+                            <{section name=calendar loop=$jobFair}>
                             <div>
                                 <!--日期-->
                                 <div>
@@ -213,16 +214,17 @@
                                         <div></div>
                                         <div></div>
                                     </div>
-                                    <div>2014-07-03</div>
-                                    <div>星期四 14:59</div>
+                                    <div><{$jobFair[calendar].jm_opentime|date_format:"%Y-%m-%d"}></div>
+                                    <div><{getdate format="cnWeek" date=$jobFair[calendar].jm_opentime }> <{$jobFair[calendar].jm_opentime|date_format:"%H:%M"}></div>
                                 </div>
                                 <!--招聘会名称-->
                                 <div>
-                                    <span><a href="#">中影实习生招聘</a>
+                                    <span><a href="#"><{$jobFair[calendar].jm_name|truncate:15:'…':true}></a>
                                     </span>
                                 </div>
                             </div>
-
+                            <{/section}>
+                            <{section name=i loop=$tempCalendar}>
                             <div>
                                 <!--日期-->
                                 <div>
@@ -231,70 +233,16 @@
                                         <div></div>
                                         <div></div>
                                     </div>
-                                    <div>2014-07-03</div>
-                                    <div>星期四 14:59</div>
+                                    <div></div>
+                                    <div></div>
                                 </div>
                                 <!--招聘会名称-->
                                 <div>
-                                    <span><a href="#">中影实习生招聘</a>
+                                    <span>
                                     </span>
                                 </div>
                             </div>
-
-                            <div>
-                                <!--日期-->
-                                <div>
-                                    <!--日历mask-->
-                                    <div>
-                                        <div></div>
-                                        <div></div>
-                                    </div>
-                                    <div>2014-07-03</div>
-                                    <div>星期四 14:59</div>
-                                </div>
-                                <!--招聘会名称-->
-                                <div>
-                                    <span><a href="#">中影实习生招聘</a>
-                                    </span>
-                                </div>
-                            </div>
-
-                            <div>
-                                <!--日期-->
-                                <div>
-                                    <!--日历mask-->
-                                    <div>
-                                        <div></div>
-                                        <div></div>
-                                    </div>
-                                    <div>2014-07-03</div>
-                                    <div>星期四 14:59</div>
-                                </div>
-                                <!--招聘会名称-->
-                                <div>
-                                    <span><a href="#">中影实习生招聘</a>
-                                    </span>
-                                </div>
-                            </div>
-
-                            <div>
-                                <!--日期-->
-                                <div>
-                                    <!--日历mask-->
-                                    <div>
-                                        <div></div>
-                                        <div></div>
-                                    </div>
-                                    <div>2014-07-03</div>
-                                    <div>星期四 14:59</div>
-                                </div>
-                                <!--招聘会名称-->
-                                <div>
-                                    <span><a href="#">中影实习生招聘</a>
-                                    </span>
-                                </div>
-                            </div>
-
+                            <{/section}>
                         </div>
                     </div>
 
@@ -347,21 +295,21 @@
                             </ul>
                             <!--招聘会信息-->
                             <ul>
-                                <{section name=i loop=$jobFair}>
+                                <{section name=i loop=$jobFairMsg}>
                                     <li>
                                         <div>
                                             <div>
                                                 <a href="#">
-                                                    <{$jobFair[i].jm_name|truncate:24: '…':true}>
+                                                    <{$jobFairMsg[i].jm_name|truncate:24: '…':true}>
                                                 </a>
                                             </div>
                                             <span>
-                                                <{$jobFair[i].jm_opentime|date_format: "%Y-%m-%d %H:%M"}>
-                                                    <{getdate format="cnWeek" date=$jobFair[i].jm_opentime }>
+                                                <{$jobFairMsg[i].jm_opentime|date_format: "%Y-%m-%d %H:%M"}>
+                                                    <{getdate format="cnWeek" date=$jobFairMsg[i].jm_opentime }>
                                             </span>
                                         </div>
                                         <div>
-                                            <{$jobFair[i].jm_addr|truncate:28: '…':true}>
+                                            <{$jobFairMsg[i].jm_addr|truncate:28: '…':true}>
                                         </div>
                                     </li>
                                     <{/section}>
@@ -737,7 +685,7 @@
                 <ul>
                     <li>友情链接</li>
                     <{section name=i loop=$friendlink}>
-                    <li><a title="<{$friendlink[i].fl_title}>" href="<{$friendlink[i].fl_url}>"><{$friendlink[i].fl_title|truncate:10: '…':true}></a>
+                    <li><a title="<{$friendlink[i].fl_title}>" target="_blank" href="<{$friendlink[i].fl_url}>"><{$friendlink[i].fl_title|truncate:10: '…':true}></a>
                     </li>
                     <{/section}>
                 </ul>

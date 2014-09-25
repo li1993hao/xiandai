@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-25 00:34:58
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-25 01:50:45
          compiled from "app/tpl/index/index.htm" */ ?>
 <?php /*%%SmartyHeaderCode:1843120913541e4a515c7036-27068526%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e5d96596228835892b3bed878e3661c8ddfa8116' => 
     array (
       0 => 'app/tpl/index/index.htm',
-      1 => 1411576496,
+      1 => 1411580952,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'web_url' => 0,
-    'corpMsg' => 0,
     'jobFair' => 0,
+    'tempCalendar' => 0,
+    'corpMsg' => 0,
+    'jobFairMsg' => 0,
     'interMsg' => 0,
     'jobPlan' => 0,
     'jobGuid' => 0,
@@ -36,9 +38,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_541e4a51ce5099_41541953')) {function content_541e4a51ce5099_41541953($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/xiandai/been/Smarty/plugins/modifier.truncate.php';
-if (!is_callable('smarty_modifier_date_format')) include '/Users/haoli/Desktop/www/xiandai/been/Smarty/plugins/modifier.date_format.php';
+<?php if ($_valid && !is_callable('content_541e4a51ce5099_41541953')) {function content_541e4a51ce5099_41541953($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/Users/haoli/Desktop/www/xiandai/been/Smarty/plugins/modifier.date_format.php';
 if (!is_callable('smarty_function_getdate')) include '/Users/haoli/Desktop/www/xiandai/been/View/plugins/function.getdate.php';
+if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/xiandai/been/Smarty/plugins/modifier.truncate.php';
 ?><!DOCTYPE HTML>
 <html>
 
@@ -255,6 +257,30 @@ if (!is_callable('smarty_function_getdate')) include '/Users/haoli/Desktop/www/x
                             <a href="#">更多>></a>
                         </div>
                         <div class="rec_clendar_info">
+                            <?php if (isset($_smarty_tpl->tpl_vars['smarty']->value['section']['calendar'])) unset($_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']);
+$_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['name'] = 'calendar';
+$_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['loop'] = is_array($_loop=$_smarty_tpl->tpl_vars['jobFair']->value) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
+$_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['show'] = true;
+$_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['max'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['loop'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['step'] = 1;
+$_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['start'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['step'] > 0 ? 0 : $_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['loop']-1;
+if ($_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['show']) {
+    $_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['total'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['loop'];
+    if ($_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['total'] == 0)
+        $_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['show'] = false;
+} else
+    $_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['total'] = 0;
+if ($_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['show']):
+
+            for ($_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['index'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['start'], $_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['iteration'] = 1;
+                 $_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['iteration'] <= $_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['total'];
+                 $_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['index'] += $_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['step'], $_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['iteration']++):
+$_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['rownum'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['iteration'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['index_prev'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['index'] - $_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['step'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['index_next'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['index'] + $_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['step'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['first']      = ($_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['iteration'] == 1);
+$_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['last']       = ($_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['iteration'] == $_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['total']);
+?>
                             <div>
                                 <!--日期-->
                                 <div>
@@ -263,16 +289,44 @@ if (!is_callable('smarty_function_getdate')) include '/Users/haoli/Desktop/www/x
                                         <div></div>
                                         <div></div>
                                     </div>
-                                    <div>2014-07-03</div>
-                                    <div>星期四 14:59</div>
+                                    <div><?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['jobFair']->value[$_smarty_tpl->getVariable('smarty')->value['section']['calendar']['index']]['jm_opentime'],"%Y-%m-%d");?>
+</div>
+                                    <div><?php echo smarty_function_getdate(array('format'=>"cnWeek",'date'=>$_smarty_tpl->tpl_vars['jobFair']->value[$_smarty_tpl->getVariable('smarty')->value['section']['calendar']['index']]['jm_opentime']),$_smarty_tpl);?>
+ <?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['jobFair']->value[$_smarty_tpl->getVariable('smarty')->value['section']['calendar']['index']]['jm_opentime'],"%H:%M");?>
+</div>
                                 </div>
                                 <!--招聘会名称-->
                                 <div>
-                                    <span><a href="#">中影实习生招聘</a>
+                                    <span><a href="#"><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['jobFair']->value[$_smarty_tpl->getVariable('smarty')->value['section']['calendar']['index']]['jm_name'],15,'…',true);?>
+</a>
                                     </span>
                                 </div>
                             </div>
+                            <?php endfor; endif; ?>
+                            <?php if (isset($_smarty_tpl->tpl_vars['smarty']->value['section']['i'])) unset($_smarty_tpl->tpl_vars['smarty']->value['section']['i']);
+$_smarty_tpl->tpl_vars['smarty']->value['section']['i']['name'] = 'i';
+$_smarty_tpl->tpl_vars['smarty']->value['section']['i']['loop'] = is_array($_loop=$_smarty_tpl->tpl_vars['tempCalendar']->value) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
+$_smarty_tpl->tpl_vars['smarty']->value['section']['i']['show'] = true;
+$_smarty_tpl->tpl_vars['smarty']->value['section']['i']['max'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['loop'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['i']['step'] = 1;
+$_smarty_tpl->tpl_vars['smarty']->value['section']['i']['start'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['step'] > 0 ? 0 : $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['loop']-1;
+if ($_smarty_tpl->tpl_vars['smarty']->value['section']['i']['show']) {
+    $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['total'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['loop'];
+    if ($_smarty_tpl->tpl_vars['smarty']->value['section']['i']['total'] == 0)
+        $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['show'] = false;
+} else
+    $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['total'] = 0;
+if ($_smarty_tpl->tpl_vars['smarty']->value['section']['i']['show']):
 
+            for ($_smarty_tpl->tpl_vars['smarty']->value['section']['i']['index'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['start'], $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['iteration'] = 1;
+                 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['iteration'] <= $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['total'];
+                 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['index'] += $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['step'], $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['iteration']++):
+$_smarty_tpl->tpl_vars['smarty']->value['section']['i']['rownum'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['iteration'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['i']['index_prev'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['index'] - $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['step'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['i']['index_next'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['index'] + $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['step'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['i']['first']      = ($_smarty_tpl->tpl_vars['smarty']->value['section']['i']['iteration'] == 1);
+$_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smarty_tpl->tpl_vars['smarty']->value['section']['i']['iteration'] == $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['total']);
+?>
                             <div>
                                 <!--日期-->
                                 <div>
@@ -281,70 +335,16 @@ if (!is_callable('smarty_function_getdate')) include '/Users/haoli/Desktop/www/x
                                         <div></div>
                                         <div></div>
                                     </div>
-                                    <div>2014-07-03</div>
-                                    <div>星期四 14:59</div>
+                                    <div></div>
+                                    <div></div>
                                 </div>
                                 <!--招聘会名称-->
                                 <div>
-                                    <span><a href="#">中影实习生招聘</a>
+                                    <span>
                                     </span>
                                 </div>
                             </div>
-
-                            <div>
-                                <!--日期-->
-                                <div>
-                                    <!--日历mask-->
-                                    <div>
-                                        <div></div>
-                                        <div></div>
-                                    </div>
-                                    <div>2014-07-03</div>
-                                    <div>星期四 14:59</div>
-                                </div>
-                                <!--招聘会名称-->
-                                <div>
-                                    <span><a href="#">中影实习生招聘</a>
-                                    </span>
-                                </div>
-                            </div>
-
-                            <div>
-                                <!--日期-->
-                                <div>
-                                    <!--日历mask-->
-                                    <div>
-                                        <div></div>
-                                        <div></div>
-                                    </div>
-                                    <div>2014-07-03</div>
-                                    <div>星期四 14:59</div>
-                                </div>
-                                <!--招聘会名称-->
-                                <div>
-                                    <span><a href="#">中影实习生招聘</a>
-                                    </span>
-                                </div>
-                            </div>
-
-                            <div>
-                                <!--日期-->
-                                <div>
-                                    <!--日历mask-->
-                                    <div>
-                                        <div></div>
-                                        <div></div>
-                                    </div>
-                                    <div>2014-07-03</div>
-                                    <div>星期四 14:59</div>
-                                </div>
-                                <!--招聘会名称-->
-                                <div>
-                                    <span><a href="#">中影实习生招聘</a>
-                                    </span>
-                                </div>
-                            </div>
-
+                            <?php endfor; endif; ?>
                         </div>
                     </div>
 
@@ -425,7 +425,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
                             <ul>
                                 <?php if (isset($_smarty_tpl->tpl_vars['smarty']->value['section']['i'])) unset($_smarty_tpl->tpl_vars['smarty']->value['section']['i']);
 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['name'] = 'i';
-$_smarty_tpl->tpl_vars['smarty']->value['section']['i']['loop'] = is_array($_loop=$_smarty_tpl->tpl_vars['jobFair']->value) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
+$_smarty_tpl->tpl_vars['smarty']->value['section']['i']['loop'] = is_array($_loop=$_smarty_tpl->tpl_vars['jobFairMsg']->value) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['show'] = true;
 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['max'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['loop'];
 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['step'] = 1;
@@ -451,19 +451,19 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
                                         <div>
                                             <div>
                                                 <a href="#">
-                                                    <?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['jobFair']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['jm_name'],24,'…',true);?>
+                                                    <?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['jobFairMsg']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['jm_name'],24,'…',true);?>
 
                                                 </a>
                                             </div>
                                             <span>
-                                                <?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['jobFair']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['jm_opentime'],"%Y-%m-%d %H:%M");?>
+                                                <?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['jobFairMsg']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['jm_opentime'],"%Y-%m-%d %H:%M");?>
 
-                                                    <?php echo smarty_function_getdate(array('format'=>"cnWeek",'date'=>$_smarty_tpl->tpl_vars['jobFair']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['jm_opentime']),$_smarty_tpl);?>
+                                                    <?php echo smarty_function_getdate(array('format'=>"cnWeek",'date'=>$_smarty_tpl->tpl_vars['jobFairMsg']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['jm_opentime']),$_smarty_tpl);?>
 
                                             </span>
                                         </div>
                                         <div>
-                                            <?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['jobFair']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['jm_addr'],28,'…',true);?>
+                                            <?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['jobFairMsg']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['jm_addr'],28,'…',true);?>
 
                                         </div>
                                     </li>
@@ -1126,7 +1126,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['first']      = ($_smart
 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smarty_tpl->tpl_vars['smarty']->value['section']['i']['iteration'] == $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['total']);
 ?>
                     <li><a title="<?php echo $_smarty_tpl->tpl_vars['friendlink']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['fl_title'];?>
-" href="<?php echo $_smarty_tpl->tpl_vars['friendlink']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['fl_url'];?>
+" target="_blank" href="<?php echo $_smarty_tpl->tpl_vars['friendlink']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['fl_url'];?>
 "><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['friendlink']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['fl_title'],10,'…',true);?>
 </a>
                     </li>

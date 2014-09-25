@@ -25,7 +25,7 @@ class IndexController extends Controller{
 		$this->view->bulletin = $jobInfoDao->getCM("bulletin",1,4); //就业工作简报	 12
 		$this->view->stuNotice = $jobInfoDao->getCM("stuNotice",1,4); //学生就业通知	 13
 
-		//招聘会信息
+		//招聘会日历
 		$job = new jobfairmsg();
 		if($userinfo){
 			$jobFair = $job->getRecentCorpMsg(6,1);
@@ -33,6 +33,22 @@ class IndexController extends Controller{
 			$jobFair = $job->getRecentCorpMsg(6,0);
 		}
 		$this->view->jobFair = $jobFair;
+		$tempArray =  array();
+		if(count($jobFair) < 5){
+			$tempCount = 5 - count($jobFair);
+			for($i =0; $i<$tempCount; $i++){
+				$tempArray[$i] = $i;
+			}
+		}
+		$this->view->tempCalendar = $tempArray;
+
+		//招聘会信息
+		if($userinfo){
+			$jobFairMsg = $job->getJobfairPageModel(1,9,null,3,null,1);
+		}else{
+			$jobFairMsg = $job->getJobfairPageModel(1,9,null,3,null,0);
+		}
+		$this->view->jobFairMsg = $jobFairMsg['list'];
 		
 		//招聘和实习信息
 		$jobcim =  new  corpinternmsg();
@@ -59,7 +75,7 @@ class IndexController extends Controller{
 				$this->setcookie("hasvisited",1,3600);
 			}
 		}
-		
+
 		$this->view->display("index.htm");
 	}
 
