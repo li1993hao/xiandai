@@ -1,0 +1,215 @@
+/*
+*招聘日历 top
+*/
+.middle_top{
+	height: 33px;
+	background-color: #3499da;
+	line-height: 33px;
+}
+.middle_top p{
+	margin-left: 20px;
+}
+/*
+*招聘日历 中间的部分
+*/
+.middle_content{
+	padding-top: 60px;
+	width: 990px;
+	height: 533px;
+	background-color: #ecf1f0;
+}
+/*
+*招聘日历 中间的部分 大的日历表格
+*/
+.middle_content_left_xia{
+	margin-left: 35px;
+	width: 582px;
+	height: 451px;
+	background-image: url("../../images/corpinternmsg/rili_bg.png");
+}
+/*
+*招聘日历 中间的部分 月 日 天   年
+*/
+.yue,.week,.day ,.toleft,.toright{
+	width: 23px;
+	height: 23px;
+}
+.yue{
+	margin-left: 40px;
+	background-repeat: no-repeat;
+	background-image: url("../../images/corpinternmsg/yue.png");
+}
+.week{
+	margin-top: -23px;
+	margin-left: 65px;
+	background-image: url("../../images/corpinternmsg/week.png");
+}
+.day{
+	margin-top: -23px;
+	margin-left: 90px;
+	background-image: url("../../images/corpinternmsg/day.png");
+}
+.shangyinian,.xiayinian{
+	width: 52px;
+	height: 23px;
+}
+.shangyinian{
+	margin-top: -23px;
+	margin-left: 120px;
+	background-image: url("../../images/corpinternmsg/shangyinian.png");
+}
+.xiayinian{
+	margin-top: -23px;
+	margin-left: 172px;
+	background-image: url("../../images/corpinternmsg/xiayinian.png");
+}
+.tian p{
+	margin-top: -23px;
+	margin-left: 270px;
+	font-size: 16px;
+}
+.toleft{
+	margin-top: -23px;
+	margin-left: 500px;
+	background-image: url("../../images/corpinternmsg/toleft.png");
+}
+.toright{
+	margin-top: -23px;
+	margin-left: 565px;
+	background-image: url("../../images/corpinternmsg/toright.png");
+}
+.today{
+	width: 38px;
+	height: 23px;
+	margin-top: -23px;
+	margin-left: 525px;
+	background-image: url("../../images/corpinternmsg/today.png");
+}
+/*
+*推荐招聘
+*/
+#tuijianzhaopin{
+	width: 301px;
+	height: 500px;
+	background-color: white;
+	position:absolute;
+	left: 855px;
+	top:300px;
+
+}
+#tuijianzhaopin #top{
+	width: 100%;
+	height: 40px;
+	background-color: #344a5d;
+}
+#top p {
+margin-left: 20px;
+color: white;
+font-size: 20px;
+line-height: 40px;
+}
+#tuijianzhaopin #content{
+	margin-left: 10px;
+	margin-right: 10px;
+	width: 268px;
+	height: 124px;
+	float: right;
+	border-bottom:1px dashed #334455 ;
+}
+#tuijianzhaopin #content #img1{
+	display: block;
+	margin-top: 20px;
+}
+#tuijianzhaopin #content #img2{
+	display: block;
+}
+#tuijianzhaopin #title{
+
+	margin-left: 123px;
+	margin-top: -50px;
+}
+#tuijianzhaopin #time{
+	margin-left: 123px;
+	margin-top: 10px;
+}
+
+#tuijianzhaopin #address{
+	margin-left: 123px;
+	margin-top: 50px;
+}
+#tuijianzhaopin .rili_left{
+	margin-top: 20px;
+	width: 86px;
+	height: 84px;
+	background-image: url("../../images/corpinternmsg/riliXia1.png");
+}
+.rili_left_top{
+	width: 86px;
+	height:39px;
+	float: left; 
+	background-image: url("../../images/corpinternmsg/riliShang1.png");
+}
+.rili_left_top_shang{
+	padding-top: 10px;
+	padding-left: 20px;
+	font-size: 10px;
+}
+.rili_left_top_xia{
+	padding-top: 15px;
+	padding-left: 10px;
+	font-size: 14px;
+}
+.detail_right{
+	margin-top: -90px;
+	width: 166px;
+	height: 94px;
+	float: right; 
+}
+.detail_right .time{
+	margin-top: 10px;
+	height: 25px;
+	line-height: 25px;
+	background-image: url("../../images/corpinternmsg/rilixia.png");
+	background-repeat: no-repeat;
+}
+.detail_right .address{
+	margin-top: 10px;
+	height: 25px;
+	line-height: 25px;
+	background-image: url("../../images/corpinternmsg/address.png");
+	background-repeat: no-repeat;
+}
+.address_content {
+	margin-left: 34px;
+}
+.time_content{
+	margin-left: 34px;
+}
+.detail_right img{
+	margin-top: 10px;
+}
+/*
+*推荐招聘  周一-------周日
+*/
+.middle_content_left_xia p{
+	width: 40px;
+	height:10px; 
+	font-size: 20px;
+	color: white;
+	float: left;
+	margin-left: 23px;
+	margin-right: 20px;
+	margin-top: 8px;
+}
+/*
+*推荐招聘  1----------------31
+*/
+table{
+	position: absolute;
+	left: 280px;
+	top:365px;
+}
+table td{
+	width: 80px;
+	height: 76px;
+}
