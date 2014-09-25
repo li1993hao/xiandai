@@ -1,0 +1,185 @@
+<<<<<<< HEAD
+=======
+<{include file='header.htm'}>
+<link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/index/index.css" />
+<link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/account/register.css"/>
+<script type="text/javascript" src="<{$web_url}>/common/app/js/account/account.js"></script>
+<script type="text/javascript" src="<{$web_url}>/common/app/js/account/company_register.js"></script>
+
+<!--导航栏-->
+		<!-- <form id="myform" method="post" enctype="multipart/form-data" action="<{$web_url}>/index.php/account/dataCheck">
+			<input type="text" name="user_name"/>
+			<input type="text" name="pswd"/>
+			<input type="file" name="file_upload"/>
+			<input type="submit" value="注册" id="mysub" />
+		</form> -->
+		
+        <div class="nav">
+        		<ul>
+        			<li><a class="nav-a"href=#>首页/</a></li><li><a href=#>企业注册</a></li>
+        		</ul>
+        </div>
+
+		<div class="register_middle">
+			<{$reg_flag}>
+			<{if $reg_flag =="succeed"}>
+            	恭喜您！注册成功！等待系统管理员审核！
+            <{else}>
+				<form id="form-register" name="form_register" method="post" enctype="multipart/form-data"  action="<{$web_url}>/index.php/account/register">
+
+	    		<div class="form-register-item">
+					<span class="form-register-item-title"></span>
+					<span id="register-result" class="form-register-item-warn" style= "width:300px;" init-data=""></span>
+					<div style="clear:both;"></div>
+				</div>
+	    		<div class="form-register-item">
+					<span class="form-register-item-title">登陆邮箱:</span>
+					<input class="form-register-item-input e-mail not-empty" id="form-email" type="text" name="form_email" value="" error_info="请检查注册邮箱！" placeholder="请输入注册邮箱" />
+					<span class="form-register-item-warn"  init-data=""></span>
+					<div style="clear:both;"></div>
+				</div>
+				<div class="form-register-item">
+					<span class="form-register-item-title">公司名称:</span>
+					<input class="form-register-item-input not-empty" error_info="企业名称不能为空！"  id="form-name"  type="text" name="form_name" />
+					<span class="form-register-item-warn" init-data=""></span>
+					<div style="clear:both;"></div>
+				</div>
+				<div class="form-register-item">
+					<span class="form-register-item-title">密码:</span>
+					<input class="form-register-item-input pw not-empty" id="form-password" type="password" error_info="密码不能为空" name="form_password"  />
+					<span class="form-register-item-warn" init-data=""></span>
+					<div style="clear:both;"></div>
+				</div>
+				<div class="form-register-item">
+					<span class="form-register-item-title">重复密码:</span>
+					<input class="form-register-item-input re-pw not-empty" id="form-password-second" type="password" error_info="密码不能为空" name="form_password_second"  />
+					<span class="form-register-item-warn zz_mima" init-data="" ></span>
+					<div style="clear:both;"></div>
+				</div>
+				
+				<div class="form-register-item form-register-item-onerow">
+					<span class="form-register-item-title">单位性质:</span>
+					<select class="form-register-item-input re-pw not-empty" id="form-dwxz" name="form_dwxz" error_info="请选择单位性质！">
+						<{section name=dl loop=$dwxzList}>
+						<option value="<{$dwxzList[dl].id}>" ><{$dwxzList[dl].name}></option>
+						<{/section}>
+					</select>
+					<span class="form-register-item-warn" init-data=""></span>
+					<div style="clear:both;"></div>
+				</div>
+				<div class="form-register-item form-register-item-onerow">
+					<span class="form-register-item-title">所属行业:</span>
+					<select class="form-register-item-input re-pw not-empty" id="form-hy" name="form_hy" error_info="请选择所属行业！">
+						<{section name=dl loop=$hyList}>
+						<option value="<{$hyList[dl].id}>" ><{$hyList[dl].name}></option>
+						<{/section}>
+					</select>
+					<span class="form-register-item-warn" init-data=""></span>
+					<div style="clear:both;"></div>
+				</div>
+				
+				<div class="form-register-item">
+					<span class="form-register-item-title">注册资本:</span>
+					<input class="form-register-item-input not-empty" id="form-zczb" type="text" name="form_zczb" value="<{$form_userinfo.form_zczb|default:""}>" error_info="请输入注册资本！" />
+					<span class="form-register-item-warn" init-data=""></span>
+					<div style="clear:both;"></div>
+				</div>
+				
+				<div class="form-register-item">
+					<span class="form-register-item-title">邮政编码:</span>
+					<input class="form-register-item-input not-empty" id="form-yzbm" type="text" name="form_yzbm" value="<{$form_userinfo.form_yzbm|default:""}>" error_info="请输入邮政编码！" />
+					<span class="form-register-item-warn" init-data=""></span>
+					<div style="clear:both;"></div>
+				</div>
+				
+				<div class="form-register-item form-register-item-onerow">
+					<span class="form-register-item-title">所在地:</span>
+					
+					<select class="form-register-item-input-dz not-empty" id="form-sheng" name="form_sheng" error_info="请选择所在地！">
+						<option value="0" selected="selected" disabled="disabled"  >选择省份</option>
+						<{section name=pl loop=$provinceList}>
+						<option value="<{$provinceList[pl].area_id}>"><{$provinceList[pl].area_name}></option>
+						<{/section}>
+					</select>
+					<select class="form-register-item-input-dz not-empty" id="form-shi" name="form_shi" error_info="请选择所在地！">
+						<option value="0" selected="selected" disabled="disabled" >选择城市</option>
+						
+					</select>
+					<select class="form-register-item-input-dz not-empty" id="form-xian" name="form_xian" error_info="请选择所在地！">
+						<option value="0" selected="selected" disabled="disabled" >选择县区</option>
+					</select>
+					
+					<span class="form-register-item-warn" init-data=""></span>
+					<div style="clear:both;"></div>
+				</div>
+				
+				<div class="form-register-item">
+					<span class="form-register-item-title">详细地址:</span>
+					<input class="form-register-item-input not-empty" id="form-xxdz" type="text" name="form_xxdz" value="<{$form_userinfo.form_xxdz|default:""}>" error_info="请输入详细地址！" />
+					<span class="form-register-item-warn" init-data=""></span>
+					<div style="clear:both;"></div>
+				</div>
+				<div class="form-register-item">
+					<span class="form-register-item-title">联系人:</span>
+					<input class="form-register-item-input not-empty" id="form-lxr" type="text" name="form_lxr" value="<{$form_userinfo.form_lxr|default:""}>" error_info="填写联系人！" />
+					<span class="form-register-item-warn" init-data=""></span>
+					<div style="clear:both;"></div>
+				</div>
+				
+				<div class="form-register-item">
+					<span class="form-register-item-title">固定电话:</span>
+					<input class="form-register-item-input not-empty" id="form-gddh" type="text" name="form_gddh" value="<{$form_userinfo.form_gddh|default:""}>" error_info="请填写固定电话！" />
+					<span class="form-register-item-warn" init-data=""></span>
+					<div style="clear:both;"></div>
+				</div>
+				<div class="form-register-item">
+					<span class="form-register-item-title">手机:</span>
+					<input class="form-register-item-input" id="form-phone" type="text" name="form_phone" value="<{$form_userinfo.form_phone|default:""}>"  />
+					<span class="form-register-item-warn" init-data=""></span>
+					<div style="clear:both;"></div>
+				</div>
+				<div class="form-register-item">
+					<span class="form-register-item-title">传真:</span>
+					<input class="form-register-item-input" id="form-chz" type="text" name="form_chz" value="<{$form_userinfo.form_chz|default:""}>" />
+					<span class="form-register-item-warn" init-data=""></span>
+					<div style="clear:both;"></div>
+				</div>
+					
+			
+				<div class="form-register-item">
+					<span class="form-register-item-title">资质证明:</span>
+					<div id="select_file_path" class="select_file_path"></div>
+					<img class ="file_upload_img"  alt="资质证明" id="imgFile" src="<{$web_url}>/common/app/images/account/register/upload.png"/>
+					<input id="file_upload" name="file_upload" type="file" onchange="file_upload_change(this)"/>
+					<input type="hidden" name="fileid" id="hidFileID" value="<{$form_userinfo.fileid|default:""}>" />
+					<input type="hidden" name="filestate" id="filestate" value="0" />
+					<div style="clear:both;"></div>
+				</div>
+				
+				<div class="form-register-item">
+					<span class="form-register-item-title">公司简介:</span>
+					<textarea id="gsjj" name="gsjj" ></textarea>
+					<div style="clear:both;"></div>
+				</div>
+				
+				<div class="form-register-item" >
+					<span class="form-register-item-title">&nbsp;</span>
+					<span class="form-register-item-info">
+						<input type="checkbox" value="0" class="" checked/>&nbsp<a href="#" class="form-a">我已阅读《协议》并同意相关条款</a> 
+					</span>
+					<div style="clear:both;"></div>
+				</div>
+				<div class="form-register-item">
+					<span id="register-result" class="form-register-item-title"></span>
+					<input id="form-submit" type="submit" class="form-submit" value="注册"/> 
+					<div style="clear:both;"></div>
+				</div>
+				<div class="form-foot">
+					
+				</div>
+			</form>
+			<{/if}>
+		</div>
+
+<{include file='footer.htm'}>
+>>>>>>> FETCH_HEAD
