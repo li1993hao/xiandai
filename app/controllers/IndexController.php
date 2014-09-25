@@ -66,7 +66,7 @@ class IndexController extends Controller{
 		$this->view->interMsg = $interMsg["list"]; //实习信息
 
 		$friendlink = new friendlink();
-		$this->view->friendlink = $friendlink->getLinkList();
+		$this->view->friendlink = $friendlink->geyAllLink();
 
 
 		if( !isset($_COOKIE['hasvisited']) ){
@@ -114,8 +114,44 @@ class IndexController extends Controller{
 
 
 
+	/**
+	 * 登录
+	 */
+	public function login(){
+		$username = $this->getRequest()->get("user_name");
+		$password = $this->getRequest()->get("user_pswd");
+		$f_user = new frontuser();
+		$result = $f_user->authUser( $username, $password );
+		if($result["result"] > 0){
+			//验证通过
+			$this->getView()->setState("1");
+			$this->getView()->setMsg($result["msg"]);
+			$this->getView()->setStatus("1");
+			$this->getView()->setData(array("userType"=>$result["userinfo"]["type"],"userTypeName"=>$result["userinfo"]["typename"],"userName"=>$result["userinfo"]["name"],"userState"=>$result["userinfo"]["state"],"userStateName"=>$result["userinfo"]["statename"]));
+			$sessionUtil = $this->getApp()->loadUtilClass("SessionUtil");
+			$sessionUtil->set ( "session_userid", $result["result"] );
+		}else{
+			$this->getView()->setState("0");
+			$this->getView()->setMsg($result["msg"]);
+		}
+		$this->view->display ( "json" );
+	}
 
 
+
+	public function logintest(){
+		$userinfo = $this->getData("userinfo");
+		var_dump($userinfo);
+	}
+
+	/**
+	 * 注销登录
+	 */
+	public function logout() {
+		$session = $this->getApp ()->loadUtilClass ( "SessionUtil" );
+		$session->clear ();
+		$this->gotoUrl("index","index");
+	}
 
 
 }

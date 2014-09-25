@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-25 01:50:45
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-25 13:17:39
          compiled from "app/tpl/index/index.htm" */ ?>
 <?php /*%%SmartyHeaderCode:1843120913541e4a515c7036-27068526%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e5d96596228835892b3bed878e3661c8ddfa8116' => 
     array (
       0 => 'app/tpl/index/index.htm',
-      1 => 1411580952,
+      1 => 1411622256,
       2 => 'file',
     ),
   ),
@@ -20,6 +20,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'web_url' => 0,
+    '__userinfo__' => 0,
     'jobFair' => 0,
     'tempCalendar' => 0,
     'corpMsg' => 0,
@@ -73,37 +74,62 @@ if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/
 <body>
     <div class="container">
         <div class="top_login">
-            <div>
-                <div>
-                    <span>账号:</span>
-                    <input type="text" placeholder="学号或邮箱" />
-                </div>
-                <div>
-                    <span>密码:</span>
-                    <input type="password" />
-                </div>
-                <div>登录</div>
-            </div>
-            <div>
-                <p>>学生可以使用学号登录,初始密码为身份证后六位</p>
-                <p>>企业可以使用您的注册邮箱进行登录</p>
-                <p>>如果忘记密码请联系天津现代职业技术学院就业指导中心</p>
-            </div>
+            <p id="login_error" class="error">
+                <p>
+                    <div>
+                        <div>
+                            <span>账号:</span>
+                            <input type="text" name="user_name" id="user_name" placeholder="学号或邮箱" />
+                        </div>
+                        <div>
+                            <span>密码:</span>
+                            <input type="password" name="user_pswd" id="user_pswd" />
+                        </div>
+                        <div id="login_submit">登录</div>
+                    </div>
+                    <div>
+                        <p>>学生可以使用学号登录,初始密码为身份证后六位</p>
+                        <p>>企业可以使用您的注册邮箱进行登录</p>
+                        <p>>如果忘记密码请联系天津现代职业技术学院就业指导中心</p>
+                    </div>
         </div>
         <div class="header" id="header">
             <div class="header_top">
-                <ul class="header_unlogin">
-                    <li><a href="javascript:void(0)">用户登录</a>
-                    </li>
-                    <li><a href="javascript:void(0)">企业注册</a>
-                    </li>
-                    <li><a href="javascript:void(0)">校友注册</a>
-                    </li>
-                </ul>
-                <div class="search">
-                    <input type="text" placeholder="请输入关键字"></input>
-                    <a href="javascript:void(0)">搜索</a>
-                </div>
+                <?php if (isset($_smarty_tpl->tpl_vars['__userinfo__']->value)){?>
+                    <ul class="header_login">
+
+                        <?php if ($_smarty_tpl->tpl_vars['__userinfo__']->value['type']=="0"){?>
+                            <li><a><img src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload/images/<?php echo $_smarty_tpl->tpl_vars['__userinfo__']->value['piclink'];?>
+"> </img></a></li>
+                            <li> <a target="_blank" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/student/myinfo">个人中心</a> </li>
+                            <?php }elseif($_smarty_tpl->tpl_vars['__userinfo__']->value['type']=="1"){?>
+                            <li> <a target="_blank" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/company/myinfo">个人中心 </a> </li>
+                            <?php }else{ ?>
+                            <li> <a target="_blank" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/teacher/myinfo">个人中心</a> </li>
+                        <?php }?>
+                        <li><a id="login_out" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/index/logout">注销</a>
+                        </li>
+                    </ul>
+
+                    <?php }else{ ?>
+                        <ul class="header_unlogin">
+                            <li><a href="javascript:void(0)">用户登录</a>
+                            </li>
+                            <li><a href="javascript:void(0)">企业注册</a>
+                            </li>
+                            <li><a href="javascript:void(0)">校友注册</a>
+                            </li>
+                        </ul>
+                    <?php }?>
+                    <div class="search">
+                        <input type="text" placeholder="请输入关键字"></input>
+                        <a href="javascript:void(0)">搜索</a>
+                    </div>
             </div>
             <div class="banner"></div>
         </div>
@@ -281,29 +307,37 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['index_next'] = $
 $_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['first']      = ($_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['iteration'] == 1);
 $_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['last']       = ($_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['iteration'] == $_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['total']);
 ?>
-                            <div>
-                                <!--日期-->
                                 <div>
-                                    <!--日历mask-->
+                                    <!--日期-->
                                     <div>
-                                        <div></div>
-                                        <div></div>
+                                        <!--日历mask-->
+                                        <div>
+                                            <div></div>
+                                            <div></div>
+                                        </div>
+                                        <div>
+                                            <?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['jobFair']->value[$_smarty_tpl->getVariable('smarty')->value['section']['calendar']['index']]['jm_opentime'],"%Y-%m-%d");?>
+
+                                        </div>
+                                        <div>
+                                            <?php echo smarty_function_getdate(array('format'=>"cnWeek",'date'=>$_smarty_tpl->tpl_vars['jobFair']->value[$_smarty_tpl->getVariable('smarty')->value['section']['calendar']['index']]['jm_opentime']),$_smarty_tpl);?>
+
+                                                <?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['jobFair']->value[$_smarty_tpl->getVariable('smarty')->value['section']['calendar']['index']]['jm_opentime'],"%H:%M");?>
+
+                                        </div>
                                     </div>
-                                    <div><?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['jobFair']->value[$_smarty_tpl->getVariable('smarty')->value['section']['calendar']['index']]['jm_opentime'],"%Y-%m-%d");?>
-</div>
-                                    <div><?php echo smarty_function_getdate(array('format'=>"cnWeek",'date'=>$_smarty_tpl->tpl_vars['jobFair']->value[$_smarty_tpl->getVariable('smarty')->value['section']['calendar']['index']]['jm_opentime']),$_smarty_tpl);?>
- <?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['jobFair']->value[$_smarty_tpl->getVariable('smarty')->value['section']['calendar']['index']]['jm_opentime'],"%H:%M");?>
-</div>
+                                    <!--招聘会名称-->
+                                    <div>
+                                        <span>
+                                            <a href="#">
+                                                <?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['jobFair']->value[$_smarty_tpl->getVariable('smarty')->value['section']['calendar']['index']]['jm_name'],15,'…',true);?>
+
+                                            </a>
+                                        </span>
+                                    </div>
                                 </div>
-                                <!--招聘会名称-->
-                                <div>
-                                    <span><a href="#"><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['jobFair']->value[$_smarty_tpl->getVariable('smarty')->value['section']['calendar']['index']]['jm_name'],15,'…',true);?>
-</a>
-                                    </span>
-                                </div>
-                            </div>
-                            <?php endfor; endif; ?>
-                            <?php if (isset($_smarty_tpl->tpl_vars['smarty']->value['section']['i'])) unset($_smarty_tpl->tpl_vars['smarty']->value['section']['i']);
+                                <?php endfor; endif; ?>
+                                    <?php if (isset($_smarty_tpl->tpl_vars['smarty']->value['section']['i'])) unset($_smarty_tpl->tpl_vars['smarty']->value['section']['i']);
 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['name'] = 'i';
 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['loop'] = is_array($_loop=$_smarty_tpl->tpl_vars['tempCalendar']->value) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['show'] = true;
@@ -327,24 +361,24 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['index_next'] = $_smarty
 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['first']      = ($_smarty_tpl->tpl_vars['smarty']->value['section']['i']['iteration'] == 1);
 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smarty_tpl->tpl_vars['smarty']->value['section']['i']['iteration'] == $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['total']);
 ?>
-                            <div>
-                                <!--日期-->
-                                <div>
-                                    <!--日历mask-->
-                                    <div>
-                                        <div></div>
-                                        <div></div>
-                                    </div>
-                                    <div></div>
-                                    <div></div>
-                                </div>
-                                <!--招聘会名称-->
-                                <div>
-                                    <span>
-                                    </span>
-                                </div>
-                            </div>
-                            <?php endfor; endif; ?>
+                                        <div>
+                                            <!--日期-->
+                                            <div>
+                                                <!--日历mask-->
+                                                <div>
+                                                    <div></div>
+                                                    <div></div>
+                                                </div>
+                                                <div></div>
+                                                <div></div>
+                                            </div>
+                                            <!--招聘会名称-->
+                                            <div>
+                                                <span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <?php endfor; endif; ?>
                         </div>
                     </div>
 
@@ -1003,7 +1037,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
                     </div>
                     <div class="right_map block_style">
                         <div>出行路线 Travel Routers</div>
-                        <div id="baidu_map" >
+                        <div id="baidu_map">
                         </div>
                     </div>
                     <div class="right_mid block_style">
@@ -1125,12 +1159,15 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['index_next'] = $_smarty
 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['first']      = ($_smarty_tpl->tpl_vars['smarty']->value['section']['i']['iteration'] == 1);
 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smarty_tpl->tpl_vars['smarty']->value['section']['i']['iteration'] == $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['total']);
 ?>
-                    <li><a title="<?php echo $_smarty_tpl->tpl_vars['friendlink']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['fl_title'];?>
+                        <li>
+                            <a title="<?php echo $_smarty_tpl->tpl_vars['friendlink']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['fl_title'];?>
 " target="_blank" href="<?php echo $_smarty_tpl->tpl_vars['friendlink']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['fl_url'];?>
-"><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['friendlink']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['fl_title'],10,'…',true);?>
-</a>
-                    </li>
-                    <?php endfor; endif; ?>
+">
+                                <?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['friendlink']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['fl_title'],10,'…',true);?>
+
+                            </a>
+                        </li>
+                        <?php endfor; endif; ?>
                 </ul>
             </div>
             <div>
@@ -1161,9 +1198,9 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
 /common/libs/jquery.min.js"></script>
     <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/app/js/index/index.js"></script>
-    <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.5&ak=A03339d9c32ed4f0920276cd3d9b0474"></script>
     <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/app/js/header.js"></script>
+    <!-- <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.5&ak=A03339d9c32ed4f0920276cd3d9b0474"></script>-->
 </body>
 
 </html><?php }} ?>

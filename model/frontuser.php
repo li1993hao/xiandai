@@ -54,7 +54,7 @@ class frontuser extends Model {
 					LEFT JOIN `picture` ON `picture`.`pic_id` = `student`.`pic_id`
 					LEFT JOIN `file` ON `file`.`file_id` = `student`.`file_id`
 					WHERE  `fu_id` =" . $entity ["fu_id"] . " LIMIT 1";
-			// echo $sql;
+			//echo $sql;
 			if ($result = $this->fetchRow ( $sql )) {
 				// stu_id fu_id stu_name stu_gender 性别，0-表示男，1-表示女 stu_birth
 				// stu_education 学历，0-表示本科，1-表示硕士，2-表示博士 stu_college stu_pro stu_grade stu_source stu_home
@@ -220,7 +220,8 @@ class frontuser extends Model {
 				$userinfo = $this->_getUserFromCode ( $user );
 			}
 		}
-		
+			
+		//var_dump($userinfo);
 		if ($userinfo) {
 			// echo $this->generatePw($password, $userinfo['user_salt']);
 			if ($userinfo ['fu_password'] == $this->generatePw ( $password, $userinfo ['fu_salt'] )) {
@@ -241,7 +242,7 @@ class frontuser extends Model {
 		} else {
 			$result ['result'] = - 2;
 			$result ['userinfo'] = null;
-			$result ['msg'] = "用户不存在";
+			$result ['msg'] = "用户名不存在";
 		}
 		return $result;
 	}

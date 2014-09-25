@@ -116,9 +116,12 @@ $(function(){
 	$(".carousel_right").click(function(){
 		scrollCarousel();
 	})
-	baiduMap();
+	loginInit();
+	//baiduMap();
 	feedBackInit();
 });
+
+
 
 /**向右滚动*/
 function scrollCarousel(){
