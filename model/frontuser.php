@@ -203,6 +203,7 @@ class frontuser extends Model {
 	 * @return Ambigous <>|boolean
 	 */
 	public function authUser($user, $password, $isId = false) {
+		
 		$result = array ();
 		if ($this->haveBadTag ( $user )) {
 			$result ['result'] = - 3;

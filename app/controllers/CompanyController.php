@@ -1,16 +1,16 @@
 <?php 
 
-class IndexController extends Controller{
+class CompanyController extends Controller{
 	public function __construct(){
 		parent::__construct();
 		$this->view->web_url = $this->getRequest()->hostUrl; 
 	}
 
-	public function Index(){
+	public function Myinfo(){
 		$this->view->test = "lihao";
       
    
-		$this->view->display("index.htm");
+		$this->view->display("myinfo.htm");
 	}
 
 	public function Go(){
