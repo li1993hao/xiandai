@@ -4,14 +4,51 @@
  */
 //namespace model;
 
+//栏目
+//studentInfo  生源信息
+//empSpe  就业专员
+//jobGuid 就业指导
+//jobPlan 职业生涯规划
+//entreGuid 创业指导
+//empPolicy 就业政策
+//fellowVisited 校友寻访
+//empStar 创就业明星
+//jobNotice 通知公告
+//bohai  渤海轻工业集团
+//bulletin 就业工作简报
+//stuNotice  学生就业通知
+//jobAct  工作动态
+
+//单页面
+//centerIntro 中心介绍
+//departIntro 院系介绍
+//recGuid 招聘指南
+
 class jobinfo extends Model{
 	
-	private $__jobnews = 1;//就业动态
-	private $__activity = 2;//通知公告
-	private $__plan = 3;//职业生涯规划
-	private $__search = 4;//求职指导
-	private $__start = 5;//创业指导
-	private $__process = 6;//创业流程
+
+	private $__infotype = array(
+	  'jobAct' => 1,  //工作动态
+	  'jobNotice' => 2, //通知公告
+	  'jobPlan' => 3, //职业生涯规划
+	  'jobGuid' => 4, //就业指导
+	  'entreGuid' => 5, //创业指导
+	  'empPolicy' => 6, //就业政策
+	  'empSpe' =>7, //就业专员
+	  'fellowVisited' =>8, //校友寻访
+	  'empStar' =>9, //创就业明星
+	  'bohai' => 11, //渤海轻工业集团
+	  'bulletin' => 12, //就业工作简报
+	  'stuNotice' => 13, //学生就业通知
+	  'centerIntro' => 15, //中心介绍
+	  'departIntro' => 16, //院系介绍
+	  'recGuid' =>17 //招聘指南
+	);
+
+	public function getCM($name,$page = 1 , $num = 10 , $key = null, $recomFirst=false){
+	   return $this->get_news_page_model( $this->__infotype[$name], $page, $num , $key, $recomFirst);
+	}
+
 	
 	/**
 	 * 获取首页大图推荐的新闻
@@ -31,9 +68,16 @@ class jobinfo extends Model{
 		return $this->fetchAll($sql);
 	}
 	
-	
-	public function get_news_page_model($type = 0 , $page = 1 , $num = 10 , $key = null, $recomFirst=false ){
-		
+	/**
+	 * [get_news_page_model description]
+	 * @param  integer $type       [description] 栏目id
+	 * @param  integer $page       [description] 页码
+	 * @param  integer $num        [description] 记录数
+	 * @param  [type]  $key        [description] 筛选关键字
+	 * @param  boolean $recomFirst [description] 推荐位排序
+	 * @return [type]              [description] 
+	 */
+	public function get_news_page_model($type = 0 , $page = 1 , $num = 10 , $key = null, $recomFirst=false ){		
 		$select = "SELECT `jobinfo`.*,`picture`.* FROM `jobinfo` LEFT JOIN `picture` ON `jobinfo`.`pic_id` = `picture`.`pic_id` ";
 		
 		
@@ -57,81 +101,11 @@ class jobinfo extends Model{
 		$limit = " Limit ".($page-1)*$num.",".$num."";
 		
 		$sql = $select.$where.$order.$limit;
-		//echo $sql;
+		//echo $sql."<br/>";
 		$list = $this->fetchAll($sql);
 		$total = $this->getTotal('jobinfo', $filter);
 		$totalPage = ceil($total / $num);
 		return array('page'=>$page,'list'=>$list,'total'=>$total,'totalPage'=>$totalPage);
-		
-	}
-	
-	
-	/**
-	 * 获取就业动态
-	 * @param unknown_type $page
-	 * @param unknown_type $num
-	 * @return multitype:unknown number Ambigous <boolean, multitype:>
-	 */
-	public function getJobPageModel($page = 1 , $num = 10 , $key = null, $recomFirst=false ){
-		
-		return $this->get_news_page_model( $this->__jobnews, $page, $num , $key, $recomFirst);
-
-	}
-	
-	/**
-	 * 获取通知公告
-	 * @param unknown_type $page
-	 * @param unknown_type $num
-	 * @param string $key
-	 * @return multitype:unknown number Ambigous <boolean, multitype:>
-	 */
-	public function getActPageModel($page = 1 , $num = 10 ,$key=null, $recomFirst=false){
-		
-		return $this->get_news_page_model( $this->__activity, $page, $num , $key, $recomFirst);
-		
-	}
-	/**
-	 * 获取职业生涯规划
-	 * @param unknown_type $page
-	 * @param unknown_type $num
-	 * @return multitype:unknown number
-	 */
-	public function getPlanPageModel($page = 1 , $num = 10 , $key = null, $recomFirst=false ){
-		
-		return $this->get_news_page_model( $this->__plan, $page, $num , $key, $recomFirst);
-		
-	}
-	
-	/**
-	 * 获取求职指导
-	 */
-	public function getSearchPageModel($page = 1 , $num = 10 ,$key=null, $recomFirst=false ){
-		
-		return $this->get_news_page_model( $this->__search, $page, $num , $key, $recomFirst);
-		
-	}
-	//
-	/**
-	 * 获取创业指导
-	 * @param unknown_type $page
-	 * @param unknown_type $num
-	 * @return multitype:unknown number Ambigous <boolean, multitype:>
-	 */
-	public function getStartPageModel($page = 1 , $num = 10 ,$key=null , $recomFirst=false ){
-		
-		return $this->get_news_page_model( $this->__start, $page, $num , $key, $recomFirst);
-		
-	}
-	//
-	/**
-	 * 获取创业流程
-	 * @param unknown_type $page
-	 * @param unknown_type $num
-	 * @return multitype:unknown number Ambigous <boolean, multitype:>
-	 */
-	public function getProcessPageModel($page = 1 , $num = 10 ,$key=null, $recomFirst=false){
-		
-		return $this->get_news_page_model( $this->__process, $page, $num , $key, $recomFirst);
 		
 	}
 	
@@ -158,26 +132,54 @@ class jobinfo extends Model{
 			}
 		}
 		return $result;
-		
 	}
+
+	/**
+	 * 获取前一个新闻
+	 * @param  [type] $cur_id [description]
+	 * @param  [type] $type   [description]
+	 * @return [type]         [description]
+	 */
 	public function getPreNews($cur_id, $type){
 	
 		$sql = "SELECT `jobinfo`.* FROM `jobinfo` WHERE `ji_id` > ".$cur_id." AND `it_id` = '".$type."' ORDER BY `ji_id` ASC limit 0,1";
 		return $this->fetchRow($sql);
 	}
+
+	/**
+	 * 获取下一个新闻
+	 * @param  [type] $cur_id [description]
+	 * @param  [type] $type   [description]
+	 * @return [type]         [description]
+	 */
 	public function getNextNews($cur_id, $type){
 		$sql = "SELECT `jobinfo`.* FROM `jobinfo` WHERE `ji_id` < ".$cur_id." AND `it_id` = '".$type."' ORDER BY `ji_id` DESC limit 0,1 ";
 		return $this->fetchRow($sql);
 	}
 	
+	/**
+	 * 添加阅读数
+	 * @param [type] $id [description]
+	 */
 	public function addReadnum($id){
 		$sql = "UPDATE  `jobinfo` SET  `ji_read` =  `ji_read` +1 WHERE  `jobinfo`.`ji_id` = ".$id." ";
 		return $this->update($sql);
 	}
+
+	/**
+	 * 添加分享数
+	 * @param  [type] $id [description]
+	 * @return [type]     [description]
+	 */
 	public function addsharenum($id){
 		$sql = "UPDATE  `jobinfo` SET  `ji_share` =  `ji_share` +1 WHERE  `jobinfo`.`ji_id` = ".$id." ";
 		return $this->update($sql);
 	}
+	/**
+	 * 点赞
+	 * @param  [type] $id [description]
+	 * @return [type]     [description]
+	 */
 	public function addgoodnum($id){
 		$sql = "UPDATE  `jobinfo` SET  `ji_good` =  `ji_good` +1 WHERE  `jobinfo`.`ji_id` = ".$id." ";
 		if( $this->update($sql)){
@@ -193,6 +195,13 @@ class jobinfo extends Model{
 		}
 	}
 	
+	/**
+	 * 获取新闻
+	 * @param  [type] $timestamp [description]
+	 * @param  [type] $num       [description]
+	 * @param  [type] $type      [description]
+	 * @return [type]            [description]
+	 */
 	public function getjobinfolist($timestamp, $num, $type)
 	{
 		$sql = "SELECT `jobinfo`.*,`picture`.* FROM `jobinfo` LEFT JOIN `picture` ON `jobinfo`.`pic_id` = `picture`.`pic_id`  

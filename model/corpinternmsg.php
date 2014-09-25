@@ -2,9 +2,9 @@
 
 // namespace model;
 class corpinternmsg extends Model {
-	private $__corptypeId = 1;
-	private $__interntypeId = 2;
-	private $__basetypeId = 3;
+	private $__corptypeId = 1; //企业招聘
+	private $__interntypeId = 2; // 实习招聘
+	private $__basetypeId = 3; //基层招聘
 	
 	// 0未处理 ， 1通过， 2拒绝
 	protected $_state = array (
@@ -266,7 +266,7 @@ class corpinternmsg extends Model {
 		$order = " ORDER BY  `corpinternmsg`.`cim_isup` DESC , `corpinternmsg`.`cim_date` DESC ";
 		$limit = " Limit " . ($page - 1) * $num . "," . $num . " ";
 		$sql = $select . $where . $order . $limit;
-		// echo $sql;
+		 //echo $sql;
 		$list = $this->fetchAll ( $sql );
 		$total = $this->getTotal ( 'corpinternmsg', $filter );
 		$totalPage = ceil ( $total / $num );

@@ -5,7 +5,7 @@
 *  QQ:281443751
 *  Email:binbin1129@126.com
 **/
-//error_reporting(0);
+error_reporting(1);
 
 
 header("Content-type: text/html; charset=utf-8");

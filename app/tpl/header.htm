@@ -7,6 +7,7 @@
     <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/reset.css?v=2.0" />
     <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/headAndfoot.css" />
     <script type="text/javascript" src="<{$web_url}>/common/libs/jquery.min.js"></script>
+     <script type="text/javascript" src="<{$web_url}>/common/app/js/header.js"></script>
     <script type="text/javascript">
     var web_url = "<{$web_url}>";
     </script>
@@ -22,8 +23,28 @@
 
 <body>
     <div class="container">
-        <div class="header">
+        <div class="top_login">
+            <p id="login_error" class="error"><p>
+            <div>
+                <div>
+                    <span>账号:</span>
+                    <input type="text" name="user_name" id="user_name" placeholder="学号或邮箱" />
+                </div>
+                <div>
+                    <span>密码:</span>
+                    <input type="password" name="user_pswd" id="user_pswd"/>
+                </div>
+                <div id="login_submit">登录</div>
+            </div>
+            <div>
+                <p>>学生可以使用学号登录,初始密码为身份证后六位</p>
+                <p>>企业可以使用您的注册邮箱进行登录</p>
+                <p>>如果忘记密码请联系天津现代职业技术学院就业指导中心</p>
+            </div>
+        </div>
+        <div class="header" id="header">
             <div class="header_top">
+                <{if isset($__userinfo__) }>
                 <ul class="header_unlogin">
                     <li><a href="javascript:void(0)">用户登录</a>
                     </li>
@@ -32,6 +53,16 @@
                     <li><a href="javascript:void(0)">校友注册</a>
                     </li>
                 </ul>
+                <{else}>
+                    <ul class="header_login">
+                        <li><a id ="user_pic" href="javascript:void(0)">></a>
+                        </li>
+                        <li><a id="person_center" href="javascript:void(0)">个人中心</a>
+                        </li>
+                        <li><a id="login_out" href="javascript:void(0)">注销</a>
+                    </li>
+                </ul>
+                <{if}>
                 <div class="search">
                         <input type="text" placeholder="请输入关键字"></input>
                         <a href="javascript:void(0)">搜索</a>
