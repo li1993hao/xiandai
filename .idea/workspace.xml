@@ -43,10 +43,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="searchlist.htm" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/tpl/jobinfo/searchlist.htm">
+      <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="68" column="86" selection-start="2877" selection-end="2877" vertical-scroll-proportion="0.6766917" vertical-offset="570" max-vertical-offset="1530">
+            <state line="6" column="8" selection-start="66" selection-end="66" vertical-scroll-proportion="0.13293944" vertical-offset="0" max-vertical-offset="677">
               <folding />
             </state>
           </provider>
@@ -141,6 +141,7 @@
         <option value="$PROJECT_DIR$/app/tpl/header.htm" />
         <option value="$PROJECT_DIR$/app/controllers/JobinfoController.php" />
         <option value="$PROJECT_DIR$/app/tpl/jobinfo/searchlist.htm" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -688,6 +689,13 @@
     <entry file="file://$PROJECT_DIR$/app/tpl/jobinfo/searchlist.htm">
       <provider selected="true" editor-type-id="text-editor">
         <state line="68" column="86" selection-start="2877" selection-end="2877" vertical-scroll-proportion="0.6766917" vertical-offset="570" max-vertical-offset="1530">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="8" selection-start="66" selection-end="66" vertical-scroll-proportion="0.13293944" vertical-offset="0" max-vertical-offset="677">
           <folding />
         </state>
       </provider>
