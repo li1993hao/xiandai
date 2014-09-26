@@ -39,31 +39,31 @@
                             <li> <a target="_blank" href="<{$web_url}>/index.php/company/myinfo">个人中心 </a> 
                             </li>
                             <{else}>
-                                <li> <a target="_blank" href="<{$web_url}>/index.php/teacher/myinfo">个人中心</a> 
+                                <li> <a target="_blank" href="<{$web_url}>/index.php/teacher/myinfo">个人中心</a>
                                 </li>
-                                <li><a id="login_out" href="<{$web_url}>/index.php/index/logout">注销</a>
-                                </li>
+
+                                <{/if}>
+                                    <li><a id="login_out" href="<{$web_url}>/index.php/index/logout">注销</a>
+                                    </li>
                 </ul>
-                <{/if}>
 
 
-                    <{else}>
-                        <ul class="header_unlogin">
-                            <li><a href="javascript:void(0)">用户登录</a>
-                            </li>
-                            <li><a href="javascript:void(0)">企业注册</a>
-                            </li>
-                            <li><a href="javascript:void(0)">校友注册</a>
-                            </li>
+                <{else}>
+                    <ul class="header_unlogin">
+                        <li><a href="javascript:void(0)">用户登录</a>
+                        </li>
+                        <li><a href="javascript:void(0)">企业注册</a>
+                        </li>
+                        <li><a href="javascript:void(0)">校友注册</a>
+                        </li>
+                    </ul>
+                    <{/if}>
+                        </li>
                         </ul>
-                        <{/if}>
-                            <li><a id="login_out" href="javascript:void(0)">注销</a>
-                            </li>
-                            </ul>
-                            <div class="search">
-                                <input type="text" placeholder="请输入关键字"></input>
-                                <a href="javascript:void(0)">搜索</a>
-                            </div>
+                        <div class="search">
+                            <input type="text" placeholder="请输入关键字"></input>
+                            <a href="javascript:void(0)">搜索</a>
+                        </div>
         </div>
         <div class="banner"></div>
     </div>

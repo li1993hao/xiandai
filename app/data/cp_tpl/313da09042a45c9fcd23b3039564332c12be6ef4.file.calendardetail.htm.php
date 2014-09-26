@@ -1,22 +1,22 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-26 12:28:29
-         compiled from "app/tpl/jobfairmsg/detail.htm" */ ?>
-<?php /*%%SmartyHeaderCode:30101234354248129337bd1-02836746%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-26 12:28:14
+         compiled from "app/tpl/jobfairmsg/calendardetail.htm" */ ?>
+<?php /*%%SmartyHeaderCode:14477274955424e71f05d592-99159866%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '8c18108ae4ddfc118de39f43385ed15e6b435d75' => 
+    '313da09042a45c9fcd23b3039564332c12be6ef4' => 
     array (
-      0 => 'app/tpl/jobfairmsg/detail.htm',
-      1 => 1411705597,
+      0 => 'app/tpl/jobfairmsg/calendardetail.htm',
+      1 => 1411705579,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '30101234354248129337bd1-02836746',
+  'nocache_hash' => '14477274955424e71f05d592-99159866',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_5424812941daf0_62415872',
+  'unifunc' => 'content_5424e71f05e589_04437451',
   'variables' => 
   array (
     'web_url' => 0,
@@ -29,7 +29,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5424812941daf0_62415872')) {function content_5424812941daf0_62415872($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/xiandai/been/Smarty/plugins/modifier.truncate.php';
+<?php if ($_valid && !is_callable('content_5424e71f05e589_04437451')) {function content_5424e71f05e589_04437451($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/xiandai/been/Smarty/plugins/modifier.truncate.php';
 if (!is_callable('smarty_modifier_date_format')) include '/Users/haoli/Desktop/www/xiandai/been/Smarty/plugins/modifier.date_format.php';
 ?><!DOCTYPE HTML>
 <html>
@@ -49,7 +49,7 @@ if (!is_callable('smarty_modifier_date_format')) include '/Users/haoli/Desktop/w
 /common/app/css/common/detail.css" />
 <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/app/css/common/detail-360.css" />
-    <title>招聘会-<?php echo $_smarty_tpl->tpl_vars['detail']->value['jm_name'];?>
+    <title>招聘日历-<?php echo $_smarty_tpl->tpl_vars['detail']->value['jm_name'];?>
 </title>
   <script type="text/javascript">
     var web_url = "<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
@@ -75,7 +75,7 @@ if (!is_callable('smarty_modifier_date_format')) include '/Users/haoli/Desktop/w
 /index.php/index">首页/</a>
                 </dt>
                 <dt><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/index.php/jobfairmsg/index">招聘会/</a>
+/index.php/jobfairmsg/Calendardetail">招聘日历/</a>
                 </dt>
                 <dt><a href="#"><?php echo $_smarty_tpl->tpl_vars['detail']->value['jm_name'];?>
 </a></dt>

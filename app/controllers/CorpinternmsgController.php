@@ -21,7 +21,7 @@ class CorpinternmsgController extends Controller{
 	
 	public function Index(){
 		$userinfo = $this->getData("userinfo");
-		$pageSize = 20;
+		$pageSize = 10;
 		$corpinternmsg = new corpinternmsg();
 
 		//推荐招聘会
@@ -30,26 +30,40 @@ class CorpinternmsgController extends Controller{
 		
 		$type = $this->getRequest()->get("type") ? $this->getRequest()->get("type") : 1;
 		$page = $this->getRequest()->get('page') ? $this->getRequest()->get('page') : 1 ;
+
 		//echo $page;
 		if( $type == $this->__typeinfo["corp"]["type_code"]){
-
-			$newsList = $corpinternmsg->getCorpPageModel($page,$pageSize,null,"pass",$userinfo);
+			if($userinfo){
+				$newsList = $corpinternmsg->getCorpPageModel($page,$pageSize,null,"pass",true);
+			}else{
+				$newsList = $corpinternmsg->getCorpPageModel($page,$pageSize,null,"pass",false);
+			}
 			$this->getView()->corpInfo = $this->__typeinfo["corp"];
+
 		
 		}else if( $type == $this->__typeinfo["intern"]["type_code"] ){
-			$newsList = $corpinternmsg->getInternPageModel($page,$pageSize,null,"pass",$userinfo);
+			if($userinfo){
+				$newsList = $corpinternmsg->getInternPageModel($page,$pageSize,null,"pass",true);
+			}else{
+				$newsList = $corpinternmsg->getInternPageModel($page,$pageSize,null,"pass",false);
+			}
 			$this->getView()->corpInfo = $this->__typeinfo["intern"];
-		
 		}else{
-			$newsList = $corpinternmsg->getBasePageModel($page,$pageSize,null,"pass",$userinfo);
+			if($userinfo){
+				$newsList = $corpinternmsg->getBasePageModel($page,$pageSize,null,"pass",true);
+			}else{
+				$newsList = $corpinternmsg->getBasePageModel($page,$pageSize,null,"pass",false);
+			}
 			$this->getView()->corpInfo = $this->__typeinfo["base"];
 			
-		}
+		}	
+
 		
 		//print_r($newsList);
 		//$corpinfolist = $corpinternmsg->getCorprecruinfo(1,10);
 		
 		$this->view->news = $newsList;
+		
 		
 		//$this->view->exist = $corpinfolist;
 		
@@ -144,9 +158,9 @@ class CorpinternmsgController extends Controller{
 		if($id){
 			//echo 111;
 			if (preg_match("/^[0-9]*[1-9][0-9]*$/", $id)){
-						//推荐招聘会
-		$jobfairmsg = new jobfairmsg();
-		$this->view->jobFair = $jobfairmsg->getfrontjobfair(5);
+				//推荐招聘会
+				$jobfairmsg = new jobfairmsg();
+				$this->view->jobFair = $jobfairmsg->getfrontjobfair(5);
 				//echo 222;
 				$corpinternmsg = new corpinternmsg();
 				$interninfo = $corpinternmsg->getDetailInfoFromId($id,null,"pass");

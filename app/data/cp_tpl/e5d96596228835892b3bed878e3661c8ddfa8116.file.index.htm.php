@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-26 10:43:33
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-26 11:58:18
          compiled from "app/tpl/index/index.htm" */ ?>
 <?php /*%%SmartyHeaderCode:1843120913541e4a515c7036-27068526%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e5d96596228835892b3bed878e3661c8ddfa8116' => 
     array (
       0 => 'app/tpl/index/index.htm',
-      1 => 1411699335,
+      1 => 1411703892,
       2 => 'file',
     ),
   ),
@@ -312,7 +312,8 @@ if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/
                     <div class="rec_clendar block_style">
                         <div class="rec_clendar_title">
                             <div>招聘日历 Recuitment calendar</div>
-                            <a href="#">更多>></a>
+                            <a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/Jobfairmsg/calendar">更多>></a>
                         </div>
                         <div class="rec_clendar_info">
                             <?php if (isset($_smarty_tpl->tpl_vars['smarty']->value['section']['calendar'])) unset($_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']);

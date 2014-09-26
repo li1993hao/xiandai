@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-26 10:55:13
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-26 11:44:04
          compiled from "app/tpl/header.htm" */ ?>
 <?php /*%%SmartyHeaderCode:204437015354206321d22f37-72171919%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fe0f70dfbcc919341cfdf4cc22d53ede3e7fca5a' => 
     array (
       0 => 'app/tpl/header.htm',
-      1 => 1411700111,
+      1 => 1411703043,
       2 => 'file',
     ),
   ),
@@ -71,32 +71,32 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                             </li>
                             <?php }else{ ?>
                                 <li> <a target="_blank" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/index.php/teacher/myinfo">个人中心</a> 
+/index.php/teacher/myinfo">个人中心</a>
                                 </li>
-                                <li><a id="login_out" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+
+                                <?php }?>
+                                    <li><a id="login_out" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /index.php/index/logout">注销</a>
-                                </li>
+                                    </li>
                 </ul>
-                <?php }?>
 
 
-                    <?php }else{ ?>
-                        <ul class="header_unlogin">
-                            <li><a href="javascript:void(0)">用户登录</a>
-                            </li>
-                            <li><a href="javascript:void(0)">企业注册</a>
-                            </li>
-                            <li><a href="javascript:void(0)">校友注册</a>
-                            </li>
+                <?php }else{ ?>
+                    <ul class="header_unlogin">
+                        <li><a href="javascript:void(0)">用户登录</a>
+                        </li>
+                        <li><a href="javascript:void(0)">企业注册</a>
+                        </li>
+                        <li><a href="javascript:void(0)">校友注册</a>
+                        </li>
+                    </ul>
+                    <?php }?>
+                        </li>
                         </ul>
-                        <?php }?>
-                            <li><a id="login_out" href="javascript:void(0)">注销</a>
-                            </li>
-                            </ul>
-                            <div class="search">
-                                <input type="text" placeholder="请输入关键字"></input>
-                                <a href="javascript:void(0)">搜索</a>
-                            </div>
+                        <div class="search">
+                            <input type="text" placeholder="请输入关键字"></input>
+                            <a href="javascript:void(0)">搜索</a>
+                        </div>
         </div>
         <div class="banner"></div>
     </div><?php }} ?>

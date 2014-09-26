@@ -7,9 +7,10 @@
     <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/reset.css?v=2.0" />
     <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/headAndfoot.css" />
     <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/content.css" />
+        <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/rec.css" />
     <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/common/detail.css" />
 <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/common/detail-360.css" />
-    <title>天津现代职业技术学院就业指导中心</title>
+    <title>招聘信息-<{$detail.cim_name}></title>
   <script type="text/javascript">
     var web_url = "<{$web_url}>";
     </script>
@@ -17,7 +18,11 @@
     <script type="text/javascript" src="<{$web_url}>/common/app/js/DOMAssistantCompressed-2.7.4.js"></script>
     <script type="text/javascript" src="<{$web_url}>/common/app/js/ie-css3.js"></script>
     <![endif]-->
-   
+   <style>
+        .middle_left >div:nth-child(3) span{
+            margin-left: 10px;
+        }
+   </style>
 
 </head>
 
@@ -28,35 +33,62 @@
             <dl>
                 <dt><a href="<{$web_url}>/index.php/index">首页/</a>
                 </dt>
-                <dt><a href="<{$web_url}>/index.php/jobfairmsg/index">招聘会/</a>
+                <dt><a href="<{$web_url}>/index.php/corpinternmsg/index">招聘信息/</a>
                 </dt>
-                <dt><a href="#"><{$detail.jm_name}></a></dt>
+                <dt><a href="#"><{$detail.cim_name}></a></dt>
             </dl>
         </div>
         <div class="middle">
 
             <div class="middle_left">
                 <div>
-                    <p><{$detail.jm_name}></p>
-                                <{if isset($__userinfo__)}>
+                    <p><{$detail.cim_name}></p>
+                   <{if isset($__userinfo__)}>
+                        <{if $__userinfo__.type==0}>
+                        <span id="do-collect-btn" class="collect-btn" <{if $collectFlag!="1"}>style="display:none;"<{/if}> >收藏</span>
+                        <span id="cancel-collect-btn" class="collect-btn" data="<{$detail.cim_id}>" <{if $collectFlag=="1"}>style="display:none;"<{/if}> >取消收藏</span>
+                        <{/if}>
+                    <{/if}>
                 </div>
                 <div>
-                         <{$detail.jm_date}>&nbsp;
-                        浏览：<{$detail.jm_read}>&nbsp;
-                        分享：<{$detail.jm_share}>&nbsp;
-                        来源：<{if $detail.jm_publish==0}><{$detail.jm_src|default:"就业中心"}><{else}><a target="blank" href="<{$web_url}>/index.php/common/userinfo/id/<{$detail.jm_publish}>"><{$detail.com_name}></a><{/if}>
+                         <{$detail.cim_date}>&nbsp;
+                        浏览：<{$detail.cim_read}>&nbsp;
+                        分享：<{$detail.cim_share}>&nbsp;
                 </div>
                 <div>
-                    <span>召开时间:<{$detail.jm_opentime}></span>
-                    <span>召开地点:<{$detail.jm_addr}></span>
+                    <span>公司:<{$detail.cim_addr}></span>
+                    <span>联系人:<{$detail.cim_contact}></span>
+                    <span>联系电话:<{$detail.cim_tel}></span>
+                    <span>邮箱:<{$detail.cim_email}></span>
                 </div>
                 <div>
+                    <{if isset($zhaopin)}>
+                        <{if $officelist}>
+                        <div class="m-l-office">
+                            <div class="m-l-office-header">
+                                >>职位
+                            </div>
+                            <div class="m-l-office-main">
+                                <{section name=ol loop=$officelist}>
+                                <div class="office-name">
+                                    <strong><{$officelist[ol].office_name}></strong>
+                                </div>
+                                <div class="office-intro">
+                                    <{$officelist[ol].office_intro}>
+                                </div>
+                                <{/section}>
+                            </div>
+
+                        </div>
+                        <{/if}>
+                    <{/if}>
+                    <div style="font-size:16px;margin-bottom:10px;">说明:</div>
                     <{if $detail.pic_id !="" }>
                         <div id="middle_img">
                             <img src="<{$web_url}>/common/upload/images/<{$detail.pic_link}>" />
                         </div>
                         <{/if}>
-                        <{$detail.jm_content}>
+                        <{$detail.cim_content}>
                 </div>
                 <div id="middle_left_file">
                     <{if $detail.file_id !="" }>
@@ -72,13 +104,13 @@
                 </div>
                 <div class="zandiv" id="zandiv" >
                     <img class="zan"   src="<{$web_url}>/common/app/images/zan.png" />
-                    <div class="zannum" ><{$detail.jm_good}></div>
+                    <div class="zannum" ><{$detail.cim_good}></div>
                 </div>
                  <div id="middle_leftprenext">
                 <p>
                     上一条：
                     <{if $preNews != "" }>
-                    <a href="<{$web_url}>/index.php/jobfairmsg/detail/id/<{$preNews.jm_id}>"><{$preNews.jm_name}></a>
+                    <a href="<{$web_url}>/index.php/corpinternmsg/detail/id/<{$preNews.cim_id}>"><{$preNews.cim_name}></a>
                     <{else}>
                     没有了！
                     <{/if}>
@@ -86,7 +118,7 @@
                 <p>
                     下一条：
                     <{if $nextNews != "" }>
-                    <a href="<{$web_url}>/index.php/jobfairmsg/detail/id/<{$nextNews.jm_id}>"><{$nextNews.jm_name}></a>
+                    <a href="<{$web_url}>/index.php/corpinternmsg/detail/id/<{$nextNews.cim_id}>"><{$nextNews.cim_name}></a>
                     <{else}>
                     没有了！
                     <{/if}>
@@ -96,16 +128,19 @@
 
             <div class="middle_right">
                 <div class="rec">
-                    <div>招聘信息</div>
-                     <{section name=i loop=$frontlist}>
-
+                    <div>推荐招聘会信息</div>
+                    <{section name=calendar loop=$jobFair}>
                     <div class="rec_item">
-                        <div><a href="<{$web_url}>/index.php/Corpinternmsg/Corpdetail/id/<{$frontlist[i].cim_id}>">  <{$frontlist[i].cim_name|truncate:22: '…':true}></a>
+                        <div>
+                            <div> <{getdate format="cnWeek" date=$jobFair[calendar].jm_opentime }></div>
+                            <div><{$jobFair[calendar].jm_opentime|date_format: "%Y.%m.%d"}></div>
                         </div>
                         <div>
-                            <{$frontlist[i].cim_content|strip_tags|strip|truncate:50: '…':true|default: "暂无介绍~"}>
+                            <div><a href="<{$web_url}>/index.php/Jobfairmsg/calendardetail/id/<{$jobFair[calendar].jm_id}>"> <{$jobFair[calendar].jm_name|truncate:15: '…':true}></a>
+                            </div>
+                            <div> <{$jobFair[calendar].jm_opentime|date_format: "%Y.%m.%d  %H:%M"}></div>
+                            <div> <{$jobFair[calendar].jm_addr|truncate:15: '…':true}></div>
                         </div>
-                        <div> <{$frontlist[i].cim_date|date_format: "%Y-%m-%d"}></div>
                     </div>
                     <{/section}>
                 </div>
@@ -176,7 +211,7 @@ $(function(){
         //alert($("#openmyinfo").attr("checked"));
         $.ajax({
             type: "POST",
-            url: "<{$web_url}>/index.php/student/collect/type/0/id/"+id+"/openmyinfo/"+openmyinfo,
+            url: "<{$web_url}>/index.php/student/collect/type/1/id/"+id+"/openmyinfo/"+openmyinfo,
             success: function(msg){
                 var obj = eval('(' + msg + ')');
                 if (obj.json.state == 1) {
@@ -204,7 +239,7 @@ $(function(){
         //alert($("#openmyinfo").attr("checked"));
         $.ajax({
             type: "POST",
-            url: "<{$web_url}>/index.php/student/cancelcollect/type/0/id/"+id,
+            url: "<{$web_url}>/index.php/student/cancelcollect/type/1/id/"+id,
             success: function(msg){
                 var obj = eval('(' + msg + ')');
                 if (obj.json.state == 1) {

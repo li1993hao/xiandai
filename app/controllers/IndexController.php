@@ -75,15 +75,17 @@ class IndexController extends Controller{
 		//招聘和实习信息
 		$jobcim =  new  corpinternmsg();
 		if($userinfo){
-			$corpMsg = $jobcim->getCorpPageModel(1,5,null,"pass");
+			$corpMsg = $jobcim->getCorpPageModel(1,5,null,"pass",true);
 		}else{
 			$corpMsg = $jobcim->getCorpPageModel(1,5,null,"pass",false);
 		}
 		if($userinfo){
-			$interMsg = $jobcim->getInternPageModel(1,5,null,"pass");
-		}else{
 			$interMsg = $jobcim->getInternPageModel(1,5,null,"pass",true);
+		}else{
+			$interMsg = $jobcim->getInternPageModel(1,5,null,"pass",false);
 		}
+
+
 		$this->view->corpMsg = $corpMsg["list"]; //招聘信息
 		$this->view->interMsg = $interMsg["list"]; //实习信息
 

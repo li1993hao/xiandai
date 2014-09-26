@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-26 10:53:59
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-26 13:03:25
          compiled from "app/tpl/jobfairmsg/index.htm" */ ?>
 <?php /*%%SmartyHeaderCode:130540465854246e225911c7-74428246%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f039dcfd73e6dab460d5103a7bbeede41c51845b' => 
     array (
       0 => 'app/tpl/jobfairmsg/index.htm',
-      1 => 1411700009,
+      1 => 1411707802,
       2 => 'file',
     ),
   ),
@@ -43,7 +43,7 @@ if (!is_callable('smarty_function_getdate')) include '/Users/haoli/Desktop/www/x
 /common/app/css/list.css" />
     <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/app/css/rec.css" />
-    <title>天津现代职业技术学院就业指导中心</title>
+    <title>招聘会</title>
 
     <!--[if lt IE 9]>
     <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
@@ -129,7 +129,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['last']       = ($_smart
                 </div>
                 <?php endfor; endif; ?>
 
-                <?php echo smarty_function_page(array('info'=>$_smarty_tpl->tpl_vars['news']->value,'web_url'=>$_smarty_tpl->tpl_vars['web_url']->value,'url'=>"/index.php/index/"),$_smarty_tpl);?>
+                <?php echo smarty_function_page(array('info'=>$_smarty_tpl->tpl_vars['news']->value,'web_url'=>$_smarty_tpl->tpl_vars['web_url']->value,'url'=>"/index.php/jobfairmsg/index/"),$_smarty_tpl);?>
 
             </div>
 

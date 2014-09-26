@@ -220,6 +220,7 @@ class corpinternmsg extends Model {
 		}else{
 			$gongkai = '';
 		}
+		$filter .=$gongkai;
 		$where = " WHERE " . $filter.$gongkai;
 		$order = " ORDER BY  `corpinternmsg`.`cim_isup` DESC , `corpinternmsg`.`cim_date` DESC ";
 		$limit = " Limit " . ($page - 1) * $num . "," . $num . " ";
@@ -261,6 +262,7 @@ class corpinternmsg extends Model {
 		}else{
 			$gongkai = '';
 		}
+		$filter .=$gongkai;
 		$where = " WHERE " . $filter . $gongkai;
 		
 		$order = " ORDER BY  `corpinternmsg`.`cim_isup` DESC , `corpinternmsg`.`cim_date` DESC ";
@@ -301,6 +303,7 @@ class corpinternmsg extends Model {
 		}else{
 			$gongkai = '';
 		}
+		$filter .=$gongkai;
 		
 		$where = " WHERE " . $filter . $gongkai;
 		$order = " ORDER BY  `corpinternmsg`.`cim_isup` DESC , `corpinternmsg`.`cim_date` DESC ";
