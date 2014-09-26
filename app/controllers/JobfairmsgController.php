@@ -31,8 +31,6 @@ class JobfairmsgController extends Controller{
 		//$this->view->uplist = $uplist;
 		
 		$this->view->news = $newsList;
-
-
 		echo $this->view->render("index.htm");
 	}
 

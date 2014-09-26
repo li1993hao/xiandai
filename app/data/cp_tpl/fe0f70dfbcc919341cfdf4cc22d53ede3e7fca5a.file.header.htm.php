@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-26 01:37:04
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-26 10:53:59
          compiled from "app/tpl/header.htm" */ ?>
 <?php /*%%SmartyHeaderCode:204437015354206321d22f37-72171919%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fe0f70dfbcc919341cfdf4cc22d53ede3e7fca5a' => 
     array (
       0 => 'app/tpl/header.htm',
-      1 => 1411666604,
+      1 => 1411700032,
       2 => 'file',
     ),
   ),
@@ -67,8 +67,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                         <?php }?>
                         <li><a id="login_out" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /index.php/index/logout">注销</a>
-                        </li>
-                    </ul>
+                        </li>                    </ul>
 
                     <?php }else{ ?>
                         <ul class="header_unlogin">
@@ -80,6 +79,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                             </li>
                         </ul>
                     <?php }?>
+                        <li><a id="login_out" href="javascript:void(0)">注销</a>
+                    </li>
+                </ul>
                 <div class="search">
                         <input type="text" placeholder="请输入关键字"></input>
                         <a href="javascript:void(0)">搜索</a>

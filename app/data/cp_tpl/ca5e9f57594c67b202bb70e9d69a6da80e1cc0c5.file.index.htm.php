@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-26 10:22:40
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-26 10:43:55
          compiled from "app/tpl/corpinternmsg/index.htm" */ ?>
 <?php /*%%SmartyHeaderCode:8076153245424302fb49ae2-32357415%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ca5e9f57594c67b202bb70e9d69a6da80e1cc0c5' => 
     array (
       0 => 'app/tpl/corpinternmsg/index.htm',
-      1 => 1411698146,
+      1 => 1411699335,
       2 => 'file',
     ),
   ),

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-26 10:11:16
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-26 10:54:35
          compiled from "app/tpl/jobfairmsg/detail.htm" */ ?>
 <?php /*%%SmartyHeaderCode:30101234354248129337bd1-02836746%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '8c18108ae4ddfc118de39f43385ed15e6b435d75' => 
     array (
       0 => 'app/tpl/jobfairmsg/detail.htm',
-      1 => 1411697474,
+      1 => 1411699335,
       2 => 'file',
     ),
   ),
