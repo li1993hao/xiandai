@@ -1,4 +1,12 @@
 <?php
+/**
+*  file:CommonController.php  encoding:UTF-8
+*  Create On 2014-1-14����3:24:58
+*  Author lidianbin
+*  QQ: 281443751
+*  Email: lidianbin@iwind-tech.com
+**/
+
 class CommonController extends Controller
 {
 	public function __construct()

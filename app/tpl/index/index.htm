@@ -49,7 +49,8 @@
                     <ul class="header_login">
 
                         <{if $__userinfo__.type=="0"}>
-                            <li><a><img src="<{$web_url}>/common/upload/images/<{$__userinfo__.piclink}>"> </img></a></li>
+                            <li><img src="<{$web_url}>/common/upload/images/<{$__userinfo__.piclink}>"> </img></li>
+                            <li><a><{$__userinfo__.name}></a></li>
                             <li> <a target="_blank" href="<{$web_url}>/index.php/student/myinfo">个人中心</a> </li>
                             <{elseif $__userinfo__.type=="1" }>
                             <li> <a target="_blank" href="<{$web_url}>/index.php/company/myinfo">个人中心 </a> </li>
@@ -86,35 +87,35 @@
                 </li>
                 <li class="drop"><a href="#">招聘查询</a>
                     <div class="drop_down">
-                        <div><a href="#">招聘会信息</a>
+                        <div><a href="<{$web_url}>/index.php/Jobfairmsg/index">招聘会信息</a>
                         </div>
-                        <div><a href="#">招聘信息</a>
+                        <div><a href="<{$web_url}>/index.php/Corpinternmsg/Corpindex">招聘信息</a>
                         </div>
-                        <div><a href="#">招聘日历</a>
+                        <div><a href="<{$web_url}>/index.php/Jobfairmsg/calendar">招聘日历</a>
                         </div>
-                        <div><a href="#">实习招聘</a>
+                        <div><a href="<{$web_url}>/index.php/Corpinternmsg/internindex">实习招聘</a>
                         </div>
                     </div>
                 </li>
                 <li class="drop"><a href="#">用人单位服务</a>
                     <div class="drop_down">
-                        <div><a href="#">院系介绍</a>
+                        <div><a href="<{$web_url}>/index.php/Collegeintroduction/index">院系介绍</a>
                         </div>
-                        <div><a href="#">生源信息</a>
+                        <div><a href="<{$web_url}>/index.php/Sourceinformation/index">生源信息</a>
                         </div>
-                        <div><a href="#">招聘指南</a>
+                        <div><a href="<{$web_url}>/index.php/Recruitment/index">招聘指南</a>
                         </div>
-                        <div><a href="#">就业专员</a>
+                        <div><a href="<{$web_url}>/index.php/Employmentteam/index">就业专员</a>
                         </div>
                     </div>
                 </li>
-                <li><a href="#">就业指导</a>
+                <li><a href="<{$web_url}>/index.php/jobinfo/jobGuid">就业指导</a>
                 </li>
-                <li><a href="#">创业指导</a>
+                <li><a href="<{$web_url}>/index.php/jobinfo/entreGuid">创业指导</a>
                 </li>
-                <li><a href="#">就业政策</a>
+                <li><a href="<{$web_url}>/index.php/Employmentpolicy/index">就业政策</a>
                 </li>
-                <li><a href="#">通知公告</a>
+                <li><a href="<{$web_url}>/index.php/jobinfo/jobNotice">通知公告</a>
                 </li>
                 <li><a href="#footer">联系我们</a>
                 </li>
@@ -163,21 +164,21 @@
                                 <span>我是学生</span>
                             </div>
                             <ul>
-                                <li><a href="#">招聘信息</a>
+                                <li><a href="<{$web_url}>/index.php/Corpinternmsg/Corpindex">招聘信息</a>
                                 </li>
-                                <li><a href="#">招聘会信息</a>
+                                <li><a href="<{$web_url}>/index.php/Jobfairmsg">招聘会信息</a>
                                 </li>
-                                <li><a href="#">招聘日历</a>
+                                <li><a href="<{$web_url}>/index.php/Jobfairmsg/calendar">招聘日历</a>
                                 </li>
-                                <li><a href="#">实习信息</a>
+                                <li><a href="<{$web_url}>/index.php/Corpinternmsg/index/type/2">实习信息</a>
                                 </li>
-                                <li><a href="#">职业生涯规划</a>
+                                <li><a href="<{$web_url}>/index.php/jobinfo/jobPlan">职业生涯规划</a>
                                 </li>
-                                <li><a href="#">就业指导</a>
+                                <li><a href="<{$web_url}>/index.php/jobinfo/jobGuid">就业指导</a>
                                 </li>
-                                <li><a href="#">就业政策</a>
+                                <li><a href="<{$web_url}>/index.php/Employmentpolicy/index">就业政策</a>
                                 </li>
-                                <li><a href="#">创业指导</a>
+                                <li><a href="<{$web_url}>/index.php/jobinfo/entreGuid">创业指导</a>
                                 </li>
                             </ul>
                         </div>
@@ -187,15 +188,15 @@
                                 <span>我是企业</span>
                             </div>
                             <ul>
-                                <li><a href="#">就业专员</a>
+                                <li><a href="<{$web_url}>/index.php/Employmentteam/index">就业专员</a>
                                 </li>
-                                <li><a href="#">中心简介</a>
+                                <li><a href="<{$web_url}>/index.php/Center/index">中心简介</a>
                                 </li>
-                                <li><a href="#">生源信息</a>
+                                <li><a href="<{$web_url}>/index.php/Sourceinformation/index">生源信息</a>
                                 </li>
-                                <li><a href="#">招聘指南</a>
+                                <li><a href="<{$web_url}>/index.php/Recruitment/index">招聘指南</a>
                                 </li>
-                                <li><a href="#">院系介绍</a>
+                                <li><a href="<{$web_url}>/index.php/Collegeintroduction/index">院系介绍</a>
                                 </li>
                             </ul>
                         </div>
@@ -205,13 +206,13 @@
                                 <span>我是校友</span>
                             </div>
                             <ul>
-                                <li><a href="#">校友寻访</a>
+                                <li><a href="<{$web_url}>/index.php/professionpersontalk/index">校友寻访</a>
                                 </li>
-                                <li><a href="#">创就业明星</a>
+                                <li><a href="<{$web_url}>/index.php/professionsail/index">创就业明星</a>
                                 </li>
-                                <li><a href="#">就业工作简报</a>
+                                <li><a href="<{$web_url}>/index.php/Activityjobbulletin/index">就业工作简报</a>
                                 </li>
-                                <li><a href="#">渤海轻工业集团</a>
+                                <li><a href="<{$web_url}>/index.php/west/index">渤海轻工业集团</a>
                                 </li>
                             </ul>
                         </div>
@@ -244,7 +245,7 @@
                                     <!--招聘会名称-->
                                     <div>
                                         <span>
-                                            <a href="#">
+                                            <a href="<{$web_url}>/index.php/Jobfairmsg/calendardetail/id/<{$jobFair[calendar].jm_id}>">
                                                 <{$jobFair[calendar].jm_name|truncate:15: '…':true}>
                                             </a>
                                         </span>
@@ -304,7 +305,7 @@
                                     <li>
                                         <div>
                                             <div>
-                                                <a href="#">
+                                                <a href="<{$web_url}>/index.php/Corpinternmsg/Corpdetail/id/<{$corpMsg[i].cim_id}>">
                                                     <{$corpMsg[i].cim_name|truncate:35: '…':true}>
                                                 </a>
                                             </div>
@@ -317,7 +318,7 @@
                                         </div>
                                     </li>
                                     <{/section}>
-                                        <div><a href="#">更多>></a>
+                                        <div><a href="<{$web_url}>/index.php/Corpinternmsg/Corpindex">更多>></a>
                                         </div>
                             </ul>
                             <!--招聘会信息-->
@@ -326,7 +327,7 @@
                                     <li>
                                         <div>
                                             <div>
-                                                <a href="#">
+                                                <a href="<{$web_url}>/index.php/jobfairmsg/detail/id/<{$jobFairMsg[i].jm_id}>">
                                                     <{$jobFairMsg[i].jm_name|truncate:24: '…':true}>
                                                 </a>
                                             </div>
@@ -340,7 +341,7 @@
                                         </div>
                                     </li>
                                     <{/section}>
-                                        <div><a href="#">更多>></a>
+                                        <div><a href="<{$web_url}>/index.php/Jobfairmsg/index">更多>></a>
                                         </div>
                             </ul>
                             <!--实习信息-->
@@ -349,7 +350,7 @@
                                     <li>
                                         <div>
                                             <div>
-                                                <a href="#">
+                                                <a href="<{$web_url}>/index.php/Corpinternmsg/interndetail/id/<{$interMsg[i].cim_id}>">
                                                     <{$interMsg[i].cim_name|truncate:35: '…':true}>
                                                 </a>
                                             </div>
@@ -362,7 +363,7 @@
                                         </div>
                                     </li>
                                     <{/section}>
-                                        <div><a href="#">更多>></a>
+                                        <div><a href="<{$web_url}>/index.php/Corpinternmsg/internindex">更多>></a>
                                         </div>
                             </ul>
                             <!--职业生涯规划-->
@@ -371,7 +372,7 @@
                                     <li>
                                         <div>
                                             <div>
-                                                <a href="#">
+                                                <a href="<{$web_url}>/index.php/jobinfo/detail/id/<{$jobPlan.list[i].ji_id}>">
                                                     <{$jobPlan.list[i].ji_title|truncate:35: '…':true}>
                                                 </a>
                                             </div>
@@ -384,7 +385,7 @@
                                         </div>
                                     </li>
                                     <{/section}>
-                                        <div><a href="#">更多>></a>
+                                        <div><a href="<{$web_url}>/index.php/jobinfo/jobPlan">更多>></a>
                                         </div>
                             </ul>
                             <!--就业指导-->
@@ -393,7 +394,7 @@
                                     <li>
                                         <div>
                                             <div>
-                                                <a href="#">
+                                                <a href="<{$web_url}>/index.php/jobinfo/detail/id/<{$jobGuid.list[i].ji_id}>">
                                                     <{$jobGuid.list[i].ji_title|truncate:35: '…':true}>
                                                 </a>
                                             </div>
@@ -406,7 +407,7 @@
                                         </div>
                                     </li>
                                     <{/section}>
-                                        <div><a href="#">更多>></a>
+                                        <div><a href="<{$web_url}>/index.php/jobinfo/jobGuid">更多>></a>
                                         </div>
                             </ul>
                             <!--创业指导-->
@@ -415,7 +416,7 @@
                                     <li>
                                         <div>
                                             <div>
-                                                <a href="#">
+                                                <a href="<{$web_url}>/index.php/jobinfo/detail/id/<{$entreGuid.list[i].ji_id}>">
                                                     <{$entreGuid.list[i].ji_title|truncate:35: '…':true}>
                                                 </a>
                                             </div>
@@ -428,7 +429,7 @@
                                         </div>
                                     </li>
                                     <{/section}>
-                                        <div><a href="#">更多>></a>
+                                        <div><a href="<{$web_url}>/index.php/jobinfo/entreGuid">更多>></a>
                                         </div>
                             </ul>
                         </div>
@@ -450,87 +451,86 @@
                                     <a href="javascript:void(0)">就业工作简报</a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)">学生就业通知</a>
+                                    <a href="javascript:void(0)">学生就业通讯</a>
                                 </li>
                             </ul>
                         </div>
                         <div class="category_list">
                             <!--校友寻访-->
                             <ul>
-                                <{section name=i loop=$fellowVisited.list}>
+                                <{section name=i loop=$fellowVisited}>
                                     <li>
                                         <div>
                                             <div>
-                                                <a href="#">
-                                                    <{$fellowVisited.list[i].ji_title|truncate:35: '…':true}>
+                                                <a href="<{$web_url}>/index.php/professionpersontalk/Talkdetail/id/<{$fellowVisited[i].ppt_id}>">
+                                                   <{$fellowVisited[i].ppt_title|truncate:35:'…':true}>
                                                 </a>
                                             </div>
                                             <span>
-                                                <{$fellowVisited.list[i].ji_date}>
+                                                <{$fellowVisited[i].ppt_pubtime|date_format:"%Y-%m-%d"}>
                                             </span>
                                         </div>
                                         <div>
-                                            <{$fellowVisited.list[i].ji_content|strip_tags|strip|truncate:110: '…':true}>
                                         </div>
                                     </li>
                                     <{/section}>
                             </ul>
                             <!--创就业明星-->
                             <ul>
-                                <{section name=i loop=$empStar.list}>
+                                <{section name=i loop=$empStar}>
                                     <li>
                                         <div>
                                             <div>
-                                                <a href="#">
-                                                    <{$empStar.list[i].ji_title|truncate:35: '…':true}>
+                                                <a href="<{$web_url}>/index.php/professionsail/detail/id/<{$empStar[i].ps_id}>">
+                                                    <{$empStar[i].ps_title|truncate:35: '…':true}>
                                                 </a>
                                             </div>
                                             <span>
-                                                <{$empStar.list[i].ji_date}>
+                                                <{$empStar[i].ps_time|date_format:"%Y-%m-%d"}>
                                             </span>
                                         </div>
                                         <div>
-                                            <{$empStar.list[i].ji_content|strip_tags|strip|truncate:110: '…':true}>
+                                            <{$empStar[i].ps_content|strip_tags|strip|truncate:110: '…':true}>
                                         </div>
                                     </li>
                                     <{/section}>
                             </ul>
                             <!--就业工作简报-->
                             <ul>
-                                <{section name=i loop=$bulletin.list}>
+                                <{section name=i loop=$bulletin}>
                                     <li>
                                         <div>
                                             <div>
-                                                <a href="#">
-                                                    <{$bulletin.list[i].ji_title|truncate:35: '…':true}>
+                                                <a href="<{$web_url}>/index.php/Activityjobbulletin/detail/id/<{$bulletin[i].aa_id}>">
+                                                    <{$bulletin[i].aa_title|truncate:35: '…':true}>
                                                 </a>
                                             </div>
                                             <span>
-                                                <{$bulletin.list[i].ji_date}>
+                                                <{$bulletin[i].aa_time|date_format:"%Y-%m-%d"}>
                                             </span>
                                         </div>
                                         <div>
-                                            <{$bulletin.list[i].ji_content|strip_tags|strip|truncate:110: '…':true}>
+                                            <{$bulletin[i].aa_content|strip_tags|strip|truncate:110: '…':true}>
                                         </div>
                                     </li>
                                     <{/section}>
                             </ul>
-                            <!--学生就业通知-->
+                            <!--学生就业通讯-->
                             <ul>
-                                <{section name=i loop=$stuNotice.list}>
+                                <{section name=i loop=$stuNotice}>
                                     <li>
                                         <div>
                                             <div>
-                                                <a href="#">
-                                                    <{$stuNotice.list[i].ji_title|truncate:35: '…':true}>
+                                                <a href="<{$web_url}>/index.php/periodicals/detail/id/<{$stuNotice[i].a_id}>">
+                                                    <{$stuNotice[i].a_title|truncate:35: '…':true}>
                                                 </a>
                                             </div>
                                             <span>
-                                                <{$stuNotice.list[i].ji_date}>
+                                                <{$stuNotice[i].a_time|date_format:"%Y-%m-%d"}>
                                             </span>
                                         </div>
                                         <div>
-                                            <{$stuNotice.list[i].ji_content|strip_tags|strip|truncate:110: '…':true}>
+                                            <{$stuNotice[i].a_content|strip_tags|strip|truncate:110: '…':true}>
                                         </div>
                                     </li>
                                     <{/section}>
@@ -541,10 +541,13 @@
                     <div class="bohai_info block_style">
                         <div>
                             <div>渤海轻工业集团</div>
-                            <a href="#">更多>></a>
+                            <a href="<{$web_url}>/index.php/west/index">更多>></a>
                         </div>
                         <div>
-                            <a href="#"><img src="<{$web_url}>/common/app/images/index/bohai.png"></img></a>
+                                <{section name=wwperson loop=$wwPersons}>
+                                <a href="<{$web_url}>/index.php/west/detail/id/<{$wwPersons[wwperson].ww_id}>"><img src="<{$web_url}>/common/upload/images/<{$wwPersons[wwperson].pic_link|default:"noimg.jpg"}>" alt="<{$wwPersons[wwperson].ww_title}>" /></a>
+                                <{/section}>
+                            </a>
                         </div>
                         <div>
                             <div>心怀梦想 自由翱翔</div>
@@ -567,7 +570,7 @@
                                 <li>
                                     <!--title-->
                                     <div>
-                                        <a href="#" target="_blank">
+                                        <a href="<{$web_url}>/index.php/jobinfo/detail/id/<{$jobNotice.list[i].ji_id}>" target="_blank">
                                             <{$jobNotice.list[i].ji_title|truncate:20: '…':true}>
                                         </a>
                                     </div>
@@ -582,7 +585,7 @@
                                 </li>
                                 <{/section}>
 
-                                    <div><a href="#" target="_blank">更多>></a>
+                                    <div><a href="<{$web_url}>/index.php/jobinfo/jobNotice" target="_blank">更多>></a>
                                     </div>
                         </ul>
                         <!--工作动态-->
@@ -593,7 +596,7 @@
                                 <li>
                                     <!--title-->
                                     <div>
-                                        <a href="#" target="_blank">
+                                        <a href="<{$web_url}>/index.php/jobinfo/detail/id/<{$jobAct.list[i].ji_id}>" target="_blank">
                                             <{$jobAct.list[i].ji_title|truncate:20: '…':true}>
                                         </a>
                                     </div>
@@ -607,7 +610,7 @@
                                     </div>
                                 </li>
                                 <{/section}>
-                                    <div><a href="#" target="_blank">更多>></a>
+                                    <div><a href="<{$web_url}>/index.php/jobinfo/jobAct" target="_blank">更多>></a>
                                     </div>
                         </ul>
 
@@ -744,7 +747,7 @@
     <script type="text/javascript" src="<{$web_url}>/common/libs/jquery.min.js"></script>
     <script type="text/javascript" src="<{$web_url}>/common/app/js/index/index.js"></script>
     <script type="text/javascript" src="<{$web_url}>/common/app/js/header.js"></script>
-    <!-- <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.5&ak=A03339d9c32ed4f0920276cd3d9b0474"></script>-->
+     <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.5&ak=A03339d9c32ed4f0920276cd3d9b0474"></script>
 </body>
 
 </html>

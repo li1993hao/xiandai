@@ -19,18 +19,40 @@ class IndexController extends Controller{
 		$this->view->jobPlan = $jobInfoDao->getCM("jobPlan",1,4); //职业生涯规划	
 		$this->view->entreGuid = $jobInfoDao->getCM("entreGuid",1,4); //创业指导	
 
+		//校友寻访 8
+		$ppt = new professionpersontalk();
+		$schoolFri = $ppt->getAlumunsPageModel(1,9);
+		$this->view->fellowVisited = $schoolFri["list"];
 
-		$this->view->fellowVisited = $jobInfoDao->getCM("fellowVisited",1,4); //校友寻访 8
-		$this->view->empStar = $jobInfoDao->getCM("empStar",1,4); //创就业明星	 9
-		$this->view->bulletin = $jobInfoDao->getCM("bulletin",1,4); //就业工作简报	 12
-		$this->view->stuNotice = $jobInfoDao->getCM("stuNotice",1,4); //学生就业通知	 13
+		//就业工作简报
+		$ajb = new activityjobbulletin();
+		$ajbInfo = $ajb->getBulletinPageModel(1,4);
+		$this->view->bulletin = $ajbInfo["list"];
+
+
+		//就业通讯
+		$jobpds = new periodicals();
+		$pdsInfo = $jobpds->getArticalPageModel(1,4);
+		$this->view->stuNotice = $pdsInfo["list"];
+
+		//职业起航 --创就业明星
+		$pfs = new professionsail();
+		$pfsMsg = $pfs->getSailPageModel(1,4);
+		$this->view->empStar =$pfsMsg["list"]; 
+
+		//渤海
+		$westWork = new westWork();
+		$wwPerson = $westWork->getPersons(1,2);
+		//print_r($wwOtherNews);
+		$this->view->wwPersons = $wwPerson;
+
 
 		//招聘会日历
 		$job = new jobfairmsg();
 		if($userinfo){
-			$jobFair = $job->getRecentCorpMsg(6,1);
+			$jobFair = $job->getRecentCorpMsg(5,1);
 		}else{
-			$jobFair = $job->getRecentCorpMsg(6,0);
+			$jobFair = $job->getRecentCorpMsg(5,0);
 		}
 		$this->view->jobFair = $jobFair;
 		$tempArray =  array();
@@ -44,23 +66,23 @@ class IndexController extends Controller{
 
 		//招聘会信息
 		if($userinfo){
-			$jobFairMsg = $job->getJobfairPageModel(1,9,null,3,null,1);
+			$jobFairMsg = $job->getJobfairPageModel(1,5,null,3,null,1);
 		}else{
-			$jobFairMsg = $job->getJobfairPageModel(1,9,null,3,null,0);
+			$jobFairMsg = $job->getJobfairPageModel(1,5,null,3,null,0);
 		}
 		$this->view->jobFairMsg = $jobFairMsg['list'];
 		
 		//招聘和实习信息
 		$jobcim =  new  corpinternmsg();
 		if($userinfo){
-			$corpMsg = $jobcim->getCorpPageModel(1,6,null,"pass");
+			$corpMsg = $jobcim->getCorpPageModel(1,5,null,"pass");
 		}else{
-			$corpMsg = $jobcim->getCorpPageModel(1,6,null,"pass",false);
+			$corpMsg = $jobcim->getCorpPageModel(1,5,null,"pass",false);
 		}
 		if($userinfo){
-			$interMsg = $jobcim->getInternPageModel(1,6,null,"pass");
+			$interMsg = $jobcim->getInternPageModel(1,5,null,"pass");
 		}else{
-			$interMsg = $jobcim->getInternPageModel(1,6,null,"pass",true);
+			$interMsg = $jobcim->getInternPageModel(1,5,null,"pass",true);
 		}
 		$this->view->corpMsg = $corpMsg["list"]; //招聘信息
 		$this->view->interMsg = $interMsg["list"]; //实习信息
@@ -127,7 +149,6 @@ class IndexController extends Controller{
 			$this->getView()->setState("1");
 			$this->getView()->setMsg($result["msg"]);
 			$this->getView()->setStatus("1");
-			$this->getView()->setData(array("userType"=>$result["userinfo"]["type"],"userTypeName"=>$result["userinfo"]["typename"],"userName"=>$result["userinfo"]["name"],"userState"=>$result["userinfo"]["state"],"userStateName"=>$result["userinfo"]["statename"]));
 			$sessionUtil = $this->getApp()->loadUtilClass("SessionUtil");
 			$sessionUtil->set ( "session_userid", $result["result"] );
 		}else{

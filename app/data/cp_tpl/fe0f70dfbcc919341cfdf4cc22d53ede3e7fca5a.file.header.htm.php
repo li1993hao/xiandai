@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-24 01:21:05
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-26 01:37:04
          compiled from "app/tpl/header.htm" */ ?>
 <?php /*%%SmartyHeaderCode:204437015354206321d22f37-72171919%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fe0f70dfbcc919341cfdf4cc22d53ede3e7fca5a' => 
     array (
       0 => 'app/tpl/header.htm',
-      1 => 1411492863,
+      1 => 1411666604,
       2 => 'file',
     ),
   ),
@@ -19,47 +19,25 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'unifunc' => 'content_54206321d32389_43416333',
   'variables' => 
   array (
+    '__userinfo__' => 0,
     'web_url' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_54206321d32389_43416333')) {function content_54206321d32389_43416333($_smarty_tpl) {?><!DOCTYPE HTML>
-<html>
-
-<head>
-    <meta id="screen-view" name="viewport" content="width=device-width" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/common/app/css/reset.css?v=2.0" />
-    <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/common/app/css/headAndfoot.css" />
-    <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/common/libs/jquery.min.js"></script>
-     <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/common/app/js/header.js"></script>
-    <script type="text/javascript">
-    var web_url = "<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-";
-    </script>
-    <title>天津现代职业技术学院就业指导中心</title>
-
-    <!--[if lt IE 9]>
-    <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/common/app/js/DOMAssistantCompressed-2.7.4.js"></script>
-    <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/common/app/js/ie-css3.js"></script>
-    <![endif]-->
-
-
-</head>
-
-<body>
+<?php if ($_valid && !is_callable('content_54206321d32389_43416333')) {function content_54206321d32389_43416333($_smarty_tpl) {?>
     <div class="container">
         <div class="top_login">
+            <p id="login_error" class="error"><p>
             <div>
-                <div><span>账号:</span><input type="text" placeholder="学号或邮箱"/></div>
-                <div><span>密码:</span><input type="password" /></div>
-                <div>登录</div>
+                <div>
+                    <span>账号:</span>
+                    <input type="text" name="user_name" id="user_name" placeholder="学号或邮箱" />
+                </div>
+                <div>
+                    <span>密码:</span>
+                    <input type="password" name="user_pswd" id="user_pswd"/>
+                </div>
+                <div id="login_submit">登录</div>
             </div>
             <div>
                 <p>>学生可以使用学号登录,初始密码为身份证后六位</p>
@@ -67,16 +45,41 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 <p>>如果忘记密码请联系天津现代职业技术学院就业指导中心</p>
             </div>
         </div>
-        <div class="header">
+        <div class="header" id="header">
             <div class="header_top">
-                <ul class="header_unlogin">
-                    <li><a href="javascript:void(0)">用户登录</a>
-                    </li>
-                    <li><a href="javascript:void(0)">企业注册</a>
-                    </li>
-                    <li><a href="javascript:void(0)">校友注册</a>
-                    </li>
-                </ul>
+                    <?php if (isset($_smarty_tpl->tpl_vars['__userinfo__']->value)){?>
+                    <ul class="header_login">
+
+                        <?php if ($_smarty_tpl->tpl_vars['__userinfo__']->value['type']=="0"){?>
+                            <li><img src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload/images/<?php echo $_smarty_tpl->tpl_vars['__userinfo__']->value['piclink'];?>
+"> </img></li>
+                            <li><a><?php echo $_smarty_tpl->tpl_vars['__userinfo__']->value['name'];?>
+</a></li>
+                            <li> <a target="_blank" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/student/myinfo">个人中心</a> </li>
+                            <?php }elseif($_smarty_tpl->tpl_vars['__userinfo__']->value['type']=="1"){?>
+                            <li> <a target="_blank" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/company/myinfo">个人中心 </a> </li>
+                            <?php }else{ ?>
+                            <li> <a target="_blank" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/teacher/myinfo">个人中心</a> </li>
+                        <?php }?>
+                        <li><a id="login_out" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/index/logout">注销</a>
+                        </li>
+                    </ul>
+
+                    <?php }else{ ?>
+                        <ul class="header_unlogin">
+                            <li><a href="javascript:void(0)">用户登录</a>
+                            </li>
+                            <li><a href="javascript:void(0)">企业注册</a>
+                            </li>
+                            <li><a href="javascript:void(0)">校友注册</a>
+                            </li>
+                        </ul>
+                    <?php }?>
                 <div class="search">
                         <input type="text" placeholder="请输入关键字"></input>
                         <a href="javascript:void(0)">搜索</a>

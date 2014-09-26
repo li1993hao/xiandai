@@ -420,8 +420,12 @@
 
 .bohai_info >div:nth-child(2) img{
     height: 211px;
-    width: 100%;
+    width: 49%;
+    float: left;
+    margin-left:4px;
+
 }
+
 
 .bohai_info >div:nth-child(3){
     height: 33px;

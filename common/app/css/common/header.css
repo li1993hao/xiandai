@@ -1,0 +1,126 @@
+@CHARSET "UTF-8";
+/*green header*/
+/*img start*/
+.header-red{background:#788ac6;}
+.header-green{background:#788ac6;}
+.header-blue{background:#788ac6;}
+.header-orange{background:#788ac6;}
+#corpinternmsg_top{
+	background: url(../../images/corpinternmsg/title.png) top center no-repeat;
+	margin:0 auto;
+	min-width:100%;
+	width:100%;
+	height:128px;
+}
+#jobinfo_top{
+	background: url(../../images/corpinternmsg/title.png) top center no-repeat;
+	margin:0 auto;
+	min-width:100%;
+	width:100%;
+	height:128px;
+}
+
+#west_top{
+	background: url(../../images/corpinternmsg/title.png) top center no-repeat;
+	margin:0 auto;
+	min-width:100%;
+	width:100%;
+	height:128px;
+}
+
+#top {
+	background: url(../../images/corpinternmsg/title.png) top center no-repeat;
+	margin:0 auto;
+	min-width:100%;
+	width:100%;
+	height:128px;
+}
+/*img end*/
+#west_one{
+	display:block;
+	width:100%;
+	margin-top:-31px;
+}
+#people  {
+	overflow:hidden;
+	background:url(../../images/corpinternmsg/title_one.png);
+	width:100%;
+	height:31px;
+}
+#people ul{width:1000px; margin:auto;}
+
+#west_one ul li{
+	float:left;
+	display:inline;
+	margin:6px 0 0 10px;
+}
+#west_one ul li a{
+	color:#fff;
+	font-size:14px;
+}
+#west_one ul li{
+	color:#fff;
+}
+/*background start*/
+#corpinternmsg_west{
+	width:100%;
+	background:#788ac6;
+	height:87px;
+}
+#jobinfo_west{
+	width:100%;
+	background:#788ac6;
+	height:87px;
+}
+#west_west{
+	width:100%;
+	background:#788ac6;
+	height:87px;
+}
+#west {
+	width: 1000px;
+	background: #788ac6;
+	height: 87px;
+}
+/*background end*/
+#west_one p{
+	font-size:30px;
+	color:#fff;
+	padding:23px 0 0 10px;
+	float:right;
+}
+#west_one em{
+	font-size:20px;
+	font-style:normal;
+}
+#phone-title{display:none;}
+#title{display:block;}
+.title-container{width:1100px; margin:auto; height:auto;}
+#phone-secondtitle{display:none;}
+#secondtitle{display:block;}
+#secondtitle{display:block;}
+#phone-thirdtitle{display:none;}
+
+
+@media screen and (max-width:400px){
+#title{display:none;}
+#phone-title{display:block;}
+#phone-secondtitle{display:block;}
+#phone-thirdtitle{display:block;}
+#secondtitle{display:none;}
+#thirdtitle{display:none;}
+#top{width: 100%;min-width:0px; height:100px;}
+#west_top{width: 100%;min-width:0px; height:100px;}
+#corpinternmsg_top{width: 100%;min-width:0px; height:100px;}
+#jobinfo_top{width: 100%;min-width:0px; height:100px;}
+#jobinfo2_top{width: 100%;min-width:0px; height:100px;}
+#west_one {display: block;width: 94%;padding:0;margin: -50px auto 0px;}
+#people{width:100%;}
+#west{width:100%;height:60px;}
+#west_west{width:100%;height:60px;}
+#corpinternmsg_west{width:100%;height:60px;}
+#jobinfo_west{width:100%;height:60px;}
+#jobinfo2_west{width:100%;height:60px;}
+#west_one p{padding: 8px 0px 0px 20px;}
+.work_two {width:100%;}
+}

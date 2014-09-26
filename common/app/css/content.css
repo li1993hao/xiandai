@@ -1,0 +1,144 @@
+ .nav dt {
+        float: left;
+        margin-top: 5px;
+    }
+    .nav dt:first-child {
+        margin-left: 30px;
+    }
+    .nav dt a {
+        color: white;
+    }
+    .middle {
+        padding-top: 20px;
+        min-height: 650px;
+        background-color: #ecf0f1;
+    }
+    .middle_left {
+        width: 616px;
+        min-height: 400px;
+        float: left;
+        background-color: #ecf0f1;
+    }
+    .middle_right {
+        width: 340px;
+        float: right;
+        height: 400px;
+    }
+
+.rec{
+    background-color: white;
+    min-height: 540px;
+}
+.rec >div:first-child{
+    line-height: 40px;
+    height: 40px;
+    background: #34495e;
+    color: white;
+    font-size: 18px;
+    padding-left: 15px;
+}
+
+.rec_item{
+    margin: 0 15px;
+    border-bottom: 1px #b2b2b2 dashed;
+}
+
+.middle_left >div:first-child span{
+    font-size: 14px;
+    background-color: #3598db;
+    color: white;
+    padding:8px 15px;
+    cursor: pointer;
+}
+.middle_left >div:nth-child(2){
+    color: #b2b2b2;
+    font-size: 14px;
+}
+
+.middle_left >div:nth-child(3){
+    color: #a2a2a2;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.middle_left >div:nth-child(3) span:first-child{
+    color: #a2a2a2;
+    font-size: 14px;
+    margin-right: 70px;
+}
+
+.middle_left >div:first-child span:hover{
+    background-color: #3598aa;
+}
+
+
+.middle_left >div:first-child{
+    height: 30px;
+    text-align:right;
+    margin-right: 20px;
+
+}
+.middle_left >div:nth-child(4){
+    margin-top: 20px;
+}
+
+.middle_left >div:first-child p{
+    font-size: 16px;
+    margin-left: 10px;
+    font-weight: bold;
+    float: left;
+}
+.zandiv{
+    margin-top: 20px;
+    text-align: center;
+}
+.zan{
+    background-color:  #3598db;
+    padding: 8px 8px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.middle_img{
+    text-align: center;
+}
+
+.rec_item{
+    margin-top: 10px;
+}
+
+.rec_item >div{
+    font-size: 14px;
+    color: #b2b2b2;
+}
+
+.rec_item >div:first-child a{
+    color: red;
+}
+
+.rec_item >div:last-child{
+    text-align: right;
+    margin-right: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

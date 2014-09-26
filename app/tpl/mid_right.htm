@@ -1,0 +1,171 @@
+ <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/common/middle-right.css" />
+ <div id="middle_right">
+
+ 	<!-- 新闻分享 -->
+ 	<{if isset($xinwenfenxiang)}>
+	 	<div class="m-r-title middle-right-<{if isset($color)}><{$color}><{/if}>">
+			<p style="background:#ffd189">
+				<img  src="<{$web_url}>/common/app/images/share.png" alt="share" />
+			</p>
+		  	<span>新闻分享</span><em></em>
+		</div>
+		<{include file='right_share.htm'}>
+	<{/if}>
+	<!-- 信息分享-->
+	<{if isset($xinxifenxiang)}>
+
+	     <div class="m-r-title middle-right-<{if isset($color)}><{$color}><{/if}>" >
+	        <p style="background:#ffd189;">
+	        	<img src="<{$web_url}>/common/app/images/corpinternmsg/share.png" alt="employ" />
+	        </p>
+	        <span>信息分享</span>
+	     </div>
+		 <{include file='right_share.htm'}>
+	<{/if}>
+
+    <!-- 新闻搜索 
+    <{if isset($xinwensousuo)}>
+    	<div class="m-r-title middle-right-<{if isset($color)}><{$color}><{/if}>">
+        	<p style="background:#ffd189;"><img src="<{$web_url}>/common/app/images/xinwensousuo.png" alt="employ" /></p>
+        	<span>新闻搜索</span>
+        </div>
+        <div class="m-r-main">
+       		<form id="form1"   target="_self" name="form1" method="post" action="<{$web_url}>/index.php/jobinfo/getsearchlist" >
+        		<br/>
+        		<div class="keywords-container">
+        			<div class="keywords-label">关键字:</div>
+  					<div class="keywords-input-wrap" ><input type="text" name="content" class="input-keyword"/></div>
+        		</div>
+
+            	<div class="btn-container">
+                	<input type="submit" value="搜索" class="btn-search middle-right-<{if isset($color)}><{$color}><{/if}>" />
+            	</div>
+			</form>
+		</div>
+      <{/if}>
+	-->
+      <!-- 信息筛选 
+      <{if isset($xinxishaixuan)}>
+      <div class="m-r-title middle-right-<{if isset($color)}><{$color}><{/if}>">
+        	<p style="background:#ffd189;"><img src="<{$web_url}>/common/app/images/corpinternmsg/employ.png" alt="employ" /></p>
+        	<span>信息筛选</span>
+      </div>
+      <div class="m-r-main">
+      	  <form id="form1"   target="_self" name="form1" method="post"  action="<{$searchaction}>" >
+            <br/>
+            <div class="keywords-container">
+            	<div class="keywords-label">关键字:</div>
+            	<div class="keywords-input-wrap" >
+            	<input type="text" name="content" class="input-keyword"/>
+            	</div>
+        	</div>
+            <div class="btn-container">
+                <input type="submit" value="搜索" class="btn-search middle-right-<{if isset($color)}><{$color}><{/if}>" />
+            </div>
+		  </form>
+     </div>
+     <{/if}>
+	-->
+
+	<!-- 推荐招聘会 -->
+	<{if isset($tuijianzhaopinhui)}>
+
+	    <div class="m-r-title middle-right-<{if isset($color)}><{$color}><{/if}>" >
+	        <p style="background:#ffd189">
+	        	<img src="<{$web_url}>/common/app/images/stujobinfo/employ1.png" alt="employ" />
+	        </p>
+	        <span>推荐招聘会</span>
+	        <em><a href="<{$web_url}>/index.php/jobfairmsg/index"><img src="<{$web_url}>/common/app/images/stujobinfo/right1.png" alt="right1" /></a></em>
+	    </div>
+	    <div class="m-r-main">
+			<{if isset($color)}>
+	    	<{getrightrecjob color=$color}>
+	    	<{else}>
+	    	<{getrightrecjob}>
+	    	<{/if}>
+	    </div>
+    <{/if}>
+
+    <!-- 招聘信息 -->
+    <{if isset($zhaopinxinxi)}>
+    <div class="m-r-title middle-right-<{if isset($color)}><{$color}><{/if}>" >
+    	<p style="background:#ffd189;">
+    		<img src="<{$web_url}>/common/app/images/corpinternmsg/broadcast.png" alt="employ" />
+    	</p>
+    	<span>招聘信息</span>
+        <em>
+        	<a href="<{$web_url}>/index.php/corpinternmsg/corpindex">
+        		<img src="<{$web_url}>/common/app/images/stujobinfo/right1.png" alt="right1" />
+        	</a>
+        </em>
+    </div>
+    <div class="m-r-main">
+    	<{getrightcorpmsg}>
+   	</div>
+   	<{/if}>
+
+
+   	<!-- 热点排行 -->
+   	<{if isset($redianpaihang)}>
+
+   	<div class="m-r-title middle-right-<{if isset($color)}><{$color}><{/if}>" >
+    	<p style="background:#ffd189;">
+    		<img src="<{$web_url}>/common/app/images/jobinfo/lanse2.png" alt="employ" />
+    	</p>
+    	<span>热点排行</span>
+    	<em>
+    		<a href="<{$web_url}>/index.php/jobinfo/news">
+    			<img src="<{$web_url}>/common/app/images/jobinfo/lansejiantou.png" alt="right1" />
+    		</a>
+    	</em>
+    </div>
+    <div class="m-r-main">
+       <{getrightjobinfo}>
+    </div>
+    <{/if}>
+
+ <!-- 写到这里了-->
+      <!-- 通知公告 -->
+      <{if isset($tongzhigonggao)}>
+      <div class="m-r-title middle-right-<{if isset($color)}><{$color}><{/if}>" >
+      	<p style="background:#ffd189;"><img src="<{$web_url}>/common/app/images/jobinfo/lanse2.png" alt="employ" /></p>
+      	<span>通知公告</span>
+      	<em>
+      		<a href="<{$web_url}>/index.php/jobinfo/act">
+      			<img src="<{$web_url}>/common/app/images/jobinfo/lansejiantou.png" alt="right1" />
+      		</a>
+      	</em>
+      </div>
+      <div class="m-r-main">
+      		<{getrightjobinfo type=2}>
+     </div>
+     <{/if}>
+<!-- 典型人物 -->
+<{if isset($dianxingrenwu)}>
+	<div class="m-r-title middle-right-<{if isset($color)}><{$color}><{/if}>" >
+		<p style="background:#ffd189;"><img src="<{$web_url}>/common/app/images/dianxingrenwu_coin.png" alt="head" /></p>
+		<span>典型人物</span>
+		<em><a href="<{$web_url}>/index.php/west/person"><img src="<{$web_url}>/common/app/images/stujobinfo/right1.png" alt="right" /></a></em>
+	</div>
+	<div id="dxrw" class="m-r-main">
+
+		<link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/west/human.css" />
+		<ul>
+			<{getrighttypical}>
+	 	</ul>
+	</div>
+<{/if}>
+<!-- js -->
+      <script type="text/javascript">
+			$(function() {
+				$("#form1").submit( function () {
+					if($("#number").val() == ""){
+ 			//			alert("123");
+ 						document.getElementById("button").disabled=true;
+ 					return false;
+ 				}
+ 				return true;
+			});
+		});
+		</script>
+</div>

@@ -75,10 +75,24 @@
 
 
     .header_login img{
-        height: 30px;
-        width: 30px;
-        border-radius: 15px;
+        height: 36px;
+        width: 36px;
+        border-radius: 18px;
+        border:1px solid #b2b2b2;
+        margin-top: -5px;
     }
+
+    .header_login li a{
+        text-decoration: underline;
+    }
+
+    .header_login li{
+        margin-left: 20px;
+    }
+    .header_login li:nth-child(2){
+        margin-left: 5px;
+    }
+
     /*header样式*/
     .header {
         width: 100%;
@@ -168,6 +182,7 @@
         background-color: #3598db;
         width: 990px;
         margin-bottom: 2px;
+        height: 33px;
     }
 
     /*footer样式**/
@@ -189,7 +204,9 @@
     	padding-right: 43px;
     	padding-left: 44px;
     }
-
+    .footer{
+        clear: both;
+    }
 
     .footer>div:last-child li:last-child{
     	margin-top: 30px;

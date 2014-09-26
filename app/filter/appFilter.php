@@ -4,7 +4,6 @@ class appFilter extends Filter{
 	protected $_limitRS=array("student","company","teacher","account");
 
 	public function doFilter(){
-		return;
 		$session = $this->getApp()->loadUtilClass("SessionUtil");
 
 		if($userid = $session->get("session_userid") ){

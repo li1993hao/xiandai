@@ -1,0 +1,266 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta id="screen-view" name="viewport" content="width=device-width" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/reset.css?v=2.0" />
+    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/headAndfoot.css" />
+    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/content.css" />
+    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/common/detail.css" />
+<link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/common/detail-360.css" />
+    <title>天津现代职业技术学院就业指导中心</title>
+  <script type="text/javascript">
+    var web_url = "<{$web_url}>";
+    </script>
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="<{$web_url}>/common/app/js/DOMAssistantCompressed-2.7.4.js"></script>
+    <script type="text/javascript" src="<{$web_url}>/common/app/js/ie-css3.js"></script>
+    <![endif]-->
+   
+
+</head>
+
+<body>
+    <{include file='header.htm' }>
+        <!--导航栏-->
+        <div class="nav">
+            <dl>
+                <dt><a href="<{$web_url}>/index.php/index">首页/</a>
+                </dt>
+                <dt><a href="<{$web_url}>/index.php/jobfairmsg/index">招聘会/</a>
+                </dt>
+                <dt><a href="#"><{$detail.jm_name}></a></dt>
+            </dl>
+        </div>
+        <div class="middle">
+
+            <div class="middle_left">
+                <div>
+                    <p><{$detail.jm_name}></p>
+                                <{if isset($__userinfo__)}>
+                        <{if $__userinfo__.type==0}>
+                        <span id="do-collect-btn" class="collect-btn" <{if $collectFlag!="1"}>style="display:none;"<{/if}> >收藏</span>
+                        <span id="cancel-collect-btn" class="collect-btn" data="<{$detail.jm_id}>" <{if $collectFlag=="1"}>style="display:none;"<{/if}> >取消收藏</span>
+                        <{/if}>
+                    <{/if}>
+                </div>
+                <div>
+                         <{$detail.jm_date}>&nbsp;
+                        浏览：<{$detail.jm_read}>&nbsp;
+                        分享：<{$detail.jm_share}>&nbsp;
+                        来源：<{if $detail.jm_publish==0}><{$detail.jm_src|default:"就业中心"}><{else}><a target="blank" href="<{$web_url}>/index.php/common/userinfo/id/<{$detail.jm_publish}>"><{$detail.com_name}></a><{/if}>
+                </div>
+                <div>
+                    <span>召开时间:<{$detail.jm_opentime}></span>
+                    <span>召开地点:<{$detail.jm_addr}></span>
+                </div>
+                <div>
+                    <{if $detail.pic_id !="" }>
+                        <div id="middle_img">
+                            <img src="<{$web_url}>/common/upload/images/<{$detail.pic_link}>" />
+                        </div>
+                        <{/if}>
+                        <{$detail.jm_content}>
+                </div>
+                <div id="middle_left_file">
+                    <{if $detail.file_id !="" }>
+                        相关附件：
+                        <a target="top" style="color:red;" href="<{$web_url}>/common/upload/files/<{$detail.file_link}>">
+                            <{if $detail.file_name=="" }>
+                                <{$detail.file_link}>
+                                    <{else}>
+                                        <{$detail.file_name}>
+                                            <{/if}>
+                        </a>
+                        <{/if}>
+                </div>
+                <div class="zandiv" id="zandiv" >
+                    <img class="zan"   src="<{$web_url}>/common/app/images/zan.png" />
+                    <div class="zannum" ><{$detail.jm_good}></div>
+                </div>
+                 <div id="middle_leftprenext">
+                <p>
+                    上一条：
+                    <{if $preNews != "" }>
+                    <a href="<{$web_url}>/index.php/jobfairmsg/detail/id/<{$preNews.jm_id}>"><{$preNews.jm_name}></a>
+                    <{else}>
+                    没有了！
+                    <{/if}>
+                </p>
+                <p>
+                    下一条：
+                    <{if $nextNews != "" }>
+                    <a href="<{$web_url}>/index.php/jobfairmsg/detail/id/<{$nextNews.jm_id}>"><{$nextNews.jm_name}></a>
+                    <{else}>
+                    没有了！
+                    <{/if}>
+                </p>
+            </div>
+            </div>
+
+            <div class="middle_right">
+                <div class="rec">
+                    <div>招聘信息</div>
+                     <{section name=i loop=$frontlist}>
+
+                    <div class="rec_item">
+                        <div><a href="<{$web_url}>/index.php/Corpinternmsg/Corpdetail/id/<{$frontlist[i].cim_id}>">  <{$frontlist[i].cim_name|truncate:22: '…':true}></a>
+                        </div>
+                        <div>
+                            <{$frontlist[i].cim_content|strip_tags|strip|truncate:50: '…':true|default: "暂无介绍~"}>
+                        </div>
+                        <div> <{$frontlist[i].cim_date|date_format: "%Y-%m-%d"}></div>
+                    </div>
+                    <{/section}>
+                </div>
+            </div>
+        </div>
+
+<!-- 收藏确认 -->
+<div class="collect-confirm">
+    <div class="collect-confirm-header">
+        <div class="collect-confirm-header-left">
+            确认收藏信息？
+        </div>
+        <div class="collect-confirm-header-right">
+            <a id="close-collect-confirm" href="#" >关闭</a>
+        </div>  
+    </div>
+    <div class="collect-confirm-main">
+        <div class="collect-confirm-main-item">
+            <span class="collect-confirm-main-title">确认收藏：</span>
+            <span class="collect-confirm-main-info"><{$detail.jm_name}></span>
+        </div>
+        <div class="collect-confirm-main-item" >
+            <span class="collect-confirm-main-title">&nbsp;</span>
+            <span class="collect-confirm-main-info">
+                <input id="openmyinfo" name="openmyinfo"  type="checkbox" checked value=1>公开我的信息给企业？
+            </span>
+        </div>
+        <div class="collect-confirm-main-item" >
+            <span class="collect-confirm-main-title">&nbsp;</span>
+            <span class="collect-confirm-main-info">
+                <span id="do-collect" class="confirm-btn" data="<{$detail.jm_id}>">确认</span>
+                <span id="cancel-collect" class="confirm-btn">取消</span>
+            </span>
+        </div>
+        <div class="collect-confirm-main-item" >
+            <span class="collect-confirm-main-title">&nbsp;</span>
+            <span id="result-collect" class="collect-confirm-main-info"></span>
+        </div>
+    
+    </div>
+</div> 
+
+        <{include file='footer.htm' }>
+            <script type="text/javascript" src="<{$web_url}>/common/libs/jquery.min.js"></script>
+            <script type="text/javascript" src="<{$web_url}>/common/app/js/header.js"></script>
+            <script>
+            $(".middle").css("height", $(".middle_left").css("height"));
+            </script><script type="text/javascript">
+
+$(function(){
+    
+    //收藏
+    $("#do-collect-btn").click(function(){
+        $(".collect-confirm").show();
+    });
+    
+    $("#close-collect-confirm,#cancel-collect").click(function(){
+        $(".collect-confirm").hide();
+    });
+    
+    $("#do-collect").click(function(){
+        var id = $(this).attr("data");
+        var openmyinfo = '1';
+        if(!$("#openmyinfo").attr("checked")){
+            openmyinfo = '0';
+        }
+        
+        //alert($("#openmyinfo").attr("checked"));
+        $.ajax({
+            type: "POST",
+            url: "<{$web_url}>/index.php/student/collect/type/0/id/"+id+"/openmyinfo/"+openmyinfo,
+            success: function(msg){
+                var obj = eval('(' + msg + ')');
+                if (obj.json.state == 1) {
+                    $("#result-collect").html("");
+                    $("#do-collect-btn").hide();
+                    $("#cancel-collect-btn").show();
+                    $("#close-collect-confirm").click();
+                }else{
+                    $("#result-collect").html(obj.json.msg);
+                }
+            },
+            error:function(msg){
+                $("#result-collect").html("网络连接错误！");
+            }
+        });
+        
+    });
+    $("#cancel-collect-btn").click(function(){
+        var id = $(this).attr("data");
+        var openmyinfo = '1';
+        if(!$("#openmyinfo").attr("checked")){
+            openmyinfo = '0';
+        }
+        
+        //alert($("#openmyinfo").attr("checked"));
+        $.ajax({
+            type: "POST",
+            url: "<{$web_url}>/index.php/student/cancelcollect/type/0/id/"+id,
+            success: function(msg){
+                var obj = eval('(' + msg + ')');
+                if (obj.json.state == 1) {
+                    $("#cancel-collect-btn").hide();
+                    $("#do-collect-btn").show();
+                }else{
+                    alert(obj.json.msg);
+                }
+            },
+            error:function(msg){
+                alert("网络连接错误！");
+            }
+        });
+    });
+    //收藏end 
+    
+    
+    var flag = false;
+    $("#zandiv").click(function(){
+        //alert("sss");
+        if(!flag){
+            $.ajax({
+                type: "POST",
+                url: "<{$web_url}>/index.php/jobfairmsg/addgood/id/<{$detail.jm_id}>",
+                success: function(msg){
+                    //alert("chenggong");
+                    flag = true;
+                    //alert( msg );
+                    if(msg != "0"){
+                        //alert("谢谢~");
+                        $(".zan").css("background","#333333");
+                        $(".zannum").text(msg);
+                    }else{
+                        //alert("shibai1"); 
+                    }
+                    
+                },
+                error:function(msg){
+                    //alert("shibai");
+                    //$("#addresult").html("添加失败！");
+                }
+            });
+        }
+        
+    });
+    
+    
+});
+
+
+</script>  
+</body>
+
+</html>

@@ -27,7 +27,6 @@ class jobfairmsg extends Model{
 
 		$sql = "SELECT `jobfairmsg`.`jm_id`, `jobfairmsg`.`jm_name`, `jobfairmsg`.`jm_addr`, UNIX_TIMESTAMP(`jobfairmsg`.`jm_opentime`) AS `jm_opentimestamp` FROM `jobfairmsg`
 				WHERE `jm_veri` = ".$this->_state["pass"]." AND `jm_opentime`>='".$start."' AND `jm_opentime`<='".$end."' ";
-		//echo $sql;
 		return $this->fetchAll($sql);
 	}
 	//获取前台右侧招聘会信息

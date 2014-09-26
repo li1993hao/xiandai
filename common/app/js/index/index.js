@@ -117,7 +117,7 @@ $(function(){
 		scrollCarousel();
 	})
 	loginInit();
-	//baiduMap();
+	baiduMap();
 	feedBackInit();
 });
 
