@@ -64,7 +64,11 @@ class PeriodicalsController extends Controller{
 					//$this->view->layout=$layout;
 					$this->view->artnum=$artnum;
 				}
-				
+
+                //推荐招聘会
+                $jobfairmsg = new jobfairmsg();
+                $this->view->jobFair = $jobfairmsg->getfrontjobfair(5);
+
 				$this->view->haspre = $hasPre;
 				$this->view->hasnext = $hasNext;
 				$this->view->perid=$periodicalsid;
@@ -95,6 +99,11 @@ class PeriodicalsController extends Controller{
 			
 			if ($periodicalsdetail)
 			{
+
+                //推荐招聘会
+                $jobfairmsg = new jobfairmsg();
+                $this->view->jobFair = $jobfairmsg->getfrontjobfair(5);
+
 				$per_lay_id=$periodicals->getPer_lay_id($periodicalsdetail['l_id']);
 				$this->view->idid = $per_lay_id;
 				$periodicals->addreadnum($id);

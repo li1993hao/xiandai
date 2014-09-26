@@ -48,6 +48,10 @@ class CollegeintroductionController extends Controller{
 			$collegeintroductioncontent = $collegeintroduction->getDetail($id);
 			if ($collegeintroductioncontent)
 			{
+                $corpinternmsg = new corpinternmsg();
+                $frontlist = $corpinternmsg->getfrontmsg(4);
+                $this->view->frontlist = $frontlist;
+
 				$collegeintroduction->addreadnum($id);
 				$this->view->pre =$collegeintroduction->getPre($collegeintroductioncontent['cci_id']);
 				$this->view->next =$collegeintroduction->getNext($collegeintroductioncontent['cci_id']);

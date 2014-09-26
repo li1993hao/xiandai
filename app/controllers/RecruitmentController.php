@@ -16,7 +16,7 @@ class RecruitmentController extends Controller
 		$corpinternmsg = new corpinternmsg();
 		$frontlist = $corpinternmsg->getfrontmsg(6);
 		$this->view->frontlist = $frontlist;
-		echo $this->view->render("index.html");
+		echo $this->view->render("index.htm");
 	}
 	public function Addshare(){
 		$id = $this->getRequest()->get('id');

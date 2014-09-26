@@ -4,8 +4,7 @@
 <head>
     <meta id="screen-view" name="viewport" content="width=device-width" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/reset.css?v=2.0" />
-    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/headAndfoot.css" />
+    <{include file='commcss.htm' }>
     <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/list.css" />
     <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/rec.css" />
     <title>招聘会</title>
@@ -35,9 +34,9 @@
                 <div class="news_item">
                     <div>
                         <{if $news.list[n].jm_isup==""}>
-                              <div><a href="<{$web_url}>/index.php/jobfairmsg/detail/id/<{$news.list[n].jm_id}>" ><{$news.list[n].jm_name|truncate:21:'…'}></a>
+                              <div><a href="<{$web_url}>/index.php/jobfairmsg/detail/id/<{$news.list[n].jm_id}>" ><{$news.list[n].jm_name|truncate:21:'…'}></a></div>>
                         <{else}>
-                           <div><a href="<{$web_url}>/index.php/jobfairmsg/detail/id/<{$news.list[n].jm_id}>" style="color:red">[顶]<{$news.list[n].jm_name|truncate:21:'…'}></a>
+                           <div><a href="<{$web_url}>/index.php/jobfairmsg/detail/id/<{$news.list[n].jm_id}>" style="color:red">[顶]<{$news.list[n].jm_name|truncate:21:'…'}></a></div>>
                         <{/if}>
              
                         </div>
@@ -76,7 +75,7 @@
                     <{/section}>
                 </div>
             </div>
-        </div>
+          </div>>
         <{include file='footer.htm' }>
             <script type="text/javascript" src="<{$web_url}>/common/libs/jquery.min.js"></script>
             <script type="text/javascript" src="<{$web_url}>/common/app/js/header.js"></script>

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-26 13:10:24
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-27 01:01:15
          compiled from "app/tpl/page.htm" */ ?>
 <?php /*%%SmartyHeaderCode:13591059935424599366a8c1-35464284%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '2a43fd02739311f93c765a284cc7b1be03056b5f' => 
     array (
       0 => 'app/tpl/page.htm',
-      1 => 1411707922,
+      1 => 1411750706,
       2 => 'file',
     ),
   ),
@@ -26,7 +26,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5424599376d559_62722396')) {function content_5424599376d559_62722396($_smarty_tpl) {?><LINK href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+<?php if ($_valid && !is_callable('content_5424599376d559_62722396')) {function content_5424599376d559_62722396($_smarty_tpl) {?><link href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/app/css/page.css" type="text/css" rel="stylesheet">
 <div id="Paging">
 	<div class="paging_show">

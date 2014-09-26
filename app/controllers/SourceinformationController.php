@@ -13,8 +13,11 @@ class SourceinformationController extends Controller{
 		$sourceinformation=new sourceinformation();
 		
 		$page = $this->getRequest()->get('page') ? $this->getRequest()->get('page') : 1 ;
-		
-		
+
+        //推荐招聘会
+        $jobfairmsg = new jobfairmsg();
+        $this->view->jobFair = $jobfairmsg->getfrontjobfair(5);
+
 		$collegeList = $sourceinformation->getSourcePageModel($page,$pageSize);
 		
 		$this->view->news = $collegeList;
@@ -29,6 +32,10 @@ class SourceinformationController extends Controller{
 		$id = $this->getRequest()->get('id');
 		
 		if($id){
+            $corpinternmsg = new corpinternmsg();
+            $frontlist = $corpinternmsg->getfrontmsg(4);
+            $this->view->frontlist = $frontlist;
+
 			$sourceinformation = new sourceinformation();
 			$sourcedetail = $sourceinformation->getSourceDetail($id);
 			$sourceinformation->addreadnum($id);

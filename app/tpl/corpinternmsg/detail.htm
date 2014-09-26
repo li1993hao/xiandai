@@ -4,13 +4,12 @@
 <head>
     <meta id="screen-view" name="viewport" content="width=device-width" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/reset.css?v=2.0" />
-    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/headAndfoot.css" />
+    <{include file='commcss.htm' }>
     <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/content.css" />
         <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/rec.css" />
     <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/common/detail.css" />
 <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/common/detail-360.css" />
-    <title>招聘信息-<{$detail.cim_name}></title>
+    <title><{$corpInfo.type_name}>-<{$detail.cim_name}></title>
   <script type="text/javascript">
     var web_url = "<{$web_url}>";
     </script>
@@ -33,7 +32,7 @@
             <dl>
                 <dt><a href="<{$web_url}>/index.php/index">首页/</a>
                 </dt>
-                <dt><a href="<{$web_url}>/index.php/corpinternmsg/index">招聘信息/</a>
+                <dt><a href="<{$web_url}>/index.php/corpinternmsg/index/type/<{$corpInfo.type_code}>"><{$corpInfo.type_name}>/</a>
                 </dt>
                 <dt><a href="#"><{$detail.cim_name}></a></dt>
             </dl>
@@ -58,7 +57,7 @@
                         浏览：<{$detail.cim_read}>&nbsp;
                         分享：<{$detail.cim_share}>&nbsp;
                 </div>
-                <div>
+                <div  >
                     <div>
                     <span style="margin-right: 10px;">公司:<{$detail.cim_addr}></span>
                     <span>联系人:<{$detail.cim_contact}></span>
@@ -68,7 +67,7 @@
                     <span>邮箱:<{$detail.cim_email}></span>
                         </div>
                 </div>
-                <div>
+                <div class="content">
                     <{if isset($zhaopin)}>
                         <{if $officelist}>
                         <div class="m-l-office">
@@ -193,9 +192,7 @@
         <{include file='footer.htm' }>
             <script type="text/javascript" src="<{$web_url}>/common/libs/jquery.min.js"></script>
             <script type="text/javascript" src="<{$web_url}>/common/app/js/header.js"></script>
-            <script>
-            $(".middle").css("height", $(".middle_left").css("height"));
-            </script><script type="text/javascript">
+         <script type="text/javascript">
 
 $(function(){
     

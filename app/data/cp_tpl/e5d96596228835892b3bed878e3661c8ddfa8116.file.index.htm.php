@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-26 19:36:05
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-27 01:15:32
          compiled from "app/tpl/index/index.htm" */ ?>
 <?php /*%%SmartyHeaderCode:1843120913541e4a515c7036-27068526%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e5d96596228835892b3bed878e3661c8ddfa8116' => 
     array (
       0 => 'app/tpl/index/index.htm',
-      1 => 1411731321,
+      1 => 1411751728,
       2 => 'file',
     ),
   ),
@@ -23,8 +23,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'jobFair' => 0,
     'tempCalendar' => 0,
     'corpMsg' => 0,
-    'jobFairMsg' => 0,
     'interMsg' => 0,
+    'jobFairMsg' => 0,
     'jobPlan' => 0,
     'jobGuid' => 0,
     'entreGuid' => 0,
@@ -79,7 +79,8 @@ if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/
             <ul>
                 <li><a href="#">首页</a>
                 </li>
-                <li><a href="#">中心简介</a>
+                <li><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/center/index">中心简介</a>
                 </li>
                 <li class="drop"><a href="#">招聘查询</a>
                     <div class="drop_down">
@@ -234,7 +235,7 @@ if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/
 /index.php/professionpersontalk/index">校友寻访</a>
                                 </li>
                                 <li><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/index.php/professionsail/index">创就业明星</a>
+/index.php/jobinfo/empStar">创就业明星</a>
                                 </li>
                                 <li><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /index.php/Activityjobbulletin/index">就业工作简报</a>
@@ -409,12 +410,22 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
                                     <li>
                                         <div>
                                             <div>
-                                                <a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+                                                <?php if ($_smarty_tpl->tpl_vars['interMsg']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['cim_isup']!=''){?>
+                                                <a style="color: #ff0000" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/Corpinternmsg/Corpdetail/id/<?php echo $_smarty_tpl->tpl_vars['corpMsg']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['cim_id'];?>
+">
+                                                    [顶]<?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['corpMsg']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['cim_name'],35,'…',true);?>
+
+                                                </a>
+                                                <?php }else{ ?>
+                                                <a  href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /index.php/Corpinternmsg/Corpdetail/id/<?php echo $_smarty_tpl->tpl_vars['corpMsg']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['cim_id'];?>
 ">
                                                     <?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['corpMsg']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['cim_name'],35,'…',true);?>
 
                                                 </a>
+                                                <?php }?>
+
                                             </div>
                                             <span>
                                                 <?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['corpMsg']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['cim_date'],"%Y-%m-%d");?>
@@ -460,12 +471,22 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
                                     <li>
                                         <div>
                                             <div>
-                                                <a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+                                                <?php if ($_smarty_tpl->tpl_vars['jobFairMsg']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['jm_isup']!=''){?>
+                                                    <a style="color: #ff0000" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /index.php/jobfairmsg/detail/id/<?php echo $_smarty_tpl->tpl_vars['jobFairMsg']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['jm_id'];?>
 ">
-                                                    <?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['jobFairMsg']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['jm_name'],24,'…',true);?>
+                                                        [顶]<?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['jobFairMsg']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['jm_name'],24,'…',true);?>
 
-                                                </a>
+                                                    </a>
+                                                <?php }else{ ?>
+                                                    <a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/jobfairmsg/detail/id/<?php echo $_smarty_tpl->tpl_vars['jobFairMsg']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['jm_id'];?>
+">
+                                                        <?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['jobFairMsg']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['jm_name'],24,'…',true);?>
+
+                                                    </a>
+                                                <?php }?>
+
                                             </div>
                                             <span>
                                                 <?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['jobFairMsg']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['jm_opentime'],"%Y-%m-%d %H:%M");?>
@@ -513,12 +534,22 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
                                     <li>
                                         <div>
                                             <div>
+                                                <?php if ($_smarty_tpl->tpl_vars['interMsg']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['cim_isup']!=''){?>
+                                                <a style="color: #ff0000" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/Corpinternmsg/interndetail/id/<?php echo $_smarty_tpl->tpl_vars['interMsg']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['cim_id'];?>
+">
+                                                    [顶]<?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['interMsg']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['cim_name'],35,'…',true);?>
+
+                                                </a>
+                                                <?php }else{ ?>
                                                 <a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /index.php/Corpinternmsg/interndetail/id/<?php echo $_smarty_tpl->tpl_vars['interMsg']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['cim_id'];?>
 ">
                                                     <?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['interMsg']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['cim_name'],35,'…',true);?>
 
                                                 </a>
+                                                <?php }?>
+
                                             </div>
                                             <span>
                                                 <?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['interMsg']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['cim_date'],"%Y-%m-%d");?>
@@ -564,12 +595,22 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
                                     <li>
                                         <div>
                                             <div>
+                                                <?php if ($_smarty_tpl->tpl_vars['jobPlan']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['ji_isup']!=''){?>
+                                                <a style="color: #ff0000" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/jobinfo/detail/id/<?php echo $_smarty_tpl->tpl_vars['jobPlan']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['ji_id'];?>
+">
+                                                    [顶]<?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['jobPlan']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['ji_title'],35,'…',true);?>
+
+                                                </a>
+                                                <?php }else{ ?>
                                                 <a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /index.php/jobinfo/detail/id/<?php echo $_smarty_tpl->tpl_vars['jobPlan']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['ji_id'];?>
 ">
                                                     <?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['jobPlan']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['ji_title'],35,'…',true);?>
 
                                                 </a>
+                                                <?php }?>
+
                                             </div>
                                             <span>
                                                 <?php echo $_smarty_tpl->tpl_vars['jobPlan']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['ji_date'];?>
@@ -615,12 +656,22 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
                                     <li>
                                         <div>
                                             <div>
-                                                <a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+                                                <?php if ($_smarty_tpl->tpl_vars['jobGuid']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['ji_isup']!=''){?>
+                                                <a style="color: #ff0000" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/jobinfo/detail/id/<?php echo $_smarty_tpl->tpl_vars['jobGuid']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['ji_id'];?>
+">
+                                                   [顶] <?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['jobGuid']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['ji_title'],35,'…',true);?>
+
+                                                </a>
+                                                <?php }else{ ?>
+                                                <a  href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /index.php/jobinfo/detail/id/<?php echo $_smarty_tpl->tpl_vars['jobGuid']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['ji_id'];?>
 ">
                                                     <?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['jobGuid']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['ji_title'],35,'…',true);?>
 
                                                 </a>
+                                                <?php }?>
+
                                             </div>
                                             <span>
                                                 <?php echo $_smarty_tpl->tpl_vars['jobGuid']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['ji_date'];?>
@@ -666,12 +717,22 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
                                     <li>
                                         <div>
                                             <div>
-                                                <a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+                                                <?php if ($_smarty_tpl->tpl_vars['entreGuid']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['ji_isup']!=''){?>
+                                                    <a style="color: #ff0000" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /index.php/jobinfo/detail/id/<?php echo $_smarty_tpl->tpl_vars['entreGuid']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['ji_id'];?>
 ">
-                                                    <?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['entreGuid']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['ji_title'],35,'…',true);?>
+                                                       [顶] <?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['entreGuid']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['ji_title'],35,'…',true);?>
 
-                                                </a>
+                                                    </a>
+                                                <?php }else{ ?>
+                                                    <a  href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/jobinfo/detail/id/<?php echo $_smarty_tpl->tpl_vars['entreGuid']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['ji_id'];?>
+">
+                                                        <?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['entreGuid']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['ji_title'],35,'…',true);?>
+
+                                                    </a>
+                                                <?php }?>
+
                                             </div>
                                             <span>
                                                 <?php echo $_smarty_tpl->tpl_vars['entreGuid']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['ji_date'];?>
@@ -787,20 +848,30 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
                                     <li>
                                         <div>
                                             <div>
-                                                <a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/index.php/professionsail/detail/id/<?php echo $_smarty_tpl->tpl_vars['empStar']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['ps_id'];?>
+                                                <?php if ($_smarty_tpl->tpl_vars['empStar']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['ji_isup']!=''){?>
+                                                <a style="color: #ff0000" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/jobinfo/detail/id/<?php echo $_smarty_tpl->tpl_vars['empStar']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['ji_id'];?>
 ">
-                                                    <?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['empStar']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['ps_title'],35,'…',true);?>
+                                                    [顶]<?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['empStar']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['ji_title'],35,'…',true);?>
 
                                                 </a>
+                                                <?php }else{ ?>
+                                                <a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/jobinfo/detail/id/<?php echo $_smarty_tpl->tpl_vars['empStar']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['ji_id'];?>
+">
+                                                    <?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['empStar']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['ji_title'],35,'…',true);?>
+
+                                                </a>
+                                                <?php }?>
+
                                             </div>
                                             <span>
-                                                <?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['empStar']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['ps_time'],"%Y-%m-%d");?>
+                                                <?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['empStar']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['ji_date'],"%Y-%m-%d");?>
 
                                             </span>
                                         </div>
                                         <div>
-                                            <?php echo smarty_modifier_truncate(preg_replace('!\s+!u', ' ',preg_replace('!<[^>]*?>!', ' ', $_smarty_tpl->tpl_vars['empStar']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['ps_content'])),110,'…',true);?>
+                                            <?php echo smarty_modifier_truncate(preg_replace('!\s+!u', ' ',preg_replace('!<[^>]*?>!', ' ', $_smarty_tpl->tpl_vars['empStar']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['ji_content'])),110,'…',true);?>
 
                                         </div>
                                     </li>
@@ -989,12 +1060,22 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
                                 <li>
                                     <!--title-->
                                     <div>
+                                        <?php if ($_smarty_tpl->tpl_vars['jobNotice']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['ji_isup']!=''){?>
+                                        <a  style="color: #ff0000" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/jobinfo/detail/id/<?php echo $_smarty_tpl->tpl_vars['jobNotice']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['ji_id'];?>
+" target="_blank">
+                                            [顶]<?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['jobNotice']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['ji_title'],20,'…',true);?>
+
+                                        </a>
+                                        <?php }else{ ?>
                                         <a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /index.php/jobinfo/detail/id/<?php echo $_smarty_tpl->tpl_vars['jobNotice']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['ji_id'];?>
 " target="_blank">
                                             <?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['jobNotice']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['ji_title'],20,'…',true);?>
 
                                         </a>
+                                        <?php }?>
+
                                     </div>
                                     <!--time-->
                                     <div>
@@ -1044,12 +1125,22 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
                                 <li>
                                     <!--title-->
                                     <div>
+                                        <?php if ($_smarty_tpl->tpl_vars['jobAct']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['ji_isup']!=''){?>
+                                        <a style="color: #ff0000" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/jobinfo/detail/id/<?php echo $_smarty_tpl->tpl_vars['jobAct']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['ji_id'];?>
+" target="_blank">
+                                           [顶] <?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['jobAct']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['ji_title'],20,'…',true);?>
+
+                                        </a>
+                                        <?php }else{ ?>
                                         <a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /index.php/jobinfo/detail/id/<?php echo $_smarty_tpl->tpl_vars['jobAct']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['ji_id'];?>
 " target="_blank">
-                                            <?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['jobAct']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['ji_title'],20,'…',true);?>
+                                             <?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['jobAct']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['ji_title'],20,'…',true);?>
 
                                         </a>
+                                        <?php }?>
+
                                     </div>
                                     <!--time-->
                                     <div>

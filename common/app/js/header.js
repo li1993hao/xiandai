@@ -16,6 +16,33 @@ $(function(){
             $("#search_form").submit();
         }
     });
+
+
+
+
+    if($("#middle_img")){
+
+        $("#middle_img img").click(function(){
+            if($(".maskDiv").size() != 0){
+                var mask =$(".maskDiv");
+                $(mask).fadeIn("slow");
+            }else{
+                var mask = $("<div>");
+                $(mask).addClass("maskDiv");
+                var img = $("<img>");
+                $(img).attr("src", $(this).attr("src"));
+                $(img).appendTo(mask);
+                $(mask).appendTo("body");
+                $(mask).fadeIn("slow");
+                $(mask).click(function(){
+                    $(this).fadeOut("slow");
+                });
+
+            }
+
+        });
+    }
+
 });
 
 function loginInit () {
@@ -50,7 +77,6 @@ function loginInit () {
 			async:false
 		});
 		$(this).text("登录");
-
 
 	});
 }

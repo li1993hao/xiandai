@@ -26,10 +26,14 @@ class WestController extends Controller{
 		$pageSize = 8;
 		$westWork = new westWork();
 		$page = $this->getRequest()->get('page') ? $this->getRequest()->get('page') : 1 ;
-		
+
 		$newsList = $westWork->getNewsPageModel($page,$pageSize);
 		//print_r($newsList);
 		//exit();
+
+        $westPersonList = $westWork->getPersons(1,6);
+        $this->view->persons = $westPersonList;
+
 		$this->view->news = $newsList;
 		
 		echo $this->view->render("westnews.htm");
@@ -44,7 +48,10 @@ class WestController extends Controller{
 		$newsList = $westWork->getPolicyPageModel($page,$pageSize);
 		//print_r($newsList);
 		$this->view->news = $newsList;
-		
+
+        $westPersonList = $westWork->getPersons(1,6);
+        $this->view->persons = $westPersonList;
+
 		echo $this->view->render("policy.htm");
 	}
 	
@@ -56,6 +63,9 @@ class WestController extends Controller{
 		$newsList = $westWork->getPersonPageModel($page,$pageSize);
 		//print_r($newsList);
 		$this->view->news = $newsList;
+
+        $westPersonList = $westWork->getPersons(1,6);
+        $this->view->persons = $westPersonList;
 	
 		echo $this->view->render("person.htm");
 	}
@@ -78,7 +88,10 @@ class WestController extends Controller{
 				$this->view->preNews = $westWork->getPreNews($westNews['ww_id'], $westNews['wc_id']);
 				$this->view->nextNews = $westWork->getNextNews($westNews['ww_id'], $westNews['wc_id']);
 				$this->view->detail = $westNews;
-				
+
+                $westPersonList = $westWork->getPersons(1,6);
+                $this->view->persons = $westPersonList;
+
 				echo $this->view->render("detail.htm");//自动加载tpl下的west文件夹下的index。htm模板
 			}else{
 				$this->error404("");

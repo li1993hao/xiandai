@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-26 12:28:14
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-27 01:51:41
          compiled from "app/tpl/jobfairmsg/calendardetail.htm" */ ?>
 <?php /*%%SmartyHeaderCode:14477274955424e71f05d592-99159866%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '313da09042a45c9fcd23b3039564332c12be6ef4' => 
     array (
       0 => 'app/tpl/jobfairmsg/calendardetail.htm',
-      1 => 1411705579,
+      1 => 1411753900,
       2 => 'file',
     ),
   ),
@@ -37,10 +37,8 @@ if (!is_callable('smarty_modifier_date_format')) include '/Users/haoli/Desktop/w
 <head>
     <meta id="screen-view" name="viewport" content="width=device-width" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/common/app/css/reset.css?v=2.0" />
-    <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/common/app/css/headAndfoot.css" />
+    <?php echo $_smarty_tpl->getSubTemplate ('commcss.htm', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
     <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/app/css/content.css" />
      <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
@@ -114,7 +112,7 @@ if (!is_callable('smarty_modifier_date_format')) include '/Users/haoli/Desktop/w
                     <span>召开地点:<?php echo $_smarty_tpl->tpl_vars['detail']->value['jm_addr'];?>
 </span>
                 </div>
-                <div>
+                <div class="content">
                     <?php if ($_smarty_tpl->tpl_vars['detail']->value['pic_id']!=''){?>
                         <div id="middle_img">
                             <img src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>

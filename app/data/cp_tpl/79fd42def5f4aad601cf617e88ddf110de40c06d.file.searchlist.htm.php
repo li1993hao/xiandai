@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-26 19:40:53
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-27 01:01:55
          compiled from "app/tpl/jobinfo/searchlist.htm" */ ?>
 <?php /*%%SmartyHeaderCode:462088128542550c54b9020-64306691%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '79fd42def5f4aad601cf617e88ddf110de40c06d' => 
     array (
       0 => 'app/tpl/jobinfo/searchlist.htm',
-      1 => 1411731650,
+      1 => 1411750822,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_542550c5609788_76946589',
   'variables' => 
   array (
     'web_url' => 0,
@@ -23,8 +25,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'frontlist' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_542550c5609788_76946589',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_542550c5609788_76946589')) {function content_542550c5609788_76946589($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/xiandai/been/Smarty/plugins/modifier.truncate.php';
 if (!is_callable('smarty_function_page')) include '/Users/haoli/Desktop/www/xiandai/been/View/plugins/function.page.php';
@@ -35,10 +35,8 @@ if (!is_callable('smarty_modifier_date_format')) include '/Users/haoli/Desktop/w
 <head>
     <meta id="screen-view" name="viewport" content="width=device-width" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/common/app/css/reset.css?v=2.0" />
-    <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/common/app/css/headAndfoot.css" />
+    <?php echo $_smarty_tpl->getSubTemplate ('commcss.htm', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
     <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/app/css/list.css" />
     <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>

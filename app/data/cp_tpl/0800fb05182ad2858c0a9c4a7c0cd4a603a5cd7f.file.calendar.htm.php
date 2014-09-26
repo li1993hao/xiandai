@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-26 12:27:32
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-27 02:08:24
          compiled from "app/tpl/jobfairmsg/calendar.htm" */ ?>
 <?php /*%%SmartyHeaderCode:18229304585424e45c251999-06740681%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0800fb05182ad2858c0a9c4a7c0cd4a603a5cd7f' => 
     array (
       0 => 'app/tpl/jobfairmsg/calendar.htm',
-      1 => 1411705513,
+      1 => 1411750829,
       2 => 'file',
     ),
   ),
@@ -33,10 +33,8 @@ if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/
 <head>
     <meta id="screen-view" name="viewport" content="width=device-width" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/common/app/css/reset.css?v=2.0" />
-    <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/common/app/css/headAndfoot.css" />
+    <?php echo $_smarty_tpl->getSubTemplate ('commcss.htm', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
     <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/app/css/list.css" />
     <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>

@@ -27,7 +27,8 @@ class JobinfoController extends Controller{
 			"jobPlan"=>array("type_code"=>3,"type_name"=>"职业生涯规划","type_color"=>"blue"),
 			"jobGuid"=> array("type_code"=>4,"type_name"=>"就业指导","type_color"=>"blue"),
 			"entreGuid"=> array("type_code"=>5,"type_name"=>"创业指导","type_color"=>"blue"),
-			"empPolicy"=> array("type_code"=>6,"type_name"=>"就业政策","type_color"=>"blue")
+			"empPolicy"=> array("type_code"=>6,"type_name"=>"就业政策","type_color"=>"blue"),
+            "empStar"=> array("type_code"=>9,"type_name"=>"创就业明星","type_color"=>"blue")
 	);
 	
 	
@@ -115,8 +116,14 @@ class JobinfoController extends Controller{
 	public function empPolicy(){
 		$_GET["type"]=6;
 		$this->Index();
-
 	}
+
+    //创就业明星
+    public function  empStar(){
+        $_GET["type"]=9;
+        $this->Index();
+    }
+
 	//还没改
 	public function Detail(){
 		

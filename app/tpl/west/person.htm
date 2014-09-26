@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta id="screen-view" name="viewport" content="width=device-width" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <{include file='commcss.htm' }>
+    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/list.css" />
+    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/rec.css" />
+    <title>渤海轻工业集团-典型人物</title>
+
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="<{$web_url}>/common/app/js/DOMAssistantCompressed-2.7.4.js"></script>
+    <script type="text/javascript" src="<{$web_url}>/common/app/js/ie-css3.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+<{include file='header.htm' }>
+<!--导航栏-->
+<div class="nav">
+    <dl>
+        <dt><a href="<{$web_url}>/index.php/index">首页/</a>
+        </dt>
+        <dt><a href="<{$web_url}>/index.php/west/index">渤海轻工业集团/</a>
+        </dt>
+        <dt><a href="#">典型人物</a>
+        </dt>
+
+    </dl>
+</div>
+<div class="middle">
+
+    <div class="middle_left">
+        <{section name=n loop=$news.list}>
+        <{if $news.list[n].pic_id != ""}>
+        <div class="news_item2_wrap">
+            <div><img src="<{$web_url}>/common/upload/images/<{$news.list[n].pic_link}>" alt="<{$web_url}>/common/upload/images/<{$news.list[n].pic_link}>" /></div>
+            <div class="news_item2">
+                <div>
+                    <{if $news.list[n].ww_isup==""}>
+                    <div><a href="<{$web_url}>/index.php/west/detail/id/<{$news.list[n].ww_id}>">
+                        <{$news.list[n].ww_title}>
+                    </a></div>>
+                    <{else}>
+                    <div>
+                        <a style="color:red;" href="<{$web_url}>/index.php/west/detail/id/<{$news.list[n].ww_id}>">
+                            [顶]<{$news.list[n].ww_title}>
+                        </a></div>
+                    <{/if}>
+                    <span><{$news.list[n].ww_time}></span>
+                </div>
+                <p><{$news.list[n].ww_content|strip_tags|strip|truncate:130:'…':true}></p>
+                <ul>
+                    <li style="display:none"></li>
+                    <li><{$news.list[n].ww_read}></li>
+                    <li><{$news.list[n].ww_share}></li>
+                    <li><a href="<{$web_url}>/index.php/west/detail/id/<{$news.list[n].ww_id}>">查看详情>></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <{/if}>
+        <div class="news_item">
+            <div>
+                <{if $news.list[n].ww_isup==""}>
+                <div><a href="<{$web_url}>/index.php/west/detail/id/<{$news.list[n].ww_id}>">
+                    <{$news.list[n].ww_title}>
+                </a></div>>
+                <{else}>
+                <div>
+                    <a style="color:red;" href="<{$web_url}>/index.php/west/detail/id/<{$news.list[n].ww_id}>">
+                        [顶]<{$news.list[n].ww_title}>
+                    </a></div>
+                <{/if}>
+                <span><{$news.list[n].ww_time}></span>
+            </div>
+            <p><{$news.list[n].ww_content|strip_tags|strip|truncate:130:'…':true}></p>
+            <ul>
+                <li style="display:none"></li>
+                <li><{$news.list[n].ww_read}></li>
+                <li><{$news.list[n].ww_share}></li>
+                <li><a href="<{$web_url}>/index.php/west/detail/id/<{$news.list[n].ww_id}>">查看详情>></a>
+                </li>
+            </ul>
+        </div>
+        <{/section}>
+        <{page info=$news web_url=$web_url url="/index.php/west/person/"}>
+    </div>
+
+    <div class="middle_right">
+        <div class="rec">
+            <div style="text-align: right"><div style="float: left">典型人物</div><a style="color: #ffffff;font-size: 16px; margin-right: 10px;" href="<{$web_url}>/index.php/west/person">MORE</a></div>
+            <ul>
+                <{section name=p loop=$persons}>
+                <li style="text-align: center">
+                    <a href="<{$web_url}>/index.php/west/detail/id/<{$persons[p].ww_id}>">
+                        <div style="text-align: center; height: 160px; width: 262px; border: 1px solid #b2b2b2;background-color: #F4F4F4; margin: 10px auto;">
+                            <img src="<{$web_url}>/common/upload/images/<{$persons[p].pic_link}>" width="219px" height="127px" alt="<{$persons[p].pic_link}>" />
+                            <p>
+                                <{if $persons[p].ww_isup == ""}>
+                                <a href="<{$web_url}>/index.php/west/detail/id/<{$persons[p].ww_id}>">
+                                    <{$persons[p].ww_title|truncate:14:'…'}>
+                                </a>
+                                <{else}>
+                                <a style="color:red;" href="<{$web_url}>/index.php/west/detail/id/<{$persons[p].ww_id}>">
+                                    [顶]<{$persons[p].ww_title|truncate:12:'…'}>
+                                </a>
+                                <{/if}>
+                            </p>
+                        </div>
+                    </a>
+
+                </li>
+                <{/section}>
+            </ul>
+        </div>
+    </div>
+</div>
+<{include file='footer.htm' }>
+<script type="text/javascript" src="<{$web_url}>/common/libs/jquery.min.js"></script>
+<script type="text/javascript" src="<{$web_url}>/common/app/js/header.js"></script>
+<script>
+    $(".middle").css("height",$(".middle_left").css("height"));
+</script>
+</body>
+
+</html>

@@ -6,9 +6,9 @@
 class CorpinternmsgController extends Controller{
 	
 	private $__typeinfo = array(
-							"corp" => array("type_code"=>1,"type_name"=>"企业招聘信息&nbsp;E<em>nterprise&nbsp;Recruitment</em>"),
-							"intern" => array("type_code"=>2,"type_name"=>"实习招聘信息  &nbsp;P<em>ractice&nbsp;information</em>"),
-							"base" => array("type_code"=>3,"type_name"=>"基层招聘信息&nbsp;B<em>asic&nbspRecruitment</em>")
+							"corp" => array("type_code"=>1,"type_name"=>"企业招聘信息"),
+							"intern" => array("type_code"=>2,"type_name"=>"实习招聘信息"),
+							"base" => array("type_code"=>3,"type_name"=>"基层招聘信息")
 							);
 	
 	

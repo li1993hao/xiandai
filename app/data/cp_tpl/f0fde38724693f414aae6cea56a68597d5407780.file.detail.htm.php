@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-26 18:03:38
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-27 02:24:18
          compiled from "app/tpl/jobinfo/detail.htm" */ ?>
 <?php /*%%SmartyHeaderCode:1676737926542533e2de1c09-12473562%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f0fde38724693f414aae6cea56a68597d5407780' => 
     array (
       0 => 'app/tpl/jobinfo/detail.htm',
-      1 => 1411725817,
+      1 => 1411755455,
       2 => 'file',
     ),
   ),
@@ -36,10 +36,8 @@ if (!is_callable('smarty_modifier_date_format')) include '/Users/haoli/Desktop/w
 <head>
     <meta id="screen-view" name="viewport" content="width=device-width" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/common/app/css/reset.css?v=2.0" />
-    <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/common/app/css/headAndfoot.css" />
+    <?php echo $_smarty_tpl->getSubTemplate ('commcss.htm', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
     <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/app/css/content.css" />
     <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
@@ -98,7 +96,8 @@ if (!is_callable('smarty_modifier_date_format')) include '/Users/haoli/Desktop/w
             分享：<?php echo $_smarty_tpl->tpl_vars['detail']->value['ji_share'];?>
 &nbsp;
         </div>
-        <div>
+        <div></div>
+        <div class="content">
             <?php if ($_smarty_tpl->tpl_vars['detail']->value['pic_id']!=''){?>
             <div id="middle_img">
                 <img src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
@@ -211,9 +210,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
 /common/libs/jquery.min.js"></script>
 <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/app/js/header.js"></script>
-<script>
-    $(".middle").css("height", $(".middle_left").css("height"));
-</script><script type="text/javascript">
+<script type="text/javascript">
 
     $(function(){
         var flag = false;

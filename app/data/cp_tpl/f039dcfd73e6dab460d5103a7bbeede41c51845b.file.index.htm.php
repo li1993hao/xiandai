@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-26 13:03:25
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-27 04:34:08
          compiled from "app/tpl/jobfairmsg/index.htm" */ ?>
 <?php /*%%SmartyHeaderCode:130540465854246e225911c7-74428246%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f039dcfd73e6dab460d5103a7bbeede41c51845b' => 
     array (
       0 => 'app/tpl/jobfairmsg/index.htm',
-      1 => 1411707802,
+      1 => 1411762129,
       2 => 'file',
     ),
   ),
@@ -35,10 +35,8 @@ if (!is_callable('smarty_function_getdate')) include '/Users/haoli/Desktop/www/x
 <head>
     <meta id="screen-view" name="viewport" content="width=device-width" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/common/app/css/reset.css?v=2.0" />
-    <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/common/app/css/headAndfoot.css" />
+    <?php echo $_smarty_tpl->getSubTemplate ('commcss.htm', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
     <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/app/css/list.css" />
     <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
@@ -100,12 +98,12 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['last']       = ($_smart
                               <div><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /index.php/jobfairmsg/detail/id/<?php echo $_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['jm_id'];?>
 " ><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['jm_name'],21,'…');?>
-</a>
+</a></div>>
                         <?php }else{ ?>
                            <div><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /index.php/jobfairmsg/detail/id/<?php echo $_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['jm_id'];?>
 " style="color:red">[顶]<?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['jm_name'],21,'…');?>
-</a>
+</a></div>>
                         <?php }?>
              
                         </div>
@@ -182,7 +180,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['last']       = (
                     <?php endfor; endif; ?>
                 </div>
             </div>
-        </div>
+          </div>>
         <?php echo $_smarty_tpl->getSubTemplate ('footer.htm', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
             <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>

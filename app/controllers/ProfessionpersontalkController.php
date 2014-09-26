@@ -11,19 +11,15 @@ class ProfessionpersontalkController extends Controller{
 	{
 		$jobfairmsg = new jobfairmsg();
 		$uplist = $jobfairmsg->getfrontjobfair(4);
-		$this->view->uplist = $uplist;
+		$this->view->jobFair = $uplist;
 		$professionpersontalk=new professionpersontalk();
-		$westWork = new westWork();
-		$westPersonList = $westWork->getPersons(1,6);
-		$this->view->persons = $westPersonList;
-		$pageSize = 4;
-		
+
+
 		$page = $this->getRequest()->get('page') ? $this->getRequest()->get('page') : 1 ;
-		$sailList = $professionpersontalk->getAlumunsPageModel($page,$pageSize);
-		
-		
+		$sailList = $professionpersontalk->getAlumunsPageModel($page,5);
 		//print_r($sailList);
 		$this->view->sail=$sailList;
+
 		echo $this->view->render("index.htm");//自动加载tpl下的professionpersontalk文件夹下的index。htm模板
 	}
 	

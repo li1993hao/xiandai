@@ -35,10 +35,8 @@ class IndexController extends Controller{
 		$pdsInfo = $jobpds->getArticalPageModel(1,4);
 		$this->view->stuNotice = $pdsInfo["list"];
 
-		//职业起航 --创就业明星
-		$pfs = new professionsail();
-		$pfsMsg = $pfs->getSailPageModel(1,4);
-		$this->view->empStar =$pfsMsg["list"]; 
+		//创就业明星
+		$this->view->empStar =$jobInfoDao->getCM("empStar",1,4); //创业指导
 
 		//渤海
 		$westWork = new westWork();

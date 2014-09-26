@@ -62,8 +62,11 @@ class ActivityjobbulletinController extends Controller
 			$this->view->bulletin=$bulletinlist;
 			$this->view->perid=$bulletinperiodicalsid;
 			//$this->view->artbull=$bull;
-			
-		
+
+            //推荐招聘会
+            $jobfairmsg = new jobfairmsg();
+            $this->view->jobFair = $jobfairmsg->getfrontjobfair(5);
+
 			$this->view->haspre = $hasPre;
 			$this->view->hasnext = $hasNext;
 			
@@ -95,6 +98,11 @@ class ActivityjobbulletinController extends Controller
 			$piclink=$bulletin->getPicLink($bulletindetail["pic_id"]);
 			if($bulletindetail)
 			{
+
+                //推荐招聘会
+                $jobfairmsg = new jobfairmsg();
+                $this->view->jobFair = $jobfairmsg->getfrontjobfair(5);
+
 				$bulletin->addreadnum($id);
 				$abc=$bulletin->getPrearticle($bulletindetail['aa_id'],$bulletindetail['ap_id']);
 				$bcd=$bulletin->getNextarticle($bulletindetail['aa_id'],$bulletindetail['ap_id']);

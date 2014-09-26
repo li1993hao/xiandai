@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-26 13:05:06
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-27 01:49:38
          compiled from "app/tpl/corpinternmsg/index.htm" */ ?>
 <?php /*%%SmartyHeaderCode:8076153245424302fb49ae2-32357415%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ca5e9f57594c67b202bb70e9d69a6da80e1cc0c5' => 
     array (
       0 => 'app/tpl/corpinternmsg/index.htm',
-      1 => 1411707833,
+      1 => 1411750856,
       2 => 'file',
     ),
   ),
@@ -36,15 +36,13 @@ if (!is_callable('smarty_modifier_date_format')) include '/Users/haoli/Desktop/w
 <head>
     <meta id="screen-view" name="viewport" content="width=device-width" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/common/app/css/reset.css?v=2.0" />
-    <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/common/app/css/headAndfoot.css" />
+    <?php echo $_smarty_tpl->getSubTemplate ('commcss.htm', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
     <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/app/css/list.css" />
     <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/app/css/rec.css" />
-    <title><?php echo $_smarty_tpl->tpl_vars['corpInfo']->value;?>
+    <title><?php echo $_smarty_tpl->tpl_vars['corpInfo']->value['type_name'];?>
 </title>
 
     <!--[if lt IE 9]>
@@ -65,7 +63,8 @@ if (!is_callable('smarty_modifier_date_format')) include '/Users/haoli/Desktop/w
                 <dt><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /index.php/index">首页/</a>
                 </dt>
-                <dt><a href="#">招聘信息</a>
+                <dt><a href="#"><?php echo $_smarty_tpl->tpl_vars['corpInfo']->value['type_name'];?>
+</a>
                 </dt>
             </dl>
         </div>
@@ -102,15 +101,15 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['last']       = ($_smart
                               <div><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /index.php/Corpinternmsg/detail/id/<?php echo $_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['cim_id'];?>
 " ><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['cim_name'],21,'…');?>
-</a>
+</a></div>
                         <?php }else{ ?>
                            <div><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /index.php/Corpinternmsg/detail/id/<?php echo $_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['cim_id'];?>
 " style="color:red">[顶]<?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['cim_name'],21,'…');?>
-</a>
+</a></div>
                         <?php }?>
              
-                        </div>
+
                         <span><?php echo $_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['cim_date'];?>
 </span>
                     </div>
@@ -185,13 +184,13 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['last']       = (
         </div>
         <?php echo $_smarty_tpl->getSubTemplate ('footer.htm', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
-            <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+        <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/libs/jquery.min.js"></script>
-            <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+        <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/app/js/header.js"></script>
-            <script>
-                $(".middle").css("height",$(".middle_left").css("height"));
-            </script>
+        <script>
+            $(".middle").css("height",$(".middle_left").css("height"));
+        </script>
 </body>
 
 </html><?php }} ?>

@@ -29,7 +29,7 @@
             <ul>
                 <li><a href="#">首页</a>
                 </li>
-                <li><a href="#">中心简介</a>
+                <li><a href="<{$web_url}>/index.php/center/index">中心简介</a>
                 </li>
                 <li class="drop"><a href="#">招聘查询</a>
                     <div class="drop_down">
@@ -154,7 +154,7 @@
                             <ul>
                                 <li><a href="<{$web_url}>/index.php/professionpersontalk/index">校友寻访</a>
                                 </li>
-                                <li><a href="<{$web_url}>/index.php/professionsail/index">创就业明星</a>
+                                <li><a href="<{$web_url}>/index.php/jobinfo/empStar">创就业明星</a>
                                 </li>
                                 <li><a href="<{$web_url}>/index.php/Activityjobbulletin/index">就业工作简报</a>
                                 </li>
@@ -251,9 +251,16 @@
                                     <li>
                                         <div>
                                             <div>
-                                                <a href="<{$web_url}>/index.php/Corpinternmsg/Corpdetail/id/<{$corpMsg[i].cim_id}>">
+                                                <{if $interMsg[i].cim_isup != "" }>
+                                                <a style="color: #ff0000" href="<{$web_url}>/index.php/Corpinternmsg/Corpdetail/id/<{$corpMsg[i].cim_id}>">
+                                                    [顶]<{$corpMsg[i].cim_name|truncate:35: '…':true}>
+                                                </a>
+                                                <{else}>
+                                                <a  href="<{$web_url}>/index.php/Corpinternmsg/Corpdetail/id/<{$corpMsg[i].cim_id}>">
                                                     <{$corpMsg[i].cim_name|truncate:35: '…':true}>
                                                 </a>
+                                                <{/if}>
+
                                             </div>
                                             <span>
                                                 <{$corpMsg[i].cim_date|date_format: "%Y-%m-%d"}>
@@ -273,9 +280,16 @@
                                     <li>
                                         <div>
                                             <div>
-                                                <a href="<{$web_url}>/index.php/jobfairmsg/detail/id/<{$jobFairMsg[i].jm_id}>">
-                                                    <{$jobFairMsg[i].jm_name|truncate:24: '…':true}>
-                                                </a>
+                                                <{if $jobFairMsg[i].jm_isup !=""}>
+                                                    <a style="color: #ff0000" href="<{$web_url}>/index.php/jobfairmsg/detail/id/<{$jobFairMsg[i].jm_id}>">
+                                                        [顶]<{$jobFairMsg[i].jm_name|truncate:24: '…':true}>
+                                                    </a>
+                                                <{else}>
+                                                    <a href="<{$web_url}>/index.php/jobfairmsg/detail/id/<{$jobFairMsg[i].jm_id}>">
+                                                        <{$jobFairMsg[i].jm_name|truncate:24: '…':true}>
+                                                    </a>
+                                                <{/if}>
+
                                             </div>
                                             <span>
                                                 <{$jobFairMsg[i].jm_opentime|date_format: "%Y-%m-%d %H:%M"}>
@@ -296,9 +310,16 @@
                                     <li>
                                         <div>
                                             <div>
+                                                <{if $interMsg[i].cim_isup != "" }>
+                                                <a style="color: #ff0000" href="<{$web_url}>/index.php/Corpinternmsg/interndetail/id/<{$interMsg[i].cim_id}>">
+                                                    [顶]<{$interMsg[i].cim_name|truncate:35: '…':true}>
+                                                </a>
+                                                <{else}>
                                                 <a href="<{$web_url}>/index.php/Corpinternmsg/interndetail/id/<{$interMsg[i].cim_id}>">
                                                     <{$interMsg[i].cim_name|truncate:35: '…':true}>
                                                 </a>
+                                                <{/if}>
+
                                             </div>
                                             <span>
                                                 <{$interMsg[i].cim_date|date_format: "%Y-%m-%d"}>
@@ -318,9 +339,16 @@
                                     <li>
                                         <div>
                                             <div>
+                                                <{if $jobPlan.list[i].ji_isup != "" }>
+                                                <a style="color: #ff0000" href="<{$web_url}>/index.php/jobinfo/detail/id/<{$jobPlan.list[i].ji_id}>">
+                                                    [顶]<{$jobPlan.list[i].ji_title|truncate:35: '…':true}>
+                                                </a>
+                                                <{else}>
                                                 <a href="<{$web_url}>/index.php/jobinfo/detail/id/<{$jobPlan.list[i].ji_id}>">
                                                     <{$jobPlan.list[i].ji_title|truncate:35: '…':true}>
                                                 </a>
+                                                <{/if}>
+
                                             </div>
                                             <span>
                                                 <{$jobPlan.list[i].ji_date}>
@@ -340,9 +368,16 @@
                                     <li>
                                         <div>
                                             <div>
-                                                <a href="<{$web_url}>/index.php/jobinfo/detail/id/<{$jobGuid.list[i].ji_id}>">
+                                                <{if $jobGuid.list[i].ji_isup != "" }>
+                                                <a style="color: #ff0000" href="<{$web_url}>/index.php/jobinfo/detail/id/<{$jobGuid.list[i].ji_id}>">
+                                                   [顶] <{$jobGuid.list[i].ji_title|truncate:35: '…':true}>
+                                                </a>
+                                                <{else}>
+                                                <a  href="<{$web_url}>/index.php/jobinfo/detail/id/<{$jobGuid.list[i].ji_id}>">
                                                     <{$jobGuid.list[i].ji_title|truncate:35: '…':true}>
                                                 </a>
+                                                <{/if}>
+
                                             </div>
                                             <span>
                                                 <{$jobGuid.list[i].ji_date}>
@@ -362,9 +397,16 @@
                                     <li>
                                         <div>
                                             <div>
-                                                <a href="<{$web_url}>/index.php/jobinfo/detail/id/<{$entreGuid.list[i].ji_id}>">
-                                                    <{$entreGuid.list[i].ji_title|truncate:35: '…':true}>
-                                                </a>
+                                                <{if $entreGuid.list[i].ji_isup != "" }>
+                                                    <a style="color: #ff0000" href="<{$web_url}>/index.php/jobinfo/detail/id/<{$entreGuid.list[i].ji_id}>">
+                                                       [顶] <{$entreGuid.list[i].ji_title|truncate:35: '…':true}>
+                                                    </a>
+                                                <{else}>
+                                                    <a  href="<{$web_url}>/index.php/jobinfo/detail/id/<{$entreGuid.list[i].ji_id}>">
+                                                        <{$entreGuid.list[i].ji_title|truncate:35: '…':true}>
+                                                    </a>
+                                                <{/if}>
+
                                             </div>
                                             <span>
                                                 <{$entreGuid.list[i].ji_date}>
@@ -427,16 +469,23 @@
                                     <li>
                                         <div>
                                             <div>
-                                                <a href="<{$web_url}>/index.php/professionsail/detail/id/<{$empStar[i].ps_id}>">
-                                                    <{$empStar[i].ps_title|truncate:35: '…':true}>
+                                                <{if $empStar.list[i].ji_isup != "" }>
+                                                <a style="color: #ff0000" href="<{$web_url}>/index.php/jobinfo/detail/id/<{$empStar.list[i].ji_id}>">
+                                                    [顶]<{$empStar.list[i].ji_title|truncate:35: '…':true}>
                                                 </a>
+                                                <{else}>
+                                                <a href="<{$web_url}>/index.php/jobinfo/detail/id/<{$empStar.list[i].ji_id}>">
+                                                    <{$empStar.list[i].ji_title|truncate:35: '…':true}>
+                                                </a>
+                                                <{/if}>
+
                                             </div>
                                             <span>
-                                                <{$empStar[i].ps_time|date_format:"%Y-%m-%d"}>
+                                                <{$empStar[i].ji_date|date_format:"%Y-%m-%d"}>
                                             </span>
                                         </div>
                                         <div>
-                                            <{$empStar[i].ps_content|strip_tags|strip|truncate:110: '…':true}>
+                                            <{$empStar[i].ji_content|strip_tags|strip|truncate:110: '…':true}>
                                         </div>
                                     </li>
                                     <{/section}>
@@ -516,9 +565,16 @@
                                 <li>
                                     <!--title-->
                                     <div>
+                                        <{if $jobNotice.list[i].ji_isup != ""}>
+                                        <a  style="color: #ff0000" href="<{$web_url}>/index.php/jobinfo/detail/id/<{$jobNotice.list[i].ji_id}>" target="_blank">
+                                            [顶]<{$jobNotice.list[i].ji_title|truncate:20: '…':true}>
+                                        </a>
+                                        <{else}>
                                         <a href="<{$web_url}>/index.php/jobinfo/detail/id/<{$jobNotice.list[i].ji_id}>" target="_blank">
                                             <{$jobNotice.list[i].ji_title|truncate:20: '…':true}>
                                         </a>
+                                        <{/if}>
+
                                     </div>
                                     <!--time-->
                                     <div>
@@ -542,9 +598,16 @@
                                 <li>
                                     <!--title-->
                                     <div>
-                                        <a href="<{$web_url}>/index.php/jobinfo/detail/id/<{$jobAct.list[i].ji_id}>" target="_blank">
-                                            <{$jobAct.list[i].ji_title|truncate:20: '…':true}>
+                                        <{if $jobAct.list[i].ji_isup != ""}>
+                                        <a style="color: #ff0000" href="<{$web_url}>/index.php/jobinfo/detail/id/<{$jobAct.list[i].ji_id}>" target="_blank">
+                                           [顶] <{$jobAct.list[i].ji_title|truncate:20: '…':true}>
                                         </a>
+                                        <{else}>
+                                        <a href="<{$web_url}>/index.php/jobinfo/detail/id/<{$jobAct.list[i].ji_id}>" target="_blank">
+                                             <{$jobAct.list[i].ji_title|truncate:20: '…':true}>
+                                        </a>
+                                        <{/if}>
+
                                     </div>
                                     <!--time-->
                                     <div>

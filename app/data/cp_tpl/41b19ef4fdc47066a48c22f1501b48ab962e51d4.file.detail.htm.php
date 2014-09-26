@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-26 18:21:46
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-27 02:18:31
          compiled from "app/tpl/corpinternmsg/detail.htm" */ ?>
 <?php /*%%SmartyHeaderCode:2819725735424daa479a1c4-17662961%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '41b19ef4fdc47066a48c22f1501b48ab962e51d4' => 
     array (
       0 => 'app/tpl/corpinternmsg/detail.htm',
-      1 => 1411726905,
+      1 => 1411755498,
       2 => 'file',
     ),
   ),
@@ -20,6 +20,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'web_url' => 0,
+    'corpInfo' => 0,
     'detail' => 0,
     '__userinfo__' => 0,
     'collectFlag' => 0,
@@ -40,10 +41,8 @@ if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/
 <head>
     <meta id="screen-view" name="viewport" content="width=device-width" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/common/app/css/reset.css?v=2.0" />
-    <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/common/app/css/headAndfoot.css" />
+    <?php echo $_smarty_tpl->getSubTemplate ('commcss.htm', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
     <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/app/css/content.css" />
         <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
@@ -52,7 +51,8 @@ if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/
 /common/app/css/common/detail.css" />
 <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/app/css/common/detail-360.css" />
-    <title>招聘信息-<?php echo $_smarty_tpl->tpl_vars['detail']->value['cim_name'];?>
+    <title><?php echo $_smarty_tpl->tpl_vars['corpInfo']->value['type_name'];?>
+-<?php echo $_smarty_tpl->tpl_vars['detail']->value['cim_name'];?>
 </title>
   <script type="text/javascript">
     var web_url = "<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
@@ -82,7 +82,9 @@ if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/
 /index.php/index">首页/</a>
                 </dt>
                 <dt><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/index.php/corpinternmsg/index">招聘信息/</a>
+/index.php/corpinternmsg/index/type/<?php echo $_smarty_tpl->tpl_vars['corpInfo']->value['type_code'];?>
+"><?php echo $_smarty_tpl->tpl_vars['corpInfo']->value['type_name'];?>
+/</a>
                 </dt>
                 <dt><a href="#"><?php echo $_smarty_tpl->tpl_vars['detail']->value['cim_name'];?>
 </a></dt>
@@ -96,9 +98,12 @@ if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/
 </p>
                    <?php if (isset($_smarty_tpl->tpl_vars['__userinfo__']->value)){?>
                         <?php if ($_smarty_tpl->tpl_vars['__userinfo__']->value['type']==0){?>
-                        <span id="do-collect-btn" class="collect-btn" <?php if ($_smarty_tpl->tpl_vars['collectFlag']->value!="1"){?>style="display:none;"<?php }?> >收藏</span>
-                        <span id="cancel-collect-btn" class="collect-btn" data="<?php echo $_smarty_tpl->tpl_vars['detail']->value['cim_id'];?>
-" <?php if ($_smarty_tpl->tpl_vars['collectFlag']->value=="1"){?>style="display:none;"<?php }?> >取消收藏</span>
+                            <?php if ($_smarty_tpl->tpl_vars['collectFlag']->value!="1"){?>
+                              <span id="do-collect-btn" class="collect-btn" style="display:none;" >收藏</span>
+                            <?php }else{ ?>
+                                <span id="cancel-collect-btn" class="collect-btn" data="<?php echo $_smarty_tpl->tpl_vars['detail']->value['cim_id'];?>
+" tyle="display:none;"> >取消收藏</span>
+                            <?php }?>
                         <?php }?>
                     <?php }?>
                 </div>
@@ -110,7 +115,7 @@ if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/
                         分享：<?php echo $_smarty_tpl->tpl_vars['detail']->value['cim_share'];?>
 &nbsp;
                 </div>
-                <div>
+                <div  >
                     <div>
                     <span style="margin-right: 10px;">公司:<?php echo $_smarty_tpl->tpl_vars['detail']->value['cim_addr'];?>
 </span>
@@ -124,7 +129,7 @@ if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/
 </span>
                         </div>
                 </div>
-                <div>
+                <div class="content">
                     <?php if (isset($_smarty_tpl->tpl_vars['zhaopin']->value)){?>
                         <?php if ($_smarty_tpl->tpl_vars['officelist']->value){?>
                         <div class="m-l-office">
@@ -324,9 +329,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['last']       = (
 /common/libs/jquery.min.js"></script>
             <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/app/js/header.js"></script>
-            <script>
-            $(".middle").css("height", $(".middle_left").css("height"));
-            </script><script type="text/javascript">
+         <script type="text/javascript">
 
 $(function(){
     
