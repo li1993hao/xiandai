@@ -2,15 +2,32 @@
 
 //namespace app\controllers;
 
+// array(
+// 	  'jobAct' => 1,  //工作动态
+// 	  'jobNotice' => 2, //通知公告
+// 	  'jobPlan' => 3, //职业生涯规划
+// 	  'jobGuid' => 4, //就业指导
+// 	  'entreGuid' => 5, //创业指导
+// 	  'empPolicy' => 6, //就业政策
+// 	  'empSpe' =>7, //就业专员
+// 	  'fellowVisited' =>8, //校友寻访
+// 	  'empStar' =>9, //创就业明星
+// 	  'bohai' => 11, //渤海轻工业集团
+// 	  'bulletin' => 12, //就业工作简报
+// 	  'stuNotice' => 13, //学生就业通知
+// 	  'centerIntro' => 15, //中心介绍
+// 	  'departIntro' => 16, //院系介绍
+// 	  'recGuid' =>17 //招聘指南
+// 	);
 class JobinfoController extends Controller{
 	
 	private $__typeinfo = array(
-			"jobnews" => array("type_code"=>1,"type_name"=>"就业动态&nbsp;E<em>mployment&nbsp;Dynamics</em>","type_color"=>"red"),
-			"activity" => array("type_code"=>2,"type_name"=>"通知公告&nbsp;N<em>otice</em>","type_color"=>"red"),
-			"plan" => array("type_code"=>3,"type_name"=>"职业生涯规划&nbsp;C<em>areer&nbsp;Planning</em>","type_color"=>"blue"),
-			"search" => array("type_code"=>4,"type_name"=>"求职指导&nbsp;C<em>areer&nbsp;Guidance</em>","type_color"=>"blue"),
-			"start" => array("type_code"=>5,"type_name"=>"创业指导&nbsp;C<em>areer&nbsp;Guidance</em>","type_color"=>"blue"),
-			"process" => array("type_code"=>6,"type_name"=>"创业流程&nbsp;E<em>ntrepreneurial&nbsp;process</em>","type_color"=>"blue")
+			"jobAct"=> array("type_code"=>1,"type_name"=>"工作动态","type_color"=>"red"),
+			"jobNotice"=>array("type_code"=>2,"type_name"=>"通知公告","type_color"=>"red"),
+			"jobPlan"=>array("type_code"=>3,"type_name"=>"职业生涯规划","type_color"=>"blue"),
+			"jobGuid"=> array("type_code"=>4,"type_name"=>"就业指导","type_color"=>"blue"),
+			"entreGuid"=> array("type_code"=>5,"type_name"=>"创业指导","type_color"=>"blue"),
+			"empPolicy"=> array("type_code"=>6,"type_name"=>"就业政策","type_color"=>"blue")
 	);
 	
 	
@@ -42,10 +59,12 @@ class JobinfoController extends Controller{
 			$jobinfo = new jobinfo();
 			$page = $this->getRequest()->get('page') ? $this->getRequest()->get('page') : 1 ;
 			
-			
 			$newsList = $jobinfo->get_news_page_model($typeinfo["type_code"], $page,$pageSize);
-			
-			//print_r($newsList);
+			$frontlist = $jobinfo->getRecNews(6);
+            $this->view->frontlist = $frontlist;
+          //  var_dump($this->view->$frontlist);
+
+
 			$this->getView()->typeinfo = $typeinfo;
 			$this->view->news = $newsList;
 			echo $this->view->render("index.htm");
@@ -53,49 +72,47 @@ class JobinfoController extends Controller{
 		}else{
 			$this->error404();
 		}
-		
-		
 	}
 	
 	/**
 	 * 就业动态
 	 */
-	public function News(){
+	public function jobAct(){
 		$_GET["type"]=1;
 		$this->Index();
-	
 	}
 	
 	/**
 	 * 通知公告
 	 */
-	public function Act(){
+	public function jobNotice(){
 		
 		$_GET["type"]=2;
 		$this->Index();
 	
 	}
 	//职业生涯规划
-	public function Plan(){
+	public function jobPlan(){
 		
 		$_GET["type"]=3;
 		$this->Index();
 		
 	}
 	//求职指导
-	public function Search(){
+	public function jobGuid(){
+
 		$_GET["type"]=4;
 		$this->Index();
 		
 	}
 	//创业指导
-	public function Start(){
+	public function entreGuid(){
 		$_GET["type"]=5;
 		$this->Index();
 		
 	}
-	//创业流程
-	public function Process(){
+	//就业政策
+	public function empPolicy(){
 		$_GET["type"]=6;
 		$this->Index();
 
@@ -110,6 +127,9 @@ class JobinfoController extends Controller{
 			
 			$jobinfodetail = $jobinfo->getDetailInfoFromId($id);
 			if($jobinfodetail){
+
+                $frontlist = $jobinfo->getRecNews(6);
+                $this->view->frontlist = $frontlist;
 				
 				$type = $jobinfodetail['it_id'];
 				$typeinfo = $this->_typecode2info($type);
@@ -139,7 +159,7 @@ class JobinfoController extends Controller{
 	}
 	
 	
-	public function getsearchlist()
+	public function searchlist()
 	{
 		$jobinfo = new jobinfo();
 		$pageSize = 10;
@@ -154,6 +174,8 @@ class JobinfoController extends Controller{
 			$this->gotoUrl('jobinfo','index',0);
 			//exit();
 		}else{
+            $frontlist = $jobinfo->getRecNews(6);
+            $this->view->frontlist = $frontlist;
 			$news = $jobinfo->getSearchlistPageModel($page, $pageSize, $key);
 			$this->view->key = $key;
 			$this->view->news = $news;

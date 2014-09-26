@@ -6,12 +6,11 @@ class AccountController extends Controller{
 		parent::__construct();
 		$this->view->web_url = $this->getRequest()->hostUrl; 
 	}
-
+// Company 注册
 	public function register(){
 		
 		$this->view->reg_flag = "register";
 		if($_POST){
-				$this->dataCheck();
                 $email = $this->getRequest()->get("form_email");
                 $name = $this->getRequest()->get("form_name");
                 $password = $this->getRequest()->get("form_password");
@@ -54,7 +53,10 @@ class AccountController extends Controller{
 				$r1 = $f_user->setCorpUserInfo($dataArr);
 				//$r2 = $f_user->setCorpZzh($id, $fileList);
 				// $r2 = $f_user->setCorpZzh($r1, $fileList);//返回的结果r1是com_id
+				$this->dataCheck();
+
 				$this->view->reg_flag = "succeed";
+
 			}else{
 				if( $result["code"] > 0 ){
 					$this->view->reg_result = "注册失败，该邮箱已被占用！";
@@ -146,7 +148,7 @@ class AccountController extends Controller{
 				// var_dump($re);
 			}else {
 				$re['result'] = 0;
-				$re['msg'] ='Invalid file type【'+$fileTypes+'】.';
+				$re['msg'] ='Invalid file type【filed  not exists】.';
 			}
 			$jsonstr = json_encode($re);
 		}else{
@@ -156,10 +158,31 @@ class AccountController extends Controller{
 		}
 		// echo $jsonstr;
 	}
-		public function createDir($path) {
+	public function createDir($path) {
 		if(!file_exists($path)){
 			$this->createDir(dirname($path));
 			mkdir($path, 0777);
 		}
+	}
+	public function Checkemail(){
+		$email = $this->getRequest()->get("email");
+		$f_user = new frontuser();
+		$code = $f_user->chenckEmailExists($email);
+		if( $code > 0 ){
+			//已存在
+			$this->getView()->setState("0");
+			$this->getView()->setMsg("账号已经存在！");
+			$this->getView()->setData( array("id"=>$code) );
+		
+		}else{
+			if($code == 0){
+				$this->getView()->setState("1");
+				$this->getView()->setMsg("可以使用！");
+			}else{
+				$this->getView()->setState("0");
+				$this->getView()->setMsg("邮箱格式错误！");
+			}
+		}
+		$this->getView()->display("json");
 	}
 }

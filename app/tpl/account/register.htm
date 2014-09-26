@@ -1,31 +1,50 @@
-<<<<<<< HEAD
-=======
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta id="screen-view" name="viewport" content="width=device-width" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/reset.css?v=2.0" />
+    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/headAndfoot.css" />
+    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/index/index.css" />
+    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/account/register.css"/>
+    <title>企业注册</title>
+
+    <script type="text/javascript">
+    var web_url = "<{$web_url}>";
+    </script>
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="<{$web_url}>/common/app/js/DOMAssistantCompressed-2.7.4.js"></script>
+    <script type="text/javascript" src="<{$web_url}>/common/app/js/ie-css3.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
 <{include file='header.htm'}>
-<link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/index/index.css" />
-<link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/account/register.css"/>
-<script type="text/javascript" src="<{$web_url}>/common/app/js/account/account.js"></script>
-<script type="text/javascript" src="<{$web_url}>/common/app/js/account/company_register.js"></script>
 
 <!--导航栏-->
-		<!-- <form id="myform" method="post" enctype="multipart/form-data" action="<{$web_url}>/index.php/account/dataCheck">
-			<input type="text" name="user_name"/>
-			<input type="text" name="pswd"/>
-			<input type="file" name="file_upload"/>
-			<input type="submit" value="注册" id="mysub" />
-		</form> -->
-		
         <div class="nav">
         		<ul>
-        			<li><a class="nav-a"href=#>首页/</a></li><li><a href=#>企业注册</a></li>
+        			<li><a class="nav-a"href="<{$web_url}>/index.php">首页/</a></li><li><a href="<{$web_url}>/index.php/account/register">企业注册</a></li>
         		</ul>
         </div>
 
 		<div class="register_middle">
-			<{$reg_flag}>
+	
 			<{if $reg_flag =="succeed"}>
-            	恭喜您！注册成功！等待系统管理员审核！
+				<div class = "register_success">
+            		恭喜您！注册成功！等待系统管理员审核!  页面将在5s跳转到 <a href= "<{$web_url}>+"/index.php" style="font-size:19px;color:red;">主页</a>
+
+            	<script type="text/javascript">
+					function Redirect(){
+					    window.location = web_url+"/index.php";
+					}
+					timer=setTimeout('Redirect()',10000); //跳转
+				</script>
+            	</div>
             <{else}>
-				<form id="form-register" name="form_register" method="post" enctype="multipart/form-data"  action="<{$web_url}>/index.php/account/register">
+				<form id="form-register" name="form_register" method="post" enctype="multipart/form-data"  action="<{$web_url}>/index.php/account/register" onsubmit = "return checkForm()">
 
 	    		<div class="form-register-item">
 					<span class="form-register-item-title"></span>
@@ -34,7 +53,7 @@
 				</div>
 	    		<div class="form-register-item">
 					<span class="form-register-item-title">登陆邮箱:</span>
-					<input class="form-register-item-input e-mail not-empty" id="form-email" type="text" name="form_email" value="" error_info="请检查注册邮箱！" placeholder="请输入注册邮箱" />
+					<input class="form-register-item-input e-mail not-empty" id="form-email" type="text" name="form_email" value="" error_info="请检查注册邮箱！" />
 					<span class="form-register-item-warn"  init-data=""></span>
 					<div style="clear:both;"></div>
 				</div>
@@ -165,13 +184,14 @@
 				<div class="form-register-item" >
 					<span class="form-register-item-title">&nbsp;</span>
 					<span class="form-register-item-info">
-						<input type="checkbox" value="0" class="" checked/>&nbsp<a href="#" class="form-a">我已阅读《协议》并同意相关条款</a> 
+						<label><img id="chkImg" src="<{$web_url}>/common/app/images/account/register/checked.png" ></label>
+						<label class="form-a">我已阅读《协议》并同意相关条款</label> 
 					</span>
 					<div style="clear:both;"></div>
 				</div>
 				<div class="form-register-item">
 					<span id="register-result" class="form-register-item-title"></span>
-					<input id="form-submit" type="submit" class="form-submit" value="注册"/> 
+					<input id="form-submit" type="submit" class="form-submit" value="注册" /> 
 					<div style="clear:both;"></div>
 				</div>
 				<div class="form-foot">
@@ -182,4 +202,11 @@
 		</div>
 
 <{include file='footer.htm'}>
->>>>>>> FETCH_HEAD
+<script type="text/javascript" src="<{$web_url}>/common/libs/jquery.min.js"></script>
+<script type="text/javascript" src="<{$web_url}>/common/app/js/header.js"></script>
+<script type="text/javascript" src="<{$web_url}>/common/app/js/account/account.js"></script>
+<script type="text/javascript" src="<{$web_url}>/common/app/js/account/company_register.js"></script>
+
+</body>
+</html>
+

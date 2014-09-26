@@ -7,7 +7,16 @@ $(function(){
 		login_toggle();
 	});
 	loginInit();
-})
+
+    $("#search_submit").click(function(){
+        var key = $("#key").val();
+        if(key == ""){
+            shake($("#key"));
+        }else{
+            $("#search_form").submit();
+        }
+    });
+});
 
 function loginInit () {
 	$("#login_submit").click(function(){
@@ -44,4 +53,16 @@ function loginInit () {
 
 
 	});
+}
+
+/**
+ * 让元素抖动起来
+ * @param  {[type]} ele
+ * @return {[type]}
+ */
+function shake(ele) {
+    $(ele).addClass("shake");
+    setTimeout(function() {
+        $(ele).removeClass("shake");
+    }, 1000);
 }

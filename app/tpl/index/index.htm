@@ -22,62 +22,8 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="top_login">
-            <p id="login_error" class="error">
-                <p>
-                    <div>
-                        <div>
-                            <span>账号:</span>
-                            <input type="text" name="user_name" id="user_name" placeholder="学号或邮箱" />
-                        </div>
-                        <div>
-                            <span>密码:</span>
-                            <input type="password" name="user_pswd" id="user_pswd" />
-                        </div>
-                        <div id="login_submit">登录</div>
-                    </div>
-                    <div>
-                        <p>>学生可以使用学号登录,初始密码为身份证后六位</p>
-                        <p>>企业可以使用您的注册邮箱进行登录</p>
-                        <p>>如果忘记密码请联系天津现代职业技术学院就业指导中心</p>
-                    </div>
-        </div>
-        <div class="header" id="header">
-            <div class="header_top">
-                <{if isset($__userinfo__) }>
-                    <ul class="header_login">
+<{include file='header.htm' }>
 
-                        <{if $__userinfo__.type=="0"}>
-                            <li><img src="<{$web_url}>/common/upload/images/<{$__userinfo__.piclink}>"> </img></li>
-                            <li><a><{$__userinfo__.name}></a></li>
-                            <li> <a target="_blank" href="<{$web_url}>/index.php/student/myinfo">个人中心</a> </li>
-                            <{elseif $__userinfo__.type=="1" }>
-                            <li> <a target="_blank" href="<{$web_url}>/index.php/company/myinfo">个人中心 </a> </li>
-                            <{else}>
-                            <li> <a target="_blank" href="<{$web_url}>/index.php/teacher/myinfo">个人中心</a> </li>
-                        <{/if}>
-                        <li><a id="login_out" href="<{$web_url}>/index.php/index/logout">注销</a>
-                        </li>
-                    </ul>
-
-                    <{else}>
-                        <ul class="header_unlogin">
-                            <li><a href="javascript:void(0)">用户登录</a>
-                            </li>
-                            <li><a href="javascript:void(0)">企业注册</a>
-                            </li>
-                            <li><a href="javascript:void(0)">校友注册</a>
-                            </li>
-                        </ul>
-                    <{/if}>
-                    <div class="search">
-                        <input type="text" placeholder="请输入关键字"></input>
-                        <a href="javascript:void(0)">搜索</a>
-                    </div>
-            </div>
-            <div class="banner"></div>
-        </div>
         <!--导航栏-->
         <div class="nav">
             <ul>
@@ -113,7 +59,7 @@
                 </li>
                 <li><a href="<{$web_url}>/index.php/jobinfo/entreGuid">创业指导</a>
                 </li>
-                <li><a href="<{$web_url}>/index.php/Employmentpolicy/index">就业政策</a>
+                <li><a href="<{$web_url}>/index.php/jobinfo/empPolicy">就业政策</a>
                 </li>
                 <li><a href="<{$web_url}>/index.php/jobinfo/jobNotice">通知公告</a>
                 </li>
@@ -128,13 +74,13 @@
                 <div class="carousel_scroll_wrap">
                     <div class="carousel_content">
                         <div>
-                            <img src="<{$web_url}>/common/app/images/index/hit1.png"></img>
+                            <img src="<{$web_url}>/common/app/images/index/hit1.png"/>
                         </div>
                         <div>
-                            <img src="<{$web_url}>/common/app/images/index/hit1.png"></img>
+                            <img src="<{$web_url}>/common/app/images/index/hit1.png"/>
                         </div>
                         <div>
-                            <img src="<{$web_url}>/common/app/images/index/hit1.png"></img>
+                            <img src="<{$web_url}>/common/app/images/index/hit1.png"/>
                         </div>
                     </div>
                 </div>
@@ -176,7 +122,7 @@
                                 </li>
                                 <li><a href="<{$web_url}>/index.php/jobinfo/jobGuid">就业指导</a>
                                 </li>
-                                <li><a href="<{$web_url}>/index.php/Employmentpolicy/index">就业政策</a>
+                                <li><a href="<{$web_url}>/index.php/jobinfo/empPolicy">就业政策</a>
                                 </li>
                                 <li><a href="<{$web_url}>/index.php/jobinfo/entreGuid">创业指导</a>
                                 </li>
@@ -545,7 +491,7 @@
                         </div>
                         <div>
                                 <{section name=wwperson loop=$wwPersons}>
-                                <a href="<{$web_url}>/index.php/west/detail/id/<{$wwPersons[wwperson].ww_id}>"><img src="<{$web_url}>/common/upload/images/<{$wwPersons[wwperson].pic_link|default:"noimg.jpg"}>" alt="<{$wwPersons[wwperson].ww_title}>" /></a>
+                                <a href="<{$web_url}>/index.php/west/detail/id/<{$wwPersons[wwperson].ww_id}>"><img src="<{$web_url}>/common/upload/images/<{$wwPersons[wwperson].pic_link|default:'noimg.jpg'}>" alt="<{$wwPersons[wwperson].ww_title}>" /></a>
                                 <{/section}>
                             </a>
                         </div>
@@ -682,67 +628,7 @@
 
         </div>
 
-        <div class="footer" id="footer">
-            <div>
-                <ul>
-                    <li>
-                        <img src="<{$web_url}>/common/app/images/logo.png"></img>
-                    </li>
-                    <li>天津现代职业技术学院就业指导中心</li>
-                    <li>版权所有</li>
-                    <li>今日访问量：315</li>
-                    <li>总访问量：55433</li>
-                    <li>自2013年9月30日起计数</li>
-                </ul>
-
-            </div>
-            <div>
-                <ul>
-                    <li>服务指南</li>
-                    <li>用人单位服务</li>
-                    <li>邮箱:xxxx@163.com</li>
-                    <li>电话:022-12345678</li>
-                    <li>传真:022-12345678</li>
-                    <li>就业政策咨询</li>
-                    <li>电话:022-12345678</li>
-                    <li>传真:022-12345678</li>
-                    <li>职业生涯辅导</li>
-                    <li>电话:022-12345678</li>
-                    <li>传真:022-12345678</li>
-                </ul>
-            </div>
-            <div>
-                <ul>
-                    <li>友情链接</li>
-                    <{section name=i loop=$friendlink}>
-                        <li>
-                            <a title="<{$friendlink[i].fl_title}>" target="_blank" href="<{$friendlink[i].fl_url}>">
-                                <{$friendlink[i].fl_title|truncate:10: '…':true}>
-                            </a>
-                        </li>
-                        <{/section}>
-                </ul>
-            </div>
-            <div>
-                <ul>
-                    <li>客户端下载</li>
-                    <li>
-                        <div>
-                            <div><a href="#"><img src="<{$web_url}>/common/app/images/android.png"></img></a>
-                            </div>
-                            <div>安卓客户端</div>
-                        </div>
-                        <div>
-                            <div><a href="#"><img src="<{$web_url}>/common/app/images/ios.png"></img></a>
-                            </div>
-                            <div>ios客户端</div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-        </div>
-    </div>
+<{include file='footer.htm' }>
     <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/am.min.css" />
     <script type="text/javascript" src="<{$web_url}>/common/libs/jquery.min.js"></script>
     <script type="text/javascript" src="<{$web_url}>/common/app/js/index/index.js"></script>

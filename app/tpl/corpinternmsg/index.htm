@@ -35,9 +35,9 @@
                 <div class="news_item">
                     <div>
                         <{if $news.list[n].cim_isup==""}>
-                              <div><a href="<{$web_url}>/index.php/Corpinternmsg/detail/id/<{$news.list[n].cim_id}>" ><{$news.list[n].cim_name|truncate:21:'…'}></a>
+                              <div><a href="<{$web_url}>/index.php/Corpinternmsg/detail/id/<{$news.list[n].cim_id}>" ><{$news.list[n].cim_name|truncate:21:'…'}></a></div>
                         <{else}>
-                           <div><a href="<{$web_url}>/index.php/Corpinternmsg/detail/id/<{$news.list[n].cim_id}>" style="color:red">[顶]<{$news.list[n].cim_name|truncate:21:'…'}></a>
+                           <div><a href="<{$web_url}>/index.php/Corpinternmsg/detail/id/<{$news.list[n].cim_id}>" style="color:red">[顶]<{$news.list[n].cim_name|truncate:21:'…'}></a></div>>
                         <{/if}>
              
                         </div>
@@ -77,11 +77,11 @@
             </div>
         </div>
         <{include file='footer.htm' }>
-            <script type="text/javascript" src="<{$web_url}>/common/libs/jquery.min.js"></script>
-            <script type="text/javascript" src="<{$web_url}>/common/app/js/header.js"></script>
-            <script>
-                $(".middle").css("height",$(".middle_left").css("height"));
-            </script>
+        <script type="text/javascript" src="<{$web_url}>/common/libs/jquery.min.js"></script>
+        <script type="text/javascript" src="<{$web_url}>/common/app/js/header.js"></script>
+        <script>
+            $(".middle").css("height",$(".middle_left").css("height"));
+        </script>
 </body>
 
 </html>

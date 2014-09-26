@@ -80,10 +80,11 @@ class App{
 		//判断当前有没有这个类和方法
 		$cName=$this->_request->cName.'Controller';
 		$aName=$this->_request->aName;
-		//echo $this->_cPath.'/'.$this->_request->cName;
+		//echo $this->_cPath.'/'.$this->_request->cName.'/'.$this->_request->aName;
 		$controller=$this->checkCA($cName,$aName);
-		
+
 		if( is_object($controller) ){
+			//echo $this->_cPath.'/'.$this->_request->cName.'/'.$this->_request->aName;
 			$controller->$aName();
 		}else{
 			if($controller==0){
@@ -131,17 +132,15 @@ class App{
 	 * @return controller
 	 */
 	public function checkCA($cName,$aName){
-		
+
 		if(!file_exists($this->_cPath.'/'.$cName.'.php')){
-		
 			return 0;
 		}else{ 
-		
+			
 			include_once($this->_cPath.'/'.$cName.'.php');
 			//echo $this->_cPath.'/'.$cName.'.php';
 			//echo $cName;
 			$controller=new $cName();
-		
 			//判断实例$instance中是否存在$action方法, 不存在则提示错误 
 			if(!method_exists($controller, $aName)){
 				return -1;

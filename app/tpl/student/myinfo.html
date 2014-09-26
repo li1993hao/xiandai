@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta id="screen-view" name="viewport" content="width=device-width" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/reset.css?v=2.0" />
+    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/headAndfoot.css" />
+    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/student/myinfo.css" />
+    <title><{$key}></title>
+    <script type="text/javascript">
+        var web_url = "<{$web_url}>";
+    </script>
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="<{$web_url}>/common/app/js/DOMAssistantCompressed-2.7.4.js"></script>
+    <script type="text/javascript" src="<{$web_url}>/common/app/js/ie-css3.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+<{include file='header.htm'}>
+   <div id="middle">
+       <!-- 导航栏-->
+       <div class="middle_top">
+           <p><a id="toStart" href="<{$web_url}>/index.php"> 首页</a>/个人中心/学生基本信息</p>
+       </div>
+       <!-- 中间左部-->
+       <div id="middle_left">
+            <div id="title">
+                <p>功能菜单</p>
+            </div>
+           <div id="xuanxiang">
+               <p id="xuanzhong">学生基本信息</p>
+               <p>我的招聘</p>
+               <p>修改密码</p>
+               <p>满意度调查</p>
+           </div>
+
+       </div>
+       <!-- 中间右部-->
+       <div id="middle_right">
+           <div id="middle_right_name">
+               小爱同学
+              <div id="xiugai">
+                <p><a href="#"> 修改</a></p>
+              </div>
+               <div id="middle_right_sex">
+                   性别;女
+               </div>
+               <div id="middle_right_birthday">
+                   出生年月;1992-01-01
+               </div>
+               <div id="middle_right_photo">
+                  个人照片：
+               </div>
+               <div id="middle_right_img">
+                   <div id="touxiang">
+
+                   </div>
+               </div>
+               <div id="middle_right_gerenpingjia">
+                   个人评价：
+                   <div id="middle_right_gerenpingjia_content">
+                       &nbsp; &nbsp; &nbsp;XXXXX014年天津市科2市市2014年天津市2014年天津年天津市2014年天津市2014年天津014年天津市科2市市2014年天津市2014年天津年天津市2014年天津市2014年天津014年天津市科2市市2014年天津市2014年天津年天津市2014年天津市2014年天津
+                   </div>
+               </div>
+
+           </div>
+
+       </div>
+   </div>
+
+
+<{include file='footer.htm'}>
+<script type="text/javascript" src="<{$web_url}>/common/libs/jquery.min.js"></script>
+<script type="text/javascript" src="<{$web_url}>/common/app/js/header.js"></script>
+<script>
+    $(".middle").css("height",$(".middle_left").css("height"));
+</script>
+</body>
+
+</html>

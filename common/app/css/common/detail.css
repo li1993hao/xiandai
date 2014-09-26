@@ -37,7 +37,7 @@
 .m-l-office{width:700px;padding-bottom:15px;}
 .m-l-office-header{height:25px;font-size:16px;line-height:25px;color:#446976;font-weight: bold;padding:5px 0;}
 .m-l-office-main{}
-.office-name{font-size: 14px;color: #585858;line-height: 30px;font-family: 黑体;}
+.office-name{font-size: 14px;color: #585858;line-height: 30px;font-family:"黑体";}
 .office-intro{font-size:14px;line-height:22px;color:#585858;margin-bottom:10px;}
 /*职位*/
 
@@ -49,8 +49,7 @@
 
 
 /*图片*/
-#middle_img{margin:15px;text-align: center;	width:300px;overflow: hidden;float:right;clear:both;	/*background-color:green;*/}
-#middle_img img{	max-width:300px;}
+#middle_img{margin:15px;text-align: center;	width:100%;overflow: hidden;float:right;clear:both;	/*background-color:green;*/}
 /*图片*/
 
 

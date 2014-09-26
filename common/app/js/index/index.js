@@ -247,17 +247,6 @@ function baiduMap(){
 		marker1.addEventListener("click", function(){this.openInfoWindow(infoWindow1);});
 		map.addOverlay(marker1);
 }
-/**
- * 让元素抖动起来
- * @param  {[type]} ele
- * @return {[type]}
- */
-function shake(ele) {
-    $(ele).addClass("shake");
-    setTimeout(function() {
-        $(ele).removeClass("shake");
-    }, 1000);
-}
 
 
 

@@ -26,7 +26,7 @@
 
                     <{if $__userinfo__.type=="0" }>
                         <li>
-                            <img src="<{$web_url}>/common/upload/images/<{$__userinfo__.piclink}>"></img>
+                            <img src="<{$web_url}>/common/upload/images/<{$__userinfo__.piclink}>"/>
                         </li>
                         <li>
                             <a>
@@ -35,12 +35,10 @@
                         </li>
                         <li> <a target="_blank" href="<{$web_url}>/index.php/student/myinfo">个人中心</a> 
                         </li>
-                        <{elseif $__userinfo__.type=="1" }>
+                        <{else $__userinfo__.type=="1" }>
                             <li> <a target="_blank" href="<{$web_url}>/index.php/company/myinfo">个人中心 </a> 
                             </li>
-                            <{else}>
-                                <li> <a target="_blank" href="<{$web_url}>/index.php/teacher/myinfo">个人中心</a>
-                                </li>
+
 
                                 <{/if}>
                                     <li><a id="login_out" href="<{$web_url}>/index.php/index/logout">注销</a>
@@ -60,10 +58,12 @@
                     <{/if}>
                         </li>
                         </ul>
+                        <form id="search_form" action="<{$web_url}>/index.php/jobinfo/searchlist" method="post">
                         <div class="search">
-                            <input type="text" placeholder="请输入关键字"></input>
-                            <a href="javascript:void(0)">搜索</a>
+                            <input type="text" id="key" name="key" placeholder="请输入关键字"/>
+                            <a href="javascript:void(0)" id="search_submit">搜索</a>
                         </div>
+                         </form>
         </div>
         <div class="banner"></div>
     </div>

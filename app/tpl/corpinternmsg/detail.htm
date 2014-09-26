@@ -45,8 +45,11 @@
                     <p><{$detail.cim_name}></p>
                    <{if isset($__userinfo__)}>
                         <{if $__userinfo__.type==0}>
-                        <span id="do-collect-btn" class="collect-btn" <{if $collectFlag!="1"}>style="display:none;"<{/if}> >收藏</span>
-                        <span id="cancel-collect-btn" class="collect-btn" data="<{$detail.cim_id}>" <{if $collectFlag=="1"}>style="display:none;"<{/if}> >取消收藏</span>
+                            <{if $collectFlag!="1"}>
+                              <span id="do-collect-btn" class="collect-btn" style="display:none;" >收藏</span>
+                            <{else}>
+                                <span id="cancel-collect-btn" class="collect-btn" data="<{$detail.cim_id}>" tyle="display:none;"> >取消收藏</span>
+                            <{/if}>
                         <{/if}>
                     <{/if}>
                 </div>
@@ -56,10 +59,14 @@
                         分享：<{$detail.cim_share}>&nbsp;
                 </div>
                 <div>
-                    <span>公司:<{$detail.cim_addr}></span>
+                    <div>
+                    <span style="margin-right: 10px;">公司:<{$detail.cim_addr}></span>
                     <span>联系人:<{$detail.cim_contact}></span>
-                    <span>联系电话:<{$detail.cim_tel}></span>
+                     </div>
+                    <div>
+                    <span  style="margin-right: 50px;">联系电话:<{$detail.cim_tel}></span>
                     <span>邮箱:<{$detail.cim_email}></span>
+                        </div>
                 </div>
                 <div>
                     <{if isset($zhaopin)}>

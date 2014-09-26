@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta id="screen-view" name="viewport" content="width=device-width" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/reset.css?v=2.0" />
+    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/headAndfoot.css" />
+    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/list.css" />
+    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/cor_drop.css" />
+    <title><{$key}></title>
+    <script type="text/javascript">
+        var web_url = "<{$web_url}>";
+    </script>
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="<{$web_url}>/common/app/js/DOMAssistantCompressed-2.7.4.js"></script>
+    <script type="text/javascript" src="<{$web_url}>/common/app/js/ie-css3.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+<{include file='header.htm' }>
+<!--导航栏-->
+<div class="nav">
+    <dl>
+        <dt><a href="<{$web_url}>/index.php/index">首页/</a>
+        </dt>
+        <dt><a href="#">搜索/<{$key}></a>
+        </dt>
+    </dl>
+</div>
+<div class="middle">
+
+    <div class="middle_left">
+        <{section name=n loop=$news.list}>
+        <div class="news_item">
+            <div>
+                <{if $news.list[n].ji_recom!="" and $news.list[n].ji_isup!="" }>
+                <div><a style="color:red" href="<{$web_url}>/index.php/jobinfo/detail/id/<{$news.list[n].ji_id}>">
+                    [荐][顶]<{$news.list[n].ji_title}>
+                </a></div>
+                <{else if $news.list[n].ji_recom neq ""}>
+                <div><a style="color:red" href="<{$web_url}>/index.php/jobinfo/detail/id/<{$news.list[n].ji_id}>">
+                    [荐]<{$news.list[n].ji_title}>
+                </a></div>
+                <{else if $news.list[n].ji_isup==""}>
+                <div><a href="<{$web_url}>/index.php/jobinfo/detail/id/<{$news.list[n].ji_id}>">
+                    <{$news.list[n].ji_title}>
+                </a></div>
+                <{else}>
+                <div><a style="color:red" href="<{$web_url}>/index.php/jobinfo/detail/id/<{$news.list[n].ji_id}>">
+                    [顶]<{$news.list[n].ji_title}>
+                </a></div>
+                <{/if}>
+                <span><{$news.list[n].ji_date}></span>
+            </div>
+            <p><{$news.list[n].ji_content|strip_tags|strip|truncate:130:'…':true}></p>
+            <ul>
+                <li style="display: none"></li>
+                <li><{$news.list[n].ji_read}></li>
+                <li><{$news.list[n].ji_share}></li>
+                <li><a href="<{$web_url}>/index.php/jobinfo/detail/id/<{$news.list[n].jm_id}>">查看详情>></a>
+                </li>
+            </ul>
+        </div>
+        <{/section}>
+
+        <{page info=$news web_url=$web_url url="/index.php/jobinfo/searchlist/key/$key>" }>
+    </div>
+
+    <div class="middle_right">
+        <div class="rec">
+            <div>热点排行</div>
+            <{section name=i loop=$frontlist}>
+
+            <div class="rec_item">
+                <div><a href="<{$web_url}>/index.php/jobinfo/detail/type/<{$frontlist[i].it_id}>/id/<{$frontlist[i].ji_id}>">  <{$frontlist[i].ji_title|truncate:22: '…':true}></a>
+                </div>
+                <div>
+                    <{$frontlist[i].ji_content|strip_tags|strip|truncate:50: '…':true|default: "暂无介绍~"}>
+                </div>
+                <div> <{$frontlist[i].ji_date|date_format: "%Y-%m-%d"}></div>
+            </div>
+            <{/section}>
+        </div>
+    </div>
+</div>
+<{include file='footer.htm' }>
+<script type="text/javascript" src="<{$web_url}>/common/libs/jquery.min.js"></script>
+<script type="text/javascript" src="<{$web_url}>/common/app/js/header.js"></script>
+<script>
+    $(".middle").css("height",$(".middle_left").css("height"));
+</script>
+</body>
+
+</html>

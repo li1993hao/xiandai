@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-26 12:28:03
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-26 18:21:46
          compiled from "app/tpl/corpinternmsg/detail.htm" */ ?>
 <?php /*%%SmartyHeaderCode:2819725735424daa479a1c4-17662961%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '41b19ef4fdc47066a48c22f1501b48ab962e51d4' => 
     array (
       0 => 'app/tpl/corpinternmsg/detail.htm',
-      1 => 1411705629,
+      1 => 1411726905,
       2 => 'file',
     ),
   ),
@@ -111,14 +111,18 @@ if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/
 &nbsp;
                 </div>
                 <div>
-                    <span>公司:<?php echo $_smarty_tpl->tpl_vars['detail']->value['cim_addr'];?>
+                    <div>
+                    <span style="margin-right: 10px;">公司:<?php echo $_smarty_tpl->tpl_vars['detail']->value['cim_addr'];?>
 </span>
                     <span>联系人:<?php echo $_smarty_tpl->tpl_vars['detail']->value['cim_contact'];?>
 </span>
-                    <span>联系电话:<?php echo $_smarty_tpl->tpl_vars['detail']->value['cim_tel'];?>
+                     </div>
+                    <div>
+                    <span  style="margin-right: 50px;">联系电话:<?php echo $_smarty_tpl->tpl_vars['detail']->value['cim_tel'];?>
 </span>
                     <span>邮箱:<?php echo $_smarty_tpl->tpl_vars['detail']->value['cim_email'];?>
 </span>
+                        </div>
                 </div>
                 <div>
                     <?php if (isset($_smarty_tpl->tpl_vars['zhaopin']->value)){?>

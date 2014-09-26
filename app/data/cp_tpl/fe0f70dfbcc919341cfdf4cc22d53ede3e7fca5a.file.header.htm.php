@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-26 11:44:04
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-26 19:37:56
          compiled from "app/tpl/header.htm" */ ?>
 <?php /*%%SmartyHeaderCode:204437015354206321d22f37-72171919%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fe0f70dfbcc919341cfdf4cc22d53ede3e7fca5a' => 
     array (
       0 => 'app/tpl/header.htm',
-      1 => 1411703043,
+      1 => 1411731473,
       2 => 'file',
     ),
   ),
@@ -54,7 +54,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                         <li>
                             <img src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/upload/images/<?php echo $_smarty_tpl->tpl_vars['__userinfo__']->value['piclink'];?>
-"></img>
+"/>
                         </li>
                         <li>
                             <a>
@@ -65,14 +65,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                         <li> <a target="_blank" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /index.php/student/myinfo">个人中心</a> 
                         </li>
-                        <?php }elseif($_smarty_tpl->tpl_vars['__userinfo__']->value['type']=="1"){?>
+                        <?php }else{ ?>
                             <li> <a target="_blank" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /index.php/company/myinfo">个人中心 </a> 
                             </li>
-                            <?php }else{ ?>
-                                <li> <a target="_blank" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/index.php/teacher/myinfo">个人中心</a>
-                                </li>
+
 
                                 <?php }?>
                                     <li><a id="login_out" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
@@ -93,10 +90,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                     <?php }?>
                         </li>
                         </ul>
+                        <form id="search_form" action="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/jobinfo/searchlist" method="post">
                         <div class="search">
-                            <input type="text" placeholder="请输入关键字"></input>
-                            <a href="javascript:void(0)">搜索</a>
+                            <input type="text" id="key" name="key" placeholder="请输入关键字"/>
+                            <a href="javascript:void(0)" id="search_submit">搜索</a>
                         </div>
+                         </form>
         </div>
         <div class="banner"></div>
     </div><?php }} ?>
