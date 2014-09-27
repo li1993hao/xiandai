@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-27 01:09:25
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-27 14:16:00
          compiled from "app/tpl/jobinfo/index.htm" */ ?>
 <?php /*%%SmartyHeaderCode:1406779035425318bbb1f19-59004530%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '33d42e44289cc4596bb64efde16f105b9df0c751' => 
     array (
       0 => 'app/tpl/jobinfo/index.htm',
-      1 => 1411750816,
+      1 => 1411797005,
       2 => 'file',
     ),
   ),
@@ -140,7 +140,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['last']       = ($_smart
                         <li><?php echo $_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['ji_share'];?>
 </li>
                         <li><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/index.php/jobfairmsg/detail/id/<?php echo $_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['jm_id'];?>
+/index.php/jobinfo/detail/id/<?php echo $_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['ji_id'];?>
 ">查看详情>></a>
                         </li>
                     </ul>

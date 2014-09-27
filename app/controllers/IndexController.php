@@ -9,6 +9,13 @@ class IndexController extends Controller{
 		$this->view->web_url = $this->getRequest()->hostUrl; 
 	}
 
+
+    public function  test(){
+        $jobInfo = new jobinfo();
+        $recNews = $jobInfo->getRecNews();
+        print_r($recNews);
+    }
+
 	public function Index(){
 		$userinfo = $this->getData("userinfo");
 
@@ -18,6 +25,11 @@ class IndexController extends Controller{
 		$this->view->jobGuid = $jobInfoDao->getCM("jobGuid",1,4); //就业指导	
 		$this->view->jobPlan = $jobInfoDao->getCM("jobPlan",1,4); //职业生涯规划	
 		$this->view->entreGuid = $jobInfoDao->getCM("entreGuid",1,4); //创业指导	
+
+        //首页焦点图
+        $recNews = $jobInfoDao->getRecNews();
+        //print_r($recNews);
+        $this->view->recNews = $recNews;
 
 		//校友寻访 8
 		$ppt = new professionpersontalk();
@@ -46,21 +58,24 @@ class IndexController extends Controller{
 
 
 		//招聘会日历
-		$job = new jobfairmsg();
-		if($userinfo){
-			$jobFair = $job->getRecentCorpMsg(5,1);
-		}else{
-			$jobFair = $job->getRecentCorpMsg(5,0);
-		}
-		$this->view->jobFair = $jobFair;
-		$tempArray =  array();
-		if(count($jobFair) < 5){
-			$tempCount = 5 - count($jobFair);
-			for($i =0; $i<$tempCount; $i++){
-				$tempArray[$i] = $i;
-			}
-		}
-		$this->view->tempCalendar = $tempArray;
+        $job = new jobfairmsg();
+        if($userinfo){
+            $jobFair = $job->getRecentCorpMsg(5,1);
+        }else{
+            $jobFair = $job->getRecentCorpMsg(5,0);
+        }
+        $this->view->jobFair = $jobFair;
+
+        if(!$jobFair){
+            $tempCount = 5;
+        }else{
+            $tempCount = 5 - count($jobFair);
+        }
+        $tempArray =  array();
+        for($i =0; $i<$tempCount; $i++){
+            $tempArray[$i] = $i;
+        }
+        $this->view->tempCalendar = $tempArray;
 
 		//招聘会信息
 		if($userinfo){
@@ -150,6 +165,7 @@ class IndexController extends Controller{
 			$this->getView()->setMsg($result["msg"]);
 			$this->getView()->setStatus("1");
 			$sessionUtil = $this->getApp()->loadUtilClass("SessionUtil");
+            $this->getView()->setData(array("userType"=>$result["userinfo"]["type"],"userTypeName"=>$result["userinfo"]["typename"],"userName"=>$result["userinfo"]["name"],"userState"=>$result["userinfo"]["state"],"userStateName"=>$result["userinfo"]["statename"]));
 			$sessionUtil->set ( "session_userid", $result["result"] );
 		}else{
 			$this->getView()->setState("0");

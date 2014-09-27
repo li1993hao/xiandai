@@ -1,7 +1,7 @@
 <div class="container">
     <div class="top_login">
         <p id="login_error" class="error">
-            <p>
+            </p>
                 <div>
                     <div>
                         <span>账号:</span>
@@ -29,13 +29,14 @@
                             <img src="<{$web_url}>/common/upload/images/<{$__userinfo__.piclink}>"/>
                         </li>
                         <li>
-                            <a>
+                            <a style="text-decoration: none">
                                 <{$__userinfo__.name}>
                             </a>
                         </li>
                         <li> <a target="_blank" href="<{$web_url}>/index.php/student/myinfo">个人中心</a> 
                         </li>
                         <{else $__userinfo__.type=="1" }>
+                            <li><{$__userinfo__.com_name}></li>
                             <li> <a target="_blank" href="<{$web_url}>/index.php/company/myinfo">个人中心 </a> 
                             </li>
 

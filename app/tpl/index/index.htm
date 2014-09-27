@@ -59,7 +59,7 @@
                 </li>
                 <li><a href="<{$web_url}>/index.php/jobinfo/entreGuid">创业指导</a>
                 </li>
-                <li><a href="<{$web_url}>/index.php/jobinfo/empPolicy">就业政策</a>
+                <li><a href="<{$web_url}>/index.php/employmentpolicy/index">就业政策</a>
                 </li>
                 <li><a href="<{$web_url}>/index.php/jobinfo/jobNotice">通知公告</a>
                 </li>
@@ -73,27 +73,46 @@
             <div class="carousel">
                 <div class="carousel_scroll_wrap">
                     <div class="carousel_content">
+                        <{section name=recnews loop=$recNews}>
                         <div>
-                            <img src="<{$web_url}>/common/app/images/index/hit1.png"/>
+                           <a href="<{$web_url}>/index.php/jobinfo/detail/id/<{$recNews[recnews].ji_id}>">
+                               <img src="<{$web_url}>/common/upload/images/<{$recNews[recnews].pic_link|default:'noimg.jpg'}>"/></a>
                         </div>
-                        <div>
-                            <img src="<{$web_url}>/common/app/images/index/hit1.png"/>
-                        </div>
-                        <div>
-                            <img src="<{$web_url}>/common/app/images/index/hit1.png"/>
-                        </div>
+                        <{/section}>
                     </div>
                 </div>
 
                 <div class="carousel_info">
-                    <div class="carousel_left">《</div>
-                    <div class="carousel_mid">
-                        <div>
-                            标题
-                        </div>
-                        <div>多发点佛挡杀佛水电费</div>
-                    </div>
-                    <div class="carousel_right">》</div>
+                    <div class="carousel_left"></div>
+                    <{section name=recnews loop=$recNews}>
+                        <{if $smarty.section.recnews.index == 0}>
+                            <div class="carousel_mid">
+                                <div>
+                                    <a href="<{$web_url}>/index.php/jobinfo/detail/id/<{$recNews[recnews].ji_id}>"><{$recNews[recnews].ji_title}></a>
+                                </div>
+                                <div><{$recNews[recnews].ji_content|strip_tags|strip|truncate:50: '…':true|default: "暂无介绍~"}></div>
+                            </div>
+                        <{else}>
+                            <div class="carousel_mid" style="display: none">
+                                <div>
+                                    <a href="<{$web_url}>/index.php/jobinfo/detail/id/<{$recNews[recnews].ji_id}>"><{$recNews[recnews].ji_title}></a>
+                                </div>>
+                                <div><{$recNews[recnews].ji_content|strip_tags|strip|truncate:50: '…':true|default: "暂无介绍~"}></div>
+                            </div>
+                            <{if $smarty.section.recnews.last}>
+                                <{section name=l loop=$recNews max=1}>
+                                <div class="carousel_mid" style="display: none">
+                                    <div>
+                                        <a href="<{$web_url}>/index.php/jobinfo/detail/id/<{$recNews[l].ji_id}>"><{$recNews[l].ji_title}></a>
+                                    </div>>
+                                    <div><{$recNews[l].ji_content|strip_tags|strip|truncate:50: '…':true|default: "暂无介绍~"}></div>
+                                </div>
+                                <{/section}>
+                            <{/if}>
+
+                        <{/if}>
+                    <{/section}>
+                    <div class="carousel_right"></div>
                 </div>
             </div>
 
@@ -122,7 +141,7 @@
                                 </li>
                                 <li><a href="<{$web_url}>/index.php/jobinfo/jobGuid">就业指导</a>
                                 </li>
-                                <li><a href="<{$web_url}>/index.php/jobinfo/empPolicy">就业政策</a>
+                                <li><a href="<{$web_url}>/index.php/Employmentpolicy/index">就业政策</a>
                                 </li>
                                 <li><a href="<{$web_url}>/index.php/jobinfo/entreGuid">创业指导</a>
                                 </li>
@@ -251,7 +270,7 @@
                                     <li>
                                         <div>
                                             <div>
-                                                <{if $interMsg[i].cim_isup != "" }>
+                                                <{if $corpMsg[i].cim_isup != "" }>
                                                 <a style="color: #ff0000" href="<{$web_url}>/index.php/Corpinternmsg/Corpdetail/id/<{$corpMsg[i].cim_id}>">
                                                     [顶]<{$corpMsg[i].cim_name|truncate:35: '…':true}>
                                                 </a>

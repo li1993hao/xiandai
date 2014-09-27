@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-27 01:07:50
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-27 14:59:49
          compiled from "app/tpl/header.htm" */ ?>
 <?php /*%%SmartyHeaderCode:204437015354206321d22f37-72171919%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fe0f70dfbcc919341cfdf4cc22d53ede3e7fca5a' => 
     array (
       0 => 'app/tpl/header.htm',
-      1 => 1411751269,
+      1 => 1411801183,
       2 => 'file',
     ),
   ),
@@ -27,7 +27,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <?php if ($_valid && !is_callable('content_54206321d32389_43416333')) {function content_54206321d32389_43416333($_smarty_tpl) {?><div class="container">
     <div class="top_login">
         <p id="login_error" class="error">
-            <p>
+            </p>
                 <div>
                     <div>
                         <span>账号:</span>
@@ -57,7 +57,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 "/>
                         </li>
                         <li>
-                            <a>
+                            <a style="text-decoration: none">
                                 <?php echo $_smarty_tpl->tpl_vars['__userinfo__']->value['name'];?>
 
                             </a>
@@ -66,6 +66,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 /index.php/student/myinfo">个人中心</a> 
                         </li>
                         <?php }else{ ?>
+                            <li><?php echo $_smarty_tpl->tpl_vars['__userinfo__']->value['com_name'];?>
+</li>
                             <li> <a target="_blank" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /index.php/company/myinfo">个人中心 </a> 
                             </li>

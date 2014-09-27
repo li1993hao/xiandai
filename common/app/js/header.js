@@ -17,9 +17,6 @@ $(function(){
         }
     });
 
-
-
-
     if($("#middle_img")){
 
         $("#middle_img img").click(function(){

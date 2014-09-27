@@ -156,7 +156,7 @@ class AccountController extends Controller{
 			$re['msg'] ='no file.';
 			$jsonstr = json_encode($re);
 		}
-		// echo $jsonstr;
+		 return $jsonstr;
 	}
 	public function createDir($path) {
 		if(!file_exists($path)){

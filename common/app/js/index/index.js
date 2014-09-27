@@ -96,26 +96,38 @@ $(function(){
 	/**轮播控件***/
 	var car_div = $(".carousel_content div");
 	scrollCount = car_div.length+1;
-	scrollWidth = $(car_div[0]).css("width").replace(/px/,"");
 
-	var last = $(".carousel_content div:first-child").clone();
-	$(".carousel_content").append(last);
+    if(scrollCount >2){
+        scrollWidth = $(car_div[0]).css("width").replace(/px/,"");
 
-	$(".carousel_content").css("width",scrollWidth*scrollCount+"px").data("index",1);
-	scrollTimer = setInterval(scrollCarousel,scrollTime);
+        var last = $(".carousel_content div:first-child").clone();
+        $(".carousel_content").append(last);
 
-	$(".carousel_info").hover(function(){
-		clearInterval(scrollTimer);
-	},function(){
-		scrollTimer = setInterval(scrollCarousel,scrollTime);
-	});
 
-	$(".carousel_left").click(function(){
-		scrollBack();
-	});
-	$(".carousel_right").click(function(){
-		scrollCarousel();
-	})
+
+        $(".carousel_content").css("width",scrollWidth*scrollCount+"px").data("index",1);
+        scrollTimer = setInterval(scrollCarousel,scrollTime);
+
+        $(".carousel_info").hover(function(){
+            console.info("hover");
+            clearInterval(scrollTimer);
+        },function(){
+            scrollTimer = setInterval(scrollCarousel,scrollTime);
+        });
+
+        $(".carousel_left").click(function(){
+            console.info("left");
+            scrollBack();
+        });
+
+        $(".carousel_right").click(function(){
+            console.info("right");
+            scrollCarousel();
+        });
+
+
+    }
+
 	loginInit();
 	baiduMap();
 	feedBackInit();
@@ -130,6 +142,17 @@ function scrollCarousel(){
 		$(".carousel_scroll_wrap").css("left","0px");
 		index = 1;
 	}
+
+    $(".carousel_mid").each(function(i){
+        if(i==index){
+            $(this).show();
+        }else{
+            $(this).hide();
+        }
+
+    });
+
+
 	$(".carousel_scroll_wrap").animate({left:-scrollWidth*index+'px'},"slow");
 	$(".carousel_content").data("index",index+1);
 

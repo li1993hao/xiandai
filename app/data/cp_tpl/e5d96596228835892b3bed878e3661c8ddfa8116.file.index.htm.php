@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-27 01:15:32
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-27 16:35:03
          compiled from "app/tpl/index/index.htm" */ ?>
 <?php /*%%SmartyHeaderCode:1843120913541e4a515c7036-27068526%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e5d96596228835892b3bed878e3661c8ddfa8116' => 
     array (
       0 => 'app/tpl/index/index.htm',
-      1 => 1411751728,
+      1 => 1411806825,
       2 => 'file',
     ),
   ),
@@ -20,11 +20,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'web_url' => 0,
+    'recNews' => 0,
     'jobFair' => 0,
     'tempCalendar' => 0,
     'corpMsg' => 0,
-    'interMsg' => 0,
     'jobFairMsg' => 0,
+    'interMsg' => 0,
     'jobPlan' => 0,
     'jobGuid' => 0,
     'entreGuid' => 0,
@@ -38,9 +39,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_541e4a51ce5099_41541953')) {function content_541e4a51ce5099_41541953($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/Users/haoli/Desktop/www/xiandai/been/Smarty/plugins/modifier.date_format.php';
+<?php if ($_valid && !is_callable('content_541e4a51ce5099_41541953')) {function content_541e4a51ce5099_41541953($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/xiandai/been/Smarty/plugins/modifier.truncate.php';
+if (!is_callable('smarty_modifier_date_format')) include '/Users/haoli/Desktop/www/xiandai/been/Smarty/plugins/modifier.date_format.php';
 if (!is_callable('smarty_function_getdate')) include '/Users/haoli/Desktop/www/xiandai/been/View/plugins/function.getdate.php';
-if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/xiandai/been/Smarty/plugins/modifier.truncate.php';
 ?><!DOCTYPE HTML>
 <html>
 
@@ -121,7 +122,7 @@ if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/
 /index.php/jobinfo/entreGuid">创业指导</a>
                 </li>
                 <li><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/index.php/jobinfo/empPolicy">就业政策</a>
+/index.php/employmentpolicy/index">就业政策</a>
                 </li>
                 <li><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /index.php/jobinfo/jobNotice">通知公告</a>
@@ -136,30 +137,133 @@ if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/
             <div class="carousel">
                 <div class="carousel_scroll_wrap">
                     <div class="carousel_content">
+                        <?php if (isset($_smarty_tpl->tpl_vars['smarty']->value['section']['recnews'])) unset($_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']);
+$_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['name'] = 'recnews';
+$_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['loop'] = is_array($_loop=$_smarty_tpl->tpl_vars['recNews']->value) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
+$_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['show'] = true;
+$_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['max'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['loop'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['step'] = 1;
+$_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['start'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['step'] > 0 ? 0 : $_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['loop']-1;
+if ($_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['show']) {
+    $_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['total'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['loop'];
+    if ($_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['total'] == 0)
+        $_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['show'] = false;
+} else
+    $_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['total'] = 0;
+if ($_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['show']):
+
+            for ($_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['index'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['start'], $_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['iteration'] = 1;
+                 $_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['iteration'] <= $_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['total'];
+                 $_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['index'] += $_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['step'], $_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['iteration']++):
+$_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['rownum'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['iteration'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['index_prev'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['index'] - $_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['step'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['index_next'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['index'] + $_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['step'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['first']      = ($_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['iteration'] == 1);
+$_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['last']       = ($_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['iteration'] == $_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['total']);
+?>
                         <div>
-                            <img src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/common/app/images/index/hit1.png"/>
+                           <a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/jobinfo/detail/id/<?php echo $_smarty_tpl->tpl_vars['recNews']->value[$_smarty_tpl->getVariable('smarty')->value['section']['recnews']['index']]['ji_id'];?>
+">
+                               <img src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload/images/<?php echo (($tmp = @$_smarty_tpl->tpl_vars['recNews']->value[$_smarty_tpl->getVariable('smarty')->value['section']['recnews']['index']]['pic_link'])===null||$tmp==='' ? 'noimg.jpg' : $tmp);?>
+"/></a>
                         </div>
-                        <div>
-                            <img src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/common/app/images/index/hit1.png"/>
-                        </div>
-                        <div>
-                            <img src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/common/app/images/index/hit1.png"/>
-                        </div>
+                        <?php endfor; endif; ?>
                     </div>
                 </div>
 
                 <div class="carousel_info">
-                    <div class="carousel_left">《</div>
-                    <div class="carousel_mid">
-                        <div>
-                            标题
-                        </div>
-                        <div>多发点佛挡杀佛水电费</div>
-                    </div>
-                    <div class="carousel_right">》</div>
+                    <div class="carousel_left"></div>
+                    <?php if (isset($_smarty_tpl->tpl_vars['smarty']->value['section']['recnews'])) unset($_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']);
+$_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['name'] = 'recnews';
+$_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['loop'] = is_array($_loop=$_smarty_tpl->tpl_vars['recNews']->value) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
+$_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['show'] = true;
+$_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['max'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['loop'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['step'] = 1;
+$_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['start'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['step'] > 0 ? 0 : $_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['loop']-1;
+if ($_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['show']) {
+    $_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['total'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['loop'];
+    if ($_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['total'] == 0)
+        $_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['show'] = false;
+} else
+    $_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['total'] = 0;
+if ($_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['show']):
+
+            for ($_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['index'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['start'], $_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['iteration'] = 1;
+                 $_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['iteration'] <= $_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['total'];
+                 $_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['index'] += $_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['step'], $_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['iteration']++):
+$_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['rownum'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['iteration'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['index_prev'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['index'] - $_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['step'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['index_next'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['index'] + $_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['step'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['first']      = ($_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['iteration'] == 1);
+$_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['last']       = ($_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['iteration'] == $_smarty_tpl->tpl_vars['smarty']->value['section']['recnews']['total']);
+?>
+                        <?php if ($_smarty_tpl->getVariable('smarty')->value['section']['recnews']['index']==0){?>
+                            <div class="carousel_mid">
+                                <div>
+                                    <a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/jobinfo/detail/id/<?php echo $_smarty_tpl->tpl_vars['recNews']->value[$_smarty_tpl->getVariable('smarty')->value['section']['recnews']['index']]['ji_id'];?>
+"><?php echo $_smarty_tpl->tpl_vars['recNews']->value[$_smarty_tpl->getVariable('smarty')->value['section']['recnews']['index']]['ji_title'];?>
+</a>
+                                </div>
+                                <div><?php echo (($tmp = @smarty_modifier_truncate(preg_replace('!\s+!u', ' ',preg_replace('!<[^>]*?>!', ' ', $_smarty_tpl->tpl_vars['recNews']->value[$_smarty_tpl->getVariable('smarty')->value['section']['recnews']['index']]['ji_content'])),50,'…',true))===null||$tmp==='' ? "暂无介绍~" : $tmp);?>
+</div>
+                            </div>
+                        <?php }else{ ?>
+                            <div class="carousel_mid" style="display: none">
+                                <div>
+                                    <a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/jobinfo/detail/id/<?php echo $_smarty_tpl->tpl_vars['recNews']->value[$_smarty_tpl->getVariable('smarty')->value['section']['recnews']['index']]['ji_id'];?>
+"><?php echo $_smarty_tpl->tpl_vars['recNews']->value[$_smarty_tpl->getVariable('smarty')->value['section']['recnews']['index']]['ji_title'];?>
+</a>
+                                </div>>
+                                <div><?php echo (($tmp = @smarty_modifier_truncate(preg_replace('!\s+!u', ' ',preg_replace('!<[^>]*?>!', ' ', $_smarty_tpl->tpl_vars['recNews']->value[$_smarty_tpl->getVariable('smarty')->value['section']['recnews']['index']]['ji_content'])),50,'…',true))===null||$tmp==='' ? "暂无介绍~" : $tmp);?>
+</div>
+                            </div>
+                            <?php if ($_smarty_tpl->getVariable('smarty')->value['section']['recnews']['last']){?>
+                                <?php if (isset($_smarty_tpl->tpl_vars['smarty']->value['section']['l'])) unset($_smarty_tpl->tpl_vars['smarty']->value['section']['l']);
+$_smarty_tpl->tpl_vars['smarty']->value['section']['l']['name'] = 'l';
+$_smarty_tpl->tpl_vars['smarty']->value['section']['l']['loop'] = is_array($_loop=$_smarty_tpl->tpl_vars['recNews']->value) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
+$_smarty_tpl->tpl_vars['smarty']->value['section']['l']['max'] = (int)1;
+$_smarty_tpl->tpl_vars['smarty']->value['section']['l']['show'] = true;
+if ($_smarty_tpl->tpl_vars['smarty']->value['section']['l']['max'] < 0)
+    $_smarty_tpl->tpl_vars['smarty']->value['section']['l']['max'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['l']['loop'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['l']['step'] = 1;
+$_smarty_tpl->tpl_vars['smarty']->value['section']['l']['start'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['l']['step'] > 0 ? 0 : $_smarty_tpl->tpl_vars['smarty']->value['section']['l']['loop']-1;
+if ($_smarty_tpl->tpl_vars['smarty']->value['section']['l']['show']) {
+    $_smarty_tpl->tpl_vars['smarty']->value['section']['l']['total'] = min(ceil(($_smarty_tpl->tpl_vars['smarty']->value['section']['l']['step'] > 0 ? $_smarty_tpl->tpl_vars['smarty']->value['section']['l']['loop'] - $_smarty_tpl->tpl_vars['smarty']->value['section']['l']['start'] : $_smarty_tpl->tpl_vars['smarty']->value['section']['l']['start']+1)/abs($_smarty_tpl->tpl_vars['smarty']->value['section']['l']['step'])), $_smarty_tpl->tpl_vars['smarty']->value['section']['l']['max']);
+    if ($_smarty_tpl->tpl_vars['smarty']->value['section']['l']['total'] == 0)
+        $_smarty_tpl->tpl_vars['smarty']->value['section']['l']['show'] = false;
+} else
+    $_smarty_tpl->tpl_vars['smarty']->value['section']['l']['total'] = 0;
+if ($_smarty_tpl->tpl_vars['smarty']->value['section']['l']['show']):
+
+            for ($_smarty_tpl->tpl_vars['smarty']->value['section']['l']['index'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['l']['start'], $_smarty_tpl->tpl_vars['smarty']->value['section']['l']['iteration'] = 1;
+                 $_smarty_tpl->tpl_vars['smarty']->value['section']['l']['iteration'] <= $_smarty_tpl->tpl_vars['smarty']->value['section']['l']['total'];
+                 $_smarty_tpl->tpl_vars['smarty']->value['section']['l']['index'] += $_smarty_tpl->tpl_vars['smarty']->value['section']['l']['step'], $_smarty_tpl->tpl_vars['smarty']->value['section']['l']['iteration']++):
+$_smarty_tpl->tpl_vars['smarty']->value['section']['l']['rownum'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['l']['iteration'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['l']['index_prev'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['l']['index'] - $_smarty_tpl->tpl_vars['smarty']->value['section']['l']['step'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['l']['index_next'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['l']['index'] + $_smarty_tpl->tpl_vars['smarty']->value['section']['l']['step'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['l']['first']      = ($_smarty_tpl->tpl_vars['smarty']->value['section']['l']['iteration'] == 1);
+$_smarty_tpl->tpl_vars['smarty']->value['section']['l']['last']       = ($_smarty_tpl->tpl_vars['smarty']->value['section']['l']['iteration'] == $_smarty_tpl->tpl_vars['smarty']->value['section']['l']['total']);
+?>
+                                <div class="carousel_mid" style="display: none">
+                                    <div>
+                                        <a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/jobinfo/detail/id/<?php echo $_smarty_tpl->tpl_vars['recNews']->value[$_smarty_tpl->getVariable('smarty')->value['section']['l']['index']]['ji_id'];?>
+"><?php echo $_smarty_tpl->tpl_vars['recNews']->value[$_smarty_tpl->getVariable('smarty')->value['section']['l']['index']]['ji_title'];?>
+</a>
+                                    </div>>
+                                    <div><?php echo (($tmp = @smarty_modifier_truncate(preg_replace('!\s+!u', ' ',preg_replace('!<[^>]*?>!', ' ', $_smarty_tpl->tpl_vars['recNews']->value[$_smarty_tpl->getVariable('smarty')->value['section']['l']['index']]['ji_content'])),50,'…',true))===null||$tmp==='' ? "暂无介绍~" : $tmp);?>
+</div>
+                                </div>
+                                <?php endfor; endif; ?>
+                            <?php }?>
+
+                        <?php }?>
+                    <?php endfor; endif; ?>
+                    <div class="carousel_right"></div>
                 </div>
             </div>
 
@@ -195,7 +299,7 @@ if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/
 /index.php/jobinfo/jobGuid">就业指导</a>
                                 </li>
                                 <li><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/index.php/jobinfo/empPolicy">就业政策</a>
+/index.php/Employmentpolicy/index">就业政策</a>
                                 </li>
                                 <li><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /index.php/jobinfo/entreGuid">创业指导</a>
@@ -410,7 +514,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
                                     <li>
                                         <div>
                                             <div>
-                                                <?php if ($_smarty_tpl->tpl_vars['interMsg']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['cim_isup']!=''){?>
+                                                <?php if ($_smarty_tpl->tpl_vars['corpMsg']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['cim_isup']!=''){?>
                                                 <a style="color: #ff0000" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /index.php/Corpinternmsg/Corpdetail/id/<?php echo $_smarty_tpl->tpl_vars['corpMsg']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['cim_id'];?>
 ">

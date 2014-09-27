@@ -16,6 +16,7 @@
 }
 /*轮播控件*/
 
+
 .carousel {
     height: 342px;
     width: 990px;
@@ -57,25 +58,38 @@
     cursor: pointer;
 }
 
+.carousel_left{
+    background: url(../../images/index/banner_btn.png) no-repeat center;
+}
+
+.carousel_right{
+    background: url(../../images/index/banner_right.png) no-repeat center;
+}
+
 .carousel_mid{
     width: 70%;
     background-color: rgba(0,0,0,0.65);
-    filter:alpha(opacity=65); 
+    filter:alpha(opacity=65);
+
 }
 .carousel_mid >div{
     margin-left: 30px;
 }
-.carousel_mid>div:first-child{
-    color: #dfc902;
-    font-size: 14px;
+
+.carousel_mid >div:first-child{
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+.carousel_mid>div:first-child a{
+    color: #dfc902;
+    font-size: 14px;
+
 }
 
 .carousel_mid>div:last-child{
     color: white;
 }
-
 
 .middle_main {
     width: 990px;
