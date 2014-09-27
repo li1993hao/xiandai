@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-27 01:51:41
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-27 17:59:47
          compiled from "app/tpl/jobfairmsg/calendardetail.htm" */ ?>
 <?php /*%%SmartyHeaderCode:14477274955424e71f05d592-99159866%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '313da09042a45c9fcd23b3039564332c12be6ef4' => 
     array (
       0 => 'app/tpl/jobfairmsg/calendardetail.htm',
-      1 => 1411753900,
+      1 => 1411811986,
       2 => 'file',
     ),
   ),
@@ -26,6 +26,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'preNews' => 0,
     'nextNews' => 0,
     'frontlist' => 0,
+    'share_content' => 0,
+    'addShareUrl' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -75,15 +77,14 @@ if (!is_callable('smarty_modifier_date_format')) include '/Users/haoli/Desktop/w
                 <dt><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /index.php/jobfairmsg/Calendardetail">招聘日历/</a>
                 </dt>
-                <dt><a href="#"><?php echo $_smarty_tpl->tpl_vars['detail']->value['jm_name'];?>
+                <dt><a href="#"><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['detail']->value['jm_name'],50,'…',true);?>
 </a></dt>
             </dl>
         </div>
         <div class="middle">
-
             <div class="middle_left">
                 <div>
-                    <p><?php echo $_smarty_tpl->tpl_vars['detail']->value['jm_name'];?>
+                    <p><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['detail']->value['jm_name'],50,'…',true);?>
 </p>
                                 <?php if (isset($_smarty_tpl->tpl_vars['__userinfo__']->value)){?>
                         <?php if ($_smarty_tpl->tpl_vars['__userinfo__']->value['type']==0){?>
@@ -103,8 +104,10 @@ if (!is_callable('smarty_modifier_date_format')) include '/Users/haoli/Desktop/w
                         来源：<?php if ($_smarty_tpl->tpl_vars['detail']->value['jm_publish']==0){?><?php echo (($tmp = @$_smarty_tpl->tpl_vars['detail']->value['jm_src'])===null||$tmp==='' ? "就业中心" : $tmp);?>
 <?php }else{ ?><a target="blank" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /index.php/common/userinfo/id/<?php echo $_smarty_tpl->tpl_vars['detail']->value['jm_publish'];?>
-"><?php echo $_smarty_tpl->tpl_vars['detail']->value['com_name'];?>
+"><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['detail']->value['com_name'],20,'…',true);?>
 </a><?php }?>
+                       <?php echo $_smarty_tpl->getSubTemplate ('share.htm', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
                 </div>
                 <div>
                     <span>召开时间:<?php echo $_smarty_tpl->tpl_vars['detail']->value['jm_opentime'];?>
@@ -151,7 +154,7 @@ if (!is_callable('smarty_modifier_date_format')) include '/Users/haoli/Desktop/w
                     <?php if ($_smarty_tpl->tpl_vars['preNews']->value!=''){?>
                     <a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /index.php/jobfairmsg/detail/id/<?php echo $_smarty_tpl->tpl_vars['preNews']->value['jm_id'];?>
-"><?php echo $_smarty_tpl->tpl_vars['preNews']->value['jm_name'];?>
+"><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['preNews']->value['jm_name'],50,'…',true);?>
 </a>
                     <?php }else{ ?>
                     没有了！
@@ -162,7 +165,7 @@ if (!is_callable('smarty_modifier_date_format')) include '/Users/haoli/Desktop/w
                     <?php if ($_smarty_tpl->tpl_vars['nextNews']->value!=''){?>
                     <a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /index.php/jobfairmsg/detail/id/<?php echo $_smarty_tpl->tpl_vars['nextNews']->value['jm_id'];?>
-"><?php echo $_smarty_tpl->tpl_vars['nextNews']->value['jm_name'];?>
+"><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['nextNews']->value['jm_name'],50,'…',true);?>
 </a>
                     <?php }else{ ?>
                     没有了！
@@ -202,7 +205,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
                     <div class="rec_item">
                         <div><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /index.php/Corpinternmsg/Corpdetail/id/<?php echo $_smarty_tpl->tpl_vars['frontlist']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['cim_id'];?>
-">  <?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['frontlist']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['cim_name'],22,'…',true);?>
+">  <?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['frontlist']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['cim_name'],30,'…',true);?>
 </a>
                         </div>
                         <div>
@@ -253,20 +256,40 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
         </div>
     
     </div>
-</div> 
-
+</div>
+    <?php $_smarty_tpl->tpl_vars['share_content'] = new Smarty_variable(smarty_modifier_truncate(preg_replace('!\s+!u', ' ',preg_replace('!<[^>]*?>!', ' ', $_smarty_tpl->tpl_vars['detail']->value['jm_content'])),130,'…',true), null, 0);?>
+    <?php $_smarty_tpl->tpl_vars['addShareUrl'] = new Smarty_variable(((string)$_smarty_tpl->tpl_vars['web_url']->value)."/index.php/jobfairmsg/addshare/id/".((string)$_smarty_tpl->tpl_vars['detail']->value['jm_id'])."/type/0", null, 0);?>
         <?php echo $_smarty_tpl->getSubTemplate ('footer.htm', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
             <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/libs/jquery.min.js"></script>
             <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/app/js/header.js"></script>
+             <script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=1782349" ></script>
+            <script type="text/javascript" id="bdshell_js"></script>
             <script>
             $(".middle").css("height", $(".middle_left").css("height"));
-            </script><script type="text/javascript">
+            </script>
+    <script type="text/javascript">
+
+        var bds_config = {
+            'bdDesc':'<?php echo smarty_modifier_truncate(preg_replace('!<[^>]*?>!', ' ', $_smarty_tpl->tpl_vars['share_content']->value),130,"...");?>
+'
+        };
+        $(function(){
+            $("#bdshare>a").click(function(){
+                $.ajax({
+                    type: "POST",
+                    url: "<?php echo $_smarty_tpl->tpl_vars['addShareUrl']->value;?>
+"
+                });
+            });
+        });
+        document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+
 
 $(function(){
-    
+
     //收藏
     $("#do-collect-btn").click(function(){
         $(".collect-confirm").show();
@@ -364,8 +387,8 @@ $(function(){
         }
         
     });
-    
-    
+
+
 });
 
 

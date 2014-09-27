@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-27 06:02:03
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-27 18:06:06
          compiled from "app/tpl/west/index.htm" */ ?>
 <?php /*%%SmartyHeaderCode:977010315425d5f35ee060-14821907%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b41bd9e19ca8a49a7a17e029bf2744269b07f419' => 
     array (
       0 => 'app/tpl/west/index.htm',
-      1 => 1411768922,
+      1 => 1411812289,
       2 => 'file',
     ),
   ),
@@ -134,7 +134,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['last']       = ($_smart
                 </ul>
             </div>
         </div>
-        <?php }?>
+        <?php }else{ ?>
         <div class="news_item">
             <div>
                 <?php if ($_smarty_tpl->tpl_vars['news']->value[$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['ww_isup']==''){?>
@@ -165,6 +165,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['last']       = ($_smart
                 </li>
             </ul>
         </div>
+        <?php }?>
         <?php endfor; endif; ?>
 
             <!--就业动态end-->

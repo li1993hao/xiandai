@@ -9,7 +9,7 @@
     <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/rec.css" />
     <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/common/detail.css" />
     <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/common/detail-360.css" />
-    <title>学生就业通讯——<{$idid.p_number}>期<{$idid.l_number}>版-$detail.a_title</title>
+    <title>学生就业通讯——<{$idid.p_number}>期<{$idid.l_number}>版-<{$detail.a_title}></title>
     <script type="text/javascript">
         var web_url = "<{$web_url}>";
     </script>
@@ -43,6 +43,7 @@
             发布时间：<{$detail.a_time}>
             &nbsp; 阅读次数：<{$detail.a_scan}>
             &nbsp;分享数：<{$detail.a_share}>
+            <{include file='share.htm' }>
         </div>
         <div></div>
         <div  class="content">
@@ -111,11 +112,27 @@
         </div>
     </div>
 </div>
-
+<{assign var=share_content value=$detail.a_content|strip_tags|strip|truncate:130:'…':true}>
+<{assign var=addShareUrl value="<{$web_url}>/index.php/periodicals/addshare/id/<{$detail.a_id}>"}>
 <{include file='footer.htm' }>
 <script type="text/javascript" src="<{$web_url}>/common/libs/jquery.min.js"></script>
 <script type="text/javascript" src="<{$web_url}>/common/app/js/header.js"></script>
-
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=1782349" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script>
+    var bds_config = {
+        'bdDesc':'<{$share_content|strip_tags|truncate:130:"..."}>'
+    };
+    $(function(){
+        $("#bdshare>a").click(function(){
+            $.ajax({
+                type: "POST",
+                url: "<{$addShareUrl}>"
+            });
+        });
+    });
+    document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+</script>>
 </body>
 
 </html>

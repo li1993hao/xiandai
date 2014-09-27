@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-27 02:33:35
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-27 18:38:47
          compiled from "app/tpl/professionpersontalk/talkdetail.htm" */ ?>
 <?php /*%%SmartyHeaderCode:1238739852542580ea91cc77-03210760%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '4bb8ad01f8547b6020e66161d604bfe333679189' => 
     array (
       0 => 'app/tpl/professionpersontalk/talkdetail.htm',
-      1 => 1411756414,
+      1 => 1411814314,
       2 => 'file',
     ),
   ),
@@ -23,10 +23,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'detail' => 0,
     'pretalk' => 0,
     'nexttalk' => 0,
+    'share_content' => 0,
+    'addShareUrl' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_542580eaa5edf0_27442347')) {function content_542580eaa5edf0_27442347($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/Users/haoli/Desktop/www/xiandai/been/Smarty/plugins/modifier.date_format.php';
+if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/xiandai/been/Smarty/plugins/modifier.truncate.php';
 ?><!DOCTYPE HTML>
 <html>
 
@@ -89,6 +92,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 &nbsp;
             分享：<?php echo (($tmp = @$_smarty_tpl->tpl_vars['detail']->value['ppt_share'])===null||$tmp==='' ? "0" : $tmp);?>
 &nbsp;
+            <?php echo $_smarty_tpl->getSubTemplate ('share.htm', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
         </div>
         <div></div>
         <div class="content">
@@ -183,12 +188,32 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     </div>
 </div>
 
+<?php $_smarty_tpl->tpl_vars['share_content'] = new Smarty_variable(smarty_modifier_truncate(preg_replace('!\s+!u', ' ',preg_replace('!<[^>]*?>!', ' ', $_smarty_tpl->tpl_vars['detail']->value['ppt_content'])),130,'…',true), null, 0);?>
+<?php $_smarty_tpl->tpl_vars['addShareUrl'] = new Smarty_variable(((string)$_smarty_tpl->tpl_vars['web_url']->value)."/index.php/professionpersontalk/addshare/id/".((string)$_smarty_tpl->tpl_vars['detail']->value['ppt_id']), null, 0);?>
 <?php echo $_smarty_tpl->getSubTemplate ('footer.htm', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/libs/jquery.min.js"></script>
 <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/app/js/header.js"></script>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=1782349" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script>
+    var bds_config = {
+        'bdDesc':'<?php echo smarty_modifier_truncate(preg_replace('!<[^>]*?>!', ' ', $_smarty_tpl->tpl_vars['share_content']->value),130,"...");?>
+'
+    };
+    $(function(){
+        $("#bdshare>a").click(function(){
+            $.ajax({
+                type: "POST",
+                url: "<?php echo $_smarty_tpl->tpl_vars['addShareUrl']->value;?>
+"
+            });
+        });
+    });
+    document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+</script>>
 </body>
 
 </html><?php }} ?>

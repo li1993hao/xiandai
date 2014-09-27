@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-27 02:28:39
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-27 18:57:30
          compiled from "app/tpl/periodicals/detail.htm" */ ?>
 <?php /*%%SmartyHeaderCode:2368538005425979a864175-69292985%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5548489b3d6dd977304d81a4bce1bdf53bffb668' => 
     array (
       0 => 'app/tpl/periodicals/detail.htm',
-      1 => 1411756117,
+      1 => 1411815446,
       2 => 'file',
     ),
   ),
@@ -25,6 +25,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'prearticle' => 0,
     'nextarticle' => 0,
     'jobFair' => 0,
+    'share_content' => 0,
+    'addShareUrl' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -49,7 +51,8 @@ if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/
 /common/app/css/common/detail-360.css" />
     <title>学生就业通讯——<?php echo $_smarty_tpl->tpl_vars['idid']->value['p_number'];?>
 期<?php echo $_smarty_tpl->tpl_vars['idid']->value['l_number'];?>
-版-$detail.a_title</title>
+版-<?php echo $_smarty_tpl->tpl_vars['detail']->value['a_title'];?>
+</title>
     <script type="text/javascript">
         var web_url = "<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 ";
@@ -96,6 +99,8 @@ if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/
             &nbsp; 阅读次数：<?php echo $_smarty_tpl->tpl_vars['detail']->value['a_scan'];?>
 
             &nbsp;分享数：<?php echo $_smarty_tpl->tpl_vars['detail']->value['a_share'];?>
+
+            <?php echo $_smarty_tpl->getSubTemplate ('share.htm', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
         </div>
         <div></div>
@@ -210,14 +215,32 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['last']       = (
         </div>
     </div>
 </div>
-
+<?php $_smarty_tpl->tpl_vars['share_content'] = new Smarty_variable(smarty_modifier_truncate(preg_replace('!\s+!u', ' ',preg_replace('!<[^>]*?>!', ' ', $_smarty_tpl->tpl_vars['detail']->value['a_content'])),130,'…',true), null, 0);?>
+<?php $_smarty_tpl->tpl_vars['addShareUrl'] = new Smarty_variable(((string)$_smarty_tpl->tpl_vars['web_url']->value)."/index.php/periodicals/addshare/id/".((string)$_smarty_tpl->tpl_vars['detail']->value['a_id']), null, 0);?>
 <?php echo $_smarty_tpl->getSubTemplate ('footer.htm', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/libs/jquery.min.js"></script>
 <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/app/js/header.js"></script>
-
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=1782349" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script>
+    var bds_config = {
+        'bdDesc':'<?php echo smarty_modifier_truncate(preg_replace('!<[^>]*?>!', ' ', $_smarty_tpl->tpl_vars['share_content']->value),130,"...");?>
+'
+    };
+    $(function(){
+        $("#bdshare>a").click(function(){
+            $.ajax({
+                type: "POST",
+                url: "<?php echo $_smarty_tpl->tpl_vars['addShareUrl']->value;?>
+"
+            });
+        });
+    });
+    document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+</script>>
 </body>
 
 </html><?php }} ?>

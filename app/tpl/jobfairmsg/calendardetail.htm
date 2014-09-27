@@ -30,14 +30,13 @@
                 </dt>
                 <dt><a href="<{$web_url}>/index.php/jobfairmsg/Calendardetail">招聘日历/</a>
                 </dt>
-                <dt><a href="#"><{$detail.jm_name}></a></dt>
+                <dt><a href="#"><{$detail.jm_name|truncate:50: '…':true}></a></dt>
             </dl>
         </div>
         <div class="middle">
-
             <div class="middle_left">
                 <div>
-                    <p><{$detail.jm_name}></p>
+                    <p><{$detail.jm_name|truncate:50: '…':true}></p>
                                 <{if isset($__userinfo__)}>
                         <{if $__userinfo__.type==0}>
                         <span id="do-collect-btn" class="collect-btn" <{if $collectFlag!="1"}>style="display:none;"<{/if}> >收藏</span>
@@ -49,7 +48,8 @@
                          <{$detail.jm_date}>&nbsp;
                         浏览：<{$detail.jm_read}>&nbsp;
                         分享：<{$detail.jm_share}>&nbsp;
-                        来源：<{if $detail.jm_publish==0}><{$detail.jm_src|default:"就业中心"}><{else}><a target="blank" href="<{$web_url}>/index.php/common/userinfo/id/<{$detail.jm_publish}>"><{$detail.com_name}></a><{/if}>
+                        来源：<{if $detail.jm_publish==0}><{$detail.jm_src|default:"就业中心"}><{else}><a target="blank" href="<{$web_url}>/index.php/common/userinfo/id/<{$detail.jm_publish}>"><{$detail.com_name|truncate:20: '…':true}></a><{/if}>
+                       <{include file='share.htm' }>
                 </div>
                 <div>
                     <span>召开时间:<{$detail.jm_opentime}></span>
@@ -83,7 +83,7 @@
                 <p>
                     上一条：
                     <{if $preNews != "" }>
-                    <a href="<{$web_url}>/index.php/jobfairmsg/detail/id/<{$preNews.jm_id}>"><{$preNews.jm_name}></a>
+                    <a href="<{$web_url}>/index.php/jobfairmsg/detail/id/<{$preNews.jm_id}>"><{$preNews.jm_name|truncate:50: '…':true}></a>
                     <{else}>
                     没有了！
                     <{/if}>
@@ -91,7 +91,7 @@
                 <p>
                     下一条：
                     <{if $nextNews != "" }>
-                    <a href="<{$web_url}>/index.php/jobfairmsg/detail/id/<{$nextNews.jm_id}>"><{$nextNews.jm_name}></a>
+                    <a href="<{$web_url}>/index.php/jobfairmsg/detail/id/<{$nextNews.jm_id}>"><{$nextNews.jm_name|truncate:50: '…':true}></a>
                     <{else}>
                     没有了！
                     <{/if}>
@@ -105,7 +105,7 @@
                      <{section name=i loop=$frontlist}>
 
                     <div class="rec_item">
-                        <div><a href="<{$web_url}>/index.php/Corpinternmsg/Corpdetail/id/<{$frontlist[i].cim_id}>">  <{$frontlist[i].cim_name|truncate:22: '…':true}></a>
+                        <div><a href="<{$web_url}>/index.php/Corpinternmsg/Corpdetail/id/<{$frontlist[i].cim_id}>">  <{$frontlist[i].cim_name|truncate:30: '…':true}></a>
                         </div>
                         <div>
                             <{$frontlist[i].cim_content|strip_tags|strip|truncate:50: '…':true|default: "暂无介绍~"}>
@@ -151,17 +151,35 @@
         </div>
     
     </div>
-</div> 
-
+</div>
+    <{assign var=share_content value=$detail.jm_content|strip_tags|strip|truncate:130:'…':true}>
+    <{assign var=addShareUrl value="<{$web_url}>/index.php/jobfairmsg/addshare/id/<{$detail.jm_id}>/type/0"}>
         <{include file='footer.htm' }>
             <script type="text/javascript" src="<{$web_url}>/common/libs/jquery.min.js"></script>
             <script type="text/javascript" src="<{$web_url}>/common/app/js/header.js"></script>
+             <script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=1782349" ></script>
+            <script type="text/javascript" id="bdshell_js"></script>
             <script>
             $(".middle").css("height", $(".middle_left").css("height"));
-            </script><script type="text/javascript">
+            </script>
+    <script type="text/javascript">
+
+        var bds_config = {
+            'bdDesc':'<{$share_content|strip_tags|truncate:130:"..."}>'
+        };
+        $(function(){
+            $("#bdshare>a").click(function(){
+                $.ajax({
+                    type: "POST",
+                    url: "<{$addShareUrl}>"
+                });
+            });
+        });
+        document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+
 
 $(function(){
-    
+
     //收藏
     $("#do-collect-btn").click(function(){
         $(".collect-confirm").show();
@@ -255,8 +273,8 @@ $(function(){
         }
         
     });
-    
-    
+
+
 });
 
 

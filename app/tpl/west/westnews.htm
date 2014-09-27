@@ -60,7 +60,7 @@
                 </ul>
             </div>
         </div>
-        <{/if}>
+        <{else}>
         <div class="news_item">
             <div>
                 <{if $news.list[n].ww_isup==""}>
@@ -84,6 +84,7 @@
                 </li>
             </ul>
         </div>
+        <{/if}>
         <{/section}>
         <{page info=$news web_url=$web_url url="/index.php/west/person/"}>
     </div>

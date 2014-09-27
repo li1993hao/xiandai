@@ -484,7 +484,7 @@
                             </ul>
                             <!--创就业明星-->
                             <ul>
-                                <{section name=i loop=$empStar}>
+                                <{section name=i loop=$empStar.list}>
                                     <li>
                                         <div>
                                             <div>
@@ -497,14 +497,13 @@
                                                     <{$empStar.list[i].ji_title|truncate:35: '…':true}>
                                                 </a>
                                                 <{/if}>
-
                                             </div>
                                             <span>
-                                                <{$empStar[i].ji_date|date_format:"%Y-%m-%d"}>
+                                                <{$empStar.list[i].ji_date}>
                                             </span>
                                         </div>
                                         <div>
-                                            <{$empStar[i].ji_content|strip_tags|strip|truncate:110: '…':true}>
+                                            <{$empStar.list[i].ji_content|strip_tags|strip|truncate:110: '…':true}>
                                         </div>
                                     </li>
                                     <{/section}>

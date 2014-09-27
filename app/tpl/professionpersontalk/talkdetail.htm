@@ -43,6 +43,7 @@
             <{$detail.ppt_pubtime|date_format:"%Y-%m-%d"}>&nbsp;
             浏览：<{$detail.ppt_scan|default:"0"}>&nbsp;
             分享：<{$detail.ppt_share|default:"0"}>&nbsp;
+            <{include file='share.htm' }>
         </div>
         <div></div>
         <div class="content">
@@ -112,9 +113,27 @@
     </div>
 </div>
 
+<{assign var=share_content value=$detail.ppt_content|strip_tags|strip|truncate:130:'…':true}>
+<{assign var=addShareUrl value="<{$web_url}>/index.php/professionpersontalk/addshare/id/<{$detail.ppt_id}>"}>
 <{include file='footer.htm' }>
 <script type="text/javascript" src="<{$web_url}>/common/libs/jquery.min.js"></script>
 <script type="text/javascript" src="<{$web_url}>/common/app/js/header.js"></script>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=1782349" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script>
+    var bds_config = {
+        'bdDesc':'<{$share_content|strip_tags|truncate:130:"..."}>'
+    };
+    $(function(){
+        $("#bdshare>a").click(function(){
+            $.ajax({
+                type: "POST",
+                url: "<{$addShareUrl}>"
+            });
+        });
+    });
+    document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+</script>>
 </body>
 
 </html>

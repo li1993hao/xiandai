@@ -50,6 +50,7 @@ class IndexController extends Controller{
 		//创就业明星
 		$this->view->empStar =$jobInfoDao->getCM("empStar",1,4); //创业指导
 
+
 		//渤海
 		$westWork = new westWork();
 		$wwPerson = $westWork->getPersons(1,2);

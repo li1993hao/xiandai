@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-27 06:02:06
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-27 18:06:02
          compiled from "app/tpl/west/person.htm" */ ?>
 <?php /*%%SmartyHeaderCode:18528628165425e25ed83817-14466932%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '20bc31437b90b8869046ab2dfa2e2b7ec79ca09e' => 
     array (
       0 => 'app/tpl/west/person.htm',
-      1 => 1411768877,
+      1 => 1411812331,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_5425e25eee6ee6_46514375',
   'variables' => 
   array (
     'web_url' => 0,
@@ -22,8 +24,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'persons' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_5425e25eee6ee6_46514375',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5425e25eee6ee6_46514375')) {function content_5425e25eee6ee6_46514375($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/xiandai/been/Smarty/plugins/modifier.truncate.php';
 if (!is_callable('smarty_function_page')) include '/Users/haoli/Desktop/www/xiandai/been/View/plugins/function.page.php';
@@ -137,7 +137,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['last']       = ($_smart
                 </ul>
             </div>
         </div>
-        <?php }?>
+        <?php }else{ ?>
         <div class="news_item">
             <div>
                 <?php if ($_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['ww_isup']==''){?>
@@ -173,6 +173,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['last']       = ($_smart
                 </li>
             </ul>
         </div>
+        <?php }?>
         <?php endfor; endif; ?>
         <?php echo smarty_function_page(array('info'=>$_smarty_tpl->tpl_vars['news']->value,'web_url'=>$_smarty_tpl->tpl_vars['web_url']->value,'url'=>"/index.php/west/person/"),$_smarty_tpl);?>
 
