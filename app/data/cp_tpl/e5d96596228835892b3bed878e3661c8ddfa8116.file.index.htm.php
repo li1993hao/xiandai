@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-27 18:50:56
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-28 17:36:13
          compiled from "app/tpl/index/index.htm" */ ?>
 <?php /*%%SmartyHeaderCode:1843120913541e4a515c7036-27068526%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e5d96596228835892b3bed878e3661c8ddfa8116' => 
     array (
       0 => 'app/tpl/index/index.htm',
-      1 => 1411815052,
+      1 => 1411896838,
       2 => 'file',
     ),
   ),
@@ -1288,7 +1288,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
                             </div>
                         </div>
                     </div>
-                    <div class="right_feedback block_style">
+                    <div id="feedback" class="right_feedback block_style">
                         <div>意见反馈 Suggestions</div>
                         <div id="friendly">
                             <div>界面友好性：</div>

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-27 18:25:32
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-27 21:20:50
          compiled from "app/tpl/jobfairmsg/detail.htm" */ ?>
 <?php /*%%SmartyHeaderCode:30101234354248129337bd1-02836746%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '8c18108ae4ddfc118de39f43385ed15e6b435d75' => 
     array (
       0 => 'app/tpl/jobfairmsg/detail.htm',
-      1 => 1411812116,
+      1 => 1411817929,
       2 => 'file',
     ),
   ),
@@ -257,7 +257,10 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
         </div>
     
     </div>
-</div> 
+</div>
+
+    <?php $_smarty_tpl->tpl_vars['share_content'] = new Smarty_variable(smarty_modifier_truncate(preg_replace('!\s+!u', ' ',preg_replace('!<[^>]*?>!', ' ', $_smarty_tpl->tpl_vars['detail']->value['jm_content'])),130,'…',true), null, 0);?>
+    <?php $_smarty_tpl->tpl_vars['addShareUrl'] = new Smarty_variable(((string)$_smarty_tpl->tpl_vars['web_url']->value)."/index.php/jobfairmsg/addshare/id/".((string)$_smarty_tpl->tpl_vars['detail']->value['jm_id'])."/type/0", null, 0);?>
 
         <?php echo $_smarty_tpl->getSubTemplate ('footer.htm', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 

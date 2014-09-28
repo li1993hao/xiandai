@@ -9,6 +9,10 @@ class CollegeintroductionController extends Controller{
 	
 	public function Index()
 	{
+        //推荐招聘会
+        $jobfairmsg = new jobfairmsg();
+        $this->view->jobFair = $jobfairmsg->getfrontjobfair(5);
+
 		$pageSize = 20;
 		$collegeintroduction=new collegeintroduction();
 		

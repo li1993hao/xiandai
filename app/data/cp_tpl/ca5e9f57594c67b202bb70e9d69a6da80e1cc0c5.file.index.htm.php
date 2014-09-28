@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-27 01:49:38
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-28 14:56:13
          compiled from "app/tpl/corpinternmsg/index.htm" */ ?>
 <?php /*%%SmartyHeaderCode:8076153245424302fb49ae2-32357415%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ca5e9f57594c67b202bb70e9d69a6da80e1cc0c5' => 
     array (
       0 => 'app/tpl/corpinternmsg/index.htm',
-      1 => 1411750856,
+      1 => 1411826208,
       2 => 'file',
     ),
   ),
@@ -58,18 +58,18 @@ if (!is_callable('smarty_modifier_date_format')) include '/Users/haoli/Desktop/w
     <?php echo $_smarty_tpl->getSubTemplate ('header.htm', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
         <!--导航栏-->
-        <div class="nav">
-            <dl>
-                <dt><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+    <div class="nav">
+        <dl>
+            <dt><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /index.php/index">首页/</a>
-                </dt>
-                <dt><a href="#"><?php echo $_smarty_tpl->tpl_vars['corpInfo']->value['type_name'];?>
+            </dt>
+            <dt><a href="#"><?php echo $_smarty_tpl->tpl_vars['corpInfo']->value['type_name'];?>
 </a>
-                </dt>
-            </dl>
-        </div>
+            </dt>
+        </dl>
+    </div>
         <div class="middle">
-           
+
             <div class="middle_left">
                 <?php if (isset($_smarty_tpl->tpl_vars['smarty']->value['section']['n'])) unset($_smarty_tpl->tpl_vars['smarty']->value['section']['n']);
 $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['name'] = 'n';
@@ -108,7 +108,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['last']       = ($_smart
 " style="color:red">[顶]<?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['cim_name'],21,'…');?>
 </a></div>
                         <?php }?>
-             
+
 
                         <span><?php echo $_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['cim_date'];?>
 </span>

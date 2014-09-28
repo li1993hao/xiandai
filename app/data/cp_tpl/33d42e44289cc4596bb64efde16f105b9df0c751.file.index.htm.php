@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-27 14:16:00
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-27 21:38:54
          compiled from "app/tpl/jobinfo/index.htm" */ ?>
 <?php /*%%SmartyHeaderCode:1406779035425318bbb1f19-59004530%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '33d42e44289cc4596bb64efde16f105b9df0c751' => 
     array (
       0 => 'app/tpl/jobinfo/index.htm',
-      1 => 1411797005,
+      1 => 1411825132,
       2 => 'file',
     ),
   ),
@@ -103,28 +103,28 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['last']       = ($_smart
                         <div><a style="color:red" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /index.php/jobinfo/detail/id/<?php echo $_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['ji_id'];?>
 ">
-                                [荐][顶]<?php echo $_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['ji_title'];?>
+                                [荐][顶]<?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['ji_title'],30,'...',true);?>
 
                         </a></div>
                         <?php }elseif($_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['ji_recom']!=''){?>
                                      <div><a style="color:red" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /index.php/jobinfo/detail/id/<?php echo $_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['ji_id'];?>
 ">
-                                [荐]<?php echo $_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['ji_title'];?>
+                                [荐<?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['ji_title'],30,'...',true);?>
 
                         </a></div>
                         <?php }elseif($_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['ji_isup']==''){?>
                                      <div><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /index.php/jobinfo/detail/id/<?php echo $_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['ji_id'];?>
 ">
-                                <?php echo $_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['ji_title'];?>
+                                        <?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['ji_title'],30,'...',true);?>
 
                         </a></div>
                         <?php }else{ ?>
                             <div><a style="color:red" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /index.php/jobinfo/detail/id/<?php echo $_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['ji_id'];?>
 ">
-                                [顶]<?php echo $_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['ji_title'];?>
+                                [顶]<?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['ji_title'],30,'...',true);?>
 
                         </a></div>
                         <?php }?>

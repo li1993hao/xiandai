@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-27 02:07:00
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-27 20:55:21
          compiled from "app/tpl/activityjobbulletin/index.htm" */ ?>
 <?php /*%%SmartyHeaderCode:85856937354258bfa6e7652-83665214%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '8b81a956dd7177c056cc65aeee2eed7bfae4a157' => 
     array (
       0 => 'app/tpl/activityjobbulletin/index.htm',
-      1 => 1411750871,
+      1 => 1411822520,
       2 => 'file',
     ),
   ),
@@ -178,7 +178,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['last']       = ($_smart
                 </ul>
             </div>
         </div>
-        <?php }?>
+        <?php }else{ ?>
         <div class="news_item">
             <div>
                 <?php if ($_smarty_tpl->tpl_vars['bulletin']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['aa_top']!=''){?>
@@ -209,6 +209,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['last']       = ($_smart
                 </li>
             </ul>
         </div>
+        <?php }?>
         <?php endfor; endif; ?>
     </div>
 

@@ -193,7 +193,7 @@ class StudentController extends Controller{
 		//print_r($favorjoblist);
 		$this->view->type = $type;
 		$this->view->joblist = $favorjoblist;
-		echo $this->view->render("favorjobinfo.html");
+		echo $this->view->render("favorjobinfo.htm");
 		
 	}
 	

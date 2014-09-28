@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-27 02:07:37
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-28 15:03:53
          compiled from "app/tpl/periodicals/index.htm" */ ?>
 <?php /*%%SmartyHeaderCode:28041370054259538b15531-42490916%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '1765ab3469cbe2d89a59405527047c4fbe268192' => 
     array (
       0 => 'app/tpl/periodicals/index.htm',
-      1 => 1411750799,
+      1 => 1411887831,
       2 => 'file',
     ),
   ),
@@ -184,16 +184,16 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['last']       = ($_smart
                     <div><a style="color:red;" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /index.php/periodicals/detail/id/<?php echo $_smarty_tpl->tpl_vars['re']->value['article'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['a_id'];?>
 ">
-                        [顶]<?php echo $_smarty_tpl->tpl_vars['re']->value['article'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['a_title'];?>
+                        [顶]<?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['re']->value['article'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['a_title'],25,'…',true);?>
 
-                    </a></div>>
+                    </a></div>
                     <?php }else{ ?>
                     <div><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /index.php/periodicals/detail/id/<?php echo $_smarty_tpl->tpl_vars['re']->value['article'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['a_id'];?>
 ">
-                        <?php echo $_smarty_tpl->tpl_vars['re']->value['article'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['a_title'];?>
+                        <?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['re']->value['article'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['a_title'],20,'…',true);?>
 
-                    </a></div>>
+                    </a></div>
                     <?php }?>
                     <span><?php echo $_smarty_tpl->tpl_vars['re']->value['article'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['a_time'];?>
 </span>
@@ -220,14 +220,14 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['last']       = ($_smart
                 <div><a style="color:red;" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /index.php/periodicals/detail/id/<?php echo $_smarty_tpl->tpl_vars['re']->value['article'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['a_id'];?>
 ">
-                    [顶]<?php echo $_smarty_tpl->tpl_vars['re']->value['article'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['a_title'];?>
+                    [顶]<?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['re']->value['article'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['a_title'],33,'…',true);?>
 
                 </a></div>>
                 <?php }else{ ?>
                 <div><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /index.php/periodicals/detail/id/<?php echo $_smarty_tpl->tpl_vars['re']->value['article'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['a_id'];?>
 ">
-                    <?php echo $_smarty_tpl->tpl_vars['re']->value['article'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['a_title'];?>
+                    [顶]<?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['re']->value['article'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['a_title'],33,'…',true);?>
 
                 </a></div>>
                 <?php }?>

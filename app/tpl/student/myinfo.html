@@ -1,13 +1,11 @@
 <!DOCTYPE HTML>
 <html>
-
 <head>
     <meta id="screen-view" name="viewport" content="width=device-width" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/reset.css?v=2.0" />
     <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/headAndfoot.css" />
-    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/student/myinfo.css" />
-    <title><{$key}></title>
+    <title>个人中心-我得信息</title>
     <script type="text/javascript">
         var web_url = "<{$web_url}>";
     </script>
@@ -15,70 +13,192 @@
     <script type="text/javascript" src="<{$web_url}>/common/app/js/DOMAssistantCompressed-2.7.4.js"></script>
     <script type="text/javascript" src="<{$web_url}>/common/app/js/ie-css3.js"></script>
     <![endif]-->
+    <style type="text/css">
+        .nav dt {
+            float: left;
+            margin-top: 5px;
+        }
+        .nav dt:first-child {
+            margin-left: 30px;
+        }
+        .nav dt a {
+            color: white;
+        }
+
+        #middle_left, #middle_right{
+            float: left;
+        }
+
+        #middle_left{
+            width: 250px;
+            height: 400px;
+            background-color: #ecf0f1;
+            margin-right: 10px;
+        }
+
+        #middle_right{
+            width: 721px;
+        }
+
+        #middle_main{
+            margin-top: 10px;
+        }
+
+        #middle_left >div{
+            font-size: 16px;
+            padding: 6px 10px;
+            margin: 0 10px;
+            border-bottom: 1px solid #000000;
+        }
+        #middle_left li:first-child{
+            margin-top: 10px;
+        }
+
+
+        #middle_left li a{
+            line-height: 25px;
+            font-size: 14px;
+            padding-left: 40px;
+        }
+
+        #middle_right >div:first-child div{
+            float: left;
+        }
+
+        #middle_right >div:first-child a{
+            color: firebrick;
+        }
+
+
+        #middle_right >div:first-child{
+            text-align: right;
+        }
+
+        #middle_right ,#middle_right  a{
+            font-size: 14px;
+
+            line-height: 30px;
+        }
+
+        #middle_right >div:nth-child(2) >div{
+            float: left;
+        }
+
+        #middle_right >div:nth-child(3) >div{
+            height: 100px;
+            width: 100px;
+        }
+        #middle_right >div:nth-child(1){
+            height: 30px;
+
+        }
+        #middle_right >div:nth-child(1) >div{
+            font-size: 16px;
+            color: #3598db;
+        }
+
+        #middle_right >div:nth-child(2){
+            height: 160px;
+        }
+        #middle_right >div:nth-child(2) >div:first-child{
+            width: 280px;
+        }
+        /*头像*/
+        #middle_right >div:nth-child(2) >div:nth-child(3) img{
+            width: 130px;
+            height: 150px;
+            margin-left: 100px;
+        }
+
+        #middle_right >div:nth-child(3){
+            height: 30px;
+        }
+
+
+    </style>
+
 
 </head>
 
 <body>
 
 <{include file='header.htm'}>
-   <div id="middle">
-       <!-- 导航栏-->
-       <div class="middle_top">
-           <p><a id="toStart" href="<{$web_url}>/index.php"> 首页</a>/个人中心/学生基本信息</p>
-       </div>
-       <!-- 中间左部-->
-       <div id="middle_left">
-            <div id="title">
-                <p>功能菜单</p>
+<div id="middle">
+    <!-- 导航栏-->
+    <div class="nav">
+        <dl>
+            <dt><a href="<{$web_url}>/index.php/index">首页/</a>
+            </dt>
+            <dt><a href="<{$web_url}>/index.php/student/myinfo">个人中心/</a>
+            </dt>
+            <dt><a href="#">基本信息</a>
+            </dt>
+
+        </dl>
+    </div>
+
+    <div id="middle_main">
+        <div id="middle_left">
+            <div >功能菜单</div>
+            <ul>
+                <li style="background-color: #33495e"><a href="<{$web_url}>/index.php/student/myinfo}>" style="color: #ffffff">学生基本信息</a></li>
+                <li><a href="<{$web_url}>/index.php/student/favorjobinfo">我的招聘</a></li>
+                <li><a href="<{$web_url}>/index.php/student/changepw">修改密码</a></li>
+                <li><a href="<{$web_url}>/index.php/index#feedback">满意度调查</a></li>
+            </ul>
+        </div>
+        <div id="middle_right">
+            <div>
+                <div><{$studetail.name}></div><a href="<{$web_url}>/index.php/student/modifyinfo">修改</a>
             </div>
-           <div id="xuanxiang">
-               <p id="xuanzhong">学生基本信息</p>
-               <p>我的招聘</p>
-               <p>修改密码</p>
-               <p>满意度调查</p>
-           </div>
+            <div>
+                <div>
+                    <ul>
+                        <li>性别：<{if $studetail.gender==0}>
+                            男
+                            <{else}>
+                            女
+                            <{/if}>	</li>
+                        <li>学历：<{if $studetail.education == 0 }>
+                            本科
+                            <{else if $studetail.education ==1 }>
+                            硕士
+                            <{else}>
+                            博士
+                            <{/if}>	</li>
+                        <li>年纪：<{$studetail.grade}></li>
+                        <li>生源地：<{$studetail.source}></li>
+                        <li>政治面貌：<{$studetail.politic}></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <li>出生年月：<{$studetail.birth|truncate:10:""}></li>
+                        <li>学院：<{$studetail.college}></li>
+                        <li>专业：<{$studetail.pro}></li>
+                        <li>籍贯：<{$studetail.home}></li>
+                        <li><{if $studetail.filelink!=""}>
+                            简历：<a href="<{$web_url}>/common/upload/files/<{$studetail.filelink}>"><{$studetail.filename}></a>
+                            <{else}>
+                            简历：还未上传！
+                            <{/if}></li>
+                    </ul>
+                </div>
+                <div>	<img src="<{$web_url}>/common/upload/images/<{$studetail.piclink|default:"noimg.jpg"}>" /></div>
 
-       </div>
-       <!-- 中间右部-->
-       <div id="middle_right">
-           <div id="middle_right_name">
-               小爱同学
-              <div id="xiugai">
-                <p><a href="#"> 修改</a></p>
-              </div>
-               <div id="middle_right_sex">
-                   性别;女
-               </div>
-               <div id="middle_right_birthday">
-                   出生年月;1992-01-01
-               </div>
-               <div id="middle_right_photo">
-                  个人照片：
-               </div>
-               <div id="middle_right_img">
-                   <div id="touxiang">
-
-                   </div>
-               </div>
-               <div id="middle_right_gerenpingjia">
-                   个人评价：
-                   <div id="middle_right_gerenpingjia_content">
-                       &nbsp; &nbsp; &nbsp;XXXXX014年天津市科2市市2014年天津市2014年天津年天津市2014年天津市2014年天津014年天津市科2市市2014年天津市2014年天津年天津市2014年天津市2014年天津014年天津市科2市市2014年天津市2014年天津年天津市2014年天津市2014年天津
-                   </div>
-               </div>
-
-           </div>
-
-       </div>
-   </div>
-
+            </div>
+            <div>感兴趣的领域：<{foreach $stuindustry as $si}>
+                <{$si.ind_type}>&nbsp;
+                <{/foreach}></div>
+            <div>
+                <p style="word-wrap:break-word ">个人简介:<br/><{$studetail.intro}></p>
+            </div>
+        </div>
+    </div>
+</div>
 
 <{include file='footer.htm'}>
 <script type="text/javascript" src="<{$web_url}>/common/libs/jquery.min.js"></script>
 <script type="text/javascript" src="<{$web_url}>/common/app/js/header.js"></script>
-<script>
-    $(".middle").css("height",$(".middle_left").css("height"));
-</script>
 </body>
-
 </html>

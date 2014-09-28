@@ -41,7 +41,7 @@
                     <{if $news.list[n].ww_isup==""}>
                     <div><a href="<{$web_url}>/index.php/west/detail/id/<{$news.list[n].ww_id}>">
                         <{$news.list[n].ww_title}>
-                    </a></div>>
+                    </a></div>
                     <{else}>
                     <div>
                     <a style="color:red;" href="<{$web_url}>/index.php/west/detail/id/<{$news.list[n].ww_id}>">
@@ -66,7 +66,7 @@
                 <{if $news.list[n].ww_isup==""}>
                 <div><a href="<{$web_url}>/index.php/west/detail/id/<{$news.list[n].ww_id}>">
                     <{$news.list[n].ww_title}>
-                </a></div>>
+                </a></div>
                 <{else}>
                 <div>
                     <a style="color:red;" href="<{$web_url}>/index.php/west/detail/id/<{$news.list[n].ww_id}>">
@@ -86,7 +86,7 @@
         </div>
         <{/if}>
         <{/section}>
-        <{page info=$news web_url=$web_url url="/index.php/west/person/"}>
+        <{page info=$news web_url=$web_url url="/index.php/west/news/"}>
     </div>
 
     <div class="middle_right">

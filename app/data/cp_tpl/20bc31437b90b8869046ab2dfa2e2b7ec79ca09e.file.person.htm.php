@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-27 18:06:02
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-28 14:59:53
          compiled from "app/tpl/west/person.htm" */ ?>
 <?php /*%%SmartyHeaderCode:18528628165425e25ed83817-14466932%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '20bc31437b90b8869046ab2dfa2e2b7ec79ca09e' => 
     array (
       0 => 'app/tpl/west/person.htm',
-      1 => 1411812331,
+      1 => 1411887591,
       2 => 'file',
     ),
   ),
@@ -109,7 +109,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['last']       = ($_smart
 ">
                         <?php echo $_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['ww_title'];?>
 
-                    </a></div>>
+                    </a></div>
                     <?php }else{ ?>
                     <div>
                         <a style="color:red;" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
@@ -146,7 +146,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['last']       = ($_smart
 ">
                     <?php echo $_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['ww_title'];?>
 
-                </a></div>>
+                </a></div>
                 <?php }else{ ?>
                 <div>
                     <a style="color:red;" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>

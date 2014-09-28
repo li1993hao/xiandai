@@ -20,6 +20,8 @@ class FriendlinkController extends Controller
 		$corpinternmsg = new corpinternmsg();
 		$frontlist = $corpinternmsg->getfrontmsg(6);
 		$this->view->frontlist = $frontlist;
+        $jobfairmsg = new jobfairmsg();
+        $this->view->jobFair = $jobfairmsg->getfrontjobfair(5);
 		echo $this->view->render("index.html");
 	}
 }

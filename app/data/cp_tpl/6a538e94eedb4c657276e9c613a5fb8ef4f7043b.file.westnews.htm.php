@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-27 06:01:07
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-28 14:58:56
          compiled from "app/tpl/west/westnews.htm" */ ?>
 <?php /*%%SmartyHeaderCode:11919175265425e201475a32-87360480%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6a538e94eedb4c657276e9c613a5fb8ef4f7043b' => 
     array (
       0 => 'app/tpl/west/westnews.htm',
-      1 => 1411768865,
+      1 => 1411887529,
       2 => 'file',
     ),
   ),
@@ -108,7 +108,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['last']       = ($_smart
 ">
                         <?php echo $_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['ww_title'];?>
 
-                    </a></div>>
+                    </a></div>
                     <?php }else{ ?>
                     <div>
                     <a style="color:red;" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
@@ -136,7 +136,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['last']       = ($_smart
                 </ul>
             </div>
         </div>
-        <?php }?>
+        <?php }else{ ?>
         <div class="news_item">
             <div>
                 <?php if ($_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['ww_isup']==''){?>
@@ -145,7 +145,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['last']       = ($_smart
 ">
                     <?php echo $_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['ww_title'];?>
 
-                </a></div>>
+                </a></div>
                 <?php }else{ ?>
                 <div>
                     <a style="color:red;" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
@@ -172,8 +172,9 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['last']       = ($_smart
                 </li>
             </ul>
         </div>
+        <?php }?>
         <?php endfor; endif; ?>
-        <?php echo smarty_function_page(array('info'=>$_smarty_tpl->tpl_vars['news']->value,'web_url'=>$_smarty_tpl->tpl_vars['web_url']->value,'url'=>"/index.php/west/person/"),$_smarty_tpl);?>
+        <?php echo smarty_function_page(array('info'=>$_smarty_tpl->tpl_vars['news']->value,'web_url'=>$_smarty_tpl->tpl_vars['web_url']->value,'url'=>"/index.php/west/news/"),$_smarty_tpl);?>
 
     </div>
 

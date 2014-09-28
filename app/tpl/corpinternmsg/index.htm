@@ -19,16 +19,16 @@
 <body>
     <{include file='header.htm' }>
         <!--导航栏-->
-        <div class="nav">
-            <dl>
-                <dt><a href="<{$web_url}>/index.php/index">首页/</a>
-                </dt>
-                <dt><a href="#"><{$corpInfo.type_name}></a>
-                </dt>
-            </dl>
-        </div>
+    <div class="nav">
+        <dl>
+            <dt><a href="<{$web_url}>/index.php/index">首页/</a>
+            </dt>
+            <dt><a href="#"><{$corpInfo.type_name}></a>
+            </dt>
+        </dl>
+    </div>
         <div class="middle">
-           
+
             <div class="middle_left">
                 <{section name=n loop=$news.list}>
                 <div class="news_item">
@@ -38,7 +38,7 @@
                         <{else}>
                            <div><a href="<{$web_url}>/index.php/Corpinternmsg/detail/id/<{$news.list[n].cim_id}>" style="color:red">[顶]<{$news.list[n].cim_name|truncate:21:'…'}></a></div>
                         <{/if}>
-             
+
 
                         <span><{$news.list[n].cim_date}></span>
                     </div>

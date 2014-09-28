@@ -37,19 +37,19 @@
                     <div>
                         <{if $news.list[n].ji_recom!="" and $news.list[n].ji_isup!="" }>
                         <div><a style="color:red" href="<{$web_url}>/index.php/jobinfo/detail/id/<{$news.list[n].ji_id}>">
-                                [荐][顶]<{$news.list[n].ji_title}>
+                                [荐][顶]<{$news.list[n].ji_title|truncate:30:'...':true}>
                         </a></div>
                         <{else if $news.list[n].ji_recom neq ""}>
                                      <div><a style="color:red" href="<{$web_url}>/index.php/jobinfo/detail/id/<{$news.list[n].ji_id}>">
-                                [荐]<{$news.list[n].ji_title}>
+                                [荐<{$news.list[n].ji_title|truncate:30:'...':true}>
                         </a></div>
                         <{else if $news.list[n].ji_isup==""}>
                                      <div><a href="<{$web_url}>/index.php/jobinfo/detail/id/<{$news.list[n].ji_id}>">
-                                <{$news.list[n].ji_title}>
+                                        <{$news.list[n].ji_title|truncate:30:'...':true}>
                         </a></div>
                         <{else}>
                             <div><a style="color:red" href="<{$web_url}>/index.php/jobinfo/detail/id/<{$news.list[n].ji_id}>">
-                                [顶]<{$news.list[n].ji_title}>
+                                [顶]<{$news.list[n].ji_title|truncate:30:'...':true}>
                         </a></div>
                         <{/if}>
                         <span><{$news.list[n].ji_date}></span>

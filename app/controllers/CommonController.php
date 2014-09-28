@@ -229,7 +229,11 @@ class CommonController extends Controller
 	 */
 	public function Userinfo(){
 		$id = $this->getRequest()->get("id");
-		
+        //推荐招聘会
+        $jobfairmsg = new jobfairmsg();
+        $this->view->jobFair = $jobfairmsg->getfrontjobfair(5);
+
+
 		$f_user = new frontuser();
 		if( $userinfo = $f_user->getUserFromAccount($id,true) ){
 			//print_r($userinfo);

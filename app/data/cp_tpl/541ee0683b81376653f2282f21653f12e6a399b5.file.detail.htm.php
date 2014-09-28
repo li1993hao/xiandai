@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-27 05:55:37
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-28 14:57:12
          compiled from "app/tpl/collegeintroduction/detail.htm" */ ?>
 <?php /*%%SmartyHeaderCode:21040285355425a5962b3f48-60343388%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '541ee0683b81376653f2282f21653f12e6a399b5' => 
     array (
       0 => 'app/tpl/collegeintroduction/detail.htm',
-      1 => 1411762750,
+      1 => 1411815827,
       2 => 'file',
     ),
   ),
@@ -170,7 +170,6 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
     </div>
 
 </div>
-
 
 <?php echo $_smarty_tpl->getSubTemplate ('footer.htm', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
