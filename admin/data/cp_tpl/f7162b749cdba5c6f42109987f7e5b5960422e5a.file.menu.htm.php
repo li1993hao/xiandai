@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-21 16:09:50
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-29 20:31:10
          compiled from "admin/tpl/index/menu.htm" */ ?>
 <?php /*%%SmartyHeaderCode:1202884331541e87ce16d907-62379379%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f7162b749cdba5c6f42109987f7e5b5960422e5a' => 
     array (
       0 => 'admin/tpl/index/menu.htm',
-      1 => 1401159564,
+      1 => 1411993235,
       2 => 'file',
     ),
   ),
@@ -15,14 +15,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_541e87ce4cf375_52308272',
   'variables' => 
   array (
     'web_url' => 0,
     'menu' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_541e87ce4cf375_52308272',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_541e87ce4cf375_52308272')) {function content_541e87ce4cf375_52308272($_smarty_tpl) {?><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <HTML><HEAD>
@@ -73,20 +73,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
           			<TD><A class=menuChild href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /manwyjob.php/recruit/getcorpmsglist" target=main>企业招聘信息管理</A></TD>
 				</TR>
-
-                <TR height=20>
+               <TR height=20>
           			<TD align=middle width=30><IMG height=9 src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/admin/images/menu_icon.gif" width=9></TD>
           			<TD><A class=menuChild href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /manwyjob.php/recruit/getinternmsglist" target=main>实习招聘信息管理</A></TD>
 				</TR>
-				<TR height=20>
+			  <!--
+					<TR height=20>
           			<TD align=middle width=30><IMG height=9 src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/admin/images/menu_icon.gif" width=9></TD>
           			<TD><A class=menuChild href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /manwyjob.php/recruit/getbasemsglist" target=main>基层招聘信息管理</A></TD>
 				</TR>
-
+             -->
 				<TR height=20>
           			<TD align=middle width=30><IMG height=9 src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/admin/images/menu_icon.gif" width=9></TD>
@@ -99,12 +99,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
           			<TD><A class=menuChild href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /manwyjob.php/recruit/addinternmsg" target=main>添加实习招聘信息</A></TD>
 				</TR>
+                <!--
 				<TR height=20>
           			<TD align=middle width=30><IMG height=9 src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/admin/images/menu_icon.gif" width=9></TD>
           			<TD><A class=menuChild href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /manwyjob.php/recruit/addbasemsg" target=main>添加基层招聘信息</A></TD>
 				</TR>
+				-->
 				<TR height=20>
           			<TD align=middle width=30><IMG height=9 src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/admin/images/menu_icon.gif" width=9></TD>
@@ -169,7 +171,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
           			<TD align=middle width=30><IMG height=9 src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/admin/images/menu_icon.gif" width=9></TD>
           			<TD><A class=menuChild href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/manwyjob.php/jobinfo/infolist/infotype/1" target=main>就业动态管理</A></TD>
+/manwyjob.php/jobinfo/infolist/infotype/1" target=main>工作动态管理</A></TD>
 				</TR>
 				<TR height=20>
           			<TD align=middle width=30><IMG height=9 src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
@@ -187,7 +189,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
           			<TD align=middle width=30><IMG height=9 src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/admin/images/menu_icon.gif" width=9></TD>
           			<TD><A class=menuChild href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/manwyjob.php/jobinfo/infolist/infotype/4" target=main>求职指导管理</A></TD>
+/manwyjob.php/jobinfo/infolist/infotype/4" target=main>就业指导管理</A></TD>
 				</TR>
 				<TR height=20>
           			<TD align=middle width=30><IMG height=9 src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
@@ -199,16 +201,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
           			<TD align=middle width=30><IMG height=9 src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/admin/images/menu_icon.gif" width=9></TD>
           			<TD><A class=menuChild href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/manwyjob.php/jobinfo/infolist/infotype/6" target=main>创业流程管理</A></TD>
-				</TR>
-				<TR height=20>
-          			<TD align=middle width=30><IMG height=9 src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/common/admin/images/menu_icon.gif" width=9></TD>
-          			<TD><A class=menuChild href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /manwyjob.php/jobinfo/Getemploylist" target=main>就业政策管理</A></TD>
 				</TR>
-
-        		<TR height=4><TD colSpan=2></TD></TR>
+                <TR height=20>
+                    <TD align=middle width=30><IMG height=9 src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/admin/images/menu_icon.gif" width=9></TD>
+                    <TD><A class=menuChild href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/manwyjob.php/jobinfo/infolist/infotype/9" target=main>创就业明星管理</A></TD>
+                </TR>
+             <TR height=4><TD colSpan=2></TD></TR>
 			</TABLE>
 			<?php }?>
 
@@ -237,7 +238,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
           			<TD align=middle width=30><IMG height=9 src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/admin/images/menu_icon.gif" width=9></TD>
           			<TD><A class=menuChild href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/manwyjob.php/studentjobinfo/getjobbulletinlist" target=main>天外职刊管理</A></TD>
+/manwyjob.php/studentjobinfo/getjobbulletinlist" target=main>就业工作简报管理</A></TD>
 				</TR>
 				<TR height=20>
           			<TD align=middle width=30><IMG height=9 src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
@@ -246,12 +247,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 /manwyjob.php/studentjobinfo/Getprofessionpersontalkmsglist" target=main>校友寻访信息管理</A></TD>
 
 				</TR>
+                <!--
 				<TR height=20>
           			<TD align=middle width=30><IMG height=9 src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/admin/images/menu_icon.gif" width=9></TD>
           			<TD><A class=menuChild href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /manwyjob.php/studentjobinfo/Getprofessionsailmsglist" target=main>职业起航管理</A></TD>
 				</TR>
+				-->
 				 <TR height=20>
           			<TD align=middle width=30><IMG height=9 src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/admin/images/menu_icon.gif" width=9></TD>
@@ -262,24 +265,23 @@ $_valid = $_smarty_tpl->decodeProperties(array (
           			<TD align=middle width=30><IMG height=9 src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/admin/images/menu_icon.gif" width=9></TD>
           			<TD><A class=menuChild href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/manwyjob.php/studentjobinfo/newjobbulletin" target=main>添加天外职刊</A></TD>
+/manwyjob.php/studentjobinfo/newjobbulletin" target=main>添加就业工作简报</A></TD>
 				</TR>
-
-
-                <TR height=20>
+               <TR height=20>
           			<TD align=middle width=30><IMG height=9 src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/admin/images/menu_icon.gif" width=9></TD>
           			<TD><A class=menuChild href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /manwyjob.php/studentjobinfo/newalumuns" target=main>添加校友寻访</A></TD>
 
 				</TR>
+                <!--
 				<TR height=20>
           			<TD align=middle width=30><IMG height=9 src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/admin/images/menu_icon.gif" width=9></TD>
           			<TD><A class=menuChild href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /manwyjob.php/studentjobinfo/newprofessionsail" target=main>添加职业起航</A></TD>
 				</TR>
-
+                -->
 				<TR height=4><TD colSpan=2></TD></TR>
 			</TABLE>
 			<?php }?>
@@ -345,7 +347,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					</TD>
           			<TD>
 		  				<A class=menuChild  href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/manwyjob.php/employerservice/Getteamlist" target=main>就业小组管理</A>
+/manwyjob.php/employerservice/Getteamlist" target=main>就业专员管理</A>
 		  			</TD>
 				</TR>
 				<TR height=20>
@@ -355,7 +357,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					</TD>
           			<TD>
 		  				<A class=menuChild  href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/manwyjob.php/employerservice/Addemploymentteam" target=main>添加就业小组</A>
+/manwyjob.php/employerservice/Addemploymentteam" target=main>添加就业专员</A>
 		  			</TD>
 				</TR>
 			<TR height=20>
@@ -365,7 +367,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					</TD>
           			<TD>
 		  				<A class=menuChild  href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/manwyjob.php/employerservice/Recruitment" target=main>招聘管理指南</A>
+/manwyjob.php/employerservice/Recruitment" target=main>招聘指南管理</A>
 		  			</TD>
 				</TR>
 
@@ -382,7 +384,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         		<TR height=22>
           			<TD style="PADDING-LEFT: 30px" background="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/admin/images/menu_bt.jpg">
-						<A class=menuParent onclick=expand(12) href="javascript:void(0);">基层就业管理</A>
+						<A class=menuParent onclick=expand(12) href="javascript:void(0);">渤海轻工集团管理</A>
 					</TD>
 				</TR>
 
@@ -396,7 +398,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					</TD>
           			<TD>
 		  				<A class=menuChild  href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/manwyjob.php/west/personlist" target=main>基层就业人物</A>
+/manwyjob.php/west/personlist" target=main>渤海轻工集团就业人物</A>
 		  			</TD>
 				</TR>
                 <TR height=20>
@@ -406,7 +408,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					</TD>
           			<TD>
 		  				<A class=menuChild  href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/manwyjob.php/west/newslist" target=main>基层就业动态</A>
+/manwyjob.php/west/newslist" target=main>渤海轻工集团就业动态</A>
 		  			</TD>
 				</TR>
 
@@ -417,10 +419,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		  			</TD>
           			<TD>
 		  				<A class=menuChild  href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/manwyjob.php/west/policylist" target=main>基层就业政策</A>
+/manwyjob.php/west/policylist" target=main>渤海轻工集团就业政策</A>
 		  			</TD>
 				</TR>
-
+        <!--
 				<TR height=20>
          			<TD align=middle width=30>
 		  				<IMG height=9 src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
@@ -428,9 +430,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		  			</TD>
           			<TD>
 		  				<A class=menuChild  href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/manwyjob.php/west/addinfo" target=main>添加基层就业信息</A>
+/manwyjob.php/west/addinfo" target=main>添加渤海轻工集团就业信息</A>
 		  			</TD>
 				</TR>
+		-->
 	  		</TABLE>
 	  		<?php }?>
 
@@ -453,12 +456,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
           			<TD><A class=menuChild href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /manwyjob.php/Othermanagement/Centerintroduction" target=main>中心简介管理</A></TD>
 				</TR>
-                <TR height=20>
-          			<TD align=middle width=30><IMG height=9 src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/common/admin/images/menu_icon.gif" width=9></TD>
-          			<TD><A class=menuChild href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/manwyjob.php/Othermanagement/Sendservices" target=main>派遣服务管理</A></TD>
-				</TR>
 				<TR height=20>
           			<TD align=middle width=30><IMG height=9 src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/admin/images/menu_icon.gif" width=9></TD>
@@ -471,24 +468,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
           			<TD><A class=menuChild href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /manwyjob.php/Othermanagement/Getlinklist" target=main>友情链接管理</A></TD>
 				</TR>
-				<TR height=20>
-          			<TD align=middle width=30><IMG height=9 src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/common/admin/images/menu_icon.gif" width=9></TD>
-          			<TD><A class=menuChild href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/manwyjob.php/Othermanagement/Getdownlist" target=main>下载管理</A></TD>
-				</TR>
-				<!-- <TR height=20>
-          			<TD align=middle width=30><IMG height=9 src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/common/admin/images/menu_icon.gif" width=9></TD>
-          			<TD><A class=menuChild href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/manwyjob.php/Othermanagement/Getprolist" target=main>宣传栏管理</A></TD>
-				</TR>
-				<TR height=20>
-          			<TD align=middle width=30><IMG height=9 src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/common/admin/images/menu_icon.gif" width=9></TD>
-          			<TD><A class=menuChild href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/manwyjob.php/Othermanagement/Getdroplist" target=main>悬浮窗管理</A></TD>
-				</TR> -->
         		<TR height=4><TD colSpan=2></TD></TR>
 			</TABLE>
 			<?php }?>
@@ -515,42 +494,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         		<TR height=4><TD colSpan=2></TD></TR>
 			</TABLE>
 			<?php }?>
-
-			<?php if ($_smarty_tpl->tpl_vars['menu']->value['leavelist']==1){?>
-		<!-- 遗留信息管理-->
-
-			<TABLE cellSpacing=0 cellPadding=0 width=150 border=0>
-        		<TR height=22>
-          			<TD style="PADDING-LEFT: 30px" background="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/common/admin/images/menu_bt.jpg">
-						<A class=menuParent onclick=expand(17) href="javascript:void(0);">遗留清单管理</A>
-					</TD>
-				</TR>
-        		<TR height=4><TD></TD></TR>
-			</TABLE>
-      		<TABLE id=child17 style="DISPLAY: none" cellSpacing=0 cellPadding=0 width=150 border=0>
-                <TR height=20>
-          			<TD align=middle width=30><IMG height=9 src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/common/admin/images/menu_icon.gif" width=9></TD>
-          			<TD><A class=menuChild href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/manwyjob.php/Leavelist/daylqd" target=main>档案遗留清单</A></TD>
-				</TR>
-				<TR height=20>
-          			<TD align=middle width=30><IMG height=9 src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/common/admin/images/menu_icon.gif" width=9></TD>
-          			<TD><A class=menuChild href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/manwyjob.php/Leavelist/xwzylqd" target=main>毕业证、学位证遗留清单</A></TD>
-				</TR>
-				<TR height=20>
-          			<TD align=middle width=30><IMG height=9 src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/common/admin/images/menu_icon.gif" width=9></TD>
-          			<TD><A class=menuChild href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/manwyjob.php/Leavelist/bdzylqd" target=main>报到证遗留清单</A></TD>
-				</TR>
-        		<TR height=4><TD colSpan=2></TD></TR>
-			</TABLE>
-			<?php }?>
-			<?php if ($_smarty_tpl->tpl_vars['menu']->value['frontuser']==1){?>
+    		<?php if ($_smarty_tpl->tpl_vars['menu']->value['frontuser']==1){?>
 		<!-- 前台用户管理 -->
 
 			<TABLE cellSpacing=0 cellPadding=0 width=150 border=0>

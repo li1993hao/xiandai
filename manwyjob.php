@@ -6,7 +6,7 @@
 *  Email:binbin1129@126.com
 **/
 header("Content-type: text/html; charset=utf-8");
-//error_reporting(0);
+error_reporting(0);
 date_default_timezone_set('Asia/Shanghai');
 define("DIR",dirname(__FILE__));
 define("APPNAME","admin");

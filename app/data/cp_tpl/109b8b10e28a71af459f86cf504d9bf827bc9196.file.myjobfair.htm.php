@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-29 18:11:39
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-29 20:33:05
          compiled from "app/tpl/company/myjobfair.htm" */ ?>
-<?php /*%%SmartyHeaderCode:106110250754292d30204c45-34025995%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:138574276854295181200134-08226835%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,12 +11,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '106110250754292d30204c45-34025995',
+  'nocache_hash' => '138574276854295181200134-08226835',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_54292d3037f552_65940296',
   'variables' => 
   array (
     'web_url' => 0,
@@ -25,8 +23,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'jobfair' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_542951813432e4_47988332',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_54292d3037f552_65940296')) {function content_54292d3037f552_65940296($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/Users/haoli/Desktop/www/xiandai/been/Smarty/plugins/modifier.date_format.php';
+<?php if ($_valid && !is_callable('content_542951813432e4_47988332')) {function content_542951813432e4_47988332($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/Users/haoli/Desktop/www/xiandai/been/Smarty/plugins/modifier.date_format.php';
 if (!is_callable('smarty_function_page')) include '/Users/haoli/Desktop/www/xiandai/been/View/plugins/function.page.php';
 ?><!DOCTYPE HTML>
 <html>

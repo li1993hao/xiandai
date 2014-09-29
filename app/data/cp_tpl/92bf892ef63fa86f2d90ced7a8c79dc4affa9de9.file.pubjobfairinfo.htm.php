@@ -1,41 +1,87 @@
-<!DOCTYPE HTML>
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-29 20:38:06
+         compiled from "app/tpl/company/pubjobfairinfo.htm" */ ?>
+<?php /*%%SmartyHeaderCode:1201843474542951b0137030-17997830%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '92bf892ef63fa86f2d90ced7a8c79dc4affa9de9' => 
+    array (
+      0 => 'app/tpl/company/pubjobfairinfo.htm',
+      1 => 1411994285,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '1201843474542951b0137030-17997830',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_542951b0209357_65601564',
+  'variables' => 
+  array (
+    'web_url' => 0,
+    'result' => 0,
+  ),
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_542951b0209357_65601564')) {function content_542951b0209357_65601564($_smarty_tpl) {?><!DOCTYPE HTML>
 <html>
 <head>
     <meta id="screen-view" name="viewport" content="width=device-width" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <{include file='commcss.htm' }>
-    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/content.css" />
-    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/cor_drop.css" />
-    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/common/detail.css" />
-    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/common/myinfo.css" />
-    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/common/detail-360.css" />
-    <link rel="stylesheet" type="text/css" href="<{$web_url}>/common/libs/upload/uploadify.css"/>
-    <script type="text/javascript" src="<{$web_url}>/common/libs/jquery.min.js"></script>
-    <script type="text/javascript" src="<{$web_url}>/common/libs/upload/jquery.uploadify.min.js"></script>
+    <?php echo $_smarty_tpl->getSubTemplate ('commcss.htm', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
+    <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/app/css/content.css" />
+    <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/app/css/cor_drop.css" />
+    <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/app/css/common/detail.css" />
+    <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/app/css/common/myinfo.css" />
+    <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/app/css/common/detail-360.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/libs/upload/uploadify.css"/>
+    <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/libs/jquery.min.js"></script>
+    <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/libs/upload/jquery.uploadify.min.js"></script>
     <title>招聘会预定</title>
     <script type="text/javascript">
-        var web_url = "<{$web_url}>";
+        var web_url = "<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+";
     </script>
 
     <!--[if lt IE 9]
-    <script type="text/javascript" src="<{$web_url}>/common/app/js/DOMAssistantCompressed-2.7.4.js"></script>
-    <script type="text/javascript" src="<{$web_url}>/common/app/js/ie-css3.js"></script>
+    <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/app/js/DOMAssistantCompressed-2.7.4.js"></script>
+    <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/app/js/ie-css3.js"></script>
     <![endif]-->
-<script type="text/javascript" src="<{$web_url}>/common/libs/jquery.min.js"></script>
-<script type="text/javascript" src="<{$web_url}>/common/libs/xheditor-1.2.1/xheditor-1.2.1.min.js"></script>
-<script type="text/javascript" src="<{$web_url}>/common/libs/xheditor-1.2.1/xheditor_lang/zh-cn.js"></script>
+<script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/libs/jquery.min.js"></script>
+<script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/libs/xheditor-1.2.1/xheditor-1.2.1.min.js"></script>
+<script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/libs/xheditor-1.2.1/xheditor_lang/zh-cn.js"></script>
 <script type="text/javascript">
     $(function(){
         var editor = $('#content').xheditor({
-            upLinkUrl:"<{$web_url}>/common/upload.php",
+            upLinkUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
             upLinkExt:"zip,rar,txt",
-            upImgUrl:"<{$web_url}>/common/upload.php",
+            upImgUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
             upImgExt:"jpg,jpeg,gif,png",
-            upFlashUrl:"<{$web_url}>/common/upload.php",
+            upFlashUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
             upFlashExt:"swf",
-            upMediaUrl:"<{$web_url}>/common/upload.php",
+            upMediaUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
             upMediaExt:"avi",
-            remoteImgSaveUrl:"<{$web_url}>/common/upload.php",
+            remoteImgSaveUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
             cleanPaste:2,
             internalScript:false,
             inlineScript:false,
@@ -45,15 +91,20 @@
         });
     $(function(){
         var editor = $('#require').xheditor({
-            upLinkUrl:"<{$web_url}>/common/upload.php",
+            upLinkUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
             upLinkExt:"zip,rar,txt",
-            upImgUrl:"<{$web_url}>/common/upload.php",
+            upImgUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
             upImgExt:"jpg,jpeg,gif,png",
-            upFlashUrl:"<{$web_url}>/common/upload.php",
+            upFlashUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
             upFlashExt:"swf",
-            upMediaUrl:"<{$web_url}>/common/upload.php",
+            upMediaUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
             upMediaExt:"avi",
-            remoteImgSaveUrl:"<{$web_url}>/common/upload.php",
+            remoteImgSaveUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
             cleanPaste:2,
             internalScript:false,
             inlineScript:false,
@@ -84,8 +135,10 @@
         $('#file_upload').uploadify({
             'formData'     : {
             },
-            'swf'      : '<{$web_url}>/common/libs/upload/uploadify.swf',
-            'uploader' : '<{$web_url}>/index.php/common/fileupload/filetype/file',
+            'swf'      : '<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/libs/upload/uploadify.swf',
+            'uploader' : '<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/common/fileupload/filetype/file',
             'queueSizeLimit': 1 ,
             'multi':false,
             'auto':true,
@@ -95,7 +148,8 @@
             'buttonText':"上传附件",
             'width' : 100,
             'height':20,
-            'cancelImg' : '<{$web_url}>/common/libs/upload/uploadify-cancel.png',
+            'cancelImg' : '<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/libs/upload/uploadify-cancel.png',
             'onUploadError' : function(file, errorCode, errorMsg, errorString) {
                 alert('The file ' + file.name + ' could not be uploaded: ' + errorString);
             },
@@ -129,24 +183,32 @@
 
 
         var editor = $('#require').xheditor({
-            upLinkUrl:"<{$web_url}>/common/upload.php",
+            upLinkUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
             upLinkExt:"zip,rar,txt",
-            upImgUrl:"<{$web_url}>/common/upload.php",
+            upImgUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
             upImgExt:"jpg,jpeg,gif,png",
-            upFlashUrl:"<{$web_url}>/common/upload.php",
+            upFlashUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
             upFlashExt:"swf",
-            upMediaUrl:"<{$web_url}>/common/upload.php",
+            upMediaUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
             upMediaExt:"avi"
         });
 
         var editor = $('#content').xheditor({
-            upLinkUrl:"<{$web_url}>/common/upload.php",
+            upLinkUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
             upLinkExt:"zip,rar,txt",
-            upImgUrl:"<{$web_url}>/common/upload.php",
+            upImgUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
             upImgExt:"jpg,jpeg,gif,png",
-            upFlashUrl:"<{$web_url}>/common/upload.php",
+            upFlashUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
             upFlashExt:"swf",
-            upMediaUrl:"<{$web_url}>/common/upload.php",
+            upMediaUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
             upMediaExt:"avi"
         });
 
@@ -195,7 +257,8 @@
 
     function getArea(htmlId,pId){
         $.ajax({
-            url:"<{$web_url}>/index.php/common/area/parentid/"+pId,
+            url:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/common/area/parentid/"+pId,
             type:"POST",
             async:false,
             dataType:"json",
@@ -226,7 +289,8 @@
 
     function delfile(id){
         $.ajax({
-            url:"<{$web_url}>/index.php/common/delfile/filetype/file/id/"+id,
+            url:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/common/delfile/filetype/file/id/"+id,
             type:"post",
             async: false,
             dataType:"json",
@@ -248,13 +312,16 @@
         });
     }
 </script>
-<{include file='header.htm'}>
+<?php echo $_smarty_tpl->getSubTemplate ('header.htm', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
 
 <div class="nav">
     <dl>
-        <dt><a href="<{$web_url}>/index.php/index">首页/</a>
+        <dt><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/index">首页/</a>
         </dt>
-        <dt><a href="<{$web_url}>/index.php/company/myinfo">个人中心/</a>
+        <dt><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/company/myinfo">个人中心/</a>
         </dt>
         <dt><a href="#">招聘会预定</a></dt>
     </dl>
@@ -265,18 +332,26 @@
             <p>功能菜单</p>
         </div>
         <div class="title" style="margin-top: 8px">
-            <p class = "title_link" onclick="location.href='<{$web_url}>/index.php/company/myinfo'" >企业基本信息</p>
-            <p class = "title_link" onclick="location.href='<{$web_url}>/index.php/company/getmyjobfair'" style="background-color:#344a5d;color: #ffffff">招聘会预定</p>
-            <p class = "title_link" onclick="location.href='<{$web_url}>/index.php/company/getmycorpmsg'">招聘信息</p>
-            <p class = "title_link" onclick="location.href='<{$web_url}>/index.php/company/studentinterestme'">学生信息</p>
-            <p class = "title_link" onclick="location.href='<{$web_url}>/index.php/company/changepw'">修改密码</p>
-            <p class = "title_link" onclick="location.href='<{$web_url}>/index.php/index/index#feedback'">满意度调查</p>
-            <p class = "title_link" onclick="location.href='<{$web_url}>/index.php/company/message'">我的消息</p>
+            <p class = "title_link" onclick="location.href='<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/company/myinfo'" >企业基本信息</p>
+            <p class = "title_link" onclick="location.href='<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/company/getmyjobfair'" style="background-color:#344a5d;color: #ffffff">招聘会预定</p>
+            <p class = "title_link" onclick="location.href='<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/company/getmycorpmsg'">招聘信息</p>
+            <p class = "title_link" onclick="location.href='<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/company/studentinterestme'">学生信息</p>
+            <p class = "title_link" onclick="location.href='<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/company/changepw'">修改密码</p>
+            <p class = "title_link" onclick="location.href='<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/index/index#feedback'">满意度调查</p>
+            <p class = "title_link" onclick="location.href='<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/company/message'">我的消息</p>
         </div>
     </div>
        <div class="middle_right" >
            <div id="myinfo_left">
-               <form id="form1" target="_self" name="form1" method="post" action="<{$web_url}>/index.php/company/pubjobfairinfo">
+               <form id="form1" target="_self" name="form1" method="post" action="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/company/pubjobfairinfo">
                    <table class="fairinfo_table">
                        <tbody>
                        <tr class="company-jobfair-item">
@@ -362,7 +437,8 @@
                            <td class="company-jobfair-item-title"></td>
                            <td class="company-jobfair-item-info">
                                <input id="submit" class="submit" name="submit" type="submit" value="预订招聘会"/>
-                               <span id="result" style="color:red;font-size:13px;margin-left: 30px"><{$result|default:""}></span>
+                               <span id="result" style="color:red;font-size:13px;margin-left: 30px"><?php echo (($tmp = @$_smarty_tpl->tpl_vars['result']->value)===null||$tmp==='' ? '' : $tmp);?>
+</span>
                            </td>
                        </tr>
                        </tbody>
@@ -376,7 +452,8 @@
 
 
 
-<{include file='footer.htm'}>
+<?php echo $_smarty_tpl->getSubTemplate ('footer.htm', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
 </body>
 
-</html>
+</html><?php }} ?>

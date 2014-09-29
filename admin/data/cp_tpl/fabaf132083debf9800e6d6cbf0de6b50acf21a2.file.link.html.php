@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-21 16:40:58
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-29 20:32:11
          compiled from "admin/tpl/othermanagement/link.html" */ ?>
 <?php /*%%SmartyHeaderCode:1977738826541e8f1ad305e5-68832147%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fabaf132083debf9800e6d6cbf0de6b50acf21a2' => 
     array (
       0 => 'admin/tpl/othermanagement/link.html',
-      1 => 1399268288,
+      1 => 1411993235,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_541e8f1add6814_19162642',
   'variables' => 
   array (
     'web_url' => 0,
@@ -24,10 +26,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'out' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_541e8f1add6814_19162642',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_541e8f1add6814_19162642')) {function content_541e8f1add6814_19162642($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/wyjob/been/Smarty/plugins/modifier.truncate.php';
+<?php if ($_valid && !is_callable('content_541e8f1add6814_19162642')) {function content_541e8f1add6814_19162642($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/xiandai/been/Smarty/plugins/modifier.truncate.php';
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>

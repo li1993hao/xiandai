@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-28 18:48:47
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-29 20:32:26
          compiled from "app/tpl/footer.htm" */ ?>
-<?php /*%%SmartyHeaderCode:7624923395424302fc3be26-32984124%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:18644246005429515a0c3304-96807334%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,19 +11,19 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '7624923395424302fc3be26-32984124',
+  'nocache_hash' => '18644246005429515a0c3304-96807334',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_5424302fc473f8_64897166',
   'variables' => 
   array (
     'web_url' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_5429515a106246_29768552',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5424302fc473f8_64897166')) {function content_5424302fc473f8_64897166($_smarty_tpl) {?><?php if (!is_callable('smarty_function_visitelog')) include '/Users/haoli/Desktop/www/xiandai/been/View/plugins/function.visitelog.php';
+<?php if ($_valid && !is_callable('content_5429515a106246_29768552')) {function content_5429515a106246_29768552($_smarty_tpl) {?><?php if (!is_callable('smarty_function_visitelog')) include '/Users/haoli/Desktop/www/xiandai/been/View/plugins/function.visitelog.php';
 if (!is_callable('smarty_function_getapp')) include '/Users/haoli/Desktop/www/xiandai/been/View/plugins/function.getapp.php';
 ?>  <div class="footer" id="footer">
             <div>

@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-29 13:37:02
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-29 20:32:25
          compiled from "app/tpl/index/index.htm" */ ?>
-<?php /*%%SmartyHeaderCode:1843120913541e4a515c7036-27068526%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:16721302254295159591db4-70105681%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,12 +11,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1843120913541e4a515c7036-27068526',
+  'nocache_hash' => '16721302254295159591db4-70105681',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_541e4a51ce5099_41541953',
   'variables' => 
   array (
     'web_url' => 0,
@@ -38,8 +36,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'jobAct' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_54295159f084c0_33149475',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_541e4a51ce5099_41541953')) {function content_541e4a51ce5099_41541953($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/xiandai/been/Smarty/plugins/modifier.truncate.php';
+<?php if ($_valid && !is_callable('content_54295159f084c0_33149475')) {function content_54295159f084c0_33149475($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/xiandai/been/Smarty/plugins/modifier.truncate.php';
 if (!is_callable('smarty_modifier_date_format')) include '/Users/haoli/Desktop/www/xiandai/been/Smarty/plugins/modifier.date_format.php';
 if (!is_callable('smarty_function_getdate')) include '/Users/haoli/Desktop/www/xiandai/been/View/plugins/function.getdate.php';
 ?><!DOCTYPE HTML>
