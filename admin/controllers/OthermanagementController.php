@@ -144,6 +144,9 @@ class OthermanagementController extends Controller
 	}
 	public function EditSoft()
 	{
+        //生成随机数
+        $mm=rand(100,1000);
+        $this->view->mm=$mm;
 		$soft = new studysoft();
 		$id = $this->getRequest()->get("id");
 		$this->view->id = $id;
@@ -286,6 +289,9 @@ class OthermanagementController extends Controller
 	}
 	public function Addsoft()
 	{
+        //生成随机数
+        $mm=rand(100,1000);
+        $this->view->mm=$mm;
 		$soft = new studysoft();
 		$addpiclink = new picture();
 		if($_POST)

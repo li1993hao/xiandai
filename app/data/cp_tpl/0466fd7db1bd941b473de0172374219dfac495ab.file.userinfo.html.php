@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-28 18:05:57
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-29 17:32:49
          compiled from "app/tpl/common/userinfo.html" */ ?>
 <?php /*%%SmartyHeaderCode:16935571715427dbd2d2c013-01591880%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0466fd7db1bd941b473de0172374219dfac495ab' => 
     array (
       0 => 'app/tpl/common/userinfo.html',
-      1 => 1411898752,
+      1 => 1411983167,
       2 => 'file',
     ),
   ),
@@ -73,21 +73,27 @@ if (!is_callable('smarty_function_getdate')) include '/Users/haoli/Desktop/www/x
         </dt>
     </dl>
 </div>
-<div class="middle">
+<div id="middle">
+<div class="middle_main">
 
-    <div class="middle_left">
     <style type="text/css">
         /*学生*/
         <!--
         #middle{
-            width:600px;
+            width:100%;
             min-height:860px;
             height:auto;
-            margin:0 auto;
         }
 
+        #middle_left{
+            width: 640px;
+            float: left;
+        }
+        .middle_right{
+            float: left;
+        }
         /*标题那一排*/
-        #myinfo_title{ margin-top:10px;	text-align:left;width:720px;display:block;border-bottom:solid 2px #929292; height:34px }
+        #myinfo_title{ margin-top:10px;	text-align:left;width:500px;display:block;border-bottom:solid 2px #929292; height:34px }
         .myinfo-title-left{width:500px;float:left;display:block;height:34px;}
         .myinfo-span-username{display:block;height:34px;float:left;line-height:30px;color:#A56B8A;font-size:22px;font-weight:500;border-bottom:2px solid #A56B8A;}
         .myinfo-span-state{color:red;font-size:13px;}
@@ -96,17 +102,16 @@ if (!is_callable('smarty_function_getdate')) include '/Users/haoli/Desktop/www/x
 
         /*标题那一排end*/
 
-        #content-left{ margin-top:20px; margin-right:10px; width:250px; float:left;}
-        #content-middle{margin-top:20px;margin-right:10px; width:250px; float:left;}
+        #content-left{ margin-top:20px; margin-right:10px; width:200px; float:left;}
+        #content-middle{margin-top:20px;margin-right:10px; width:200px; float:left;}
         #content-right{margin-top:20px;	width:200px; max-height:200px; float:left;}
-        #content-right img{max-height:200px;max-width:200px;}
-        #content-down{width:720px;float:left;}
+        #content-right img{height:120px;width:100px;}
+        #content-down{width:500px;float:left;}
         .content-info{margin:10px 0 0 0;font-size:15px;line-height:20px;color:#707070;}
 
 
         -->
     </style>
-    <div id="middle">
     <div id="middle_left">
     <?php if ($_smarty_tpl->tpl_vars['userinfo']->value['type']=="0"){?>
     <!-- 学生 -->
@@ -236,7 +241,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['indl']['last']       = ($_sm
         .content-background1{background:#72B1D6;}
         .content-background2{background: #7BAC87;}
         .content-background3{background:#A56B8A;}
-        .content-down-company{width:723px;height:40px;margin-top:20px;}
+        .content-down-company{width:600px;height:40px;margin-top:20px;}
         .content-down-company-title{margin-left:2px;width:130px;height:30px;float:left;font-size:18px;line-height:30px;cursor:pointer;text-align:center;padding:5px 10px;color:white;}
         .content-down-company-title:hover{color:white;}
         .cdct-selected1{background:url(../../common/app/images/companyinfo_xuanxiang_coin.png) 0 0 no-repeat #72B1D6; background-position:bottom center;}
@@ -259,7 +264,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['indl']['last']       = ($_sm
         .jobinfo-container-more{height:30px;margin-top:12px;}
         .jobinfo-container-more p{float:right; font-size:1em;}
 
-        .content-down-company-content{	width:720px;height:auto;}
+        .content-down-company-content{	width:600px;height:auto;}
 
         .company-introduce{	width:564px;	height:auto;}
         .company-introduce p{	font-size:12px;}
@@ -369,7 +374,6 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['indl']['last']       = ($_sm
 " />
     </div>
 
-    <!-- #content-down start-->
     <div id="content-down">
 
         <div class="content-down-company">
@@ -521,12 +525,11 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['jfm']['last']       = ($_sma
 
 
         <!-- 企业end -->
-        <?php }?>
+
 
     </div>
-    </div>
 
-    </div>
+    <?php }?>
     </div>
 
     <div class="middle_right">
@@ -589,6 +592,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['last']       = (
             <?php endfor; endif; ?>
         </div>
     </div>
+</div>
 </div>
 <?php echo $_smarty_tpl->getSubTemplate ('footer.htm', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 

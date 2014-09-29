@@ -32,13 +32,13 @@ class appFilter extends Filter{
 					}
 					$this->getApp()->putData('drTable', $arr);
 					
-					
+
 				}else if($userdata["type"] == 2){//教师
 					
 				}
 				$this->getApp()->putData('userinfo', $userdata );
 				$this->getApp()->getView()->__userinfo__=$userdata;
-				
+
 			}else{
 				$session->clear();
 				$this->getApp()->gotoUrl("Index","Index");

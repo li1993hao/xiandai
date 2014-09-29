@@ -283,9 +283,9 @@ class student extends Model {
 		$order = " ORDER BY `frontuser`.`fu_register_time` DESC";
 		$limit = " LIMIT " . ($page - 1) * $num . "," . $num . "";
 		$sql = $select . $filter . $order . $limit;
-		// echo $sql;
 		$sqlTotal = $select . $filter . $order;
-		if ($type == 0) {
+
+   		if ($type == 0) {
 			$list = $this->fetchAll ( $sql );
 			$total = count ( $this->fetchAll ( $sqlTotal ) );
 			$totalPage = ceil ( $total / $num );
@@ -298,5 +298,7 @@ class student extends Model {
 		} else {
 			return $this->fetchAll ( $sqlTotal );
 		}
+
+
 	}
 }

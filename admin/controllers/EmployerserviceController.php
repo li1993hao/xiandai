@@ -138,6 +138,9 @@ class EmployerserviceController extends Controller
 	//添加生源信息
 	public function Addsourceinfo()
 	{
+        //生成随机数
+        $mm=rand(100,1000);
+        $this->view->mm=$mm;
 		$userinfo = $this->getData("userinfo");
 		$this->view->user = $userinfo;
 		$sourceinfo=new sourceinformation();
@@ -188,6 +191,9 @@ class EmployerserviceController extends Controller
 	//修改生源信息
 	public function editsimsg()
 	{
+        //生成随机数
+        $mm=rand(100,1000);
+        $this->view->mm=$mm;
 		$userinfo = $this->getData("userinfo");
 		$this->view->user = $userinfo;
 		$id = $this->getRequest()->get("id");

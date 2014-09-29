@@ -53,6 +53,10 @@ class JobfairController extends Controller{
 	//添加招聘会信息
 	public function addjobfairmsg()
 	{
+
+        //生成随机数
+        $mm=rand(100,1000);
+        $this->view->mm=$mm;
 		$userinfo = $this->getData("userinfo");
 		$this->view->user = $userinfo;
 		$jobmsg = new jobfairmsg();

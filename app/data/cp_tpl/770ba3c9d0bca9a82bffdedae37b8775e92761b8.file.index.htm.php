@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-27 01:38:40
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-29 14:11:59
          compiled from "app/tpl/collegeintroduction/index.htm" */ ?>
 <?php /*%%SmartyHeaderCode:4706905345425a3a190fff1-03126050%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '770ba3c9d0bca9a82bffdedae37b8775e92761b8' => 
     array (
       0 => 'app/tpl/collegeintroduction/index.htm',
-      1 => 1411753119,
+      1 => 1411967656,
       2 => 'file',
     ),
   ),
@@ -43,6 +43,10 @@ if (!is_callable('smarty_function_getdate')) include '/Users/haoli/Desktop/www/x
 /common/app/css/rec.css" />
     <title>院系介绍</title>
 
+    <script type="text/javascript">
+        var web_url = "<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+";
+    </script>
     <!--[if lt IE 9]>
     <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/app/js/DOMAssistantCompressed-2.7.4.js"></script>

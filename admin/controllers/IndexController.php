@@ -14,7 +14,9 @@ class IndexController extends Controller{
 		
 	}
 	public function Index(){
-		//echo "dddddd";	
+		//echo "dddddd";
+
+		
 		echo $this->view->render("index.htm");
 	}
 	public function Header(){

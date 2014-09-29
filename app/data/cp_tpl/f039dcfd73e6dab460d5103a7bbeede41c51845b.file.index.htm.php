@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-27 18:25:27
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-29 14:11:15
          compiled from "app/tpl/jobfairmsg/index.htm" */ ?>
 <?php /*%%SmartyHeaderCode:130540465854246e225911c7-74428246%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f039dcfd73e6dab460d5103a7bbeede41c51845b' => 
     array (
       0 => 'app/tpl/jobfairmsg/index.htm',
-      1 => 1411813526,
+      1 => 1411971068,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'web_url' => 0,
-    'typeinfo' => 0,
     'news' => 0,
     'jobFair' => 0,
   ),
@@ -42,8 +41,7 @@ if (!is_callable('smarty_modifier_date_format')) include '/Users/haoli/Desktop/w
 /common/app/css/list.css" />
     <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/app/css/rec.css" />
-    <title><?php echo $_smarty_tpl->tpl_vars['typeinfo']->value['type_name'];?>
-</title>
+    <title>招聘会信息</title>
     <script type="text/javascript">
         var web_url = "<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 ";

@@ -6,7 +6,7 @@
 <LINK href="<{$web_url}>/common/admin/css/admin.css" type="text/css" rel="stylesheet">
 <title>添加招聘会信息</title>
 <script type="text/javascript" src="<{$web_url}>/common/libs/jquery-1.4.4.min.js"></script>
-<script type="text/javascript" src="<{$web_url}>/common/libs/upload/jquery.uploadify.min.js"></script>
+<script type="text/javascript" src="<{$web_url}>/common/libs/upload/jquery.uploadify.min.js?ver=<{$mm}>"></script>
 <link rel="stylesheet" type="text/css" href="<{$web_url}>/common/libs/upload/uploadify.css">
 <script type="text/javascript" src="<{$web_url}>/common/libs/xheditor-1.2.1/xheditor-1.2.1.min.js"></script>
 <script type="text/javascript" src="<{$web_url}>/common/libs/xheditor-1.2.1/xheditor_lang/zh-cn.js"></script>
@@ -132,8 +132,10 @@
 			$("#form1").submit( function () {
 				$("#result").val("");
 				$('#content').val(editor.getSource());//加上这句防止提交数据为空
-				
+				+
 				//return false;
+
+
 				if($("#name").val() == ""){
 					$("#result").text("标题不能为空！");
 					$("#name").focus();
@@ -145,12 +147,12 @@
 					$("#addr").focus();
 					return false;
 				}
-				if($("#date").val() == ""){
-					$("#result").text("召开时间不能为空！");
-					$("#date").focus();
-					return false;
-				}
-			
+
+                if($("#date").val() == ""){
+                    $("#result").text("召开时间不能为空！");
+                    $("#date").focus();
+                    return false;
+                }
 				//alert($("#newssort").val());
 				
 				if($("#content").val() == ""){
@@ -223,7 +225,7 @@
                                   <tr>
                                     <td height="40"><div align="right">召开时间：</div></td>
                                     <td height="40" colspan="2">&nbsp;
-                                        <input type="text" name="opentime"  size="25" class="Wdate" id="date"/>
+                                        <input type="text" name="opentime"  size="25" id="date" class="Wdate"  />
                                      &nbsp;&nbsp;<font color="#ff0000">必填</font></td>
                                   </tr>
                                   <tr>

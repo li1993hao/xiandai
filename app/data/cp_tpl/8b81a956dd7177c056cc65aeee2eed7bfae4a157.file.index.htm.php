@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-27 20:55:21
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-29 14:12:19
          compiled from "app/tpl/activityjobbulletin/index.htm" */ ?>
 <?php /*%%SmartyHeaderCode:85856937354258bfa6e7652-83665214%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '8b81a956dd7177c056cc65aeee2eed7bfae4a157' => 
     array (
       0 => 'app/tpl/activityjobbulletin/index.htm',
-      1 => 1411822520,
+      1 => 1411967663,
       2 => 'file',
     ),
   ),
@@ -47,6 +47,10 @@ if (!is_callable('smarty_function_getdate')) include '/Users/haoli/Desktop/www/x
     <title>就业工作简报-第<?php echo $_smarty_tpl->tpl_vars['perid']->value['ap_number'];?>
 期</title>
 
+    <script type="text/javascript">
+        var web_url = "<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+";
+    </script>
     <!--[if lt IE 9]>
     <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/app/js/DOMAssistantCompressed-2.7.4.js"></script>

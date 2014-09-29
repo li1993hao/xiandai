@@ -110,6 +110,8 @@ class WestController extends Controller{
 	 * 添加新闻
 	 */
 	public function Addinfo(){
+        $mm=rand(100,1000);
+        $this->view->mm=$mm;
 		$west = new westWork();
 		if($_POST){
 			//print_r($_POST);

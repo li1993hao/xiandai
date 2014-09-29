@@ -152,7 +152,7 @@ class message extends Model{
 				. "LEFT JOIN `company` ON `company`.`fu_id` = `message`.`fu_id_publisher` "
 				. $filter." AND `message`.`mes_type` = '0') "
 				.$order;
-		echo $sqlTotal;
+		// $sqlTotal;
 		$list = $this->fetchAll($sql);
 		$total = count($this->fetchAll($sqlTotal));
 		$totalPage = ceil($total / $num);

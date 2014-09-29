@@ -56,6 +56,10 @@ class RecruitController extends Controller {
 	//添加企业招聘信息
 	public function addCorpmsg()
 	{
+        //生成随机数
+        $mm=rand(100,1000);
+        $this->view->mm=$mm;
+
 		$userinfo = $this->getData("userinfo");
 		$this->view->user = $userinfo;
 		$corpmsg=new corpinternmsg();
@@ -266,7 +270,11 @@ class RecruitController extends Controller {
 	}
 	//添加实习招聘信息
 	public function addInternmsg()
-	{   
+	{
+        //生成随机数
+        $mm=rand(100,1000);
+        $this->view->mm=$mm;
+
 		//print_r($_POST);
 		$userinfo = $this->getData("userinfo");
 		$this->view->user = $userinfo;
@@ -446,6 +454,10 @@ class RecruitController extends Controller {
 	//添加基层就业信息
 	public function addBasemsg()
 	{
+        //生成随机数
+        $mm=rand(100,1000);
+        $this->view->mm=$mm;
+
 		$userinfo = $this->getData("userinfo");
 		$this->view->user = $userinfo;
 		$corpmsg=new corpinternmsg();

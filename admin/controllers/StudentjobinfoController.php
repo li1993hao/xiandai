@@ -79,6 +79,9 @@ class StudentjobinfoController extends Controller
 	//添加学生就业通讯
 	public function Newstudentjobcomm()
 	{
+        //生成随机数
+        $mm=rand(100,1000);
+        $this->view->mm=$mm;
 		$userinfo = $this->getData("userinfo");
 		$this->view->user = $userinfo;
 		$period=new periodicals();
@@ -203,6 +206,9 @@ class StudentjobinfoController extends Controller
 	//添加就业工作简报
 	public function Newjobbulletin()
 	{
+      //生成随机数
+        $mm=rand(100,1000);
+        $this->view->mm=$mm;
 		$userinfo = $this->getData("userinfo");
 		$this->view->user = $userinfo;
 		$periodicals=new activityjobbulletin();
@@ -256,6 +262,9 @@ class StudentjobinfoController extends Controller
 	//修改活动工作简报
 	public function editjbmsg()
 	{
+        //生成随机数
+       $mm=rand(100,1000);
+       $this->view->mm=$mm;
 		$jbmsg=new activityjobbulletin();
 		$userinfo = $this->getData("userinfo");
 		//$this->view->user = $userinfo;
@@ -311,7 +320,10 @@ class StudentjobinfoController extends Controller
 	}
 	//添加新的访谈记录
 	public function Newalumuns()
-	{	
+	{
+        //生成随机数
+        $mm=rand(100,1000);
+        $this->view->mm=$mm;
 		$userinfo = $this->getData("userinfo");
 		$this->view->user = $userinfo;
 		$alumunsreport=new professionpersontalk();

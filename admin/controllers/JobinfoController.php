@@ -5,13 +5,13 @@
 class JobinfoController extends Controller{
 	
 	private $__typeinfo = array(
-			"jobnews" => array("type_code"=>1,"type_name"=>"就业动态","type_color"=>"red"),
-			"activity" => array("type_code"=>2,"type_name"=>"通知公告","type_color"=>"red"),
-			"plan" => array("type_code"=>3,"type_name"=>"职业生涯规划","type_color"=>"blue"),
-			"search" => array("type_code"=>4,"type_name"=>"求职指导","type_color"=>"blue"),
-			"start" => array("type_code"=>5,"type_name"=>"创业指导","type_color"=>"blue"),
-			"process" => array("type_code"=>6,"type_name"=>"创业流程","type_color"=>"blue")
-			//"employ" => array("type_code"=>7,"type_name"=>"就业政策","type_color"=>"blue")这个不在一个数据库中
+        "jobAct"=> array("type_code"=>1,"type_name"=>"工作动态","type_color"=>"red"),
+        "jobNotice"=>array("type_code"=>2,"type_name"=>"通知公告","type_color"=>"red"),
+        "jobPlan"=>array("type_code"=>3,"type_name"=>"职业生涯规划","type_color"=>"blue"),
+        "jobGuid"=> array("type_code"=>4,"type_name"=>"就业指导","type_color"=>"blue"),
+        "entreGuid"=> array("type_code"=>5,"type_name"=>"创业指导","type_color"=>"blue"),
+        "empPolicy"=> array("type_code"=>6,"type_name"=>"就业政策","type_color"=>"blue"),
+        "empStar"=> array("type_code"=>9,"type_name"=>"创就业明星","type_color"=>"blue")
 	);
 	
 	public function __construct(){
@@ -106,15 +106,12 @@ class JobinfoController extends Controller{
 	
 			$pageSize = 9;
 			$page = $this->getRequest()->get('page') ? $this->getRequest()->get('page') : 1 ;
-			
-			//echo $page;
-			if( $key = trim( str_replace("/", " ",  $this->getRequest()->get("keyword")  ) ) ){
+    		if( $key = trim( str_replace("/", " ",  $this->getRequest()->get("keyword")  ) ) ){
 				$jobList = $jobmsg->get_news_page_model($type,$page,$pageSize,$key,TRUE);
 				$this->view->keyword = $key;
 			}else{
 				$jobList = $jobmsg->get_news_page_model($type,$page,$pageSize,null,TRUE);
 			}
-			////print_r($jobList);
 			$this->getView()->typeinfo = $typeinfo;
 			$this->view->joblist = $jobList;	
 			echo $this->view->render("infolist.htm");
@@ -129,6 +126,9 @@ class JobinfoController extends Controller{
 	 * 修改信息
 	 */
 	public function Editinfo(){
+        //生成随机数
+        $mm= rand(100,1000);
+        $this->view->mm=$mm;
 		if($id = $this->getRequest()->get("id")){
 			$this->view->id = $id;
 		
@@ -198,6 +198,9 @@ class JobinfoController extends Controller{
 	 */
 	public function Addinfo(){
 		$type = $this->getRequest()->get("infotype") ? $this->getRequest()->get("infotype") : 1;
+       //生成随机数
+        $mm=rand(100,1000);
+        $this->view->mm=$mm;
 		if($typeinfo = $this->_typecode2info($type)){
 			
 			$userinfo = $this->getData("userinfo");
@@ -221,9 +224,7 @@ class JobinfoController extends Controller{
 				{
 					//$recom = ($_POST['recom'] == 1) ? date("y-m-d") : 0;
 					$content = addslashes($_POST['content']);
-						
 					$result = $jobmsg->addjobinfo($_POST['title'], $type, $_POST['picid'], $userinfo['user_id'], $content,$_POST['fileid'],$_POST['filetitle']);
-					//print_r($_POST);
 					if($result>0){
 						$this->view->result = $this->_lang->tianjiachenggong;
 					}else{
@@ -314,6 +315,9 @@ class JobinfoController extends Controller{
 	
 	public function Editemploy()
 	{
+        //生成随机数
+        $mm=rand(100,1000);
+        $this->view->mm=$mm;
 		$id = $this->getRequest()->get("id");
 		$this->view->id = $id;
 		$employ = new employmentpolicy();
@@ -366,6 +370,9 @@ class JobinfoController extends Controller{
 	}
 	public function Addemploy()
 	{
+        //生成随机数
+        $mm=rand(100,1000);
+       $this->view->mm=$mm;
 		$employ = new employmentpolicy();
 		if($_POST)
 		{
