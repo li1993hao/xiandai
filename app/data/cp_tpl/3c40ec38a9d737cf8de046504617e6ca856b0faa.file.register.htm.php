@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-27 12:59:11
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-29 13:58:48
          compiled from "app/tpl/account/register.htm" */ ?>
 <?php /*%%SmartyHeaderCode:120008462354251dd562cc04-85821932%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '3c40ec38a9d737cf8de046504617e6ca856b0faa' => 
     array (
       0 => 'app/tpl/account/register.htm',
-      1 => 1411793950,
+      1 => 1411970326,
       2 => 'file',
     ),
   ),
@@ -21,10 +21,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   array (
     'web_url' => 0,
     'reg_flag' => 0,
+    'reg_result' => 0,
+    'form_userinfo' => 0,
     'dwxzList' => 0,
     'hyList' => 0,
-    'form_userinfo' => 0,
     'provinceList' => 0,
+    'zzhList' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -39,9 +41,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/app/css/headAndfoot.css" />
     <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/common/app/css/index/index.css" />
-    <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/app/css/account/register.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/libs/upload/uploadify.css">
+
+
+
     <title>企业注册</title>
 
     <script type="text/javascript">
@@ -64,63 +69,56 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <!--导航栏-->
 <div class="nav">
     <ul>
-        <li><a class="nav-a"href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/index.php">首页/</a></li><li><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/index.php/account/register">企业注册</a></li>
+        <dl><dt><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php">首页/</a></dt>
+         <dt><a href="#">企业注册</a></dt>
+        </dl>
     </ul>
 </div>
 
-<div class="register_middle">
+<div class="register_middle" style="min-height: 400px;">
 
     <?php if ($_smarty_tpl->tpl_vars['reg_flag']->value=="succeed"){?>
-    <div class = "register_success">
-        恭喜您！注册成功！等待系统管理员审核!  页面将在10s跳转到 <a href= "<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-"+/index.php" style="font-size:19px;color:red;">主页</a>
-
-        <script type="text/javascript">
-            function Redirect(){
-                window.location = web_url+"/index.php";
-            }
-            timer=setTimeout('Redirect()',10000); //跳转
-        </script>
-    </div>
+    恭喜您！注册成功！等待系统管理员审核！
     <?php }else{ ?>
-    <form id="form-register" name="form_register" method="post" enctype="multipart/form-data"  action="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/index.php/account/register" >
-
+    <form id="form-register" name="form_register" method="post" action="" style="width: 558px; margin: 0 auto;">
         <div class="form-register-item">
             <span class="form-register-item-title"></span>
-            <span  class="form-register-item-warn" style= "width:300px;" init-data=""></span>
+            <span id="register-result" class="form-register-item-warn" style= "width:300px;" init-data=""><?php echo (($tmp = @$_smarty_tpl->tpl_vars['reg_result']->value)===null||$tmp==='' ? '' : $tmp);?>
+</span>
             <div style="clear:both;"></div>
         </div>
         <div class="form-register-item">
-            <span class="form-register-item-title">登陆邮箱:</span>
-            <input class="form-register-item-input e-mail not-empty" id="form-email" type="text" name="form_email" value="" error_info="请检查注册邮箱！"/>
-            <span class="form-register-item-warn"  init-data=""><font color=red>*</font></span>
+            <span class="form-register-item-title"><span style="color:red;">*</span>邮箱:</span>
+            <input class="form-register-item-input e-mail not-empty" id="form-email" type="text" name="form_email" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['form_userinfo']->value['form_email'])===null||$tmp==='' ? '' : $tmp);?>
+" error_info="请检查注册邮箱！" placeholder="请输入注册邮箱" />
+            <span class="form-register-item-warn"  init-data=""></span>
             <div style="clear:both;"></div>
         </div>
         <div class="form-register-item">
-            <span class="form-register-item-title">公司名称:</span>
-            <input class="form-register-item-input not-empty" error_info="企业名称不能为空！"  id="form-name"  type="text" name="form_name" />
-            <span class="form-register-item-warn" init-data=""><font color=red>*</font></span>
+            <span class="form-register-item-title"><span style="color:red;">*</span>企业名称:</span>
+            <input class="form-register-item-input not-empty" error_info="企业名称不能为空！"  id="form-name" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['form_userinfo']->value['form_name'])===null||$tmp==='' ? '' : $tmp);?>
+" type="text" name="form_name" />
+            <span class="form-register-item-warn" init-data=""></span>
             <div style="clear:both;"></div>
         </div>
         <div class="form-register-item">
-            <span class="form-register-item-title">密码:</span>
+            <span class="form-register-item-title"><span style="color:red;">*</span>密码:</span>
             <input class="form-register-item-input pw not-empty" id="form-password" type="password" error_info="密码不能为空" name="form_password"  />
-            <span class="form-register-item-warn" init-data=""><font color=red>*</font></span>
+            <span class="form-register-item-warn" init-data=""></span>
             <div style="clear:both;"></div>
         </div>
         <div class="form-register-item">
-            <span class="form-register-item-title">重复密码:</span>
+            <span class="form-register-item-title"><span style="color:red;">*</span>重复密码:</span>
             <input class="form-register-item-input re-pw not-empty" id="form-password-second" type="password" error_info="密码不能为空" name="form_password_second"  />
-            <span class="form-register-item-warn zz_mima" init-data="" ><font color=red>*</font></span>
+            <span class="form-register-item-warn zz_mima" init-data="" ></span>
             <div style="clear:both;"></div>
         </div>
 
         <div class="form-register-item form-register-item-onerow">
-            <span class="form-register-item-title">单位性质:</span>
-            <select class="form-register-item-input not-empty" id="form-dwxz" name="form_dwxz" error_info="请选择单位性质！">
+            <span class="form-register-item-title"><span style="color:red;">*</span>单位性质:</span>
+            <select class="form-register-item-select short-select not-empty" id="form-dwxz" name="form_dwxz" error_info="请选择单位性质！">
+                <option value="" selected="selected"   >选择单位性质</option>
                 <?php if (isset($_smarty_tpl->tpl_vars['smarty']->value['section']['dl'])) unset($_smarty_tpl->tpl_vars['smarty']->value['section']['dl']);
 $_smarty_tpl->tpl_vars['smarty']->value['section']['dl']['name'] = 'dl';
 $_smarty_tpl->tpl_vars['smarty']->value['section']['dl']['loop'] = is_array($_loop=$_smarty_tpl->tpl_vars['dwxzList']->value) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
@@ -154,34 +152,35 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['dl']['last']       = ($_smar
             <div style="clear:both;"></div>
         </div>
         <div class="form-register-item form-register-item-onerow">
-            <span class="form-register-item-title">所属行业:</span>
-            <select class="form-register-item-input not-empty" id="form-hy" name="form_hy" error_info="请选择所属行业！">
-                <?php if (isset($_smarty_tpl->tpl_vars['smarty']->value['section']['dl'])) unset($_smarty_tpl->tpl_vars['smarty']->value['section']['dl']);
-$_smarty_tpl->tpl_vars['smarty']->value['section']['dl']['name'] = 'dl';
-$_smarty_tpl->tpl_vars['smarty']->value['section']['dl']['loop'] = is_array($_loop=$_smarty_tpl->tpl_vars['hyList']->value) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
-$_smarty_tpl->tpl_vars['smarty']->value['section']['dl']['show'] = true;
-$_smarty_tpl->tpl_vars['smarty']->value['section']['dl']['max'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['dl']['loop'];
-$_smarty_tpl->tpl_vars['smarty']->value['section']['dl']['step'] = 1;
-$_smarty_tpl->tpl_vars['smarty']->value['section']['dl']['start'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['dl']['step'] > 0 ? 0 : $_smarty_tpl->tpl_vars['smarty']->value['section']['dl']['loop']-1;
-if ($_smarty_tpl->tpl_vars['smarty']->value['section']['dl']['show']) {
-    $_smarty_tpl->tpl_vars['smarty']->value['section']['dl']['total'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['dl']['loop'];
-    if ($_smarty_tpl->tpl_vars['smarty']->value['section']['dl']['total'] == 0)
-        $_smarty_tpl->tpl_vars['smarty']->value['section']['dl']['show'] = false;
+            <span class="form-register-item-title"><span style="color:red;">*</span>所属行业:</span>
+            <select class="form-register-item-select short-select not-empty" id="form-hy" name="form_hy" error_info="请选择行业！">
+                <option value="" selected="selected"   >选择行业</option>
+                <?php if (isset($_smarty_tpl->tpl_vars['smarty']->value['section']['hl'])) unset($_smarty_tpl->tpl_vars['smarty']->value['section']['hl']);
+$_smarty_tpl->tpl_vars['smarty']->value['section']['hl']['name'] = 'hl';
+$_smarty_tpl->tpl_vars['smarty']->value['section']['hl']['loop'] = is_array($_loop=$_smarty_tpl->tpl_vars['hyList']->value) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
+$_smarty_tpl->tpl_vars['smarty']->value['section']['hl']['show'] = true;
+$_smarty_tpl->tpl_vars['smarty']->value['section']['hl']['max'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['hl']['loop'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['hl']['step'] = 1;
+$_smarty_tpl->tpl_vars['smarty']->value['section']['hl']['start'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['hl']['step'] > 0 ? 0 : $_smarty_tpl->tpl_vars['smarty']->value['section']['hl']['loop']-1;
+if ($_smarty_tpl->tpl_vars['smarty']->value['section']['hl']['show']) {
+    $_smarty_tpl->tpl_vars['smarty']->value['section']['hl']['total'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['hl']['loop'];
+    if ($_smarty_tpl->tpl_vars['smarty']->value['section']['hl']['total'] == 0)
+        $_smarty_tpl->tpl_vars['smarty']->value['section']['hl']['show'] = false;
 } else
-    $_smarty_tpl->tpl_vars['smarty']->value['section']['dl']['total'] = 0;
-if ($_smarty_tpl->tpl_vars['smarty']->value['section']['dl']['show']):
+    $_smarty_tpl->tpl_vars['smarty']->value['section']['hl']['total'] = 0;
+if ($_smarty_tpl->tpl_vars['smarty']->value['section']['hl']['show']):
 
-            for ($_smarty_tpl->tpl_vars['smarty']->value['section']['dl']['index'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['dl']['start'], $_smarty_tpl->tpl_vars['smarty']->value['section']['dl']['iteration'] = 1;
-                 $_smarty_tpl->tpl_vars['smarty']->value['section']['dl']['iteration'] <= $_smarty_tpl->tpl_vars['smarty']->value['section']['dl']['total'];
-                 $_smarty_tpl->tpl_vars['smarty']->value['section']['dl']['index'] += $_smarty_tpl->tpl_vars['smarty']->value['section']['dl']['step'], $_smarty_tpl->tpl_vars['smarty']->value['section']['dl']['iteration']++):
-$_smarty_tpl->tpl_vars['smarty']->value['section']['dl']['rownum'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['dl']['iteration'];
-$_smarty_tpl->tpl_vars['smarty']->value['section']['dl']['index_prev'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['dl']['index'] - $_smarty_tpl->tpl_vars['smarty']->value['section']['dl']['step'];
-$_smarty_tpl->tpl_vars['smarty']->value['section']['dl']['index_next'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['dl']['index'] + $_smarty_tpl->tpl_vars['smarty']->value['section']['dl']['step'];
-$_smarty_tpl->tpl_vars['smarty']->value['section']['dl']['first']      = ($_smarty_tpl->tpl_vars['smarty']->value['section']['dl']['iteration'] == 1);
-$_smarty_tpl->tpl_vars['smarty']->value['section']['dl']['last']       = ($_smarty_tpl->tpl_vars['smarty']->value['section']['dl']['iteration'] == $_smarty_tpl->tpl_vars['smarty']->value['section']['dl']['total']);
+            for ($_smarty_tpl->tpl_vars['smarty']->value['section']['hl']['index'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['hl']['start'], $_smarty_tpl->tpl_vars['smarty']->value['section']['hl']['iteration'] = 1;
+                 $_smarty_tpl->tpl_vars['smarty']->value['section']['hl']['iteration'] <= $_smarty_tpl->tpl_vars['smarty']->value['section']['hl']['total'];
+                 $_smarty_tpl->tpl_vars['smarty']->value['section']['hl']['index'] += $_smarty_tpl->tpl_vars['smarty']->value['section']['hl']['step'], $_smarty_tpl->tpl_vars['smarty']->value['section']['hl']['iteration']++):
+$_smarty_tpl->tpl_vars['smarty']->value['section']['hl']['rownum'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['hl']['iteration'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['hl']['index_prev'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['hl']['index'] - $_smarty_tpl->tpl_vars['smarty']->value['section']['hl']['step'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['hl']['index_next'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['hl']['index'] + $_smarty_tpl->tpl_vars['smarty']->value['section']['hl']['step'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['hl']['first']      = ($_smarty_tpl->tpl_vars['smarty']->value['section']['hl']['iteration'] == 1);
+$_smarty_tpl->tpl_vars['smarty']->value['section']['hl']['last']       = ($_smarty_tpl->tpl_vars['smarty']->value['section']['hl']['iteration'] == $_smarty_tpl->tpl_vars['smarty']->value['section']['hl']['total']);
 ?>
-                <option value="<?php echo $_smarty_tpl->tpl_vars['hyList']->value[$_smarty_tpl->getVariable('smarty')->value['section']['dl']['index']]['id'];?>
-" ><?php echo $_smarty_tpl->tpl_vars['hyList']->value[$_smarty_tpl->getVariable('smarty')->value['section']['dl']['index']]['name'];?>
+                <option value="<?php echo $_smarty_tpl->tpl_vars['hyList']->value[$_smarty_tpl->getVariable('smarty')->value['section']['hl']['index']]['id'];?>
+"><?php echo $_smarty_tpl->tpl_vars['hyList']->value[$_smarty_tpl->getVariable('smarty')->value['section']['hl']['index']]['name'];?>
 </option>
                 <?php endfor; endif; ?>
             </select>
@@ -190,25 +189,24 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['dl']['last']       = ($_smar
         </div>
 
         <div class="form-register-item">
-            <span class="form-register-item-title">注册资本:</span>
+            <span class="form-register-item-title"><span style="color:red;">*</span>注册资本:</span>
             <input class="form-register-item-input not-empty" id="form-zczb" type="text" name="form_zczb" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['form_userinfo']->value['form_zczb'])===null||$tmp==='' ? '' : $tmp);?>
 " error_info="请输入注册资本！" />
-            <span class="form-register-item-warn" init-data=""><font color=red>*</font></span>
+            <span class="form-register-item-warn" init-data=""></span>
             <div style="clear:both;"></div>
         </div>
 
         <div class="form-register-item">
-            <span class="form-register-item-title">邮政编码:</span>
+            <span class="form-register-item-title"><span style="color:red;">*</span>邮政编码:</span>
             <input class="form-register-item-input not-empty" id="form-yzbm" type="text" name="form_yzbm" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['form_userinfo']->value['form_yzbm'])===null||$tmp==='' ? '' : $tmp);?>
 " error_info="请输入邮政编码！" />
-            <span class="form-register-item-warn" init-data=""><font color=red>*</font></span>
+            <span class="form-register-item-warn" init-data=""></span>
             <div style="clear:both;"></div>
         </div>
 
         <div class="form-register-item form-register-item-onerow">
-            <span class="form-register-item-title">所在地:</span>
-
-            <select class="form-register-item-input-dz not-empty" id="form-sheng" name="form_sheng" error_info="请选择所在地！">
+            <span class="form-register-item-title"><span style="color:red;">*</span>所在地:</span>
+            <select class="form-register-item-select short-select not-empty" id="form-sheng" name="form_sheng" error_info="请选择所在地！">
                 <option value="0" selected="selected" disabled="disabled"  >选择省份</option>
                 <?php if (isset($_smarty_tpl->tpl_vars['smarty']->value['section']['pl'])) unset($_smarty_tpl->tpl_vars['smarty']->value['section']['pl']);
 $_smarty_tpl->tpl_vars['smarty']->value['section']['pl']['name'] = 'pl';
@@ -239,38 +237,37 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['pl']['last']       = ($_smar
 </option>
                 <?php endfor; endif; ?>
             </select>
-            <select class="form-register-item-input-dz not-empty" id="form-shi" name="form_shi" error_info="请选择所在地！">
+            <select class="form-register-item-select short-select not-empty" id="form-shi" name="form_shi" error_info="请选择所在地！">
                 <option value="0" selected="selected" disabled="disabled" >选择城市</option>
 
             </select>
-            <select class="form-register-item-input-dz not-empty" id="form-xian" name="form_xian" error_info="请选择所在地！">
+            <select class="form-register-item-select short-select not-empty" id="form-xian" name="form_xian" error_info="请选择所在地！">
                 <option value="0" selected="selected" disabled="disabled" >选择县区</option>
             </select>
-
             <span class="form-register-item-warn" init-data=""></span>
             <div style="clear:both;"></div>
         </div>
 
         <div class="form-register-item">
-            <span class="form-register-item-title">详细地址:</span>
+            <span class="form-register-item-title"><span style="color:red;">*</span>详细地址:</span>
             <input class="form-register-item-input not-empty" id="form-xxdz" type="text" name="form_xxdz" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['form_userinfo']->value['form_xxdz'])===null||$tmp==='' ? '' : $tmp);?>
 " error_info="请输入详细地址！" />
-            <span class="form-register-item-warn" init-data=""><font color=red>*</font></span>
+            <span class="form-register-item-warn" init-data=""></span>
             <div style="clear:both;"></div>
         </div>
         <div class="form-register-item">
-            <span class="form-register-item-title">联系人:</span>
+            <span class="form-register-item-title"><span style="color:red;">*</span>联系人:</span>
             <input class="form-register-item-input not-empty" id="form-lxr" type="text" name="form_lxr" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['form_userinfo']->value['form_lxr'])===null||$tmp==='' ? '' : $tmp);?>
 " error_info="填写联系人！" />
-            <span class="form-register-item-warn" init-data=""><font color=red>*</font></span>
+            <span class="form-register-item-warn" init-data=""></span>
             <div style="clear:both;"></div>
         </div>
 
         <div class="form-register-item">
-            <span class="form-register-item-title">固定电话:</span>
+            <span class="form-register-item-title"><span style="color:red;">*</span>固定电话:</span>
             <input class="form-register-item-input not-empty" id="form-gddh" type="text" name="form_gddh" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['form_userinfo']->value['form_gddh'])===null||$tmp==='' ? '' : $tmp);?>
 " error_info="请填写固定电话！" />
-            <span class="form-register-item-warn" init-data=""><font color=red>*</font></span>
+            <span class="form-register-item-warn" init-data=""></span>
             <div style="clear:both;"></div>
         </div>
         <div class="form-register-item">
@@ -287,14 +284,49 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['pl']['last']       = ($_smar
             <span class="form-register-item-warn" init-data=""></span>
             <div style="clear:both;"></div>
         </div>
-
-
         <div class="form-register-item">
-            <span class="form-register-item-title">资质证明:</span>
-            <div id="select_file_path" class="select_file_path"></div>
-            <img class ="file_upload_img"  alt="资质证明" id="imgFile" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/common/app/images/account/register/upload.png"/>
-            <input id="file_upload" name="file_upload" accept=".jpeg,.gif,.png" type="file" onchange="file_upload_change(this)"/>
+            <span class="form-register-item-title"></span>
+            <div class="form-register-item-imglist">
+                <?php if (isset($_smarty_tpl->tpl_vars['smarty']->value['section']['zzhl'])) unset($_smarty_tpl->tpl_vars['smarty']->value['section']['zzhl']);
+$_smarty_tpl->tpl_vars['smarty']->value['section']['zzhl']['name'] = 'zzhl';
+$_smarty_tpl->tpl_vars['smarty']->value['section']['zzhl']['loop'] = is_array($_loop=$_smarty_tpl->tpl_vars['zzhList']->value) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
+$_smarty_tpl->tpl_vars['smarty']->value['section']['zzhl']['show'] = true;
+$_smarty_tpl->tpl_vars['smarty']->value['section']['zzhl']['max'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['zzhl']['loop'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['zzhl']['step'] = 1;
+$_smarty_tpl->tpl_vars['smarty']->value['section']['zzhl']['start'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['zzhl']['step'] > 0 ? 0 : $_smarty_tpl->tpl_vars['smarty']->value['section']['zzhl']['loop']-1;
+if ($_smarty_tpl->tpl_vars['smarty']->value['section']['zzhl']['show']) {
+    $_smarty_tpl->tpl_vars['smarty']->value['section']['zzhl']['total'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['zzhl']['loop'];
+    if ($_smarty_tpl->tpl_vars['smarty']->value['section']['zzhl']['total'] == 0)
+        $_smarty_tpl->tpl_vars['smarty']->value['section']['zzhl']['show'] = false;
+} else
+    $_smarty_tpl->tpl_vars['smarty']->value['section']['zzhl']['total'] = 0;
+if ($_smarty_tpl->tpl_vars['smarty']->value['section']['zzhl']['show']):
+
+            for ($_smarty_tpl->tpl_vars['smarty']->value['section']['zzhl']['index'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['zzhl']['start'], $_smarty_tpl->tpl_vars['smarty']->value['section']['zzhl']['iteration'] = 1;
+                 $_smarty_tpl->tpl_vars['smarty']->value['section']['zzhl']['iteration'] <= $_smarty_tpl->tpl_vars['smarty']->value['section']['zzhl']['total'];
+                 $_smarty_tpl->tpl_vars['smarty']->value['section']['zzhl']['index'] += $_smarty_tpl->tpl_vars['smarty']->value['section']['zzhl']['step'], $_smarty_tpl->tpl_vars['smarty']->value['section']['zzhl']['iteration']++):
+$_smarty_tpl->tpl_vars['smarty']->value['section']['zzhl']['rownum'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['zzhl']['iteration'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['zzhl']['index_prev'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['zzhl']['index'] - $_smarty_tpl->tpl_vars['smarty']->value['section']['zzhl']['step'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['zzhl']['index_next'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['zzhl']['index'] + $_smarty_tpl->tpl_vars['smarty']->value['section']['zzhl']['step'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['zzhl']['first']      = ($_smarty_tpl->tpl_vars['smarty']->value['section']['zzhl']['iteration'] == 1);
+$_smarty_tpl->tpl_vars['smarty']->value['section']['zzhl']['last']       = ($_smarty_tpl->tpl_vars['smarty']->value['section']['zzhl']['iteration'] == $_smarty_tpl->tpl_vars['smarty']->value['section']['zzhl']['total']);
+?>
+                <div data="<?php echo $_smarty_tpl->tpl_vars['zzhList']->value[$_smarty_tpl->getVariable('smarty')->value['section']['zzhl']['index']]['pic_id'];?>
+" class="form-register-item-imgitem">
+                    <img alt="资质证明" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload/images/<?php echo $_smarty_tpl->tpl_vars['zzhList']->value[$_smarty_tpl->getVariable('smarty')->value['section']['zzhl']['index']]['pic_link'];?>
+">
+                    <div title="删除" class="form-register-item-imgitem-close">X</div>
+                </div>
+                <?php endfor; else: ?>
+                <?php endif; ?>
+
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+        <div class="form-register-item">
+            <span class="form-register-item-title">上传资质:</span>
+            <input id="file_upload" name="file_upload" type="file" multiple />
             <input type="hidden" name="fileid" id="hidFileID" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['form_userinfo']->value['fileid'])===null||$tmp==='' ? '' : $tmp);?>
 " />
             <input type="hidden" name="filestate" id="filestate" value="0" />
@@ -302,27 +334,25 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['pl']['last']       = ($_smar
         </div>
 
         <div class="form-register-item">
-            <span class="form-register-item-title">公司简介:</span>
-            <textarea id="gsjj" name="gsjj" ></textarea>
+            <span class="form-register-item-title" style="margin-bottom: 10px;">公司简介:</span>
+            <textarea id="gsjj" name="gsjj" ><?php echo (($tmp = @$_smarty_tpl->tpl_vars['form_userinfo']->value['gsjj'])===null||$tmp==='' ? '' : $tmp);?>
+</textarea>
             <div style="clear:both;"></div>
         </div>
 
         <div class="form-register-item" >
             <span class="form-register-item-title">&nbsp;</span>
 					<span class="form-register-item-info">
-						<label><img id="chkImg" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/common/app/images/account/register/checked.png" ></label>
-						<label class="form-a">我已阅读《协议》并同意相关条款</label>
+						点击注册，将认为您同意<a href="#">《协议》</a>
 					</span>
             <div style="clear:both;"></div>
         </div>
         <div class="form-register-item">
             <span id="register-result" class="form-register-item-title"></span>
-            <input id="form-submit" type="submit" class="form-submit" value="注册" />
+            <input id="form-submit" type="submit" class="form-submit" value="注册"/>
             <div style="clear:both;"></div>
         </div>
-        <div class="form-foot">
-
+        <div class="form-register-item form-register-item-onerow">
         </div>
     </form>
     <?php }?>
@@ -335,9 +365,12 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['pl']['last']       = ($_smar
 <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/app/js/header.js"></script>
 <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/common/app/js/account/company_register.js"></script>
-
+/common/libs/upload/jquery.uploadify.min.js"></script>
+<script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/libs/xheditor-1.2.1/xheditor-1.2.1.min.js"></script>
+<script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/libs/xheditor-1.2.1/xheditor_lang/zh-cn.js"></script>
+<script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/app/js/account/register.js"></script>
 </body>
-</html>
-
-<?php }} ?>
+</html><?php }} ?>

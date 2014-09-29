@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-27 18:54:03
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-28 19:41:23
          compiled from "app/tpl/west/detail.htm" */ ?>
 <?php /*%%SmartyHeaderCode:9219661515425e313739b79-52387790%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '9f0748a986cc581b765659e104c311774856b677' => 
     array (
       0 => 'app/tpl/west/detail.htm',
-      1 => 1411815235,
+      1 => 1411904482,
       2 => 'file',
     ),
   ),
@@ -87,7 +87,7 @@ if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/
 
     <div class="middle_left">
         <div >
-            <p style="float: none; color: #000000; font-size: 18px; text-align: center"><?php echo $_smarty_tpl->tpl_vars['detail']->value['cci_title'];?>
+            <p style="float: none; color: #000000; font-size: 18px; text-align: center"><?php echo $_smarty_tpl->tpl_vars['detail']->value['ww_title'];?>
 </p>
         </div>
         <div>
@@ -202,7 +202,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['p']['last']       = ($_smart
                 <?php endfor; endif; ?>
             </ul>
         </div>
-    </div>>
+    </div>
 
 </div>
 

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-27 20:56:34
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-28 22:22:51
          compiled from "app/tpl/west/index.htm" */ ?>
 <?php /*%%SmartyHeaderCode:977010315425d5f35ee060-14821907%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b41bd9e19ca8a49a7a17e029bf2744269b07f419' => 
     array (
       0 => 'app/tpl/west/index.htm',
-      1 => 1411822582,
+      1 => 1411914164,
       2 => 'file',
     ),
   ),
@@ -40,7 +40,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/app/css/rec.css" />
     <title>渤海轻工业集团</title>
-
+    <script type="text/javascript">
+        var web_url = "<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+";
+    </script>
     <!--[if lt IE 9]>
     <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/app/js/DOMAssistantCompressed-2.7.4.js"></script>

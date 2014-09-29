@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-28 16:04:49
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-28 19:44:18
          compiled from "app/tpl/student/modifyinfo.html" */ ?>
 <?php /*%%SmartyHeaderCode:18785496975427bd82814f38-44005400%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f8423a99979220e57b5c52339863164cf7d10499' => 
     array (
       0 => 'app/tpl/student/modifyinfo.html',
-      1 => 1411891485,
+      1 => 1411896996,
       2 => 'file',
     ),
   ),
@@ -43,7 +43,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 /common/app/css/reset.css?v=2.0" />
     <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/app/css/headAndfoot.css" />
-    <title>个人中心-我得信息</title>
+    <title>个人中心-修改个人信息</title>
     <script type="text/javascript">
         var web_url = "<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 ";
@@ -170,10 +170,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <div id="middle_left">
             <div >功能菜单</div>
             <ul>
-                <li class="menu_active"><a href="#" style="color: #ffffff">学生基本信息</a></li>
-                <li><a href="#">我得招聘</a></li>
-                <li><a href="#">修改密码</a></li>
-                <li><a href="#">满意度调查</a></li>
+                <li class="menu_active"><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/student/myinfo}>" style="color: #ffffff">学生基本信息</a></li>
+                <li><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/student/favorjobinfo}>">我的招聘</a></li>
+                <li><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/student/changepw}>">修改密码</a></li>
+                <li><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/index#feedback">满意度调查</a></li>
             </ul>
         </div>
         <div id="middle_right">

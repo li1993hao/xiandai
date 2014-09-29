@@ -7,7 +7,7 @@ class appFilter extends Filter{
 		$session = $this->getApp()->loadUtilClass("SessionUtil");
 
 		if($userid = $session->get("session_userid") ){
-		
+
 			$f_user=new frontuser();
 			$userdata=$f_user->getUserFromAccount($userid,true);
 			//print_r($userdata);

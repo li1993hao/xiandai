@@ -33,7 +33,7 @@ class IndexController extends Controller{
 
 		//校友寻访 8
 		$ppt = new professionpersontalk();
-		$schoolFri = $ppt->getAlumunsPageModel(1,9);
+		$schoolFri = $ppt->getAlumunsPageModel(1,7);
 		$this->view->fellowVisited = $schoolFri["list"];
 
 		//就业工作简报

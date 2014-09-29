@@ -1,5 +1,7 @@
 <!DOCTYPE HTML>
 <html>
+<!-- <![endif]-->
+
 
 <head>
     <meta id="screen-view" name="viewport" content="width=device-width" />
@@ -8,11 +10,11 @@
     <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/headAndfoot.css" />
     <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/index/index.css" />
 
-    <script type="text/javascript">
-    var web_url = "<{$web_url}>";
-    </script>
     <title>天津现代职业技术学院就业指导中心</title>
 
+    <script type="text/javascript">
+        var web_url = "<{$web_url}>";
+    </script>
     <!--[if lt IE 9]>
     <script type="text/javascript" src="<{$web_url}>/common/app/js/DOMAssistantCompressed-2.7.4.js"></script>
     <script type="text/javascript" src="<{$web_url}>/common/app/js/ie-css3.js"></script>
@@ -96,7 +98,7 @@
                             <div class="carousel_mid" style="display: none">
                                 <div>
                                     <a href="<{$web_url}>/index.php/jobinfo/detail/id/<{$recNews[recnews].ji_id}>"><{$recNews[recnews].ji_title}></a>
-                                </div>>
+                                </div>
                                 <div><{$recNews[recnews].ji_content|strip_tags|strip|truncate:50: '…':true|default: "暂无介绍~"}></div>
                             </div>
                             <{if $smarty.section.recnews.last}>
@@ -104,7 +106,7 @@
                                 <div class="carousel_mid" style="display: none">
                                     <div>
                                         <a href="<{$web_url}>/index.php/jobinfo/detail/id/<{$recNews[l].ji_id}>"><{$recNews[l].ji_title}></a>
-                                    </div>>
+                                    </div>
                                     <div><{$recNews[l].ji_content|strip_tags|strip|truncate:50: '…':true|default: "暂无介绍~"}></div>
                                 </div>
                                 <{/section}>
@@ -600,13 +602,13 @@
                                     </div>
                                     <!--info-->
                                     <div>&nbsp&nbsp&nbsp&nbsp
-                                        <{$jobNotice.list[i].ji_content|strip_tags|strip|truncate:60: '…':true}>
+                                        <{$jobNotice.list[i].ji_content|strip_tags|strip|truncate:40: '…':true}>
                                     </div>
                                 </li>
                                 <{/section}>
 
-                                    <div><a href="<{$web_url}>/index.php/jobinfo/jobNotice" target="_blank">更多>></a>
-                                    </div>
+                                <div style="margin-top: 5px;border-bottom: none;text-align: right;"><a href="<{$web_url}>/index.php/jobinfo/jobNotice" target="_blank">更多>></a>
+                                </div>
                         </ul>
                         <!--工作动态-->
                         <ul>
@@ -633,12 +635,12 @@
                                     </div>
                                     <!--info-->
                                     <div>&nbsp&nbsp&nbsp&nbsp
-                                        <{$jobAct.list[i].ji_content|strip_tags|strip|truncate:60: '…':true}>
+                                        <{$jobAct.list[i].ji_content|strip_tags|strip|truncate:40: '…':true}>
                                     </div>
                                 </li>
                                 <{/section}>
-                                    <div><a href="<{$web_url}>/index.php/jobinfo/jobAct" target="_blank">更多>></a>
-                                    </div>
+                                <div style="margin-top: 5px;border-bottom: none;text-align: right;"><a href="<{$web_url}>/index.php/jobinfo/jobAct" target="_blank">更多>></a>
+                                </div>
                         </ul>
 
                     </div>
@@ -710,6 +712,10 @@
         </div>
 
 <{include file='footer.htm' }>
+
+    <script type="text/javascript">
+        var web_url = "<{$web_url}>";
+    </script>
     <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/am.min.css" />
     <script type="text/javascript" src="<{$web_url}>/common/libs/jquery.min.js"></script>
     <script type="text/javascript" src="<{$web_url}>/common/app/js/index/index.js"></script>

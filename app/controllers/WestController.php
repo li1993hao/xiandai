@@ -11,13 +11,15 @@ class WestController extends Controller{
 	public function Index(){
 		$westWork = new westWork();
 		$westNewsList = $westWork->getNews(1,4);
-		$westPersonList = $westWork->getPersons(1,6);
+		$westPersonList = $westWork->getPersons(1,4);
 		$westPolicyList = $westWork->getPolicy(1,4);
 		$this->view->persons = $westPersonList;
 		$this->view->news = $westNewsList;
 		$this->view->policy = $westPolicyList;
 		//print_r($westNewsList);
 		echo $this->view->render("index.htm");//自动加载tpl下的west文件夹下的index。htm模板
+
+
 	}
 	
 	public function News(){
@@ -31,7 +33,7 @@ class WestController extends Controller{
 		//print_r($newsList);
 		//exit();
 
-        $westPersonList = $westWork->getPersons(1,6);
+        $westPersonList = $westWork->getPersons(1,4);
         $this->view->persons = $westPersonList;
 
 		$this->view->news = $newsList;
@@ -49,7 +51,7 @@ class WestController extends Controller{
 		//print_r($newsList);
 		$this->view->news = $newsList;
 
-        $westPersonList = $westWork->getPersons(1,6);
+        $westPersonList = $westWork->getPersons(1,4);
         $this->view->persons = $westPersonList;
 
 		echo $this->view->render("policy.htm");
@@ -64,7 +66,7 @@ class WestController extends Controller{
 		//print_r($newsList);
 		$this->view->news = $newsList;
 
-        $westPersonList = $westWork->getPersons(1,6);
+        $westPersonList = $westWork->getPersons(1,4);
         $this->view->persons = $westPersonList;
 	
 		echo $this->view->render("person.htm");
@@ -89,7 +91,7 @@ class WestController extends Controller{
 				$this->view->nextNews = $westWork->getNextNews($westNews['ww_id'], $westNews['wc_id']);
 				$this->view->detail = $westNews;
 
-                $westPersonList = $westWork->getPersons(1,6);
+                $westPersonList = $westWork->getPersons(1,4);
                 $this->view->persons = $westPersonList;
 
 				echo $this->view->render("detail.htm");//自动加载tpl下的west文件夹下的index。htm模板

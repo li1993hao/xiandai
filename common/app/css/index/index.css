@@ -198,7 +198,6 @@
 .rec_clendar_info > div > div {
     height: 77px;
     margin-bottom: 5px;
-    background-color: red;
 }
 .rec_clendar_info >div >div:nth-child(1) {
     margin-top: 10px;
@@ -312,7 +311,7 @@
     display: none;
 }
 
-.category_list ul:first-child{
+.category_list ul:nth-child(1){
     display: block;
 }
 
@@ -380,7 +379,10 @@
     padding-right: 12px;
     border-radius: 3px;
     border: 1px solid #b2b2b2;
+    padding-left\0: 10px;
+    padding-right\0: 9px;
 }
+
 
 .category_nav_normal{
     background-color: #34495e;
@@ -443,10 +445,10 @@
 
 .bohai_info >div:nth-child(3){
     height: 33px;
-    width: 100%;
+    width: 110%;
 }
 .bohai_info >div:nth-child(3) >div{
-    width: 50%;
+    width: 303px;
     float: left;
     text-align:  center;
     background-color: #34495e;
@@ -454,6 +456,10 @@
     color: white;
     height: 33px;
     line-height: 33px;
+}
+
+.bohai_info >div:nth-child(3)>div:first-child{
+ margin-left: 3px;
 }
 
 /*****右侧样式******/
