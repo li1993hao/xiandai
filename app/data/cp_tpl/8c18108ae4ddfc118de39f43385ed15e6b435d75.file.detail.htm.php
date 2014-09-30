@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-30 14:29:52
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-30 14:46:27
          compiled from "app/tpl/jobfairmsg/detail.htm" */ ?>
-<?php /*%%SmartyHeaderCode:580779329542a4de0839bf6-24272935%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1863305378542a51c3ec19d6-86934105%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '8c18108ae4ddfc118de39f43385ed15e6b435d75' => 
     array (
       0 => 'app/tpl/jobfairmsg/detail.htm',
-      1 => 1412058588,
+      1 => 1412059578,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '580779329542a4de0839bf6-24272935',
+  'nocache_hash' => '1863305378542a51c3ec19d6-86934105',
   'function' => 
   array (
   ),
@@ -29,9 +29,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_542a4de09d7838_13263671',
+  'unifunc' => 'content_542a51c4119fd8_20040341',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_542a4de09d7838_13263671')) {function content_542a4de09d7838_13263671($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/xiandai/been/Smarty/plugins/modifier.truncate.php';
+<?php if ($_valid && !is_callable('content_542a51c4119fd8_20040341')) {function content_542a51c4119fd8_20040341($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/xiandai/been/Smarty/plugins/modifier.truncate.php';
 if (!is_callable('smarty_modifier_date_format')) include '/Users/haoli/Desktop/www/xiandai/been/Smarty/plugins/modifier.date_format.php';
 ?><!DOCTYPE HTML>
 <html>
@@ -117,7 +117,7 @@ if (!is_callable('smarty_modifier_date_format')) include '/Users/haoli/Desktop/w
 </span>
                 </div>
                 <div  class="content">
-                    <?php if ($_smarty_tpl->tpl_vars['detail']->value['pic_id']!=''){?>
+                    <?php if ($_smarty_tpl->tpl_vars['detail']->value['pic_link']!=''){?>
                     <div id="middle_img">
                         <img src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/upload/images/<?php echo $_smarty_tpl->tpl_vars['detail']->value['pic_link'];?>

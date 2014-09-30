@@ -1,31 +1,33 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-30 14:28:27
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-30 14:41:21
          compiled from "app/tpl/center/index.htm" */ ?>
-<?php /*%%SmartyHeaderCode:1344530110542a4d8ba3f187-16628008%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1923188426542a4fafc7b6b4-66101330%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'd1f6dcc3562a0a6a4f0a9de9afb7ebdbdf18b3af' => 
     array (
       0 => 'app/tpl/center/index.htm',
-      1 => 1412042840,
+      1 => 1412059270,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1344530110542a4d8ba3f187-16628008',
+  'nocache_hash' => '1923188426542a4fafc7b6b4-66101330',
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_542a4fafd1ab98_01284469',
   'variables' => 
   array (
     'web_url' => 0,
     'page' => 0,
     'frontlist' => 0,
+    'share_content' => 0,
+    'addShareUrl' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_542a4d8bae3a97_34087711',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_542a4d8bae3a97_34087711')) {function content_542a4d8bae3a97_34087711($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/Users/haoli/Desktop/www/xiandai/been/Smarty/plugins/modifier.date_format.php';
+<?php if ($_valid && !is_callable('content_542a4fafd1ab98_01284469')) {function content_542a4fafd1ab98_01284469($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/Users/haoli/Desktop/www/xiandai/been/Smarty/plugins/modifier.date_format.php';
 if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/xiandai/been/Smarty/plugins/modifier.truncate.php';
 ?><!DOCTYPE HTML>
 <html>
@@ -80,6 +82,8 @@ if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/
  次
             &nbsp; &nbsp; 分享次数：<?php echo $_smarty_tpl->tpl_vars['page']->value['ci_share'];?>
  次
+            <?php echo $_smarty_tpl->getSubTemplate ('share.htm', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
         </div>
         <div>
         </div>
@@ -142,9 +146,29 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
 /common/libs/jquery.min.js"></script>
 <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/app/js/header.js"></script>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=1782349" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
 <script>
+    var bds_config = {
+        'bdDesc':'<?php echo smarty_modifier_truncate(preg_replace('!<[^>]*?>!', ' ', $_smarty_tpl->tpl_vars['share_content']->value),130,"...");?>
+'
+    };
+    $(function(){
+        $("#bdshare>a").click(function(){
+            $.ajax({
+                type: "POST",
+                url: "<?php echo $_smarty_tpl->tpl_vars['addShareUrl']->value;?>
+"
+            });
+        });
+    });
+    document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
     $(".middle").css("height", $(".middle_left").css("height"));
 </script>
+
+
+
+
 </body>
 
 </html><?php }} ?>

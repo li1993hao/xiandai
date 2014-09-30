@@ -1,37 +1,36 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-30 14:41:47
-         compiled from "app/tpl/jobinfo/detail.htm" */ ?>
-<?php /*%%SmartyHeaderCode:984475622542a50ab0625a9-66670066%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-30 14:41:59
+         compiled from "app/tpl/collegeintroduction/detail.htm" */ ?>
+<?php /*%%SmartyHeaderCode:338743913542a4fa343c877-21562121%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    'f0fde38724693f414aae6cea56a68597d5407780' => 
+    '541ee0683b81376653f2282f21653f12e6a399b5' => 
     array (
-      0 => 'app/tpl/jobinfo/detail.htm',
-      1 => 1412042840,
+      0 => 'app/tpl/collegeintroduction/detail.htm',
+      1 => 1412059278,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '984475622542a50ab0625a9-66670066',
+  'nocache_hash' => '338743913542a4fa343c877-21562121',
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_542a4fa350cf42_82548932',
   'variables' => 
   array (
     'web_url' => 0,
-    'typeinfo' => 0,
     'detail' => 0,
-    'preNews' => 0,
-    'nextNews' => 0,
+    'pre' => 0,
+    'next' => 0,
     'frontlist' => 0,
     'share_content' => 0,
     'addShareUrl' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_542a50ab1be7c8_24237727',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_542a50ab1be7c8_24237727')) {function content_542a50ab1be7c8_24237727($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/xiandai/been/Smarty/plugins/modifier.truncate.php';
-if (!is_callable('smarty_modifier_date_format')) include '/Users/haoli/Desktop/www/xiandai/been/Smarty/plugins/modifier.date_format.php';
+<?php if ($_valid && !is_callable('content_542a4fa350cf42_82548932')) {function content_542a4fa350cf42_82548932($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/Users/haoli/Desktop/www/xiandai/been/Smarty/plugins/modifier.date_format.php';
+if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/xiandai/been/Smarty/plugins/modifier.truncate.php';
 ?><!DOCTYPE HTML>
 <html>
 
@@ -48,9 +47,7 @@ if (!is_callable('smarty_modifier_date_format')) include '/Users/haoli/Desktop/w
 /common/app/css/common/detail.css" />
     <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/app/css/common/detail-360.css" />
-    <title><?php echo $_smarty_tpl->tpl_vars['typeinfo']->value['type_name'];?>
--<?php echo $_smarty_tpl->tpl_vars['detail']->value['ji_title'];?>
-</title>
+    <title>院系介绍-</title>
     <script type="text/javascript">
         var web_url = "<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 ";
@@ -75,73 +72,43 @@ if (!is_callable('smarty_modifier_date_format')) include '/Users/haoli/Desktop/w
 /index.php/index">首页/</a>
         </dt>
         <dt><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/index.php/jobinfo/index/type/<?php echo $_smarty_tpl->tpl_vars['typeinfo']->value['type_code'];?>
-"><?php echo $_smarty_tpl->tpl_vars['typeinfo']->value['type_name'];?>
-/</a>
+/index.php/index">院系介绍/</a>
         </dt>
-        <dt><a href="#"><?php echo $_smarty_tpl->tpl_vars['detail']->value['ji_title'];?>
+        <dt><a href="#"><?php echo $_smarty_tpl->tpl_vars['detail']->value['cci_title'];?>
 </a></dt>
     </dl>
 </div>
-
 <div class="middle">
+
     <div class="middle_left">
-        <div>
-            <p><?php echo $_smarty_tpl->tpl_vars['detail']->value['ji_title'];?>
+        <div >
+            <p style="float: none; color: #000000; font-size: 18px; text-align: center"><?php echo $_smarty_tpl->tpl_vars['detail']->value['cci_title'];?>
 </p>
         </div>
         <div>
-            <?php echo $_smarty_tpl->tpl_vars['detail']->value['ji_date'];?>
-&nbsp;
-            浏览：<?php echo $_smarty_tpl->tpl_vars['detail']->value['ji_read'];?>
-&nbsp;
-            分享：<?php echo $_smarty_tpl->tpl_vars['detail']->value['ji_share'];?>
-&nbsp;
+            发布时间：<?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['detail']->value['cci_time'],"%Y-%m-%d");?>
+
+            &nbsp; &nbsp; 阅读次数：<?php echo $_smarty_tpl->tpl_vars['detail']->value['cci_browse'];?>
+ 次
+            &nbsp; &nbsp; 分享次数：<?php echo $_smarty_tpl->tpl_vars['detail']->value['cci_share'];?>
+ 次
             <?php echo $_smarty_tpl->getSubTemplate ('share.htm', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
         </div>
-        <div></div>
-        <div class="content">
-            <?php if ($_smarty_tpl->tpl_vars['detail']->value['pic_id']!=''){?>
-            <div id="middle_img">
-                <img src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/common/upload/images/<?php echo $_smarty_tpl->tpl_vars['detail']->value['pic_link'];?>
-" />
-            </div>
-            <?php }?>
-            <div style="clear: both"></div>
-            <?php echo $_smarty_tpl->tpl_vars['detail']->value['ji_content'];?>
+        <div>
+        </div>
+        <div  class="content">
+            <?php echo $_smarty_tpl->tpl_vars['detail']->value['cci_content'];?>
 
         </div>
-        <div id="middle_left_file">
-            <?php if ($_smarty_tpl->tpl_vars['detail']->value['file_id']!=''){?>
-            相关附件：
-            <a target="top" style="color:red;" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/common/upload/files/<?php echo $_smarty_tpl->tpl_vars['detail']->value['file_link'];?>
-">
-                <?php if ($_smarty_tpl->tpl_vars['detail']->value['file_name']==''){?>
-                <?php echo $_smarty_tpl->tpl_vars['detail']->value['file_link'];?>
-
-                <?php }else{ ?>
-                <?php echo $_smarty_tpl->tpl_vars['detail']->value['file_name'];?>
-
-                <?php }?>
-            </a>
-            <?php }?>
-        </div>
-        <div class="zandiv" id="zandiv" >
-            <img class="zan"   src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/common/app/images/zan.png" />
-            <div class="zannum" ><?php echo $_smarty_tpl->tpl_vars['detail']->value['ji_good'];?>
-</div>
-        </div>
-        <div id="middle_leftprenext">
+        <div id="middle_leftprenext" class="m-l-footer">
             <p>
                 上一条：
-                <?php if ($_smarty_tpl->tpl_vars['preNews']->value!=''){?>
+
+                <?php if ($_smarty_tpl->tpl_vars['pre']->value!=''){?>
                 <a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/index.php/jobinfo/detail/id/<?php echo $_smarty_tpl->tpl_vars['preNews']->value['ji_id'];?>
-"><?php echo $_smarty_tpl->tpl_vars['preNews']->value['ji_title'];?>
+/index.php/collegeintroduction/detail/id/<?php echo $_smarty_tpl->tpl_vars['pre']->value['cci_id'];?>
+"><?php echo $_smarty_tpl->tpl_vars['pre']->value['cci_title'];?>
 </a>
                 <?php }else{ ?>
                 没有了！
@@ -149,10 +116,10 @@ if (!is_callable('smarty_modifier_date_format')) include '/Users/haoli/Desktop/w
             </p>
             <p>
                 下一条：
-                <?php if ($_smarty_tpl->tpl_vars['nextNews']->value!=''){?>
+                <?php if ($_smarty_tpl->tpl_vars['next']->value!=''){?>
                 <a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/index.php/jobinfo/detail/id/<?php echo $_smarty_tpl->tpl_vars['nextNews']->value['ji_id'];?>
-"><?php echo $_smarty_tpl->tpl_vars['nextNews']->value['ji_title'];?>
+/index.php/collegeintroduction/detail/id/<?php echo $_smarty_tpl->tpl_vars['next']->value['cci_id'];?>
+"><?php echo $_smarty_tpl->tpl_vars['next']->value['cci_title'];?>
 </a>
                 <?php }else{ ?>
                 没有了！
@@ -163,7 +130,7 @@ if (!is_callable('smarty_modifier_date_format')) include '/Users/haoli/Desktop/w
 
     <div class="middle_right">
         <div class="rec">
-            <div>热点排行</div>
+            <div >招聘信息</div>
             <?php if (isset($_smarty_tpl->tpl_vars['smarty']->value['section']['i'])) unset($_smarty_tpl->tpl_vars['smarty']->value['section']['i']);
 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['name'] = 'i';
 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['loop'] = is_array($_loop=$_smarty_tpl->tpl_vars['frontlist']->value) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
@@ -191,25 +158,23 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
 
             <div class="rec_item">
                 <div><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/index.php/jobinfo/detail/type/<?php echo $_smarty_tpl->tpl_vars['frontlist']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['it_id'];?>
-/id/<?php echo $_smarty_tpl->tpl_vars['frontlist']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['ji_id'];?>
-">  <?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['frontlist']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['ji_title'],22,'…',true);?>
+/index.php/Corpinternmsg/Corpdetail/id/<?php echo $_smarty_tpl->tpl_vars['frontlist']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['cim_id'];?>
+">  <?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['frontlist']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['cim_name'],22,'…',true);?>
 </a>
                 </div>
                 <div>
-                    <?php echo (($tmp = @smarty_modifier_truncate(preg_replace('!\s+!u', ' ',preg_replace('!<[^>]*?>!', ' ', $_smarty_tpl->tpl_vars['frontlist']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['ji_content'])),50,'…',true))===null||$tmp==='' ? "暂无介绍~" : $tmp);?>
+                    <?php echo (($tmp = @smarty_modifier_truncate(preg_replace('!\s+!u', ' ',preg_replace('!<[^>]*?>!', ' ', $_smarty_tpl->tpl_vars['frontlist']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['cim_content'])),50,'…',true))===null||$tmp==='' ? "暂无介绍~" : $tmp);?>
 
                 </div>
-                <div> <?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['frontlist']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['ji_date'],"%Y-%m-%d");?>
+                <div> <?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['frontlist']->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]['cim_date'],"%Y-%m-%d");?>
 </div>
             </div>
             <?php endfor; endif; ?>
         </div>
     </div>
+
 </div>
 
-<?php $_smarty_tpl->tpl_vars['share_content'] = new Smarty_variable(smarty_modifier_truncate(preg_replace('!<[^>]*?>!', ' ', $_smarty_tpl->tpl_vars['detail']->value['ji_content']),130,"…"), null, 0);?>
-<?php $_smarty_tpl->tpl_vars['addShareUrl'] = new Smarty_variable(((string)$_smarty_tpl->tpl_vars['web_url']->value)."/index.php/jobinfo/addshare/id/".((string)$_smarty_tpl->tpl_vars['detail']->value['ji_id']), null, 0);?>
 <?php echo $_smarty_tpl->getSubTemplate ('footer.htm', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
@@ -218,55 +183,26 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
 /common/app/js/header.js"></script>
 <script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=1782349" ></script>
 <script type="text/javascript" id="bdshell_js"></script>
-<script type="text/javascript">
-
-    $(function(){
-        var flag = false;
-        $("#zandiv").click(function(){
-            //alert("sss");
-            if(!flag){
-                $.ajax({
-                    type: "POST",
-                    url: "<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/index.php/jobinfo/addgood/id/<?php echo $_smarty_tpl->tpl_vars['detail']->value['ji_id'];?>
-",
-                    success: function(msg){
-                        //alert("chenggong");
-                        flag = true;
-                        //alert( msg );
-                        if(msg != "0"){
-                            //alert("谢谢~");
-                            $(".zan").css("background","#333333");
-                            $(".zannum").text(msg);
-                        }else{
-                            //alert("shibai1");
-                        }
-
-                    },
-                    error:function(msg){
-                        //alert("shibai");
-                        //$("#addresult").html("添加失败！");
-                    }
-                });
-            }
-
-        });
-    });
-
+<script>
     var bds_config = {
-        'bdDesc':'<?php echo smarty_modifier_truncate(preg_replace('!<[^>]*?>!', ' ', $_smarty_tpl->tpl_vars['share_content']->value),130,"...");?>
+    'bdDesc':'<?php echo smarty_modifier_truncate(preg_replace('!<[^>]*?>!', ' ', $_smarty_tpl->tpl_vars['share_content']->value),130,"...");?>
 '
     };
     $(function(){
-        $("#bdshare>a").click(function(){
-            $.ajax({
-                type: "POST",
-                url: "<?php echo $_smarty_tpl->tpl_vars['addShareUrl']->value;?>
+    $("#bdshare>a").click(function(){
+    $.ajax({
+    type: "POST",
+    url: "<?php echo $_smarty_tpl->tpl_vars['addShareUrl']->value;?>
 "
-            });
-        });
+    });
+    });
     });
     document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
 </script>
+
+
+
+
 </body>
+
 </html><?php }} ?>

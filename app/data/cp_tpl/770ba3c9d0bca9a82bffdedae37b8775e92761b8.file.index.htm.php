@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-30 14:46:27
-         compiled from "app/tpl/jobfairmsg/index.htm" */ ?>
-<?php /*%%SmartyHeaderCode:1121620464542a51c3156ea4-79352559%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-30 14:37:20
+         compiled from "app/tpl/collegeintroduction/index.htm" */ ?>
+<?php /*%%SmartyHeaderCode:1384182349542a4fa06600a3-71086261%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    'f039dcfd73e6dab460d5103a7bbeede41c51845b' => 
+    '770ba3c9d0bca9a82bffdedae37b8775e92761b8' => 
     array (
-      0 => 'app/tpl/jobfairmsg/index.htm',
+      0 => 'app/tpl/collegeintroduction/index.htm',
       1 => 1412042840,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1121620464542a51c3156ea4-79352559',
+  'nocache_hash' => '1384182349542a4fa06600a3-71086261',
   'function' => 
   array (
   ),
@@ -23,12 +23,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_542a51c325d672_59841768',
+  'unifunc' => 'content_542a4fa0759787_66823313',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_542a51c325d672_59841768')) {function content_542a51c325d672_59841768($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/xiandai/been/Smarty/plugins/modifier.truncate.php';
+<?php if ($_valid && !is_callable('content_542a4fa0759787_66823313')) {function content_542a4fa0759787_66823313($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/xiandai/been/Smarty/plugins/modifier.truncate.php';
+if (!is_callable('smarty_modifier_date_format')) include '/Users/haoli/Desktop/www/xiandai/been/Smarty/plugins/modifier.date_format.php';
 if (!is_callable('smarty_function_page')) include '/Users/haoli/Desktop/www/xiandai/been/View/plugins/function.page.php';
 if (!is_callable('smarty_function_getdate')) include '/Users/haoli/Desktop/www/xiandai/been/View/plugins/function.getdate.php';
-if (!is_callable('smarty_modifier_date_format')) include '/Users/haoli/Desktop/www/xiandai/been/Smarty/plugins/modifier.date_format.php';
 ?><!DOCTYPE HTML>
 <html>
 
@@ -41,7 +41,8 @@ if (!is_callable('smarty_modifier_date_format')) include '/Users/haoli/Desktop/w
 /common/app/css/list.css" />
     <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/app/css/rec.css" />
-    <title>招聘会信息</title>
+    <title>院系介绍</title>
+
     <script type="text/javascript">
         var web_url = "<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 ";
@@ -64,7 +65,7 @@ if (!is_callable('smarty_modifier_date_format')) include '/Users/haoli/Desktop/w
         <dt><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /index.php/index">首页/</a>
         </dt>
-        <dt><a href="#">招聘会信息</a>
+        <dt><a href="#">院系介绍</a>
         </dt>
     </dl>
 </div>
@@ -95,56 +96,47 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['index_next'] = $_smarty
 $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['first']      = ($_smarty_tpl->tpl_vars['smarty']->value['section']['n']['iteration'] == 1);
 $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['last']       = ($_smarty_tpl->tpl_vars['smarty']->value['section']['n']['iteration'] == $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['total']);
 ?>
-        <div class="news_item">
+        <div class="news_item" style="height: 76px" >
             <div>
-                <?php if ($_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['jm_isup']==''){?>
-                <div>
-                    <a title="<?php echo $_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['jm_name'];?>
-" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/index.php/jobfairmsg/detail/id/<?php echo $_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['jm_id'];?>
-">
-                        <?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['jm_name'],21,'…');?>
+                <?php if ($_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['cci_top']==''){?>
+                <div><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/collegeintroduction/detail/id/<?php echo $_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['cci_id'];?>
+" ><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['cci_title'],21,'…');?>
+</a>
+                    <?php }else{ ?>
+                    <div><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/collegeintroduction/detail/id/<?php echo $_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['cci_id'];?>
+" style="color:red">[顶]<?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['cci_title'],21,'…');?>
+</a>
+                        <?php }?>
 
-                    </a>
+                    </div>
                 </div>
-                <?php }else{ ?>
-                <div>
-                    <a title="<?php echo $_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['jm_name'];?>
-" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/index.php/jobfairmsg/detail/id/<?php echo $_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['jm_id'];?>
-">
-                        <font color="#ff0000">[顶]<?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['jm_name'],21,'…');?>
-</font>
-                    </a>
-                </div>
-                <?php }?>
-                <span><?php echo $_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['jm_date'];?>
-</span>
-            </div>
-            <p><?php echo smarty_modifier_truncate(preg_replace('!\s+!u', ' ',preg_replace('!<[^>]*?>!', ' ', $_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['jm_content'])),130,'…',true);?>
-</p>
-            <ul>
-                <li style="display: none"></li>
-                <li><?php echo $_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['jm_read'];?>
+               <!-- <p><?php echo smarty_modifier_truncate(preg_replace('!\s+!u', ' ',preg_replace('!<[^>]*?>!', ' ', $_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['jm_content'])),130,'…',true);?>
+</p>-->
+                <ul style="position: static">
+                    <li><?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['cci_time'],"%Y-%m-%d");?>
 </li>
-                <li><?php echo $_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['jm_share'];?>
+                    <li><?php echo $_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['cci_scan'];?>
 </li>
-                <li><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/index.php/jobfairmsg/detail/id/<?php echo $_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['jm_id'];?>
+                    <li><?php echo $_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['cci_share'];?>
+</li>
+                    <li><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/collegeintroduction/detail/id/<?php echo $_smarty_tpl->tpl_vars['news']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['cci_id'];?>
 ">查看详情>></a>
-                </li>
-            </ul>
+                    </li>
+                </ul>
+            </div>
+            <?php endfor; endif; ?>
+
+            <?php echo smarty_function_page(array('info'=>$_smarty_tpl->tpl_vars['news']->value,'web_url'=>$_smarty_tpl->tpl_vars['web_url']->value,'url'=>"/index.php/collegeintroduction/index/"),$_smarty_tpl);?>
+
         </div>
-        <?php endfor; endif; ?>
 
-        <?php echo smarty_function_page(array('info'=>$_smarty_tpl->tpl_vars['news']->value,'web_url'=>$_smarty_tpl->tpl_vars['web_url']->value,'url'=>"/index.php/jobfairmsg/index/"),$_smarty_tpl);?>
-
-    </div>
-
-    <div class="middle_right">
-        <div class="rec">
-            <div>推荐招聘会信息</div>
-            <?php if (isset($_smarty_tpl->tpl_vars['smarty']->value['section']['calendar'])) unset($_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']);
+        <div class="middle_right">
+            <div class="rec">
+                <div>推荐招聘会信息</div>
+                <?php if (isset($_smarty_tpl->tpl_vars['smarty']->value['section']['calendar'])) unset($_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']);
 $_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['name'] = 'calendar';
 $_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['loop'] = is_array($_loop=$_smarty_tpl->tpl_vars['jobFair']->value) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
 $_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['show'] = true;
@@ -168,49 +160,38 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['index_next'] = $
 $_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['first']      = ($_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['iteration'] == 1);
 $_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['last']       = ($_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['iteration'] == $_smarty_tpl->tpl_vars['smarty']->value['section']['calendar']['total']);
 ?>
-            <div class="rec_item">
-                <div>
+                <div class="rec_item">
                     <div>
-                        <?php echo smarty_function_getdate(array('format'=>"cnWeek",'date'=>$_smarty_tpl->tpl_vars['jobFair']->value[$_smarty_tpl->getVariable('smarty')->value['section']['calendar']['index']]['jm_opentime']),$_smarty_tpl);?>
-
+                        <div> <?php echo smarty_function_getdate(array('format'=>"cnWeek",'date'=>$_smarty_tpl->tpl_vars['jobFair']->value[$_smarty_tpl->getVariable('smarty')->value['section']['calendar']['index']]['jm_opentime']),$_smarty_tpl);?>
+</div>
+                        <div><?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['jobFair']->value[$_smarty_tpl->getVariable('smarty')->value['section']['calendar']['index']]['jm_opentime'],"%Y.%m.%d");?>
+</div>
                     </div>
                     <div>
-                        <?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['jobFair']->value[$_smarty_tpl->getVariable('smarty')->value['section']['calendar']['index']]['jm_opentime'],"%Y.%m.%d");?>
-
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+                        <div><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /index.php/Jobfairmsg/calendardetail/id/<?php echo $_smarty_tpl->tpl_vars['jobFair']->value[$_smarty_tpl->getVariable('smarty')->value['section']['calendar']['index']]['jm_id'];?>
-">
-                            <?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['jobFair']->value[$_smarty_tpl->getVariable('smarty')->value['section']['calendar']['index']]['jm_name'],15,'…',true);?>
-
-                        </a>
-                    </div>
-                    <div>
-                        <?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['jobFair']->value[$_smarty_tpl->getVariable('smarty')->value['section']['calendar']['index']]['jm_opentime'],"%Y.%m.%d  %H:%M");?>
-
-                    </div>
-                    <div>
-                        <?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['jobFair']->value[$_smarty_tpl->getVariable('smarty')->value['section']['calendar']['index']]['jm_addr'],15,'…',true);?>
-
+"> <?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['jobFair']->value[$_smarty_tpl->getVariable('smarty')->value['section']['calendar']['index']]['jm_name'],15,'…',true);?>
+</a>
+                        </div>
+                        <div> <?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['jobFair']->value[$_smarty_tpl->getVariable('smarty')->value['section']['calendar']['index']]['jm_opentime'],"%Y.%m.%d  %H:%M");?>
+</div>
+                        <div> <?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['jobFair']->value[$_smarty_tpl->getVariable('smarty')->value['section']['calendar']['index']]['jm_addr'],15,'…',true);?>
+</div>
                     </div>
                 </div>
+                <?php endfor; endif; ?>
             </div>
-            <?php endfor; endif; ?>
         </div>
     </div>
-</div>
-<?php echo $_smarty_tpl->getSubTemplate ('footer.htm', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+    <?php echo $_smarty_tpl->getSubTemplate ('footer.htm', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
-<script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+    <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/libs/jquery.min.js"></script>
-<script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+    <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/app/js/header.js"></script>
-<script>
-    $(".middle").css("height",$(".middle_left").css("height"));
-</script>
+    <script>
+        $(".middle").css("height",$(".middle_left").css("height"));
+    </script>
 </body>
 
 </html><?php }} ?>

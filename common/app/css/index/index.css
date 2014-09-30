@@ -320,6 +320,7 @@
     height: 470px;
 }
 .category_nav, .category_nav2 {
+    width: 1000px;
     height: 40px;
 }
 .category_nav li, .category_nav2 li {

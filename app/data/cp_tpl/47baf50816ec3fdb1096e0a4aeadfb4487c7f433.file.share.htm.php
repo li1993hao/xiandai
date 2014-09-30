@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-30 14:28:17
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-30 14:39:48
          compiled from "app/tpl/share.htm" */ ?>
-<?php /*%%SmartyHeaderCode:1926797515542a4d813b9d96-50340598%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1136462160542a5034386717-50307314%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,15 +11,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1926797515542a4d813b9d96-50340598',
+  'nocache_hash' => '1136462160542a5034386717-50307314',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_542a4d813bb388_88554051',
+  'unifunc' => 'content_542a5034387ea3_89824025',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_542a4d813bb388_88554051')) {function content_542a4d813bb388_88554051($_smarty_tpl) {?><div id="shareinfo" style="float: right;">
+<?php if ($_valid && !is_callable('content_542a5034387ea3_89824025')) {function content_542a5034387ea3_89824025($_smarty_tpl) {?><div id="shareinfo" style="float: right;">
     <div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare">
         <a class="bds_qzone" ></a>
         <a class="bds_tsina"></a>
