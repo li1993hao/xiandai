@@ -1,4 +1,29 @@
-
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-30 16:24:15
+         compiled from "app/tpl/company/addposition.htm" */ ?>
+<?php /*%%SmartyHeaderCode:1262556809542a5b76ec0016-04231445%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'b8a919c42a38d44bc61eef017b09ddf0252fac8e' => 
+    array (
+      0 => 'app/tpl/company/addposition.htm',
+      1 => 1412063975,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '1262556809542a5b76ec0016-04231445',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_542a5b76ec6a18_77555453',
+  'variables' => 
+  array (
+    'web_url' => 0,
+  ),
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_542a5b76ec6a18_77555453')) {function content_542a5b76ec6a18_77555453($_smarty_tpl) {?>
 <style>
 #dialog{z-index:10000; position: absolute;
 left: 37%;
@@ -49,7 +74,8 @@ $(document).ready(function(){
 });
 function getJobtype(htmlId,pId,officetypeid){
 	$.ajax({
-		url:"<{$web_url}>/index.php/common/jobtype/parentid/"+pId,
+		url:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/common/jobtype/parentid/"+pId,
 		type:"POST",
 		async:false,
 		dataType:"json",
@@ -123,4 +149,4 @@ function getJobtype(htmlId,pId,officetypeid){
 	</div>
 	<div id ="officeresult" style="float:left;color:red;"></div>
 </div>
-</div>
+</div><?php }} ?>

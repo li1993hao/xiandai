@@ -72,9 +72,9 @@
             </div>
         </div>
         <{section name=n loop=$bulletin.list}>
-        <{if $bulletin.list[n].pic_id != ""}>
+        <{if $bulletin.list[n].pic_link != ""}>
         <div class="news_item2_wrap">
-            <div><img src="<{$web_url}>/common/upload/images/<{$sail.list[n].pic_link}>" alt="<{$web_url}>/common/upload/images/<{$sail.list[n].pic_link}>" /></div>
+            <div><img src="<{$web_url}>/common/upload/images/<{$bulletin.list[n].pic_link}>" alt="<{$web_url}>/common/upload/images/<{$bulletin.list[n].pic_link}>" /></div>
             <div class="news_item2">
                 <div>
                     <{if $bulletin.list[n].aa_top!=""}>

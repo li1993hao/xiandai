@@ -195,7 +195,6 @@ class CorpinternmsgController extends Controller{
 					$this->view->preNews = $corpinternmsg->getPreNews($interninfo['cim_id'],$interninfo['rit_id']);
 					$this->view->nextNews = $corpinternmsg->getNextNews($interninfo['cim_id'],$interninfo['rit_id']);
 					$this->view->detail = $interninfo;
-					
 					//获取职位的信息
 					$officelist = $corpinternmsg->getofficeinfo($id);
 					//print_r($officelist);

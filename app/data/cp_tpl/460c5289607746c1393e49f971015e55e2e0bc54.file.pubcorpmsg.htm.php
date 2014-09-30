@@ -1,27 +1,68 @@
-<!DOCTYPE HTML>
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-30 15:50:52
+         compiled from "app/tpl/company/pubcorpmsg.htm" */ ?>
+<?php /*%%SmartyHeaderCode:811798089542a5b76dfd722-41626061%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '460c5289607746c1393e49f971015e55e2e0bc54' => 
+    array (
+      0 => 'app/tpl/company/pubcorpmsg.htm',
+      1 => 1412063425,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '811798089542a5b76dfd722-41626061',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_542a5b76eb8306_04467863',
+  'variables' => 
+  array (
+    'web_url' => 0,
+    'company' => 0,
+    'officelist' => 0,
+  ),
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_542a5b76eb8306_04467863')) {function content_542a5b76eb8306_04467863($_smarty_tpl) {?><!DOCTYPE HTML>
 <html>
 
 <head>
     <meta id="screen-view" name="viewport" content="width=device-width" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <{include file='commcss.htm' }>
-    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/content.css" />
-    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/cor_drop.css" />
-    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/common/detail.css" />
-    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/common/myinfo.css" />
-    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/common/detail-360.css" />
-    <link rel="stylesheet" type="text/css" href="<{$web_url}>/common/libs/upload/uploadify.css"/>
-    <script type="text/javascript" src="<{$web_url}>/common/libs/jquery.min.js"></script>
-    <script type="text/javascript" src="<{$web_url}>/common/libs/upload/jquery.uploadify.min.js"></script>
-    <script type="text/javascript" src="<{$web_url}>/common/libs/xheditor-1.2.1/xheditor-1.2.1.min.js"></script>
-    <script type="text/javascript" src="<{$web_url}>/common/libs/xheditor-1.2.1/xheditor_lang/zh-cn.js"></script>
+    <?php echo $_smarty_tpl->getSubTemplate ('commcss.htm', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
+    <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/app/css/content.css" />
+    <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/app/css/cor_drop.css" />
+    <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/app/css/common/detail.css" />
+    <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/app/css/common/myinfo.css" />
+    <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/app/css/common/detail-360.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/libs/upload/uploadify.css"/>
+    <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/libs/jquery.min.js"></script>
+    <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/libs/upload/jquery.uploadify.min.js"></script>
+    <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/libs/xheditor-1.2.1/xheditor-1.2.1.min.js"></script>
+    <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/libs/xheditor-1.2.1/xheditor_lang/zh-cn.js"></script>
     <title>招聘信息</title>
     <script type="text/javascript">
-        var web_url = "<{$web_url}>";
+        var web_url = "<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+";
     </script>
     <!--[if lt IE 9]>
-    <script type="text/javascript" src="<{$web_url}>/common/app/js/DOMAssistantCompressed-2.7.4.js"></script>
-    <script type="text/javascript" src="<{$web_url}>/common/app/js/ie-css3.js"></script>
+    <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/app/js/DOMAssistantCompressed-2.7.4.js"></script>
+    <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/app/js/ie-css3.js"></script>
     <![endif]-->
 </head>
 <body>
@@ -95,8 +136,10 @@ $(document).ready(function(){
     $('#file_upload').uploadify({
         'formData'     : {
         },
-        'swf'      : '<{$web_url}>/common/libs/upload/uploadify.swf',
-        'uploader' : '<{$web_url}>/index.php/common/fileupload/filetype/file',
+        'swf'      : '<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/libs/upload/uploadify.swf',
+        'uploader' : '<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/common/fileupload/filetype/file',
         'queueSizeLimit': 1 ,
         'multi':false,
         'auto':true,
@@ -106,7 +149,8 @@ $(document).ready(function(){
         'buttonText':"上传附件",
         'width' : 100,
         'height':20,
-        'cancelImg' : '<{$web_url}>/common/libs/upload/uploadify-cancel.png',
+        'cancelImg' : '<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/libs/upload/uploadify-cancel.png',
         'onUploadError' : function(file, errorCode, errorMsg, errorString) {
             alert('The file ' + file.name + ' could not be uploaded: ' + errorString);
         },
@@ -140,24 +184,32 @@ $(document).ready(function(){
 
 
     var editor = $('#require').xheditor({
-        upLinkUrl:"<{$web_url}>/common/upload.php",
+        upLinkUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
         upLinkExt:"zip,rar,txt",
-        upImgUrl:"<{$web_url}>/common/upload.php",
+        upImgUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
         upImgExt:"jpg,jpeg,gif,png",
-        upFlashUrl:"<{$web_url}>/common/upload.php",
+        upFlashUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
         upFlashExt:"swf",
-        upMediaUrl:"<{$web_url}>/common/upload.php",
+        upMediaUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
         upMediaExt:"avi"
     });
 
     var editor = $('#content').xheditor({
-        upLinkUrl:"<{$web_url}>/common/upload.php",
+        upLinkUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
         upLinkExt:"zip,rar,txt",
-        upImgUrl:"<{$web_url}>/common/upload.php",
+        upImgUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
         upImgExt:"jpg,jpeg,gif,png",
-        upFlashUrl:"<{$web_url}>/common/upload.php",
+        upFlashUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
         upFlashExt:"swf",
-        upMediaUrl:"<{$web_url}>/common/upload.php",
+        upMediaUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
         upMediaExt:"avi"
     });
 
@@ -274,7 +326,8 @@ $(document).ready(function(){
 function getArea(htmlId,pId){
     //alert(provid);
     $.ajax({
-        url:"<{$web_url}>/index.php/common/area/parentid/"+pId,
+        url:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/common/area/parentid/"+pId,
         type:"POST",
         async:false,
         dataType:"json",
@@ -310,7 +363,8 @@ function getArea(htmlId,pId){
 
 function delfile(id){
     $.ajax({
-        url:"<{$web_url}>/index.php/common/delfile/filetype/file/id/"+id,
+        url:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/common/delfile/filetype/file/id/"+id,
         type:"post",
         async: false,
         dataType:"json",
@@ -334,12 +388,15 @@ function delfile(id){
 
 
 </script>
-<{include file='header.htm'}>
+<?php echo $_smarty_tpl->getSubTemplate ('header.htm', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
 <div class="nav">
     <dl>
-        <dt><a href="<{$web_url}>/index.php/index">首页/</a>
+        <dt><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/index">首页/</a>
         </dt>
-        <dt><a href="<{$web_url}>/index.php/company/myinfo">个人中心/</a>
+        <dt><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/company/myinfo">个人中心/</a>
         </dt>
         <dt><a href="#">招聘信息</a></dt>
     </dl>
@@ -350,20 +407,28 @@ function delfile(id){
             <p>功能菜单</p>
         </div>
         <div class="title" style="margin-top: 8px">
-            <p class = "title_link" onclick="location.href='<{$web_url}>/index.php/company/myinfo'" >企业基本信息</p>
-            <p class = "title_link" onclick="location.href='<{$web_url}>/index.php/company/getmyjobfair'">招聘会预定</p>
-            <p class = "title_link" onclick="location.href='<{$web_url}>/index.php/company/getmycorpmsg'"  style="background-color:#344a5d;color: #ffffff">招聘信息</p>
-            <p class = "title_link" onclick="location.href='<{$web_url}>/index.php/company/studentinterestme'">学生信息</p>
-            <p class = "title_link" onclick="location.href='<{$web_url}>/index.php/company/changepw'">修改密码</p>
-            <p class = "title_link" onclick="location.href='<{$web_url}>/index.php/index/index#feedback'">满意度调查</p>
-            <p class = "title_link" onclick="location.href='<{$web_url}>/index.php/company/message'">我的消息</p>
+            <p class = "title_link" onclick="location.href='<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/company/myinfo'" >企业基本信息</p>
+            <p class = "title_link" onclick="location.href='<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/company/getmyjobfair'">招聘会预定</p>
+            <p class = "title_link" onclick="location.href='<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/company/getmycorpmsg'"  style="background-color:#344a5d;color: #ffffff">招聘信息</p>
+            <p class = "title_link" onclick="location.href='<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/company/studentinterestme'">学生信息</p>
+            <p class = "title_link" onclick="location.href='<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/company/changepw'">修改密码</p>
+            <p class = "title_link" onclick="location.href='<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/index/index#feedback'">满意度调查</p>
+            <p class = "title_link" onclick="location.href='<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/company/message'">我的消息</p>
         </div>
 
     </div>
     <div class="middel_right">
 
         <div id="myinfo_left">
-            <form id="form1" target="_self" name="form1" method="post" action="<{$web_url}>/index.php/company/pubcorpmsg">
+            <form id="form1" target="_self" name="form1" method="post" action="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/company/pubcorpmsg">
                 <table class="fairinfo_table">
                     <tbody>
                     <tr class="company-jobfair-item">
@@ -394,15 +459,18 @@ function delfile(id){
                     </tr>
                     <tr class="company-jobfair-item">
                         <td class="company-jobfair-item-title">单位名称：</td>
-                        <td class="company-jobfair-item-info"><{$company.name}></td>
+                        <td class="company-jobfair-item-info"><?php echo $_smarty_tpl->tpl_vars['company']->value['name'];?>
+</td>
                     </tr>
                     <tr class="company-jobfair-item">
                         <td class="company-jobfair-item-title">单位性质：</td>
-                        <td class="company-jobfair-item-info"><{$company.corptype}></td>
+                        <td class="company-jobfair-item-info"><?php echo $_smarty_tpl->tpl_vars['company']->value['corptype'];?>
+</td>
                     </tr>
                     <tr class="company-jobfair-item">
                         <td class="company-jobfair-item-title">所属行业：</td>
-                        <td class="company-jobfair-item-info"><{$company.industry}></td>
+                        <td class="company-jobfair-item-info"><?php echo $_smarty_tpl->tpl_vars['company']->value['industry'];?>
+</td>
                     </tr>
                     <tr class="company-jobfair-item">
                         <td class="company-jobfair-item-title">所在地：</td>
@@ -414,36 +482,73 @@ function delfile(id){
                     </tr>
                     <tr class="company-jobfair-item">
                         <td class="company-jobfair-item-title">网址：</td>
-                        <td class="company-jobfair-item-info"<{$company.website}></td>
+                        <td class="company-jobfair-item-info"<?php echo $_smarty_tpl->tpl_vars['company']->value['website'];?>
+</td>
                     </tr>
                     <tr class="company-jobfair-item">
                         <td class="company-jobfair-item-title">电话：</td>
-                        <td class="company-jobfair-item-info"><{$company.phone}></td>
+                        <td class="company-jobfair-item-info"><?php echo $_smarty_tpl->tpl_vars['company']->value['phone'];?>
+</td>
                     </tr>
                     <tr class="company-jobfair-item">
                         <td class="company-jobfair-item-title">邮箱：</td>
-                        <td class="company-jobfair-item-info"><{$company.comEmail}></td>
+                        <td class="company-jobfair-item-info"><?php echo $_smarty_tpl->tpl_vars['company']->value['comEmail'];?>
+</td>
                     </tr>
                     </tbody>
                 </table>
 
                 <div class="company-jobfair-item" >
                     <div id = "positionlist" class="company-jobfair-item-info">
-                        <{section name=n loop=$officelist}>
+                        <?php if (isset($_smarty_tpl->tpl_vars['smarty']->value['section']['n'])) unset($_smarty_tpl->tpl_vars['smarty']->value['section']['n']);
+$_smarty_tpl->tpl_vars['smarty']->value['section']['n']['name'] = 'n';
+$_smarty_tpl->tpl_vars['smarty']->value['section']['n']['loop'] = is_array($_loop=$_smarty_tpl->tpl_vars['officelist']->value) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
+$_smarty_tpl->tpl_vars['smarty']->value['section']['n']['show'] = true;
+$_smarty_tpl->tpl_vars['smarty']->value['section']['n']['max'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['loop'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['n']['step'] = 1;
+$_smarty_tpl->tpl_vars['smarty']->value['section']['n']['start'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['step'] > 0 ? 0 : $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['loop']-1;
+if ($_smarty_tpl->tpl_vars['smarty']->value['section']['n']['show']) {
+    $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['total'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['loop'];
+    if ($_smarty_tpl->tpl_vars['smarty']->value['section']['n']['total'] == 0)
+        $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['show'] = false;
+} else
+    $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['total'] = 0;
+if ($_smarty_tpl->tpl_vars['smarty']->value['section']['n']['show']):
+
+            for ($_smarty_tpl->tpl_vars['smarty']->value['section']['n']['index'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['start'], $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['iteration'] = 1;
+                 $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['iteration'] <= $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['total'];
+                 $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['index'] += $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['step'], $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['iteration']++):
+$_smarty_tpl->tpl_vars['smarty']->value['section']['n']['rownum'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['iteration'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['n']['index_prev'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['index'] - $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['step'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['n']['index_next'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['index'] + $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['step'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['n']['first']      = ($_smarty_tpl->tpl_vars['smarty']->value['section']['n']['iteration'] == 1);
+$_smarty_tpl->tpl_vars['smarty']->value['section']['n']['last']       = ($_smarty_tpl->tpl_vars['smarty']->value['section']['n']['iteration'] == $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['total']);
+?>
                         <div class="position-list-item edit-flag" style="height: 25px;border-bottom: 1px">
                             <div class="position-list-item-content" style="float: left;margin-left: 70px">
-                                <span class="float-left"><{$officelist[n].office_name}></span>
+                                <span class="float-left"><?php echo $_smarty_tpl->tpl_vars['officelist']->value[$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['office_name'];?>
+</span>
                             </div>
                             <div  class="option-content">
-                                <div style="float: left;margin-left: 150px"  class="edit-coin-content" jobcontent="<{$officelist[n].office_intro}>" jobtypeinput3="<{$officelist[n].ot_id}>" jobtypeinput2="<{$officelist[n].officetype2}>" jobtypeinput1="<{$officelist[n].officetype1}>" jobname="<{$officelist[n].office_name}>">
-                                    <input class="officename" type="hidden" value="<{$officelist[n].office_name}>" name="officenamelist[]"></input>
-                                    <input class="jobtypeinput" type="hidden" jobtypeinput2="<{$officelist[n].officetype2}>" jobtypeinput1="<{$officelist[n].officetype1}>" value="<{$officelist[n].ot_id}>" name="officejobtype[]"></input>
-                                    <input class="jobcontentinput" type="hidden" value="<{$officelist[n].office_intro}>" name="officecontent[]"></input>
+                                <div style="float: left;margin-left: 150px"  class="edit-coin-content" jobcontent="<?php echo $_smarty_tpl->tpl_vars['officelist']->value[$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['office_intro'];?>
+" jobtypeinput3="<?php echo $_smarty_tpl->tpl_vars['officelist']->value[$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['ot_id'];?>
+" jobtypeinput2="<?php echo $_smarty_tpl->tpl_vars['officelist']->value[$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['officetype2'];?>
+" jobtypeinput1="<?php echo $_smarty_tpl->tpl_vars['officelist']->value[$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['officetype1'];?>
+" jobname="<?php echo $_smarty_tpl->tpl_vars['officelist']->value[$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['office_name'];?>
+">
+                                    <input class="officename" type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['officelist']->value[$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['office_name'];?>
+" name="officenamelist[]"></input>
+                                    <input class="jobtypeinput" type="hidden" jobtypeinput2="<?php echo $_smarty_tpl->tpl_vars['officelist']->value[$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['officetype2'];?>
+" jobtypeinput1="<?php echo $_smarty_tpl->tpl_vars['officelist']->value[$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['officetype1'];?>
+" value="<?php echo $_smarty_tpl->tpl_vars['officelist']->value[$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['ot_id'];?>
+" name="officejobtype[]"></input>
+                                    <input class="jobcontentinput" type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['officelist']->value[$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['office_intro'];?>
+" name="officecontent[]"></input>
                                 </div>
                                 <span style="float: left;margin-left: 20px"  class="position-list-delete position-list-optionitem cursor-hand" onclick="deleteoffice(this);">删除</span>
                             </div>
                         </div >
-                        <{/section}>
+                        <?php endfor; endif; ?>
                     </div>
                 </div>
                 <script type="text/javascript">
@@ -457,7 +562,8 @@ function delfile(id){
                         <td class="company-jobfair-item-title" style="width: 100px">职位：</td>
                         <td class="company-jobfair-item-info"><input class="cursor-hand jqmClose" type="button" value="添加职位" onclick="addZhiwei();"/></td>
                     </tr>
-                    <{include file='company/addposition.htm'}>
+                    <?php echo $_smarty_tpl->getSubTemplate ('company/addposition.htm', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
                     <tr class="company-jobfair-item">
                         <td class="company-jobfair-item-title"></td>
                         <td id="file" class="company-jobfair-item-info"></td>
@@ -491,6 +597,7 @@ function delfile(id){
 
     </div>
 </div>
-<{include file='footer.htm'}>
+<?php echo $_smarty_tpl->getSubTemplate ('footer.htm', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
 </body>
-</html>
+</html><?php }} ?>
