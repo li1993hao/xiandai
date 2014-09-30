@@ -23,49 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="register.htm" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/tpl/account/register.htm">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="162" column="24" selection-start="9143" selection-end="9169" vertical-scroll-proportion="4.62" vertical-offset="2661" max-vertical-offset="3300">
-              <folding>
-                <element signature="n#style#0;n#div#1;n#div#15;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#19;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="register.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common/app/js/account/register.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="165" column="13" selection-start="5684" selection-end="5774" vertical-scroll-proportion="-16.576923" vertical-offset="2044" max-vertical-offset="4305">
-              <folding>
-                <marker date="1411968891000" expanded="false" signature="950:961" placeholder="..." />
-                <marker date="1411968891000" expanded="false" signature="8536:8548" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="myinfo.htm" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/tpl/company/myinfo.htm">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="31" selection-start="1834" selection-end="1834" vertical-scroll-proportion="-2.4" vertical-offset="405" max-vertical-offset="3735">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="modifycominfo.htm" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/tpl/company/modifycominfo.htm">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="89" selection-start="789" selection-end="789" vertical-scroll-proportion="-3.3" vertical-offset="0" max-vertical-offset="5310">
-              <folding>
-                <element signature="n#style#0;n#div#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#2;n#tr#3;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#2;n#tr#9;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#2;n#tr#14;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state line="11" column="89" selection-start="789" selection-end="789" vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="5310">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -73,7 +35,7 @@
       <file leaf-file-name="commcss.htm" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/tpl/commcss.htm">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="120">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="120">
               <folding />
             </state>
           </provider>
@@ -82,16 +44,43 @@
       <file leaf-file-name="manwyjob.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/manwyjob.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="0" selection-start="146" selection-end="146" vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="720">
+            <state line="8" column="0" selection-start="146" selection-end="146" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="720">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pubjobfairinfo.htm" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="pubjobfairinfo.htm" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/tpl/company/pubjobfairinfo.htm">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="106" selection-start="997" selection-end="997" vertical-scroll-proportion="0.3051643" vertical-offset="0" max-vertical-offset="5805">
+            <state line="13" column="106" selection-start="997" selection-end="997" vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="5805">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.htm" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/tpl/corpinternmsg/index.htm">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="13" selection-start="526" selection-end="526" vertical-scroll-proportion="0.0" vertical-offset="295" max-vertical-offset="1410">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="detail.htm" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/tpl/jobfairmsg/detail.htm">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="63" column="27" selection-start="2915" selection-end="2915" vertical-scroll-proportion="-18.125" vertical-offset="510" max-vertical-offset="4320">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="detail.htm" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/tpl/jobinfo/detail.htm">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="49" column="3" selection-start="1723" selection-end="1917" vertical-scroll-proportion="0.49624062" vertical-offset="405" max-vertical-offset="2565">
               <folding />
             </state>
           </provider>
@@ -100,7 +89,7 @@
       <file leaf-file-name="pubcorpmsg.htm" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/tpl/company/pubcorpmsg.htm">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="304" column="58" selection-start="12236" selection-end="12236" vertical-scroll-proportion="-190.0" vertical-offset="0" max-vertical-offset="6510">
+            <state line="304" column="58" selection-start="12236" selection-end="12236" vertical-scroll-proportion="0.0" vertical-offset="4560" max-vertical-offset="6510">
               <folding />
             </state>
           </provider>
@@ -109,7 +98,7 @@
       <file leaf-file-name="mycorpmsg.htm" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/tpl/company/mycorpmsg.htm">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="31" selection-start="1184" selection-end="1184" vertical-scroll-proportion="-14.375" vertical-offset="0" max-vertical-offset="2565">
+            <state line="23" column="31" selection-start="1184" selection-end="1184" vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="2565">
               <folding />
             </state>
           </provider>
@@ -118,7 +107,7 @@
       <file leaf-file-name="db.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/setting/db.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="555">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="645">
               <folding />
             </state>
           </provider>
@@ -134,7 +123,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/tpl/student/modifyinfo.html" />
         <option value="$PROJECT_DIR$/app/tpl/student/myinfo.html" />
         <option value="$PROJECT_DIR$/app/controllers/CommonController.php" />
         <option value="$PROJECT_DIR$/app/tpl/student/favorjobinfo.htm" />
@@ -185,6 +173,7 @@
         <option value="$PROJECT_DIR$/manwyjob.php" />
         <option value="$PROJECT_DIR$/app/tpl/company/pubjobfairinfo.htm" />
         <option value="$PROJECT_DIR$/app/tpl/company/mycorpmsg.htm" />
+        <option value="$PROJECT_DIR$/app/tpl/jobfairmsg/detail.htm" />
       </list>
     </option>
   </component>
@@ -288,7 +277,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="company" />
+              <option name="myItemId" value="jobinfo" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -302,11 +291,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wyjob" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="xiandai" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -395,388 +398,209 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/tpl/jobinfo/searchlist.htm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1515">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/tpl/friendlink/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="75" selection-start="1854" selection-end="1854" vertical-scroll-proportion="-31.875" vertical-offset="0" max-vertical-offset="1425">
-          <folding />
-        </state>
+        <state line="51" column="75" selection-start="1854" selection-end="1854" vertical-scroll-proportion="-31.875" vertical-offset="0" max-vertical-offset="1425" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/tpl/employmentteam/detail.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1560">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1560" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/tpl/employmentteam/index.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="13" selection-start="507" selection-end="507" vertical-scroll-proportion="-8.125" vertical-offset="0" max-vertical-offset="1395">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
+        <state line="13" column="13" selection-start="507" selection-end="507" vertical-scroll-proportion="-8.125" vertical-offset="0" max-vertical-offset="1395" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/tpl/employmentpolicy/detail.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1560">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1560" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/tpl/employmentpolicy/index.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1440">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1440" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/tpl/corpinternmsg/detail.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4890">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/tpl/corpinternmsg/index.htm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="13" selection-start="526" selection-end="526" vertical-scroll-proportion="-8.125" vertical-offset="0" max-vertical-offset="1410">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4890" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/tpl/collegeintroduction/detail.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1545">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1545" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/tpl/activityjobbulletin/index.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="13" selection-start="532" selection-end="532" vertical-scroll-proportion="-8.125" vertical-offset="0" max-vertical-offset="2295">
-          <folding />
-        </state>
+        <state line="13" column="13" selection-start="532" selection-end="532" vertical-scroll-proportion="-8.125" vertical-offset="0" max-vertical-offset="2295" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/tpl/activityjobbulletin/detail.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2115">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2115" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/common/app/css/account/register.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="1" selection-start="1739" selection-end="1739" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
-          <folding />
-        </state>
+        <state line="29" column="1" selection-start="1739" selection-end="1739" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/AccountController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="74" selection-start="2590" selection-end="2596" vertical-scroll-proportion="0.0" vertical-offset="970" max-vertical-offset="2190">
-          <folding />
-        </state>
+        <state line="67" column="74" selection-start="2590" selection-end="2596" vertical-scroll-proportion="0.0" vertical-offset="970" max-vertical-offset="2190" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/tpl/jobfairmsg/calendar.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="13" selection-start="743" selection-end="743" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="1500">
-          <folding />
-        </state>
+        <state line="15" column="13" selection-start="743" selection-end="743" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="1500" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/tpl/jobfairmsg/index.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="16" selection-start="411" selection-end="411" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="1665">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/tpl/jobfairmsg/detail.htm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="978" selection-end="978" vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="4320">
-          <folding />
-        </state>
+        <state line="9" column="16" selection-start="411" selection-end="411" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="1665" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/tpl/student/myinfo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="124" column="0" selection-start="2898" selection-end="2927" vertical-scroll-proportion="0.0" vertical-offset="1335" max-vertical-offset="3135">
-          <folding />
-        </state>
+        <state line="124" column="0" selection-start="2898" selection-end="2927" vertical-scroll-proportion="0.0" vertical-offset="1335" max-vertical-offset="3135" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/tpl/header.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="17.375" vertical-offset="417" max-vertical-offset="1095">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="17.375" vertical-offset="417" max-vertical-offset="1095" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/tpl/common/userinfo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="2" selection-start="487" selection-end="572" vertical-scroll-proportion="-3.0" vertical-offset="0" max-vertical-offset="1380">
-          <folding>
-            <element signature="tag#div#0;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#0;tag#div#0;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#1;tag#div#0;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#2;tag#div#0;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#3;tag#div#0;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#4;tag#div#0;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#style#0;tag#div#0;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#script#0;tag#div#0;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#5;tag#div#0;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#6;tag#div#0;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#7;tag#div#0;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#8;tag#div#0;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#9;tag#div#0;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#1;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
-          </folding>
-        </state>
+        <state line="10" column="2" selection-start="487" selection-end="572" vertical-scroll-proportion="-3.0" vertical-offset="0" max-vertical-offset="1380" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/tpl/center/index.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="6" selection-start="770" selection-end="770" vertical-scroll-proportion="-13.125" vertical-offset="0" max-vertical-offset="1245">
-          <folding />
-        </state>
+        <state line="21" column="6" selection-start="770" selection-end="770" vertical-scroll-proportion="-13.125" vertical-offset="0" max-vertical-offset="1245" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/tpl/index/index.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="3" selection-start="299" selection-end="392" vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="10965">
-          <folding />
-        </state>
+        <state line="9" column="3" selection-start="299" selection-end="392" vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="10965" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/tpl/collegeintroduction/index.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="180" selection-end="215" vertical-scroll-proportion="-3.75" vertical-offset="0" max-vertical-offset="1410">
-          <folding />
-        </state>
+        <state line="6" column="0" selection-start="180" selection-end="215" vertical-scroll-proportion="-3.75" vertical-offset="0" max-vertical-offset="1410" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/message.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="154" column="10" selection-start="5854" selection-end="5854" vertical-scroll-proportion="-4.26" vertical-offset="2097" max-vertical-offset="2940">
-          <folding>
-            <marker date="1411985110000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-          </folding>
-        </state>
+        <state line="154" column="10" selection-start="5854" selection-end="5854" vertical-scroll-proportion="-4.26" vertical-offset="2097" max-vertical-offset="2940" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/tpl/company/editjobfair.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="303" column="58" selection-start="12142" selection-end="12142" vertical-scroll-proportion="-15.0" vertical-offset="4185" max-vertical-offset="6360">
-          <folding />
-        </state>
+        <state line="303" column="58" selection-start="12142" selection-end="12142" vertical-scroll-proportion="-15.0" vertical-offset="4185" max-vertical-offset="6360" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/tpl/company/editcorpmsg.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="345" column="28" selection-start="14022" selection-end="14022" vertical-scroll-proportion="-6.25" vertical-offset="5025" max-vertical-offset="7575">
-          <folding>
-            <marker date="1411985309000" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1411985309000" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1411985309000" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1411985309000" expanded="false" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
+        <state line="345" column="28" selection-start="14022" selection-end="14022" vertical-scroll-proportion="-6.25" vertical-offset="5025" max-vertical-offset="7575" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/tpl/company/changepw.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="58" selection-start="1261" selection-end="1261" vertical-scroll-proportion="-6.25" vertical-offset="285" max-vertical-offset="1245">
-          <folding />
-        </state>
+        <state line="29" column="58" selection-start="1261" selection-end="1261" vertical-scroll-proportion="-6.25" vertical-offset="285" max-vertical-offset="1245" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/tpl/company/addposition.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1965">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1965" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/tpl/company/error.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="75" selection-start="1180" selection-end="1180" vertical-scroll-proportion="-14.875" vertical-offset="48" max-vertical-offset="750">
-          <folding />
-        </state>
+        <state line="27" column="75" selection-start="1180" selection-end="1180" vertical-scroll-proportion="-14.875" vertical-offset="48" max-vertical-offset="750" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/tpl/company/message.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="174" column="58" selection-start="4456" selection-end="4456" vertical-scroll-proportion="-8.75" vertical-offset="2400" max-vertical-offset="4770">
-          <folding />
-        </state>
+        <state line="174" column="58" selection-start="4456" selection-end="4456" vertical-scroll-proportion="-8.75" vertical-offset="2400" max-vertical-offset="4770" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/CorpinternmsgController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="8355">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="8355" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/tpl/company/myjobfair.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="10" selection-start="3110" selection-end="3209" vertical-scroll-proportion="-25.0" vertical-offset="780" max-vertical-offset="2760">
-          <folding />
-        </state>
+        <state line="92" column="10" selection-start="3110" selection-end="3209" vertical-scroll-proportion="-25.0" vertical-offset="780" max-vertical-offset="2760" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/tpl/company/studentinterstme.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="1225" selection-end="1225" vertical-scroll-proportion="153.125" vertical-offset="3975" max-vertical-offset="5310">
-          <folding>
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#3;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1411987135000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1411987135000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1411987135000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1411987135000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1411987135000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1411987135000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1411987135000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1411987135000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1411987135000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1411987135000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
+        <state line="20" column="0" selection-start="1225" selection-end="1225" vertical-scroll-proportion="153.125" vertical-offset="3975" max-vertical-offset="5310" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/student.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="286" column="0" selection-start="9504" selection-end="9504" vertical-scroll-proportion="-13.333333" vertical-offset="3970" max-vertical-offset="4635">
-          <folding>
-            <marker date="1411988184000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
-            <marker date="1411988184000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1411988184000" expanded="true" signature="-1:-1" placeholder="SELECT `stud..." />
-            <marker date="1411988184000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
-          </folding>
-        </state>
+        <state line="286" column="0" selection-start="9504" selection-end="9504" vertical-scroll-proportion="-13.333333" vertical-offset="3970" max-vertical-offset="4635" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/tpl/company/studentall.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="158" column="41" selection-start="6913" selection-end="6914" vertical-scroll-proportion="118.75" vertical-offset="5220" max-vertical-offset="6030">
-          <folding>
-            <marker date="1411987482000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1411987482000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1411987482000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1411987482000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1411987482000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1411987482000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1411987482000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1411987482000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1411987482000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1411987482000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1411987482000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1411987482000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1411987482000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1411987482000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1411987482000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1411987482000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1411987482000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
+        <state line="158" column="41" selection-start="6913" selection-end="6914" vertical-scroll-proportion="118.75" vertical-offset="5220" max-vertical-offset="6030" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/tpl/company/leftModel.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="97" selection-start="855" selection-end="855" vertical-scroll-proportion="-8.125" vertical-offset="0" max-vertical-offset="360">
-          <folding />
-        </state>
+        <state line="13" column="97" selection-start="855" selection-end="855" vertical-scroll-proportion="-8.125" vertical-offset="0" max-vertical-offset="360" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/common/app/css/common/myinfo.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="131" column="0" selection-start="6394" selection-end="6394" vertical-scroll-proportion="0.0" vertical-offset="1306" max-vertical-offset="2055">
-          <folding />
-        </state>
+        <state line="131" column="0" selection-start="6394" selection-end="6394" vertical-scroll-proportion="0.0" vertical-offset="1306" max-vertical-offset="2055" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/filter/appFilter.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="39" selection-start="340" selection-end="340" vertical-scroll-proportion="-5.625" vertical-offset="30" max-vertical-offset="1620">
-          <folding />
-        </state>
+        <state line="11" column="39" selection-start="340" selection-end="340" vertical-scroll-proportion="-5.625" vertical-offset="30" max-vertical-offset="1620" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/frontuser.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="127" column="0" selection-start="5780" selection-end="5780" vertical-scroll-proportion="-17.333334" vertical-offset="1489" max-vertical-offset="9495">
-          <folding>
-            <marker date="1411989962000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1411989962000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
-            <marker date="1411989962000" expanded="true" signature="-1:-1" placeholder="SELECT `user..." />
-            <marker date="1411989962000" expanded="true" signature="-1:-1" placeholder="SELECT `fron..." />
-            <marker date="1411989962000" expanded="true" signature="-1:-1" placeholder="select * fro..xvzhi..." />
-          </folding>
-        </state>
+        <state line="127" column="0" selection-start="5780" selection-end="5780" vertical-scroll-proportion="-17.333334" vertical-offset="1489" max-vertical-offset="9495" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/CommonController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="132" column="56" selection-start="3795" selection-end="3806" vertical-scroll-proportion="-5.46" vertical-offset="1617" max-vertical-offset="4245">
-          <folding />
-        </state>
+        <state line="132" column="56" selection-start="3795" selection-end="3806" vertical-scroll-proportion="-5.46" vertical-offset="1617" max-vertical-offset="4245" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/company.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="114" column="20" selection-start="4094" selection-end="4094" vertical-scroll-proportion="-13.333333" vertical-offset="1390" max-vertical-offset="2055">
-          <folding>
-            <marker date="1396603432000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-          </folding>
-        </state>
+        <state line="114" column="20" selection-start="4094" selection-end="4094" vertical-scroll-proportion="-13.333333" vertical-offset="1390" max-vertical-offset="2055" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/CompanyController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="310" column="30" selection-start="12906" selection-end="12906" vertical-scroll-proportion="-4.08" vertical-offset="4446" max-vertical-offset="9990">
-          <folding />
-        </state>
+        <state line="310" column="30" selection-start="12906" selection-end="12906" vertical-scroll-proportion="-4.08" vertical-offset="4446" max-vertical-offset="9990" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/common/app/js/account/register.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="165" column="13" selection-start="5684" selection-end="5774" vertical-scroll-proportion="-16.576923" vertical-offset="2044" max-vertical-offset="4305">
-          <folding>
-            <marker date="1411968891000" expanded="false" signature="950:961" placeholder="..." />
-            <marker date="1411968891000" expanded="false" signature="8536:8548" placeholder="..." />
-          </folding>
-        </state>
+        <state line="165" column="13" selection-start="5684" selection-end="5774" vertical-scroll-proportion="0.0" vertical-offset="2044" max-vertical-offset="4305" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/tpl/account/register.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="162" column="24" selection-start="9143" selection-end="9169" vertical-scroll-proportion="4.62" vertical-offset="2661" max-vertical-offset="3300">
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#15;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#19;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
+        <state line="162" column="24" selection-start="9143" selection-end="9169" vertical-scroll-proportion="0.0" vertical-offset="2661" max-vertical-offset="3300" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/tpl/company/myinfo.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="31" selection-start="1834" selection-end="1834" vertical-scroll-proportion="-2.4" vertical-offset="405" max-vertical-offset="3735">
+        <state line="35" column="31" selection-start="1834" selection-end="1834" vertical-scroll-proportion="0.0" vertical-offset="405" max-vertical-offset="3735">
           <folding />
         </state>
       </provider>
@@ -790,14 +614,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/manwyjob.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="146" selection-end="146" vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="720">
+        <state line="8" column="0" selection-start="146" selection-end="146" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="720">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/tpl/company/mycorpmsg.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="31" selection-start="1184" selection-end="1184" vertical-scroll-proportion="-14.375" vertical-offset="0" max-vertical-offset="2565">
+        <state line="23" column="31" selection-start="1184" selection-end="1184" vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="2565">
           <folding />
         </state>
       </provider>
@@ -811,26 +635,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/tpl/company/modifycominfo.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="89" selection-start="789" selection-end="789" vertical-scroll-proportion="-3.3" vertical-offset="0" max-vertical-offset="5310">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#2;n#tr#3;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#2;n#tr#9;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#2;n#tr#14;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state line="11" column="89" selection-start="789" selection-end="789" vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="5310">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/tpl/company/pubcorpmsg.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="304" column="58" selection-start="12236" selection-end="12236" vertical-scroll-proportion="-190.0" vertical-offset="0" max-vertical-offset="6510">
+        <state line="304" column="58" selection-start="12236" selection-end="12236" vertical-scroll-proportion="0.0" vertical-offset="4560" max-vertical-offset="6510">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/tpl/company/pubjobfairinfo.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="106" selection-start="997" selection-end="997" vertical-scroll-proportion="0.3051643" vertical-offset="0" max-vertical-offset="5805">
+        <state line="13" column="106" selection-start="997" selection-end="997" vertical-scroll-proportion="-0.0" vertical-offset="195" max-vertical-offset="5805">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/tpl/corpinternmsg/index.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="13" selection-start="526" selection-end="526" vertical-scroll-proportion="0.0" vertical-offset="295" max-vertical-offset="1410">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/tpl/jobfairmsg/detail.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="27" selection-start="2915" selection-end="2915" vertical-scroll-proportion="-18.125" vertical-offset="510" max-vertical-offset="4320">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/tpl/jobinfo/detail.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="3" selection-start="1723" selection-end="1917" vertical-scroll-proportion="0.49624062" vertical-offset="405" max-vertical-offset="2565">
           <folding />
         </state>
       </provider>

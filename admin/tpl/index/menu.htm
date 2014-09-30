@@ -318,7 +318,7 @@
 		  				<A class=menuChild  href="<{$web_url}>/manwyjob.php/west/policylist" target=main>渤海轻工集团就业政策</A>
 		  			</TD>
 				</TR>
-        <!--
+
 				<TR height=20>
          			<TD align=middle width=30>
 		  				<IMG height=9 src="<{$web_url}>/common/admin/images/menu_icon.gif" width=9>
@@ -327,7 +327,7 @@
 		  				<A class=menuChild  href="<{$web_url}>/manwyjob.php/west/addinfo" target=main>添加渤海轻工集团就业信息</A>
 		  			</TD>
 				</TR>
-		-->
+
 	  		</TABLE>
 	  		<{/if}>
 
@@ -402,10 +402,12 @@
           			<TD align=middle width=30><IMG height=9 src="<{$web_url}>/common/admin/images/menu_icon.gif" width=9></TD>
           			<TD><A class=menuChild href="<{$web_url}>/manwyjob.php/frontuser/companydegree" target=main>企业信用等级管理</A></TD>
 				</TR>
+                <!--
 				<TR height=20>
           			<TD align=middle width=30><IMG height=9 src="<{$web_url}>/common/admin/images/menu_icon.gif" width=9></TD>
           			<TD><A class=menuChild href="<{$web_url}>/manwyjob.php/frontuser/xvzhi/mod/select" target=main>前台须知管理</A></TD>
 				</TR>
+				-->
 			</TABLE>
 			<{/if}>
 
@@ -550,30 +552,7 @@
 
 	  		</TABLE>
 	  		<{/if}>
-
-	  		<{if $menu.wechat == 1}>
-			<!-- 系统统计 -->
-			<TABLE cellSpacing=0 cellPadding=0 width=150 border=0>
-        		<TR height=22>
-          			<TD style="PADDING-LEFT: 30px" background="<{$web_url}>/common/admin/images/menu_bt.jpg">
-						<A class=menuParent onclick=expand(15) href="javascript:void(0);">微信平台</A>
-					</TD>
-				</TR>
-
-        		<TR height=4><TD></TD></TR>
-			</TABLE>
-			<TABLE id=child15 style="DISPLAY: none" cellSpacing=0 cellPadding=0 width=150 border=0>
-        		 <TR height=20>
-          			<TD align=middle width=30><IMG height=9 src="<{$web_url}>/common/admin/images/menu_icon.gif" width=9></TD>
-          			<TD><A class=menuChild href="https://mp.weixin.qq.com/" target=main>微信推送</A></TD>
-				</TR>
-
-	  		</TABLE>
-	  		<{/if}>
-
-
-
-      		<TABLE cellSpacing=0 cellPadding=0 width=150 border=0>
+            <TABLE cellSpacing=0 cellPadding=0 width=150 border=0>
         		<TR height=22>
           			<TD style="PADDING-LEFT: 30px" background="<{$web_url}>/common/admin/images/menu_bt.jpg">
 						<A class=menuParent onclick=expand(20) href="javascript:void(0);">个人信息管理</A>

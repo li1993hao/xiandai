@@ -13,40 +13,40 @@
 <script language="javascript" type="text/javascript" src="<{$web_url}>/common/libs/My97DatePicker/WdatePicker.js"></script>
 <script type="text/javascript">
 		$(function() {
-			
+
 			$("#zz_del").click(function(){
 				$("#attrID").val('');
 				$("#filetitle").val('');
 				$("#file").hide();
 			})
-			
+
 			$("#addcalendar").change(function(){
 				$(".calendar").show('fast');
 			});
-			
+
 			$('#file_upload').uploadify({
 				'formData'     : {
 				},
 				'swf'      : '<{$web_url}>/common/libs/upload/uploadify.swf',
 				'uploader' : '<{$web_url}>/manwyjob.php/recruit/upload/',
-				'queueSizeLimit': 1 , 
+				'queueSizeLimit': 1 ,
 				'multi':false,
 				'auto':true,
 				'fileTypeDesc':"请选择图片文件",
 				'fileTypeExts':'*.jpg;*.jpeg;*.png;*.gif;*.bmp',
-				'fileSizeLimit': 1024*1024, 
-				'buttonText':"选择图片", 
-				'width' : 100, 
-				'height':20, 
+				'fileSizeLimit': 1024*1024,
+				'buttonText':"选择图片",
+				'width' : 100,
+				'height':20,
 				'cancelImg' : '<{$web_url}>/common/libs/upload/uploadify-cancel.png',
 				'onUploadError' : function(file, errorCode, errorMsg, errorString) {
 			            alert('The file ' + file.name + ' could not be uploaded: ' + errorString);
 			    },
 			    //'onUploadStart' : function(file) {
-			    //	$("#picstate").val("1"); 
+			    //	$("#picstate").val("1");
 		        //},
 		        'onCancel' : function(file) {
-		        	$("#picstate").val("0"); 
+		        	$("#picstate").val("0");
 		        },
 			    'onUploadSuccess' : function(file, data, response) {
 		            //alert('The file ' + file.name + ' was successfully uploaded with a response of ' + response + ':' + data);
@@ -61,34 +61,34 @@
 			            $("#img").html("<img style=\" max-width:600px; max-height:200px;\" src='"+myObject.msg+"'/>");
 			            $("#picstate").val("2");
 		            }
-		            
+
 			    }
 			});
-			
-			
+
+
 			$('#attr_upload').uploadify({
 				'formData'     : {
 				},
 				'swf'      : '<{$web_url}>/common/libs/upload/uploadify.swf',
 				'uploader' : '<{$web_url}>/manwyjob.php/recruit/upload/filetype/file',
-				'queueSizeLimit': 1 , 
+				'queueSizeLimit': 1 ,
 				'multi':false,
 				'auto':true,
-				'fileTypeDesc':"请选择文件", 
+				'fileTypeDesc':"请选择文件",
 				'fileTypeExts':'*.txt;*.pdf;*.doc;*.docx;*.xls;*.xslx;*.rar;*.zip;*.ppt;*.pptx',
-				'fileSizeLimit': '10240KB', 
+				'fileSizeLimit': '10240KB',
 				'buttonText':"选择文件",
-				'width' : 100, 
-				'height':20, 
+				'width' : 100,
+				'height':20,
 				'cancelImg' : '<{$web_url}>/common/libs/upload/uploadify-cancel.png',
 				'onUploadError' : function(file, errorCode, errorMsg, errorString) {
 			            alert('The file ' + file.name + ' could not be uploaded: ' + errorString);
 			    },
 			    'onUploadStart' : function(file) {
-			    	$("#filestate").val("1"); 
+			    	$("#filestate").val("1");
 		        },
 		        'onCancel' : function(file) {
-		        	$("#filestate").val("0"); 
+		        	$("#filestate").val("0");
 		        },
 			    'onUploadSuccess' : function(file, data, response) {
 		           // alert('The file ' + file.name + ' was successfully uploaded with a response of ' + response + ':' + data);
@@ -106,13 +106,13 @@
 		            	$("#file").html("<a href='"+myObject.msg+"'>"+myObject.name+"</a>");
 			            $("#filestate").val("2");
 		            }
-		            
+
 			    }
 			});
-			
-			
-			
-			
+
+
+
+
 			var editor = $('#content').xheditor({
 				upLinkUrl:"<{$web_url}>/common/upload.php",
 				upLinkExt:"zip,rar,txt",
@@ -132,7 +132,6 @@
 			$("#form1").submit( function () {
 				$("#result").val("");
 				$('#content').val(editor.getSource());//加上这句防止提交数据为空
-				+
 				//return false;
 
 
@@ -176,13 +175,13 @@
 		$(function() {
 			//var order = $("#order").val();
 			$("#date").focus(function(){
-				
+
 					WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'});
-				
-				
+
+
 			});
-			
-		}); 
+
+		});
 </script>
 </head>
 <body>
