@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-30 16:24:15
+<?php /* Smarty version Smarty-3.1.14, created on 2014-10-08 10:02:18
          compiled from "app/tpl/company/addposition.htm" */ ?>
 <?php /*%%SmartyHeaderCode:1262556809542a5b76ec0016-04231445%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b8a919c42a38d44bc61eef017b09ddf0252fac8e' => 
     array (
       0 => 'app/tpl/company/addposition.htm',
-      1 => 1412063975,
+      1 => 1412733732,
       2 => 'file',
     ),
   ),
@@ -53,7 +53,7 @@ background-color: #EEEEEE}
 <script type="text/javascript">
 
     function jobTypeChange(){
-            getJobtype("jobtype2",parentId,"");
+            getJobtype("jobtype2",$("jobtype2").val(),"");
             $("#jobtype2").change(function(){
                 parentId = $("#jobtype2").val();
                 getJobtype("jobtype3",parentId,"");

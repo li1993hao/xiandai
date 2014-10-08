@@ -28,7 +28,7 @@ background-color: #EEEEEE}
 <script type="text/javascript">
 
     function jobTypeChange(){
-            getJobtype("jobtype2",parentId,"");
+            getJobtype("jobtype2",$("jobtype2").val(),"");
             $("#jobtype2").change(function(){
                 parentId = $("#jobtype2").val();
                 getJobtype("jobtype3",parentId,"");

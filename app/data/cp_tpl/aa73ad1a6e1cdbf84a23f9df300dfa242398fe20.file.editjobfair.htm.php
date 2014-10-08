@@ -1,33 +1,72 @@
-<!DOCTYPE HTML>
+<?php /* Smarty version Smarty-3.1.14, created on 2014-10-08 10:40:36
+         compiled from "app/tpl/company/editjobfair.htm" */ ?>
+<?php /*%%SmartyHeaderCode:12778574675434a32c24beb5-28256892%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'aa73ad1a6e1cdbf84a23f9df300dfa242398fe20' => 
+    array (
+      0 => 'app/tpl/company/editjobfair.htm',
+      1 => 1412736028,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '12778574675434a32c24beb5-28256892',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_5434a32c336579_89393520',
+  'variables' => 
+  array (
+    'web_url' => 0,
+    'jobfairinfo' => 0,
+    'company' => 0,
+    'result' => 0,
+  ),
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_5434a32c336579_89393520')) {function content_5434a32c336579_89393520($_smarty_tpl) {?><!DOCTYPE HTML>
 <html>
 
 <head>
     <meta id="screen-view" name="viewport" content="width=device-width" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <{include file='commcss.htm' }>
-    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/content.css" />
-    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/common/detail.css" />
-    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/common/myinfo.css" />
-    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/common/detail-360.css" />
+    <?php echo $_smarty_tpl->getSubTemplate ('commcss.htm', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
+    <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/app/css/content.css" />
+    <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/app/css/common/detail.css" />
+    <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/app/css/common/myinfo.css" />
+    <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/app/css/common/detail-360.css" />
     <title>招聘信息</title>
     <script type="text/javascript">
-        var web_url = "<{$web_url}>";
+        var web_url = "<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+";
     </script>
     <!--[if lt IE 9]>
-    <script type="text/javascript" src="<{$web_url}>/common/app/js/DOMAssistantCompressed-2.7.4.js"></script>
-    <script type="text/javascript" src="<{$web_url}>/common/app/js/ie-css3.js"></script>
+    <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/app/js/DOMAssistantCompressed-2.7.4.js"></script>
+    <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/app/js/ie-css3.js"></script>
     <![endif]-->
 </head>
 <body>
 
 
 
-<{include file='header.htm'}>
+<?php echo $_smarty_tpl->getSubTemplate ('header.htm', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
 <div class="nav">
     <dl>
-        <dt><a href="<{$web_url}>/index.php/index">首页/</a>
+        <dt><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/index">首页/</a>
         </dt>
-        <dt><a href="<{$web_url}>/index.php/company/myinfo">个人中心/</a>
+        <dt><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/company/myinfo">个人中心/</a>
         </dt>
         <dt><a href="#">招聘信息</a></dt>
     </dl>
@@ -38,26 +77,36 @@
             <p>功能菜单</p>
         </div>
         <div class="title" style="margin-top: 8px">
-            <p class = "title_link" onclick="location.href='<{$web_url}>/index.php/company/myinfo'" >企业基本信息</p>
-            <p class = "title_link" onclick="location.href='<{$web_url}>/index.php/company/getmyjobfair'">招聘会预定</p>
-            <p class = "title_link" onclick="location.href='<{$web_url}>/index.php/company/getmycorpmsg'"  style="background-color:#344a5d;color: #ffffff">招聘信息</p>
-            <p class = "title_link" onclick="location.href='<{$web_url}>/index.php/company/studentinterestme'">学生信息</p>
-            <p class = "title_link" onclick="location.href='<{$web_url}>/index.php/company/changepw'">修改密码</p>
-            <p class = "title_link" onclick="location.href='<{$web_url}>/index.php/index/index#feedback'">满意度调查</p>
-            <p class = "title_link" onclick="location.href='<{$web_url}>/index.php/company/message'">我的消息</p>
+            <p class = "title_link" onclick="location.href='<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/company/myinfo'" >企业基本信息</p>
+            <p class = "title_link" onclick="location.href='<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/company/getmyjobfair'">招聘会预定</p>
+            <p class = "title_link" onclick="location.href='<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/company/getmycorpmsg'"  style="background-color:#344a5d;color: #ffffff">招聘信息</p>
+            <p class = "title_link" onclick="location.href='<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/company/studentinterestme'">学生信息</p>
+            <p class = "title_link" onclick="location.href='<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/company/changepw'">修改密码</p>
+            <p class = "title_link" onclick="location.href='<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/index/index#feedback'">满意度调查</p>
+            <p class = "title_link" onclick="location.href='<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/company/message'">我的消息</p>
         </div>
 
     </div>
     <div class="middel_right">
 
         <div id="myinfo_left">
-            <form id="form1" target="_self" name="form1" method="post" action="<{$web_url}>/index.php/company/editjobfair/id/<{$jobfairinfo.jm_id}>">
+            <form id="form1" target="_self" name="form1" method="post" action="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/company/editjobfair/id/<?php echo $_smarty_tpl->tpl_vars['jobfairinfo']->value['jm_id'];?>
+">
                 <table class="fairinfo_table">
                     <tbody>
                     <tr class="company-jobfair-item">
                         <td class="company-jobfair-item-title">标题：</td>
                         <td class="company-jobfair-item-info">
-                            <input id="jobfairtitle" type="text" name="jobfairtitle" style="width:480px;height:30px;" value="<{$jobfairinfo.jm_name}>" />
+                            <input id="jobfairtitle" type="text" name="jobfairtitle" style="width:480px;height:30px;" value="<?php echo $_smarty_tpl->tpl_vars['jobfairinfo']->value['jm_name'];?>
+" />
                         </td>
                     </tr>
                     <tr class="company-jobfair-item">
@@ -65,22 +114,25 @@
                         <td class="company-jobfair-item-info">
                             <select id="isopen" name="isopen" class="select-list">
                                 <option value="" selected="selected" disabled>选择</option>
-                                <option value="0" <{if $jobfairinfo.jm_isopen eq 0}>selected="selected"<{/if}>>不公开</option>
-                                <option value="1" <{if $jobfairinfo.jm_isopen eq 1}>selected="selected"<{/if}>>公开</option>
+                                <option value="0" <?php if ($_smarty_tpl->tpl_vars['jobfairinfo']->value['jm_isopen']==0){?>selected="selected"<?php }?>>不公开</option>
+                                <option value="1" <?php if ($_smarty_tpl->tpl_vars['jobfairinfo']->value['jm_isopen']==1){?>selected="selected"<?php }?>>公开</option>
                             </select>
                         </td>
                     </tr>
                     <tr class="company-jobfair-item">
                         <td class="company-jobfair-item-title" style="width:100px">单位名称：</td>
-                        <td class="company-jobfair-item-info"><{$company.name}></td>
+                        <td class="company-jobfair-item-info"><?php echo $_smarty_tpl->tpl_vars['company']->value['name'];?>
+</td>
                     </tr>
                     <tr class="company-jobfair-item">
                         <td class="company-jobfair-item-title">单位性质：</td>
-                        <td class="company-jobfair-item-info"><{$company.corptype}></td>
+                        <td class="company-jobfair-item-info"><?php echo $_smarty_tpl->tpl_vars['company']->value['corptype'];?>
+</td>
                     </tr>
                     <tr class="company-jobfair-item">
                         <td class="company-jobfair-item-title">所属行业：</td>
-                        <td class="company-jobfair-item-info"><{$company.industry}></td>
+                        <td class="company-jobfair-item-info"><?php echo $_smarty_tpl->tpl_vars['company']->value['industry'];?>
+</td>
                     </tr>
                     <tr class="company-jobfair-item">
                         <td class="company-jobfair-item-title">所在地：</td>
@@ -92,17 +144,21 @@
                     </tr>
                     <tr class="company-jobfair-item">
                         <td class="company-jobfair-item-title">网址：</td>
-                        <td class="company-jobfair-item-info"<{$company.website}></td>
+                        <td class="company-jobfair-item-info"<?php echo $_smarty_tpl->tpl_vars['company']->value['website'];?>
+</td>
                     </tr>
                     <tr class="company-jobfair-item">
                         <td class="company-jobfair-item-title">电话：</td>
-                        <td class="company-jobfair-item-info"><{$company.phone}></td>
+                        <td class="company-jobfair-item-info"><?php echo $_smarty_tpl->tpl_vars['company']->value['phone'];?>
+</td>
                     </tr>
                     <tr class="company-jobfair-item">
                         <td class="company-jobfair-item-title">邮箱：</td>
-                        <td class="company-jobfair-item-info"><{$company.email}></td>
+                        <td class="company-jobfair-item-info"><?php echo $_smarty_tpl->tpl_vars['company']->value['email'];?>
+</td>
                     </tr>
-                    <{include file='company/addposition.htm'}>
+                    <?php echo $_smarty_tpl->getSubTemplate ('company/addposition.htm', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
                     <tr class="company-jobfair-item">
                         <td class="company-jobfair-item-title"></td>
                         <td id="file" class="company-jobfair-item-info"></td>
@@ -119,20 +175,23 @@
 				   <tr class="company-jobfair-item">
                         <td class="company-jobfair-item-title">期望时间以及要求：</td>
                         <td class="company-jobfair-item-info">
-                            <textarea id="content" name="require" rows="15" cols="120" style="width:90%;height:150px"><{$jobfairinfo.jm_require}></textarea>
+                            <textarea id="content" name="require" rows="15" cols="120" style="width:90%;height:150px"><?php echo $_smarty_tpl->tpl_vars['jobfairinfo']->value['jm_require'];?>
+</textarea>
                         </td>
                     </tr>
                     <tr class="company-jobfair-item">
                         <td class="company-jobfair-item-title">招聘内容：</td>
                         <td class="company-jobfair-item-info">
-                            <textarea id="content" name="content" rows="15" cols="120" style="width:90%;height:150px"><{$jobfairinfo.jm_content}></textarea>
+                            <textarea id="content" name="content" rows="15" cols="120" style="width:90%;height:150px"><?php echo $_smarty_tpl->tpl_vars['jobfairinfo']->value['jm_content'];?>
+</textarea>
                         </td>
                     </tr>
                     <tr class="company-jobfair-item">
                         <td class="company-jobfair-item-title"></td>
                         <td class="company-jobfair-item-info">
                             <input id="submit" class="submit" name="submit" type="submit" value="确认修改招聘会"/>
-                            <span id="result" style="color:red;font-size:13px;"><{$result|default:""}></span>
+                            <span id="result" style="color:red;font-size:13px;"><?php echo (($tmp = @$_smarty_tpl->tpl_vars['result']->value)===null||$tmp==='' ? '' : $tmp);?>
+</span>
                         </td>
                     </tr>
                     </tbody>
@@ -142,13 +201,19 @@
 
     </div>
 </div>
-<{include file='footer.htm'}>
+<?php echo $_smarty_tpl->getSubTemplate ('footer.htm', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
-<script type="text/javascript" src="<{$web_url}>/common/libs/jquery.min.js"></script>
-<script type="text/javascript" src="<{$web_url}>/common/libs/upload/jquery.uploadify.min.js"></script>
-<link rel="stylesheet" type="text/css" href="<{$web_url}>/common/libs/upload/uploadify.css">>
-<script type="text/javascript" src="<{$web_url}>/common/libs/xheditor-1.2.1/xheditor-1.2.1.min.js"></script>
-<script type="text/javascript" src="<{$web_url}>/common/libs/xheditor-1.2.1/xheditor_lang/zh-cn.js"></script>
+
+<script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/libs/jquery.min.js"></script>
+<script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/libs/upload/jquery.uploadify.min.js"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/libs/upload/uploadify.css">>
+<script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/libs/xheditor-1.2.1/xheditor-1.2.1.min.js"></script>
+<script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/libs/xheditor-1.2.1/xheditor_lang/zh-cn.js"></script>
 <script type="text/javascript">
 var parentId = 0;
 var provid = 0;
@@ -167,8 +232,10 @@ $(document).ready(function(){
     $('#file_upload').uploadify({
         'formData'     : {
         },
-        'swf'      : '<{$web_url}>/common/libs/upload/uploadify.swf',
-        'uploader' : '<{$web_url}>/index.php/common/fileupload/filetype/file',
+        'swf'      : '<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/libs/upload/uploadify.swf',
+        'uploader' : '<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/common/fileupload/filetype/file',
         'queueSizeLimit': 1 ,
         'multi':false,
         'auto':true,
@@ -178,7 +245,8 @@ $(document).ready(function(){
         'buttonText':"上传附件",
         'width' : 100,
         'height':20,
-        'cancelImg' : '<{$web_url}>/common/libs/upload/uploadify-cancel.png',
+        'cancelImg' : '<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/libs/upload/uploadify-cancel.png',
         'onUploadError' : function(file, errorCode, errorMsg, errorString) {
             alert('The file ' + file.name + ' could not be uploaded: ' + errorString);
         },
@@ -212,24 +280,32 @@ $(document).ready(function(){
 
 
     var editor = $('#require').xheditor({
-        upLinkUrl:"<{$web_url}>/common/upload.php",
+        upLinkUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
         upLinkExt:"zip,rar,txt",
-        upImgUrl:"<{$web_url}>/common/upload.php",
+        upImgUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
         upImgExt:"jpg,jpeg,gif,png",
-        upFlashUrl:"<{$web_url}>/common/upload.php",
+        upFlashUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
         upFlashExt:"swf",
-        upMediaUrl:"<{$web_url}>/common/upload.php",
+        upMediaUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
         upMediaExt:"avi"
     });
 
     var editor = $('#content').xheditor({
-        upLinkUrl:"<{$web_url}>/common/upload.php",
+        upLinkUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
         upLinkExt:"zip,rar,txt",
-        upImgUrl:"<{$web_url}>/common/upload.php",
+        upImgUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
         upImgExt:"jpg,jpeg,gif,png",
-        upFlashUrl:"<{$web_url}>/common/upload.php",
+        upFlashUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
         upFlashExt:"swf",
-        upMediaUrl:"<{$web_url}>/common/upload.php",
+        upMediaUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
         upMediaExt:"avi"
     });
 
@@ -364,7 +440,8 @@ $(document).ready(function(){
 function getArea(htmlId,pId){
     //alert(provid);
     $.ajax({
-        url:"<{$web_url}>/index.php/common/area/parentid/"+pId,
+        url:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/common/area/parentid/"+pId,
         type:"POST",
         async:false,
         dataType:"json",
@@ -400,7 +477,8 @@ function getArea(htmlId,pId){
 
 function delfile(id){
     $.ajax({
-        url:"<{$web_url}>/index.php/common/delfile/filetype/file/id/"+id,
+        url:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/common/delfile/filetype/file/id/"+id,
         type:"post",
         async: false,
         dataType:"json",
@@ -424,4 +502,4 @@ function delfile(id){
 </script>
 
 </body>
-</html>
+</html><?php }} ?>

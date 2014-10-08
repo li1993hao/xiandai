@@ -1,0 +1,457 @@
+<?php /* Smarty version Smarty-3.1.14, created on 2014-10-08 10:32:04
+         compiled from "app/tpl/company/pubjobfairinfo.htm" */ ?>
+<?php /*%%SmartyHeaderCode:9855468645434a224e2f708-12496896%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '92bf892ef63fa86f2d90ced7a8c79dc4affa9de9' => 
+    array (
+      0 => 'app/tpl/company/pubjobfairinfo.htm',
+      1 => 1412062166,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '9855468645434a224e2f708-12496896',
+  'function' => 
+  array (
+  ),
+  'variables' => 
+  array (
+    'web_url' => 0,
+    'result' => 0,
+  ),
+  'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_5434a224f08697_81464913',
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_5434a224f08697_81464913')) {function content_5434a224f08697_81464913($_smarty_tpl) {?><!DOCTYPE HTML>
+<html>
+<head>
+    <meta id="screen-view" name="viewport" content="width=device-width" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <?php echo $_smarty_tpl->getSubTemplate ('commcss.htm', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
+    <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/app/css/content.css" />
+    <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/app/css/cor_drop.css" />
+    <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/app/css/common/detail.css" />
+    <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/app/css/common/myinfo.css" />
+    <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/app/css/common/detail-360.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/libs/upload/uploadify.css"/>
+    <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/libs/jquery.min.js"></script>
+    <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/libs/upload/jquery.uploadify.min.js"></script>
+    <title>招聘会预定</title>
+    <script type="text/javascript">
+        var web_url = "<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+";
+    </script>
+
+    <!--[if lt IE 9]
+    <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/app/js/DOMAssistantCompressed-2.7.4.js"></script>
+    <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/app/js/ie-css3.js"></script>
+    <![endif]-->
+<script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/libs/xheditor-1.2.1/xheditor-1.2.1.min.js"></script>
+<script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/libs/xheditor-1.2.1/xheditor_lang/zh-cn.js"></script>
+<script type="text/javascript">
+    $(function(){
+        var editor = $('#content').xheditor({
+            upLinkUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
+            upLinkExt:"zip,rar,txt",
+            upImgUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
+            upImgExt:"jpg,jpeg,gif,png",
+            upFlashUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
+            upFlashExt:"swf",
+            upMediaUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
+            upMediaExt:"avi",
+            remoteImgSaveUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
+            cleanPaste:2,
+            internalScript:false,
+            inlineScript:false,
+            internalStyle:false,
+            inlineStyle:false
+        });
+        });
+    $(function(){
+        var editor = $('#require').xheditor({
+            upLinkUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
+            upLinkExt:"zip,rar,txt",
+            upImgUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
+            upImgExt:"jpg,jpeg,gif,png",
+            upFlashUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
+            upFlashExt:"swf",
+            upMediaUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
+            upMediaExt:"avi",
+            remoteImgSaveUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
+            cleanPaste:2,
+            internalScript:false,
+            inlineScript:false,
+            internalStyle:false,
+            inlineStyle:false
+        });
+        });
+    
+</script>
+</head>
+
+<body>
+<script type="text/javascript">
+    var parentId = 0;
+
+    $(document).ready(function(){
+        getArea("prov",parentId);
+
+        $("#prov").change(function(){
+            parentId = $("#prov").val();
+            getArea("city",parentId);
+            $("#city").change(function(){
+                parentId = $("#city").val();
+                getArea("county",parentId);
+            });
+        });
+
+        $('#file_upload').uploadify({
+            'formData'     : {
+            },
+            'swf'      : '<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/libs/upload/uploadify.swf',
+            'uploader' : '<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/common/fileupload/filetype/file',
+            'queueSizeLimit': 1 ,
+            'multi':false,
+            'auto':true,
+            'fileTypeDesc':"请选择文件",
+            'fileTypeExts':'*.txt;*.pdf;*.doc;*.docx;*.xls;*.xslx;*.rar;*.zip;*.ppt;*.pptx',
+            'fileSizeLimit': '10240KB',
+            'buttonText':"上传附件",
+            'width' : 100,
+            'height':20,
+            'cancelImg' : '<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/libs/upload/uploadify-cancel.png',
+            'onUploadError' : function(file, errorCode, errorMsg, errorString) {
+                alert('The file ' + file.name + ' could not be uploaded: ' + errorString);
+            },
+            'onUploadStart' : function(file) {
+                $("#filestate").val("1");
+            },
+            'onCancel' : function(file) {
+                $("#filestate").val("0");
+            },
+            'onUploadSuccess' : function(file, data, response) {
+                //alert('The file ' + file.name + ' was successfully uploaded with a response of ' + response + ':' + data);
+                // alert(data);//size
+                var myObject = eval('(' + data + ')');
+                // alert(myObject.result);
+                //alert(myObject.msg);
+                if(myObject.result == '0'){
+                    $("#file").html("上传失败！");
+                    $("#filestate").val("0");//0表示没有图片上传 1表示图片上传中 2表示图片上传成功
+                }else{
+                    $("#hidFileID").attr("value",myObject.result);
+                    //$("#fsize").val(myObject.size);
+                    $("#filetitle").val(myObject.name);
+                    var str = "<a id= \"link"+myObject.result+"\" href='"+myObject.msg+"'><font size='2px' color='#080719'>"+myObject.name+"</font></a>";
+                    str += "<a id=\"del"+myObject.result+"\"  href=\"#\" onClick=\"delfile("+myObject.result+");\" return false;><font size='2px' color='#D6504B'>[删除]</font></a>";
+                    $("#file").html(str);
+                    $("#filestate").val("2");
+                }
+
+            }
+        });
+
+
+        var editor = $('#require').xheditor({
+            upLinkUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
+            upLinkExt:"zip,rar,txt",
+            upImgUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
+            upImgExt:"jpg,jpeg,gif,png",
+            upFlashUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
+            upFlashExt:"swf",
+            upMediaUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
+            upMediaExt:"avi"
+        });
+
+        var editor = $('#content').xheditor({
+            upLinkUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
+            upLinkExt:"zip,rar,txt",
+            upImgUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
+            upImgExt:"jpg,jpeg,gif,png",
+            upFlashUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
+            upFlashExt:"swf",
+            upMediaUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload.php",
+            upMediaExt:"avi"
+        });
+
+        $("#form1").submit( function (){
+            //alert($("#jobfairtitle").val());
+            if($("#jobfairtitle").val() == ""){
+                $("#result").text("标题不能为空！");
+                $("#jobfairtitle").focus();
+                return false;
+            }
+            if($("#isopen").val() == ""){
+                $("#result").text("请选择是否公开！");
+                $("#isopen").focus();
+                return false;
+            }
+            //alert($("#prov").val());
+            if($("#prov").val() == 0){
+                $("#result").text("所在省份不能为空！");
+                $("#prov").focus();
+                return false;
+            }
+            if($("#city").val() == 0){
+                $("#result").text("所在城市不能为空！");
+                $("#city").focus();
+                return false;
+            }
+            if($("#county").val() == 0){
+                $("#result").text("所在县区不能为空！");
+                $("#county").focus();
+                return false;
+            }
+            //alert("aaa");
+            if($("#require").val() == ""){
+                $("#result").text("所在县区不能为空！");
+                $("#require").focus();
+                return false;
+            }
+            if($("#content").val() == ""){
+                $("#result").text("所在县区不能为空！");
+                $("#content").focus();
+                return false;
+            }
+            return true;
+        });
+    });
+
+    function getArea(htmlId,pId){
+        $.ajax({
+            url:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/common/area/parentid/"+pId,
+            type:"POST",
+            async:false,
+            dataType:"json",
+            success:function(data){
+                var str = "";
+                if(htmlId == "prov"){
+                    str += "<option value=\"0\" selected=\"selected\">选择省份</option>";
+                }else if(htmlId == "city"){
+                    str += "<option value=\"0\" selected=\"selected\">选择城市</option>";
+                }else{
+                    str += "<option value=\"0\" selected=\"selected\">选择县区</option>";
+                }
+                //var str="";
+                if(data.json.state == 1){
+                    $.each(data.json.data.list,function(index,item){
+                        str +="<option value=\""+item.area_id+"\">"+item.area_name+"</option>";
+                    });
+                    $("#"+htmlId).html(str);
+                }else{
+                    $("#"+htmlId).html(str);
+                }
+            },
+            error:function(msg){
+                alert("网络出现问题！");
+            }
+        });
+    }
+
+    function delfile(id){
+        $.ajax({
+            url:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/common/delfile/filetype/file/id/"+id,
+            type:"post",
+            async: false,
+            dataType:"json",
+            success:function(data){
+                if (data.json.state == 1){
+                    $("#link"+id).remove();
+                    $("#del"+id).remove();
+                    $("#hidFileID").val("");
+                    $("#filetitle").val("");
+                    alert("删除成功");
+                }else{
+                    alert("删除失败");
+                }
+            },
+            error:function(msg){
+                alert("网络出现问题，请稍后再试");
+                //$("#news-all-container").html("");
+            }
+        });
+    }
+</script>
+<?php echo $_smarty_tpl->getSubTemplate ('header.htm', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
+
+<div class="nav">
+    <dl>
+        <dt><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/index">首页/</a>
+        </dt>
+        <dt><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/company/myinfo">个人中心/</a>
+        </dt>
+        <dt><a href="#">招聘会预定</a></dt>
+    </dl>
+</div>
+<div class="middle" style="padding: 0px">
+    <div id="middle_left" style="padding-top: 0px">
+        <div id="title">
+            <p>功能菜单</p>
+        </div>
+        <div class="title" style="margin-top: 8px">
+            <p class = "title_link" onclick="location.href='<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/company/myinfo'" >企业基本信息</p>
+            <p class = "title_link" onclick="location.href='<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/company/getmyjobfair'" style="background-color:#344a5d;color: #ffffff">招聘会预定</p>
+            <p class = "title_link" onclick="location.href='<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/company/getmycorpmsg'">招聘信息</p>
+            <p class = "title_link" onclick="location.href='<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/company/studentinterestme'">学生信息</p>
+            <p class = "title_link" onclick="location.href='<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/company/changepw'">修改密码</p>
+            <p class = "title_link" onclick="location.href='<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/index/index#feedback'">满意度调查</p>
+            <p class = "title_link" onclick="location.href='<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/company/message'">我的消息</p>
+        </div>
+    </div>
+       <div class="middle_right" >
+           <div id="myinfo_left">
+               <form id="form1" target="_self" name="form1" method="post" action="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/company/pubjobfairinfo">
+                   <table class="fairinfo_table">
+                       <tbody>
+                       <tr class="company-jobfair-item">
+                           <td class="company-jobfair-item-title">标题：</td>
+                           <td class="company-jobfair-item-info">
+                               <input id="jobfairtitle" type="text" name="jobfairtitle" style="width:480px;height:30px;" value="" />
+                           </td>
+                       </tr>
+                       <tr class="company-jobfair-item">
+                           <td class="company-jobfair-item-title">是否公开：</td>
+                           <td class="company-jobfair-item-info">
+                               <select id="isopen" name="isopen" class="select-list">
+                                   <option value="" selected="selected" disabled>选择</option>
+                                   <option value="0">不公开</option>
+                                   <option value="1">公开</option>
+                               </select>
+                           </td>
+                       </tr>
+                       <tr class="company-jobfair-item">
+                           <td class="company-jobfair-item-title">单位名称：</td>
+                           <td class="company-jobfair-item-info">天津爱风科技有限公司</td>
+                       </tr>
+                       <tr class="company-jobfair-item">
+                           <td class="company-jobfair-item-title">单位性质：</td>
+                           <td class="company-jobfair-item-info">科研设计单位</td>
+                       </tr>
+                       <tr class="company-jobfair-item">
+                           <td class="company-jobfair-item-title">所属行业：</td>
+                           <td class="company-jobfair-item-info">IT软件</td>
+                       </tr>
+                       <tr class="company-jobfair-item">
+                           <td class="company-jobfair-item-title">所在地：</td>
+                           <td class="company-jobfair-item-info">
+                           <select id="prov" name="prov" class="select-list">
+                               <option value="0" selected="selected">选择省份</option>
+                           </select>
+                           <select id="city" name="city" class="select-list">
+                               <option value="0" selected="selected">选择城市</option>
+                           </select>
+                           <select id="county" name="county" class="select-list">
+                               <option value="0" selected="selected" >选择县区</option>
+                           </select>
+                           </td>
+                       </tr>
+                       <tr class="company-jobfair-item">
+                           <td class="company-jobfair-item-title">网址：</td>
+                           <td class="company-jobfair-item-info">http://www.baidu.com</td>
+                       </tr>
+                       <tr class="company-jobfair-item">
+                           <td class="company-jobfair-item-title">电话：</td>
+                           <td class="company-jobfair-item-info">02287458860</td>
+                       </tr>
+                       <tr class="company-jobfair-item">
+                           <td class="company-jobfair-item-title">邮箱：</td>
+                           <td class="company-jobfair-item-info">iwind-tech@iwind-tech.com</td>
+                       </tr>
+                       <tr class="company-jobfair-item">
+                           <td class="company-jobfair-item-title"></td>
+                           <td id="file" class="company-jobfair-item-info"></td>
+                       </tr>
+                       <tr class="company-jobfair-item">
+                           <td class="company-jobfair-item-title">附件：</td>
+                           <td class="company-jobfair-item-info">
+                               <input id="file_upload" name="file_upload" type="file" multiple />
+                               <input id="hidFileID" type="hidden" name="fileid" value="" />
+                               <input type="hidden" name="filestate" id="filestate" value="0" />
+                               <input type="hidden" name="filetitle" id="filetitle" value="" />
+                           </td>
+                       </tr>
+                       <tr class="company-jobfair-item">
+                           <td class="company-jobfair-item-title">期望时间以及要求：</td>
+                           <td class="company-jobfair-item-info">
+                               <textarea id="require" name="require" rows="10" cols="120" style="width:90%;height:200px" value=""></textarea>
+                           </td>
+                       </tr>
+                       <tr class="company-jobfair-item">
+                           <td class="company-jobfair-item-title" style="width: 100px">招聘会内容：</td>
+                           <td class="company-jobfair-item-info">
+                               <textarea id="content" name="content" rows="15" cols="120" style="width:90%;height:230px" value=""></textarea>
+                           </td>
+                       </tr>
+                       <tr class="company-jobfair-item">
+                           <td class="company-jobfair-item-title"></td>
+                           <td class="company-jobfair-item-info">
+                               <input id="submit" class="submit" name="submit" type="submit" value="预订招聘会"/>
+                               <span id="result" style="color:red;font-size:13px;margin-left: 30px"><?php echo (($tmp = @$_smarty_tpl->tpl_vars['result']->value)===null||$tmp==='' ? '' : $tmp);?>
+</span>
+                           </td>
+                       </tr>
+                       </tbody>
+                   </table>
+               </form>
+           </div>
+       </div>
+
+
+ </div>
+
+
+
+<?php echo $_smarty_tpl->getSubTemplate ('footer.htm', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
+</body>
+
+</html><?php }} ?>

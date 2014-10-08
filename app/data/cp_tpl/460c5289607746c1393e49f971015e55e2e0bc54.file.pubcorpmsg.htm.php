@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-30 15:50:52
+<?php /* Smarty version Smarty-3.1.14, created on 2014-10-08 10:04:53
          compiled from "app/tpl/company/pubcorpmsg.htm" */ ?>
 <?php /*%%SmartyHeaderCode:811798089542a5b76dfd722-41626061%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '460c5289607746c1393e49f971015e55e2e0bc54' => 
     array (
       0 => 'app/tpl/company/pubcorpmsg.htm',
-      1 => 1412063425,
+      1 => 1412733891,
       2 => 'file',
     ),
   ),
@@ -249,41 +249,8 @@ $(document).ready(function(){
         return true;
     });
 
-    //确认添加职位
-    $(".select-yes").live('click',function(){
-        var besure = "";
-        if($("#officename").val() == ""){
-            $("#officeresult").text("职位名称不能为空！");
-            $("#officename").focus();
-            besure = false;
-        }else if($("#jobtype3").val() == "0"){
-            $("#officeresult").text("职位类别不能为空！");
-            besure = false;
-        }else if($("#officereq").val() == ""){
-            $("#officeresult").text("职位要求不能为空！");
-            $("#officereq").focus();
-            besure = false;
-        }else{besure = true;}
-        if(besure == true){
-            officename = $("#officename").val();
-            officetype = $("#jobtype3").attr("value");
-            officetype1 = $("#jobtype1").attr("value");
-            officetype2 = $("#jobtype2").attr("value");
-            officereq = $("#officereq").val();
-            //alert(officename+officetype+officereq);
-            var str = "";
-            str+="<div class=\"position-list-item edit-flag\" style=\"height: 25px;border-bottom: 1px\" >";
-            str+="<div class=\"position-list-item-content\" style=\"float: left;margin-left: 70px\" > <span class=\"float-left\">"+officename+"</span></div>";
-            str+="<div class=\"option-content\"><div style=\"float: left;margin-left: 150px\" class=\"edit-coin-content\"  jobname=\""+officename+"\" jobtypeinput1= \""+officetype1+"\" jobtypeinput2= \""+officetype2+"\" jobtypeinput3 =\""+officetype+"\" jobcontent=\""+officereq+"\">";
-            str+="<input class=\"officename\" type=\"hidden\" name = \"officenamelist[]\" value=\""+officename+"\"/>";
-            str+="<input class=\"jobtypeinput\" type=\"hidden\" name = \"officejobtype[]\" value=\""+officetype+"\" jobtypeinput1= \""+officetype1+"\" jobtypeinput2= \""+officetype2+"\"/>";
-            str+="<input class=\"jobcontentinput\" type=\"hidden\" name = \"officecontent[]\" value=\""+officereq+"\"/></div>";
-            str+="<span  style=\"float: left;margin-left: 20px\" class=\"position-list-delete position-list-optionitem cursor-hand\" onclick=\"deleteoffice(this);\">删除</span></div>";
-            str+="</div>";
-            $("#positionlist").append(str);
-            $("#dialog").hide();
-        }
-    });
+
+
     $(".edit-coin-content").live('click',function(){
         var officename = $(this).attr("jobname");
         var officetype1 = $(this).attr("jobtypeinput1");

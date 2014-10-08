@@ -68,7 +68,6 @@
             </div>
         </div>
         <div class="content">
-            <{if isset($zhaopin)}>
             <{if $officelist}>
             <div class="m-l-office">
                 <div class="m-l-office-header">
@@ -87,8 +86,11 @@
 
             </div>
             <{/if}>
-            <{/if}>
-            <div style="font-size:16px;margin-bottom:10px;">说明:</div>
+            <div class="m-l-office">
+                <div class="m-l-office-header">
+                    >>说明
+                </div>
+            </div>
             <{if $detail.pic_id !="" }>
             <div id="middle_img">
                 <img src="<{$web_url}>/common/upload/images/<{$detail.pic_link}>"/>

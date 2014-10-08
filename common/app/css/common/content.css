@@ -1,6 +1,6 @@
 /*��ͼ�б�*/
 
-#middle{width:1000px;min-height:500px;	height:auto;margin:0 auto;	padding:0 95px;}
+#middle{width:1000px;min-height:1000px;margin:0 auto;	padding:0 95px;}
 #middle_left{	width:723px;	height:auto;	float:right;	display:block;}
 .middle-color-blue{color:#72B1D6;}
 .middle-color-red{color:#677bc0;}

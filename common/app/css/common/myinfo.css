@@ -127,5 +127,5 @@
     line-height: 30px;
     font-size:16px;
 }
-.submit{background:#344a5d;width:130px; height:30px;color:white;text-align:center;cursor:pointer;float:left;}
+.submit{background:#344a5d;width:130px; font-size: 14px;height:30px;color:white;text-align:center;cursor:pointer;float:left;}
 .submit:hover{backgoround:#5d6e7d;font-size: 14px;width:130px; height:30px;color:white;}

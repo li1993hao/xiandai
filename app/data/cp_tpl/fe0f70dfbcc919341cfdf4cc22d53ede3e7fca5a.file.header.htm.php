@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-30 14:36:55
+<?php /* Smarty version Smarty-3.1.14, created on 2014-10-08 09:52:47
          compiled from "app/tpl/header.htm" */ ?>
 <?php /*%%SmartyHeaderCode:508932121542a4f871042a0-52621829%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fe0f70dfbcc919341cfdf4cc22d53ede3e7fca5a' => 
     array (
       0 => 'app/tpl/header.htm',
-      1 => 1412042840,
+      1 => 1412733165,
       2 => 'file',
     ),
   ),
@@ -15,14 +15,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_542a4f87144a61_87391700',
   'variables' => 
   array (
     '__userinfo__' => 0,
     'web_url' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_542a4f87144a61_87391700',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_542a4f87144a61_87391700')) {function content_542a4f87144a61_87391700($_smarty_tpl) {?><div class="container">
     <div class="top_login">
@@ -66,10 +66,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 /index.php/student/myinfo">个人中心</a> 
                         </li>
                         <?php }else{ ?>
-                            <li><?php echo $_smarty_tpl->tpl_vars['__userinfo__']->value['com_name'];?>
-</li>
+                            <li style="margin-right: 10px;">
+                                <a style="text-decoration: none">
+                                    <?php echo $_smarty_tpl->tpl_vars['__userinfo__']->value['name'];?>
+
+                                </a>
+                            </li>
                             <li> <a target="_blank" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/index.php/company/myinfo">个人中心 </a> 
+/index.php/company/myinfo">个人中心 </a>
                             </li>
 
 

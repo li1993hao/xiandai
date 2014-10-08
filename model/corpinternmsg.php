@@ -354,7 +354,7 @@ class corpinternmsg extends Model {
 		if ($fileid == "") {
 			$file = "NULL,NULL";
 		} else {
-			$file = " '" . $fileid . "', '" . $filename . "'";
+			$file = " '" . $filename . "', '" . $fileid. "'";
 		}
 		
 		if ($publish == "0") {
@@ -363,7 +363,7 @@ class corpinternmsg extends Model {
 		
 		$sql = "INSERT INTO `corpinternmsg`(`cim_name`,`rit_id`,`ct_id`,`prov_id`,`cim_addr`,`cim_contact`,`cim_tel`,`cim_email`,`cim_fax`,`cim_web`,`user_id`,`cim_publish`,`cim_src`,`cim_isup`,`cim_content`,`cim_news`,`cim_notice`,`cim_date`,`file_name`,`file_id`,`cim_veri`,`cim_isopen`)
 				VALUES('" . $name . "','" . $ritid . "','" . $ctid . "','" . $provid . "','" . $addr . "','" . $contact . "','" . $tel . "','" . $email . "','" . $fax . "','" . $web . "','" . $userid . "','" . $publish . "','" . $src . "',NULL,'" . $content . "','" . $news . "','" . $notice . "', NOW()," . $file . ",'" . $veri . "','" . $isopen . "') ";
-
+        //var_dump($sql);
 		return $this->insert ( $sql );
 	}
 	

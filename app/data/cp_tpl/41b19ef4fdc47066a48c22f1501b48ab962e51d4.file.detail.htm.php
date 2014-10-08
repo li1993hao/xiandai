@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-30 15:41:28
+<?php /* Smarty version Smarty-3.1.14, created on 2014-10-08 10:31:39
          compiled from "app/tpl/corpinternmsg/detail.htm" */ ?>
 <?php /*%%SmartyHeaderCode:659149143542a5ea87f9c14-64889720%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '41b19ef4fdc47066a48c22f1501b48ab962e51d4' => 
     array (
       0 => 'app/tpl/corpinternmsg/detail.htm',
-      1 => 1412042840,
+      1 => 1412735498,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_542a5ea89b6253_58992939',
   'variables' => 
   array (
     'web_url' => 0,
@@ -22,7 +24,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'detail' => 0,
     '__userinfo__' => 0,
     'collectFlag' => 0,
-    'zhaopin' => 0,
     'officelist' => 0,
     'preNews' => 0,
     'nextNews' => 0,
@@ -31,8 +32,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'addShareUrl' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_542a5ea89b6253_58992939',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_542a5ea89b6253_58992939')) {function content_542a5ea89b6253_58992939($_smarty_tpl) {?><?php if (!is_callable('smarty_function_getdate')) include '/Users/haoli/Desktop/www/xiandai/been/View/plugins/function.getdate.php';
 if (!is_callable('smarty_modifier_date_format')) include '/Users/haoli/Desktop/www/xiandai/been/Smarty/plugins/modifier.date_format.php';
@@ -133,7 +132,6 @@ if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/
             </div>
         </div>
         <div class="content">
-            <?php if (isset($_smarty_tpl->tpl_vars['zhaopin']->value)){?>
             <?php if ($_smarty_tpl->tpl_vars['officelist']->value){?>
             <div class="m-l-office">
                 <div class="m-l-office-header">
@@ -177,8 +175,11 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['ol']['last']       = ($_smar
 
             </div>
             <?php }?>
-            <?php }?>
-            <div style="font-size:16px;margin-bottom:10px;">说明:</div>
+            <div class="m-l-office">
+                <div class="m-l-office-header">
+                    >>说明
+                </div>
+            </div>
             <?php if ($_smarty_tpl->tpl_vars['detail']->value['pic_id']!=''){?>
             <div id="middle_img">
                 <img src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
