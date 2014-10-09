@@ -18,7 +18,7 @@
 	<font color="#CC0000"><{$result|default:""}></font>
 </div>
 <div style="padding-left:30px;padding-top:0px;background-color:white;width:100px;height:30px; ">
-<a href ="<{$web_url}>/manwyjob.php/Othermanagement/Addpro" >添加宣传栏</a>
+<a href ="<{$web_url}>/manxiandai.php/Othermanagement/Addpro" >添加宣传栏</a>
 </div>
 <div>
 <{if $prolist.list eq "0" }>没有数据
@@ -27,14 +27,14 @@
 <div style="padding-left:30px;padding-top:20px;background-color:white;width:400px;height:150px; float:left">
 	<div class = "<{if $re.pm_flag=="" or $re.pm_flag=="0000-00-00 00:00:00"}> disable <{else}> enable <{/if}>">
 		<div style="height:20px; width:400px; text-align: right; ">
-    		<a   style="line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/Othermanagement/Editpro/id/<{$re.pm_id}>">修改</a>
+    		<a   style="line-height:20px; height: 20px;"  href="<{$web_url}>/manxiandai.php/Othermanagement/Editpro/id/<{$re.pm_id}>">修改</a>
 			&nbsp;&nbsp;
-		   	<a onclick="return confirm('确认删除这个宣传栏吗？');" style="line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/Othermanagement/Getprolist/do/del/id/<{$re.pm_id}>">删除</a>
+		   	<a onclick="return confirm('确认删除这个宣传栏吗？');" style="line-height:20px; height: 20px;"  href="<{$web_url}>/manxiandai.php/Othermanagement/Getprolist/do/del/id/<{$re.pm_id}>">删除</a>
 			&nbsp;&nbsp;
 			<{if $re.pm_flag=="" or $re.pm_flag=="0000-00-00 00:00:00"}>
-	    	 <a style="width: 60px; line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/Othermanagement/Getprolist/do/top/id/<{$re.pm_id}>">启用</a>
+	    	 <a style="width: 60px; line-height:20px; height: 20px;"  href="<{$web_url}>/manxiandai.php/Othermanagement/Getprolist/do/top/id/<{$re.pm_id}>">启用</a>
 			<{else}>
-			<a  style="width: 80px; line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/Othermanagement/Getprolist/do/canceltop/id/<{$re.pm_id}>">禁用</a>
+			<a  style="width: 80px; line-height:20px; height: 20px;"  href="<{$web_url}>/manxiandai.php/Othermanagement/Getprolist/do/canceltop/id/<{$re.pm_id}>">禁用</a>
 			<{/if}>
 			&nbsp;&nbsp;
 		</div>
@@ -60,7 +60,7 @@
 <{/if}>
 <div style="clear: both;"></div>
 </div>
-<{page info=$prolist web_url=$web_url url="/manwyjob.php/Othermanagement/Getprolist/"}>
+<{page info=$prolist web_url=$web_url url="/manxiandai.php/Othermanagement/Getprolist/"}>
 
 </body>
 </html>

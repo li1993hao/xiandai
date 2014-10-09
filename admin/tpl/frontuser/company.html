@@ -162,10 +162,10 @@ li{margin:0;padding:0; display: inline-block;}
 	}
 	
 	function companylist(page){
-		//var url = "<{$web_url}>/manwyjob.php/frontuser/Getcompanyuserlist/state/"+verifyState+"/active/"+activeState+"/page/"+page;
+		//var url = "<{$web_url}>/manxiandai.php/frontuser/Getcompanyuserlist/state/"+verifyState+"/active/"+activeState+"/page/"+page;
 		//alert(url);
 		$.ajax({
-			url:"<{$web_url}>/manwyjob.php/frontuser/Getcompanylist",
+			url:"<{$web_url}>/manxiandai.php/frontuser/Getcompanylist",
 			data:{state:verifyState,active:activeState,page:page},
 			type:"POST",
 			dataType:"json",
@@ -184,7 +184,7 @@ li{margin:0;padding:0; display: inline-block;}
 						str +="<a class=\"company-href\" href=\"#\" onclick=\"setpw("+item.fu_id+");\">重置密码</a>";
 						str +="&nbsp;&nbsp;";
 						if (item.fu_state == 0){
-							str +="<a class=\"company-href\" href=\"<{$web_url}>/manwyjob.php/frontuser/verifycompany/id/"+item.fu_id+"\">查看并审核</a>";
+							str +="<a class=\"company-href\" href=\"<{$web_url}>/manxiandai.php/frontuser/verifycompany/id/"+item.fu_id+"\">查看并审核</a>";
 						}else{
 							str +="<a class=\"company-href\" href=\"<{$web_url}>/index.php/common/userinfo/id/"+item.fu_id+"\">查看用户</a>";
 						}
@@ -255,7 +255,7 @@ li{margin:0;padding:0; display: inline-block;}
 				alert("新密码不能为空！");
 			}else{
 				$.ajax({
-					url:"<{$web_url}>/manwyjob.php/frontuser/Setpassword",
+					url:"<{$web_url}>/manxiandai.php/frontuser/Setpassword",
 					data:{id:id,pw:password},
 					type:"POST",
 					async:false,
@@ -281,10 +281,10 @@ li{margin:0;padding:0; display: inline-block;}
 		if(!confirm("确定要改变激活状态吗？")){
 			return false;
 		}
-		var url= "<{$web_url}>/manwyjob.php/frontuser/Changestaus/id/"+id;
+		var url= "<{$web_url}>/manxiandai.php/frontuser/Changestaus/id/"+id;
 		alert(url);
 		$.ajax({
-			url:"<{$web_url}>/manwyjob.php/frontuser/Changestaus/id/"+id,
+			url:"<{$web_url}>/manxiandai.php/frontuser/Changestaus/id/"+id,
 			type:"POST",
 			async:false,
 			dataType:"json",
@@ -312,10 +312,10 @@ li{margin:0;padding:0; display: inline-block;}
 		if(!confirm("确定要删除吗？")){
 			return false;
 		}
-		var url= "<{$web_url}>/manwyjob.php/frontuser/Delcompany/id/"+id;
+		var url= "<{$web_url}>/manxiandai.php/frontuser/Delcompany/id/"+id;
 		alert(url);
 		$.ajax({
-			url:"<{$web_url}>/manwyjob.php/frontuser/Delcompany/id/"+id,
+			url:"<{$web_url}>/manxiandai.php/frontuser/Delcompany/id/"+id,
 			type:"POST",
 			async:false,
 			dataType:"json",

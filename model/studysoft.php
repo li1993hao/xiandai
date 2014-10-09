@@ -1,7 +1,25 @@
 <?php
 class studysoft extends Model
 {
-	/**
+    public function getPublicitycolumn( )
+    {
+        $sql = "SELECT `publicitycolumn`.* ,`picture`.* FROM `publicitycolumn` LEFT JOIN `picture` ON `publicitycolumn`.`pic_id` = `picture`.`pic_id` ";
+        return $this->fetchRow($sql);
+    }
+
+    public function  setPublicitycolumn($id, $pid,$title="",$pc_url="",$stop=0){
+        if($pid != -1){
+            $sql = "UPDATE `publicitycolumn` SET `pic_id` = '".$pid."' ,pc_title='".$title."', pc_url='".$pc_url."',stop='".$stop."' WHERE `publicitycolumn`.`pc_id` = '".$id."'";
+            return $this->update($sql);
+        }else{
+            $sql = "UPDATE `publicitycolumn` SET pc_title='".$title."', pc_url='".$pc_url."',stop='".$stop."' WHERE `publicitycolumn`.`pc_id` = '".$id."'";
+            return $this->update($sql);
+        }
+
+    }
+
+
+    /**
 	 * 获取学习软件列表
 	 * @return Ambigous <boolean, multitype:>
 	 */

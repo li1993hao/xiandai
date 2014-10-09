@@ -103,8 +103,17 @@ class IndexController extends Controller{
 		$this->view->corpMsg = $corpMsg["list"]; //招聘信息
 		$this->view->interMsg = $interMsg["list"]; //实习信息
 
+        //友情链接
 		$friendlink = new friendlink();
 		$this->view->friendlink = $friendlink->geyAllLink();
+
+        //快速通道
+        $soft = new studysoft();
+        $softlist = $soft->getSoftList(2);
+        $this->view->softList = $softlist;
+        //宣传栏
+        $this->view->publicitycolumn = $soft->getPublicitycolumn();
+        //var_dump($this->view->publicitycolumn);
 
 
 		if( !isset($_COOKIE['hasvisited']) ){

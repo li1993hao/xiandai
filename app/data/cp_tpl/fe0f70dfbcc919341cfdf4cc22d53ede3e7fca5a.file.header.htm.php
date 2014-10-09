@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-10-08 09:52:47
+<?php /* Smarty version Smarty-3.1.14, created on 2014-10-08 15:43:22
          compiled from "app/tpl/header.htm" */ ?>
 <?php /*%%SmartyHeaderCode:508932121542a4f871042a0-52621829%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fe0f70dfbcc919341cfdf4cc22d53ede3e7fca5a' => 
     array (
       0 => 'app/tpl/header.htm',
-      1 => 1412733165,
+      1 => 1412754198,
       2 => 'file',
     ),
   ),
@@ -95,6 +95,73 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                     <?php }?>
                         </li>
                         </ul>
+
+
+                    <ul class="menu">
+                        <li><a href="#">我是学生</a>
+                            <ul class="submenu">
+                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/Corpinternmsg/Corpindex">招聘信息</a>
+                                </li>
+                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/Jobfairmsg">招聘会信息</a>
+                                </li>
+                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/Jobfairmsg/calendar">招聘日历</a>
+                                </li>
+                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/Corpinternmsg/index/type/2">实习信息</a>
+                                </li>
+                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/jobinfo/jobPlan">职业生涯规划</a>
+                                </li>
+                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/jobinfo/jobGuid">就业指导</a>
+                                </li>
+                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/Employmentpolicy/index">就业政策</a>
+                                </li>
+                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/jobinfo/entreGuid">创业指导</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="active"><a href="#s2">我是企业</a>
+                            <ul class="submenu">
+                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/Employmentteam/index">就业专员</a>
+                                </li>
+                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/Center/index">中心简介</a>
+                                </li>
+                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/Sourceinformation/index">生源信息</a>
+                                </li>
+                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/Recruitment/index">招聘指南</a>
+                                </li>
+                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/Collegeintroduction/index">院系介绍</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="#">我是校友</a>
+                            <ul class="submenu">
+                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/professionpersontalk/index">校友寻访</a>
+                                </li>
+                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/jobinfo/empStar">创就业明星</a>
+                                </li>
+                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/Activityjobbulletin/index">就业工作简报</a>
+                                </li>
+                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/west/index">渤海轻工业集团</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
                         <form id="search_form" action="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /index.php/jobinfo/searchlist" method="post">
                         <div class="search">

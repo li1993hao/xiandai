@@ -443,9 +443,11 @@
                             </ul>
                         </div>
                     </div>
-
+                    <{if $publicitycolumn.stop == 1}>
                     <div class="focus_map">
+                       <a href="<{$publicitycolumn.pc_url}>" target="_blank"><img height="98px" width="637px" src="<{$web_url}>/common/upload/images/<{$publicitycolumn.pic_link}>"/></a>
                     </div>
+                    <{/if}>
 
                     <div class="category_info2">
                         <div class="category_nav2">
@@ -661,12 +663,14 @@
                         <div><a href="#">用人单位指导手册</a>
                         </div>
                         <div>
+                            <{section name=sl loop=$softList}>
                             <div>
-                                <a href="#">毕业生就业管理系统</a>
+                                <a href="<{$softList[sl].sm_url}>" target="_blank">
+                                    <img class="software-img" src="<{$web_url}>/common/upload/images/<{$softList[sl].pic_link|default:"noimg.jpg"}>" alt="<{$softList[sl].pic_link}>" title="<{$softList[sl].sm_title}>" />
+                                </a>
                             </div>
-                            <div>
-                                <a href="#">自助创业证的申请</a>
-                            </div>
+                            <{/section}>
+                            <div style="text-align: right"><a href="<{$web_url}>/index.php/friendlink/getpm" style="font-size: 16px; color: #b2b2b2; margin-right: 20px;">更多>></a></div>
                         </div>
                     </div>
                     <div id="feedback" class="right_feedback block_style">

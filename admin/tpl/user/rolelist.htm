@@ -64,12 +64,12 @@
 		<{else}>
 		&nbsp;&nbsp;
 		<{if $rolelist[rl].is_use == 1}>
-		[<a onClick="return confirm('确认要删除角色：<{$rolelist[rl].role_name}>有人使用？');" href="<{$web_url}>/manwyjob.php/user/rolelist/do/del/id/<{$rolelist[rl].role_id}>">删除</a>]
+		[<a onClick="return confirm('确认要删除角色：<{$rolelist[rl].role_name}>有人使用？');" href="<{$web_url}>/manxiandai.php/user/rolelist/do/del/id/<{$rolelist[rl].role_id}>">删除</a>]
 		<{else}>
-		[<a onClick="return confirm('确认要删除角色：<{$rolelist[rl].role_name}>？');" href="<{$web_url}>/manwyjob.php/user/rolelist/do/del/id/<{$rolelist[rl].role_id}>">删除</a>]
+		[<a onClick="return confirm('确认要删除角色：<{$rolelist[rl].role_name}>？');" href="<{$web_url}>/manxiandai.php/user/rolelist/do/del/id/<{$rolelist[rl].role_id}>">删除</a>]
 		<{/if}>
 		&nbsp;&nbsp;
-		[<a href="<{$web_url}>/manwyjob.php/user/modifyrole/id/<{$rolelist[rl].role_id}>" >修改</a>]
+		[<a href="<{$web_url}>/manxiandai.php/user/modifyrole/id/<{$rolelist[rl].role_id}>" >修改</a>]
 		<{/if}>
 	</td>
   </tr>  

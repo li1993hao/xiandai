@@ -34,7 +34,7 @@
 </div>
 <div>
 	<div style="padding-left:30px;padding-top:20px;">
-		<form  target="_self" name="form1" method="post" action="<{$web_url}>/manwyjob.php/recruit/getinternmsglist">
+		<form  target="_self" name="form1" method="post" action="<{$web_url}>/manxiandai.php/recruit/getinternmsglist">
 			<input type="text" name="keyword" id="keyword" size="20" value="<{$keyword|default:""}>" />
 			<input type="submit" value="搜索" />
 			<{if isset($keyword) }>
@@ -54,14 +54,14 @@
 		<div style="heig  ht:20px; width:400px; text-align: right; ">
     		<a target="top" style="line-height:20px; height: 20px;" href="<{$web_url}>/index.php/corpinternmsg/interndetail/id/<{$re.cim_id}>">查看详情</a>
 			&nbsp;&nbsp;
-    		<a style="line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/recruit/editinternmsg/id/<{$re.cim_id}>">修改</a>
+    		<a style="line-height:20px; height: 20px;"  href="<{$web_url}>/manxiandai.php/recruit/editinternmsg/id/<{$re.cim_id}>">修改</a>
 			&nbsp;&nbsp;
-		   	<a onclick="return confirm('确认删除这条招聘信息吗？');" style="line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/recruit/getinternmsglist/do/del/id/<{$re.cim_id}>">删除</a>
+		   	<a onclick="return confirm('确认删除这条招聘信息吗？');" style="line-height:20px; height: 20px;"  href="<{$web_url}>/manxiandai.php/recruit/getinternmsglist/do/del/id/<{$re.cim_id}>">删除</a>
 			&nbsp;&nbsp;
 			<{if $re.cim_isup=="" or $re.cim_isup=="0000-00-00 00:00:00"}>
-	    	 <a  style="width: 60px; line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/recruit/getinternmsglist/do/up/id/<{$re.cim_id}>">置顶</a>
+	    	 <a  style="width: 60px; line-height:20px; height: 20px;"  href="<{$web_url}>/manxiandai.php/recruit/getinternmsglist/do/up/id/<{$re.cim_id}>">置顶</a>
 			<{else}>
-			<a  style="width: 80px; line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/recruit/getinternmsglist/do/cancelup/id/<{$re.cim_id}>">取消置顶</a>
+			<a  style="width: 80px; line-height:20px; height: 20px;"  href="<{$web_url}>/manxiandai.php/recruit/getinternmsglist/do/cancelup/id/<{$re.cim_id}>">取消置顶</a>
 			<{/if}>
 			&nbsp;&nbsp;
 		</div>
@@ -91,9 +91,9 @@
 </div>
 
 <{if isset($keyword) }>
-	<{assign var=url value="/manwyjob.php/recruit/getinternmsglist/keyword/<{$keyword}>"}>
+	<{assign var=url value="/manxiandai.php/recruit/getinternmsglist/keyword/<{$keyword}>"}>
 <{else}>
-	<{assign var=url value="/manwyjob.php/recruit/getinternmsglist"}> 
+	<{assign var=url value="/manxiandai.php/recruit/getinternmsglist"}>
 <{/if}>
 <{page info=$corplist web_url=$web_url url=$url}>
 

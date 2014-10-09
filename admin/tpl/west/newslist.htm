@@ -42,14 +42,14 @@
 		<div style="height:20px; width:400px; text-align: right; ">
     		<a target="top" style="line-height:20px; height: 20px;" href="<{$web_url}>/index.php/west/detail/id/<{$re.ww_id}>">查看详情</a>
 			&nbsp;&nbsp;
-    		<a style="line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/west/modify/id/<{$re.ww_id}>">修改</a>
+    		<a style="line-height:20px; height: 20px;"  href="<{$web_url}>/manxiandai.php/west/modify/id/<{$re.ww_id}>">修改</a>
 			&nbsp;&nbsp;
-		   	<a onclick="return confirm('确认删除这条信息吗？');" style="line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/west/newslist/do/del/id/<{$re.ww_id}>">删除</a>
+		   	<a onclick="return confirm('确认删除这条信息吗？');" style="line-height:20px; height: 20px;"  href="<{$web_url}>/manxiandai.php/west/newslist/do/del/id/<{$re.ww_id}>">删除</a>
 			&nbsp;&nbsp;
 			<{if $re.ww_isup==""}>
-	    	 <a  style="width: 60px; line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/west/newslist/do/up/id/<{$re.ww_id}>">置顶</a>
+	    	 <a  style="width: 60px; line-height:20px; height: 20px;"  href="<{$web_url}>/manxiandai.php/west/newslist/do/up/id/<{$re.ww_id}>">置顶</a>
 			<{else}>
-			<a  style="width: 80px; line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/west/newslist/do/cancelup/id/<{$re.ww_id}>">取消置顶</a>
+			<a  style="width: 80px; line-height:20px; height: 20px;"  href="<{$web_url}>/manxiandai.php/west/newslist/do/cancelup/id/<{$re.ww_id}>">取消置顶</a>
 			<{/if}>
 			&nbsp;&nbsp;
 		</div>
@@ -76,7 +76,7 @@
 <{/if}>
 <div style="clear: both;"></div>
 </div>
-<{page info=$infoList web_url=$web_url url="/manwyjob.php/west/newslist/"}>
+<{page info=$infoList web_url=$web_url url="/manxiandai.php/west/newslist/"}>
 
 </body>
 </html>

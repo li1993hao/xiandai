@@ -14,14 +14,21 @@ class FriendlinkController extends Controller
 		$this->view->page = $schoollinklist;
 		$outlinklist = $friendlink->getLinkList(1);
 		$this->view->link = $outlinklist;
-		$jobfairmsg = new jobfairmsg();
-		$uplist = $jobfairmsg->getfrontjobfair(4);
-		$this->view->uplist = $uplist;
-		$corpinternmsg = new corpinternmsg();
-		$frontlist = $corpinternmsg->getfrontmsg(6);
-		$this->view->frontlist = $frontlist;
+
+
         $jobfairmsg = new jobfairmsg();
         $this->view->jobFair = $jobfairmsg->getfrontjobfair(5);
 		echo $this->view->render("index.html");
 	}
+
+    public  function  getpm(){
+        //快速通道
+        $soft = new studysoft();
+        $softlist = $soft->getSoftList();
+        $this->view->softList = $softlist;
+
+        $jobfairmsg = new jobfairmsg();
+        $this->view->jobFair = $jobfairmsg->getfrontjobfair(5);
+        echo $this->view->render("pm.html");
+    }
 }

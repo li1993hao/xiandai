@@ -19,7 +19,7 @@
 	<font color="#CC0000"><{$result|default:""}></font>
 </div>
 <div style="padding-left:40px;background-color:white;width:100px;height:30px; ">
-<a href ="<{$web_url}>/manwyjob.php/Othermanagement/Adddown" >
+<a href ="<{$web_url}>/manxiandai.php/Othermanagement/Adddown" >
 添加新文件</a>
 </div>
 <div>
@@ -29,14 +29,14 @@
 <div style="padding-left:30px;padding-top:20px;background-color:white;width:400px;height:150px; float:left">
 	<div class = "<{if $re.dc_istop=="" or $re.dc_istop=="0000-00-00 00:00:00"}> disable <{else}> enable <{/if}>">
 		<div style="height:20px; width:400px; text-align: right; ">
-    		<a  style="line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/Othermanagement/Editdown/id/<{$re.dc_id}>">修改</a>
+    		<a  style="line-height:20px; height: 20px;"  href="<{$web_url}>/manxiandai.php/Othermanagement/Editdown/id/<{$re.dc_id}>">修改</a>
 			&nbsp;&nbsp;
-		   	<a onclick="return confirm('确认删除这个文件吗？');" style="line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/Othermanagement/Getdownlist/do/del/id/<{$re.dc_id}>">删除</a>
+		   	<a onclick="return confirm('确认删除这个文件吗？');" style="line-height:20px; height: 20px;"  href="<{$web_url}>/manxiandai.php/Othermanagement/Getdownlist/do/del/id/<{$re.dc_id}>">删除</a>
 			&nbsp;&nbsp;
 			<{if $re.dc_istop=="" or $re.dc_istop=="0000-00-00 00:00:00"}>
-	    	 <a  style="width: 60px; line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/Othermanagement/Getdownlist/do/top/id/<{$re.dc_id}>">置顶</a>
+	    	 <a  style="width: 60px; line-height:20px; height: 20px;"  href="<{$web_url}>/manxiandai.php/Othermanagement/Getdownlist/do/top/id/<{$re.dc_id}>">置顶</a>
 			<{else}>
-			<a  style="width: 80px; line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/Othermanagement/Getdownlist/do/canceltop/id/<{$re.dc_id}>">取消置顶</a>
+			<a  style="width: 80px; line-height:20px; height: 20px;"  href="<{$web_url}>/manxiandai.php/Othermanagement/Getdownlist/do/canceltop/id/<{$re.dc_id}>">取消置顶</a>
 			<{/if}>
 			&nbsp;&nbsp;
 		</div>
@@ -53,7 +53,7 @@
 
 <div style="clear: both;"></div>
 </div>
-<{page info=$downlist web_url=$web_url url="/manwyjob.php/Othermanagement/Getdownlist/"}>
+<{page info=$downlist web_url=$web_url url="/manxiandai.php/Othermanagement/Getdownlist/"}>
 
 </body>
 </html>

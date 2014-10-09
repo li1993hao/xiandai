@@ -430,7 +430,6 @@
 .focus_map {
     margin-top: 11px;
     height: 98px;
-    background: url(../../images/index/focu_map.png) no-repeat center;
 }
 
 /****渤海轻工业集团*****/
@@ -563,8 +562,8 @@
     margin-bottom: 20px;
 }
 .right_mid{
-    height: 322px;
-    margin-bottom: 20px;
+    height: 340px;
+    margin-bottom: 2px;
 }
 
 .right_feedback{
@@ -634,29 +633,21 @@
    background: url(../../images/index/m32.png) no-repeat ; 
 }
 
-.right_mid>div:nth-child(5){
-    height: 115px;
-    background-color: #34495e;
-}
+
 .right_mid>div:nth-child(5) a{
      color: white;
     font-size: 22px;  
 }
 
-.right_mid>div:nth-child(5)>div{
-    line-height: 35px;
+.right_mid>div:nth-child(5)>div img{
+    width: 345px;
     height: 50px;
-    padding-left: 80px;
 }
 
-.right_mid>div:nth-child(5) >div:nth-child(1){
-   padding-top: 10px;
-   background: url(../../images/index/m4.png) no-repeat ; 
-   background-position: 23px 11px;
-}
-.right_mid>div:nth-child(5)>div:nth-child(2){
-   background: url(../../images/index/m5.png) no-repeat ; 
-   background-position: 23px 0px;
+.right_mid>div:nth-child(5)>div{
+    width: 345px;
+    line-height: 35px;
+    height: 50px;
 }
 
 .right_feedback >div{

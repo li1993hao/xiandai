@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-30 16:03:17
+<?php /* Smarty version Smarty-3.1.14, created on 2014-10-09 10:38:31
          compiled from "app/tpl/index/index.htm" */ ?>
 <?php /*%%SmartyHeaderCode:1617063304542a4f9bd77348-38874028%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e5d96596228835892b3bed878e3661c8ddfa8116' => 
     array (
       0 => 'app/tpl/index/index.htm',
-      1 => 1412064195,
+      1 => 1412822308,
       2 => 'file',
     ),
   ),
@@ -29,6 +29,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'jobPlan' => 0,
     'jobGuid' => 0,
     'entreGuid' => 0,
+    'publicitycolumn' => 0,
     'fellowVisited' => 0,
     'empStar' => 0,
     'bulletin' => 0,
@@ -36,6 +37,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'wwPersons' => 0,
     'jobNotice' => 0,
     'jobAct' => 0,
+    'softList' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -857,9 +859,14 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
                             </ul>
                         </div>
                     </div>
-
+                    <?php if ($_smarty_tpl->tpl_vars['publicitycolumn']->value['stop']==1){?>
                     <div class="focus_map">
+                       <a href="<?php echo $_smarty_tpl->tpl_vars['publicitycolumn']->value['pc_url'];?>
+" target="_blank"><img height="98px" width="637px" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload/images/<?php echo $_smarty_tpl->tpl_vars['publicitycolumn']->value['pic_link'];?>
+"/></a>
                     </div>
+                    <?php }?>
 
                     <div class="category_info2">
                         <div class="category_nav2">
@@ -1282,12 +1289,43 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
                         <div><a href="#">用人单位指导手册</a>
                         </div>
                         <div>
+                            <?php if (isset($_smarty_tpl->tpl_vars['smarty']->value['section']['sl'])) unset($_smarty_tpl->tpl_vars['smarty']->value['section']['sl']);
+$_smarty_tpl->tpl_vars['smarty']->value['section']['sl']['name'] = 'sl';
+$_smarty_tpl->tpl_vars['smarty']->value['section']['sl']['loop'] = is_array($_loop=$_smarty_tpl->tpl_vars['softList']->value) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
+$_smarty_tpl->tpl_vars['smarty']->value['section']['sl']['show'] = true;
+$_smarty_tpl->tpl_vars['smarty']->value['section']['sl']['max'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['sl']['loop'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['sl']['step'] = 1;
+$_smarty_tpl->tpl_vars['smarty']->value['section']['sl']['start'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['sl']['step'] > 0 ? 0 : $_smarty_tpl->tpl_vars['smarty']->value['section']['sl']['loop']-1;
+if ($_smarty_tpl->tpl_vars['smarty']->value['section']['sl']['show']) {
+    $_smarty_tpl->tpl_vars['smarty']->value['section']['sl']['total'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['sl']['loop'];
+    if ($_smarty_tpl->tpl_vars['smarty']->value['section']['sl']['total'] == 0)
+        $_smarty_tpl->tpl_vars['smarty']->value['section']['sl']['show'] = false;
+} else
+    $_smarty_tpl->tpl_vars['smarty']->value['section']['sl']['total'] = 0;
+if ($_smarty_tpl->tpl_vars['smarty']->value['section']['sl']['show']):
+
+            for ($_smarty_tpl->tpl_vars['smarty']->value['section']['sl']['index'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['sl']['start'], $_smarty_tpl->tpl_vars['smarty']->value['section']['sl']['iteration'] = 1;
+                 $_smarty_tpl->tpl_vars['smarty']->value['section']['sl']['iteration'] <= $_smarty_tpl->tpl_vars['smarty']->value['section']['sl']['total'];
+                 $_smarty_tpl->tpl_vars['smarty']->value['section']['sl']['index'] += $_smarty_tpl->tpl_vars['smarty']->value['section']['sl']['step'], $_smarty_tpl->tpl_vars['smarty']->value['section']['sl']['iteration']++):
+$_smarty_tpl->tpl_vars['smarty']->value['section']['sl']['rownum'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['sl']['iteration'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['sl']['index_prev'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['sl']['index'] - $_smarty_tpl->tpl_vars['smarty']->value['section']['sl']['step'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['sl']['index_next'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['sl']['index'] + $_smarty_tpl->tpl_vars['smarty']->value['section']['sl']['step'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['sl']['first']      = ($_smarty_tpl->tpl_vars['smarty']->value['section']['sl']['iteration'] == 1);
+$_smarty_tpl->tpl_vars['smarty']->value['section']['sl']['last']       = ($_smarty_tpl->tpl_vars['smarty']->value['section']['sl']['iteration'] == $_smarty_tpl->tpl_vars['smarty']->value['section']['sl']['total']);
+?>
                             <div>
-                                <a href="#">毕业生就业管理系统</a>
+                                <a href="<?php echo $_smarty_tpl->tpl_vars['softList']->value[$_smarty_tpl->getVariable('smarty')->value['section']['sl']['index']]['sm_url'];?>
+" target="_blank">
+                                    <img class="software-img" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/upload/images/<?php echo (($tmp = @$_smarty_tpl->tpl_vars['softList']->value[$_smarty_tpl->getVariable('smarty')->value['section']['sl']['index']]['pic_link'])===null||$tmp==='' ? "noimg.jpg" : $tmp);?>
+" alt="<?php echo $_smarty_tpl->tpl_vars['softList']->value[$_smarty_tpl->getVariable('smarty')->value['section']['sl']['index']]['pic_link'];?>
+" title="<?php echo $_smarty_tpl->tpl_vars['softList']->value[$_smarty_tpl->getVariable('smarty')->value['section']['sl']['index']]['sm_title'];?>
+" />
+                                </a>
                             </div>
-                            <div>
-                                <a href="#">自助创业证的申请</a>
-                            </div>
+                            <?php endfor; endif; ?>
+                            <div style="text-align: right"><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/index.php/friendlink/getpm" style="font-size: 16px; color: #b2b2b2; margin-right: 20px;">更多>></a></div>
                         </div>
                     </div>
                     <div id="feedback" class="right_feedback block_style">

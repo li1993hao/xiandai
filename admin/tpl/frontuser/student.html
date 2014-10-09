@@ -134,7 +134,7 @@ function getInfo(flag,page){
 	//alert("");
 	$("#mytable").html("正在载入，请稍后。。。");
 	$.ajax({
-		url:"<{$web_url}>/manwyjob.php/frontuser/getallstudentinfo/",
+		url:"<{$web_url}>/manxiandai.php/frontuser/getallstudentinfo/",
 		data:{type:flag,college:collegeName,grade:grade,major:pro,degree:degree,page:page,gender:gender,stuname:stuname,number:number,state:state},
 		type:"POST",
 		async:false,
@@ -156,9 +156,9 @@ function getInfo(flag,page){
 	 			 	str += "<a style=\"line-height:30px; height: 30px;\" id=\"studetail"+ item.fu_id +"\" class=\"studetail\" data=\""+item.fu_id+"\" href=\"javascript:void(0)\">详情</a>&nbsp;&nbsp;";
 	 			 	str += "<a style=\"line-height:30px; height: 30px;\" class=\"resetpw\" data=\""+ item.fu_id +"\"  href=\"javascript:void(0)\">重置密码</a>&nbsp;&nbsp;";
 	 			 	if(item.fu_isable == 1){
-	 			 		str += "<a style=\"line-height:30px; height: 20px;\"  href=\"<{$web_url}>/manwyjob.php/frontuser/disablestu/id/"+ item.fu_id +"\">冻结</a>&nbsp;&nbsp;";
+	 			 		str += "<a style=\"line-height:30px; height: 20px;\"  href=\"<{$web_url}>/manxiandai.php/frontuser/disablestu/id/"+ item.fu_id +"\">冻结</a>&nbsp;&nbsp;";
 	 			 	}else{
-	 			 		str += "<a style=\"line-height:30px; height: 20px;\"  href=\"<{$web_url}>/manwyjob.php/frontuser/enablestu/id/"+ item.fu_id +"\">激活</a>&nbsp;&nbsp;";
+	 			 		str += "<a style=\"line-height:30px; height: 20px;\"  href=\"<{$web_url}>/manxiandai.php/frontuser/enablestu/id/"+ item.fu_id +"\">激活</a>&nbsp;&nbsp;";
 	 			 	}
 	 			 	str += "&nbsp;&nbsp;</div>";
 	 			 	str += "<div style=\"height:110px; margin:10px; width:380; text-align:left;\" >";
@@ -208,7 +208,7 @@ function getProList(flag){
 	//var url = "<{$web_url}>/index.php/company/Getstudentinfo/flag/"+flag+"/type/"+infoType+"/infoid/"+infoId+"/major/"+pro+"/time/"+timeRange;
 	//alert(url);
 	$.ajax({
-		url:"<{$web_url}>/manwyjob.php/frontuser/getallstudentinfo/",
+		url:"<{$web_url}>/manxiandai.php/frontuser/getallstudentinfo/",
 		data:{type:flag},
 		type:"POST",
 		async:false,
@@ -235,7 +235,7 @@ function getGrade(flag){
 	//var url = "<{$web_url}>/index.php/company/Getallstudentinfo/type/"+flag;
 	//alert(url);
 	$.ajax({
-		url:"<{$web_url}>/manwyjob.php/frontuser/getallstudentinfo/",
+		url:"<{$web_url}>/manxiandai.php/frontuser/getallstudentinfo/",
 		data:{type:flag},
 		type:"POST",
 		async:false,
@@ -265,7 +265,7 @@ function getCollege(flag){
 	//var url = "<{$web_url}>/index.php/company/Getallstudentinfo/type/"+flag;
 	//alert(url);
 	$.ajax({
-		url:"<{$web_url}>/manwyjob.php/frontuser/getallstudentinfo/",
+		url:"<{$web_url}>/manxiandai.php/frontuser/getallstudentinfo/",
 		data:{type:flag},
 		type:"POST",
 		async:false,
@@ -311,7 +311,7 @@ $(function(){
 		$("#content-right").text("未上传图片");
 		
 		$.ajax({
-			url:"<{$web_url}>/manwyjob.php/frontuser/getstudetail/infoid/"+infoid,
+			url:"<{$web_url}>/manxiandai.php/frontuser/getstudetail/infoid/"+infoid,
 			type:"post",
 			success:function(msg){
 				var obj = eval('(' + msg + ')');
@@ -382,7 +382,7 @@ $(function(){
 		
 		$.ajax({
 			type:"post",
-			url:"<{$web_url}>/manwyjob.php/frontuser/resetpw",
+			url:"<{$web_url}>/manxiandai.php/frontuser/resetpw",
 			data:"stuid="+stuid+"&pw="+pw,
 			success:function(msg){
 				//alert(msg);

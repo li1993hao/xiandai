@@ -47,7 +47,7 @@ $(function(){
 		//alert(content);
 		$.ajax({
 			type:"POST",
-			url:"<{$web_url}>/manwyjob.php/jobinfo/addjsondata",
+			url:"<{$web_url}>/manxiandai.php/jobinfo/addjsondata",
 			data:"title="+title+"&time="+time+"&addr="+addr+"&tel="+tel+"&assistel="+assistel+"&content="+content,
 			success:function(msg){
 				var obj = eval('(' + msg + ')');
@@ -131,7 +131,7 @@ function calendar_view(containerid,basePath) {
 
 		    },
 	 		  eventMouseover:function( event, jsEvent, view ){
-		    	$(".event-info").html("标题："+event.title+"&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"<{$web_url}>/manwyjob.php/jobinfo/delcalendar/id/"+event.id+"\">【删除此条信息】</a><br/>地点："+event.addr+"<br/>联系人电话："+event.tel+"<br/>学生助理电话："+event.assistel+"<br/>时间："+event.start.getFullYear()+"-"+(event.start.getMonth()+1)+"-"+event.start.getDate()+"&nbsp;"+event.start.toLocaleTimeString()+"<br/>内容："+event.content);
+		    	$(".event-info").html("标题："+event.title+"&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"<{$web_url}>/manxiandai.php/jobinfo/delcalendar/id/"+event.id+"\">【删除此条信息】</a><br/>地点："+event.addr+"<br/>联系人电话："+event.tel+"<br/>学生助理电话："+event.assistel+"<br/>时间："+event.start.getFullYear()+"-"+(event.start.getMonth()+1)+"-"+event.start.getDate()+"&nbsp;"+event.start.toLocaleTimeString()+"<br/>内容："+event.content);
 		    	//alert("jsEvent"+jsEvent.pageX+"..."+jsEvent.pageY);
 		    	$(".event-info").css("left",$(jsEvent.target).offset().left+"px");
 		    	$(".event-info").css("top",$(jsEvent.target).offset().top+$(jsEvent.target).height()+"px");
@@ -154,7 +154,7 @@ function calendar_view(containerid,basePath) {
 			events : function(start, end, callback) {	
 				
 				var events = [];
-				var goUrl = basePath+"/manwyjob.php/jobinfo/Getjsondata";
+				var goUrl = basePath+"/manxiandai.php/jobinfo/Getjsondata";
 				
 				$.ajax({
 				   	type: "POST",

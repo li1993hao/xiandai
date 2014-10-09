@@ -43,7 +43,7 @@ $(function(){
 			'formData'     : {
 			},
 			'swf'      : '<{$web_url}>/common/libs/upload/uploadify.swf',
-			'uploader' : '<{$web_url}>/manwyjob.php/frontuser/upload/filetype/file', 
+			'uploader' : '<{$web_url}>/manxiandai.php/frontuser/upload/filetype/file',
 			'multi':true,
 			'auto':true,
 			'fileTypeDesc':"请选择要上传的附件",
@@ -91,7 +91,7 @@ $(function(){
     	<TD background="<{$web_url}>/common/admin/images/shadow_bg.jpg"></TD>
 	</TR>
 </TABLE>
-<form action="<{$web_url}>/manwyjob.php/frontuser/xvzhi/mod/upload" method="post">
+<form action="<{$web_url}>/manxiandai.php/frontuser/xvzhi/mod/upload" method="post">
 <table>
 <tr><td>标题：</td><td><input id="re_title" name="title" type="text" value = "<{if isset($info)}><{$info.title}><{/if}>"/></td></tr>
 <tr><td>内容：</td><td><textarea id="content" name = "content" cols="100" rows="20" style="resize:none;"><{if isset($info)}><{$info.content}><{/if}></textarea></td></tr>

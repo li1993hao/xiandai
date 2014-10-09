@@ -78,7 +78,7 @@ function calendar_view(containerid,basePath) {
 			events : function(start, end, callback) {	
 				
 				var events = [];
-				var goUrl = basePath+"/manwyjob.php/jobinfo/Getjsondata";
+				var goUrl = basePath+"/manxiandai.php/jobinfo/Getjsondata";
 				
 				$.ajax({
 				   	type: "POST",

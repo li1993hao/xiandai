@@ -43,14 +43,14 @@
 		<div style="heig  ht:20px; width:400px; text-align: right; ">
     		<a target="top" style="line-height:20px; height: 20px;" href="<{$web_url}>/index.php/corpinternmsg/corpdetail/id/<{$re.cim_id}>">查看详情</a>
 			&nbsp;&nbsp;
-    		<a style="line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/recruit/editcorpmsg/id/<{$re.cim_id}>">修改</a>
+    		<a style="line-height:20px; height: 20px;"  href="<{$web_url}>/manxiandai.php/recruit/editcorpmsg/id/<{$re.cim_id}>">修改</a>
 			&nbsp;&nbsp;
-		   	<a onclick="return confirm('确认删除这条招聘信息吗？');" style="line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/recruit/getcorpmsglist/do/del/id/<{$re.cim_id}>">删除</a>
+		   	<a onclick="return confirm('确认删除这条招聘信息吗？');" style="line-height:20px; height: 20px;"  href="<{$web_url}>/manxiandai.php/recruit/getcorpmsglist/do/del/id/<{$re.cim_id}>">删除</a>
 			&nbsp;&nbsp;
 			<{if $re.cim_isup=="" or $re.cim_isup=="0000-00-00 00:00:00"}>
-	    	 <a  style="width: 60px; line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/recruit/getcorpmsglist/do/up/id/<{$re.cim_id}>">置顶</a>
+	    	 <a  style="width: 60px; line-height:20px; height: 20px;"  href="<{$web_url}>/manxiandai.php/recruit/getcorpmsglist/do/up/id/<{$re.cim_id}>">置顶</a>
 			<{else}>
-			<a  style="width: 80px; line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/recruit/getcorpmsglist/do/cancelup/id/<{$re.cim_id}>">取消置顶</a>
+			<a  style="width: 80px; line-height:20px; height: 20px;"  href="<{$web_url}>/manxiandai.php/recruit/getcorpmsglist/do/cancelup/id/<{$re.cim_id}>">取消置顶</a>
 			<{/if}>
 			&nbsp;&nbsp;
 		</div>
@@ -68,7 +68,7 @@
 <{/if}>
 <div style="clear: both;"></div>
 </div>
-<{page info=$searchlist web_url=$web_url url="/manwyjob.php/recruit/searchcplist/key/<{$key}>"}>
+<{page info=$searchlist web_url=$web_url url="/manxiandai.php/recruit/searchcplist/key/<{$key}>"}>
 
 </body>
 </html>

@@ -13,6 +13,8 @@ class OthermanagementController extends Controller
 		$this->view->center = $center;
 		echo $this->view->render("center.html");
 	}
+
+
 	public function Editcenterintroduction()
 	{
 			$center = new centerintroduction();
@@ -134,7 +136,28 @@ class OthermanagementController extends Controller
 		}
 	
 	}
-	public function Getsoftlist()
+
+    public function  Publicitycolumn(){
+      // var_dump($_POST);
+        $soft = new studysoft();
+        //生成随机数
+        $mm=rand(100,1000);
+        $this->view->mm=$mm;
+        if($_POST){
+            $pic_id= $_POST['picstate']==2?$_POST['picid']:-1;
+            $pc_title= $_POST['title'];
+            $pc_id= $_POST['pc_id'];
+            $pc_url= $_POST['url'];
+            $stop= $_POST['stop']?1:0;
+            $soft->setPublicitycolumn($pc_id,$pic_id,$pc_title,$pc_url,$stop);
+        }
+        $this->view->detail = $soft->getPublicitycolumn();
+        //var_dump($this->view->detail);
+        echo $this->view->render("publicitycolumn.html");
+    }
+
+
+    public function Getsoftlist()
 	{
 		$soft = new studysoft();
 		$this->view->result = $this->_dosomething($soft);

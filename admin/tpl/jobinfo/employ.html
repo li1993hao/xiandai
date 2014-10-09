@@ -14,14 +14,14 @@
     	<TD background="<{$web_url}>/common/admin/images/shadow_bg.jpg"></TD>
 	</TR>
 </TABLE>
-<div style="padding:10px 30px;"><a href="<{$web_url}>/manwyjob.php/Jobinfo/Addemploy">+添加就业政策</a></div>
+<div style="padding:10px 30px;"><a href="<{$web_url}>/manxiandai.php/Jobinfo/Addemploy">+添加就业政策</a></div>
 <div style="padding-left:30px;" >
 	<font color="#CC0000"><{$result|default:""}></font>
 </div>
 <div>
 
 <div style="padding-left:30px;padding-top:20px;">
-	<form  target="_self" name="form1" method="post" action="<{$web_url}>/manwyjob.php/jobinfo/Getemploylist">
+	<form  target="_self" name="form1" method="post" action="<{$web_url}>/manxiandai.php/jobinfo/Getemploylist">
 		<input type="text" name="keyword" id="keyword" size="20" value="<{$keyword|default:""}>" />
 		<input type="submit" value="搜索" />
 		<{if isset($keyword) }>
@@ -41,14 +41,14 @@
 		<div style="heig  ht:20px; width:400px; text-align: right; ">
 			<a target="top" style="line-height:20px; height: 20px;" href="<{$web_url}>/index.php/Employmentpolicy/detail/id/<{$re.ep_id}>">查看详情</a>
 			&nbsp;&nbsp;
-    		<a  style="line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/Jobinfo/Editemploy/id/<{$re.ep_id}>">修改</a>
+    		<a  style="line-height:20px; height: 20px;"  href="<{$web_url}>/manxiandai.php/Jobinfo/Editemploy/id/<{$re.ep_id}>">修改</a>
 			&nbsp;&nbsp;
-		   	<a onclick="return confirm('确认删除这个文件吗？');" style="line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/Jobinfo/Getemploylist/do/del/id/<{$re.ep_id}>">删除</a>
+		   	<a onclick="return confirm('确认删除这个文件吗？');" style="line-height:20px; height: 20px;"  href="<{$web_url}>/manxiandai.php/Jobinfo/Getemploylist/do/del/id/<{$re.ep_id}>">删除</a>
 			&nbsp;&nbsp;
 			<{if $re.ep_istop=="" or $re.ep_istop=="0000-00-00 00:00:00"}>
-	    	 <a  style="width: 60px; line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/Jobinfo/Getemploylist/do/top/id/<{$re.ep_id}>">置顶</a>
+	    	 <a  style="width: 60px; line-height:20px; height: 20px;"  href="<{$web_url}>/manxiandai.php/Jobinfo/Getemploylist/do/top/id/<{$re.ep_id}>">置顶</a>
 			<{else}>
-			<a  style="width: 80px; line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/Jobinfo/Getemploylist/do/canceltop/id/<{$re.ep_id}>">取消置顶</a>
+			<a  style="width: 80px; line-height:20px; height: 20px;"  href="<{$web_url}>/manxiandai.php/Jobinfo/Getemploylist/do/canceltop/id/<{$re.ep_id}>">取消置顶</a>
 			<{/if}>
 			&nbsp;&nbsp;
 		</div>
@@ -66,9 +66,9 @@
 <div style="clear: both;"></div>
 </div>
 <{if isset($keyword) }>
-	<{assign var=url value="/manwyjob.php/jobinfo/Getemploylist/keyword/<{$keyword}>"}>
+	<{assign var=url value="/manxiandai.php/jobinfo/Getemploylist/keyword/<{$keyword}>"}>
 <{else}>
-	<{assign var=url value="/manwyjob.php/jobinfo/Getemploylist"}> 
+	<{assign var=url value="/manxiandai.php/jobinfo/Getemploylist"}>
 <{/if}>
 <{page info=$employlist web_url=$web_url url=$url}>
 

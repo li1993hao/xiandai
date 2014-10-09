@@ -45,7 +45,7 @@
 		第<{$re.p_number}>期
 	</div>
 	<div style="float:right; margin-right:20px;">
-		<a href = "<{$web_url}>/manwyjob.php/studentjobinfo/Getstudentjobcomsglist/do/delqi/id/<{$re.id}>">删除</a>
+		<a href = "<{$web_url}>/manxiandai.php/studentjobinfo/Getstudentjobcomsglist/do/delqi/id/<{$re.id}>">删除</a>
 	</div>
 	
 </div>
@@ -63,7 +63,7 @@
 	第<{$re.l_number}>版
 	</div>
 	<div style="float:right; width:40px;">
-		<a href = "<{$web_url}>/manwyjob.php/studentjobinfo/Getstudentjobcomsglist/do/delban/id/<{$re.layoutid}>">删除</a>
+		<a href = "<{$web_url}>/manxiandai.php/studentjobinfo/Getstudentjobcomsglist/do/delban/id/<{$re.layoutid}>">删除</a>
 	</div>
 </div>
 <{if $re.a_id == ""}>
@@ -80,14 +80,14 @@
 		<div style="heig  ht:20px; width:400px; text-align: right; ">
     		<a target="top" style="line-height:20px; height: 20px;" href="<{$web_url}>/index.php/periodicals/detail/id/<{$re.a_id}>">查看详情</a>
 			&nbsp;&nbsp;
-    		<a style="line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/studentjobinfo/editstujcomsg/id/<{$re.a_id}>">修改</a>
+    		<a style="line-height:20px; height: 20px;"  href="<{$web_url}>/manxiandai.php/studentjobinfo/editstujcomsg/id/<{$re.a_id}>">修改</a>
 			&nbsp;&nbsp;
-		   	<a onclick="return confirm('确认删除这条学生就业通讯吗？');" style="line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/studentjobinfo/Getstudentjobcomsglist/do/del/id/<{$re.a_id}>">删除</a>
+		   	<a onclick="return confirm('确认删除这条学生就业通讯吗？');" style="line-height:20px; height: 20px;"  href="<{$web_url}>/manxiandai.php/studentjobinfo/Getstudentjobcomsglist/do/del/id/<{$re.a_id}>">删除</a>
 			&nbsp;&nbsp;
 			<{if $re.a_top==""}>
-	    	 <a  style="width: 60px; line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/studentjobinfo/Getstudentjobcomsglist/do/up/id/<{$re.a_id}>">置顶</a>
+	    	 <a  style="width: 60px; line-height:20px; height: 20px;"  href="<{$web_url}>/manxiandai.php/studentjobinfo/Getstudentjobcomsglist/do/up/id/<{$re.a_id}>">置顶</a>
 			<{else}>
-			<a  style="width: 80px; line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/studentjobinfo/Getstudentjobcomsglist/do/cancelup/id/<{$re.a_id}>">取消置顶</a>
+			<a  style="width: 80px; line-height:20px; height: 20px;"  href="<{$web_url}>/manxiandai.php/studentjobinfo/Getstudentjobcomsglist/do/cancelup/id/<{$re.a_id}>">取消置顶</a>
 			<{/if}>
 			&nbsp;&nbsp;
 		</div>
@@ -114,6 +114,6 @@
 <{/foreach}>
 <div style="clear: both;"></div>
 
-<{page info=$alist web_url=$web_url url="/manwyjob.php/studentjobinfo/Getstudentjobcomsglist/"}>
+<{page info=$alist web_url=$web_url url="/manxiandai.php/studentjobinfo/Getstudentjobcomsglist/"}>
 </body>
 </html>

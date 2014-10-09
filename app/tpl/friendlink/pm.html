@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta id="screen-view" name="viewport" content="width=device-width" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <{include file='commcss.htm' }>
+    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/list.css" />
+    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/rec.css" />
+    <title>快速通道</title>
+    <script type="text/javascript">
+        var web_url = "<{$web_url}>";
+    </script>
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="<{$web_url}>/common/app/js/DOMAssistantCompressed-2.7.4.js"></script>
+    <script type="text/javascript" src="<{$web_url}>/common/app/js/ie-css3.js"></script>
+    <![endif]-->
+
+
+</head>
+
+<body>
+<{include file='header.htm' }>
+<!--导航栏-->
+<div class="nav">
+    <dl>
+        <dt><a href="<{$web_url}>/index.php/index">首页/</a>
+        </dt>
+        <dt><a href="#">快速通道</a>
+        </dt>
+    </dl>
+</div>
+<div class="middle">
+
+    <div class="middle_left" style="padding-left: 10px; width: 639px;">
+        <div>
+            <table>
+
+            <{section name=i loop=$softList}>
+            <tr><td><a target="_blank" href="<{$softList[i].sm_url}>"><{$softList[i].sm_title}>:</a></td>
+                <td> <a target="_blank" href="<{$softList[i].sm_url}>"><img style="height: 40px; width: 200px;" src="<{$web_url}>/common/upload/images/<{$softList[i].pic_link}>"/></a></td>
+            </tr>
+            <{/section}>
+            </table>
+
+        </div>
+    </div>
+
+    <div class="middle_right">
+        <div class="rec">
+            <div>推荐招聘会信息</div>
+            <{section name=calendar loop=$jobFair}>
+            <div class="rec_item">
+                <div>
+                    <div> <{getdate format="cnWeek" date=$jobFair[calendar].jm_opentime }></div>
+                    <div><{$jobFair[calendar].jm_opentime|date_format: "%Y.%m.%d"}></div>
+                </div>
+                <div>
+                    <div><a href="<{$web_url}>/index.php/Jobfairmsg/calendardetail/id/<{$jobFair[calendar].jm_id}>"> <{$jobFair[calendar].jm_name|truncate:15: '…':true}></a>
+                    </div>
+                    <div> <{$jobFair[calendar].jm_opentime|date_format: "%Y.%m.%d  %H:%M"}></div>
+                    <div> <{$jobFair[calendar].jm_addr|truncate:15: '…':true}></div>
+                </div>
+            </div>
+            <{/section}>
+        </div>
+    </div>
+</div>
+
+
+
+<{include file='footer.htm' }>
+</body>
+
+</html>

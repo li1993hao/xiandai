@@ -51,7 +51,7 @@
 		$("#pop-meau-notok").click(function(){
 			var reasontxt = $("#reason").val();
 			$.ajax({
-				url:"<{$web_url}>/manwyjob.php/frontuser/Verifyresult",
+				url:"<{$web_url}>/manxiandai.php/frontuser/Verifyresult",
 				data:{id:<{$detail.id}>, type:0, reason:reasontxt},
 				type:"POST",
 				async:false,
@@ -75,7 +75,7 @@
 			var outdate = $("#outdate").val();
 			var degree = $("#degree").val();
 			$.ajax({
-				url:"<{$web_url}>/manwyjob.php/frontuser/Verifyresult",
+				url:"<{$web_url}>/manxiandai.php/frontuser/Verifyresult",
 				data:{id:<{$detail.id}>, type:1, degree:degree, outdate:outdate},
 				type:"POST",
 				async:false,

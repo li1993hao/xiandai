@@ -30,7 +30,7 @@ $(function() {
 		$("#company-website").text("");
 		
 		$.ajax({
-			url:"<{$web_url}>/manwyjob.php/recruit/infodetail/infoid/"+infoid,
+			url:"<{$web_url}>/manxiandai.php/recruit/infodetail/infoid/"+infoid,
 			type:"post",
 			success:function(msg){
 				$("#dialog").fadeIn("fast");
@@ -103,7 +103,7 @@ $(function() {
 		var state = $("#com_state_"+infoid).val();
 		//alert(state);
 		$.ajax({
-			url:"<{$web_url}>/manwyjob.php/recruit/passinfo/comid/"+com_id+"/infoid/"+infoid+"/state/"+state,
+			url:"<{$web_url}>/manxiandai.php/recruit/passinfo/comid/"+com_id+"/infoid/"+infoid+"/state/"+state,
 			type:"post",
 			success:function(msg){
 				var obj = eval('('+ msg +')');
@@ -139,7 +139,7 @@ $(function() {
 		var com_id = $("#com_id").val();
 		//alert(reason);
 		$.ajax({
-			url:"<{$web_url}>/manwyjob.php/recruit/rejectreason",
+			url:"<{$web_url}>/manxiandai.php/recruit/rejectreason",
 			type:"post",
 			data:"comid="+com_id+"&infoid="+infoid+"&reason="+reason+"&state="+state,
 			success:function(msg){
@@ -217,7 +217,7 @@ $(function() {
 </TABLE>
 
 <div style="padding-left:30px;" >
- <form method="post" id="verifyinfo" action="<{$web_url}>/manwyjob.php/recruit/verifyinfo">
+ <form method="post" id="verifyinfo" action="<{$web_url}>/manxiandai.php/recruit/verifyinfo">
 	待审核：<input class="verify" name="select-info" type="radio" value="0" <{if $type == 0}> checked="checked" <{/if}> />
 	&nbsp;&nbsp;全部信息：<input name="select-info" class="verify" type="radio" value="1" <{if $type == 1}> checked="checked" <{/if}> />
 	&nbsp;&nbsp;已拒绝：<input name="select-info" class="verify" type="radio" value="2" <{if $type == 2}> checked="checked" <{/if}> />
@@ -237,7 +237,7 @@ $(function() {
 		<div style="height:20px; width:400px; text-align: right; ">
     		<a id="info-id" class="recruit-info" data="<{$re.cim_id}>"  href="javascript:void(0)" style="line-height:20px; height: 20px;" href="<{$web_url}>/index.php/corpinternmsg/corpdetail/id/<{$re.cim_id}>">查看并审核</a>
 			&nbsp;&nbsp;
-    		<a onClick="return confirm('确认删除这条招聘信息吗？');" style="line-height:20px; height: 20px;"  href="<{$web_url}>/manwyjob.php/recruit/verifyinfo/do/del/id/<{$re.cim_id}>">删除</a>
+    		<a onClick="return confirm('确认删除这条招聘信息吗？');" style="line-height:20px; height: 20px;"  href="<{$web_url}>/manxiandai.php/recruit/verifyinfo/do/del/id/<{$re.cim_id}>">删除</a>
 			&nbsp;&nbsp;
 		   
 		</div>
@@ -284,7 +284,7 @@ $(function() {
 <div style="clear: both;"></div>
 </div>
 
-<{page info=$corplist web_url=$web_url url="/manwyjob.php/recruit/verifyinfo/type/<{$type|default:0}>"}>
+<{page info=$corplist web_url=$web_url url="/manxiandai.php/recruit/verifyinfo/type/<{$type|default:0}>"}>
 
     <div class="jqmWindow" id="dialog">
 	<div style="height:20px">
