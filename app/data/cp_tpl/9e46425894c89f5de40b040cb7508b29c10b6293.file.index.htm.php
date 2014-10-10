@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-30 14:36:54
+<?php /* Smarty version Smarty-3.1.14, created on 2014-10-10 11:03:45
          compiled from "app/tpl/professionpersontalk/index.htm" */ ?>
 <?php /*%%SmartyHeaderCode:869998621542a4f86ea0ad3-89480625%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '9e46425894c89f5de40b040cb7508b29c10b6293' => 
     array (
       0 => 'app/tpl/professionpersontalk/index.htm',
-      1 => 1412042840,
+      1 => 1412910224,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_542a4f870e9992_71526209',
   'variables' => 
   array (
     'web_url' => 0,
@@ -22,8 +24,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'jobFair' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_542a4f870e9992_71526209',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_542a4f870e9992_71526209')) {function content_542a4f870e9992_71526209($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/xiandai/been/Smarty/plugins/modifier.truncate.php';
 if (!is_callable('smarty_function_page')) include '/Users/haoli/Desktop/www/xiandai/been/View/plugins/function.page.php';
@@ -131,7 +131,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['last']       = ($_smart
                     </ul>
                 </div>
             </div>
-             <?php }?>
+             <?php }else{ ?>
                 <div class="news_item">
                     <div>
                         <?php if ($_smarty_tpl->tpl_vars['sail']->value['list'][$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['ppt_top']==''){?>
@@ -163,6 +163,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['last']       = ($_smart
                         </li>
                     </ul>
                 </div>
+            <?php }?>
         <?php endfor; endif; ?>
         <?php echo smarty_function_page(array('info'=>$_smarty_tpl->tpl_vars['sail']->value,'web_url'=>$_smarty_tpl->tpl_vars['web_url']->value,'url'=>"/index.php/professionpersontalk/index"),$_smarty_tpl);?>
 

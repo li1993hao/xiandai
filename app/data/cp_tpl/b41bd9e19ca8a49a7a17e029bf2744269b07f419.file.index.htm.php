@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-10-08 21:06:05
+<?php /* Smarty version Smarty-3.1.14, created on 2014-10-10 11:04:55
          compiled from "app/tpl/west/index.htm" */ ?>
 <?php /*%%SmartyHeaderCode:1885648567543536bdca8fb7-98357660%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b41bd9e19ca8a49a7a17e029bf2744269b07f419' => 
     array (
       0 => 'app/tpl/west/index.htm',
-      1 => 1412042840,
+      1 => 1412910292,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_543536bdec7fc7_23468809',
   'variables' => 
   array (
     'web_url' => 0,
@@ -23,8 +25,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'persons' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_543536bdec7fc7_23468809',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_543536bdec7fc7_23468809')) {function content_543536bdec7fc7_23468809($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/xiandai/been/Smarty/plugins/modifier.truncate.php';
 ?><!DOCTYPE HTML>
@@ -72,7 +72,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <!--就业动态-->
         <div style="text-align: right;border-bottom: 3px solid #5f5f5f;margin:0 10px; line-height: 30px;"><div style=" float: left; font-size: 20px;font-weight: bolder; ">工作动态</div>
             <a style="color: #3598db;" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/index.php/west/news">查看更多>></a>
+/index.php/west/news">更多>></a>
         </div>
         <div style="margin-left: 10px;width: 77px; height: 3px; background: #3598db;margin-top: -3px;"></div>
         <?php if (isset($_smarty_tpl->tpl_vars['smarty']->value['section']['n'])) unset($_smarty_tpl->tpl_vars['smarty']->value['section']['n']);

@@ -53,7 +53,7 @@
                     </ul>
                 </div>
             </div>
-             <{/if}>
+             <{else}>
                 <div class="news_item">
                     <div>
                         <{if $sail.list[n].ppt_top ==""}>
@@ -72,6 +72,7 @@
                         </li>
                     </ul>
                 </div>
+            <{/if}>
         <{/section}>
         <{page info=$sail web_url=$web_url url="/index.php/professionpersontalk/index"}>
     </div>

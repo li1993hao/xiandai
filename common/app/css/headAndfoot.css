@@ -285,15 +285,6 @@ a:hover {
     height: 58px;
 }
 .menu li {
-    background: -moz-linear-gradient(#292929, #252525);
-    background: -ms-linear-gradient(#292929, #252525);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #292929), color-stop(100%, #252525));
-    background: -webkit-linear-gradient(#292929, #252525);
-    background: -o-linear-gradient(#292929, #252525);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#292929', endColorstr='#252525');
-    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#292929', endColorstr='#252525')";
-    background: linear-gradient(#292929, #252525);
-
     min-width: 120px;
 }
 .menu > li {
@@ -304,6 +295,9 @@ a:hover {
 .menu > li:first-child {
     border-radius: 5px 0 0;
 }
+.menu > li:last-child {
+    border-top-right-radius: 5px;
+}
 .menu a {
     color: #ffffff;
     display: block;
@@ -313,26 +307,40 @@ a:hover {
     padding: 0 6px;
     text-decoration: none;
     text-transform: uppercase;
-    background-color: #3598db;
     text-align: center;
 }
 
 /* onhover styles */
-.menu li:hover {
-    background-color: #3598db;
-    background: -moz-linear-gradient(#3598db, #3598db);
-    background: -ms-linear-gradient(#3598db, #3598db);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3598db), color-stop(100%, #3598db));
-    background: -webkit-linear-gradient(#3598db, #3598db);
-    background: -o-linear-gradient(#3598db, #3598db);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3598db', endColorstr='#3598db');
-    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#3598db', endColorstr='#3598db')";
-    background: linear-gradient(#3598db, #3598db);
-
+.menu >li:nth-child(1) {
+    background: #27ae61;
 }
-.menu li:hover > a {
-    border-radius: 5px 0 0 0;
-    border-left: 3px solid #000000;
+.menu >li:nth-child(1) .submenu li{
+    background: #27ae61;
+}
+.menu >li:nth-child(1) .submenu li:hover{
+    background: #219413;
+}
+
+.menu >li:nth-child(2) {
+    background: #3598db;
+}
+.menu >li:nth-child(2) .submenu li{
+    background: #3598db;
+}
+.menu >li:nth-child(2) .submenu li:hover{
+    background: #2771a3;
+}
+
+
+
+.menu >li:nth-child(3) {
+    background: #9b58b5;
+}
+.menu >li:nth-child(3) .submenu li{
+     background: #9b58b5;
+ }
+.menu >li:nth-child(3) .submenu li:hover{
+    background: #874d9e;
 }
 
 /* submenu styles */
