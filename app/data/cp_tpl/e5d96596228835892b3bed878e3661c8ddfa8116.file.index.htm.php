@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-10-09 10:38:31
+<?php /* Smarty version Smarty-3.1.14, created on 2014-10-10 12:19:03
          compiled from "app/tpl/index/index.htm" */ ?>
 <?php /*%%SmartyHeaderCode:1617063304542a4f9bd77348-38874028%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e5d96596228835892b3bed878e3661c8ddfa8116' => 
     array (
       0 => 'app/tpl/index/index.htm',
-      1 => 1412822308,
+      1 => 1412914741,
       2 => 'file',
     ),
   ),
@@ -1281,12 +1281,14 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
                         <div></div>
                         <!--登录-->
                         <div>
-                            <div>学生登录</div>
-                            <div>企业登录</div>
+                            <div><a style="color: #ffffff" href="http://tjbys.ncss.org.cn/login" target="_blank">学生登录</a></div>
+                            <div><a style="color: #ffffff" href="http://tjbys.ncss.org.cn/rec/login" target="_blank">企业登录</a></div>
                         </div>
-                        <div><a href="#">学生指导手册</a>
+                        <div><a  href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/onesite/xszd.doc">学生指导手册</a>
                         </div>
-                        <div><a href="#">用人单位指导手册</a>
+                        <div><a  href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/onesite/dwzd.doc">用人单位指导手册</a>
                         </div>
                         <div>
                             <?php if (isset($_smarty_tpl->tpl_vars['smarty']->value['section']['sl'])) unset($_smarty_tpl->tpl_vars['smarty']->value['section']['sl']);

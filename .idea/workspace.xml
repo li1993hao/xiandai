@@ -23,11 +23,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="IndexController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/IndexController.php">
+      <file leaf-file-name="index.htm" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/tpl/index/index.htm">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="36" selection-start="847" selection-end="847" vertical-scroll-proportion="-9.375" vertical-offset="195" max-vertical-offset="3165">
-              <folding />
+            <state line="658" column="58" selection-start="37028" selection-end="37028" vertical-scroll-proportion="0.34586465" vertical-offset="9640" max-vertical-offset="11040">
+              <folding>
+                <element signature="n#style#0;n#a#0;n#div#0;n#div#1;n#div#2;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#div#1;n#div#1;n#div#2;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -101,10 +104,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="headAndfoot.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="headAndfoot.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/common/app/css/headAndfoot.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="362" column="4" selection-start="5981" selection-end="5981" vertical-scroll-proportion="0.18803419" vertical-offset="5298" max-vertical-offset="7755">
+            <state line="362" column="0" selection-start="5977" selection-end="5977" vertical-scroll-proportion="0.0" vertical-offset="5298" max-vertical-offset="7755">
               <folding />
             </state>
           </provider>
@@ -167,7 +170,6 @@
         <option value="$PROJECT_DIR$/admin/tpl/othermanagement/publicitycolumn.html" />
         <option value="$PROJECT_DIR$/admin/controllers/OthermanagementController.php" />
         <option value="$PROJECT_DIR$/common/app/css/index/index.css" />
-        <option value="$PROJECT_DIR$/app/tpl/index/index.htm" />
         <option value="$PROJECT_DIR$/app/controllers/FriendlinkController.php" />
         <option value="$PROJECT_DIR$/app/tpl/friendlink/pm.html" />
         <option value="$PROJECT_DIR$/app/tpl/company/addposition.htm" />
@@ -180,6 +182,7 @@
         <option value="$PROJECT_DIR$/app/tpl/professionpersontalk/index.htm" />
         <option value="$PROJECT_DIR$/app/tpl/west/index.htm" />
         <option value="$PROJECT_DIR$/common/app/css/headAndfoot.css" />
+        <option value="$PROJECT_DIR$/app/tpl/index/index.htm" />
       </list>
     </option>
   </component>
@@ -760,13 +763,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/tpl/index/index.htm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="672" column="107" selection-start="37780" selection-end="37780" vertical-scroll-proportion="0.0" vertical-offset="9820" max-vertical-offset="11040">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/tpl/friendlink/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="74" selection-start="105" selection-end="105" vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="1425" />
@@ -916,8 +912,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/common/app/css/headAndfoot.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="362" column="4" selection-start="5981" selection-end="5981" vertical-scroll-proportion="0.18803419" vertical-offset="5298" max-vertical-offset="7755">
+        <state line="362" column="0" selection-start="5977" selection-end="5977" vertical-scroll-proportion="0.0" vertical-offset="5298" max-vertical-offset="7755">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/tpl/index/index.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="658" column="58" selection-start="37028" selection-end="37028" vertical-scroll-proportion="0.34586465" vertical-offset="9640" max-vertical-offset="11040">
+          <folding>
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#1;n#div#2;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#1;n#div#1;n#div#2;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
