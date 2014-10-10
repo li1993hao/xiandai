@@ -62,9 +62,9 @@
                         </li>
                         </ul>
 
-
+                    <{if !$isIndex}>
                     <ul class="menu">
-                        <li><a href="#">我是学生</a>
+                        <li><a href="#">学生</a>
                             <ul class="submenu">
                                 <li><a href="<{$web_url}>/index.php/Corpinternmsg/Corpindex">招聘信息</a>
                                 </li>
@@ -84,7 +84,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="active"><a href="#s2">我是企业</a>
+                        <li class="active"><a href="#s2">企业</a>
                             <ul class="submenu">
                                 <li><a href="<{$web_url}>/index.php/Employmentteam/index">就业专员</a>
                                 </li>
@@ -98,7 +98,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="#">我是校友</a>
+                        <li><a href="#">校友</a>
                             <ul class="submenu">
                                 <li><a href="<{$web_url}>/index.php/professionpersontalk/index">校友寻访</a>
                                 </li>
@@ -111,6 +111,7 @@
                             </ul>
                         </li>
                     </ul>
+                    <{/if}>
                         <form id="search_form" action="<{$web_url}>/index.php/jobinfo/searchlist" method="post">
                         <div class="search">
                             <input type="text" id="key" name="key" placeholder="请输入关键字"/>

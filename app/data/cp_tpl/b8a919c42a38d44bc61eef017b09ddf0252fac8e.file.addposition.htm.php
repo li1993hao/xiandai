@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-10-08 10:02:18
+<?php /* Smarty version Smarty-3.1.14, created on 2014-10-10 10:40:04
          compiled from "app/tpl/company/addposition.htm" */ ?>
 <?php /*%%SmartyHeaderCode:1262556809542a5b76ec0016-04231445%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b8a919c42a38d44bc61eef017b09ddf0252fac8e' => 
     array (
       0 => 'app/tpl/company/addposition.htm',
-      1 => 1412733732,
+      1 => 1412908801,
       2 => 'file',
     ),
   ),
@@ -27,7 +27,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <style>
 #dialog{z-index:10000; position: absolute;
 left: 37%;
-background-color: #EEEEEE}
+background-color: #dcdcdc}
 .add-position-window{width:500px;height:auto;font-size:16px;}
 .add-position-window-head{width:500px; height:30px;border-bottom:2px solid black;}
 .add-position-title{float:left;width:100px; height:inherit;text-align:center; border-bottom:2px solid red;}

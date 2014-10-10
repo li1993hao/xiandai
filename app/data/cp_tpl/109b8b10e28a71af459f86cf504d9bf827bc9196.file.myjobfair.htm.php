@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-30 16:22:44
+<?php /* Smarty version Smarty-3.1.14, created on 2014-10-10 10:57:51
          compiled from "app/tpl/company/myjobfair.htm" */ ?>
 <?php /*%%SmartyHeaderCode:780369900542a6854afcd03-97262651%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '109b8b10e28a71af459f86cf504d9bf827bc9196' => 
     array (
       0 => 'app/tpl/company/myjobfair.htm',
-      1 => 1412042840,
+      1 => 1412909805,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_542a6854c477e1_52449148',
   'variables' => 
   array (
     'web_url' => 0,
@@ -23,8 +25,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'jobfair' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_542a6854c477e1_52449148',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_542a6854c477e1_52449148')) {function content_542a6854c477e1_52449148($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/Users/haoli/Desktop/www/xiandai/been/Smarty/plugins/modifier.date_format.php';
 if (!is_callable('smarty_function_page')) include '/Users/haoli/Desktop/www/xiandai/been/View/plugins/function.page.php';
@@ -51,6 +51,8 @@ if (!is_callable('smarty_function_page')) include '/Users/haoli/Desktop/www/xian
         var web_url = "<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 ";
     </script>
+    <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+/common/libs/jquery.min.js"></script>
     <!--[if lt IE 9]>
     <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/app/js/DOMAssistantCompressed-2.7.4.js"></script>

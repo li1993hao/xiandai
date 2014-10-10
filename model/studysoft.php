@@ -88,7 +88,7 @@ class studysoft extends Model
 	public function insertSoft($pid,$url,$title)
 	{
 			$sql = "INSERT INTO `softmanagement` (`sm_id`, `pic_id`, `sm_url`, `sm_title`, `sm_istop`) VALUES (NULL, '".$pid."', '".$url."', '".$title."', NULL)";
-			echo $sql;
+			//echo $sql;
 		return $this->insert($sql);
 	}
 	public function getInfofromId($id)

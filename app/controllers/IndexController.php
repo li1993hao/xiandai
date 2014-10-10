@@ -26,6 +26,7 @@ class IndexController extends Controller{
 		$this->view->jobPlan = $jobInfoDao->getCM("jobPlan",1,4); //职业生涯规划	
 		$this->view->entreGuid = $jobInfoDao->getCM("entreGuid",1,4); //创业指导	
 
+        $this->view->isIndex = true;
         //首页焦点图
         $recNews = $jobInfoDao->getRecNews();
         //print_r($recNews);
@@ -80,23 +81,23 @@ class IndexController extends Controller{
 
 		//招聘会信息
 		if($userinfo){
-			$jobFairMsg = $job->getJobfairPageModel(1,5,null,3,null,1);
+			$jobFairMsg = $job->getJobfairPageModel(1,4,null,3,null,1);
 		}else{
-			$jobFairMsg = $job->getJobfairPageModel(1,5,null,3,null,0);
+			$jobFairMsg = $job->getJobfairPageModel(1,4,null,3,null,0);
 		}
 		$this->view->jobFairMsg = $jobFairMsg['list'];
 		
 		//招聘和实习信息
 		$jobcim =  new  corpinternmsg();
 		if($userinfo){
-			$corpMsg = $jobcim->getCorpPageModel(1,5,null,"pass",true);
+			$corpMsg = $jobcim->getCorpPageModel(1,4,null,"pass",true);
 		}else{
-			$corpMsg = $jobcim->getCorpPageModel(1,5,null,"pass",false);
+			$corpMsg = $jobcim->getCorpPageModel(1,4,null,"pass",false);
 		}
 		if($userinfo){
-			$interMsg = $jobcim->getInternPageModel(1,5,null,"pass",true);
+			$interMsg = $jobcim->getInternPageModel(1,4,null,"pass",true);
 		}else{
-			$interMsg = $jobcim->getInternPageModel(1,5,null,"pass",false);
+			$interMsg = $jobcim->getInternPageModel(1,4,null,"pass",false);
 		}
 
 

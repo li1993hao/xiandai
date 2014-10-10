@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-10-08 15:43:22
+<?php /* Smarty version Smarty-3.1.14, created on 2014-10-10 10:53:04
          compiled from "app/tpl/header.htm" */ ?>
 <?php /*%%SmartyHeaderCode:508932121542a4f871042a0-52621829%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fe0f70dfbcc919341cfdf4cc22d53ede3e7fca5a' => 
     array (
       0 => 'app/tpl/header.htm',
-      1 => 1412754198,
+      1 => 1412909579,
       2 => 'file',
     ),
   ),
@@ -21,6 +21,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   array (
     '__userinfo__' => 0,
     'web_url' => 0,
+    'isIndex' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -96,9 +97,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                         </li>
                         </ul>
 
-
+                    <?php if (!$_smarty_tpl->tpl_vars['isIndex']->value){?>
                     <ul class="menu">
-                        <li><a href="#">我是学生</a>
+                        <li><a href="#">学生</a>
                             <ul class="submenu">
                                 <li><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /index.php/Corpinternmsg/Corpindex">招聘信息</a>
@@ -126,7 +127,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                 </li>
                             </ul>
                         </li>
-                        <li class="active"><a href="#s2">我是企业</a>
+                        <li class="active"><a href="#s2">企业</a>
                             <ul class="submenu">
                                 <li><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /index.php/Employmentteam/index">就业专员</a>
@@ -145,7 +146,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="#">我是校友</a>
+                        <li><a href="#">校友</a>
                             <ul class="submenu">
                                 <li><a href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /index.php/professionpersontalk/index">校友寻访</a>
@@ -162,6 +163,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                             </ul>
                         </li>
                     </ul>
+                    <?php }?>
                         <form id="search_form" action="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /index.php/jobinfo/searchlist" method="post">
                         <div class="search">

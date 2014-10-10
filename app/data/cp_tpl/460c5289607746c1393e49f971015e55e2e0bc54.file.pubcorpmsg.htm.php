@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-10-08 10:04:53
+<?php /* Smarty version Smarty-3.1.14, created on 2014-10-10 10:43:10
          compiled from "app/tpl/company/pubcorpmsg.htm" */ ?>
 <?php /*%%SmartyHeaderCode:811798089542a5b76dfd722-41626061%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '460c5289607746c1393e49f971015e55e2e0bc54' => 
     array (
       0 => 'app/tpl/company/pubcorpmsg.htm',
-      1 => 1412733891,
+      1 => 1412908988,
       2 => 'file',
     ),
   ),
@@ -547,7 +547,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['last']       = ($_smart
                     <tr class="company-jobfair-item">
                         <td class="company-jobfair-item-title">招聘内容：</td>
                         <td class="company-jobfair-item-info">
-                            <textarea id="content" name="content" rows="15" cols="120" style="width:90%;height:150px" value=""></textarea>
+                            <textarea id="content" name="content" rows="15" cols="120" style="width:90%;height:350px" value=""></textarea>
                         </td>
                     </tr>
                     <tr class="company-jobfair-item">
