@@ -1,0 +1,67 @@
+@charset "utf-8";
+/* CSS Document */
+/*---------------middle--------------------------*/
+
+#middle{
+	width:1000px;
+	min-height:860px;
+	height:auto;
+	margin:0 auto;
+	padding:0 95px;
+}
+#middle_left{
+	width:723px;
+	height:auto;
+	float:left;
+	display:inline;
+	margin-top:20px;
+}
+#list{
+	float:left;
+	display: inline;
+	margin-bottom:15px;
+}
+#list ul li{
+	background: url(../../images/corpinternmsg/list1.png) no-repeat;
+	background-position:center;
+	background-position:left;
+	border-bottom:1px dashed #CCC;
+	width:708px;
+	padding:0 0 0 15px;
+	margin-top:10px;
+	float:left;
+	height:25px;
+}
+#list ul li a{
+	float:left;
+	display:inline;
+	color:#585858;
+	line-height:26px;
+}
+#list .middl_leftone a{
+	color:#c1525b;
+}
+#list .middl_lefttwo a{
+	color:#2a85bf;
+}
+#list em{
+	float:right;
+	display:inline;
+	color:#b8b8b8;
+	font-style:normal;
+}
+
+.text-item-br{display:none;}
+/*<360px*/
+@media screen and (max-width:400px){
+#middle{width:92%;min-height:300px; margin:10px 4% 0; padding:0;}
+#list ul li {width:100%;padding:0; height:auto;background:none;}
+#middle_left{width:100%;}
+/*item*/
+.text-title{float:left;}
+.text-title-moreinfo{float:left;}
+#list em{float:left;}
+#list ul li a{line-height:0;}
+.phone-text-clear{clear:both;}
+.text-item-br{display:inline;}
+}

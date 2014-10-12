@@ -1,0 +1,323 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta id="screen-view" name="viewport" content="width=device-width"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <{include file='commcss.htm' }>
+    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/content.css"/>
+    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/rec.css"/>
+    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/common/detail.css"/>
+    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/common/detail-360.css"/>
+    <title><{$corpInfo.type_name}>-<{$detail.cim_name}></title>
+    <script type="text/javascript">
+        var web_url = "<{$web_url}>";
+    </script>
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="<{$web_url}>/common/app/js/DOMAssistantCompressed-2.7.4.js"></script>
+    <script type="text/javascript" src="<{$web_url}>/common/app/js/ie-css3.js"></script>
+    <![endif]-->
+    <style>
+        .middle_left > div:nth-child(3) span {
+            margin-left: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+<{include file='header.htm' }>
+<!--导航栏-->
+<div class="nav">
+    <dl>
+        <dt><a href="<{$web_url}>/index.php/index">首页/</a>
+        </dt>
+        <dt>
+            <a href="<{$web_url}>/index.php/corpinternmsg/index/type/<{$corpInfo.type_code}>"><{$corpInfo.type_name}>/</a>
+        </dt>
+        <dt><a href="#"><{$detail.cim_name}></a></dt>
+    </dl>
+</div>
+<div class="middle">
+
+    <div class="middle_left">
+        <div>
+            <p><{$detail.cim_name}></p>
+            <{if isset($__userinfo__)}>
+            <{if $__userinfo__.type==0}>
+            <span id="do-collect-btn" class="collect-btn" <{if $collectFlag!="1"}>style="display:none;"<{/if}> >收藏</span>
+            <span id="cancel-collect-btn" class="collect-btn" data="<{$detail.cim_id}>" <{if $collectFlag=="1"}>style="display:none;"<{/if}> >取消收藏</span>
+            <{/if}>
+            <{/if}>
+        </div>
+        <div>
+            <{$detail.cim_date}>&nbsp;
+            浏览：<{$detail.cim_read}>&nbsp;
+            分享：<{$detail.cim_share}>&nbsp;
+            <{include file='share.htm' }>
+
+        </div>
+        <div>
+            <div>
+                <span style="margin-right: 10px;">公司:<{$detail.cim_addr}></span>
+                <span>联系人:<{$detail.cim_contact}></span>
+            </div>
+            <div>
+                <span style="margin-right: 50px;">联系电话:<{$detail.cim_tel}></span>
+                <span>邮箱:<{$detail.cim_email}></span>
+            </div>
+        </div>
+        <div class="content">
+            <{if $officelist}>
+            <div class="m-l-office">
+                <div class="m-l-office-header">
+                    >>职位
+                </div>
+                <div class="m-l-office-main">
+                    <{section name=ol loop=$officelist}>
+                    <div class="office-name">
+                        <strong><{$officelist[ol].office_name}></strong>
+                    </div>
+                    <div class="office-intro">
+                        <{$officelist[ol].office_intro}>
+                    </div>
+                    <{/section}>
+                </div>
+
+            </div>
+            <{/if}>
+            <div class="m-l-office">
+                <div class="m-l-office-header">
+                    >>说明
+                </div>
+            </div>
+            <{if $detail.pic_id !="" }>
+            <div id="middle_img">
+                <img src="<{$web_url}>/common/upload/images/<{$detail.pic_link}>"/>
+            </div>
+            <{/if}>
+            <{$detail.cim_content}>
+        </div>
+        <div id="middle_left_file">
+            <{if $detail.file_id !="" }>
+            相关附件：
+            <a target="top" style="color:red;" href="<{$web_url}>/common/upload/files/<{$detail.file_link}>">
+                <{if $detail.file_name=="" }>
+                <{$detail.file_link}>
+                <{else}>
+                <{$detail.file_name}>
+                <{/if}>
+            </a>
+            <{/if}>
+        </div>
+        <div class="zandiv" id="zandiv">
+            <img class="zan" src="<{$web_url}>/common/app/images/zan.png"/>
+
+            <div class="zannum"><{$detail.cim_good}></div>
+        </div>
+        <div id="middle_leftprenext">
+            <p>
+                上一条：
+                <{if $preNews != "" }>
+                <a href="<{$web_url}>/index.php/corpinternmsg/detail/id/<{$preNews.cim_id}>"><{$preNews.cim_name}></a>
+                <{else}>
+                没有了！
+                <{/if}>
+            </p>
+
+            <p>
+                下一条：
+                <{if $nextNews != "" }>
+                <a href="<{$web_url}>/index.php/corpinternmsg/detail/id/<{$nextNews.cim_id}>"><{$nextNews.cim_name}></a>
+                <{else}>
+                没有了！
+                <{/if}>
+            </p>
+        </div>
+    </div>
+
+    <div class="middle_right">
+        <div class="rec">
+            <div>推荐招聘会信息</div>
+            <{section name=calendar loop=$jobFair}>
+            <div class="rec_item">
+                <div>
+                    <div> <{getdate format="cnWeek" date=$jobFair[calendar].jm_opentime }></div>
+                    <div><{$jobFair[calendar].jm_opentime|date_format: "%Y.%m.%d"}></div>
+                </div>
+                <div>
+                    <div><a href="<{$web_url}>/index.php/Jobfairmsg/calendardetail/id/<{$jobFair[calendar].jm_id}>">
+                        <{$jobFair[calendar].jm_name|truncate:15: '…':true}></a>
+                    </div>
+                    <div> <{$jobFair[calendar].jm_opentime|date_format: "%Y.%m.%d %H:%M"}></div>
+                    <div> <{$jobFair[calendar].jm_addr|truncate:15: '…':true}></div>
+                </div>
+            </div>
+            <{/section}>
+        </div>
+    </div>
+</div>
+
+<!-- 收藏确认 -->
+<div class="collect-confirm">
+    <div class="collect-confirm-header">
+        <div class="collect-confirm-header-left">
+            确认收藏信息？
+        </div>
+        <div class="collect-confirm-header-right">
+            <a id="close-collect-confirm" href="#">关闭</a>
+        </div>
+    </div>
+    <div class="collect-confirm-main">
+        <div class="collect-confirm-main-item">
+            <span class="collect-confirm-main-title">确认收藏：</span>
+            <span class="collect-confirm-main-info"><{$detail.cim_name}></span>
+        </div>
+        <div class="collect-confirm-main-item">
+            <span class="collect-confirm-main-title">&nbsp;</span>
+            <span class="collect-confirm-main-info">
+                <input id="openmyinfo" name="openmyinfo" type="checkbox" checked value=1>公开我的信息给企业？
+            </span>
+        </div>
+        <div class="collect-confirm-main-item">
+            <span class="collect-confirm-main-title">&nbsp;</span>
+            <span class="collect-confirm-main-info">
+                <span id="do-collect" class="confirm-btn" data="<{$detail.cim_id}>">确认</span>
+                <span id="cancel-collect" class="confirm-btn">取消</span>
+            </span>
+        </div>
+        <div class="collect-confirm-main-item">
+            <span class="collect-confirm-main-title">&nbsp;</span>
+            <span id="result-collect" class="collect-confirm-main-info"></span>
+        </div>
+
+    </div>
+</div>
+
+<{assign var=share_content value=$detail.cci_content|strip_tags|truncate:130:"…"}>
+<{assign var=addShareUrl value="<{$web_url}>/index.php/corpinternmsg/addshare/type/<{$corpInfo.type_code}>/id/<{$detail.cim_id}>"}>
+
+<{include file='footer.htm' }>
+<script type="text/javascript" src="<{$web_url}>/common/libs/jquery.min.js"></script>
+<script type="text/javascript" src="<{$web_url}>/common/app/js/header.js"></script>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=1782349"></script>
+<script type="text/javascript" id="bdshell_js"></script>
+
+
+<script type="text/javascript">
+    var bds_config = {
+        'bdDesc': '<{$share_content|strip_tags|truncate:130:"..."}>'
+    };
+    document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date() / 3600000);
+
+    $(function () {
+
+        $("#bdshare>a").click(function () {
+            $.ajax({
+                type: "POST",
+                url: "<{$addShareUrl}>"
+            });
+        });
+
+        //收藏
+        $("#do-collect-btn").click(function () {
+            $(".collect-confirm").show();
+        });
+
+        $("#close-collect-confirm,#cancel-collect").click(function () {
+            $(".collect-confirm").hide();
+        });
+
+        $("#do-collect").click(function () {
+            var id = $(this).attr("data");
+            var openmyinfo = '1';
+            if (!$("#openmyinfo").attr("checked")) {
+                openmyinfo = '0';
+            }
+
+            //alert($("#openmyinfo").attr("checked"));
+            $.ajax({
+                type: "POST",
+                url: "<{$web_url}>/index.php/student/collect/type/<{$corpInfo.type_code}>/id/" + id + "/openmyinfo/" + openmyinfo,
+                success: function (msg) {
+                    var obj = eval('(' + msg + ')');
+                    if (obj.json.state == 1) {
+                        $("#result-collect").html("");
+                        $("#do-collect-btn").hide();
+                        $("#cancel-collect-btn").show();
+                        $("#close-collect-confirm").click();
+                    } else {
+                        $("#result-collect").html(obj.json.msg);
+                    }
+                },
+                error: function (msg) {
+                    $("#result-collect").html("网络连接错误！");
+                }
+            });
+
+        });
+        $("#cancel-collect-btn").click(function () {
+            var id = $(this).attr("data");
+            var openmyinfo = '1';
+            if (!$("#openmyinfo").attr("checked")) {
+                openmyinfo = '0';
+            }
+
+            //alert($("#openmyinfo").attr("checked"));
+            $.ajax({
+                type: "POST",
+                url: "<{$web_url}>/index.php/student/cancelcollect/type/<{$corpInfo.type_code}>/id/" + id,
+                success: function (msg) {
+                    var obj = eval('(' + msg + ')');
+                    if (obj.json.state == 1) {
+                        $("#cancel-collect-btn").hide();
+                        $("#do-collect-btn").show();
+                    } else {
+                        alert(obj.json.msg);
+                    }
+                },
+                error: function (msg) {
+                    alert("网络连接错误！");
+                }
+            });
+        });
+        //收藏end
+
+
+        var flag = false;
+        $("#zandiv").click(function () {
+            //alert("sss");
+            if (!flag) {
+                $.ajax({
+                    type: "POST",
+                    url: "<{$web_url}>/index.php/corpinternmsg/addgood/id/<{$detail.cim_id}>",
+                    success: function (msg) {
+                        //alert("chenggong");
+                        flag = true;
+                        //alert( msg );
+                        if (msg != "0") {
+                            //alert("谢谢~");
+                            $(".zan").css("background", "#333333");
+                            $(".zannum").text(msg);
+                        } else {
+                            //alert("shibai1");
+                        }
+
+                    },
+                    error: function (msg) {
+                        //alert("shibai");
+                        //$("#addresult").html("添加失败！");
+                    }
+                });
+            }
+
+        });
+
+
+    });
+
+
+</script>
+</body>
+
+</html>

@@ -3,7 +3,6 @@ function login_toggle() {
 }
 
 $(function(){
-
 	$($(".header_unlogin a")[0]).click(function(){
 		login_toggle();
 	});
@@ -40,6 +39,7 @@ $(function(){
 
         });
     }
+
 });
 
 function loginInit () {

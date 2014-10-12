@@ -1,0 +1,273 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+/*
+*html的全部内容  除去头和尾
+*/
+#middle{
+    height: 600px;
+    background-color: #ffffff;
+}
+/*
+*首页、我的招聘
+*/
+.middle_top{
+    width: 994px;
+    height: 33px;
+    background-color: #3499da;
+}
+.middle_top p{
+    margin-left: 20px;
+    line-height: 33px;
+    color: white;
+    font-size: 18px;
+}
+.middle_top a{
+    color: white;
+    font-size: 18px;
+}
+/*
+*中间  左部
+*/
+#middle_left{
+    margin-top: 15px;
+    width: 260px;
+    height: 557px;
+    background-color: #ecf1f0;
+}
+#middle_left  #title{
+    margin-left: 11px;
+    width: 239px;
+    height: 26px;
+    border-bottom:1px solid gray;
+}
+#middle_left  #title p{
+    padding-left: 10px;
+    margin-top: -8px;
+    font-size: 20px;
+}
+#xuanxiang p{
+    padding-left: 38px;
+}
+#xuanxiang p{
+    font-size: 14px;
+    padding-top: 3px;
+}
+#xuanzhong{
+    color: #ffffff;
+    width: 222px;
+
+    background-color: #344a5d;
+}
+/*
+*中间  右部
+*/
+#middle_right{
+    margin-left: 277px;
+    margin-top:-132px;
+    width: 300px;
+    height: 400px;
+}
+#middle_right_top{
+    width: 645px;
+    height: 35px;
+    background-color: #344a5d;
+}
+.middle_right_top_nav,.middle_right_top_nav_checked{
+    font-size: 20px;
+    float: left;
+    width: 178px;
+    height: 35px;
+    line-height: 35px;
+    color: #ffffff;
+    padding-left: 20px;
+
+}
+.middle_right_top_nav_checked{
+    background-position:50% 125%;
+    background-color: #5d6e7d;
+    background-repeat: no-repeat;
+    background-image: url("../../images/student/sanjiao.png");
+}
+#ishixi{
+    width: 259px;
+    height: 29px;
+    background-color: #82605e;
+}
+#ishixi{
+    margin-top: 13px;
+    height: 29px;
+}
+#ishixi p{
+    width: 70px;
+    height: 28px;
+    font-size: 20px;
+    float: left;
+    color: #ffffff;
+    margin-left:12px ;
+}
+#ishixi_checked{
+    padding-left:12px ;
+    background-color: #344a5d;
+}
+#biaoge{
+    margin-top: 23px;
+    margin-left: 9px;
+    width: 700px;
+    height: 207px;
+    border:2px solid gray;
+
+}
+.td1{
+    width: 48px;
+    height: 44px;
+    border:1px solid gray;
+}
+.td2{
+    width: 180px;
+    height: 44px;
+    border:1px solid gray;
+}
+.td2 p {
+    margin-left: 51px;
+    line-height: 44px;
+    font-size: 20px;
+}
+.td1_xuanzhong{
+    width: 31px;
+    height: 28px;
+    margin-top: 0px;
+    margin-left: 8px;
+  display: inline-block;
+    background-repeat: no-repeat;
+    background-image: url("../../images/student/xuankuang.png");
+}
+.td1_xuanzhong_checkbox{
+    width: 30px;
+    height: 29px;
+}
+.chankanxiangqing ,.shanchu{
+    font-size: 20px;
+
+    color: red;
+}
+.chankanxiangqing{
+    padding-left: 14px;
+    margin-top: 10px;
+}
+.shanchu{
+    float: right;
+    margin-right: 10px;
+    margin-top: -30px;
+
+}
+#biaoge a{
+    text-decoration:underline
+}
+.td1_xuanzhong_checkbox_quanxuan{
+    width: 30px;
+    height: 29px;
+    margin-left: 20px;
+    margin-top: 17px;
+}
+#quanxuan{
+    font-size: 20px;
+    margin-left: 60px;
+    margin-top: -35px;
+}
+#sahnchu_bottom a{
+    float: left;
+    width: 40px;
+    height: 20px;
+    font-size: 20px;
+    color: red;
+    margin-left: 122px;
+    margin-top: -30px;
+    text-decoration: underline;
+}
+/*
+*底部分页
+*/
+#fenye{
+    height: 150px;
+}
+#fenye_left{
+    width: 36px;
+    height: 36px;
+   margin-top: 13px;
+    margin-left: 326px;
+    background-repeat: no-repeat;
+    background-image: url("../../images/corpinternmsg/fenye_left.png");
+}
+#fenye_middle{
+    margin-left: 363px;
+    margin-top: -36px;
+    width: 525px;
+    height: 36px;
+    background-repeat: no-repeat;
+    background-image: url("../../images/corpinternmsg/fenye_bg.png");
+}
+#fenye_right{
+    width: 36px;
+    height: 36px;
+    margin-left: 890px;
+    margin-top: -36px;
+    background-repeat: no-repeat;
+    background-image: url("../../images/corpinternmsg/fenye_right.png");
+}
+.fenye_middle_tuoyuan{
+    margin-left: 5px;
+    margin-top: 5px;
+    float: left;
+    width: 22px;
+    height: 22px;
+    background-repeat: no-repeat;
+    background-image: url("../../images/corpinternmsg/fenye_tuoyuan.png");
+}
+.fenye_middle_tuoyuan_nowPage{
+    margin-left: 5px;
+    margin-top: 5px;
+    float: left;
+    width: 22px;
+    height: 22px;
+    background-repeat: no-repeat;
+    background-image: url("../../images/corpinternmsg/tuoyuan_nowpage.png");
+}
+.fenye_middle_tuoyuan_nowPage p{
+    line-height: 22px;
+    padding-left: 6px;
+    color: white;
+}
+.fenye_middle_tuoyuan2{
+    margin-left: 9px;
+    margin-top: 5px;
+    float: left;
+    width: 22px;
+    height: 22px;
+    background-repeat: no-repeat;
+    background-image: url("../../images/corpinternmsg/fenye_tuoyuan.png");
+}
+.fenye_middle_tuoyuan p{
+    line-height: 22px;
+    padding-left: 8px;
+}
+.fenye_middle_tuoyuan2 p{
+    line-height: 22px;
+    padding-left: 6px;
+}
+#help{
+    width: 40px;
+    margin-left: 285px;
+    margin-top: -50px;
+    font-size: 14px;
+    color: red;
+}
+#help_content{
+    width: 4000px;
+    margin-left: 285px;
+    margin-top: 0px;
+    font-size: 14px;
+
+}
+

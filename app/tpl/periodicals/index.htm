@@ -1,0 +1,187 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta id="screen-view" name="viewport" content="width=device-width" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <{include file='commcss.htm' }>
+    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/list.css" />
+    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/rec.css" />
+    <title>就业工作简报-第<{$perid.ap_number}>期</title>
+
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="<{$web_url}>/common/app/js/DOMAssistantCompressed-2.7.4.js"></script>
+    <script type="text/javascript" src="<{$web_url}>/common/app/js/ie-css3.js"></script>
+    <![endif]-->
+    <style>
+        .middle_left_title{
+            height: 44px;
+            border-bottom: 2px #3598db solid;
+            margin: 0 10px;
+        }
+        .middle_left_title_left{
+            float: left;
+        }
+        .middle_left_title_right{
+            float: right;
+        }
+
+        .middle_left_title_left ,.middle_left_title_right a{
+            font-size: 16px;
+            color: #3598db;
+            line-height: 30px;
+        }
+
+        .ban-title{
+            line-height: 30px;
+            margin-left: 20px;
+            font-size: 14px;
+        }
+        .ban-title-right{
+
+            float: right;
+            width: 522px;
+            margin-top: -16px;
+            margin-right: 10px;
+            border-bottom: 1px dashed #b2b2b2;
+
+        }
+
+
+    </style>
+</head>
+
+<body>
+<{include file='header.htm' }>
+<!--导航栏-->
+<div class="nav">
+    <dl>
+        <dt><a href="<{$web_url}>/index.php/index">首页/</a>
+        </dt>
+        <dt><a href="#">学生就业通讯-第<{$perid.p_number}>期</a>
+        </dt>
+    </dl>
+</div>
+<div class="middle">
+
+    <div class="middle_left">
+        <div class="middle_left_title">
+            <div class="middle_left_title_left">
+                第<{$perid.p_number}>期
+            </div>
+            <div class="middle_left_title_right">
+
+                <{if $haspre}>
+                <a href="<{$web_url}>/index.php/periodicals/index/do/pre/id/<{$perid.p_id}>"  title = "上一期"><上一期</a>
+                <{else}>
+                上一期
+                <{/if}>
+                |
+                <{if $hasnext}>
+                <a href="<{$web_url}>/index.php/periodicals/index/do/next/id/<{$perid.p_id}>"  title = "下一期" >下一期></a>
+                <{else}>
+                下一期
+                <{/if}>
+
+            </div>
+        </div>
+        <{if isset($artnum)}>
+        <{foreach $artnum as $re}>
+
+        <div class="ban-title">
+            <div class="ban-title-left">第<{$re.layoutnum}>版(<{$re.articletotal.num}>篇文章)</div>
+            <div class="ban-title-right"></div>
+        </div>
+
+        <{section name=n loop=$re.article}>
+        <{if $re.article[n].pic_id != ""}>
+        <div class="news_item2_wrap">
+            <div><img src="<{$web_url}>/common/upload/images/<{$re.article[n].pic_link}>" alt="<{$web_url}>/common/upload/images/<{$re.article[n].pic_link}>" /></div>
+            <div class="news_item2">
+                <div>
+                    <{if $re.article[n].a_top != ""}>
+                    <div><a style="color:red;" href="<{$web_url}>/index.php/periodicals/detail/id/<{$re.article[n].a_id}>">
+                        [顶]<{$re.article[n].a_title|truncate:25:'…':true}>
+                    </a></div>
+                    <{else}>
+                    <div><a href="<{$web_url}>/index.php/periodicals/detail/id/<{$re.article[n].a_id}>">
+                        <{$re.article[n].a_title|truncate:20:'…':true}>
+                    </a></div>
+                    <{/if}>
+                    <span><{$re.article[n].a_time}></span>
+                </div>
+                <p><{$re.article[n].a_content|strip_tags|strip|truncate:130:'…':true}></p>
+                <ul>
+                    <li style="display:none"></li>
+                    <li><{$re.article[n].a_scan}></li>
+                    <li><{$re.article[n].a_share}></li>
+                    <li><a href="<{$web_url}>/index.php/periodicals/detail/id/<{$re.article[n].a_id}>">查看详情>></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <{else}>
+        <div class="news_item">
+            <div>
+                <{if $re.article[n].a_top != ""}>
+                <div><a style="color:red;" href="<{$web_url}>/index.php/periodicals/detail/id/<{$re.article[n].a_id}>">
+                    [顶]<{$re.article[n].a_title|truncate:33:'…':true}>
+                </a></div>>
+                <{else}>
+                <div><a href="<{$web_url}>/index.php/periodicals/detail/id/<{$re.article[n].a_id}>">
+                    [顶]<{$re.article[n].a_title|truncate:33:'…':true}>
+                </a></div>>
+                <{/if}>
+                <span><{$re.article[n].a_time}></span>
+            </div>
+            <p><{$re.article[n].a_content|strip_tags|strip|truncate:130:'…':true}></p>
+            <ul>
+                <li style="display:none"></li>
+                <li><{$re.article[n].a_scan}></li>
+                <li><{$re.article[n].a_share}></li>
+                <li><a href="<{$web_url}>/index.php/periodicals/detail/id/<{$re.article[n].a_id}>">查看详情>></a>
+                </li>
+            </ul>
+        </div>
+        <{/if}>
+        <{sectionelse}>
+        &nbsp;&nbsp;&nbsp;&nbsp;	暂无文章~
+        <{/section}>
+
+        <{/foreach}>
+        <{else}>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;暂无内容~
+        <{/if}>
+
+    </div>
+
+    <div class="middle_right">
+        <div class="rec">
+            <div>推荐招聘会信息</div>
+            <{section name=calendar loop=$jobFair}>
+            <div class="rec_item">
+                <div>
+                    <div> <{getdate format="cnWeek" date=$jobFair[calendar].jm_opentime }></div>
+                    <div><{$jobFair[calendar].jm_opentime|date_format: "%Y.%m.%d"}></div>
+                </div>
+                <div>
+                    <div><a href="<{$web_url}>/index.php/Jobfairmsg/calendardetail/id/<{$jobFair[calendar].jm_id}>"> <{$jobFair[calendar].jm_name|truncate:15: '…':true}></a>
+                    </div>
+                    <div> <{$jobFair[calendar].jm_opentime|date_format: "%Y.%m.%d  %H:%M"}></div>
+                    <div> <{$jobFair[calendar].jm_addr|truncate:15: '…':true}></div>
+                </div>
+            </div>
+            <{/section}>
+        </div>
+    </div>
+</div>
+<{include file='footer.htm' }>
+<script type="text/javascript" src="<{$web_url}>/common/libs/jquery.min.js"></script>
+<script type="text/javascript" src="<{$web_url}>/common/app/js/header.js"></script>
+<script>
+    $(".middle").css("height",$(".middle_left").css("height"));
+</script>
+</body>
+
+</html>

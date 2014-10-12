@@ -1,0 +1,37 @@
+.rec{
+    background-color: white;
+    min-height: 540px;
+}
+.rec >div:first-child{
+    line-height: 40px;
+    height: 40px;
+    background: #34495e;
+    color: white;
+    font-size: 18px;
+    padding-left: 15px;
+}
+
+.rec_item{
+    margin: 0 15px;
+    border-bottom: 1px #b2b2b2 dashed;
+}
+
+
+
+.rec_item{
+    margin-top: 10px;
+}
+
+.rec_item >div{
+    font-size: 14px;
+    color: #b2b2b2;
+}
+
+.rec_item >div:first-child a{
+    color: red;
+}
+
+.rec_item >div:last-child{
+    text-align: right;
+    margin-right: 20px;
+}

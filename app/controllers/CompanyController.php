@@ -74,7 +74,7 @@ class CompanyController extends Controller{
             $hy = $this->getRequest()->get("form_hy");
             $zczb = $this->getRequest()->get("form_zczb");
             $yzbm = $this->getRequest()->get("form_yzbm");
-            $xian = $this->getRequest()->get("form_xian");
+            $xian = $this->getRequest()->get("county");
             $xxdz = $this->getRequest()->get("form_xxdz");
             $lxr = $this->getRequest()->get("form_lxr");
             $gddh = $this->getRequest()->get("form_gddh");
@@ -146,11 +146,6 @@ class CompanyController extends Controller{
         $this->view->areainfo = $areainfo;
         $this->view->cityinfo = $cityinfo;
         $this->view->provinfo = $provinfo;
-        //省
-        $area = new area();
-        $list = $area->getAreaByParentId(0);
-        $this->getView()->provinceList = $list;
-        unset($list);
 
         $userinfo = $this->getData("userinfo");
         $this->view->companyinfo = $userinfo;

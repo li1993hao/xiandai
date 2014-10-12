@@ -1,0 +1,124 @@
+.nav dt {
+    float: left;
+    margin-top: 5px;
+}
+.nav dt:first-child {
+    margin-left: 30px;
+}
+.nav dt a {
+    color: white;
+}
+.middle {
+    padding-top: 20px;
+    min-height: 900px;
+    background-color: #ecf0f1;
+}
+.middle_left {
+    padding: 0 20px;
+    width: 606px;
+    min-height: 400px;
+    float: left;
+    background-color: #ecf0f1;
+    overflow: auto;
+}
+.middle_right {
+    width: 340px;
+    float: right;
+    height: 400px;
+}
+#middle_img img{
+    height: 200px;
+    width: 200px;
+    cursor: pointer;
+}
+
+
+.middle_left >div:first-child span{
+    font-size: 14px;
+    background-color: #3598db;
+    color: white;
+    padding:8px 15px;
+    line-height: 2;
+    cursor: pointer;
+}
+.middle_left >div:nth-child(2){
+    color: #b2b2b2;
+    font-size: 14px;
+    line-height: 40px;
+}
+
+.middle_left >div:nth-child(3){
+    color: #a2a2a2;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.middle_left >div:nth-child(3) span:first-child{
+    color: #a2a2a2;
+    font-size: 14px;
+    margin-right: 70px;
+}
+
+.middle_left >div:first-child span:hover{
+    background-color: #3598aa;
+}
+
+
+.middle_left >div:first-child{
+    height: 30px;
+    text-align:right;
+    margin-right: 20px;
+
+}
+.middle_left >div:nth-child(4){
+    margin-top: 20px;
+}
+
+.middle_left >div:first-child p{
+    font-size: 16px;
+    margin-left: 10px;
+    font-weight: bold;
+    float: left;
+}
+.zandiv{
+    margin-top: 20px;
+    text-align: center;
+    border-bottom: 1px solid #b2b2b2;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+.zan{
+    background-color:  #3598db;
+    padding: 8px 8px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.middle_img{
+    text-align: center;
+}
+
+.content{
+    min-height: 400px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-10-12 16:09:05
+<?php /* Smarty version Smarty-3.1.14, created on 2014-10-10 11:01:05
          compiled from "app/tpl/west/detail.htm" */ ?>
 <?php /*%%SmartyHeaderCode:149379441554374bf13b4d19-81066901%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '9f0748a986cc581b765659e104c311774856b677' => 
     array (
       0 => 'app/tpl/west/detail.htm',
-      1 => 1413101343,
+      1 => 1412042840,
       2 => 'file',
     ),
   ),
@@ -15,8 +15,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_54374bf14feb52_75221948',
   'variables' => 
   array (
     'web_url' => 0,
@@ -28,6 +26,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'addShareUrl' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_54374bf14feb52_75221948',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_54374bf14feb52_75221948')) {function content_54374bf14feb52_75221948($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/Users/haoli/Desktop/www/xiandai/been/Smarty/plugins/modifier.date_format.php';
 if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/xiandai/been/Smarty/plugins/modifier.truncate.php';
@@ -47,9 +47,7 @@ if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/
 /common/app/css/common/detail.css" />
     <link type="text/css" rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/app/css/common/detail-360.css" />
-    <title>渤海轻工业集团-<?php echo $_smarty_tpl->tpl_vars['detail']->value['wc_name'];?>
--<?php echo $_smarty_tpl->tpl_vars['detail']->value['ww_title'];?>
-</title>
+    <title>院系介绍-</title>
     <script type="text/javascript">
         var web_url = "<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 ";

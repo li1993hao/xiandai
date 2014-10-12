@@ -1,0 +1,119 @@
+*{
+    padding: 0;
+    margin: 0px;
+}
+/*
+*html的全部内容  除去头和尾
+*/
+#middle{
+    height: 600px;
+    background-color: #ffffff;
+}
+/*
+*首页、中心简历
+*/
+.middle_top{
+    width: 994px;
+    height: 33px;
+    background-color: #3499da;
+}
+.middle_top p{
+    margin-left: 20px;
+    line-height: 33px;
+    color: white;
+    font-size: 18px;
+}
+.middle_top a{
+    color: white;
+    font-size: 18px;
+}
+/*
+*中间  左部
+*/
+#middle_left{
+    margin-top: 15px;
+    width: 260px;
+    height: 557px;
+    background-color: #ecf1f0;
+}
+#middle_left  #title{
+    margin-left: 11px;
+    width: 239px;
+    height: 26px;
+    border-bottom:1px solid gray;
+}
+#middle_left  #title p{
+    padding-left: 10px;
+    margin-top: -9px;
+    font-size: 20px;
+}
+#xuanxiang p{
+    padding-left: 38px;
+}
+#xuanxiang p{
+    font-size: 14px;
+    padding-top: 3px;
+}
+#xuanzhong{
+    color: #ffffff;
+    width: 222px;
+    margin-top: 10px;
+    background-color: #344a5d;
+}
+/*
+*中间  右部
+*/
+#middle_right_name{
+    width: 1000px;
+    height: 40px;
+    color: #000000;
+    font-size: 18px;
+    float: left;
+   margin-top: -554px;
+    margin-left: 300px;
+}
+#middle_right_sex{
+    margin-top: 10px;
+    color: #000000;
+}
+#middle_right_birthday{
+    margin-top: -26px;
+   margin-left: 144px;
+}
+#middle_right_photo{
+    margin-top: -26px;
+    margin-left: 365px;
+}
+#middle_right_photo p{
+    display: inline-block;
+    padding-top: 173px;
+}
+#touxiang{
+    width: 173px;
+    height: 224px;
+    margin-left: 460px;
+    margin-top: -26px;
+    background-image: url("../../images/student/gerenzhaopin.png");
+}
+#xiugai{
+    display: inline-block;
+    width: 80px;
+    height: 32px;
+    position: relative;
+    margin-left: 512px;
+    margin-top: -400px;
+    background-image: url("../../images/student/xiugai.png");
+}
+#xiugai a{
+    line-height: 32px;
+    color: #ffffff;
+    padding-left: 22px;
+}
+#middle_right_gerenpingjia{
+    width: 608px;
+    margin-top: 94px;
+    font-size: 18px;
+}
+#middle_right_gerenpingjia_content{
+    font-size: 14px;
+}

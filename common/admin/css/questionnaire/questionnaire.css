@@ -1,0 +1,11 @@
+@CHARSET "UTF-8";
+.enable{
+	background-color:#FF9315;
+	width:500px;
+	height:150px;
+}
+.disable{
+	background-color:#E3E0D5;
+	width:500px;
+	height:150px;
+}

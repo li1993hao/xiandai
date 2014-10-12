@@ -1,0 +1,128 @@
+/*��ͼ�б�*/
+
+#middle{width:1000px;min-height:1000px;margin:0 auto;	padding:0 95px;}
+#middle_left{	width:723px;	height:auto;	float:right;	display:block;}
+.middle-color-blue{color:#72B1D6;}
+.middle-color-red{color:#677bc0;}
+.middle-color-green{color:#7BAC87;}
+.middle-color-orange{color:#CD865A;}
+/*.content{display:block;}*/
+/*��ҵ������*/
+/*期刊号部分*/
+.middle_left_title {width: 723px;margin: 0;height: 35px;line-height: 35px;border-bottom: 2px solid #929292;}
+.middle_left_title_left {float: left;min-width: 60px;font-size: 20px;margin: 0 10px;padding: 0 20px;height: 35px;
+line-height: 35px;color: #677bc0;border-bottom: 2px solid #677bc0;
+}
+.middle_left_title_right{float: right;height: 25px;line-height: 25px;padding: 10px 15px 0 15px;
+font-size: 14px;border-bottom: 2px solid #677bc0; color:#585858;
+}
+.middle_left_title_right a{color:#677bc0;}
+
+/*版面部分*/
+.ban-title{	height:30px;}
+.ban-title-left{padding-left:10px;width:110px;float:left;color:#446976;font-size:14px;line-height: 30px;}
+.ban-title-right{width:600px;float:right;height:15px;color:#446976;	font-size:14px;	border-bottom:dotted 1px #333333;}
+
+
+/* west 习近平的讲话那段*/
+#middle_leftone{width:723px;padding:10px 0;}
+#middle_leftone p{text-indent:2em;color:#585858;font-size:12px;	line-height:30px;}
+#talk{	color:#585858;	font-size:12px;	margin-top:15px;float:right;display:block;}
+#work{width:723px;	height:auto;	margin-top:13px;}
+
+/*west 西部就业里的title*/
+#work>h2,#policy h2{
+	color:#5f5f5f;
+	font-size:20px;
+	width:723px;
+	background:url(../../images/west/heng.png) no-repeat;
+	background-position:bottom;
+	padding-top:10px;
+}
+
+
+
+/*带图的列表样式*/
+.work_one{width:723px;height:auto;padding-bottom:5px;border-bottom: 1px dashed #b6b6b6 ;}
+.work_one img{width:202px;height:135px;	float:left;	display:inline;	margin-top:16px;}
+/*列表的右侧，文字内容*/
+.work_concent{	float:right;	width:508px;	margin-top:16px;}
+
+/*标题部分*/
+.work_title{width:508px;}
+.work_title p{width: 350px;float:left;/*display:inline;*/}
+.work_title  a{font-size:14px;color:#677bc0;}
+.work_title em{	float:right;font-size:14px; line-height:25px;	font-style:normal;	color:#b8b8b8;}
+.work_concent .concent{font-size:12px;color:#585858;line-height:20px;/*float:left;display:inline;*/}
+.work_read{	width:508px; height:25px; line-height:25px;}
+.work_read_left{margin-right:22px;	float:left;	display:block;	color:#446976;	font-size:12px;}
+.work_read_right{/*margin-left:240px;*/	float:right;}
+.work_read_right a{	color:#677bc0;}
+/*end带图的列表样式*/
+
+/*不带图的列表样式*/
+.work_two{height:auto;width:723px;display:block;padding-bottom:5px;border-bottom: 1px dashed #b6b6b6 ;}
+.concentone{font-size:12px;	color:#585858;line-height:20px;	/*float:left;*/	/*display:inline;*/}
+.work_titleone{	width:723px;margin-top:12px;}
+.work_titleone p{width: 580px;	float: left;}
+.work_titleone  a{font-size:14px;line-height:25px;color:#677bc0;}
+.work_titleone em{float:right;font-size:14px; line-height:30px;font-style:normal;	color:#b8b8b8;	}
+.work_readone{width:723px;	height:25px; line-height:25px;}
+
+
+
+
+#middle_right{
+	float:right;
+	display:block;
+	width:263px;
+	height:auto;
+	background:#fff;
+	border:#d9d9d9 solid 1px;
+	position:relative;
+	top:-22px;
+}
+/*<360px*/
+@media screen and (max-width:400px){
+#middle{width:94%;min-height:300px; margin:5px 3% 0; padding:0;}
+#middle_left{width:100%;}
+#middle_right{display:none;}
+
+#work{width:100%;}
+/*第一种*/
+.work_one{width:100%;padding:0;}
+.work_one img{width:40%;height:100px;}
+.work_concent {width:55%;margin-left:5%;}/*右侧内容的容器*/
+.work_title{width:100%;}
+.work_title p{width:100%;}
+.work_title em{float:left;}
+.work_read{width:100%;}
+.concent{display:none;}
+
+/*第二种*/
+.work_two {width:100%;padding:0;}
+.work_titleone{width:100%;}
+.work_titleone p{width:100%;}
+.work_titleone em{float:left;}
+.work_readone{width:100%;}
+.concentone{display:none;}
+
+.work_read_left{width:100%;margin:0px;padding:0px;}
+.work_read_right{display:none;}
+
+
+
+/*west start*/
+#middle_leftone{width:100%;}
+#work>h2,#policy>h2 {width:100%;}
+#policy{width:100%;}
+/*west end*/
+
+
+/*canlendar 日历*/
+.fc-button-content{padding: 0px 0.2em;}
+.fc-header-title h2{font-size:12px;}
+
+}
+
+

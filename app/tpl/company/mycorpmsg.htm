@@ -1,0 +1,166 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta id="screen-view" name="viewport" content="width=device-width" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <{include file='commcss.htm' }>
+    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/content.css" />
+    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/cor_drop.css" />
+    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/common/detail.css" />
+    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/common/myinfo.css" />
+    <link type="text/css" rel="stylesheet" href="<{$web_url}>/common/app/css/common/detail-360.css" />
+    <script type="text/javascript" src="<{$web_url}>/common/libs/jquery.min.js"></script>
+
+    <title>招聘信息</title>
+    <script type="text/javascript">
+        var web_url = "<{$web_url}>";
+    </script>
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="<{$web_url}>/common/app/js/DOMAssistantCompressed-2.7.4.js"></script>
+    <script type="text/javascript" src="<{$web_url}>/common/app/js/ie-css3.js"></script>
+    <![endif]-->
+</head>
+<script type="text/javascript">
+    var web_url = "<{$web_url}>";
+
+    function deletecorpmsg(id,type,page){
+            url=web_url+"/index.php/company/deletecorpmsg/id/"+id,
+                $.ajax({
+                    url:"<{$web_url}>/index.php/company/deletecorpmsg",
+                    type:"POST",
+                    data:"id="+id,
+                    dataType:"json",
+                    async: false,
+                    success:function(data){
+
+                        if(data.json.state == 1){
+                            alert(data.json.msg);
+                        }else{
+                            //alert(data);
+                            alert(data.json.msg);
+                        }
+                        location.assign(web_url+"/index.php/company/getmycorpmsg/type/<{$type}>/page/<{$page}>");
+                    }
+                });
+
+    }
+    function show_confirm(id,type,page)
+    {
+        var r=confirm("确定要删除这条信息吗？");
+        if (r==true)
+        {
+            deletecorpmsg(id,type,page);
+        }
+        else
+        {
+            alert("已取消删除!");
+        }
+    }
+</script>
+<body>
+
+<{include file='header.htm'}>
+
+
+<div class="nav">
+    <dl>
+        <dt><a href="<{$web_url}>/index.php/index">首页/</a>
+        </dt>
+        <dt><a href="<{$web_url}>/index.php/company/myinfo">个人中心/</a>
+        </dt>
+        <dt><a href="#">招聘信息</a></dt>
+    </dl>
+</div>
+	<div class ="middle" style="padding: 0">
+        <div id="middle_left" style="padding-top: 0px">
+            <div id="title">
+                <p>功能菜单</p>
+            </div>
+            <div class="title" style="margin-top: 8px">
+                <p class = "title_link" onclick="location.href='<{$web_url}>/index.php/company/myinfo'" >企业基本信息</p>
+                <p class = "title_link" onclick="location.href='<{$web_url}>/index.php/company/getmyjobfair'">招聘会预定</p>
+                <p class = "title_link" onclick="location.href='<{$web_url}>/index.php/company/getmycorpmsg'"  style="background-color:#344a5d;color: #ffffff">招聘信息</p>
+                <p class = "title_link" onclick="location.href='<{$web_url}>/index.php/company/studentinterestme'">学生信息</p>
+                <p class = "title_link" onclick="location.href='<{$web_url}>/index.php/company/changepw'">修改密码</p>
+                <p class = "title_link" onclick="location.href='<{$web_url}>/index.php/index/index#feedback'">满意度调查</p>
+                <p class = "title_link" onclick="location.href='<{$web_url}>/index.php/company/message'">我的消息</p>
+            </div>
+
+        </div>
+		<div class="middle_right">
+		<div class="myinfo_left_top">
+			<div class="getjobfair-result"></div>
+			<div class="xuanxiang-title">状态：</div>
+			<div id="xuanxiang-table">
+				<div>
+					<div id="jobfair-button1" class="cursor-hand jobfair-table <{if $type eq 1}>jobfair-button-selected<{/if}>" data=1>
+						<a href="<{$web_url}>/index.php/company/getmycorpmsg/type/1">所有</a>
+					</div>
+					<div id="jobfair-button2" class="cursor-hand jobfair-table <{if $type eq 2}>jobfair-button-selected<{/if}>" data=2>
+						<a href="<{$web_url}>/index.php/company/getmycorpmsg/type/2">申请中</a>
+					</div>
+					<div id="jobfair-button3" class="cursor-hand jobfair-table <{if $type eq 3}>jobfair-button-selected<{/if}>" data=3>
+						<a href="<{$web_url}>/index.php/company/getmycorpmsg/type/3">已通过</a>
+					</div>
+					<div id="jobfair-button4" class="cursor-hand jobfair-table <{if $type eq 4}>jobfair-button-selected<{/if}>" data=4>
+						<a href="<{$web_url}>/index.php/company/getmycorpmsg/type/4">未通过</a>
+					</div>
+				</div>
+			</div>
+			<a href="<{$web_url}>/index.php/company/Pubcorpmsg">
+			<div class="xuanxiang-pubcorpmsg-background">
+				<div class = "xuanxiang-pubcorpmsg" style="font-size:16px">发布招聘信息</div>
+			</div>
+			</a>
+		</div>
+		<div id="table-type1" class="table-type">
+		<{if $jobfair.list eq false}>
+		   &nbsp;&nbsp;没有招聘信息~
+		<{else}>
+		<table id="mytable" cellspacing="0" >
+  			<tr>
+    			<th scope="col" width="" style="border-left:1px solid #D9D9D9;" >名称</th>
+    			<th>分类</th>
+			    <th>状态</th>
+			    <th>申请时间</th>
+			    <th>操作</th>
+  			</tr>
+			<{section name=n loop=$jobfair.list}>
+			 <tr>
+			 	<td><{$jobfair.list[n].cim_name}></td>
+			 	<td>
+			 		<{if $jobfair.list[n].rit_id eq 1}>企业招聘
+			 		<{elseif $jobfair.list[n].rit_id eq 2}>实习招聘
+			 		<{elseif $jobfair.list[n].rit_id eq 3 }>基层招聘
+			 		<{/if}>
+			 	</td>
+			 		<td><{if $jobfair.list[n].cim_veri eq 0}>    				<span style="color:#e59c00">审批中</span>
+			 		<{elseif $jobfair.list[n].cim_veri eq 2}><span style="color:red">未通过审核（原因：<{$jobfair.list[n].cim_reason}>）</span>
+			 		<{elseif $jobfair.list[n].cim_veri eq 1 }><span style="color:#7bac87">审批通过</span><{if <{$jobfair.list[n].interest}> neq 0}><br>（<span style="color:#2d83b5"><{$jobfair.list[n].interest}></span>人对此信息感兴趣）<{/if}>
+			 		<{/if}>
+			 	</td>
+			 	<td><{$jobfair.list[n].cim_date}></td>
+			 	<td>
+			 		<{if $jobfair.list[n].cim_veri eq 0}><div class="option-item"><a href="<{$web_url}>/index.php/company/editcorpmsg/id/<{$jobfair.list[n].cim_id}>">修改</a></div><div id = "delete-jobfair" class="cursor-hand  option-item" onclick="show_confirm(<{$jobfair.list[n].cim_id}>,1,<{$jobfair.page}>)">删除</div>
+			 		<{elseif $jobfair.list[n].cim_veri eq 2}><div class="option-item"><a href="<{$web_url}>/index.php/company/editcorpmsg/id/<{$jobfair.list[n].cim_id}>">修改</a></div><div id = "delete-jobfair" class="cursor-hand option-item" onclick="show_confirm(<{$jobfair.list[n].cim_id}>,1,<{$jobfair.page}>)">删除</div>
+			 		<{elseif $jobfair.list[n].cim_veri eq 1 }>已经审批不能进行操作，如需修改请联系就业中心
+			 		<{/if}>
+			 	</td>
+			 </tr>
+			 <{sectionelse}>
+  			 <tr >
+    			<th class="spec" colspan="5">暂无记录</th>
+  			 </tr>
+			 <{/section}>
+		</table>
+            <{page info=$jobfair web_url=$web_url url="/index.php/company/getmycorpmsg/type/1"}>
+		 <{/if}>
+	 </div>
+	</div>
+
+	</div>		
+<{include file='footer.htm'}>
+</body>
+
+</html>
