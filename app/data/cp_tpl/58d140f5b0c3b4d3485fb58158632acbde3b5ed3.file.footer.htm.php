@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-30 14:36:55
+<?php /* Smarty version Smarty-3.1.14, created on 2014-10-12 16:34:54
          compiled from "app/tpl/footer.htm" */ ?>
 <?php /*%%SmartyHeaderCode:1406297439542a4f872360d7-52740545%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '58d140f5b0c3b4d3485fb58158632acbde3b5ed3' => 
     array (
       0 => 'app/tpl/footer.htm',
-      1 => 1412042840,
+      1 => 1413102881,
       2 => 'file',
     ),
   ),
@@ -15,13 +15,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_542a4f87256a34_69272703',
   'variables' => 
   array (
     'web_url' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_542a4f87256a34_69272703',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_542a4f87256a34_69272703')) {function content_542a4f87256a34_69272703($_smarty_tpl) {?><?php if (!is_callable('smarty_function_visitelog')) include '/Users/haoli/Desktop/www/xiandai/been/View/plugins/function.visitelog.php';
 if (!is_callable('smarty_function_getapp')) include '/Users/haoli/Desktop/www/xiandai/been/View/plugins/function.getapp.php';
