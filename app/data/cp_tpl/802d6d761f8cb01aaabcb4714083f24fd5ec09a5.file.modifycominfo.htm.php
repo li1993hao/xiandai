@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-30 16:24:07
+<?php /* Smarty version Smarty-3.1.14, created on 2014-10-11 19:47:06
          compiled from "app/tpl/company/modifycominfo.htm" */ ?>
 <?php /*%%SmartyHeaderCode:641944566542a68a72299e3-57591031%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '802d6d761f8cb01aaabcb4714083f24fd5ec09a5' => 
     array (
       0 => 'app/tpl/company/modifycominfo.htm',
-      1 => 1412042840,
+      1 => 1413028024,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_542a68a7364759_72380999',
   'variables' => 
   array (
     'web_url' => 0,
@@ -28,8 +30,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'result' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_542a68a7364759_72380999',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_542a68a7364759_72380999')) {function content_542a68a7364759_72380999($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/xiandai/been/Smarty/plugins/modifier.truncate.php';
 ?><!DOCTYPE HTML>
@@ -92,10 +92,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 .form-register-item-input-dz{height:30px;width:87px;margin:2px 10px 3px 0px;border:solid 1px #DBDBDB; line-height:30px;float:left;}
 .form-register-item-warn{height:18px;width:120px;display:block;margin:10px 10px 0;color:red;line-height:15px;font-size:13px;float:left;text-align:left;}
 .company-jobfair-item-title{width:80px;}
+.form-register-item-imgitem-close{
+    cursor: pointer;
+}
 
 </style>
 <script type="text/javascript">
-	$(document).ready(function(){
+    $(document).ready(function(){
         $('#file_upload').uploadify({
             'formData'     : {
             },
@@ -128,41 +131,47 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 //alert(myObject.msg);
                 if(myObject.result == '0'){
                     $("#img").html(myObject.msg);
-                    $("#picstate").val("0");//0表示没有图片上传 1表示图片上传中 2表示图片上传成功
+                    $("#filestate").val("0");//0表示没有图片上传 1表示图片上传中 2表示图片上传成功
                 }else{
-                    var info = "<div data=\""+myObject.result+"\" class=\"form-register-item-imgitem\"><img alt=\"资质证明\" class=\"up_img\" src=\""+myObject.msg+"\"><div title=\"删除\" class=\"form-register-item-imgitem-close\">X</div></div>";
+                    var info = "<div data=\""+myObject.result+"\" class=\"orm-register-item-imgitemf\"><img alt=\"资质证明\" class=\"up_img\" src=\""+myObject.msg+"\"><div title=\"删除\" class=\"form-register-item-imgitem-close\">X</div></div>";
                     $(".company-register-item-imglist").append(info);
-                    $("#picstate").val("2");
+                    $("#filestate").val("2");
 
+                    var idArr = new Array();
+                    $(".orm-register-item-imgitemf").each(function(){
+                        idArr.push($(this).attr("data"));
+                    });
+
+                    $("#fileid").val(idArr.join(","));
                 }
 
             }
         });
 
-	 	var editor = $('#gsjj').xheditor({
-			upLinkUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+        var editor = $('#gsjj').xheditor({
+            upLinkUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/upload.php",
-			upLinkExt:"zip,rar,txt",
-			upImgUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+            upLinkExt:"zip,rar,txt",
+            upImgUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/upload.php",
-			upImgExt:"jpg,jpeg,gif,png",
-			upFlashUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+            upImgExt:"jpg,jpeg,gif,png",
+            upFlashUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/upload.php",
-			upFlashExt:"swf",
-			upMediaUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+            upFlashExt:"swf",
+            upMediaUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/upload.php",
-			upMediaExt:"avi",
-			remoteImgSaveUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+            upMediaExt:"avi",
+            remoteImgSaveUrl:"<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/upload.php",
-			cleanPaste:2,
-			internalScript:false,
-			inlineScript:false,
-			internalStyle:false,
-			inlineStyle:false
-		});
+            cleanPaste:2,
+            internalScript:false,
+            inlineScript:false,
+            internalStyle:false,
+            inlineStyle:false
+        });
 
 
-		});
+    });
 </script>
 <body>
 <?php echo $_smarty_tpl->getSubTemplate ('header.htm', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
@@ -473,12 +482,14 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['zzhl']['index_next'] = $_sma
 $_smarty_tpl->tpl_vars['smarty']->value['section']['zzhl']['first']      = ($_smarty_tpl->tpl_vars['smarty']->value['section']['zzhl']['iteration'] == 1);
 $_smarty_tpl->tpl_vars['smarty']->value['section']['zzhl']['last']       = ($_smarty_tpl->tpl_vars['smarty']->value['section']['zzhl']['iteration'] == $_smarty_tpl->tpl_vars['smarty']->value['section']['zzhl']['total']);
 ?>
-                   <div data="<?php echo $_smarty_tpl->tpl_vars['zzhList']->value[$_smarty_tpl->getVariable('smarty')->value['section']['zzhl']['index']]['pic_id'];?>
+                       <div data="<?php echo $_smarty_tpl->tpl_vars['zzhList']->value[$_smarty_tpl->getVariable('smarty')->value['section']['zzhl']['index']]['pic_id'];?>
 " class="form-register-item-imgitem">
-                   <img alt="资质证明" class="up_img" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+                           <img alt="资质证明" class="up_img" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/upload/images/<?php echo $_smarty_tpl->tpl_vars['zzhList']->value[$_smarty_tpl->getVariable('smarty')->value['section']['zzhl']['index']]['pic_link'];?>
 ">
-                   </div>
+                           <div title="删除" class="form-register-item-imgitem-close">X</div>
+
+                       </div>
                    <?php endfor; else: ?>
                    <?php endif; ?>
                    </div>
@@ -491,9 +502,9 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['zzhl']['last']       = ($_sm
                        <td><span class="form-register-item-title">上传资质:</span></td>
                        <td>
                            <input id="file_upload" name="file_upload" type="file" multiple />
-                           <input type="hidden" name="fileid" id="hidFileID" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['form_userinfo']->value['fileid'])===null||$tmp==='' ? '' : $tmp);?>
+                           <input type="hidden"  name="fileid" id="fileid" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['form_userinfo']->value['fileid'])===null||$tmp==='' ? '' : $tmp);?>
 " />
-                           <input type="hidden" name="filestate" id="filestate" value="0" />
+                           <input type="hidden"  name="filestate" id="filestate" value="0" />
                        </td>
                        <td><div style="clear:both;"></div></td>
                    </tr>
