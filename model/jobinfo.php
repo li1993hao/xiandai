@@ -325,7 +325,26 @@ class jobinfo extends Model{
 		$totalPage = ceil($total / $num);
 		return array('page'=>$page,'list'=>$list,'total'=>$total,'totalPage'=>$totalPage);
 	}
-	
+
+
+    /**
+     * APP赫建武
+     * 就业，创业，职业生涯规划查询
+     */
+    public function getappjobinfolist($num, $type)
+    {
+        $sql = "SELECT `jobinfo`.*,`picture`.* FROM `jobinfo` LEFT JOIN `picture` ON `jobinfo`.`pic_id` = `picture`.`pic_id`
+				WHERE `jobinfo`.`it_id` = '".$type."' ORDER BY  `jobinfo`.`ji_recom` DESC, `jobinfo`.`ji_isup` DESC , `jobinfo`.`ji_date` DESC Limit ".$num.",10";
+
+        return $this->fetchAll($sql);
+    }
+    /**
+     * 获取首页APP大图推荐的新闻
+     */
+    public function getAppRecNews(){
+        $sql = "SELECT `jobinfo`.*,`picture`.* FROM `jobinfo` LEFT JOIN `picture` ON `jobinfo`.`pic_id` = `picture`.`pic_id`  WHERE  `jobinfo`.`ji_recom` IS NOT NULL ORDER BY  `jobinfo`.`ji_recom` DESC limit 0,5";
+        return $this->fetchAll($sql);
+    }
 	
 }
 

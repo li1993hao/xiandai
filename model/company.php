@@ -128,4 +128,21 @@ class company extends Model {
 		$sql = "DELETE FROM `companypicture` WHERE `companypicture`.`com_id` = '".$comid."' AND `companypicture`.`pic_id` = '".$picid."'";
 		return $this->del($sql);
 	}
+
+
+    /**
+     * APP赫建武查询公司详细信息
+     */
+    public function getAppCompanyDetailByFuId($fuId) {
+        $sql = "SELECT `company`.*, `frontuser`.`fu_state`, `frontuser`.`fu_isable`,`frontuser`.`fu_outdate`, `industry`.`ind_type`, `corptype`.`ct_type`, `area`.`area_name`,`area`.`p_id`,`picture`.`pic_link`
+				FROM `company` "
+            . "LEFT JOIN `frontuser` ON `frontuser`.`fu_id` = `company`.`fu_id` "
+            . "LEFT JOIN `industry` ON `industry`.`ind_id` = `company`.`ind_id` "
+            . "LEFT JOIN `corptype` ON `corptype`.`ct_id` = `company`.`ct_id` "
+            . "LEFT JOIN `picture` ON `picture`.`pic_id` = `company`.`pic_id`"
+            . "LEFT JOIN `area` ON `area`.`area_id` = `company`.`area_id` "
+            . "WHERE `company`.`fu_id` = '" . $fuId . "'";
+        // echo $sql;
+        return $this->fetchRow( $sql );
+    }
 }

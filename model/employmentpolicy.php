@@ -104,4 +104,18 @@ class employmentpolicy extends Model
 		//echo $sql;
 		return $this->fetchRow($sql);
 	}
+
+    /**
+     * 赫建武APP
+     * 就业政策列表
+     */
+    public function getappepinfo($num){
+        $select = "SELECT `employmentpolicy`.* FROM `employmentpolicy` ";
+        $order = "ORDER BY  `employmentpolicy`.`ep_create` DESC ";
+        $limit = "LIMIT " . $num . ",10 ";
+        //echo $sql;
+        $sql = $select.$order.$limit;
+        return $this->fetchAll ( $sql );
+
+    }
 }

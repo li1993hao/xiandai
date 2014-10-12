@@ -77,6 +77,21 @@ class feedback extends Model
 		$list = $this->fetchRow($sql);
 		return $list;
 	}
+
+    /**
+     * APP赫建武，反馈提交
+     */
+    public function addappfeedback($platform,$title,$content,$ui,$info,$fun,$time, $versionNum){
+        if( !($this->haveInjectTag( $title )) && !($this->haveInjectTag($content))  ){
+            $sql = "INSERT INTO `feedback` (`fb_id`, `fb_title`, `fb_content`, `fb_ui`, `fb_info`, `fb_fun`, `fb_platform`, `fb_version_num`, `fb_time`)
+								VALUES (NULL, '".$this->filterSomeBadTag($title)."', '".$this->filterSomeBadTag($content)."', '".$ui."', '".$info."', '".$fun."', '".$platform."', '".$versionNum."','".$time."' )";
+
+            return $this->insert($sql) ? 1 : 0;
+
+        }else{
+            return -1;
+        }
+    }
 	
 }
 

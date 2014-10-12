@@ -749,6 +749,126 @@ class corpinternmsg extends Model {
 		// echo $sql;
 		return $this->fetchRow ( $sql );
 	}
+
+
+    /** APP获取招聘信息赫建武 */
+    // 获取前台招聘信息
+    public function getappfrontmsg($num = 0, $state = NULL,$rit_id = 1) {
+        $select = "SELECT `corpinternmsg`.* FROM `corpinternmsg` ";
+        $filter = "WHERE `corpinternmsg`.`rit_id` = '".$rit_id."' ";
+        if ($state){
+            $filter .="AND `corpinternmsg`.`cim_veri` = '".$state."' ";
+        }
+        $order = "ORDER BY `corpinternmsg`.`cim_isup` DESC, `corpinternmsg`.`cim_date` DESC ";
+        $limit = "LIMIT " . $num . ",10 ";
+        //echo $sql;
+        $sql = $select.$filter.$order.$limit;
+        return $this->fetchAll ( $sql );
+    }
+    /**  获取单条招聘信息内容*/
+    public function getappzpcontent($cim_id,$type){
+        if($type==1){
+            $sql="select cim_name title,cim_date fb_date ,cim_read read_num,cim_content content from corpinternmsg where cim_id=$cim_id";
+            $sql1="update corpinternmsg set cim_read=cim_read+1 where cim_id=$cim_id";
+            $this->update($sql1);
+        }elseif($type==0){
+            $sql="select jm_name title,jm_opentime fb_date,jm_read read_num,jm_content content from jobfairmsg where jm_id=$cim_id";
+            $sql1="update jobfairmsg set jm_read=jm_read+1 where jm_id=$cim_id";
+            $this->update($sql1);
+        }elseif($type==2){
+            $sql="select ep_title title,ep_create fb_date,ep_content content from employmentpolicy where ep_id=$cim_id";
+            $sql1="update employmentpolicy set ep_browse=ep_browse+1 where ep_id=$cim_id";
+            $this->update($sql1);
+        }elseif($type==3){
+            $sql="select ji_title title,ji_date fb_date,ji_read read_num,ji_content content from jobinfo where ji_id=$cim_id";
+            $sql1="update jobinfo set ji_read=ji_read+1 where ji_id=$cim_id";
+            $this->update($sql1);
+        }elseif($type==4){
+            $sql="select cci_title title,cci_time fb_date,cci_scan read_num,cci_content content from collegeintroduction where cci_id=$cim_id";
+            $sql1="update collegeintroduction set cci_scan=cci_scan+1 where cci_id=$cim_id";
+            $this->update($sql1);
+        }elseif($type==5){
+            $sql="select si_title title,si_time fb_date,si_scan read_num,si_content content from sourceinformation where si_id=$cim_id";
+            $sql1="update sourceinformation set si_scan=si_scan+1 where si_id=$cim_id";
+            $this->update($sql1);
+        }
+        return $this->fetchRow($sql);
+    }
+    /**
+     * 获取企业  通过审核  未通过审核 未审核的信息列表
+     */
+    public function getappmsg($fu_id,$state){
+        $sql="select cim_id,cim_name,cim_content,cim_date from corpinternmsg where cim_publish=$fu_id and cim_veri=$state";
+        $cor_msg_lists=$this->fetchAll($sql);
+        if($cor_msg_lists){
+            for($i=0;$i<count($cor_msg_lists);$i++){
+                $cor_msg_lists[$i][type]=1;
+                $cor_msg_lists[$i][content]=strip_tags($cor_msg_lists[$i][content]);
+            }
+        }
+        $sql1="select jm_id cim_id,jm_name cim_name,jm_content cim_content,jm_date cim_date from jobfairmsg where jm_publish=$fu_id and jm_veri=$state";
+        $jobfairmsg=$this->fetchAll($sql1);
+        if($jobfairmsg){
+            for($i=0;$i<count($jobfairmsg);$i++){
+                $jobfairmsg[$i][type]=0;
+                $jobfairmsg[$i][content]=strip_tags($jobfairmsg[$i][content]);
+            }
+        }
+
+        if($cor_msg_lists&&$jobfairmsg){
+            return  array_merge($cor_msg_lists,$jobfairmsg);
+        }else{
+            if($cor_msg_lists){
+                return $cor_msg_lists;
+            }elseif($jobfairmsg){
+                return $jobfairmsg;
+            }else{
+                return false;
+            }
+        }
+
+
+    }
+    /** 获取热点排行信息 0表示招聘会信息  1表示招聘 2 实习信息   最近一周的排行  按照点击量排序 */
+    public function gethotnews1($type_num,$num,$start_time,$end_time){
+        if($type_num==1){
+            $sql="SELECT cim_id info_id,cim_name info_name,cim_content info_content,cim_read info_read,cim_good info_good,cim_date info_date FROM corpinternmsg WHERE  `cim_date` >  '".$end_time."' AND  `cim_date` <  '".$start_time."' AND `rit_id`='".$type_num."' order by cim_read desc limit $num,10";
+        }elseif($type_num==2){
+            $sql="SELECT cim_id info_id,cim_name info_name,cim_content info_content,cim_read info_read,cim_good info_good,cim_date info_date FROM corpinternmsg WHERE  `cim_date` >  '".$end_time."' AND  `cim_date` <  '".$start_time."' AND `rit_id`='".$type_num."' order by cim_read desc limit $num,10";
+        }elseif($type_num==0){
+            $sql="SELECT jm_id info_id,jm_name info_name,jm_addr info_content,jm_read info_read,jm_good info_good,jm_date info_date FROM jobfairmsg WHERE  `jm_date` >  '".$end_time."' AND  `jm_date` <  '".$start_time."'  order by jm_read desc limit $num,10";
+
+        }
+        return $this->fetchAll($sql);
+    }
+
+    public function gethotnews2($type_num,$num,$start_time,$end_time){
+        if($type_num==1){
+            $sql="SELECT cim_id info_id,cim_name info_name,cim_content info_content,cim_read info_read,cim_good info_good,cim_date info_date FROM corpinternmsg WHERE  `cim_date` >  '".$end_time."' AND  `cim_date` <  '".$start_time."' AND `rit_id`='".$type_num."' order by cim_good desc limit $num,10";
+        }elseif($type_num==2){
+            $sql="SELECT cim_id info_id,cim_name info_name,cim_content info_content,cim_read info_read,cim_good info_good,cim_date info_date FROM corpinternmsg WHERE  `cim_date` >  '".$end_time."' AND  `cim_date` <  '".$start_time."' AND `rit_id`='".$type_num."' order by cim_good desc limit $num,10";
+        }elseif($type_num==0){
+            $sql="SELECT jm_id info_id,jm_name info_name,jm_addr info_content,jm_read info_read,jm_good info_good,jm_date info_date FROM jobfairmsg WHERE  `jm_date` >  '".$end_time."' AND  `jm_date` <  '".$start_time."'  order by jm_good desc limit $num,10";
+        }
+        return $this->fetchAll($sql);
+    }
+
+    /** 统计当天新信息数量  0表示招聘会信息  1表示招聘 2 实习信息  */
+    public function getcountnum($start_time,$end_time){
+        $sql="select count(*) zp_num from corpinternmsg where `cim_date` >  '".$start_time."' AND  `cim_date` <  '".$end_time."' AND `rit_id`=1";
+        $zp_num=$this->fetchRow($sql);
+        $sql2="select count(*) sx_num from corpinternmsg where `cim_date` >  '".$start_time."' AND  `cim_date` <  '".$end_time."' AND `rit_id`=2";
+        $sx_num=$this->fetchRow($sql2);
+        $sql3="select count(*) zph_num from jobfairmsg where `jm_date` >  '".$start_time."' AND  `jm_date` <  '".$end_time."' ";
+        $zph_num=$this->fetchRow($sql3);
+        $sql4="select count(*) dz_num from tj_zan where `zan_time` >  '".$start_time."' AND  `zan_time` <  '".$end_time."' ";
+        $dz_num=$this->fetchRow($sql4);
+        $sql5="select count(*) dj_num from tj_view where `view_time` >  '".$start_time."' AND  `view_time` <  '".$end_time."' ";
+        $dj_num=$this->fetchRow($sql5);
+        $sql6="select count(*) fw_num from frontuser where `fu_outdate` >  '".$start_time."' AND  `fu_outdate` <  '".$end_time."' ";
+        $fw_num=$this->fetchRow($sql6);
+        return array_merge($dj_num,$dz_num,$fw_num,$zp_num,$sx_num,$zph_num);
+    }
 }
 
 ?>

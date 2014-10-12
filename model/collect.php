@@ -190,4 +190,89 @@ class collect extends Model {
 			return $this->fetchAll ( $sqlTotal );
 		}
 	}
+
+    /** 点赞提交
+     * 赫建武APP
+     * type=0表示招聘会，为其他表示招聘信息和实习信息。
+     */
+    public function do_app_good($msg_id,$type){
+        if($type==0){
+            $sql="update jobfairmsg set jm_good=jm_good+1 where jm_id=$msg_id";
+        }else{
+            $sql="update corpinternmsg set cim_good=cim_good+1 where cim_id=$msg_id";
+
+        }
+        return $this->update($sql);
+    }
+    /** 统计信息收藏数目 */
+    public function getAppCollectNum($id, $type) {
+        $sql = "select COUNT(`collect`.`coll_id`) num
+				from `collect`
+				where `collect`.`coll_info_id`='" . $id . "'
+				  and `collect`.`coll_type`='" . $type . "'";
+        // echo $sql;
+        return $this->fetchRow ( $sql );
+    }
+    /** 验证是否已经收藏！ */
+    public function valid_if_col($fu_id,$info_id,$type){
+        $sql="select * from collect where fu_id=$fu_id and coll_info_id='".$info_id."' and coll_type='".$type."'";
+        return $this->fetchRow($sql);
+    }
+    /** 提交收藏信息 */
+    public function sub_col_info($fu_id,$info_id,$type,$if_scan,$time){
+        $sql="insert into collect (fu_id,coll_info_id,coll_type,coll_open_myinfo,coll_time) values ('".$fu_id."','".$info_id."','".$type."','".$if_scan."','".$time."')";
+        return $this->insert($sql);
+    }
+    /** 获取学生收藏信息，0-招聘会信息，1-表示企业，2-实习 */
+    public function getappcolinfo($fu_id,$coll_type,$num){
+        if($coll_type==0){
+            $sql="select collect.*,jobfairmsg.jm_name cim_name  from collect left join jobfairmsg on collect.coll_info_id=jobfairmsg.jm_id where collect.fu_id=$fu_id and collect.coll_type=$coll_type limit $num ,10";
+        }else{
+            $sql="select collect.*,corpinternmsg.cim_name from collect left join corpinternmsg on collect.coll_info_id=corpinternmsg.cim_id where collect.fu_id=$fu_id and collect.coll_type=$coll_type limit $num ,10";
+        }
+        return $this->fetchAll($sql);
+    }
+    /** 感兴趣的学生列表 */
+    public function getappfavstudentlist($userid, $num = 10) {
+        $sql = "SELECT DISTINCT `student`.* FROM `collect`
+			LEFT JOIN `corpinternmsg` ON (`corpinternmsg`.`cim_id`=`collect`.`coll_info_id` AND `collect`.`coll_type`=1)
+			LEFT JOIN `jobfairmsg` ON (`jobfairmsg`.`jm_id`=`collect`.`coll_info_id` AND `collect`.`coll_type`=0)
+			LEFT JOIN `student` ON (`student`.`fu_id`=`collect`.`fu_id` )
+			WHERE `corpinternmsg`.`cim_publish`=$userid OR `jobfairmsg`.`jm_publish`=$userid
+			ORDER BY  `collect`.`coll_time` DESC  "; // TODO
+        $sql .= "Limit " . $num . "," . 10;
+
+// 		echo $sql;
+        return $this->fetchAll ( $sql );
+    }
+    /** 删除收藏的信息 */
+    public function app_delete_collect($userId, $id, $type) {
+
+        $sql = "DELETE FROM `collect`
+				WHERE `fu_id` = '" . $userId . "'
+				  And `coll_id` = '" . $id . "'
+				  And `coll_type` = '" . $type . "'";
+        //echo  $sql;
+        return $this->del($sql);
+    }
+    /** 信息提醒  学生收藏招聘消息 */
+    public function getAppStuColl($userid,$num){
+        $sql = "SELECT DISTINCT `student`.* FROM `collect`
+			LEFT JOIN `corpinternmsg` ON (`corpinternmsg`.`cim_id`=`collect`.`coll_info_id` AND `collect`.`coll_type`=1)
+			LEFT JOIN `jobfairmsg` ON (`jobfairmsg`.`jm_id`=`collect`.`coll_info_id` AND `collect`.`coll_type`=0)
+			LEFT JOIN `student` ON (`student`.`fu_id`=`collect`.`fu_id` )
+			WHERE `corpinternmsg`.`cim_publish`=$userid OR `jobfairmsg`.`jm_publish`=$userid
+			ORDER BY  `collect`.`coll_time` DESC  "; // TODO
+        $sql .= "Limit " . $num . "," . 10;
+        return $this->fetchAll ( $sql );
+    }
+    /** 根据信息ID和类型得到企业用户的num */
+    public function getAppCompanyNum($info_id,$type){
+        if($type==0){
+            $sql="select f.fu_number from jobfairmsg jm left join frontuser f on jm.jm_publish=f.fu_id where jm_id=$info_id";
+        }else{
+            $sql="select f.fu_number from corpinternmsg cm left join frontuser f on cm.cim_publish=f.fu_id where cim_id=$info_id";
+        }
+        return $this->fetchRow($sql);
+    }
 }

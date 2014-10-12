@@ -404,7 +404,20 @@ class jobfairmsg extends Model{
 		return $this->update($sql);
 	}
 
-
+    /**
+     * APP获取招聘信息赫建武　
+     **/
+    public function getappzphinfo($num,$state){
+        $sql = "SELECT `jobfairmsg`.*,`picture`.*
+					FROM `jobfairmsg` LEFT JOIN `picture`
+					ON `jobfairmsg`.`pic_id` = `picture`.`pic_id`";
+        if($state!==null){
+            $where = " WHERE `jobfairmsg`.`jm_veri` = ".$state;
+        }
+        $order = " ORDER BY  `jobfairmsg`.`jm_isup` DESC , `jobfairmsg`.`jm_date` DESC Limit ".$num.",10";
+        $sql=$sql.$where.$order;
+        return $this->fetchAll($sql);
+    }
 
 
 }

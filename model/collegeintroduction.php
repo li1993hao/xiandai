@@ -127,4 +127,15 @@ class collegeintroduction extends Model
 		$sql = "SELECT `collegeintroduction`.*,  `user`.* FROM `collegeintroduction`  LEFT JOIN `user` ON `collegeintroduction`.`user_id` = `user`.`user_id` WHERE `collegeintroduction`.`cci_id` = '".$id."' ";
 		return $this->fetchRow($sql);
 	}
+
+
+    /**
+     * APP赫建武
+     * 获取院校信息列表
+     */
+    public function getappcolledgeinfolist($num)
+    {
+        $sql="SELECT `collegeintroduction`.*  FROM `collegeintroduction` ORDER BY `cci_top` DESC, `cci_time` DESC limit $num,10";
+        return $this->fetchAll($sql);
+    }
 }

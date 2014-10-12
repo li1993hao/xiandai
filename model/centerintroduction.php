@@ -27,4 +27,13 @@ class centerintroduction extends Model
 		$sql = "UPDATE `complexintroduction` SET `ci_content` = '".$content."',`ci_modify` = NOW() WHERE `complexintroduction`.`ci_id` = '".$id."'";
 		return $this->update($sql);
 	}
+
+
+    /** 赫建武APP
+     * 获取  招聘管理指南、中心简介管理  信息
+     */
+    public function getappcenter($ci_type){
+        $sql = "select * from `complexintroduction` where `cic_id`= $ci_type";
+        return $this->fetchRow($sql);
+    }
 }

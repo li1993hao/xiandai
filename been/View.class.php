@@ -10,6 +10,7 @@ include_once("Smarty/Smarty.class.php");
 class View{
 	protected $_engine;
 	protected $jsonArray = array("json" => array( "state" => null, "msg"=>null, "status"=>"0", "data"=>null ) );
+    protected $jsonAppArray = array();
 	public function __construct($array){		
  		$this->_engine=new Smarty();
  		$this->_engine->left_delimiter 	= 	$array['left_delimiter'];
@@ -77,8 +78,36 @@ class View{
  		$this->jsonArray["json"]["data"]=$val;
  		return $this;
  	}
- 	
 
+    /** APP端json设置 */
+    public function setAppState($val){
+        $this->jsonAppArray["state"]=$val;
+        return $this;
+    }
+    public function setAppMsg($val){
+        $this->jsonAppArray["msg"]=$val;
+        return $this;
+    }
+    public function setAppStatus($val){
+        $this->jsonAppArray["status"]=$val;
+        return $this;
+    }
+    public function setAppData($val){
+        $this->jsonAppArray["data"]=$val;
+        return $this;
+    }
+    public function apprender($name){
+        if($name=="json"){
+            //var_dump($this->jsonAppArray);
+            return $this->preRender(json_encode($this->jsonAppArray));
+        }
+        $cname=strtolower($this->getApp()->getRequest()->cName);
+        return $this->preRender( $this->_engine->fetch($cname."/".strtolower($name)) );
+    }
+
+    public function appdisplay($name){
+        echo $this->apprender($name);
+    }
  	/**
  	 * 在渲染之前对数据进行处理
  	 * 替换一些不该出现的文字

@@ -3,7 +3,7 @@ include_once "Filter.class.php";
 class clientapiFilter extends Filter{
 	
 	protected $_openRS = array(
-			'Account' => array('Login','Logout'),
+			'Account' => array('Login','Logout','Applogin','Zpinfo','Sxinfo','Zphinfo','Do_good','Zponeinfo','Epinfo','Jobinfo','Collegeinfo','Sourceinfo','Collectinfo','Show_stu_collect','Fetchqymsg','Stu_info','Company_info','Stu_like_company','Zpzm','Feedback','Favstudentlist','Del_collect','Hot_news','Count_num','Focus_img','Collect_info'),
 			'Index' => array('Test'),
 			'Employer' => array('Getcenterintroduction','Getcollegeintroductioninfolist','Collegedetail','Getenrollintroductioninfolist','Sourcedetail','Getemployguide'),
 			'Setting' => array('Check','Feedback'),

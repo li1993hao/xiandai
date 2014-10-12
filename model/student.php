@@ -301,4 +301,37 @@ class student extends Model {
 
 
 	}
+
+
+
+    /** APP赫建武
+     * 获取学生详细个人信息
+     */
+    public function getappstudetail($id) {
+        $sql = "SELECT `student`.*, `file`.*, `picture`.* FROM `student`
+				LEFT JOIN `picture` ON `picture`.`pic_id` = `student`.`pic_id`
+				LEFT JOIN `file` ON `file`.`file_id` = `student`.`file_id`
+				WHERE `student`.`fu_id` = " . $id;
+
+        if($userinfo = $this->fetchRow ( $sql )){
+            $userinfo["ind_id"] = "";
+            $userinfo["ind_name"] = "";
+            $sql = "SELECT `industry`.* from `studentindustry`
+						LEFT JOIN  `industry` ON `industry`.ind_id = `studentindustry`.ind_id
+						WHERE `studentindustry`.fu_id = ".$id;
+            //echo $sql;
+            if($result = $this->fetchAll($sql)){
+                $userinfo["ind_id"] = $result[0]["ind_id"];
+                $userinfo["ind_name"] = $result[0]["ind_type"];
+                for($i = 1 ;$i < count($result); $i++ ){
+                    $userinfo["ind_id"] .= ",".$result[$i]["ind_id"];
+                    $userinfo["ind_name"] .= ",".$result[$i]["ind_type"];
+                }
+
+            }
+
+            return $userinfo;
+        }
+        return false;
+    }
 }

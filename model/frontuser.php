@@ -624,4 +624,22 @@ class frontuser extends Model {
 		$sql = "select * from xvzhi left join file on xvzhi.file_id = file.file_id where id = 1";
 		return $this->fetchRow($sql);
 	}
+
+    /** APP赫建武
+     *$usertype   0学生 1企业
+     *  */
+    public function AppAuthUser($username,$password,$usertype){
+        if($usertype==0){
+            $sql="select f.fu_number,s.stu_name fu_name from frontuser f left join student s on f.fu_id=s.fu_id where f.fu_number=$username and f.fu_password=$password and f.fu_type=$usertype";
+        }elseif($usertype==1){
+            $sql="select f.fu_number,c.com_name fu_name from frontuser f left join company c on f.fu_id=c.fu_id where f.fu_number=$username and f.fu_password=$password and f.fu_type=$usertype";
+        }
+        return $this->fetchRow($sql);
+    }
+    /** 根据学生学号获取对应ID */
+    public function getappuserinfo($num){
+        $sql="select f.fu_id,s.stu_name fu_name from frontuser f left join student s on f.fu_id=s.fu_id   where f.fu_number=$num";
+        return $this->fetchRow($sql);
+    }
+
 }

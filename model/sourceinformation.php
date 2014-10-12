@@ -125,4 +125,16 @@ class sourceinformation extends Model
 		//echo $sql;
 		return $this->update($sql);
 	}
+
+    /**
+     *APP赫建武
+     *获取生源信息
+     */
+    public function getappsourinfolist($num){
+        $sql = "SELECT `sourceinformation`.*,`file`.* FROM `sourceinformation`
+				LEFT JOIN `file` ON `file`.`file_id` = `sourceinformation`.`file_id`
+				ORDER BY  `sourceinformation`.`si_top` DESC , `sourceinformation`.`si_time` DESC Limit ".$num.",10 ";
+        return $this->fetchAll($sql);
+    }
+
 }
