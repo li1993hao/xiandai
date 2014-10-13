@@ -130,6 +130,8 @@
 			});
 			
 			$("#form1").submit( function () {
+
+
 				$("#result").val("");
 				$('#content').val(editor.getSource());//加上这句防止提交数据为空
 				//return false;
@@ -139,8 +141,14 @@
 					$("#result").text("标题不能为空！");
 					$("#name").focus();
 					return false;
-				} 
-				//alert($("#newssort").val());
+				}
+
+                if($("#link").val() == ""){
+                    $("#result").text("链接不能为空！");
+                    $("#link").focus();
+                    return false;
+                }
+
 				if($("#addr").val() == ""){
 					$("#result").text("召开地址不能为空！");
 					$("#addr").focus();
@@ -153,6 +161,18 @@
                     return false;
                 }
 				//alert($("#newssort").val());
+
+                if($("#contact").val() == ""){
+                    $("#result").text("联系人不能为空！");
+                    $("#contact").focus();
+                    return false;
+                }
+
+                if($("#tel").val() == ""){
+                    $("#result").text("电话不能为空！");
+                    $("#tel").focus();
+                    return false;
+                }
 				
 				if($("#content").val() == ""){
 					$("#result").text("内容不能为空！");
@@ -219,12 +239,11 @@
                                     <td height="40"><div align="right">链接：</div></td>
                                     <td height="40" colspan="2">&nbsp;
                                         <input type="text" name="link" id="link" size="35" class="inputcss" />
-                                        &nbsp;&nbsp;<font color="#ff0000">必填</font></td>
                                   </tr>
                                   <tr>
                                     <td height="40"><div align="right">召开时间：</div></td>
                                     <td height="40" colspan="2">&nbsp;
-                                        <input type="text" name="opentime"  size="25" id="date" class="Wdate"  />
+                                        <input type="text" name="opentime"   size="25" id="date" class="Wdate"  />
                                      &nbsp;&nbsp;<font color="#ff0000">必填</font></td>
                                   </tr>
                                   <tr>
@@ -302,14 +321,12 @@
                                     <td height="40"><div align="right">学生助理：</div></td>
                                     <td height="40" colspan="2">&nbsp;
                                         <input type="text" name="student" id="student" size="35" class="inputcss" />
-                                     &nbsp;&nbsp;<font color="#ff0000">必填</font></td>
                                   </tr>
                                   
                                   <tr>
                                     <td height="40"><div align="right">学生助理电话：</div></td>
                                     <td height="40" colspan="2">&nbsp;
                                         <input type="text" name="assis-tel" id="assis-tel" size="35" class="inputcss" />
-                                     &nbsp;&nbsp;<font color="#ff0000">必填</font></td>
                                   </tr>
 							
                                   
