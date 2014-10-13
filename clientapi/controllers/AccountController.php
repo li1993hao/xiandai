@@ -707,7 +707,7 @@ class AccountController extends Controller {
             $this->view->setAppStatus ( "0" );
             $this->view->setAppMsg ( "统计失败！" );
         }
-        $this->view->appappdisplay ( "json" );
+        $this->view->appdisplay ( "json" );
     }
     /**学生收藏信息提醒  */
     public function Collect_info(){
