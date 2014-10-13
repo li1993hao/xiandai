@@ -134,7 +134,6 @@
 
 				$("#result").val("");
 				$('#content').val(editor.getSource());//加上这句防止提交数据为空
-				//return false;
 
 
 				if($("#name").val() == ""){
@@ -157,7 +156,7 @@
 
                 if($("#date").val() == ""){
                     $("#result").text("召开时间不能为空！");
-                    $("#date").focus();
+                    $("body").scrollTop(0);
                     return false;
                 }
 				//alert($("#newssort").val());
@@ -195,9 +194,7 @@
 		$(function() {
 			//var order = $("#order").val();
 			$("#date").focus(function(){
-
 					WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'});
-
 
 			});
 
