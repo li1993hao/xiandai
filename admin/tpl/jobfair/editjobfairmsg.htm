@@ -140,7 +140,7 @@
 				}
 				if($("#date").val() == ""){
 					$("#result").text("召开时间不能为空！");
-					$("#date").focus();
+                   $("body").scrollTop(0);
 					return false;
 				}
                 if($("#link").val() == ""){
