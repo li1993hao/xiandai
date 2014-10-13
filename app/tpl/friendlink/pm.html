@@ -37,8 +37,12 @@
             <table>
 
             <{section name=i loop=$softList}>
-            <tr><td><a target="_blank" href="<{$softList[i].sm_url}>"><{$softList[i].sm_title}>:</a></td>
-                <td> <a target="_blank" href="<{$softList[i].sm_url}>"><img style="height: 40px; width: 200px;" src="<{$web_url}>/common/upload/images/<{$softList[i].pic_link}>"/></a></td>
+
+            <tr>
+                <{section name=j loop=$softList[i]}>
+                <td><a target="_blank" href="<{$softList[i][j].sm_url}>"><{$softList[i][j].sm_title}>:</a></td>
+                <td> <a target="_blank" href="<{$softList[i][j].sm_url}>"><img style="height: 40px; width: 200px;" src="<{$web_url}>/common/upload/images/<{$softList[i][j].pic_link}>"/></a></td>
+                <{/section}>
             </tr>
             <{/section}>
             </table>

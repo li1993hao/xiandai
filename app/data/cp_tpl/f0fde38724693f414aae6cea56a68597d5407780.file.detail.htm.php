@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-30 14:41:47
+<?php /* Smarty version Smarty-3.1.14, created on 2014-10-12 16:41:18
          compiled from "app/tpl/jobinfo/detail.htm" */ ?>
 <?php /*%%SmartyHeaderCode:984475622542a50ab0625a9-66670066%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f0fde38724693f414aae6cea56a68597d5407780' => 
     array (
       0 => 'app/tpl/jobinfo/detail.htm',
-      1 => 1412042840,
+      1 => 1413103106,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_542a50ab1be7c8_24237727',
   'variables' => 
   array (
     'web_url' => 0,
@@ -27,8 +29,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'addShareUrl' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_542a50ab1be7c8_24237727',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_542a50ab1be7c8_24237727')) {function content_542a50ab1be7c8_24237727($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/xiandai/been/Smarty/plugins/modifier.truncate.php';
 if (!is_callable('smarty_modifier_date_format')) include '/Users/haoli/Desktop/www/xiandai/been/Smarty/plugins/modifier.date_format.php';
