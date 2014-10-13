@@ -19,15 +19,21 @@ class jobfairmsg extends Model{
 			if($state!==null){
 				$where = " WHERE `jobfairmsg`.`jm_veri` = ".$this->_state[$state];
 			}
-			$order = " ORDER BY  `jobfairmsg`.`jm_isup` DESC , `jobfairmsg`.`jm_date` DESC Limit ".($page-1)*$num.",".$num."";
-		return $this->fetchAll($sql);
+
+            return $this->fetchAll($sql.$where);
 	}
-	public function getJobfairMsgFromTime($start,$end){
+	public function getJobfairMsgFromTime($start,$end,$islog){
 
 
 		$sql = "SELECT `jobfairmsg`.`jm_id`, `jobfairmsg`.`jm_name`, `jobfairmsg`.`jm_addr`, UNIX_TIMESTAMP(`jobfairmsg`.`jm_opentime`) AS `jm_opentimestamp` FROM `jobfairmsg`
 				WHERE `jm_veri` = ".$this->_state["pass"]." AND `jm_opentime`>='".$start."' AND `jm_opentime`<='".$end."' ";
-		return $this->fetchAll($sql);
+        $where="";
+        if($islog == 1){
+            $where.="AND 1";
+        }else{
+            $where.="AND `jobfairmsg`.`jm_isopen` = 1";
+        }
+		return $this->fetchAll($sql.$where);
 	}
 	//获取前台右侧招聘会信息
 	public function getfrontjobfair($num = 5)

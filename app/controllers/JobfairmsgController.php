@@ -222,7 +222,15 @@ class JobfairmsgController extends Controller{
 		$start = date("Y-m-d H:i:s",@$_POST["start"]/1000);
 		$end = date("Y-m-d H:i:s",(@$_POST["end"]/1000)-1);
 		$jobfairmsg = new jobfairmsg();
-		$list = $jobfairmsg->getJobfairMsgFromTime($start,$end);
+
+        $userinfo = $this->getData("userinfo");
+        if($userinfo){
+            $list = $jobfairmsg->getJobfairMsgFromTime($start,$end,1);
+        }else{
+            $list = $jobfairmsg->getJobfairMsgFromTime($start,$end,0);
+        }
+
+
 		echo json_encode($list);
 		//print_r($list);
 	}
