@@ -38,6 +38,8 @@ class appFilter extends Filter{
 				}
 				$this->getApp()->putData('userinfo', $userdata );
 				$this->getApp()->getView()->__userinfo__=$userdata;
+                $mm=rand(100,1000);
+                $this->getApp()->getView()->mm=$mm;
 
 			}else{
 				$session->clear();

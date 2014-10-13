@@ -6,7 +6,7 @@
 <LINK href="<{$web_url}>/common/admin/css/admin.css" type="text/css" rel="stylesheet">
 <title>修改实习招聘信息</title>
 <script type="text/javascript" src="<{$web_url}>/common/libs/jquery-1.4.4.min.js"></script>
-<script type="text/javascript" src="<{$web_url}>/common/libs/upload/jquery.uploadify.min.js"></script>
+<script type="text/javascript" src="<{$web_url}>/common/libs/upload/jquery.uploadify.min.js?ver=<{$mm}>"></script>
 <link rel="stylesheet" type="text/css" href="<{$web_url}>/common/libs/upload/uploadify.css">
 <script type="text/javascript" src="<{$web_url}>/common/libs/xheditor-1.2.1/xheditor-1.2.1.min.js"></script>
 <script type="text/javascript" src="<{$web_url}>/common/libs/xheditor-1.2.1/xheditor_lang/zh-cn.js"></script>
@@ -196,7 +196,33 @@ $(function() {
 	$("#form1").submit( function () {
 		$("#result").val("");
 		$('#content').val(editor.getSource());//加上这句防止提交数据为空
-		
+
+
+        if($("#contact").val() == ""){
+            $("#result").text("联系人不能为空！");
+            $("#contact").focus();
+            return false;
+        }
+
+
+        if($("#addr").val() == ""){
+            $("#result").text("单位地址不能为空！");
+            $("#result").focus();
+            return false;
+        }
+
+        if($("#tel").val() == ""){
+            $("#result").text("电话不能为空！");
+            $("#tel").focus();
+            return false;
+        }
+
+        if($("#email").val() == ""){
+            $("#result").text("邮箱不能为空！");
+            $("#email").focus();
+            return false;
+        }
+
 		if($("#name").val() == ""){
 			$("#result").text("标题不能为空！");
 			$("#name").focus();
@@ -391,13 +417,11 @@ function removeHTMLTag(str) {
                                     <td height="40"><div align="right">传真号码：</div></td>
                                     <td height="40" colspan="2">&nbsp;
                                         <input type="text" name="fax" size="35" id="fax" value="<{$detail.cim_fax}>" class="inputcss" />
-                                        &nbsp;&nbsp;<font color="#ff0000">必填</font></td>
                                   </tr>
 								   <tr>
                                     <td height="40"><div align="right">公司网址号码：</div></td>
                                     <td height="40" colspan="2">&nbsp;
                                         <input type="text" name="web" size="35" id="web" value="<{$detail.cim_web}>" class="inputcss" />
-                                        &nbsp;&nbsp;<font color="#ff0000">必填</font></td>
                                   </tr>
                                    <tr>
                                     <td height="40"><div align="right">公开方式：</div></td>

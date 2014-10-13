@@ -6,7 +6,7 @@
 <LINK href="<{$web_url}>/common/admin/css/admin.css" type="text/css" rel="stylesheet">
 <title>添加招聘会招聘信息</title>
 <script type="text/javascript" src="<{$web_url}>/common/libs/jquery-1.4.4.min.js"></script>
-<script type="text/javascript" src="<{$web_url}>/common/libs/upload/jquery.uploadify.min.js"></script>
+<script type="text/javascript" src="<{$web_url}>/common/libs/upload/jquery.uploadify.min.js?ver=<{$mm}>"></script>
 <link rel="stylesheet" type="text/css" href="<{$web_url}>/common/libs/upload/uploadify.css">
 <script type="text/javascript" src="<{$web_url}>/common/libs/xheditor-1.2.1/xheditor-1.2.1.min.js"></script>
 <script type="text/javascript" src="<{$web_url}>/common/libs/xheditor-1.2.1/xheditor_lang/zh-cn.js"></script>
@@ -140,9 +140,14 @@
 				}
 				if($("#date").val() == ""){
 					$("#result").text("召开时间不能为空！");
-					$("#date").focus();
+                   $("body").scrollTop(0);
 					return false;
 				}
+                if($("#link").val() == ""){
+                    $("#result").text("链接不能为空！！");
+                    $("#link").focus();
+                    return false;
+                }
 			
 				//alert($("#newssort").val());
 				
@@ -224,8 +229,8 @@
                                     <td height="40"><div align="right">公开方式：</div></td>
                                     <td height="40" colspan="2">&nbsp;
                                         <select name="isopen">
-                                        <option value="1" <{if $detail.jm_isopen==1}>selected = ""selected<{/if}>   >对所有人公开</option>
-                                        <option value="0" <{if $detail.jm_isopen==0}>selected = ""selected<{/if}>  >仅对校内学生公开</option>
+                                        <option value="1" <{if $detail.jm_isopen==1}>selected<{/if}>   >对所有人公开</option>
+                                        <option value="0" <{if $detail.jm_isopen==0}>selected<{/if}>  >仅对校内学生公开</option>
                                         </select><font color="#ff0000">必填</font></td>
                                   </tr>
                                     <td height="40"><div align="right">图片：</div></td>

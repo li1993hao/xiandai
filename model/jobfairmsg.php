@@ -325,7 +325,7 @@ class jobfairmsg extends Model{
 						`file_id` = '".$fileid."',
 						`area_id` = '".$areaid."',
 						`jm_isopen` = '".$isopen."'
-					WHERE `jobfairmsg`.`jm_id` = '".$id."' AND `jobfairmsg`.`jm_publish`=".$fu_id;
+					WHERE `jobfairmsg`.`jm_id` = '".$id."'";
 
 		//echo $sql;
 		return $this->update($sql);
