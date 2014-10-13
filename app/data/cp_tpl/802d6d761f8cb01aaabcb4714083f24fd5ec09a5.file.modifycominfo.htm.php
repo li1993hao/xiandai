@@ -1,25 +1,26 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-10-11 19:47:06
+<?php /* Smarty version Smarty-3.1.14, created on 2014-10-13 14:38:39
          compiled from "app/tpl/company/modifycominfo.htm" */ ?>
-<?php /*%%SmartyHeaderCode:641944566542a68a72299e3-57591031%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1033583773543b7040221f29-02534255%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '802d6d761f8cb01aaabcb4714083f24fd5ec09a5' => 
     array (
       0 => 'app/tpl/company/modifycominfo.htm',
-      1 => 1413028024,
+      1 => 1413182233,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '641944566542a68a72299e3-57591031',
+  'nocache_hash' => '1033583773543b7040221f29-02534255',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_542a68a7364759_72380999',
+  'unifunc' => 'content_543b7040502291_09662638',
   'variables' => 
   array (
     'web_url' => 0,
+    'mm' => 0,
     'companyinfo' => 0,
     'dwxzList' => 0,
     'companydetail' => 0,
@@ -31,7 +32,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_542a68a7364759_72380999')) {function content_542a68a7364759_72380999($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/xiandai/been/Smarty/plugins/modifier.truncate.php';
+<?php if ($_valid && !is_callable('content_543b7040502291_09662638')) {function content_543b7040502291_09662638($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include '/Users/haoli/Desktop/www/xiandai/been/Smarty/plugins/modifier.truncate.php';
 ?><!DOCTYPE HTML>
 <html>
 <head>
@@ -64,7 +65,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/libs/xheditor-1.2.1/xheditor_lang/zh-cn.js"></script>
     <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/common/libs/upload/jquery.uploadify.min.js"></script>
+/common/libs/upload/jquery.uploadify.min.js?ver=<?php echo $_smarty_tpl->tpl_vars['mm']->value;?>
+"></script>
     <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/app/js/company/modifycominfo.js"></script>
     <title>修改企业信息</title>
@@ -99,6 +101,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 </style>
 <script type="text/javascript">
     $(document).ready(function(){
+        var idArr = new Array();
+        $(".form-register-item-imgitem").each(function(){
+            idArr.push($(this).attr("data"));
+        });
+
+        $("#fileid").val(idArr.join(","));
         $('#file_upload').uploadify({
             'formData'     : {
             },
@@ -138,7 +146,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                     $("#filestate").val("2");
 
                     var idArr = new Array();
-                    $(".orm-register-item-imgitemf").each(function(){
+                    $(".form-register-item-imgitem").each(function(){
                         idArr.push($(this).attr("data"));
                     });
 

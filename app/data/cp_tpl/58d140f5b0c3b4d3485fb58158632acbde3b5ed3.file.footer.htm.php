@@ -1,29 +1,29 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-10-12 16:41:01
+<?php /* Smarty version Smarty-3.1.14, created on 2014-10-13 14:08:26
          compiled from "app/tpl/footer.htm" */ ?>
-<?php /*%%SmartyHeaderCode:1406297439542a4f872360d7-52740545%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:795088852543b6c5a1f6e74-54602898%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '58d140f5b0c3b4d3485fb58158632acbde3b5ed3' => 
     array (
       0 => 'app/tpl/footer.htm',
-      1 => 1413103106,
+      1 => 1413180366,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1406297439542a4f872360d7-52740545',
+  'nocache_hash' => '795088852543b6c5a1f6e74-54602898',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_542a4f87256a34_69272703',
   'variables' => 
   array (
     'web_url' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_543b6c5a216a21_10136107',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_542a4f87256a34_69272703')) {function content_542a4f87256a34_69272703($_smarty_tpl) {?><?php if (!is_callable('smarty_function_visitelog')) include '/Users/haoli/Desktop/www/xiandai/been/View/plugins/function.visitelog.php';
+<?php if ($_valid && !is_callable('content_543b6c5a216a21_10136107')) {function content_543b6c5a216a21_10136107($_smarty_tpl) {?><?php if (!is_callable('smarty_function_visitelog')) include '/Users/haoli/Desktop/www/xiandai/been/View/plugins/function.visitelog.php';
 if (!is_callable('smarty_function_getapp')) include '/Users/haoli/Desktop/www/xiandai/been/View/plugins/function.getapp.php';
 ?>  <div class="footer" id="footer">
             <div>
@@ -46,15 +46,15 @@ if (!is_callable('smarty_function_getapp')) include '/Users/haoli/Desktop/www/xi
             	<ul>
             		<li>服务指南</li>
             		<li>用人单位服务</li>
-            		<li>邮箱:xxxx@163.com</li>
-            		<li>电话:022-12345678</li>
-            		<li>传真:022-12345678</li>
+            		<li>邮箱:yfpd@163.com</li>
+            		<li>电话:022-28193292</li>
+            		<li>传真:022-28343733</li>
             		<li>就业政策咨询</li>
-            		<li>电话:022-12345678</li>
-            		<li>传真:022-12345678</li>
+            		<li>电话:022-28193292</li>
+            		<li>传真:022-28343733</li>
             		<li>职业生涯辅导</li>
-              		<li>电话:022-12345678</li>
-            		<li>传真:022-12345678</li>
+              		<li>电话:022-28193292</li>
+            		<li>传真:022-28343733</li>
             	</ul>
             </div>
             <div>

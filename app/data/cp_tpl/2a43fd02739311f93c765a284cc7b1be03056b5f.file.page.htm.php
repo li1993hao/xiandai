@@ -1,22 +1,20 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-10-12 16:41:08
+<?php /* Smarty version Smarty-3.1.14, created on 2014-10-13 14:28:11
          compiled from "app/tpl/page.htm" */ ?>
-<?php /*%%SmartyHeaderCode:1795573800542a4f871500a3-84536647%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1034218359543b70fb236118-56513958%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '2a43fd02739311f93c765a284cc7b1be03056b5f' => 
     array (
       0 => 'app/tpl/page.htm',
-      1 => 1413103106,
+      1 => 1413173411,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1795573800542a4f871500a3-84536647',
+  'nocache_hash' => '1034218359543b70fb236118-56513958',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_542a4f8722a694_38447707',
   'variables' => 
   array (
     'web_url' => 0,
@@ -25,8 +23,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'foo' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_543b70fb2f8374_55079549',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_542a4f8722a694_38447707')) {function content_542a4f8722a694_38447707($_smarty_tpl) {?><link href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
+<?php if ($_valid && !is_callable('content_543b70fb2f8374_55079549')) {function content_543b70fb2f8374_55079549($_smarty_tpl) {?><link href="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
 /common/app/css/page.css" type="text/css" rel="stylesheet">
 <div id="Paging">
 	<div class="paging_show">
@@ -49,8 +49,7 @@ $_smarty_tpl->tpl_vars['foo']->first = $_smarty_tpl->tpl_vars['foo']->iteration 
 "><?php echo $_smarty_tpl->tpl_vars['foo']->value;?>
 </a></li>	    
      			<?php }} ?>
-     	<li class="Paging_dot"><img src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/common/app/images/point.png" alt="point" /></li>
+     	<li class="Paging_dot">...</li>
      			<?php $_smarty_tpl->tpl_vars['foo'] = new Smarty_Variable;$_smarty_tpl->tpl_vars['foo']->step = 1;$_smarty_tpl->tpl_vars['foo']->total = (int)ceil(($_smarty_tpl->tpl_vars['foo']->step > 0 ? $_smarty_tpl->tpl_vars['news']->value['page']-1+1 - ($_smarty_tpl->tpl_vars['news']->value['page']-2) : $_smarty_tpl->tpl_vars['news']->value['page']-2-($_smarty_tpl->tpl_vars['news']->value['page']-1)+1)/abs($_smarty_tpl->tpl_vars['foo']->step));
 if ($_smarty_tpl->tpl_vars['foo']->total > 0){
 for ($_smarty_tpl->tpl_vars['foo']->value = $_smarty_tpl->tpl_vars['news']->value['page']-2, $_smarty_tpl->tpl_vars['foo']->iteration = 1;$_smarty_tpl->tpl_vars['foo']->iteration <= $_smarty_tpl->tpl_vars['foo']->total;$_smarty_tpl->tpl_vars['foo']->value += $_smarty_tpl->tpl_vars['foo']->step, $_smarty_tpl->tpl_vars['foo']->iteration++){
@@ -87,8 +86,7 @@ $_smarty_tpl->tpl_vars['foo']->first = $_smarty_tpl->tpl_vars['foo']->iteration 
 "><?php echo $_smarty_tpl->tpl_vars['foo']->value;?>
 </a></li>	    
      			<?php }} ?>
-     			<li class="Paging_dot"><img src="<?php echo $_smarty_tpl->tpl_vars['web_url']->value;?>
-/common/app/images/point.png" alt="point" /></li>
+     			<li class="Paging_dot">...</li>
      			<?php $_smarty_tpl->tpl_vars['foo'] = new Smarty_Variable;$_smarty_tpl->tpl_vars['foo']->step = 1;$_smarty_tpl->tpl_vars['foo']->total = (int)ceil(($_smarty_tpl->tpl_vars['foo']->step > 0 ? $_smarty_tpl->tpl_vars['news']->value['totalPage']-1+1 - ($_smarty_tpl->tpl_vars['news']->value['totalPage']-2) : $_smarty_tpl->tpl_vars['news']->value['totalPage']-2-($_smarty_tpl->tpl_vars['news']->value['totalPage']-1)+1)/abs($_smarty_tpl->tpl_vars['foo']->step));
 if ($_smarty_tpl->tpl_vars['foo']->total > 0){
 for ($_smarty_tpl->tpl_vars['foo']->value = $_smarty_tpl->tpl_vars['news']->value['totalPage']-2, $_smarty_tpl->tpl_vars['foo']->iteration = 1;$_smarty_tpl->tpl_vars['foo']->iteration <= $_smarty_tpl->tpl_vars['foo']->total;$_smarty_tpl->tpl_vars['foo']->value += $_smarty_tpl->tpl_vars['foo']->step, $_smarty_tpl->tpl_vars['foo']->iteration++){

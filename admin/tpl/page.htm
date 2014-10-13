@@ -11,7 +11,7 @@
      			<{for $foo=2 to 3 }>
      	<li class="Paging_btn"><a href="<{$url}>/page/<{$foo}>"><{$foo}></a></li>	    
      			<{/for}>
-     	<li class="Paging_dot">...</li>
+     	<li >...</li>
      			<{for $foo=$news.page-2 to $news.page-1 }>
      	<li class="Paging_btn"><a href="<{$url}>/page/<{$foo}>"><{$foo}></a></li>	    
      			<{/for}>
@@ -29,7 +29,7 @@
     				<{for $foo=$news.page+1 to $news.page+2 }>
      	<li class="Paging_btn"><a href="<{$url}>/page/<{$foo}>"><{$foo}></a></li>	    
      			<{/for}>
-     			<li class="Paging_dot">...</li>
+     			<li >...</li>
      			<{for $foo=$news.totalPage-2 to $news.totalPage-1 }>
      	<li class="Paging_btn"><a href="<{$url}>/page/<{$foo}>"><{$foo}></a></li>	    
      			<{/for}>

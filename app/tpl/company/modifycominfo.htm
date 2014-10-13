@@ -16,7 +16,7 @@
     <script type="text/javascript" src="<{$web_url}>/common/app/js/ie-css3.js"></script>
     <script type="text/javascript" src="<{$web_url}>/common/libs/xheditor-1.2.1/xheditor-1.2.1.min.js"></script>
     <script type="text/javascript" src="<{$web_url}>/common/libs/xheditor-1.2.1/xheditor_lang/zh-cn.js"></script>
-    <script type="text/javascript" src="<{$web_url}>/common/libs/upload/jquery.uploadify.min.js"></script>
+    <script type="text/javascript" src="<{$web_url}>/common/libs/upload/jquery.uploadify.min.js?ver=<{$mm}>"></script>
     <script type="text/javascript" src="<{$web_url}>/common/app/js/company/modifycominfo.js"></script>
     <title>修改企业信息</title>
     <script type="text/javascript">
@@ -49,6 +49,12 @@
 </style>
 <script type="text/javascript">
     $(document).ready(function(){
+        var idArr = new Array();
+        $(".form-register-item-imgitem").each(function(){
+            idArr.push($(this).attr("data"));
+        });
+
+        $("#fileid").val(idArr.join(","));
         $('#file_upload').uploadify({
             'formData'     : {
             },
@@ -88,7 +94,7 @@
                     $("#filestate").val("2");
 
                     var idArr = new Array();
-                    $(".orm-register-item-imgitemf").each(function(){
+                    $(".form-register-item-imgitem").each(function(){
                         idArr.push($(this).attr("data"));
                     });
 
