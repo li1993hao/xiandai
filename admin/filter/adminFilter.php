@@ -32,6 +32,8 @@ class adminFilter extends Filter{
 					$resarr[] = strtolower($res['rs_class']);
 				}
 				//}
+                $mm=rand(100,1000);
+                $this->getApp()->getView()->mm=$mm;
 				$this->getApp()->putData('resource', $resarr );
 				
 			}else{

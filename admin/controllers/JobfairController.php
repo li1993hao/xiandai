@@ -163,6 +163,7 @@ class JobfairController extends Controller{
 		$this->view->id = $id;
 		if($_POST)
 		{
+            //var_dump($_POST);
 			if($_POST['name'] == NULL)
 			{
 				$this->view->result = $this->_lang->biaotibunengweikong;
@@ -231,7 +232,8 @@ class JobfairController extends Controller{
 			//print_r($corpinfo);
 			$this->view->detail = $corpinfo;
 		}
-	
+
+
 		echo $this->view->render("editjobfairmsg.htm");
 	}
 	
