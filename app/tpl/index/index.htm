@@ -210,12 +210,16 @@
                                         </div>
                                     </div>
                                     <!--招聘会名称-->
-                                    <div>
+                                    <div class="calendar_mask_wrap">
                                         <span>
                                             <a href="<{$web_url}>/index.php/Jobfairmsg/calendardetail/id/<{$jobFair[calendar].jm_id}>">
                                                 <{$jobFair[calendar].jm_name|truncate:15: '…':true}>
                                             </a>
                                         </span>
+                                        <div class="calendar_mask">
+                                            <span>召开地点:</span><br/>
+                                            <span><{$jobFair[calendar].jm_addr|truncate:15: '…':true}></span>
+                                        </div>
                                     </div>
                                 </div>
                                 <{/section}>
@@ -246,22 +250,22 @@
                         <div class="category_nav">
                             <ul>
                                 <li>
-                                    <a class="category_nav_active" href="javascript:void(0)">招聘信息</a>
+                                    <a class="category_nav_active" href="<{$web_url}>/index.php/Corpinternmsg/Corpindex">招聘信息</a>
                                 </li>
                                 <li>
-                                    <a class="category_nav_normal" href="javascript:void(0)">招聘会信息</a>
+                                    <a class="category_nav_normal"  href="<{$web_url}>/index.php/Jobfairmsg/index">招聘会信息</a>
                                 </li>
                                 <li>
-                                    <a class="category_nav_normal" href="javascript:void(0)">实习信息</a>
+                                    <a class="category_nav_normal" href="<{$web_url}>/index.php/Corpinternmsg/internindex">实习信息</a>
                                 </li>
                                 <li>
-                                    <a class="category_nav_normal" href="javascript:void(0)">职业生涯规划</a>
+                                    <a class="category_nav_normal" href="<{$web_url}>/index.php/jobinfo/jobPlan">职业生涯规划</a>
                                 </li>
                                 <li>
-                                    <a class="category_nav_normal" href="javascript:void(0)">就业指导</a>
+                                    <a class="category_nav_normal" href="<{$web_url}>/index.php/jobinfo/jobGuid">就业指导</a>
                                 </li>
                                 <li>
-                                    <a class="category_nav_normal" href="javascript:void(0)">创业指导</a>
+                                    <a class="category_nav_normal" href="<{$web_url}>/index.php/jobinfo/entreGuid">创业指导</a>
                                 </li>
                             </ul>
                         </div>
@@ -453,19 +457,21 @@
                         <div class="category_nav2">
                             <ul>
                                 <li>
-                                    <a class="category_nav2_active" href="javascript:void(0)">校友寻访</a>
+                                    <a class="category_nav2_active" href="<{$web_url}>/index.php/professionpersontalk/index">校友寻访</a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)">创就业明星</a>
+                                    <a href="<{$web_url}>/index.php/jobinfo/empStar">创就业明星</a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)">就业工作简报</a>
+                                    <a href="<{$web_url}>/index.php/Activityjobbulletin/index">就业工作简报</a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)">学生就业通讯</a>
+                                    <a href="<{$web_url}>/index.php/periodicals/index/">学生就业通讯</a>
                                 </li>
                             </ul>
                         </div>
+
+
                         <div class="category_list">
                             <!--校友寻访-->
                             <ul>
@@ -485,6 +491,8 @@
                                         </div>
                                     </li>
                                     <{/section}>
+                                <div><a href="<{$web_url}>/index.php/professionpersontalk/index">更多>></a>
+                                </div>
                             </ul>
                             <!--创就业明星-->
                             <ul>
@@ -511,6 +519,8 @@
                                         </div>
                                     </li>
                                     <{/section}>
+                                <div><a href="<{$web_url}>/index.php/jobinfo/empStar">更多>></a>
+                                </div>
                             </ul>
                             <!--就业工作简报-->
                             <ul>
@@ -531,6 +541,8 @@
                                         </div>
                                     </li>
                                     <{/section}>
+                                <div><a href="<{$web_url}>/index.php/Activityjobbulletin/index">更多>></a>
+                                </div>
                             </ul>
                             <!--学生就业通讯-->
                             <ul>
@@ -551,6 +563,8 @@
                                         </div>
                                     </li>
                                     <{/section}>
+                                <div><a href="<{$web_url}>/index.php/periodicals/index/">更多>></a>
+                                </div>
                             </ul>
                         </div>
                     </div>

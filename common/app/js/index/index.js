@@ -71,6 +71,17 @@ $(function(){
 		$(this).data("index", i);
 	});
 
+
+    /*日历*/
+    $(".calendar_mask_wrap").hover(function(){
+        var mask = $(this).children(".calendar_mask");
+        $(mask).slideDown("fast");
+    },function(){
+        var mask = $(this).children(".calendar_mask");
+        $(mask).slideUp("fast");
+    });
+
+
 	/***评分星星**/
 	$(".star").hover(function(){
 		var stars = $(this).parent().children(".star");
