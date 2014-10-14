@@ -212,13 +212,13 @@
                                     <!--招聘会名称-->
                                     <div class="calendar_mask_wrap">
                                         <span>
-                                            <a href="<{$web_url}>/index.php/Jobfairmsg/calendardetail/id/<{$jobFair[calendar].jm_id}>">
+                                            <a title="召开地点:<{$jobFair[calendar].jm_addr|truncate:15: '…':true}>" href="<{$web_url}>/index.php/Jobfairmsg/calendardetail/id/<{$jobFair[calendar].jm_id}>">
                                                 <{$jobFair[calendar].jm_name|truncate:15: '…':true}>
                                             </a>
                                         </span>
                                         <div class="calendar_mask">
                                             <span>召开地点:</span><br/>
-                                            <span><{$jobFair[calendar].jm_addr|truncate:15: '…':true}></span>
+                                            <span> <a style="padding-top: 0" href="<{$web_url}>/index.php/Jobfairmsg/calendardetail/id/<{$jobFair[calendar].jm_id}>"><{$jobFair[calendar].jm_addr|truncate:15: '…':true}></a></span>
                                         </div>
                                     </div>
                                 </div>

@@ -73,13 +73,13 @@ $(function(){
 
 
     /*日历*/
-    $(".calendar_mask_wrap").hover(function(){
-        var mask = $(this).children(".calendar_mask");
-        $(mask).slideDown("fast");
-    },function(){
-        var mask = $(this).children(".calendar_mask");
-        $(mask).slideUp("fast");
-    });
+//    $(".calendar_mask_wrap").hover(function(){
+//        var mask = $(this).children(".calendar_mask");
+//        $(mask).slideDown("fast");
+//    },function(){
+//        var mask = $(this).children(".calendar_mask");
+//        $(mask).slideUp("fast");
+//    });
 
 
 	/***评分星星**/
