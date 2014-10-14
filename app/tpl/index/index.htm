@@ -212,7 +212,7 @@
                                     <!--招聘会名称-->
                                     <div class="calendar_mask_wrap">
                                         <span>
-                                            <a title="召开地点:<{$jobFair[calendar].jm_addr|truncate:15: '…':true}>" href="<{$web_url}>/index.php/Jobfairmsg/calendardetail/id/<{$jobFair[calendar].jm_id}>">
+                                            <a data-toggle="tooltip" data-placement="top"  data-original-title="" title="召开地点:<{$jobFair[calendar].jm_addr|truncate:15: '…':true}>" href="<{$web_url}>/index.php/Jobfairmsg/calendardetail/id/<{$jobFair[calendar].jm_id}>">
                                                 <{$jobFair[calendar].jm_name|truncate:15: '…':true}>
                                             </a>
                                         </span>
@@ -739,7 +739,6 @@
     <script type="text/javascript" src="<{$web_url}>/common/app/js/header.js"></script>
      <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.5&ak=A03339d9c32ed4f0920276cd3d9b0474"></script>
     <script type="text/javascript" src="<{$web_url}>/common/app/js/index/index.js"></script>
-
 </body>
 
 </html>

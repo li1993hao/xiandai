@@ -59,10 +59,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="list.css" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="list.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/common/app/css/list.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="13" selection-start="680" selection-end="680" vertical-scroll-proportion="0.0" vertical-offset="555" max-vertical-offset="3165">
+            <state line="44" column="14" selection-start="681" selection-end="681" vertical-scroll-proportion="0.14957266" vertical-offset="555" max-vertical-offset="3165">
               <folding />
             </state>
           </provider>
@@ -71,7 +71,7 @@
       <file leaf-file-name="index.htm" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/tpl/index/index.htm">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="214" column="59" selection-start="10705" selection-end="10705" vertical-scroll-proportion="-6.875" vertical-offset="3045" max-vertical-offset="11250">
+            <state line="741" column="0" selection-start="42112" selection-end="42112" vertical-scroll-proportion="-22.708334" vertical-offset="10570" max-vertical-offset="11235">
               <folding>
                 <element signature="n#style#0;n#a#0;n#span#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -79,10 +79,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/common/app/js/index/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="4" selection-start="1666" selection-end="1926" vertical-scroll-proportion="0.52104497" vertical-offset="766" max-vertical-offset="4410">
+            <state line="75" column="4" selection-start="1666" selection-end="1926" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4410">
               <folding />
             </state>
           </provider>
@@ -173,9 +173,9 @@
         <option value="$PROJECT_DIR$/app/tpl/west/person.htm" />
         <option value="$PROJECT_DIR$/common/app/css/page.css" />
         <option value="$PROJECT_DIR$/app/controllers/WestController.php" />
-        <option value="$PROJECT_DIR$/common/app/css/list.css" />
-        <option value="$PROJECT_DIR$/app/tpl/index/index.htm" />
         <option value="$PROJECT_DIR$/common/app/js/index/index.js" />
+        <option value="$PROJECT_DIR$/app/tpl/index/index.htm" />
+        <option value="$PROJECT_DIR$/common/app/css/list.css" />
       </list>
     </option>
   </component>
@@ -1032,25 +1032,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/common/app/css/list.css">
+    <entry file="file://$PROJECT_DIR$/common/app/js/index/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="13" selection-start="680" selection-end="680" vertical-scroll-proportion="0.0" vertical-offset="555" max-vertical-offset="3165">
+        <state line="75" column="4" selection-start="1666" selection-end="1926" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4410">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/tpl/index/index.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="214" column="59" selection-start="10705" selection-end="10705" vertical-scroll-proportion="-6.875" vertical-offset="3045" max-vertical-offset="11250">
+        <state line="741" column="0" selection-start="42112" selection-end="42112" vertical-scroll-proportion="-22.708334" vertical-offset="10570" max-vertical-offset="11235">
           <folding>
             <element signature="n#style#0;n#a#0;n#span#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/common/app/js/index/index.js">
+    <entry file="file://$PROJECT_DIR$/common/app/css/list.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="4" selection-start="1666" selection-end="1926" vertical-scroll-proportion="0.52104497" vertical-offset="766" max-vertical-offset="4410">
+        <state line="44" column="14" selection-start="681" selection-end="681" vertical-scroll-proportion="0.14957266" vertical-offset="555" max-vertical-offset="3165">
           <folding />
         </state>
       </provider>
