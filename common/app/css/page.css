@@ -9,6 +9,7 @@
 	height:22px;
 	color:#fff;
 	font-weight:600;
+    clear: left;
 }
 #Paging .paging_show{
 	float:left;
