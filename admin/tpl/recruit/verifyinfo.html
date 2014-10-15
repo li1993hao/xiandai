@@ -34,7 +34,7 @@ $(function() {
 			type:"post",
 			success:function(msg){
 				$("#dialog").fadeIn("fast");
-				//alert(msg);
+                console.info(msg);
 				var obj = eval('('+ msg +')');
 				if(obj.json.data.info.cim_veri != 2){
 					$("#reject").html("拒绝并填写原因  &nbsp;&nbsp;");
@@ -54,7 +54,10 @@ $(function() {
 				$("#company-address").text("公司所在地："+obj.json.data.cominfo.location);
 				$("#company-contact").text("联系人："+obj.json.data.cominfo.com_contact);
 				$("#company-phone").text("联系电话："+obj.json.data.cominfo.com_phone);
-				var email = obj.json.data.cominfo.com_email.substr(0,16);
+                var email = "";
+                if(obj.json.data.cominfo.com_email){
+                    var email = obj.json.data.cominfo.com_email.substr(0,16);
+                }
 				$("#company-email").text("公司邮箱："+email);
 				$("#company-website").text("公司网址："+obj.json.data.cominfo.com_website);
 				$("#com_id").val(obj.json.data.cominfo.fu_id)
@@ -68,8 +71,10 @@ $(function() {
 					});
 					$("#office-info").html(str);
 				}
-				
-				var content = removeHTMLTag(obj.json.data.info.cim_content).substr(0,200);
+
+
+
+                 var content   = removeHTMLTag(obj.json.data.info.cim_content).substr(0,200);
 				$("#info-intro").text(content);
 				if(obj.json.data.info.file_id != null){
 					var str2 = "<a href=\"<{$web_url}>/common/upload/files/"+obj.json.data.info.file_link+"\">"+obj.json.data.info.file_name+"</a>";
