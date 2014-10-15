@@ -71,7 +71,6 @@
             <img class="zan"   src="<{$web_url}>/common/app/images/zan.png" />
             <div class="zannum" ><{$detail.ji_good}></div>
         </div>
-        <hr></hr>
         <div id="middle_leftprenext" class="m-l-footer">
             <p>
                 上一条：
@@ -83,6 +82,7 @@
                 <{/if}>
             </p>
             <p>
+                下一条
                 <{if $nextarticle != "" }>
                 <a href="<{$web_url}>/index.php/activityjobbulletin/detail/id/<{$nextarticle.a_id}>"><{$nextarticle.a_title}></a>
                 <{else}>

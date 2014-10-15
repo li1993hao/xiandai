@@ -140,15 +140,15 @@ class JobfairController extends Controller{
 	{
 		$jobfairmsg = new jobfairmsg();
 		$this->view->result = $this->_dosomething($jobfairmsg);
-		$pageSize = 9;
+		$pageSize = 10;
 		$page = $this->getRequest()->get('page') ? $this->getRequest()->get('page') : 1 ;
 		//echo $page;
 		
 		if( $key = str_replace("/", " ", trim( urldecode($this->getRequest()->get("keyword") ) ) ) ){
-			$jobList = $jobfairmsg->getJobfairPageModel($page,$pageSize,$key);
+			$jobList = $jobfairmsg->houtaigetJobfairPageModel($page,$pageSize,$key);
 			$this->view->keyword = $key;
 		}else{
-			$jobList = $jobfairmsg->getJobfairPageModel($page,$pageSize);
+			$jobList = $jobfairmsg->houtaigetJobfairPageModel($page,$pageSize);
 		}
 	
 		$this->view->joblist = $jobList;
@@ -254,7 +254,7 @@ class JobfairController extends Controller{
 			}
 		}
 		
-		$corplist = $jobfairmsg->getJobfairPageModel($page, 9, NULL, $type, NULL);
+		$corplist = $jobfairmsg->houtaigetJobfairPageModel($page, 10, NULL, $type, NULL);
 
 		$this->view->corplist = $corplist;
 		$this->view->type = $type;

@@ -54,7 +54,10 @@ class CompanyController extends Controller{
      * 修改企业信息
      */
     public function modifyinfo(){
+
         $userinfo = $this->getData("userinfo");
+
+
         //var_dump($userinfo);
         $frountid = $userinfo['id'];
         $company = new company();
@@ -98,6 +101,12 @@ class CompanyController extends Controller{
             $dataArr["intro"] = $gsjj;
             $dataArr["commail"] = $commail;
             $dataArr["comweb"] = $comweb;
+
+            if($userinfo['state'] == 2){
+                $fuser = new frontuser();
+                $fuser->resetCompanyStaus($userinfo['id']);
+            }
+
             $beforefilelist = $company->getfilelist($companyid['com_id']);
             if($beforefilelist){
                 for($i=0;$i<count($beforefilelist);$i++){
@@ -855,7 +864,7 @@ class CompanyController extends Controller{
         $this->view->mes = $mesList;
         $this->view->page = $page;
         $this->view->type = $type;
-
+       // var_dump($mesList);
         echo $this->view->render("message.htm");
     }
 
