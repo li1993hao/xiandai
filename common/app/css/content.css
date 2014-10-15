@@ -83,7 +83,6 @@
 .zandiv{
     margin-top: 20px;
     text-align: center;
-    border-bottom: 1px solid #b2b2b2;
     margin-bottom: 10px;
     padding-bottom: 10px;
 }
@@ -103,6 +102,14 @@
 
 }
 
+
+#middle_leftprenext{
+    border-top: 1px solid #b2b2b2; padding:10px 0; margin-top: 10px;
+
+}
+#middle_leftprenext a{
+    font-size: 14px;
+}
 
 
 

@@ -18,7 +18,18 @@
     <script type="text/javascript" src="<{$web_url}>/common/app/js/DOMAssistantCompressed-2.7.4.js"></script>
     <script type="text/javascript" src="<{$web_url}>/common/app/js/ie-css3.js"></script>
     <![endif]-->
-
+<style>
+    /*---------------*/
+    .event-info{
+        display:none;
+        padding:10px;
+        background:#FFFFCC;
+        border:1px #CCCCCC solid;
+        color:#990000;
+        position: absolute;
+        z-index:9999;
+    }
+    </style>
 </head>
 
 <body>
@@ -37,7 +48,8 @@
             <div class="middle_left" id="middle_left">
 
             </div>
-
+            <div class="event-info">
+            </div>
             <div class="middle_right">
                 <div class="rec">
                     <div>推荐招聘会信息</div>

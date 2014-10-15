@@ -19,15 +19,21 @@ class jobfairmsg extends Model{
 			if($state!==null){
 				$where = " WHERE `jobfairmsg`.`jm_veri` = ".$this->_state[$state];
 			}
-			$order = " ORDER BY  `jobfairmsg`.`jm_isup` DESC , `jobfairmsg`.`jm_date` DESC Limit ".($page-1)*$num.",".$num."";
-		return $this->fetchAll($sql);
+              $order = " ORDER BY  `jobfairmsg`.`jm_isup` DESC , `jobfairmsg`.`jm_date` DESC ";
+            return $this->fetchAll($sql.$where.$order);
 	}
-	public function getJobfairMsgFromTime($start,$end){
+	public function getJobfairMsgFromTime($start,$end,$islog){
 
 
 		$sql = "SELECT `jobfairmsg`.`jm_id`, `jobfairmsg`.`jm_name`, `jobfairmsg`.`jm_addr`, UNIX_TIMESTAMP(`jobfairmsg`.`jm_opentime`) AS `jm_opentimestamp` FROM `jobfairmsg`
 				WHERE `jm_veri` = ".$this->_state["pass"]." AND `jm_opentime`>='".$start."' AND `jm_opentime`<='".$end."' ";
-		return $this->fetchAll($sql);
+        $where="";
+        if($islog == 1){
+            $where.="AND 1";
+        }else{
+            $where.="AND `jobfairmsg`.`jm_isopen` = 1";
+        }
+		return $this->fetchAll($sql.$where);
 	}
 	//获取前台右侧招聘会信息
 	public function getfrontjobfair($num = 5)
@@ -110,6 +116,53 @@ class jobfairmsg extends Model{
 		}
 
 	}
+
+    public  function  houtaigetJobfairPageModel($page = 1 , $num = 0 , $key=null,$state=null, $publish=null,$islog = 1 ){
+        $select = "SELECT `jobfairmsg`.*,`picture`.*
+				FROM `jobfairmsg` LEFT JOIN `picture` ON `jobfairmsg`.`pic_id` = `picture`.`pic_id` ";
+        $filter = " 1 ";
+        if($key){
+            //echo $key;
+            $keyArr  = explode(" ",$key);
+            foreach($keyArr as $item){
+                $filter .= " AND `jobfairmsg`.`jm_name` LIKE '%".$item."%' ";
+            }
+        }
+        if($state==null || $state==1){
+            $filter.=" AND 1 ";
+        }elseif ($state == 2){
+            $filter.= " AND `jobfairmsg`.`jm_veri` = ".$this->_state["untreated"]." ";
+        }elseif($state == 3){
+            $filter.= " AND `jobfairmsg`.`jm_veri` = ".$this->_state["pass"]." ";
+        }elseif($state == 4){
+            $filter.= " AND `jobfairmsg`.`jm_veri` = ".$this->_state["refuse"]." ";
+        }elseif($state == 5){
+            $filter.= " AND ( `jobfairmsg`.`jm_veri` = ".$this->_state["refuse"]." OR `jobfairmsg`.`jm_veri` = ".$this->_state["untreated"]." ) ";
+        }
+        if($publish){
+            $filter.= "AND `jobfairmsg`.`jm_publish` = '".$publish."'";
+        }
+        if($islog == 1){
+            $filter.="AND 1";
+        }else{
+            $filter.="AND `jobfairmsg`.`jm_isopen` = 1";
+        }
+        $where = " WHERE ".$filter;
+
+        $order = " ORDER BY  `jobfairmsg`.`jm_isup` DESC , `jobfairmsg`.`jm_date` DESC ";
+
+        $limit = $num > 0 ? " Limit ".($page-1)*$num.",".$num." " : "";
+
+        $sql = $select.$where.$order.$limit;
+        //echo $sql;
+        $list = $this->fetchAll($sql);
+        $total = $this->getTotal('jobfairmsg',$filter);
+
+        $totalPage = $num > 0 ? ceil($total / $num) : 1;
+
+        return array('page'=>$page,'list'=>$list,'total'=>$total,'totalPage'=>$totalPage);
+    }
+
 
 	/**
 	 * 获取招聘会信息

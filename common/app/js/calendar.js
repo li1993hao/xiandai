@@ -58,6 +58,7 @@ function calendar_view(containerid,basePath) {
 		    },
 		    eventMouseover:function( event, jsEvent, view ){
 		    	$(".event-info").html("<a href=\""+basePath+"/index.php/jobfairmsg/calendardetail/id/"+event.id+"\">"+event.title+"</a><br/>地点："+event.addr+"<br/>开始时间："+event.start.getFullYear()+"-"+(event.start.getMonth()+1)+"-"+event.start.getDate()+"&nbsp;"+event.start.toLocaleTimeString() );
+
 		    	//alert("jsEvent"+jsEvent.pageX+"..."+jsEvent.pageY);
 		    	$(".event-info").css("left",$(jsEvent.target).offset().left+"px");
 		    	$(".event-info").css("top",$(jsEvent.target).offset().top+$(jsEvent.target).height()+"px");

@@ -10,7 +10,7 @@
 }
 .middle {
     padding-top: 20px;
-    min-height: 650px;
+    min-height: 800px;
     background-color: #ecf0f1;
 }
 .middle_left {
@@ -42,7 +42,7 @@
 
 .news_item >div:first-child {
     text-align: right;
-    height: 33px;
+    height: 42px;
 }
 .news_item >div:first-child div {
     float: left;

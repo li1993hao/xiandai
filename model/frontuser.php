@@ -555,6 +555,13 @@ class frontuser extends Model {
 		$sql = "UPDATE `frontuser` SET `fu_isable` = '" . $able . "' WHERE `frontuser`.`fu_id` = '" . $fuId . "';";
 		return $this->update ( $sql );
 	}
+
+
+    public function resetCompanyStaus($fuId) {
+        $sql = "UPDATE `frontuser` SET `fu_state` = 0 WHERE `frontuser`.`fu_id` = '" . $fuId . "';";
+        return $this->update ( $sql );
+    }
+
 	public function delCompanyByFuId($fuId) {
 		$sql = "DELETE FROM `frontuser` " . "WHERE `frontuser`.`fu_id` = '" . $fuId . "'";
 		// echo $sql;

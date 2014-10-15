@@ -111,53 +111,53 @@ class message extends Model{
 	 * @return multitype:unknown number
 	 */
 	public function getComMesByFuId($fuId, $type = 0, $page = 1, $num = 10){
-		$filter = "WHERE `message`.`fu_id_publisher` = '".$fuId."' ";
-		if ($type == 1){
-			$filter .= "AND `message`.`mes_isread` = '0' ";
-		}
-		$order = "ORDER BY `mes_time` DESC ";
-		$limit = "LIMIT ".($page-1)*$num.",".$num."";
-		//$limit = "LIMIT 5,10";
-		$sql = "(SELECT `message`.*, `corpinternmsg`.`cim_name` AS info_name FROM `message` "
-				. "LEFT JOIN `corpinternmsg` ON `message`.`info_id` = `corpinternmsg`.`cim_id` "
-				. $filter." AND `message`.`mes_type` != '0' AND `message`.`mes_type` != '4' 
+        $filter = "WHERE `message`.`fu_id_publisher` = '".$fuId."' ";
+        if ($type == 1){
+            $filter .= "AND `message`.`mes_isread` = '0' ";
+        }
+        $order = "ORDER BY `mes_time` DESC ";
+        $limit = "LIMIT ".($page-1)*$num.",".$num."";
+        //$limit = "LIMIT 5,10";
+        $sql = "(SELECT `message`.*, `corpinternmsg`.`cim_name` AS info_name FROM `message` "
+            . "LEFT JOIN `corpinternmsg` ON `message`.`info_id` = `corpinternmsg`.`cim_id` "
+            . $filter." AND `message`.`mes_type` != '0' AND `message`.`mes_type` != '4'
 						AND `message`.`mes_type` != '5' AND `corpinternmsg`.`cim_publish` = '".$fuId."') "
-				. "UNION ALL "
-				. "(SELECT `message`.*, `jobfairmsg`.`jm_name` AS info_name FROM `message` "
-				. "LEFT JOIN `jobfairmsg` ON `jobfairmsg`.`jm_id` = `message`.`info_id` "
-				. $filter."	AND `message`.`mes_type` = '4'  AND `jobfairmsg`.`jm_publish` = '".$fuId."') "
-				. "UNION ALL "
-				. "(SELECT `message`.*, `student`.`stu_name` AS info_name FROM `message` "
-				. "LEFT JOIN `student` ON `student`.`fu_id` = `message`.`fu_id` "
-				. $filter." AND `message`.`mes_type` = '5') "
-				. "UNION ALL "
-				. "(SELECT `message`.*, `company`.`com_name` AS info_name FROM `message` "
-				. "LEFT JOIN `company` ON `company`.`fu_id` = `message`.`fu_id_publisher` "
-				. $filter." AND `message`.`mes_type` = '0') "
-				.$order.$limit;
-		
-		$sqlTotal = "(SELECT `message`.*, `corpinternmsg`.`cim_name` AS info_name FROM `message` "
-				. "LEFT JOIN `corpinternmsg` ON `message`.`info_id` = `corpinternmsg`.`cim_id` "
-				. $filter." AND `message`.`mes_type` != '0' AND `message`.`mes_type` != '4' AND `message`.`mes_type` != '5' AND `corpinternmsg`.`cim_publish` = '".$fuId."') "
-				. "UNION ALL "
-				. "(SELECT `message`.*, `jobfairmsg`.`jm_name` AS info_name FROM `message` "
-				. "LEFT JOIN `jobfairmsg` ON `jobfairmsg`.`jm_id` = `message`.`info_id` "
-				. $filter."	AND `message`.`mes_type` = '4'  AND `jobfairmsg`.`jm_publish` = '".$fuId."') "
-				. "UNION ALL "
-				. "(SELECT `message`.*, `student`.`stu_name` AS info_name FROM `message` "
-				. "LEFT JOIN `student` ON `student`.`fu_id` = `message`.`fu_id` "
-				. $filter." AND `message`.`mes_type` = '5') "
-				. "UNION ALL "
-				. "(SELECT `message`.*, `company`.`com_name` AS info_name FROM `message` "
-				. "LEFT JOIN `company` ON `company`.`fu_id` = `message`.`fu_id_publisher` "
-				. $filter." AND `message`.`mes_type` = '0') "
-				.$order;
-		// $sqlTotal;
-		$list = $this->fetchAll($sql);
-		$total = count($this->fetchAll($sqlTotal));
-		$totalPage = ceil($total / $num);
-		return array('page'=>$page,'list'=>$list,'total'=>$total,'totalPage'=>$totalPage);		
-	}
+            . "UNION ALL "
+            . "(SELECT `message`.*, `jobfairmsg`.`jm_name` AS info_name FROM `message` "
+            . "LEFT JOIN `jobfairmsg` ON `jobfairmsg`.`jm_id` = `message`.`info_id` "
+            . $filter."	AND `message`.`mes_type` = '4'  AND `jobfairmsg`.`jm_publish` = '".$fuId."') "
+            . "UNION ALL "
+            . "(SELECT `message`.*, `student`.`stu_name` AS info_name FROM `message` "
+            . "LEFT JOIN `student` ON `student`.`fu_id` = `message`.`fu_id` "
+            . $filter." AND `message`.`mes_type` = '5') "
+            . "UNION ALL "
+            . "(SELECT `message`.*, `company`.`com_name` AS info_name FROM `message` "
+            . "LEFT JOIN `company` ON `company`.`fu_id` = `message`.`fu_id_publisher` "
+            . $filter." AND `message`.`mes_type` = '0') "
+            .$order.$limit;
+
+        $sqlTotal = "(SELECT `message`.*, `corpinternmsg`.`cim_name` AS info_name FROM `message` "
+            . "LEFT JOIN `corpinternmsg` ON `message`.`info_id` = `corpinternmsg`.`cim_id` "
+            . $filter." AND `message`.`mes_type` != '0' AND `message`.`mes_type` != '4' AND `message`.`mes_type` != '5' AND `corpinternmsg`.`cim_publish` = '".$fuId."') "
+            . "UNION ALL "
+            . "(SELECT `message`.*, `jobfairmsg`.`jm_name` AS info_name FROM `message` "
+            . "LEFT JOIN `jobfairmsg` ON `jobfairmsg`.`jm_id` = `message`.`info_id` "
+            . $filter."	AND `message`.`mes_type` = '4'  AND `jobfairmsg`.`jm_publish` = '".$fuId."') "
+            . "UNION ALL "
+            . "(SELECT `message`.*, `student`.`stu_name` AS info_name FROM `message` "
+            . "LEFT JOIN `student` ON `student`.`fu_id` = `message`.`fu_id` "
+            . $filter." AND `message`.`mes_type` = '5') "
+            . "UNION ALL "
+            . "(SELECT `message`.*, `company`.`com_name` AS info_name FROM `message` "
+            . "LEFT JOIN `company` ON `company`.`fu_id` = `message`.`fu_id_publisher` "
+            . $filter." AND `message`.`mes_type` = '0') "
+            .$order;
+       // echo $sqlTotal;
+        $list = $this->fetchAll($sql);
+        $total = count($this->fetchAll($sqlTotal));
+        $totalPage = ceil($total / $num);
+        return array('page'=>$page,'list'=>$list,'total'=>$total,'totalPage'=>$totalPage);
+    }
 	
 	/**
 	 * 删除消息

@@ -231,7 +231,8 @@
                             你的公司
                             <font color="#E6433C"><{$mes.list[ml].info_name|truncate:16:'...':true:true}></font>
                             <{if $mes.list[ml].mes_sort == 0}>
-                            未通过审核
+                            未通过审核<br/>
+                            原因:<{$__userinfo__.reason}><br/>
                             <{else if $mes.list[ml].mes_sort == 1}>
                             通过了审核
                             <{else}>
@@ -240,7 +241,8 @@
                             你的企业招聘信息
                             <font color="#E6433C"><{$mes.list[ml].info_name|truncate:16:'...':true:true}></font>
                             <{if $mes.list[ml].mes_sort == 0}>
-                            未通过审核
+                            未通过审核<br/>
+
                             <{else if $mes.list[ml].mes_sort == 1}>
                             通过了审核
                             <{else}>

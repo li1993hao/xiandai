@@ -345,14 +345,16 @@
     padding-left: 25px;
 }
 
-.category_info .category_list ul>div{
+.category_list ul>div{
     text-align: right;
     font-size: 16px;
     color: #b2b2b2;
     height: 30px;
 }
 
-.category_info .category_list ul>div a{
+
+
+.category_list ul>div a{
     line-height: 30px;
     margin-right: 10px;
     font-size: 16px;
@@ -743,8 +745,10 @@
     position: relative;
 }
 
-
-
+.calendar_mask{
+    position:relative;background-color:rgba(0,0,0,0.6);height: 77px;width: 115px;top:-39px;
+    display: none;
+}
 
 
 
