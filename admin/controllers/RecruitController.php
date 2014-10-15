@@ -776,6 +776,18 @@ class RecruitController extends Controller {
 		$state = $this->getRequest()->get('state');
 		$corpinternmsg = new corpinternmsg();
 		if($corpinternmsg->infopassed($infoid)){
+            /** 推送功能 */
+            $collect=new collect();
+            $msg_arr=$collect->getAppCompanyNum($infoid,1);
+            $msg_title=$msg_arr["msg_title"];
+            $company_num=$msg_arr["fu_number"];
+            //var_dump($company_arr);
+            $platform = 'android,ios'; // 接受此信息的系统
+            $msg_content = json_encode(array('n_builder_id'=>0,'n_title'=>'消息提醒', 'n_content'=>"'招聘信息'.$msg_title.'通过审核'",'n_extras'=>array('type'=>3)));
+            //var_dump($msg_content);
+            $j=new jpush();
+            $j->send(18,3,$company_num,1,$msg_content,$platform);
+            /** 推送结束 */
 			$mes = new message();
 			$mes->addMes("", $infoid, 1, $state, $id);
 			$this->view->setState(1);
@@ -792,6 +804,18 @@ class RecruitController extends Controller {
 		$state = $this->getRequest()->get('state');
 		$corpinternmsg = new corpinternmsg();
 		if($corpinternmsg->rejectreason($infoid, $reason)){
+            /** 推送功能 */
+            $collect=new collect();
+            $msg_arr=$collect->getAppCompanyNum($infoid,1);
+            $msg_title=$msg_arr["msg_title"];
+            $company_num=$msg_arr["fu_number"];
+            //var_dump($company_arr);
+            $platform = 'android,ios'; // 接受此信息的系统
+            $msg_content = json_encode(array('n_builder_id'=>0,'n_title'=>'消息提醒', 'n_content'=>"$msg_title.'（招聘信息）未通过审核'",'n_extras'=>array('type'=>3,'reason'=>$reason)));
+            //var_dump($msg_content);
+            $j=new jpush();
+            $j->send(18,3,$company_num,1,$msg_content,$platform);
+            /** 推送结束 */
 			$mes = new message();
 			$mes->addMes("", $infoid, 0, $state, $id);
 			$this->view->setState(1);

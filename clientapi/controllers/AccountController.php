@@ -395,9 +395,11 @@ class AccountController extends Controller {
                 if($if_scan==1){
                     $company_arr=$collect->getAppCompanyNum($info_id,$type);
                     $company_num=$company_arr["fu_number"];
+
                     //var_dump($company_arr);
                     $platform = 'android,ios'; // 接受此信息的系统
-                    $msg_content = json_encode(array('n_builder_id'=>0,'n_title'=>'消息提醒', 'n_content'=>"$fu_name.'收藏了您的信息，并对您公布了TA的信息'",'n_extras'=>array('ex'=>'这是附加的字段!')));
+                    $msg_content = json_encode(array('n_builder_id'=>0,'n_title'=>'消息提醒', 'n_content'=>"$fu_name.'收藏了您的信息，并对您公布了TA的信息'",'n_extras'=>array('type'=>1)));
+                    //var_dump($msg_content);
                     $j=new jpush();
                     $j->send(18,3,$company_num,1,$msg_content,$platform);
                 }

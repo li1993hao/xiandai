@@ -269,9 +269,9 @@ class collect extends Model {
     /** 根据信息ID和类型得到企业用户的num */
     public function getAppCompanyNum($info_id,$type){
         if($type==0){
-            $sql="select f.fu_number from jobfairmsg jm left join frontuser f on jm.jm_publish=f.fu_id where jm_id=$info_id";
+            $sql="select f.fu_number,jm.jm_name msg_title from jobfairmsg jm left join frontuser f on jm.jm_publish=f.fu_id where jm_id=$info_id";
         }else{
-            $sql="select f.fu_number from corpinternmsg cm left join frontuser f on cm.cim_publish=f.fu_id where cim_id=$info_id";
+            $sql="select f.fu_number,cm.cim_name msg_title from corpinternmsg cm left join frontuser f on cm.cim_publish=f.fu_id where cim_id=$info_id";
         }
         return $this->fetchRow($sql);
     }

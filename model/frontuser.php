@@ -649,5 +649,10 @@ class frontuser extends Model {
         $sql="select f.fu_id,s.stu_name fu_name,f.fu_salt from frontuser f left join student s on f.fu_id=s.fu_id   where f.fu_number=$num";
         return $this->fetchRow($sql);
     }
+    /** 根据用户ID获取用户信息 */
+    public function getappuserinfobyid($id){
+        $sql="select * from frontuser where fu_id=$id";
+        return $this->fetchRow($sql);
+    }
 
 }
