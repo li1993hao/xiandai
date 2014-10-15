@@ -24,6 +24,7 @@ class AccountController extends Controller
         $password = $this->getRequest()->get("password");
         $f_user = new frontuser();
         $result = $f_user->authUser( $username, $password );
+        //var_dump($result);
         if($result["result"] > 0){
             //验证通过
             $this->getView()->setState("1");

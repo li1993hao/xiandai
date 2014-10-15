@@ -90,17 +90,25 @@ class AccountController extends Controller {
         $password = $this->getRequest ()->get ( "password" );
         $usertype = $this->getRequest ()->get ( "usertype" ); // 0学生 1 企业
         $user=new frontuser();
-        $userinfo=$user->AppAuthUser($username,$password,$usertype);
-        if($userinfo){
-            $data["fu_number"]=$userinfo["fu_number"];
-            $data["fu_name"]=$userinfo["fu_name"];
-            $this->view->setAppStatus ( "1" );
-		    $this->view->setAppMsg ( "登录成功!" );
-			$this->view->setAppData ( $data );
+        $fu_arr=$user->getappuserinfo($username);
+        if($fu_arr){
+            $salt=$fu_arr[fu_salt];
+            $userinfo=$user->AppAuthUser($username,$password,$usertype,$salt);
+            if($userinfo){
+                $data["fu_number"]=$userinfo["fu_number"];
+                $data["fu_name"]=$userinfo["fu_name"];
+                $this->view->setAppStatus ( "1" );
+                $this->view->setAppMsg ( "登录成功!" );
+                $this->view->setAppData ( $data );
+            }else{
+                $this->view->setAppStatus ( "0" );
+                $this->view->setAppMsg ( "用户名/密码错误!" );
+            }
         }else{
             $this->view->setAppStatus ( "0" );
-            $this->view->setAppMsg ( "用户名/密码错误!" );
+            $this->view->setAppMsg ( "无此用户！" );
         }
+
         $this->view->appdisplay ( "json" );
     }
     /** 获取招聘信息 */
