@@ -7,69 +7,74 @@ class AccountController extends Controller {
         $this->view->images_app_url = $this->getRequest ()->hostUrl . "/common/upload/images/";
 	}
 	
-//	/**
-//	 * 登录
-//	 */
-//	public function Login() {
-//
-//		$username = $this->getRequest ()->get ( "userName" );
-//		$password = $this->getRequest ()->get ( "password" );
-//		$osType = $this->getRequest ()->get ( "platform" ); // 2-代表Android,3-代iOS
-//		$token = $this->getRequest ()->get ( "userToken" );
-//		$userType = $this->getRequest ()->get ( "userType" ); // 0学生 1 企业
-//		if ($username && $password && $osType && $token && ($userType == 0 || $userType == 1)) {
-//
-//			$user = new frontuser ();
-//			$userinfo = $user->authUser ( $username, $password, 0 );
-//			if ($userinfo ["result"] > 0) {
-//				$data ["userID"] = $userinfo ["result"];
-//				$data ["userType"] = $userinfo ["userinfo"] ["type"] == 1 ? "1" : "0";
-//				$url = $this->getRequest ()->hostUrl;
-//				// 判断企业还是学生
-//				if ($data ["userType"]) {
-//					// 1-企业
-//					$com = new company ();
-//					$info = $com->getCompanyDetailByFuId2 ( $data ["userID"] );
-//					$data ['nickName'] = $info ['com_name'];
-//				} else {
-//					// 0-学生
-//					$student = new student ();
-//					$info = $student->getstudetail ( $data ["userID"] );
-//					$data ['nickName'] = $info ['stu_name'];
-//				}
-//				// echo 2;
-//				$data ["pic"] = $info ["pic_link"] == null ? "" : "$url/common/upload/images/" . $info ["pic_link"];
-//				$session = $this->getApp ()->loadUtilClass ( "SessionUtil" );
-//				$session->set ( "session_userid", $userinfo ["result"] );
-//				$user->setPhoneInfo ( $userinfo ["result"], $osType, $token == "null" ? "" : $token );
-//				// echo 3;
-//				// var_dump($session->get("session_id"));
-//				// $userdata=$user->getUserFromAccount($session->get("session_id"),true);
-//				// $this->getApp()->putData('userinfo', $userdata );
-//				// $userinfo = $this->getData ( 'userinfo' );
-//				// $userId = $userinfo ['id'];
-//				// var_dump($userId);
-//
-//				//$this->view->setState ( "1" );
-//				$this->view->setAppStatus ( "1" );
-//				$this->view->setAppMsg ( "登录成功!" );
-//				$this->view->setAppData ( $data );
-//				$this->view->appdisplay ( "json" );
-//			} else {
-//				//$this->view->setState ( "0" );
-//				$this->view->setAppStatus ( "0" );
-//				$this->view->setAppData ( ( object ) null );
-//				$this->view->setAppMsg ( $userinfo ['msg'] );
-//				$this->view->appdisplay ( "json" );
-//			}
-//		} else {
-//			//$this->view->setState ( "0" );
-//			$this->view->setAppMsg ( "参数缺失!" );
-//			$this->view->setAppStatus ( "0" );
-//			$this->view->setAppData ( ( object ) null );
-//			$this->view->appdisplay ( "json" );
-//		}
-//	}
+	/**
+	 * 登录
+	 */
+	public function Login() {
+
+		$username = $this->getRequest ()->get ( "userName" );
+		$password = $this->getRequest ()->get ( "password" );
+		$osType = $this->getRequest ()->get ( "platform" ); // 2-代表Android,3-代iOS
+		$token = $this->getRequest ()->get ( "userToken" );
+		$userType = $this->getRequest ()->get ( "userType" ); // 0学生 1 企业
+		if ($username && $password && $osType  && ($userType == 0 || $userType == 1)) {
+
+			$user = new frontuser ();
+			$userinfo = $user->authUser ( $username, $password, 0 );
+			if ($userinfo ["result"] > 0) {
+
+				$data ["userID"] = $userinfo ["result"];
+				$data ["userType"] = $userinfo ["userinfo"] ["type"] == 1 ? "1" : "0";
+				$url = $this->getRequest ()->hostUrl;
+				// 判断企业还是学生
+				if ($data ["userType"]) {
+					// 1-企业
+                    //var_dump($userinfo);
+					$com = new company ();
+					$info = $com->getCompanyDetailByFuId2 ( $data ["userID"] );
+					$data ['fu_name'] = $info ['com_name'];
+                    $data["fu_number"]=$userinfo ["userinfo"]["email"];
+				} else {
+					// 0-学生
+                    //var_dump($userinfo);
+					$student = new student ();
+					$info = $student->getstudetail ( $data ["userID"] );
+					$data ['fu_name'] = $info ['stu_name'];
+                    $data["fu_number"]=$userinfo ["userinfo"]["code"];
+				}
+				// echo 2;
+				$data ["pic"] = $info ["pic_link"] == null ? "" : "$url/common/upload/images/" . $info ["pic_link"];
+				//$session = $this->getApp ()->loadUtilClass ( "SessionUtil" );
+				//$session->set ( "session_userid", $userinfo ["result"] );
+				$user->setPhoneInfo ( $userinfo ["result"], $osType, $token == "null" ? "" : $token );
+				// echo 3;
+				// var_dump($session->get("session_id"));
+				// $userdata=$user->getUserFromAccount($session->get("session_id"),true);
+				// $this->getApp()->putData('userinfo', $userdata );
+				// $userinfo = $this->getData ( 'userinfo' );
+				// $userId = $userinfo ['id'];
+				// var_dump($userId);
+
+				//$this->view->setState ( "1" );
+				$this->view->setAppStatus ( "1" );
+				$this->view->setAppMsg ( "登录成功!" );
+				$this->view->setAppData ( $data );
+				$this->view->appdisplay ( "json" );
+			} else {
+				//$this->view->setState ( "0" );
+				$this->view->setAppStatus ( "0" );
+				$this->view->setAppData ( ( object ) null );
+				$this->view->setAppMsg ( $userinfo ['msg'] );
+				$this->view->appdisplay ( "json" );
+			}
+		} else {
+			//$this->view->setState ( "0" );
+			$this->view->setAppMsg ( "参数缺失!" );
+			$this->view->setAppStatus ( "0" );
+			$this->view->setAppData ( ( object ) null );
+			$this->view->appdisplay ( "json" );
+		}
+	}
 
 //	/**
 //	 * 注销
@@ -394,14 +399,14 @@ class AccountController extends Controller {
                 /** 推送测试 */
                 if($if_scan==1){
                     $company_arr=$collect->getAppCompanyNum($info_id,$type);
-                    $company_num=$company_arr["fu_number"];
-
-                    //var_dump($company_arr);
+                    $company_id=$company_arr["fu_id"];
+                    //var_dump($fu_name);
                     $platform = 'android,ios'; // 接受此信息的系统
                     $msg_content = json_encode(array('n_builder_id'=>0,'n_title'=>'消息提醒', 'n_content'=>"$fu_name.'收藏了您的信息，并对您公布了TA的信息'",'n_extras'=>array('type'=>1)));
                     //var_dump($msg_content);
                     $j=new jpush();
-                    $j->send(18,3,$company_num,1,$msg_content,$platform);
+                    $j->send(18,3,$company_id,1,$msg_content,$platform);
+                    //$j->send(18,4,"",1,$msg_content,$platform);
                 }
                 $this->view->setAppStatus ( "1" );
                 $this->view->setAppMsg ( "收藏成功！" );
@@ -613,6 +618,7 @@ class AccountController extends Controller {
         $frontuser=new frontuser();
         $fu_arr=$frontuser->getappuserinfo($fu_num);
         $fu_id=$fu_arr[fu_id];
+        //var_dump($fu_id);
         $collect=new collect();
         $fav_students=$collect->getappfavstudentlist($fu_id,$num);
         if($fav_students){
@@ -726,6 +732,7 @@ class AccountController extends Controller {
         $frontuser=new frontuser();
         $fu_arr=$frontuser->getappuserinfo($fu_num);
         $fu_id=$fu_arr[fu_id];
+        //var_dump($fu_id);
         $collect=new collect();
         $stu_arr=$collect->getAppStuColl($fu_id,$num);
 //        /** 推送测试 */

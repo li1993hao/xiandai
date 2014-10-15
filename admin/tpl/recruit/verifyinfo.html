@@ -34,6 +34,7 @@ $(function() {
 			type:"post",
 			success:function(msg){
 				$("#dialog").fadeIn("fast");
+                console.info(msg);
 				//alert(msg);
 				var obj = eval('('+ msg +')');
 				if(obj.json.data.info.cim_veri != 2){
@@ -54,7 +55,10 @@ $(function() {
 				$("#company-address").text("公司所在地："+obj.json.data.cominfo.location);
 				$("#company-contact").text("联系人："+obj.json.data.cominfo.com_contact);
 				$("#company-phone").text("联系电话："+obj.json.data.cominfo.com_phone);
-				var email = obj.json.data.cominfo.com_email.substr(0,16);
+                var email = "";
+                if(obj.json.data.cominfo.com_email){
+                    email = obj.json.data.cominfo.com_email.substr(0,16);
+                }
 				$("#company-email").text("公司邮箱："+email);
 				$("#company-website").text("公司网址："+obj.json.data.cominfo.com_website);
 				$("#com_id").val(obj.json.data.cominfo.fu_id)

@@ -283,13 +283,11 @@ class FrontuserController extends Controller{
 				$this->view->setState("1");
 				$this->view->setMsg("success!");
                 /** 推送测试 */
-                $fu_arr=$frontuser->getappuserinfobyid($id);
-                $fu_num=$fu_arr[fu_number];
                 //var_dump($fu_num);
                 $platform = 'android,ios'; // 接受此信息的系统
                 $msg_content = json_encode(array('n_builder_id'=>0,'n_title'=>'消息提醒', 'n_content'=>"您的企业未通过审核",'n_extras'=>array('type'=>2)));
                 $j=new jpush();
-                $j->send(18,3,$fu_num,1,$msg_content,$platform);
+                $j->send(18,3,$id,1,$msg_content,$platform);
                 /** 推送结束 */
 			}else{
 				$this->view->setState("0");
@@ -306,13 +304,12 @@ class FrontuserController extends Controller{
 				$this->view->setState("1");
 				$this->view->setMsg("success!");
                 /** 推送测试 */
-                $fu_arr=$frontuser->getappuserinfobyid($id);
-                $fu_num=$fu_arr[fu_number];
-                var_dump($fu_num);
+
+                //var_dump($fu_num);
                 $platform = 'android,ios'; // 接受此信息的系统
                 $msg_content = json_encode(array('n_builder_id'=>0,'n_title'=>'消息提醒', 'n_content'=>"您的企业通过审核",'n_extras'=>array('type'=>2)));
                 $j=new jpush();
-                $j->send(18,3,$fu_num,1,$msg_content,$platform);
+                $j->send(18,3,$id,1,$msg_content,$platform);
                 /** 推送结束 */
 			}else{
 				$this->view->setState("0");
