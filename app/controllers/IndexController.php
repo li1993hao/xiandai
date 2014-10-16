@@ -45,7 +45,7 @@ class IndexController extends Controller{
 
 		//就业通讯
 		$jobpds = new periodicals();
-		$pdsInfo = $jobpds->getArticalPageModel(1,4);
+		$pdsInfo = $jobpds->getindexArticalPageModel(1,4);
 		$this->view->stuNotice = $pdsInfo["list"];
 
 		//创就业明星

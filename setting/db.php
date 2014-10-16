@@ -11,22 +11,14 @@ return array(
 			'host'		=>"localhost:3306",
 			'database'	=>"wyjob",
 			'user'		=>"root",
-<<<<<<< HEAD
 			'pw'		=>'root',
-=======
-			'pw'		=>'',
->>>>>>> FETCH_HEAD
 			'charset'	=>'utf8'
 		),
 		"slaver" => array(
 			'host'		=>"localhost:3306",
 			'database'	=>"wyjob",
 			'user'		=>"root",
-<<<<<<< HEAD
 			'pw'		=>'root',
-=======
-			'pw'		=>'',
->>>>>>> FETCH_HEAD
 			'charset'	=>'utf8'
 		)
 // 				"master" => array(

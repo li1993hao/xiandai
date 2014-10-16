@@ -126,11 +126,11 @@
                 <{if $re.article[n].a_top != ""}>
                 <div><a style="color:red;" href="<{$web_url}>/index.php/periodicals/detail/id/<{$re.article[n].a_id}>">
                     [顶]<{$re.article[n].a_title|truncate:33:'…':true}>
-                </a></div>>
+                </a></div>
                 <{else}>
                 <div><a href="<{$web_url}>/index.php/periodicals/detail/id/<{$re.article[n].a_id}>">
-                    [顶]<{$re.article[n].a_title|truncate:33:'…':true}>
-                </a></div>>
+                    <{$re.article[n].a_title|truncate:33:'…':true}>
+                </a></div>
                 <{/if}>
                 <span><{$re.article[n].a_time}></span>
             </div>

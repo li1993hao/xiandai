@@ -479,9 +479,17 @@
                                     <li>
                                         <div>
                                             <div>
+
+                                                <{if $fellowVisited[i].ppt_top ==""}>
                                                 <a href="<{$web_url}>/index.php/professionpersontalk/Talkdetail/id/<{$fellowVisited[i].ppt_id}>">
-                                                   <{$fellowVisited[i].ppt_title|truncate:35:'…':true}>
+                                                    <{$fellowVisited[i].ppt_title|truncate:35:'…':true}>
                                                 </a>
+                                                <{else}>
+                                                <a style="color: #ff0000" href="<{$web_url}>/index.php/professionpersontalk/Talkdetail/id/<{$fellowVisited[i].ppt_id}>">
+                                                   [顶]<{$fellowVisited[i].ppt_title|truncate:35:'…':true}>
+                                                </a>
+                                                <{/if}>
+
                                             </div>
                                             <span>
                                                 <{$fellowVisited[i].ppt_pubtime|date_format:"%Y-%m-%d"}>
@@ -528,9 +536,17 @@
                                     <li>
                                         <div>
                                             <div>
+
+                                                <{if $bulletin.aa_top==""}>
                                                 <a href="<{$web_url}>/index.php/Activityjobbulletin/detail/id/<{$bulletin[i].aa_id}>">
                                                     <{$bulletin[i].aa_title|truncate:35: '…':true}>
                                                 </a>
+                                                <{else}>
+                                                <a style="color: #ff0000" href="<{$web_url}>/index.php/Activityjobbulletin/detail/id/<{$bulletin[i].aa_id}>">
+                                                    [顶]<{$bulletin[i].aa_title|truncate:35: '…':true}>
+                                                </a>
+                                                <{/if}>
+
                                             </div>
                                             <span>
                                                 <{$bulletin[i].aa_time|date_format:"%Y-%m-%d"}>
@@ -550,9 +566,18 @@
                                     <li>
                                         <div>
                                             <div>
+
+                                                <{if $stuNotice[i].a_top != ""}>
+                                                <a style="color: #ff0000" href="<{$web_url}>/index.php/periodicals/detail/id/<{$stuNotice[i].a_id}>">
+                                                    [顶]<{$stuNotice[i].a_title|truncate:35: '…':true}>
+                                                </a>
+                                                <{else}>
                                                 <a href="<{$web_url}>/index.php/periodicals/detail/id/<{$stuNotice[i].a_id}>">
                                                     <{$stuNotice[i].a_title|truncate:35: '…':true}>
                                                 </a>
+                                                <{/if}>
+
+
                                             </div>
                                             <span>
                                                 <{$stuNotice[i].a_time|date_format:"%Y-%m-%d"}>
@@ -578,11 +603,11 @@
                                 <{section name=wwperson loop=$wwPersons}>
                                 <a href="<{$web_url}>/index.php/west/detail/id/<{$wwPersons[wwperson].ww_id}>"><img src="<{$web_url}>/common/upload/images/<{$wwPersons[wwperson].pic_link|default:'noimg.jpg'}>" alt="<{$wwPersons[wwperson].ww_title}>" /></a>
                                 <{/section}>
-                            </a>
                         </div>
                         <div>
-                            <div>心怀梦想 自由翱翔</div>
-                            <div>心怀梦想 自由翱翔</div>
+                            <{section name=wwperson loop=$wwPersons}>
+                            <div> <a style="color: #ffffff" href="<{$web_url}>/index.php/west/detail/id/<{$wwPersons[wwperson].ww_id}>"><{$wwPersons[wwperson].ww_title}></a></div>
+                            <{/section}>
                         </div>
                     </div>
                 </div>
