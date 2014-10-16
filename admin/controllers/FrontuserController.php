@@ -267,6 +267,7 @@ class FrontuserController extends Controller{
 	}
 
 	public function Verifyresult(){
+        set_time_limit(10);
 		$id = $this->getRequest()->get("id");
 		$type = $this->getRequest()->get("type") ? $this->getRequest()->get("type") : 0;
 		$frontuser = new frontuser();
@@ -278,13 +279,20 @@ class FrontuserController extends Controller{
 			$reason = $this->getRequest()->get("reason");
 			$isUpdate = $frontuser->verifyCompany($id, 0, 0, $reason);
 			if ($isUpdate){
-				$mes ->addMes("", "", 0, 0, $id);
+                $mes ->addMes("", "", 0, 0, $id);
 				$this->view->setState("1");
 				$this->view->setMsg("success!");
+                /** 推送测试 */
+                //var_dump($fu_num);
+                $platform = 'android,ios'; // 接受此信息的系统
+                $msg_content = json_encode(array('n_builder_id'=>0,'n_title'=>'消息提醒', 'n_content'=>"您的企业未通过审核",'n_extras'=>array('type'=>2)));
+                $j=new jpush();
+                $j->send(18,3,$id,1,$msg_content,$platform);
+                /** 推送结束 */
 			}else{
 				$this->view->setState("0");
 				$this->view->setMsg("failed!");
-			}
+            }
 		}else if ($type == 1){
 			//$this->getApp()->getPush()->pushQualificationMsg($token['fu_token'], "资质审核", "资质审核通过", "15");
 			$outdate =$this->getRequest()->get("outdate");
@@ -292,19 +300,27 @@ class FrontuserController extends Controller{
 			$isUpdate = $frontuser->verifyCompany($id, 1, $outdate);
 			$isSet = $company->setDegree($id, $degree);
 			if ($isUpdate && $isSet){
-				$mes->addMes("", "", 1, 0, $id);
+                $mes->addMes("", "", 1, 0, $id);
 				$this->view->setState("1");
 				$this->view->setMsg("success!");
+                /** 推送测试 */
+
+                //var_dump($fu_num);
+                $platform = 'android,ios'; // 接受此信息的系统
+                $msg_content = json_encode(array('n_builder_id'=>0,'n_title'=>'消息提醒', 'n_content'=>"您的企业通过审核",'n_extras'=>array('type'=>2)));
+                $j=new jpush();
+                $j->send(18,3,$id,1,$msg_content,$platform);
+                /** 推送结束 */
 			}else{
 				$this->view->setState("0");
 				$this->view->setMsg("failed!");
-			}
+            }
 		}else {
 			$this->view->setState("0");
 			$this->view->setMsg("no this type!");
-		}
-		$this->view->display("json");
-	}
+        }
+        $this->view->display("json");
+    }
 
 	public function Companydegree(){
 		$ds = new degreeresource();

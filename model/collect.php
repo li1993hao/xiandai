@@ -6,13 +6,38 @@ class collect extends Model {
 	 * @author lsq
 	 * @return 已经插入过：-1 插入失败：0 插入成功：总数
 	 */
+    /** 根据用户ID获取用户详细信息 */
+    public function getappuserinfobyuserid($id){
+        $sql="select * from student where fu_id=$id";
+        return $this->fetchRow($sql);
+    }
 	public function add($userId, $id, $flag, $type) {
 		//6/218/1/1
 		if ($this->haveCollect ( $userId, $id, $type )) {
 			
 			return - 1;
 		}
-		
+        /** @var 推送 $frontuser */
+
+        $front_arr=$this->getappuserinfobyuserid($userId);
+        $stu_name=$front_arr[stu_name];
+        if($type==0){
+            $sql="select f.fu_id from frontuser f left join jobfairmsg  jm on f.fu_id=jm.user_id where jm.jm_id=$id";
+            $com_arr=$this->fetchrow($sql);
+            $fu_id=$com_arr[fu_id];
+        }else{
+            $sql="select f.fu_id from frontuser f left join corpinternmsg  cm on f.fu_id=cm.cim_publish where cm.cim_id=$id ";
+            $com_arr=$this->fetchrow($sql);
+            $fu_id=$com_arr[fu_id];
+
+        }
+        $platform = 'android,ios'; // 接受此信息的系统
+        $msg_content = json_encode(array('n_builder_id'=>0,'n_title'=>'消息提醒', 'n_content'=>"$stu_name.'收藏了您的信息，并对您公布了TA的信息'",'n_extras'=>array('type'=>$type)));
+        //var_dump($msg_content);
+        $j=new jpush();
+        //$j->send(18,3,$company_num,1,$msg_content,$platform);
+        $j->send(18,3,$fu_id,1,$msg_content,$platform);
+		/** @var 推送结束 $sql */
 		$sql = "INSERT INTO `collect`
 				(`fu_id`, `coll_info_id`, `coll_type`, `coll_open_myinfo`, `coll_time`)
 				VALUES 
@@ -269,9 +294,9 @@ class collect extends Model {
     /** 根据信息ID和类型得到企业用户的num */
     public function getAppCompanyNum($info_id,$type){
         if($type==0){
-            $sql="select f.fu_number from jobfairmsg jm left join frontuser f on jm.jm_publish=f.fu_id where jm_id=$info_id";
+            $sql="select f.fu_id,f.fu_number,jm.jm_name msg_title from jobfairmsg jm left join frontuser f on jm.jm_publish=f.fu_id where jm_id=$info_id";
         }else{
-            $sql="select f.fu_number from corpinternmsg cm left join frontuser f on cm.cim_publish=f.fu_id where cim_id=$info_id";
+            $sql="select f.fu_id,f.fu_number,cm.cim_name msg_title from corpinternmsg cm left join frontuser f on cm.cim_publish=f.fu_id where cim_id=$info_id";
         }
         return $this->fetchRow($sql);
     }
