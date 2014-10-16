@@ -97,7 +97,7 @@
         <{else}>
         <div class="news_item">
             <div>
-                <{if $bulletin.list[n].aa_top!=""}>
+                <{if $bulletin.list[n].aa_top==""}>
                 <div><a href="<{$web_url}>/index.php/activityjobbulletin/detail/id/<{$bulletin.list[n].aa_id}>" ><{$bulletin.list[n].aa_title}></a></div>
                 <{else}>
                 <div><a href="<{$web_url}>/index.php/activityjobbulletin/detail/id/<{$bulletin.list[n].aa_id}>" style="color:red">[顶]<{$bulletin.list[n].aa_title}></a></div>

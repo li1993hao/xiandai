@@ -537,7 +537,7 @@
                                         <div>
                                             <div>
 
-                                                <{if $bulletin.aa_top==""}>
+                                                <{if $bulletin[i].aa_top==""}>
                                                 <a href="<{$web_url}>/index.php/Activityjobbulletin/detail/id/<{$bulletin[i].aa_id}>">
                                                     <{$bulletin[i].aa_title|truncate:35: '…':true}>
                                                 </a>

@@ -32,10 +32,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.htm" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.htm" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/tpl/index/index.htm">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="569" column="65" selection-start="32732" selection-end="32732" vertical-scroll-proportion="0.42003232" vertical-offset="8275" max-vertical-offset="11610">
+            <state line="539" column="64" selection-start="30888" selection-end="30888" vertical-scroll-proportion="-5.8333335" vertical-offset="7945" max-vertical-offset="11610">
               <folding>
                 <element signature="n#style#0;n#a#1;n#div#0;n#div#0;n#li#0;n#ul#0;n#div#1;n#div#4;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#a#1;n#div#0;n#div#0;n#li#0;n#ul#2;n#div#1;n#div#4;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -46,10 +46,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.htm" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.htm" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/tpl/activityjobbulletin/index.htm">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="14" selection-start="2616" selection-end="3050" vertical-scroll-proportion="-13.75" vertical-offset="855" max-vertical-offset="2295">
+            <state line="99" column="46" selection-start="3756" selection-end="3756" vertical-scroll-proportion="0.5088853" vertical-offset="1170" max-vertical-offset="2295">
               <folding />
             </state>
           </provider>
@@ -182,11 +182,11 @@
         <option value="$PROJECT_DIR$/app/tpl/account/register.htm" />
         <option value="$PROJECT_DIR$/app/tpl/periodicals/detail.htm" />
         <option value="$PROJECT_DIR$/app/tpl/professionpersontalk/index.htm" />
-        <option value="$PROJECT_DIR$/app/tpl/activityjobbulletin/index.htm" />
         <option value="$PROJECT_DIR$/app/tpl/periodicals/index.htm" />
         <option value="$PROJECT_DIR$/app/controllers/IndexController.php" />
         <option value="$PROJECT_DIR$/model/periodicals.php" />
         <option value="$PROJECT_DIR$/app/tpl/index/index.htm" />
+        <option value="$PROJECT_DIR$/app/tpl/activityjobbulletin/index.htm" />
       </list>
     </option>
   </component>
@@ -251,38 +251,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="setting" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wyjob" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xiandai" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wyjob" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xiandai" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -678,13 +646,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/tpl/activityjobbulletin/index.htm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="14" selection-start="2616" selection-end="3050" vertical-scroll-proportion="-13.75" vertical-offset="855" max-vertical-offset="2295">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/periodicals.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="252" column="180" selection-start="6989" selection-end="6989" vertical-scroll-proportion="-3.94" vertical-offset="3538" max-vertical-offset="5820">
@@ -713,13 +674,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/tpl/index/index.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="569" column="65" selection-start="32732" selection-end="32732" vertical-scroll-proportion="0.42003232" vertical-offset="8275" max-vertical-offset="11610">
+        <state line="539" column="64" selection-start="30888" selection-end="30888" vertical-scroll-proportion="-5.8333335" vertical-offset="7945" max-vertical-offset="11610">
           <folding>
             <element signature="n#style#0;n#a#1;n#div#0;n#div#0;n#li#0;n#ul#0;n#div#1;n#div#4;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#1;n#div#0;n#div#0;n#li#0;n#ul#2;n#div#1;n#div#4;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#li#0;n#ul#3;n#div#1;n#div#4;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#div#0;n#div#2;n#div#5;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/tpl/activityjobbulletin/index.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="99" column="46" selection-start="3756" selection-end="3756" vertical-scroll-proportion="0.5088853" vertical-offset="1170" max-vertical-offset="2295">
+          <folding />
         </state>
       </provider>
     </entry>
