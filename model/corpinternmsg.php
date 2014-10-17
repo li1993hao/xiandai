@@ -766,17 +766,21 @@ class corpinternmsg extends Model {
         return $this->fetchAll ( $sql );
     }
     /**  获取单条招聘信息内容*/
-    public function getappzpcontent($cim_id,$type){
+    public function getappzpcontent($userId=0,$cim_id,$type){
         if($type==1){
-            $sql="select cim_name title,cim_date fb_date ,cim_read read_num,cim_content content from corpinternmsg where cim_id=$cim_id";
+            $sql="select cim.cim_name title,cim.cim_date fb_date ,cim.cim_read read_num,cim.cim_content content,f.file_link,cim.file_name from corpinternmsg cim left join file f on cim.file_id=f.file_id where cim.cim_id=$cim_id";
             $sql1="update corpinternmsg set cim_read=cim_read+1 where cim_id=$cim_id";
             $this->update($sql1);
+            $sql1="insert into tj_view (user_id,post_id,post_type,view_time) values ('".$userId."','".$cim_id."','".$type."','".date('Y-m-d H:i:s',time())."')";
+            $this->insert($sql1);
         }elseif($type==0){
-            $sql="select jm_name title,jm_opentime fb_date,jm_read read_num,jm_content content from jobfairmsg where jm_id=$cim_id";
+            $sql="select jm.jm_name title,jm.jm_opentime fb_date,jm.jm_read read_num,jm.jm_content content,f.file_link,jm.file_name from jobfairmsg jm  left join file f on jm.file_id=f.file_id  where jm.jm_id=$cim_id";
             $sql1="update jobfairmsg set jm_read=jm_read+1 where jm_id=$cim_id";
             $this->update($sql1);
+            $sql1="insert into tj_view (user_id,post_id,post_type,view_time) values ('".$userId."','".$cim_id."','".$type."','".date('Y-m-d H:i:s',time())."')";
+            $this->insert($sql1);
         }elseif($type==2){
-            $sql="select ep_title title,ep_create fb_date,ep_content content from employmentpolicy where ep_id=$cim_id";
+            $sql="select ep.ep_title title,ep.ep_create fb_date,ep.ep_content content,f.file_link,ep.file_name from employmentpolicy ep left join file f on ep.file_id=f.file_id  where ep.ep_id=$cim_id";
             $sql1="update employmentpolicy set ep_browse=ep_browse+1 where ep_id=$cim_id";
             $this->update($sql1);
         }elseif($type==3){
@@ -788,7 +792,7 @@ class corpinternmsg extends Model {
             $sql1="update collegeintroduction set cci_scan=cci_scan+1 where cci_id=$cim_id";
             $this->update($sql1);
         }elseif($type==5){
-            $sql="select si_title title,si_time fb_date,si_scan read_num,si_content content from sourceinformation where si_id=$cim_id";
+            $sql="select si.si_title title,si.si_time fb_date,si.si_scan read_num,si.si_content content,f.file_link,si.file_name from sourceinformation si left join file f on si.fu_id=f.fu_id where si.si_id=$cim_id";
             $sql1="update sourceinformation set si_scan=si_scan+1 where si_id=$cim_id";
             $this->update($sql1);
         }
@@ -865,7 +869,7 @@ class corpinternmsg extends Model {
         $dz_num=$this->fetchRow($sql4);
         $sql5="select count(*) dj_num from tj_view where `view_time` >  '".$start_time."' AND  `view_time` <  '".$end_time."' ";
         $dj_num=$this->fetchRow($sql5);
-        $sql6="select count(*) fw_num from frontuser where `fu_outdate` >  '".$start_time."' AND  `fu_outdate` <  '".$end_time."' ";
+        $sql6="select count(*) fw_num from tj_login where `login_time` >  '".$start_time."' AND  `login_time` <  '".$end_time."' ";
         $fw_num=$this->fetchRow($sql6);
         return array_merge($dj_num,$dz_num,$fw_num,$zp_num,$sx_num,$zph_num);
     }

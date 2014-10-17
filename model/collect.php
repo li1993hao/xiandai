@@ -220,13 +220,16 @@ class collect extends Model {
      * 赫建武APP
      * type=0表示招聘会，为其他表示招聘信息和实习信息。
      */
-    public function do_app_good($msg_id,$type){
+    public function do_app_good($userId=0,$msg_id,$type){
         if($type==0){
             $sql="update jobfairmsg set jm_good=jm_good+1 where jm_id=$msg_id";
+
         }else{
             $sql="update corpinternmsg set cim_good=cim_good+1 where cim_id=$msg_id";
 
         }
+        $sql1="insert into tj_zan (user_id,post_id,post_type,zan_time) values ('".$userId."','".$msg_id."','".$type."','".date('Y-m-d H:i:s',time())."')";
+        $this->insert($sql1);
         return $this->update($sql);
     }
     /** 统计信息收藏数目 */

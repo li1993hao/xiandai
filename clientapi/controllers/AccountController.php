@@ -5,6 +5,7 @@ class AccountController extends Controller {
 		$this->view->web_host = $this->getRequest ()->hostUrl;
 		$this->view->web_app_url = $this->getRequest ()->hostUrl . "/index.php";
         $this->view->images_app_url = $this->getRequest ()->hostUrl . "/common/upload/images/";
+        $this->view->files_app_url = $this->getRequest ()->hostUrl . "/common/upload/files/";
 	}
 	
 	/**
@@ -21,9 +22,9 @@ class AccountController extends Controller {
 
 			$user = new frontuser ();
 			$userinfo = $user->authUser ( $username, $password, 0 );
-			if ($userinfo ["result"] > 0) {
 
-				$data ["userID"] = $userinfo ["result"];
+			if ($userinfo ["result"] > 0) {
+                $data ["userID"] = $userinfo ["result"];
 				$data ["userType"] = $userinfo ["userinfo"] ["type"] == 1 ? "1" : "0";
 				$url = $this->getRequest ()->hostUrl;
 				// 判断企业还是学生
@@ -227,10 +228,12 @@ class AccountController extends Controller {
     }
     /** 点赞 */
     public function  Do_good(){
+        /** userId  游客为0   */
+        $userId=$this->getRequest ()->get ( "userId" );
         $msg_id = $this->getRequest ()->get ( "msg_id" );
         $type=$this->getRequest ()->get ( "type" );
         $collect=new collect();
-        $if_sucess=$collect->do_app_good($msg_id,$type);
+        $if_sucess=$collect->do_app_good($userId,$msg_id,$type);
         if($if_sucess){
             $this->view->setAppStatus ( "1" );
             $this->view->setAppMsg ( "点赞成功" );
@@ -244,38 +247,79 @@ class AccountController extends Controller {
         * 获取单个招聘,实习,招聘会,就业政策 详细信息
     */
     public function Zponeinfo(){
+        /** userId  游客为0   */
+        $userId=$this->getRequest ()->get ( "userId" );
         $cim_id = $this->getRequest ()->get ( "cim_id" );
         $type = $this->getRequest ()->get ( "type" );
         /** 查询单条招聘信息 */
         $msg = new corpinternmsg();
-        $zp_content=$msg->getappzpcontent($cim_id,$type);
+        $zp_content=$msg->getappzpcontent($userId,$cim_id,$type);
 
-        echo "
+        $file_link=$this->view->files_app_url.$zp_content[file_link];
+        if($zp_content[file_name]){
+            echo "
 
         <html>
         <head>
-            <style type='text/css' >
-              *{
-                margin: 0;
-                padding: 0;
-                font-family: 'Hiragino Sans GB', 'Helvetica Neue', Helvetica, Arial, 'Microsoft Yahei', sans-serif;
-                }
+        <style type='text/css' >
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Hiragino Sans GB', 'Helvetica Neue', Helvetica, Arial, 'Microsoft Yahei', sans-serif;
+        }
 
-            </style>
+        </style>
         </head>
         <body style='background-image: url(http://localhost/xiandai/common/upload/images/bg.jpg);width: 98%;height: 100%;'>
         <div style='width: 98%;height: 100%;'>
             <div style='text-align: center;padding-top: 15px;font-size: 24px'>$zp_content[title]  </div>
             <div style='text-align: center;margin-top: 10px;font-size: 8px'><span style='text-decoration:none'>发布时间：$zp_content[fb_date]</span><span style='margin-left: 40px;text-decoration:none'>浏览量：$zp_content[read_num]</span></div>
             <div style='width: 100%' >
-            <div style='line-height:31px;margin: 0 auto;width:98%;margin-left: 15px;font-size: 16px;margin-top: 18px'>
-                $zp_content[content]
+                <div style='line-height:31px;margin: 0 auto;width:98%;margin-left: 15px;font-size: 16px;margin-top: 18px'>
+                    $zp_content[content]
+                </div>
+                <div style='margin-top: 150px;margin-left: 15px'>
+                    <span>相关附件：</span><span style='margin-left: 10px;'><a href='$file_link' style='color: red;text-decoration: none'>$zp_content[file_name]</a></span>
+                </div>
             </div>
 
         </div>
         </body>
         </html>
         ";
+        }else{
+            echo "
+
+        <html>
+        <head>
+        <style type='text/css' >
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Hiragino Sans GB', 'Helvetica Neue', Helvetica, Arial, 'Microsoft Yahei', sans-serif;
+        }
+
+        </style>
+        </head>
+        <body style='background-image: url(http://localhost/xiandai/common/upload/images/bg.jpg);width: 98%;height: 100%;'>
+        <div style='width: 98%;height: 100%;'>
+            <div style='text-align: center;padding-top: 15px;font-size: 24px'>$zp_content[title]  </div>
+            <div style='text-align: center;margin-top: 10px;font-size: 8px'><span style='text-decoration:none'>发布时间：$zp_content[fb_date]</span><span style='margin-left: 40px;text-decoration:none'>浏览量：$zp_content[read_num]</span></div>
+            <div style='width: 100%' >
+                <div style='line-height:31px;margin: 0 auto;width:98%;margin-left: 15px;font-size: 16px;margin-top: 18px'>
+                    $zp_content[content]
+                </div>
+                <div style='margin-top: 150px;margin-left: 15px'>
+                    <span>相关附件：</span><span style='margin-left: 10px;'>暂无附件！</span>
+                </div>
+            </div>
+
+        </div>
+        </body>
+        </html>
+        ";
+        }
+
     }
     /** 就业政策列表 employmentpolicy*/
     public function Epinfo(){
@@ -529,7 +573,7 @@ class AccountController extends Controller {
             if($company_info[pic_link]!=null){
                 $data[pic_link]=$this->view->images_app_url.$company_info[pic_link];
             }else{
-                $data[pic_link]=$company_info[pic_link];
+                $data[pic_link]="";
             }
 
             $data[com_name]=$company_info[com_name];
@@ -542,7 +586,12 @@ class AccountController extends Controller {
             $data[com_phone]=$company_info[com_phone];
             $data[area_name]=$company_info[area_name];
             $data[com_address]=$company_info[com_address];
-            /**资质证明**/
+            /**资质证明获得**/
+            $zz_arr=$frontuser->getappzzzm($fu_id);
+            for($i=0;$i<count($zz_arr);$i++){
+                $data["zz_pic"][]=$this->view->images_app_url.$zz_arr[$i]["pic_link"];
+            }
+            /** 结束 */
             $this->view->setAppStatus ( "1" );
             $this->view->setAppMsg ( "查询公司信息成功!" );
             $this->view->setAppData ( $data );
@@ -752,6 +801,76 @@ class AccountController extends Controller {
         }else{
             $this->view->setAppStatus ( "1" );
             $this->view->setAppMsg ( "暂无信息！" );
+        }
+        $this->view->appdisplay ( "json" );
+    }
+    /** 企业资质信息显示 */
+    public function Qyzz_msg(){
+        $userId=$this->getRequest()->get("userId");
+        $num=$this->getRequest()->get("num");
+        $message=new message();
+        $msg_arr=$message->getAppCompanyMessageList($userId,$num);
+        //var_dump($msg_arr);
+        if($msg_arr){
+            for($i=0;$i<count($msg_arr);$i++){
+                if($msg_arr[$i]["flag"]==0){
+                    $data[$i]["message"]="您的企业未通过审核";
+                }else{
+                    $data[$i]["message"]="您的企业通过审核";
+                }
+                $data[$i]["pub_time"]=$msg_arr[$i]["msgTime"];
+            }
+            $this->view->setAppStatus ( "1" );
+            $this->view->setAppMsg ( "查询信息成功!" );
+            $this->view->setAppData ( $data );
+        }else{
+            $this->view->setAppStatus ( "0" );
+            $this->view->setAppMsg ( "暂无信息！" );
+        }
+        $this->view->appdisplay ( "json" );
+    }
+    /** 招聘信息和招聘会信息审核 */
+    public function Zp_msg(){
+        $userId=$this->getRequest()->get("userId");
+        $num=$this->getRequest()->get("num");
+        $message=new message();
+        $msg_arr=$message->getAppRecruitMessageList($userId, $num);
+        if($msg_arr){
+            for($i=0;$i<count($msg_arr);$i++){
+                if($msg_arr[$i]["flag"]==0){
+                    if($msg_arr[$i]["msgType"]==1){
+                        $msg_arr[$i]["message"]=$msg_arr[$i]["title"]."(招聘信息）未通过审核";
+                    }elseif($msg_arr[$i]["msgType"]==4){
+                        $msg_arr[$i]["message"]=$msg_arr[$i]["title"]."(招聘会信息）未通过审核";
+                    }
+                }elseif($msg_arr[$i]["flag"]==1){
+                    if($msg_arr[$i]["msgType"]==1){
+                        $msg_arr[$i]["message"]="招聘信息".$msg_arr[$i]["title"]."通过审核";
+                        $msg_arr[$i]["reason"]="";
+                    }elseif($msg_arr[$i]["msgType"]==4){
+                        $msg_arr[$i]["message"]="招聘会信息".$msg_arr[$i]["title"]."通过审核";
+                        $msg_arr[$i]["reason"]="";
+                    }
+                }
+            }
+            $this->view->setAppStatus ( "1" );
+            $this->view->setAppMsg ( "查询信息成功!" );
+            $this->view->setAppData ($msg_arr );
+        }else{
+            $this->view->setAppStatus ( "0" );
+            $this->view->setAppMsg ( "暂无信息！" );
+        }
+        $this->view->appdisplay ( "json" );
+    }
+    /** 统计登陆数 */
+    public function Login_num(){
+        $frontuser=new frontuser();
+        if($frontuser->addloginnum()){
+            $this->view->setAppStatus ( "1" );
+            $this->view->setAppMsg ( "访问数添加成功" );
+        }else{
+            $this->view->setAppStatus ( "0" );
+            $this->view->setAppMsg ( "访问数添加失败" );
         }
         $this->view->appdisplay ( "json" );
     }

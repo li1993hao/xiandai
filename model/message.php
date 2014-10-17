@@ -186,6 +186,62 @@ class message extends Model{
 		//echo $sql;
 		return $this->insert($sql);
 	}
+
+
+
+    /**
+     * APP赫建武
+     *
+     */
+
+
+	public function getAppCompanyMessageList($userId, $num) {
+        $sql = "SELECT message.mes_sort AS flag,
+				message.mes_time AS msgTime
+				FROM message
+				WHERE message.fu_id = $userId AND message.mes_type = 0
+				ORDER BY mes_id DESC , mes_time DESC
+				Limit $num,10";
+
+        return $this->fetchAll($sql);
+    }
+
+    /**
+     * 获取企业消息——审核消息(包括招聘和招聘会)
+     */
+    public function getAppRecruitMessageList($userId, $num) {
+        $sql = "(SELECT
+					message.mes_sort AS flag,
+					corpinternmsg.cim_id AS msgId,
+					message.mes_time AS msgTime,
+					corpinternmsg.cim_name AS name,
+					message.mes_type AS msgType,
+					0 AS location,
+					0 AS openTime,
+					corpinternmsg.cim_name AS title,
+					corpinternmsg.cim_reason AS reason
+				FROM corpinternmsg INNER JOIN message ON corpinternmsg.cim_id = message.info_id
+				WHERE message.fu_id_publisher = $userId AND message.mes_type = 1 AND corpinternmsg.rit_id = 1
+				ORDER BY msgId DESC , msgTime DESC
+				) union all (
+				SELECT
+					message.mes_sort AS flag,
+					jobfairmsg.jm_id AS msgId,
+					message.mes_time AS msgTime,
+					jobfairmsg.jm_name AS name,
+					message.mes_type AS msgType,
+                 jobfairmsg.jm_addr AS location,
+					jobfairmsg.jm_opentime AS openTime,
+					jobfairmsg.jm_name AS title,
+					jobfairmsg.jm_reason AS reason
+				FROM jobfairmsg INNER JOIN message ON jobfairmsg.jm_id = message.info_id
+				WHERE message.fu_id_publisher = $userId AND message.mes_type = 4
+				)
+				ORDER BY msgtime DESC , msgId DESC
+				Limit $num,10";
+        //echo $sql;
+        return $this->fetchAll($sql);
+    }
 }
 
 ?>

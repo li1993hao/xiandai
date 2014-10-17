@@ -260,6 +260,7 @@ class FrontuserController extends Controller{
 	public function Verifycompany(){
 		$frontuser = new frontuser();
 		$companyInfo = $frontuser->getUserFromAccount($this->getRequest()->get("id"),$this->getRequest()->get("id"));
+        //var_dump($companyInfo);
 		$this->view->detail = $companyInfo;
 		//echo "<pre>";
 		//print_r($companyInfo);
