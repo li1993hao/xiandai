@@ -11,14 +11,14 @@ return array(
 			'host'		=>"localhost:3306",
 			'database'	=>"wyjob",
 			'user'		=>"root",
-			'pw'		=>'',
+			'pw'		=>'root',
 			'charset'	=>'utf8'
 		),
 		"slaver" => array(
 			'host'		=>"localhost:3306",
 			'database'	=>"wyjob",
 			'user'		=>"root",
-			'pw'		=>'',
+			'pw'		=>'root',
 			'charset'	=>'utf8'
 		)
 // 				"master" => array(

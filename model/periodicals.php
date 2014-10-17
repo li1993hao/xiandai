@@ -121,7 +121,7 @@ class periodicals extends Model
 		$sql="select `article`.*,`picture`.* from `article` 
 				LEFT JOIN `picture` ON `picture`.`pic_id` = `article`.`pic_id` 
 				where `article`.`l_id`='".$id."' 
-				ORDER BY `article`.`a_top` DESC	
+				ORDER BY `article`.`a_top` DESC,`article`.`a_time` DESC
 				";
 		//echo $sql;
 		return $this->fetchAll($sql);
@@ -246,7 +246,19 @@ class periodicals extends Model
 		//echo $sql;
 		return $this->fetchRow($sql);
 	}
-	
+
+    public  function  getindexArticalPageModel($page = 1 , $num = 10){
+
+
+        $sql = "SELECT `article`.* ,`picture`.* FROM `article` LEFT JOIN `picture` ON `article`.`pic_id` = `picture`.`pic_id` ORDER BY `article`.`a_top` DESC , `article`.`l_id` DESC,`article`.`a_time` DESC   Limit ".($page-1)*$num.",".$num." ";
+
+        //echo $sql;
+        $list = $this->fetchAll($sql);
+        $total = $this->getTotal('article',"");
+        $totalPage = ceil($total / $num);
+        return array('page'=>$page,'list'=>$list,'total'=>$total,'totalPage'=>$totalPage);
+    }
+
 	/**
 	 * 获取就业通讯 id是版面号的id
 	 * @param unknown_type $page

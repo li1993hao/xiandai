@@ -24,7 +24,7 @@
             <{if isset($__userinfo__) }>
                 <ul class="header_login">
 
-                    <{if $__userinfo__.type=="0" }>
+                    <{if $__userinfo__.type=="0" }>$__userinfo__.picUrl
                         <li>
                             <img src="<{$web_url}>/common/upload/images/<{$__userinfo__.piclink}>"/>
                         </li>
@@ -36,17 +36,20 @@
                         <li> <a target="_blank" href="<{$web_url}>/index.php/student/myinfo">个人中心</a> 
                         </li>
                         <{else $__userinfo__.type=="1" }>
+                            <li>
+                                <img src="<{$web_url}>/common/upload/images/<{$__userinfo__.picUrl|default:"noimg.jpg"}>"/>
+                            </li>
                             <li style="margin-right: 10px;">
                                 <a style="text-decoration: none">
                                     <{$__userinfo__.name}>
                                 </a>
                             </li>
-                            <li> <a target="_blank" href="<{$web_url}>/index.php/company/myinfo">个人中心 </a>
+                            <li> <a target="_blank" href="<{$web_url}>/index.php/company/myinfo" >个人中心 </a>
                             </li>
 
 
                                 <{/if}>
-                                    <li><a id="login_out" href="<{$web_url}>/index.php/index/logout">注销</a>
+                                    <li style="margin-left: 10px"><a id="login_out" href="<{$web_url}>/index.php/index/logout">注销</a>
                                     </li>
                 </ul>
 

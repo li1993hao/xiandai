@@ -41,7 +41,7 @@
                         </a></div>
                         <{else if $news.list[n].ji_recom neq ""}>
                                      <div><a style="color:red" href="<{$web_url}>/index.php/jobinfo/detail/id/<{$news.list[n].ji_id}>">
-                                [荐<{$news.list[n].ji_title|truncate:30:'...':true}>
+                                [荐]<{$news.list[n].ji_title|truncate:30:'...':true}>
                         </a></div>
                         <{else if $news.list[n].ji_isup==""}>
                                      <div><a href="<{$web_url}>/index.php/jobinfo/detail/id/<{$news.list[n].ji_id}>">

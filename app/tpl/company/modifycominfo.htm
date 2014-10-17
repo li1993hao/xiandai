@@ -89,16 +89,66 @@
                     $("#img").html(myObject.msg);
                     $("#filestate").val("0");//0表示没有图片上传 1表示图片上传中 2表示图片上传成功
                 }else{
-                    var info = "<div data=\""+myObject.result+"\" class=\"orm-register-item-imgitemf\"><img alt=\"资质证明\" class=\"up_img\" src=\""+myObject.msg+"\"><div title=\"删除\" class=\"form-register-item-imgitem-close\">X</div></div>";
+                    var info = "<div data=\""+myObject.result+"\" class=\"orm-register-item-imgitem\"><img alt=\"资质证明\" class=\"up_img\" src=\""+myObject.msg+"\"><div title=\"删除\" class=\"form-register-item-imgitem-close\">X</div></div>";
                     $(".company-register-item-imglist").append(info);
                     $("#filestate").val("2");
 
                     var idArr = new Array();
-                    $(".form-register-item-imgitem").each(function(){
+                    $(".orm-register-item-imgitem").each(function(){
                         idArr.push($(this).attr("data"));
                     });
 
                     $("#fileid").val(idArr.join(","));
+                }
+
+            }
+        });
+
+//        <div><img id="file_img" src="<{$web_url}>/common/upload/images/<{$companydetail.picUrl|default:"noimg.jpg"}>"/></div>
+//                <td><span class="form-register-item-title">上传头像:</span></td>
+//                <td>
+//        <input id="com_file_upload" name="com_file_upload" type="file" multiple />
+//        <input type="hidden"  name="com_fileid" id="com_fileid" value="<{$companydetail.picId|default:""}>" />
+//        <input type="hidden"  name="com_filestate" id="com_filestate" value="0" />
+//                </td>
+//                <td><div style="clear:both;"></div></td>
+
+        $('#com_file_upload').uploadify({
+            'formData'     : {
+            },
+            'swf'      : web_url+'/common/libs/upload/uploadify.swf',
+            'uploader' : web_url+'/index.php/common/fileupload/filetype/img',
+            'queueSizeLimit': 1 ,
+            'multi':false,
+            'auto':true,
+            'fileTypeDesc':"请选择图片文件",
+            'fileTypeExts':'*.jpg;*.jpeg;*.png;*.gif;*.bmp',
+            'fileSizeLimit': '4096KB',
+            'buttonText':"选择图片",
+            'width' : 100,
+            'height':20,
+            'cancelImg' : web_url+'/common/libs/upload/uploadify-cancel.png',
+            'onUploadError' : function(file, errorCode, errorMsg, errorString) {
+                alert('The file ' + file.name + ' could not be uploaded: ' + errorString);
+            },
+            'onUploadStart' : function(file) {
+                $("#com_filestate").val("1");
+            },
+            'onCancel' : function(file) {
+                $("#com_filestate").val("0");
+            },
+            'onUploadSuccess' : function(file, data, response) {
+                //alert('The file ' + file.name + ' was successfully uploaded with a response of ' + response + ':' + data);
+                // alert(data);
+                var myObject = eval('(' + data + ')');
+                //alert(myObject.result);
+                //alert(myObject.msg);
+                if(myObject.result == '0'){
+                    $("#com_filestate").val("0");//0表示没有图片上传 1表示图片上传中 2表示图片上传成功
+                }else{
+                    $("#file_img").attr("src",myObject.msg);
+                    $("#com_fileid").val(myObject.result);
+                    $("#com_filestate").val(2);
                 }
 
             }
@@ -325,16 +375,31 @@
                    <td>
                    <div style="clear:both;"></div>
                    </td>
+
                    </tr>
                    <tr class="form-register-item">
                        <td><span class="form-register-item-title">上传资质:</span></td>
                        <td>
-                           <input id="file_upload" name="file_upload" type="file" multiple />
+                           <input id="file_upload" name="file_upload" type="file"  />
                            <input type="hidden"  name="fileid" id="fileid" value="<{$form_userinfo.fileid|default:""}>" />
                            <input type="hidden"  name="filestate" id="filestate" value="0" />
                        </td>
                        <td><div style="clear:both;"></div></td>
                    </tr>
+                   <tr class="form-register-item">
+                      <td></td> <td><img id="file_img" height="100px" width="100px" src="<{$web_url}>/common/upload/images/<{$__userinfo__.picUrl|default:"noimg.jpg"}>"/></td>
+                   </tr>
+                   <tr class="form-register-item">
+
+                       <td><span class="form-register-item-title">上传头像:</span></td>
+                       <td>
+                           <input id="com_file_upload" name="com_file_upload" type="file" multiple />
+                           <input type="hidden"  name="com_fileid" id="com_fileid" value="<{$companydetail.picId|default:""}>" />
+                           <input type="hidden"  name="com_filestate" id="com_filestate" value="0" />
+                       </td>
+                       <td><div style="clear:both;"></div></td>
+                   </tr>
+
                    <tr class="form-register-item">
                        <td><span class="form-register-item-title">公司简介:</span></td>
                        <td>
