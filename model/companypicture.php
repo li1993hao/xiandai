@@ -14,7 +14,7 @@ class companypicture extends Model{
 	 */
 	public function getPicByCompanyId($comId){
 		$sql = "SELECT `companypicture`。*, `picture`.`pic_link` FROM `companypicture` "
-			 . "LEFT JOIN `picture` ON `picture`.`pic_id` = `companypicture`。`pic_id` "
+			 . "LEFT JOIN `picture` ON `picture`.`pic_id` = `companypicture`.`pic_id` "
 			 . "WHERE `companypicture`.`com_id` = '".$comId."' ";
 		return $this->fetchAll($sql);
 	}

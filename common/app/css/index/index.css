@@ -538,14 +538,11 @@
     text-align: right;
 }
 
-.right_top ul> div a{
-    color: #b2b2b2;
-}
+
 
 .right_top li div:first-child a{
     display: block;
     margin-top: 7px;
-    color: #fe0000;
     font-size: 14px;
 }
 

@@ -80,16 +80,16 @@ class WestController extends Controller{
 						$this->view->result = $this->_lang->xiugaishibai;
 					}
 					if ($result && $push == 1){
-						if ($_POST['newssort'] == 1){
-							$url = $this->getRequest()->hostUrl."/clientapi.php/Student/Getwestdetail/id/".$id;
-							$this->getApp()->getPush()->pushMsg($_POST['title'],"此工作动态信息有修改", "10", $url);
-						}else if ($_POST['newssort'] == 2){
-							$url = $this->getRequest()->hostUrl."/clientapi.php/Student/Getwestdetail/id/".$id;
-							$this->getApp()->getPush()->pushMsg($_POST['title'],"此相关政策信息有修改", "11", $url);
-						}else{
-							$url = $this->getRequest()->hostUrl."/clientapi.php/Student/Getwestdetail/id/".$id;
-							$this->getApp()->getPush()->pushMsg($_POST['title'],"此典型人物消息有修改", "12", $url);
-						}
+//						if ($_POST['newssort'] == 1){
+//							$url = $this->getRequest()->hostUrl."/clientapi.php/Student/Getwestdetail/id/".$id;
+//							$this->getApp()->getPush()->pushMsg($_POST['title'],"此工作动态信息有修改", "10", $url);
+//						}else if ($_POST['newssort'] == 2){
+//							$url = $this->getRequest()->hostUrl."/clientapi.php/Student/Getwestdetail/id/".$id;
+//							$this->getApp()->getPush()->pushMsg($_POST['title'],"此相关政策信息有修改", "11", $url);
+//						}else{
+//							$url = $this->getRequest()->hostUrl."/clientapi.php/Student/Getwestdetail/id/".$id;
+//							$this->getApp()->getPush()->pushMsg($_POST['title'],"此典型人物消息有修改", "12", $url);
+//						}
 					}
 				}
 			}

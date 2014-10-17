@@ -250,7 +250,7 @@ class periodicals extends Model
     public  function  getindexArticalPageModel($page = 1 , $num = 10){
 
 
-        $sql = "SELECT `article`.* ,`picture`.* FROM `article` LEFT JOIN `picture` ON `article`.`pic_id` = `picture`.`pic_id` ORDER BY `article`.`l_id` DESC,`article`.`a_time` DESC   Limit ".($page-1)*$num.",".$num." ";
+        $sql = "SELECT `article`.* ,`picture`.* FROM `article` LEFT JOIN `picture` ON `article`.`pic_id` = `picture`.`pic_id` ORDER BY `article`.`a_top` DESC , `article`.`l_id` DESC,`article`.`a_time` DESC   Limit ".($page-1)*$num.",".$num." ";
 
         //echo $sql;
         $list = $this->fetchAll($sql);
