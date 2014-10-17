@@ -233,14 +233,35 @@ class AccountController extends Controller {
         $msg_id = $this->getRequest ()->get ( "msg_id" );
         $type=$this->getRequest ()->get ( "type" );
         $collect=new collect();
-        $if_sucess=$collect->do_app_good($userId,$msg_id,$type);
-        if($if_sucess){
-            $this->view->setAppStatus ( "1" );
-            $this->view->setAppMsg ( "点赞成功" );
+        if($userId==0){
+            $if_sucess=$collect->do_app_good($userId,$msg_id,$type);
+
+            if($if_sucess){
+                $this->view->setAppStatus ( "1" );
+                $this->view->setAppMsg ( "点赞成功" );
+            }else{
+                $this->view->setAppStatus ( "0" );
+                $this->view->setAppMsg ( "点赞失败" );
+            }
         }else{
-            $this->view->setAppStatus ( "0" );
-            $this->view->setAppMsg ( "点赞失败" );
+//            判断是否存在点赞
+
+            if($collect->getifgood($userId,$msg_id,$type)){
+
+                $this->view->setAppStatus ( "0" );
+                $this->view->setAppMsg ( "不能重复点赞" );
+            }else{
+                $if_sucess=$collect->do_app_good($userId,$msg_id,$type);
+                if($if_sucess){
+                    $this->view->setAppStatus ( "1" );
+                    $this->view->setAppMsg ( "点赞成功" );
+                }else{
+                    $this->view->setAppStatus ( "0" );
+                    $this->view->setAppMsg ( "点赞失败" );
+                }
+            }
         }
+
         $this->view->appdisplay ( "json" );
     }
     /**
@@ -253,7 +274,8 @@ class AccountController extends Controller {
         $type = $this->getRequest ()->get ( "type" );
         /** 查询单条招聘信息 */
         $msg = new corpinternmsg();
-        $zp_content=$msg->getappzpcontent($userId,$cim_id,$type);
+        $zp_content=$msg->getappzpcon
+        tent($userId,$cim_id,$type);
 
         $file_link=$this->view->files_app_url.$zp_content[file_link];
         if($zp_content[file_name]){
@@ -332,6 +354,7 @@ class AccountController extends Controller {
                 $data[$i]["ep_title"]=$ep_info[$i]["ep_title"];
                 $data[$i]["ep_create"]=$ep_info[$i]["ep_create"];
                 $data[$i]["ep_content"]=substr(strip_tags($ep_info[$i]["ep_content"]), 0, 300);
+                $data[$i]["ep_browse"]=$ep_info[$i]["ep_browse"];
             }
             $this->view->setAppStatus ( "1" );
             $this->view->setAppMsg ( "查询就业政策信息成功!" );

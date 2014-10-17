@@ -780,7 +780,7 @@ class corpinternmsg extends Model {
             $sql1="insert into tj_view (user_id,post_id,post_type,view_time) values ('".$userId."','".$cim_id."','".$type."','".date('Y-m-d H:i:s',time())."')";
             $this->insert($sql1);
         }elseif($type==2){
-            $sql="select ep.ep_title title,ep.ep_create fb_date,ep.ep_content content,f.file_link,ep.file_name from employmentpolicy ep left join file f on ep.file_id=f.file_id  where ep.ep_id=$cim_id";
+            $sql="select ep.ep_browse read_num,ep.ep_title title,ep.ep_create fb_date,ep.ep_content content,f.file_link,ep.file_name from employmentpolicy ep left join file f on ep.file_id=f.file_id  where ep.ep_id=$cim_id";
             $sql1="update employmentpolicy set ep_browse=ep_browse+1 where ep_id=$cim_id";
             $this->update($sql1);
         }elseif($type==3){
