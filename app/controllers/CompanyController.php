@@ -58,7 +58,7 @@ class CompanyController extends Controller{
         $userinfo = $this->getData("userinfo");
 
 
-        //var_dump($userinfo);
+       // var_dump($userinfo);
         $frountid = $userinfo['id'];
         $company = new company();
         $area = new area();
@@ -101,6 +101,9 @@ class CompanyController extends Controller{
             $dataArr["intro"] = $gsjj;
             $dataArr["commail"] = $commail;
             $dataArr["comweb"] = $comweb;
+            if($this->getRequest()->get("com_filestate") == 2){
+                $dataArr["pic_id"] = $this->getRequest()->get("com_fileid");
+            }
 
             if($userinfo['state'] == 2){
                 $fuser = new frontuser();

@@ -88,9 +88,6 @@ a:hover {
     text-decoration: underline;
 }
 
-.header_login li{
-    margin-left: 20px;
-}
 .header_login li:nth-child(2){
     margin-left: 5px;
 }

@@ -505,15 +505,18 @@
     padding-left: 59px;
     background-color: #34495e;
 }
-.right_top>div:first-child div{
+.right_top>div:first-child div {
     float: left;
     text-align: center;
-    color: white;
     height: 38px;
     line-height: 38px;
     width: 113px;
-    font-size: 18px;
     cursor: pointer;
+}
+
+.right_top>div:first-child div a{
+    font-size: 18px;
+    color: white;
 }
 
 .right_top ul{

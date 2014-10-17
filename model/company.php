@@ -66,7 +66,7 @@ class company extends Model {
 	 * @return Ambigous <boolean, number>
 	 */
 	public function updateCcompanyInfo($dataArr){
-	
+	    $where = "'WHERE `company`.`com_id` = '".$dataArr["id"]."'";
 		$sql = "UPDATE `company`
 				 SET `ind_id` = '".$dataArr["indId"]."',
 				 	`ct_id` = '".$dataArr["corpId"]."',
@@ -80,10 +80,12 @@ class company extends Model {
 				 	  `com_website` = '".$dataArr["comweb"]."',
 				 	  `area_id` = '".$dataArr["areaId"]."',
 				 	  `com_address` =  '".$dataArr["address"]."',
-				 	  `com_intro` = '".$dataArr["intro"]."'
-				WHERE `company`.`com_id` = '".$dataArr["id"]."'";
+				 	  `com_intro` = '".$dataArr["intro"];
+        if($dataArr["pic_id"]){
+            $sql.= "',`pic_id` = '".$dataArr["pic_id"];
+        }
 		//echo $sql;
-		return $this->insert($sql);
+		return $this->insert($sql.$where);
 	}
 	/**
 	 * 修改图片信息 资质认证
