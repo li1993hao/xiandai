@@ -24,9 +24,9 @@
             <{if isset($__userinfo__) }>
                 <ul class="header_login">
 
-                    <{if $__userinfo__.type=="0" }>$__userinfo__.picUrl
+                    <{if $__userinfo__.type=="0" }>
                         <li>
-                            <img src="<{$web_url}>/common/upload/images/<{$__userinfo__.piclink}>"/>
+                            <img src="<{$web_url}>/common/upload/images/<{$__userinfo__.piclink|default:"noimg.jpg"}>"/>
                         </li>
                         <li>
                             <a style="text-decoration: none">
