@@ -87,11 +87,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.htm" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.htm" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/tpl/index/main.htm">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="38" selection-start="2503" selection-end="2503" vertical-scroll-proportion="0.8556391" vertical-offset="181" max-vertical-offset="870">
+            <state line="50" column="38" selection-start="2503" selection-end="2503" vertical-scroll-proportion="-23.708334" vertical-offset="181" max-vertical-offset="870">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.htm" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/tpl/header.htm">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="51" selection-start="988" selection-end="988" vertical-scroll-proportion="0.13533835" vertical-offset="300" max-vertical-offset="1965">
+              <folding>
+                <element signature="n#style#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#6;n#ul#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -109,15 +121,6 @@
         <entry file="file://$PROJECT_DIR$/app/controllers/JobfairmsgController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="15.625" vertical-offset="375" max-vertical-offset="3660">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.htm" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/tpl/index/index.htm">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="619" column="79" selection-start="35745" selection-end="35745" vertical-scroll-proportion="-3.3333333" vertical-offset="9205" max-vertical-offset="11610">
               <folding />
             </state>
           </provider>
@@ -186,13 +189,13 @@
         <option value="$PROJECT_DIR$/app/controllers/CompanyController.php" />
         <option value="$PROJECT_DIR$/app/tpl/company/modifycominfo.htm" />
         <option value="$PROJECT_DIR$/common/app/css/headAndfoot.css" />
-        <option value="$PROJECT_DIR$/app/tpl/header.htm" />
         <option value="$PROJECT_DIR$/app/tpl/index/index.htm" />
         <option value="$PROJECT_DIR$/common/app/css/index/index.css" />
         <option value="$PROJECT_DIR$/app/tpl/company/myinfo.htm" />
         <option value="$PROJECT_DIR$/admin/tpl/frontuser/student.html" />
         <option value="$PROJECT_DIR$/app/tpl/account/register.htm" />
         <option value="$PROJECT_DIR$/admin/tpl/index/main.htm" />
+        <option value="$PROJECT_DIR$/app/tpl/header.htm" />
       </list>
     </option>
   </component>
@@ -454,24 +457,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wyjob" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xiandai" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -832,16 +817,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/tpl/header.htm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="27" selection-start="1405" selection-end="1405" vertical-scroll-proportion="-8.125" vertical-offset="330" max-vertical-offset="1965">
-          <folding>
-            <element signature="n#style#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#6;n#ul#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/tpl/index/index.htm">
       <provider selected="true" editor-type-id="text-editor">
         <state line="619" column="79" selection-start="35745" selection-end="35745" vertical-scroll-proportion="-3.3333333" vertical-offset="9205" max-vertical-offset="11610">
@@ -926,8 +901,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/tpl/index/main.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="38" selection-start="2503" selection-end="2503" vertical-scroll-proportion="0.8556391" vertical-offset="181" max-vertical-offset="870">
+        <state line="50" column="38" selection-start="2503" selection-end="2503" vertical-scroll-proportion="-23.708334" vertical-offset="181" max-vertical-offset="870">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/tpl/header.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="51" selection-start="988" selection-end="988" vertical-scroll-proportion="0.13533835" vertical-offset="300" max-vertical-offset="1965">
+          <folding>
+            <element signature="n#style#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#6;n#ul#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
