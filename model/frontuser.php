@@ -664,5 +664,16 @@ class frontuser extends Model {
         $sql="select * from student where fu_id=$id";
         return $this->fetchRow($sql);
     }
-
+    /** 根据公司ID获取资质证明 */
+    public function getappzzzm($fu_id){
+        $sql = "SELECT `companypicture`.*,`picture`.* FROM  `companypicture`
+						LEFT JOIN `picture` ON `companypicture`.`pic_id` = `picture`.`pic_id`
+						WHERE  `com_id` = " . $fu_id . ".";
+        return $this->fetchAll($sql);
+    }
+    /** 访问添加 */
+    public function  addloginnum(){
+        $sql="insert into tj_login (user_id,login_time) values (0,'".date('Y-m-d H:i:s',time())."')";
+        return $this->insert($sql);
+    }
 }

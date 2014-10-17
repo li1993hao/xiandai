@@ -783,7 +783,7 @@ class RecruitController extends Controller {
             $company_id=$msg_arr["fu_id"];
             //var_dump($company_arr);
             $platform = 'android,ios'; // 接受此信息的系统
-            $msg_content = json_encode(array('n_builder_id'=>0,'n_title'=>'消息提醒', 'n_content'=>"'招聘信息'.$msg_title.'通过审核'",'n_extras'=>array('type'=>3,'infoid'=>$infoid,'msg_type'=>1,'reason'=>'','time'=>'','address'=>'')));
+            $msg_content = json_encode(array('n_builder_id'=>0,'n_title'=>'消息提醒', 'n_content'=>"'招聘信息'.$msg_title.'通过审核'",'n_extras'=>array('type'=>3)));
             //var_dump($msg_content);
             $j=new jpush();
             $j->send(18,3,$company_id,1,$msg_content,$platform);
@@ -811,7 +811,7 @@ class RecruitController extends Controller {
             $company_id=$msg_arr["fu_id"];
             //var_dump($company_arr);
             $platform = 'android,ios'; // 接受此信息的系统
-            $msg_content = json_encode(array('n_builder_id'=>0,'n_title'=>'消息提醒', 'n_content'=>"$msg_title.'（招聘信息）未通过审核'",'n_extras'=>array('type'=>3,'reason'=>$reason,'infoid'=>$infoid,'msg_type'=>1,'time'=>'','address'=>'')));
+            $msg_content = json_encode(array('n_builder_id'=>0,'n_title'=>'消息提醒', 'n_content'=>"$msg_title.'（招聘信息）未通过审核'",'n_extras'=>array('type'=>3)));
             //var_dump($msg_content);
             $j=new jpush();
             $j->send(18,3,$company_id,1,$msg_content,$platform);
