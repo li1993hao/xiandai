@@ -303,4 +303,8 @@ class collect extends Model {
         }
         return $this->fetchRow($sql);
     }
+    public function  getifgood($userId,$msg_id,$type){
+        $sql="select * from tj_zan where user_id=$userId and post_id=$msg_id and post_type=$type 	";
+        return $this->fetchAll($sql);
+    }
 }

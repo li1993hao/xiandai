@@ -59,7 +59,7 @@ class PushController extends Controller{
                     $j->send(18,4,"",1,$msg_content,$platform);
                 }else{
                     $platform = 'android,ios'; // 接受此信息的系统
-                    $msg_content = json_encode(array('n_builder_id'=>0,'n_title'=>$_POST['title'], 'n_content'=>$_POST['content'],'n_extras'=>array('type'=>0,'if_url'=>1,'url'=>'详情请查看:'.$_POST['url'])));
+                    $msg_content = json_encode(array('n_builder_id'=>0,'n_title'=>$_POST['title'], 'n_content'=>$_POST['content'],'n_extras'=>array('type'=>0,'if_url'=>1,'url'=>$_POST['url'])));
                     //var_dump($msg_content);
                     $j=new jpush();
                     $j->send(18,4,"",1,$msg_content,$platform);
