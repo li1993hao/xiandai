@@ -89,6 +89,8 @@
                     $("#img").html(myObject.msg);
                     $("#filestate").val("0");//0表示没有图片上传 1表示图片上传中 2表示图片上传成功
                 }else{
+
+
                     var info = "<div data=\""+myObject.result+"\" class=\"orm-register-item-imgitem\"><img alt=\"资质证明\" class=\"up_img\" src=\""+myObject.msg+"\"><div title=\"删除\" class=\"form-register-item-imgitem-close\">X</div></div>";
                     $(".company-register-item-imglist").append(info);
                     $("#filestate").val("2");
@@ -99,6 +101,10 @@
                     });
 
                     $("#fileid").val(idArr.join(","));
+
+                    var leftheight= $("#myinfo_left").css("height").replace(/px/,"");
+                    var midheight = parseInt(leftheight);
+                    $(".middle").css("height",midheight);
                 }
 
             }

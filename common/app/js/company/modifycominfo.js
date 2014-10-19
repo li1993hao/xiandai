@@ -101,12 +101,16 @@ $(function(){
         var id = $(this).parent().attr("data");
         //alert(id);
         $(this).parent().remove();
+        var leftheight= $("#myinfo_left").css("height").replace(/px/,"");
+        var midheight = parseInt(leftheight);
+        $(".middle").css("height",midheight);
         $.ajax({
         type:"POST",
         url:web_php_url+"/common/Delfile",
         data: "id="+id,
         async:false,
         success:function(msg){
+
         },
     error:function(o){
         }
