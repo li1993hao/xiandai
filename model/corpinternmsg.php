@@ -784,7 +784,7 @@ class corpinternmsg extends Model {
             $sql1="update employmentpolicy set ep_browse=ep_browse+1 where ep_id=$cim_id";
             $this->update($sql1);
         }elseif($type==3){
-            $sql="select ji_title title,ji_date fb_date,ji_read read_num,ji_content content from jobinfo where ji_id=$cim_id";
+            $sql="select ji.ji_title title,ji.ji_date fb_date,ji.ji_read read_num,ji.ji_content content,jia.file_name,f.file_link from jobinfo ji left join jobinfo_attr jia on ji.ji_id=jia.ji_id left join file f on jia.file_id=f.file_id where ji.ji_id=$cim_id";
             $sql1="update jobinfo set ji_read=ji_read+1 where ji_id=$cim_id";
             $this->update($sql1);
         }elseif($type==4){
@@ -798,11 +798,16 @@ class corpinternmsg extends Model {
         }
         return $this->fetchRow($sql);
     }
+    /** 获取职位信息 */
+    public function getAppOffice($cim_id){
+        $sql="select * from office where cim_id=$cim_id";
+        return $this->fetchAll($sql);
+    }
     /**
      * 获取企业  通过审核  未通过审核 未审核的信息列表
      */
     public function getappmsg($fu_id,$state){
-        $sql="select cim_id,cim_name,cim_content,cim_date from corpinternmsg where cim_publish=$fu_id and cim_veri=$state";
+        $sql="select cim_id,cim_name,cim_content,cim_date,cim_reason from corpinternmsg where cim_publish=$fu_id and cim_veri=$state";
         $cor_msg_lists=$this->fetchAll($sql);
         if($cor_msg_lists){
             for($i=0;$i<count($cor_msg_lists);$i++){
@@ -810,7 +815,7 @@ class corpinternmsg extends Model {
                 $cor_msg_lists[$i][content]=strip_tags($cor_msg_lists[$i][content]);
             }
         }
-        $sql1="select jm_id cim_id,jm_name cim_name,jm_content cim_content,jm_date cim_date from jobfairmsg where jm_publish=$fu_id and jm_veri=$state";
+        $sql1="select jm_id cim_id,jm_name cim_name,jm_content cim_content,jm_date cim_date,jm_reason  cim_reason from jobfairmsg where jm_publish=$fu_id and jm_veri=$state";
         $jobfairmsg=$this->fetchAll($sql1);
         if($jobfairmsg){
             for($i=0;$i<count($jobfairmsg);$i++){

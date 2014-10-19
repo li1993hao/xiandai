@@ -131,6 +131,7 @@ class AccountController extends Controller {
                 $data[$i]["cim_name"]=$zp_info[$i]["cim_name"];
                 $data[$i]["cim_date"]=$zp_info[$i]["cim_date"];
                 $data[$i]["cim_content"]=substr(strip_tags($zp_info[$i]["cim_content"]), 0, 300);
+                $data[$i]["cim_content"]=str_replace("&nbsp;","",$data[$i]["cim_content"]);
                 $data[$i]["cim_good"]=$zp_info[$i]["cim_good"];
                 /**判断是否为置顶信息**/
                 if($zp_info[$i]["cim_isup"]){
@@ -166,6 +167,7 @@ class AccountController extends Controller {
                 $data[$i]["cim_name"]=$zp_info[$i]["cim_name"];
                 $data[$i]["cim_date"]=$zp_info[$i]["cim_date"];
                 $data[$i]["cim_content"]=substr(strip_tags($zp_info[$i]["cim_content"]), 0, 300);
+                $data[$i]["cim_content"]=str_replace("&nbsp;","",$data[$i]["cim_content"]);
                 $data[$i]["cim_good"]=$zp_info[$i]["cim_good"];
                 /**判断是否为置顶信息**/
                 if($zp_info[$i]["cim_isup"]){
@@ -274,11 +276,25 @@ class AccountController extends Controller {
         $type = $this->getRequest ()->get ( "type" );
         /** 查询单条招聘信息 */
         $msg = new corpinternmsg();
-        $zp_content=$msg->getappzpcon
-        tent($userId,$cim_id,$type);
+        $zp_content=$msg->getappzpcontent($userId,$cim_id,$type);
+        $div_str = "";
+        if($type==1){
+            $office_arr=$msg->getAppOffice($cim_id);
+            $div_str .= "<div style='width: 100%' ><div style='line-height:31px;margin: 0 auto;width:98%;margin-left: 15px;font-size: 16px;margin-top: 18px'><strong>>>职位</strong></div>";
+
+            for($i =0; $i<count($office_arr); $i++){
+                $div_str.= "<div style='line-height:31px;margin: 0 auto;width:98%;margin-left: 15px;font-size: 16px;margin-top: 18px'><strong>";
+                $div_str.= $office_arr[$i]['office_name'];
+                $div_str.= "</strong></div>";
+                $div_str.= "<div style='line-height:31px;margin: 0 auto;width:98%;margin-left: 15px;font-size: 16px;margin-top: 2px'>";
+                $div_str.= $office_arr[$i]['office_intro'];
+                $div_str.= "</div>";
+            }
+            $div_str .= "</div>";
+        }
 
         $file_link=$this->view->files_app_url.$zp_content[file_link];
-        if($zp_content[file_name]){
+
             echo "
 
         <html>
@@ -296,12 +312,20 @@ class AccountController extends Controller {
         <div style='width: 98%;height: 100%;'>
             <div style='text-align: center;padding-top: 15px;font-size: 24px'>$zp_content[title]  </div>
             <div style='text-align: center;margin-top: 10px;font-size: 8px'><span style='text-decoration:none'>发布时间：$zp_content[fb_date]</span><span style='margin-left: 40px;text-decoration:none'>浏览量：$zp_content[read_num]</span></div>
+        ";
+        echo ($office_arr?$div_str:"");
+        echo "
             <div style='width: 100%' >
                 <div style='line-height:31px;margin: 0 auto;width:98%;margin-left: 15px;font-size: 16px;margin-top: 18px'>
                     $zp_content[content]
                 </div>
                 <div style='margin-top: 150px;margin-left: 15px'>
-                    <span>相关附件：</span><span style='margin-left: 10px;'><a href='$file_link' style='color: red;text-decoration: none'>$zp_content[file_name]</a></span>
+                    <span>相关附件：</span><span style='margin-left: 10px;'><a href='$file_link' style='color: red;text-decoration: none'>
+                    ";
+
+         echo           $zp_content[file_name]?$zp_content[file_name]:'暂无附件';
+        echo "
+                    </a></span>
                 </div>
             </div>
 
@@ -309,38 +333,7 @@ class AccountController extends Controller {
         </body>
         </html>
         ";
-        }else{
-            echo "
 
-        <html>
-        <head>
-        <style type='text/css' >
-        *{
-            margin: 0;
-            padding: 0;
-            font-family: 'Hiragino Sans GB', 'Helvetica Neue', Helvetica, Arial, 'Microsoft Yahei', sans-serif;
-        }
-
-        </style>
-        </head>
-        <body style='background-image: url(http://localhost/xiandai/common/upload/images/bg.jpg);width: 98%;height: 100%;'>
-        <div style='width: 98%;height: 100%;'>
-            <div style='text-align: center;padding-top: 15px;font-size: 24px'>$zp_content[title]  </div>
-            <div style='text-align: center;margin-top: 10px;font-size: 8px'><span style='text-decoration:none'>发布时间：$zp_content[fb_date]</span><span style='margin-left: 40px;text-decoration:none'>浏览量：$zp_content[read_num]</span></div>
-            <div style='width: 100%' >
-                <div style='line-height:31px;margin: 0 auto;width:98%;margin-left: 15px;font-size: 16px;margin-top: 18px'>
-                    $zp_content[content]
-                </div>
-                <div style='margin-top: 150px;margin-left: 15px'>
-                    <span>相关附件：</span><span style='margin-left: 10px;'>暂无附件！</span>
-                </div>
-            </div>
-
-        </div>
-        </body>
-        </html>
-        ";
-        }
 
     }
     /** 就业政策列表 employmentpolicy*/
@@ -354,6 +347,7 @@ class AccountController extends Controller {
                 $data[$i]["ep_title"]=$ep_info[$i]["ep_title"];
                 $data[$i]["ep_create"]=$ep_info[$i]["ep_create"];
                 $data[$i]["ep_content"]=substr(strip_tags($ep_info[$i]["ep_content"]), 0, 300);
+                $data[$i]["ep_content"]=str_replace("&nbsp;","",$data[$i]["ep_content"]);
                 $data[$i]["ep_browse"]=$ep_info[$i]["ep_browse"];
             }
             $this->view->setAppStatus ( "1" );
@@ -377,6 +371,7 @@ class AccountController extends Controller {
                 $data[$i]["ji_title"]=$info_arr[$i]["ji_title"];
                 $data[$i]["ji_create"]=$info_arr[$i]["ji_date"];
                 $data[$i]["ji_content"]=substr(strip_tags($info_arr[$i]["ji_content"]), 0, 300);
+                $data[$i]["ji_content"]=str_replace("&nbsp;","",$data[$i]["ji_content"]);
                 /**判断是否为置顶信息**/
                 if($info_arr[$i]["ji_isup"]){
                     $data[$i]["is_up"]=1;
@@ -532,7 +527,9 @@ class AccountController extends Controller {
 
             for($i=0;$i<count($msg_lists);$i++){
                 $msg_lists[$i]["cim_content"]=substr(strip_tags($msg_lists[$i]["cim_content"]), 0, 300);
+                $msg_lists[$i]["cim_content"]=str_replace("&nbsp;","",$msg_lists[$i]["cim_content"]);
             }
+
             $this->view->setAppStatus ( "1" );
             $this->view->setAppMsg ( "查询信息成功!" );
             $this->view->setAppData ( $msg_lists );
@@ -611,9 +608,15 @@ class AccountController extends Controller {
             $data[com_address]=$company_info[com_address];
             /**资质证明获得**/
             $zz_arr=$frontuser->getappzzzm($fu_id);
-            for($i=0;$i<count($zz_arr);$i++){
-                $data["zz_pic"][]=$this->view->images_app_url.$zz_arr[$i]["pic_link"];
+            //var_dump($zz_arr);
+            if($zz_arr){
+                for($i=0;$i<count($zz_arr);$i++){
+                    $data["zz_pic"][]=$this->view->images_app_url.$zz_arr[$i]["pic_link"];
+                }
+            }else{
+                $data["zz_pic"]="";
             }
+
             /** 结束 */
             $this->view->setAppStatus ( "1" );
             $this->view->setAppMsg ( "查询公司信息成功!" );

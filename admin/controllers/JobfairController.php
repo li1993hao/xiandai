@@ -117,8 +117,14 @@ class JobfairController extends Controller{
 					if ($tokenList){
 						for ($i = 0; $i < count($tokenList); $i++){
 							if ($tokenList[$i]['fu_token']){
-								$url = $this->getRequest()->hostUrl."/clientapi.php/student/getjobfairinfodetail/id/".$result;
-								$this->getApp()->getPush()->pushMsg($tokenList[$i]['fu_token'], $_POST['name'],"有新的招聘会信息", "2", $url);
+                                $platform = 'android,ios'; // 接受此信息的系统
+                                $msg_content = json_encode(array('n_builder_id'=>0,'n_title'=>'消息提醒', 'n_content'=>"有新的招聘会信息",'n_extras'=>array('type'=>0,'if_url'=>0)));
+                                //var_dump($msg_content);
+                                $j=new jpush();
+                                //$j->send(18,3,$company_id,1,$msg_content,$platform);
+                                $j->send(18,4,"",1,$msg_content,$platform);
+//								$url = $this->getRequest()->hostUrl."/clientapi.php/student/getjobfairinfodetail/id/".$result;
+//								$this->getApp()->getPush()->pushMsg($tokenList[$i]['fu_token'], $_POST['name'],"有新的招聘会信息", "2", $url);
 							}
 						}
 					}
@@ -219,6 +225,12 @@ class JobfairController extends Controller{
 								$this->getApp()->getPush()->pushMsg($tokenList[$i]['fu_token'],$_POST['name'],"招聘会信息有修改", "2", $url);
 							}
 						}
+                        $platform = 'android,ios'; // 接受此信息的系统
+                        $msg_content = json_encode(array('n_builder_id'=>0,'n_title'=>'消息提醒', 'n_content'=>$_POST['name']."此企业招聘信息有修改",'n_extras'=>array('type'=>0,'if_url'=>0)));
+                        //var_dump($msg_content);
+                        $j=new jpush();
+                        //$j->send(18,3,$company_id,1,$msg_content,$platform);
+                        $j->send(18,4,"",1,$msg_content,$platform);
 					}
 				
 				}

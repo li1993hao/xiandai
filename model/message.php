@@ -199,7 +199,7 @@ class message extends Model{
         $sql = "SELECT message.mes_sort AS flag,
 				message.mes_time AS msgTime
 				FROM message
-				WHERE message.fu_id = $userId AND message.mes_type = 0
+				WHERE message.fu_id_publisher = $userId AND message.mes_type = 0
 				ORDER BY mes_id DESC , mes_time DESC
 				Limit $num,10";
 

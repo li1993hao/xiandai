@@ -666,11 +666,20 @@ class frontuser extends Model {
     }
     /** 根据公司ID获取资质证明 */
     public function getappzzzm($fu_id){
-        $sql = "SELECT `companypicture`.*,`picture`.* FROM  `companypicture`
-						LEFT JOIN `picture` ON `companypicture`.`pic_id` = `picture`.`pic_id`
-						WHERE  `com_id` = " . $fu_id . ".";
-        return $this->fetchAll($sql);
+//        $sql = "SELECT `companypicture`.*,`picture`.* FROM  `companypicture`
+//						LEFT JOIN `picture` ON `companypicture`.`pic_id` = `picture`.`pic_id`
+//						WHERE  `com_id` = " . $fu_id . ".";
+//        return $this->fetchAll($sql);
+
+        $sql = "SELECT `picture`.`pic_link`  FROM `company`
+				LEFT JOIN `companypicture` ON `companypicture`.`com_id` = `company`.`com_id`
+			 	LEFT JOIN `picture` ON `picture`.`pic_id` = `companypicture`.`pic_id`
+				WHERE `company`.`fu_id` = '" .  $fu_id . "'";
+        //var_dump($sql);
+        // echo $sql;
+        return $this->fetchAll ( $sql );
     }
+
     /** 访问添加 */
     public function  addloginnum(){
         $sql="insert into tj_login (user_id,login_time) values (0,'".date('Y-m-d H:i:s',time())."')";
