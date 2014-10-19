@@ -53,7 +53,9 @@
         $(".form-register-item-imgitem").each(function(){
             idArr.push($(this).attr("data"));
         });
-
+        var leftheight= $("#myinfo_left").css("height").replace(/px/,"");
+        var midheight = parseInt(leftheight);
+        $(".middle").css("height",midheight+100);
         $("#fileid").val(idArr.join(","));
         $('#file_upload').uploadify({
             'formData'     : {
