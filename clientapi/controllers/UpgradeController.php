@@ -31,36 +31,36 @@ class UpgradeController extends Controller{
 					$data[0]['apkSize']=$versionInfo[0]['SIZE_VERSION'];
 					$data[0]['upgradeURI']=$versionInfo[0]['NAME_FILE'];
 					$data[0]['upgradeDesc'] = $versionInfo[0]['DESC_VERSION'];
-					$array["json"]["State"]=1;
-					$array["json"]["data"]=	array("upgradeType"=>$versionInfo[0]['TYPE_UPGRADE'],
+					$array["state"]=1;
+					$array["data"]=	array("upgradeType"=>$versionInfo[0]['TYPE_UPGRADE'],
 							"versionName"=>$versionInfo[0]['NUM_VERSION'],
 							"apkSize"=>$versionInfo[0]['SIZE_VERSION'],
 							"upgradeURI"=>$versionInfo[0]['NAME_FILE'],
 							"upgradeDesc"=>$versionInfo[0]['DESC_VERSION']);
-					$array["json"]["Msg"]="获取版本更新功！";
+					$array["msg"]="获取版本更新功！";
 				}
 				else
 				{
-					$array["json"]["State"]=1;
-					$array["json"]["data"]=	array("upgradeType"=>"0",
+					$array["state"]=1;
+					$array["data"]=	array("upgradeType"=>"0",
 							"versionName"=>"",
 							"apkSize"=>"",
 							"upgradeURI"=>"",
 							"upgradeDesc"=>"");
-					$array["json"]["Msg"]="你已经是最新版本！";
+					$array["msg"]="你已经是最新版本！";
 				}
 			}
 			else
 			{
-				$array["json"]["State"]=0;
-				$array["json"]["Msg"]="未提交版本号！";
+				$array["state"]=0;
+				$array["msg"]="未提交版本号！";
 			}
 				
 		}
 		else
 		{
-			$array["json"]["State"]=0;
-			$array["json"]["Msg"]="未提交平台号！";
+			$array["state"]=0;
+			$array["msg"]="未提交平台号！";
 		}
 		echo json_encode($array);
 	}

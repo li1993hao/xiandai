@@ -203,7 +203,7 @@ class frontuser extends Model {
 	 * @return Ambigous <>|boolean
 	 */
 	public function authUser($user, $password, $isId = false) {
-		
+
 		$result = array ();
 		if ($this->haveBadTag ( $user )) {
 			$result ['result'] = - 3;
@@ -211,7 +211,7 @@ class frontuser extends Model {
 			$result ['msg'] = "非法的用户名";
 			return $result;
 		}
-		
+
 		if ($isId) {
 			$userinfo = $this->_getUserFromUserid ( $user );
 		} else {
@@ -221,7 +221,7 @@ class frontuser extends Model {
 				$userinfo = $this->_getUserFromCode ( $user );
 			}
 		}
-			
+
 		//var_dump($userinfo);
 		if ($userinfo) {
 			//echo $this->generatePw($password, $userinfo['user_salt']);
@@ -247,6 +247,100 @@ class frontuser extends Model {
 		}
 		return $result;
 	}
+    /** 验证学生信息 */
+    public function authStuUser($user, $password, $isId = false) {
+
+        $result = array ();
+        if ($this->haveBadTag ( $user )) {
+            $result ['result'] = - 3;
+            $result ['userinfo'] = null;
+            $result ['msg'] = "非法的用户名";
+            return $result;
+        }
+
+        if ($isId) {
+            $userinfo = $this->_getUserFromUserid ( $user );
+        } else {
+//			if ($this->isEmail ( $user )) {
+//				$userinfo = $this->_getUserFromEmail ( $user );
+//			} else {
+            $userinfo = $this->_getUserFromCode ( $user );
+//			}
+        }
+
+        //var_dump($userinfo);
+        if ($userinfo) {
+            //echo $this->generatePw($password, $userinfo['user_salt']);
+            if ($userinfo ['fu_password'] == $this->generatePw ( $password, $userinfo ['fu_salt'] )) {
+                if ($userinfo ['fu_isable'] == $this->isable ["disable"]) {
+                    $result ['result'] = - 3;
+                    $result ['userinfo'] = null;
+                    $result ['msg'] = "该账号已被冻结";
+                } else {
+                    $result ['result'] = $userinfo ['fu_id'];
+                    $result ['userinfo'] = $this->entity2model ( $userinfo );
+                    $result ['msg'] = "验证成功";
+                }
+            } else {
+                $result ['result'] = - 1;
+                $result ['userinfo'] = null;
+                $result ['msg'] = "密码错误";
+            }
+        } else {
+            $result ['result'] = - 2;
+            $result ['userinfo'] = null;
+            $result ['msg'] = "用户名不存在";
+        }
+        return $result;
+    }
+    /**验证企业信息*/
+    public function authComUser($user, $password, $isId = false) {
+
+        $result = array ();
+        if ($this->haveBadTag ( $user )) {
+            $result ['result'] = - 3;
+            $result ['userinfo'] = null;
+            $result ['msg'] = "非法的用户名";
+            return $result;
+        }
+
+        if ($isId) {
+            $userinfo = $this->_getUserFromUserid ( $user );
+        } else {
+//            if ($this->isEmail ( $user )) {
+                $userinfo = $this->_getUserFromEmail ( $user );
+//            } else {
+//                $userinfo = $this->_getUserFromCode ( $user );
+//            }
+        }
+
+        //var_dump($userinfo);
+        if ($userinfo) {
+            //echo $this->generatePw($password, $userinfo['user_salt']);
+            if ($userinfo ['fu_password'] == $this->generatePw ( $password, $userinfo ['fu_salt'] )) {
+                if ($userinfo ['fu_isable'] == $this->isable ["disable"]) {
+                    $result ['result'] = - 3;
+                    $result ['userinfo'] = null;
+                    $result ['msg'] = "该账号已被冻结";
+                } else {
+                    $result ['result'] = $userinfo ['fu_id'];
+                    $result ['userinfo'] = $this->entity2model ( $userinfo );
+                    $result ['msg'] = "验证成功";
+                }
+            } else {
+                $result ['result'] = - 1;
+                $result ['userinfo'] = null;
+                $result ['msg'] = "密码错误";
+            }
+        } else {
+            $result ['result'] = - 2;
+            $result ['userinfo'] = null;
+            $result ['msg'] = "用户名不存在";
+        }
+        return $result;
+    }
+
+
 	
 	/**
 	 *

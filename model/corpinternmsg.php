@@ -774,7 +774,7 @@ class corpinternmsg extends Model {
             $sql1="insert into tj_view (user_id,post_id,post_type,view_time) values ('".$userId."','".$cim_id."','".$type."','".date('Y-m-d H:i:s',time())."')";
             $this->insert($sql1);
         }elseif($type==0){
-            $sql="select jm.jm_name title,jm.jm_opentime fb_date,jm.jm_read read_num,jm.jm_content content,f.file_link,jm.file_name from jobfairmsg jm  left join file f on jm.file_id=f.file_id  where jm.jm_id=$cim_id";
+            $sql="select jm.jm_name title,jm.jm_opentime fb_date,jm.jm_read read_num,jm.jm_content content,f.file_link,jm.file_name,p.pic_link from jobfairmsg jm  left join file f on jm.file_id=f.file_id left join picture p on p.pic_id=jm.pic_id where jm.jm_id=$cim_id";
             $sql1="update jobfairmsg set jm_read=jm_read+1 where jm_id=$cim_id";
             $this->update($sql1);
             $sql1="insert into tj_view (user_id,post_id,post_type,view_time) values ('".$userId."','".$cim_id."','".$type."','".date('Y-m-d H:i:s',time())."')";
@@ -784,7 +784,7 @@ class corpinternmsg extends Model {
             $sql1="update employmentpolicy set ep_browse=ep_browse+1 where ep_id=$cim_id";
             $this->update($sql1);
         }elseif($type==3){
-            $sql="select ji.ji_title title,ji.ji_date fb_date,ji.ji_read read_num,ji.ji_content content,jia.file_name,f.file_link from jobinfo ji left join jobinfo_attr jia on ji.ji_id=jia.ji_id left join file f on jia.file_id=f.file_id where ji.ji_id=$cim_id";
+            $sql="select ji.ji_title title,ji.ji_date fb_date,ji.ji_read read_num,ji.ji_content content,jia.file_name,f.file_link,p.pic_link from jobinfo ji left join jobinfo_attr jia on ji.ji_id=jia.ji_id left join file f on jia.file_id=f.file_id left join picture p on p.pic_id=ji.pic_id where ji.ji_id=$cim_id";
             $sql1="update jobinfo set ji_read=ji_read+1 where ji_id=$cim_id";
             $this->update($sql1);
         }elseif($type==4){

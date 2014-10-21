@@ -26,221 +26,16 @@
       <file leaf-file-name="AccountController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/clientapi/controllers/AccountController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="464" column="41" selection-start="18723" selection-end="18723" vertical-scroll-proportion="12.0" vertical-offset="9452" max-vertical-offset="17290">
-              <folding>
-                <marker date="1413713496060" expanded="true" signature="10941:10952" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="10967:11059" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="11185:11277" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="11435:11526" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="11791:13295" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="11791:12573" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="11806:12053" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="11838:12037" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="11850:12020" placeholder="{...}" />
-                <marker date="1413713496060" expanded="true" signature="12076:12176" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12177:13279" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12177:13279" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12177:13279" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12177:13279" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12177:13279" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12177:13279" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12177:13279" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12177:13279" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12177:12573" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12199:12223" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12224:13263" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12224:13263" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12224:13263" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12224:13263" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12224:13263" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12224:13263" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12224:13263" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12224:12573" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12250:12302" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12250:12302" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12250:12302" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12250:12302" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12250:12302" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12250:12302" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12250:12302" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12250:12302" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12355:12405" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12420:12440" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12487:12525" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12656:12667" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12668:13156" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12668:13151" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12668:13247" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12668:13077" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12699:12791" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12792:12856" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12792:12856" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12792:12856" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12792:12856" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12792:12856" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12792:12856" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12792:12856" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12792:12856" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12792:12856" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12792:12856" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12792:12856" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12792:12856" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12792:12856" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12886:12921" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12922:13228" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12922:13228" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12922:13228" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12922:13228" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12922:13228" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12922:13228" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12922:13228" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12922:13228" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12922:13228" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12922:13228" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12922:13156" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12922:13151" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12922:13077" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12975:12993" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12994:13205" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="12994:13077" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="13023:13055" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="13056:13198" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="13056:13077" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25544:25568" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25544:26558" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25551:25568" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25579:25774" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25579:25774" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25579:25774" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25579:25774" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25579:25774" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25579:25774" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25579:25774" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25579:25774" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25579:25774" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25579:25774" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25579:25774" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25579:25774" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25579:25774" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25579:25774" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25579:25774" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25591:25761" placeholder="{...}" />
-                <marker date="1413713496060" expanded="true" signature="25797:25897" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25898:26550" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25898:26550" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25898:26550" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25898:26550" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25898:26550" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25898:26550" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25898:26550" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25898:26550" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25898:26550" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25898:26550" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25898:26550" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25898:26550" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25898:26550" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25898:26550" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25898:26550" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25898:26550" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25898:26550" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25898:26550" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25912:25936" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25937:26543" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25937:26543" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25937:26543" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25937:26543" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25937:26543" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25937:26543" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25937:26543" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25937:26543" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25937:26543" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25937:26543" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25937:26543" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25937:26543" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25937:26543" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25937:26543" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25937:26543" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25937:26543" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25937:26543" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25937:26543" placeholder="..." />
-                <marker date="1413713496060" expanded="false" signature="25955:26007" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25955:26007" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25955:26007" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25955:26007" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25955:26007" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25955:26007" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25955:26007" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25955:26007" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25955:26007" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25955:26007" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25955:26007" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25955:26007" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25955:26007" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25955:26007" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25955:26007" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25955:26007" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25955:26007" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="25955:26007" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="26046:26096" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="26111:26131" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="26177:26215" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="26261:26299" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="26354:26365" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="26366:26542" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="26366:26542" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="26366:26542" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="26366:26542" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="26366:26542" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="26366:26542" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="26366:26542" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="26366:26542" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="26366:26542" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="26366:26542" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="26366:26542" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="26366:26542" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="26366:26542" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="26366:26542" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="26366:26542" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="26366:26542" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="26366:26542" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="26366:26542" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="26389:26481" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="26482:26530" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="26482:26530" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="26482:26530" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="26482:26530" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="26482:26530" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="26482:26530" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="26482:26530" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="26482:26530" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="26482:26530" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="26482:26530" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="26482:26530" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="26482:26530" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="26482:26530" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="26482:26530" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="26482:26530" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="26482:26530" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="26482:26530" placeholder="..." />
-                <marker date="1413713496060" expanded="true" signature="26482:26530" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="myinfo.htm" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/tpl/company/myinfo.htm">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="4731">
+            <state line="452" column="26" selection-start="18254" selection-end="18256" vertical-scroll-proportion="0.0" vertical-offset="10193" max-vertical-offset="17518">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="modifycominfo.htm" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/tpl/company/modifycominfo.htm">
+      <file leaf-file-name="AccountController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/controllers/AccountController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="47" selection-start="2806" selection-end="2806" vertical-scroll-proportion="0.53395784" vertical-offset="627" max-vertical-offset="8436">
+            <state line="12" column="55" selection-start="302" selection-end="304" vertical-scroll-proportion="0.0" vertical-offset="228" max-vertical-offset="2451">
               <folding />
             </state>
           </provider>
@@ -249,8 +44,60 @@
       <file leaf-file-name="RecruitController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/controllers/RecruitController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="461" column="67" selection-start="16465" selection-end="16465" vertical-scroll-proportion="-23.071428" vertical-offset="8113" max-vertical-offset="16340">
+            <state line="460" column="188" selection-start="16277" selection-end="16277" vertical-scroll-proportion="0.0" vertical-offset="7969" max-vertical-offset="16397">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jobinfo.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/jobinfo.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="213" column="20" selection-start="6104" selection-end="6104" vertical-scroll-proportion="0.0" vertical-offset="4047" max-vertical-offset="6802">
+              <folding>
+                <marker date="1413104735568" expanded="true" signature="1093:1278" placeholder="SELECT `jobi..." />
+                <marker date="1413104735568" expanded="true" signature="2073:2181" placeholder="SELECT `jobi..." />
+                <marker date="1413104735568" expanded="true" signature="3068:3092" placeholder="SELECT * FRO..." />
+                <marker date="1413104735568" expanded="true" signature="10645:10840" placeholder="SELECT `jobi..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="corpinternmsg.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/corpinternmsg.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="352" column="20" selection-start="12715" selection-end="12715" vertical-scroll-proportion="0.0" vertical-offset="6404" max-vertical-offset="16872">
+              <folding>
+                <marker date="1413789499089" expanded="true" signature="320:350" placeholder="SELECT * FRO..." />
+                <marker date="1413789499089" expanded="true" signature="436:460" placeholder="SELECT * FRO..." />
+                <marker date="1413789499089" expanded="true" signature="544:564" placeholder="SELECT * FRO..." />
+                <marker date="1413789499089" expanded="true" signature="687:732" placeholder="SELECT `corp..." />
+                <marker date="1413789499089" expanded="true" signature="1263:1833" placeholder="SELECT `corp..." />
+                <marker date="1413789499089" expanded="true" signature="5104:5473" placeholder="SELECT `corp..." />
+                <marker date="1413789499089" expanded="true" signature="7359:7732" placeholder="SELECT `corp..." />
+                <marker date="1413789499089" expanded="true" signature="8852:9146" placeholder="SELECT `corp..." />
+                <marker date="1413789499089" expanded="true" signature="10265:10634" placeholder="SELECT `corp..." />
+                <marker date="1413789499089" expanded="true" signature="14241:14319" placeholder="DELETE FROM ..." />
+                <marker date="1413789499089" expanded="true" signature="23468:23512" placeholder="DELETE FROM ..." />
+                <marker date="1413789499089" expanded="true" signature="23986:24015" placeholder="SELECT * FRO..." />
+                <marker date="1413789499089" expanded="true" signature="26028:26073" placeholder="SELECT `corp..." />
+                <marker date="1413789499089" expanded="true" signature="26625:26834" placeholder="select cim.c..corpinternmsg..." />
+                <marker date="1413789499089" expanded="true" signature="26856:26921" placeholder="update corpi..." />
+                <marker date="1413789499089" expanded="true" signature="27198:27448" placeholder="select jm.jm..jobfairmsg..." />
+                <marker date="1413789499089" expanded="true" signature="27470:27529" placeholder="update jobfa..." />
+                <marker date="1413789499089" expanded="true" signature="27806:28010" placeholder="select ep.ep..employmentpolicy..." />
+                <marker date="1413789499089" expanded="true" signature="28032:28101" placeholder="update emplo..." />
+                <marker date="1413789499089" expanded="true" signature="28183:28477" placeholder="select ji.ji..jobinfo..." />
+                <marker date="1413789499089" expanded="true" signature="28499:28555" placeholder="update jobin..." />
+                <marker date="1413789499089" expanded="true" signature="28637:28760" placeholder="select cci_t..collegeintroduction..." />
+                <marker date="1413789499089" expanded="true" signature="28782:28853" placeholder="update colle..." />
+                <marker date="1413789499089" expanded="true" signature="28935:29131" placeholder="select si.si..sourceinformation..." />
+                <marker date="1413789499089" expanded="true" signature="29153:29219" placeholder="update sourc..." />
+                <marker date="1413789499089" expanded="true" signature="29385:29426" placeholder="select * fro..office..." />
+                <marker date="1413789499089" expanded="true" signature="29583:29701" placeholder="select cim_i..corpinternmsg..." />
+                <marker date="1413789499089" expanded="true" signature="29999:30156" placeholder="select jm_id..jobfairmsg..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -258,7 +105,16 @@
       <file leaf-file-name="JobfairController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/controllers/JobfairController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="232" column="67" selection-start="7970" selection-end="7970" vertical-scroll-proportion="-27.142857" vertical-offset="3648" max-vertical-offset="6973">
+            <state line="231" column="39" selection-start="7840" selection-end="7840" vertical-scroll-proportion="-12.857142" vertical-offset="4029" max-vertical-offset="6992">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PushController.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/admin/controllers/PushController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="58" column="63" selection-start="2052" selection-end="2052" vertical-scroll-proportion="0.5632184" vertical-offset="732" max-vertical-offset="1425">
               <folding />
             </state>
           </provider>
@@ -274,8 +130,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/model/studysoft.php" />
-        <option value="$PROJECT_DIR$/app/controllers/IndexController.php" />
         <option value="$PROJECT_DIR$/app/tpl/company/myjobfair.htm" />
         <option value="$PROJECT_DIR$/app/tpl/professionpersontalk/index.htm" />
         <option value="$PROJECT_DIR$/app/tpl/west/index.htm" />
@@ -292,7 +146,6 @@
         <option value="$PROJECT_DIR$/admin/tpl/frontuser/company.html" />
         <option value="$PROJECT_DIR$/admin/tpl/frontuser/verifycompany.html" />
         <option value="$PROJECT_DIR$/setting/db.php" />
-        <option value="$PROJECT_DIR$/model/jpush.php" />
         <option value="$PROJECT_DIR$/admin/tpl/recruit/verifyinfo.html" />
         <option value="$PROJECT_DIR$/../../movies_html/recruitment.html" />
         <option value="$USER_HOME$/Desktop/a.html" />
@@ -300,7 +153,6 @@
         <option value="$PROJECT_DIR$/clientapi/filter/clientapiFilter.php" />
         <option value="$PROJECT_DIR$/../../../apps/phpmyadmin3.4.10.1/config.inc.php" />
         <option value="$PROJECT_DIR$/../../movies_html/css/tiptimes_style.css" />
-        <option value="$PROJECT_DIR$/admin/controllers/PushController.php" />
         <option value="$PROJECT_DIR$/model/collect.php" />
         <option value="$PROJECT_DIR$/../../movies_html/itnews.html" />
         <option value="$PROJECT_DIR$/../../movies_html/index.html" />
@@ -319,12 +171,16 @@
         <option value="$PROJECT_DIR$/../../tiptimes/Common/common.php" />
         <option value="$PROJECT_DIR$/../../tiptimes/Admin/Lib/Action/NewsAction.class.php" />
         <option value="$PROJECT_DIR$/../../tiptimes/Admin/Common/common.php" />
+        <option value="$PROJECT_DIR$/app/tpl/company/modifycominfo.htm" />
+        <option value="$PROJECT_DIR$/../../nkgn_news/setting/db.php" />
         <option value="$PROJECT_DIR$/model/frontuser.php" />
         <option value="$PROJECT_DIR$/model/corpinternmsg.php" />
+        <option value="$PROJECT_DIR$/clientapi/controllers/AccountController.php" />
+        <option value="$PROJECT_DIR$/clientapi/controllers/UpgradeController.php" />
+        <option value="$PROJECT_DIR$/model/jpush.php" />
         <option value="$PROJECT_DIR$/admin/controllers/RecruitController.php" />
         <option value="$PROJECT_DIR$/admin/controllers/JobfairController.php" />
-        <option value="$PROJECT_DIR$/clientapi/controllers/AccountController.php" />
-        <option value="$PROJECT_DIR$/app/tpl/company/modifycominfo.htm" />
+        <option value="$PROJECT_DIR$/admin/controllers/PushController.php" />
       </list>
     </option>
   </component>
@@ -332,8 +188,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -514,15 +370,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.102813855" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22364217" sideWeight="0.87852496" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.100453176" sideWeight="0.87852496" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23642172" sideWeight="0.121475056" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -530,11 +386,11 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32934928" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -554,26 +410,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/model/centerintroduction.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="20" selection-start="997" selection-end="997" vertical-scroll-proportion="-23.071428" vertical-offset="0" max-vertical-offset="836" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/tpl/frontuser/verifycompany.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="215" column="291" selection-start="8100" selection-end="8129" vertical-scroll-proportion="-16.285715" vertical-offset="3629" max-vertical-offset="5909" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/controllers/FrontuserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="280" column="70" selection-start="7875" selection-end="7875" vertical-scroll-proportion="-12.830189" vertical-offset="4640" max-vertical-offset="7277" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/clientapi/filter/clientapiFilter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="375" selection-start="474" selection-end="474" vertical-scroll-proportion="-0.6785714" vertical-offset="76" max-vertical-offset="1520" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/tpl/recruit/verifyinfo.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="113" column="46" selection-start="4365" selection-end="4365" vertical-scroll-proportion="152.92857" vertical-offset="6429" max-vertical-offset="7296" />
@@ -602,11 +438,6 @@
     <entry file="file://$PROJECT_DIR$/../../movies_html/news.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="193" column="18" selection-start="10878" selection-end="11436" vertical-scroll-proportion="0.0" vertical-offset="2500" max-vertical-offset="4294" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/controllers/PushController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="194" selection-start="2329" selection-end="2329" vertical-scroll-proportion="0.0" vertical-offset="1159" max-vertical-offset="1501" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/employmentpolicy.php">
@@ -646,9 +477,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/model/message.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="205" column="37" selection-start="7579" selection-end="7579" vertical-scroll-proportion="-3.5357144" vertical-offset="3796" max-vertical-offset="4788">
-          <folding />
-        </state>
+        <state line="205" column="37" selection-start="7579" selection-end="7579" vertical-scroll-proportion="-3.5357144" vertical-offset="3796" max-vertical-offset="4788" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../tiptimes/Admin/Runtime/~runtime.php">
@@ -703,371 +532,185 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../tiptimes/Admin/Tpl/Index/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="103" column="55" selection-start="3002" selection-end="3002" vertical-scroll-proportion="0.0" vertical-offset="1539" max-vertical-offset="4484">
-          <folding />
-        </state>
+        <state line="103" column="55" selection-start="3002" selection-end="3002" vertical-scroll-proportion="0.0" vertical-offset="1539" max-vertical-offset="4484" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../tiptimes/Common/common.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="464" selection-end="464" vertical-scroll-proportion="0.0" vertical-offset="437" max-vertical-offset="589">
-          <folding />
-        </state>
+        <state line="23" column="0" selection-start="464" selection-end="464" vertical-scroll-proportion="0.0" vertical-offset="437" max-vertical-offset="589" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../tiptimes/Admin/Common/common.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="20" selection-start="584" selection-end="584" vertical-scroll-proportion="0.0" vertical-offset="475" max-vertical-offset="684">
-          <folding />
-        </state>
+        <state line="25" column="20" selection-start="584" selection-end="584" vertical-scroll-proportion="0.0" vertical-offset="475" max-vertical-offset="684" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../tiptimes/Admin/Lib/Action/NewsAction.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="21" selection-start="2829" selection-end="2829" vertical-scroll-proportion="-0.0" vertical-offset="1425" max-vertical-offset="3496">
-          <folding />
-        </state>
+        <state line="75" column="21" selection-start="2829" selection-end="2829" vertical-scroll-proportion="-0.0" vertical-offset="1425" max-vertical-offset="3496" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/controllers/JobinfoController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="226" column="43" selection-start="6626" selection-end="6626" vertical-scroll-proportion="-16.964285" vertical-offset="3819" max-vertical-offset="8113">
+        <state line="226" column="43" selection-start="6626" selection-end="6626" vertical-scroll-proportion="-16.964285" vertical-offset="3819" max-vertical-offset="8113" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/student.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="309" column="20" selection-start="9907" selection-end="9907" vertical-scroll-proportion="0.47635525" vertical-offset="5458" max-vertical-offset="6498" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/RecruitmentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="44" selection-start="514" selection-end="514" vertical-scroll-proportion="-11.535714" vertical-offset="0" max-vertical-offset="760" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/CorpinternmsgController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="188" column="52" selection-start="5060" selection-end="5060" vertical-scroll-proportion="-12.75" vertical-offset="3215" max-vertical-offset="10564" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/company.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="40" selection-start="1744" selection-end="2053" vertical-scroll-proportion="0.6674473" vertical-offset="285" max-vertical-offset="2964" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/tpl/company/modifycominfo.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="47" selection-start="2806" selection-end="2806" vertical-scroll-proportion="0.53395784" vertical-offset="627" max-vertical-offset="8436" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../nkgn_news/model/admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-5.22376" vertical-offset="4529" max-vertical-offset="5396" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../nkgn_news/setting/db.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="33" selection-start="399" selection-end="399" vertical-scroll-proportion="0.30680507" vertical-offset="0" max-vertical-offset="867" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/tpl/company/myinfo.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4731" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/AccountController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="31" selection-start="651" selection-end="651" vertical-scroll-proportion="-8.821428" vertical-offset="114" max-vertical-offset="2679" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/frontuser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="221" column="0" selection-start="8235" selection-end="8239" vertical-scroll-proportion="38.714287" vertical-offset="5283" max-vertical-offset="14972" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../tiptimes/Home/Tpl/Index/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="43" selection-start="693" selection-end="693" vertical-scroll-proportion="0.35063437" vertical-offset="57" max-vertical-offset="4826" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/jpush.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="41" selection-start="2271" selection-end="2271" vertical-scroll-proportion="-10.857142" vertical-offset="836" max-vertical-offset="2869">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/version.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="76" column="37" selection-start="2969" selection-end="2969" vertical-scroll-proportion="-14.214286" vertical-offset="1046" max-vertical-offset="2185" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clientapi/controllers/UpgradeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="29" selection-start="981" selection-end="981" vertical-scroll-proportion="-14.0" vertical-offset="159" max-vertical-offset="1311" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clientapi/filter/clientapiFilter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="375" selection-start="474" selection-end="474" vertical-scroll-proportion="0.022248244" vertical-offset="76" max-vertical-offset="1520" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clientapi/controllers/AccountController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="452" column="26" selection-start="18254" selection-end="18256" vertical-scroll-proportion="0.0" vertical-offset="10193" max-vertical-offset="17518">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/controllers/AccountController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="55" selection-start="302" selection-end="304" vertical-scroll-proportion="0.0" vertical-offset="228" max-vertical-offset="2451">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/jobinfo.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="213" column="20" selection-start="6104" selection-end="6104" vertical-scroll-proportion="0.3442623" vertical-offset="3715" max-vertical-offset="6764">
+        <state line="213" column="20" selection-start="6104" selection-end="6104" vertical-scroll-proportion="0.0" vertical-offset="4047" max-vertical-offset="6802">
           <folding>
-            <marker date="1413104735568" expanded="true" signature="-1:-1" placeholder="SELECT `jobi..." />
-            <marker date="1413104735568" expanded="true" signature="-1:-1" placeholder="SELECT `jobi..." />
-            <marker date="1413104735568" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
-            <marker date="1413104735568" expanded="true" signature="-1:-1" placeholder="SELECT `jobi..." />
+            <marker date="1413104735568" expanded="true" signature="1093:1278" placeholder="SELECT `jobi..." />
+            <marker date="1413104735568" expanded="true" signature="2073:2181" placeholder="SELECT `jobi..." />
+            <marker date="1413104735568" expanded="true" signature="3068:3092" placeholder="SELECT * FRO..." />
+            <marker date="1413104735568" expanded="true" signature="10645:10840" placeholder="SELECT `jobi..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/student.php">
+    <entry file="file://$PROJECT_DIR$/model/corpinternmsg.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="309" column="20" selection-start="9907" selection-end="9907" vertical-scroll-proportion="0.47635525" vertical-offset="5458" max-vertical-offset="6498">
+        <state line="352" column="20" selection-start="12715" selection-end="12715" vertical-scroll-proportion="0.0" vertical-offset="6404" max-vertical-offset="16872">
           <folding>
-            <marker date="1413104600914" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
-            <marker date="1413104600914" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1413104600914" expanded="true" signature="-1:-1" placeholder="SELECT `stud..." />
-            <marker date="1413104600914" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/frontuser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="667" column="39" selection-start="22327" selection-end="22327" vertical-scroll-proportion="-13.535714" vertical-offset="12294" max-vertical-offset="13186">
-          <folding>
-            <marker date="1413713496073" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1413713496073" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
-            <marker date="1413713496073" expanded="true" signature="-1:-1" placeholder="SELECT `user..." />
-            <marker date="1413713496073" expanded="true" signature="-1:-1" placeholder="SELECT `fron..." />
-            <marker date="1413713496073" expanded="true" signature="-1:-1" placeholder="select * fro..xvzhi..." />
-            <marker date="1413713496073" expanded="true" signature="-1:-1" placeholder="select * fro..frontuser..." />
-            <marker date="1413713496073" expanded="true" signature="-1:-1" placeholder="select * fro..student..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/controllers/AccountController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2451">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/RecruitmentController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="44" selection-start="514" selection-end="514" vertical-scroll-proportion="-11.535714" vertical-offset="0" max-vertical-offset="760">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/CorpinternmsgController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="188" column="52" selection-start="5060" selection-end="5060" vertical-scroll-proportion="-12.75" vertical-offset="3215" max-vertical-offset="10564">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/company.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="40" selection-start="1744" selection-end="2053" vertical-scroll-proportion="0.6674473" vertical-offset="285" max-vertical-offset="2964">
-          <folding>
-            <marker date="1413531046676" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1413789499089" expanded="true" signature="320:350" placeholder="SELECT * FRO..." />
+            <marker date="1413789499089" expanded="true" signature="436:460" placeholder="SELECT * FRO..." />
+            <marker date="1413789499089" expanded="true" signature="544:564" placeholder="SELECT * FRO..." />
+            <marker date="1413789499089" expanded="true" signature="687:732" placeholder="SELECT `corp..." />
+            <marker date="1413789499089" expanded="true" signature="1263:1833" placeholder="SELECT `corp..." />
+            <marker date="1413789499089" expanded="true" signature="5104:5473" placeholder="SELECT `corp..." />
+            <marker date="1413789499089" expanded="true" signature="7359:7732" placeholder="SELECT `corp..." />
+            <marker date="1413789499089" expanded="true" signature="8852:9146" placeholder="SELECT `corp..." />
+            <marker date="1413789499089" expanded="true" signature="10265:10634" placeholder="SELECT `corp..." />
+            <marker date="1413789499089" expanded="true" signature="14241:14319" placeholder="DELETE FROM ..." />
+            <marker date="1413789499089" expanded="true" signature="23468:23512" placeholder="DELETE FROM ..." />
+            <marker date="1413789499089" expanded="true" signature="23986:24015" placeholder="SELECT * FRO..." />
+            <marker date="1413789499089" expanded="true" signature="26028:26073" placeholder="SELECT `corp..." />
+            <marker date="1413789499089" expanded="true" signature="26625:26834" placeholder="select cim.c..corpinternmsg..." />
+            <marker date="1413789499089" expanded="true" signature="26856:26921" placeholder="update corpi..." />
+            <marker date="1413789499089" expanded="true" signature="27198:27448" placeholder="select jm.jm..jobfairmsg..." />
+            <marker date="1413789499089" expanded="true" signature="27470:27529" placeholder="update jobfa..." />
+            <marker date="1413789499089" expanded="true" signature="27806:28010" placeholder="select ep.ep..employmentpolicy..." />
+            <marker date="1413789499089" expanded="true" signature="28032:28101" placeholder="update emplo..." />
+            <marker date="1413789499089" expanded="true" signature="28183:28477" placeholder="select ji.ji..jobinfo..." />
+            <marker date="1413789499089" expanded="true" signature="28499:28555" placeholder="update jobin..." />
+            <marker date="1413789499089" expanded="true" signature="28637:28760" placeholder="select cci_t..collegeintroduction..." />
+            <marker date="1413789499089" expanded="true" signature="28782:28853" placeholder="update colle..." />
+            <marker date="1413789499089" expanded="true" signature="28935:29131" placeholder="select si.si..sourceinformation..." />
+            <marker date="1413789499089" expanded="true" signature="29153:29219" placeholder="update sourc..." />
+            <marker date="1413789499089" expanded="true" signature="29385:29426" placeholder="select * fro..office..." />
+            <marker date="1413789499089" expanded="true" signature="29583:29701" placeholder="select cim_i..corpinternmsg..." />
+            <marker date="1413789499089" expanded="true" signature="29999:30156" placeholder="select jm_id..jobfairmsg..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/controllers/RecruitController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="461" column="67" selection-start="16465" selection-end="16465" vertical-scroll-proportion="-23.071428" vertical-offset="8113" max-vertical-offset="16340">
+        <state line="460" column="188" selection-start="16277" selection-end="16277" vertical-scroll-proportion="0.0" vertical-offset="7969" max-vertical-offset="16397">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/corpinternmsg.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="817" column="113" selection-start="29992" selection-end="29992" vertical-scroll-proportion="0.5327869" vertical-offset="15068" max-vertical-offset="16872">
-          <folding>
-            <marker date="1413713496071" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
-            <marker date="1413713496071" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
-            <marker date="1413713496071" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
-            <marker date="1413713496071" expanded="true" signature="-1:-1" placeholder="SELECT `corp..." />
-            <marker date="1413713496071" expanded="true" signature="-1:-1" placeholder="SELECT `corp..." />
-            <marker date="1413713496071" expanded="true" signature="-1:-1" placeholder="SELECT `corp..." />
-            <marker date="1413713496071" expanded="true" signature="-1:-1" placeholder="SELECT `corp..." />
-            <marker date="1413713496071" expanded="true" signature="-1:-1" placeholder="SELECT `corp..." />
-            <marker date="1413713496071" expanded="true" signature="-1:-1" placeholder="SELECT `corp..." />
-            <marker date="1413713496071" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1413713496071" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1413713496071" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
-            <marker date="1413713496071" expanded="true" signature="-1:-1" placeholder="SELECT `corp..." />
-            <marker date="1413713496071" expanded="true" signature="-1:-1" placeholder="select cim.c..corpinternmsg..." />
-            <marker date="1413713496071" expanded="true" signature="-1:-1" placeholder="update corpi..." />
-            <marker date="1413713496071" expanded="true" signature="-1:-1" placeholder="select jm.jm..jobfairmsg..." />
-            <marker date="1413713496071" expanded="true" signature="-1:-1" placeholder="update jobfa..." />
-            <marker date="1413713496071" expanded="true" signature="-1:-1" placeholder="select ep.ep..employmentpolicy..." />
-            <marker date="1413713496071" expanded="true" signature="-1:-1" placeholder="update emplo..." />
-            <marker date="1413713496071" expanded="true" signature="-1:-1" placeholder="select ji.ji..jobinfo..." />
-            <marker date="1413713496071" expanded="true" signature="-1:-1" placeholder="update jobin..." />
-            <marker date="1413713496071" expanded="true" signature="-1:-1" placeholder="select cci_t..collegeintroduction..." />
-            <marker date="1413713496071" expanded="true" signature="-1:-1" placeholder="update colle..." />
-            <marker date="1413713496071" expanded="true" signature="-1:-1" placeholder="select si.si..sourceinformation..." />
-            <marker date="1413713496071" expanded="true" signature="-1:-1" placeholder="update sourc..." />
-            <marker date="1413713496071" expanded="true" signature="-1:-1" placeholder="select * fro..office..." />
-            <marker date="1413713496071" expanded="true" signature="-1:-1" placeholder="select cim_i..corpinternmsg..." />
-            <marker date="1413713496071" expanded="true" signature="-1:-1" placeholder="select jm_id..jobfairmsg..." />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/controllers/JobfairController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="232" column="67" selection-start="7970" selection-end="7970" vertical-scroll-proportion="-27.142857" vertical-offset="3648" max-vertical-offset="6973">
+        <state line="231" column="39" selection-start="7840" selection-end="7840" vertical-scroll-proportion="-12.857142" vertical-offset="4029" max-vertical-offset="6992">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clientapi/controllers/AccountController.php">
+    <entry file="file://$PROJECT_DIR$/admin/controllers/PushController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="464" column="41" selection-start="18723" selection-end="18723" vertical-scroll-proportion="12.0" vertical-offset="9452" max-vertical-offset="17290">
-          <folding>
-            <marker date="1413713496060" expanded="true" signature="10941:10952" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="10967:11059" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="11185:11277" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="11435:11526" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="11791:13295" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="11791:12573" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="11806:12053" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="11838:12037" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="11850:12020" placeholder="{...}" />
-            <marker date="1413713496060" expanded="true" signature="12076:12176" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12177:13279" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12177:13279" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12177:13279" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12177:13279" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12177:13279" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12177:13279" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12177:13279" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12177:13279" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12177:12573" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12199:12223" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12224:13263" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12224:13263" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12224:13263" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12224:13263" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12224:13263" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12224:13263" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12224:13263" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12224:12573" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12250:12302" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12250:12302" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12250:12302" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12250:12302" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12250:12302" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12250:12302" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12250:12302" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12250:12302" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12355:12405" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12420:12440" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12487:12525" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12656:12667" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12668:13156" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12668:13151" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12668:13247" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12668:13077" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12699:12791" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12792:12856" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12792:12856" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12792:12856" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12792:12856" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12792:12856" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12792:12856" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12792:12856" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12792:12856" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12792:12856" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12792:12856" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12792:12856" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12792:12856" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12792:12856" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12886:12921" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12922:13228" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12922:13228" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12922:13228" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12922:13228" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12922:13228" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12922:13228" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12922:13228" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12922:13228" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12922:13228" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12922:13228" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12922:13156" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12922:13151" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12922:13077" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12975:12993" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12994:13205" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="12994:13077" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="13023:13055" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="13056:13198" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="13056:13077" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25544:25568" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25544:26558" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25551:25568" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25579:25774" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25579:25774" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25579:25774" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25579:25774" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25579:25774" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25579:25774" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25579:25774" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25579:25774" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25579:25774" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25579:25774" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25579:25774" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25579:25774" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25579:25774" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25579:25774" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25579:25774" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25591:25761" placeholder="{...}" />
-            <marker date="1413713496060" expanded="true" signature="25797:25897" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25898:26550" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25898:26550" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25898:26550" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25898:26550" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25898:26550" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25898:26550" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25898:26550" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25898:26550" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25898:26550" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25898:26550" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25898:26550" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25898:26550" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25898:26550" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25898:26550" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25898:26550" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25898:26550" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25898:26550" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25898:26550" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25912:25936" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25937:26543" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25937:26543" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25937:26543" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25937:26543" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25937:26543" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25937:26543" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25937:26543" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25937:26543" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25937:26543" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25937:26543" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25937:26543" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25937:26543" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25937:26543" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25937:26543" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25937:26543" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25937:26543" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25937:26543" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25937:26543" placeholder="..." />
-            <marker date="1413713496060" expanded="false" signature="25955:26007" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25955:26007" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25955:26007" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25955:26007" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25955:26007" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25955:26007" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25955:26007" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25955:26007" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25955:26007" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25955:26007" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25955:26007" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25955:26007" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25955:26007" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25955:26007" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25955:26007" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25955:26007" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25955:26007" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="25955:26007" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="26046:26096" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="26111:26131" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="26177:26215" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="26261:26299" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="26354:26365" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="26366:26542" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="26366:26542" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="26366:26542" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="26366:26542" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="26366:26542" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="26366:26542" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="26366:26542" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="26366:26542" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="26366:26542" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="26366:26542" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="26366:26542" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="26366:26542" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="26366:26542" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="26366:26542" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="26366:26542" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="26366:26542" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="26366:26542" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="26366:26542" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="26389:26481" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="26482:26530" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="26482:26530" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="26482:26530" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="26482:26530" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="26482:26530" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="26482:26530" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="26482:26530" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="26482:26530" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="26482:26530" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="26482:26530" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="26482:26530" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="26482:26530" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="26482:26530" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="26482:26530" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="26482:26530" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="26482:26530" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="26482:26530" placeholder="..." />
-            <marker date="1413713496060" expanded="true" signature="26482:26530" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/tpl/company/myinfo.htm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4731">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/tpl/company/modifycominfo.htm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="47" selection-start="2806" selection-end="2806" vertical-scroll-proportion="0.53395784" vertical-offset="627" max-vertical-offset="8436">
+        <state line="58" column="63" selection-start="2052" selection-end="2052" vertical-scroll-proportion="0.5632184" vertical-offset="732" max-vertical-offset="1425">
           <folding />
         </state>
       </provider>

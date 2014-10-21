@@ -21,7 +21,13 @@ class AccountController extends Controller {
 		if ($username && $password && $osType  && ($userType == 0 || $userType == 1)) {
 
 			$user = new frontuser ();
-			$userinfo = $user->authUser ( $username, $password, 0 );
+            if($userType){
+                $userinfo = $user->authComUser ( $username, $password, 0 );
+
+            }else{
+                $userinfo = $user->authStuUser ( $username, $password, 0 );
+            }
+
 
 			if ($userinfo ["result"] > 0) {
                 $data ["userID"] = $userinfo ["result"];
@@ -278,10 +284,15 @@ class AccountController extends Controller {
         $msg = new corpinternmsg();
         $zp_content=$msg->getappzpcontent($userId,$cim_id,$type);
         $div_str = "";
+        $div_str1 = "";
+        if($zp_content[pic_link]){
+            $zp_content[pic_link]=$this->view->images_app_url.$zp_content[pic_link];
+            $div_str1 .= "<div style='width: 100%' ><div style='text-align:center;line-height:31px;margin: 0 auto;width:98%;margin-left: 15px;font-size: 16px;margin-top: 18px'><img src='$zp_content[pic_link]'/></div></div>";
+            //var_dump($div_str);
+        }
         if($type==1){
             $office_arr=$msg->getAppOffice($cim_id);
             $div_str .= "<div style='width: 100%' ><div style='line-height:31px;margin: 0 auto;width:98%;margin-left: 15px;font-size: 16px;margin-top: 18px'><strong>>>职位</strong></div>";
-
             for($i =0; $i<count($office_arr); $i++){
                 $div_str.= "<div style='line-height:31px;margin: 0 auto;width:98%;margin-left: 15px;font-size: 16px;margin-top: 18px'><strong>";
                 $div_str.= $office_arr[$i]['office_name'];
@@ -313,6 +324,7 @@ class AccountController extends Controller {
             <div style='text-align: center;padding-top: 15px;font-size: 24px'>$zp_content[title]  </div>
             <div style='text-align: center;margin-top: 10px;font-size: 8px'><span style='text-decoration:none'>发布时间：$zp_content[fb_date]</span><span style='margin-left: 40px;text-decoration:none'>浏览量：$zp_content[read_num]</span></div>
         ";
+        echo ($zp_content[pic_link]?$div_str1:"");
         echo ($office_arr?$div_str:"");
         echo "
             <div style='width: 100%' >
