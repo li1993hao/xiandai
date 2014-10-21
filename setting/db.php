@@ -9,14 +9,14 @@
 return array(
 		"master" => array(
 			'host'		=>"localhost:3306",
-			'database'	=>"wyjob",
+			'database'	=>"xdjob",
 			'user'		=>"root",
 			'pw'		=>'root',
 			'charset'	=>'utf8'
 		),
 		"slaver" => array(
 			'host'		=>"localhost:3306",
-			'database'	=>"wyjob",
+			'database'	=>"xdjob",
 			'user'		=>"root",
 			'pw'		=>'root',
 			'charset'	=>'utf8'
