@@ -19,6 +19,7 @@
                     <p>>如果忘记密码请联系天津现代职业技术学院就业指导中心</p>
                 </div>
     </div>
+
     <div class="header" id="header">
         <div class="header_top">
             <{if isset($__userinfo__) }>
@@ -58,14 +59,17 @@
                     <ul class="header_unlogin">
                         <li><a href="javascript:void(0)">用户登录</a>
                         </li>
-                        <li><a href="<{$web_url}>/index.php/account/register">企业注册</a>
+                        <li id="tk" ><a href="<{$web_url}>/index.php/account/register_tk" >企业注册</a>
                         </li>
+
                     </ul>
+
                     <{/if}>
                         </li>
                         </ul>
 
                     <{if !$isIndex}>
+
                     <ul class="menu">
                         <li><a href="#">学生</a>
                             <ul class="submenu">

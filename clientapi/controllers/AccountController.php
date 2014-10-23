@@ -287,7 +287,7 @@ class AccountController extends Controller {
         $div_str1 = "";
         if($zp_content[pic_link]){
             $zp_content[pic_link]=$this->view->images_app_url.$zp_content[pic_link];
-            $div_str1 .= "<div style='width: 100%' ><div style='text-align:center;line-height:31px;margin: 0 auto;width:98%;margin-left: 15px;font-size: 16px;margin-top: 18px'><img src='$zp_content[pic_link]'/></div></div>";
+            $div_str1 .= "<div style='width: 100%' ><div style='text-align:center;line-height:31px;margin: 0 auto;width:98%;margin-left: 15px;font-size: 16px;margin-top: 18px'><img src='$zp_content[pic_link]' style='width: 150px;height: 200px'/></div></div>";
             //var_dump($div_str);
         }
         if($type==1){

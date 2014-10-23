@@ -45,6 +45,9 @@ class AccountController extends Controller
     /**
      * 注册
      */
+    public function Register_tk(){
+        $this->getView()->display("register_tk.htm");
+    }
     public function Register(){
 
         $this->getView()->reg_flag = "register";

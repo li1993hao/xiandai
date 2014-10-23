@@ -4,6 +4,8 @@ class appFilter extends Filter{
 	protected $_limitRS=array("student","company","teacher","account");
 
 	public function doFilter(){
+        $mm=rand(100,1000);
+        $this->getApp()->getView()->mm=$mm;
 		$session = $this->getApp()->loadUtilClass("SessionUtil");
 
 		if($userid = $session->get("session_userid") ){
@@ -39,8 +41,7 @@ class appFilter extends Filter{
 				$this->getApp()->putData('userinfo', $userdata );
 
 				$this->getApp()->getView()->__userinfo__=$userdata;
-                $mm=rand(100,1000);
-                $this->getApp()->getView()->mm=$mm;
+
 
 			}else{
 				$session->clear();
