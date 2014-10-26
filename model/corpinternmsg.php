@@ -792,7 +792,7 @@ class corpinternmsg extends Model {
             $sql1="update collegeintroduction set cci_scan=cci_scan+1 where cci_id=$cim_id";
             $this->update($sql1);
         }elseif($type==5){
-            $sql="select si.si_title title,si.si_time fb_date,si.si_scan read_num,si.si_content content,f.file_link,si.file_name from sourceinformation si left join file f on si.fu_id=f.fu_id where si.si_id=$cim_id";
+            $sql="select si.si_title title,si.si_time fb_date,si.si_scan read_num,si.si_content content,f.file_link,si.file_name from sourceinformation si left join file f on si.file_id=f.file_id where si.si_id=$cim_id";
             $sql1="update sourceinformation set si_scan=si_scan+1 where si_id=$cim_id";
             $this->update($sql1);
         }

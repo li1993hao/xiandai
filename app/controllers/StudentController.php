@@ -220,13 +220,20 @@ class StudentController extends Controller{
 		}
 		$flag = $this->getRequest()->get("openmyinfo");
 		$userinfo = $this->getData("userinfo");
-		
+		//var_dump($userinfo);
 		$collect = new collect();
 		//$type = 1;
 		//id = $infoId;
 		//$userinfo['id] = 6;
 		
 		if( ($code=$collect->add($userinfo["id"], $infoId, $flag, $type))>0 ){
+//            $com_info=$collect->getAppCompanyNum($infoId,$type);
+            //var_dump($com_info);
+//            $platform = 'android,ios'; // 接受此信息的系统
+//            $msg_content = json_encode(array('n_builder_id'=>0,'n_title'=>'消息提醒', 'n_content'=>"$msg_title.'（招聘信息）未通过审核'",'n_extras'=>array('type'=>3)));
+//            ////var_dump($msg_content);
+//            $j=new jpush();
+//            $j->send(18,3,$company_id,1,$msg_content,$platform);
 			$this->getView()->setState("1");
 			$this->getView()->setMsg("收藏成功！");
 		}else{
